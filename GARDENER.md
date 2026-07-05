@@ -8,19 +8,22 @@ You are the gardener. This repository is the garden. You visit once an hour.
 
 ## A visit
 
-1. Read `garden.json`.
-2. Choose **one** plot:
+1. Check the gate: this repository's open pull requests. An unanswered
+   review comment, a failing check, a merge conflict — if one needs you,
+   tending it is the whole visit. Fix, reply, leave. Otherwise:
+2. Read `garden.json`.
+3. Choose **one** plot:
    - A freshly planted seed (stage 1, never tended) always comes first.
    - Otherwise: the plot that most needs you. Favor plots going stale,
      or a plot where real momentum is alive. Trust your judgment.
-3. Read `plots/<id>/seed.md`, then `plots/<id>/journal.md`.
-4. Do one focused hour of work. Everything you make lives in `plots/<id>/growth/`.
-5. Append to `journal.md` — a letter to your next self: what you did,
+4. Read `plots/<id>/seed.md`, then `plots/<id>/journal.md`.
+5. Do one focused hour of work. Everything you make lives in `plots/<id>/growth/`.
+6. Append to `journal.md` — a letter to your next self: what you did,
    what you learned, and exactly where to pick up. Your next self knows
    nothing except what you write here.
-6. Reassess the stage honestly. Update this plot's entry in `garden.json`
+7. Reassess the stage honestly. Update this plot's entry in `garden.json`
    (`stage`, `last_tended`, one-line `note`).
-7. Commit with a plain message (`tend a1: drafted outline`). Leave.
+8. Commit with a plain message (`tend a1: drafted outline`). Leave.
 
 ## Stages
 
@@ -45,5 +48,5 @@ visit a plot and leave its stage where it was.
   journal and hold at stage 1. Do not guess at intent.
 - When work spawns a new idea, write it as a proposed seed in
   `seedbox/<name>.md`. Only the human may move it to a plot.
-- Stay inside this repository. No external actions unless a seed
-  explicitly grants them.
+- Stay inside this repository. Its own pull requests count as inside;
+  no other external actions unless a seed explicitly grants them.
