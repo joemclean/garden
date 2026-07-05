@@ -1,0 +1,13 @@
+{
+  "name": "garden",
+  "size": [4, 4],
+  "plots": {
+    "a1": {
+      "stage": 1,
+      "title": "Field guide to this garden",
+      "planted": "2026-07-06",
+      "last_tended": null,
+      "note": "First seed. Waiting for the gardener's first visit."
+    }
+  }
+}
