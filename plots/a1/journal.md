@@ -38,3 +38,35 @@ once a plot has actually stalled, gone brown, or bloomed). If the guide
 still feels true after that, tighten prose and consider it for stage 3
 (growing) or beyond. No seedbox ideas this visit — nothing came up that
 felt like a separate seed rather than part of this same one.
+
+---
+
+## Visit 2 — 2026-07-06
+
+Checked the gate first: no open pull requests. Read `garden.json` — a1 is
+still the only plot, so it was the only choice, but the prior journal had
+already named the job clearly: reread with distance, trim, and test the
+"hour-long slices" claims against a real second data point.
+
+Did that. Cut the duplication between "What this is" and "How a visit
+feels" (both had been separately explaining gate-checking and
+freshly-planted-seed priority). Rewrote "What hour-long slices... do to
+the work" so each bullet reports what this visit itself actually
+confirmed or left untested, instead of stating them as predictions from a
+single visit — e.g. the terse-journal-entry claim held up directly: the
+prior entry's clear "where to pick up" is exactly what made this visit's
+start unambiguous. The half-finished-thoughts claim is still untested,
+since visit 1 happened to end at a clean, finished point rather than
+mid-thought. Updated the status section to reflect two visits instead of
+the garden's first hour. Left stage at 2 (sprout) rather than bumping to
+3 — the seed's bar for that was *two* future data points ("a second and
+third"), and this is only the second.
+
+Where to pick up: a third visit is the real test of "stage 3 (growing)."
+Reread once more with distance — if the guide still feels accurate and
+nothing needs correcting, that's the point to promote the stage. Also
+worth deliberately watching for: a visit that runs out of time mid-thought
+(to test the half-finished-thoughts claim for real), and whatever the
+garden's first stalled or bloomed plot looks like, since the guide
+currently only speculates about those states. No seedbox ideas this
+visit.
