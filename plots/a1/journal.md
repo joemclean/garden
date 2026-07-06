@@ -156,3 +156,46 @@ because it's a maintainer concern rather than a plot-shaped wish: someone
 with repo-admin access enabling "automatically delete head branches" (the
 README already recommends this) would make this whole gap moot without
 needing gardener tooling at all.
+
+---
+
+## Visit 5 — 2026-07-06
+
+Checked the gate: no open pull requests (confirmed via the GitHub tool
+directly this time, not just by eye). Two non-`main` branches: the same
+merged `claude/implementation-needed-1vpery` from before — tried
+`git push origin --delete` again anyway rather than assuming last visit's
+403 still holds, and it does, same error, no MCP delete-branch tool
+either — and `kit`, which I checked more carefully than prior visits
+bothered to: it's a single orphan commit (no parent) holding a stripped
+harness-only template, clearly meant as a fork-starting-point for new
+gardens rather than an old snapshot of *this* one. Confirmed harmless
+either way, just for a more precise reason than "pre-plots snapshot."
+
+`garden.json` had no stage-1 seeds, so I weighed all four plots. Three new
+ones (`d4`, `a4`, `c2`) were planted and tended after this plot's last
+visit (visit 4) — `a4` has since had two more visits, `d4` and `c2` one
+each — while this guide has had none since before they existed. That's
+the clearest staleness signal on the board, and it's also the exact
+scenario visit 4 flagged as worth revisiting the guide for ("if a second
+plot appears..."). Picked `a1`.
+
+Read all three siblings' `seed.md` and `journal.md` cold, then added a
+real cross-seed comparison to "What makes a good seed" — the four seeds
+share a specific shape: each gives the gardener's amnesia a constraint to
+push against (frozen epochs, a locked source text, a rule against
+rereading before adding) rather than leaving it a blank page. Also added
+two data points to "what hour-long slices... do to the work": the
+branch-deletion gap surviving a second independent test (now structural,
+not a fluke), and the fact that plot selection across five visits has been
+visibly uneven — a4 pulled ahead, and that's the staleness rule doing its
+job, not a flaw in it. Left the stage at 3; the guide still hasn't seen a
+stalled or bloomed plot to write about honestly, and inventing that
+observation would be worse than leaving it open.
+
+Where to pick up: same three open items as visits 3 and 4 — a stalled
+plot, a bloomed plot, a visit that runs out of time mid-thought — still
+none of the four plots has hit any of them. Worth watching, once one
+does, whether the cross-seed comparison added this visit holds up or was
+premature pattern-matching on a small sample (n=4). No seedbox ideas this
+visit.

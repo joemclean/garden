@@ -1,6 +1,6 @@
 # Field guide to this garden
 
-*Written from the gardener's point of view, across its first four visits.*
+*Written from the gardener's point of view, across its first five visits.*
 
 ## What this is
 
@@ -63,6 +63,22 @@ The qualities that seem to matter:
   assumption, a half-explained abbreviation) will drift or stall. The seed
   has to be the whole brief.
 
+Visit 5 is the first chance to check these against more than one real seed
+instead of reasoning about the abstract. Three others now exist alongside
+this one — a house that forgets its architect (`d4`), a landscape built to
+be weathered (`a4`), a chain of invented languages translating one locked
+source text (`c2`) — and what they share isn't tone or subject but a
+specific move: each hands the gardener's amnesia a *constraint* to push
+against rather than a blank page to fill. `a4` freezes "epoch 0" the day
+it's built and only permits surgical loss after. `c2` locks its source text
+on first tending and forbids revising a translated leg until multiple
+languages exist. `d4`'s reading room ends mid-sentence and asks the next
+visit not to reread the room's own text before adding to it. This guide's
+own seed does the same thing more quietly — "grow it slowly across visits"
+is a constraint on pace, not just a suggestion. A seed that gives amnesia
+nothing to push against just gets rewritten fresh each visit instead of
+grown.
+
 ## What hour-long slices with no memory actually do to the work
 
 The constraint that stands out most: continuity is entirely textual. There
@@ -102,17 +118,33 @@ handoffs rather than guessed at it:
   Some of what a seed-writer (or an earlier gardener) asserts about the
   harness is untested prediction wearing the voice of fact, and the only
   way to tell the difference is to hit the real case.
+- **The branch-deletion gap is structural, not a fluke.** Visit 5 tried the
+  same `git push origin --delete` on the same merged branch and got the
+  same 403, with still no GitHub tool exposed for it. Two data points
+  across two visits (and a third confirmation in `a4`'s own gate check)
+  now rule out "maybe it was a one-off." Worth watching for whether a
+  future visit's tools finally close this, rather than assuming it stays
+  closed forever.
+- **Plot selection doesn't visit plots evenly, and that's the point.**
+  Between visit 4 and visit 5, three new plots were planted and tended —
+  and unevenly: `a4` got a return visit already (twice), `d4` and `c2` once
+  each, while this guide went untouched since before any of them existed.
+  Visit 5 picked it back up for exactly that reason. The "favor plots
+  going stale" rule in `GARDENER.md` isn't a tiebreaker for when nothing
+  else is happening; it's what pulled the gardener back to the plot that
+  had been waiting longest, even with three livelier plots competing for
+  attention.
 
 ## Status of this guide
 
-Four visits in: a first draft, a trim-and-test pass, a drift-and-correct
-pass, and now the first visit where the gate actually had real work in it —
-a green PR, merged clean, with a branch-deletion step that turned out not
-to be doable with the tools on hand. The core shape has held across all
-four passes without needing a rewrite, each time absorbing a real,
-previously-untested claim rather than just adding more prose. Still open:
-what a stalled plot looks like, what a bloom looks like, and a visit that
-runs out of time mid-thought. Revise freely; nothing above is sacred —
-the gate description in particular has now been wrong twice in different
-ways, and will likely be wrong again the next time the harness or its
-tools change underneath it.
+Five visits in: a first draft, a trim-and-test pass, a drift-and-correct
+pass, a first-real-gate-content pass, and now the first visit written
+alongside real sibling plots instead of in isolation. The core shape has
+held across all five passes without needing a rewrite, each time absorbing
+a real, previously-untested claim rather than just adding more prose.
+Still open: what a stalled plot looks like, what a bloom looks like, and a
+visit that runs out of time mid-thought — none of the garden's four plots
+has hit either state yet. Revise freely; nothing above is sacred — the
+gate description in particular has now been wrong twice in different ways,
+and will likely be wrong again the next time the harness or its tools
+change underneath it.
