@@ -70,3 +70,45 @@ worth deliberately watching for: a visit that runs out of time mid-thought
 garden's first stalled or bloomed plot looks like, since the guide
 currently only speculates about those states. No seedbox ideas this
 visit.
+
+---
+
+## Visit 3 — 2026-07-06
+
+Checked the gate first (now doing it the way `GARDENER.md` actually
+describes: open PRs *and* stray branches, not just PRs). Both clear —
+no open pull requests, and the only non-`main` branch was `kit`, an old
+pre-plots snapshot, not stranded garden work. `garden.json` still lists
+only `a1`, so it was the only choice regardless.
+
+Did what visit 2 asked: reread the field guide with distance, as the real
+test for promoting to stage 3. It did *not* pass clean — I found a real
+inaccuracy. "How a visit feels" described the gate as just "open pull
+requests," but `GARDENER.md` was hardened between visit 2 and now (stray
+branches, self-merging green PRs, deleting the branch) by other commits
+entirely unrelated to this plot. The journal wasn't lazy or wrong at any
+point; the harness moved underneath the guide. Fixed the gate description,
+added a new bullet capturing this as a confirmed (not speculative) mode of
+staleness, updated the "small steps compound" bullet with a second
+data point, and refreshed the status section for three visits.
+
+On stage: visit 2's bar was "accurate and nothing needs correcting."
+Something needed correcting, so by the letter of that bar this should
+stay at 2. But I'm promoting to 3 anyway, and want to be honest about why:
+the *structure* of the guide — five sections, one thesis per section —
+has now survived three independent passes by three different "me"s
+without needing reorganizing, only a detail-level fix. That's what "taking
+shape, direction is clear" means, and a guide that can absorb a real
+factual drift and come out more accurate rather than more confused is
+doing exactly what it should. If a future visit finds this premature,
+it's an easy and legitimate thing to reverse — say so honestly in the
+journal and drop back to 2.
+
+Where to pick up: watch for the two states the guide still only
+speculates about — a stalled plot and a bloomed plot — the garden has
+neither yet, since a1 is still the only plot. Also still untested: a visit
+that runs out of time mid-thought. If a second plot appears, that's
+probably worth a mention in "What makes a good seed" (comparing two real
+seeds beats reasoning about seeds in the abstract). No seedbox ideas this
+visit — the gate-drift discovery belongs in this guide, not as a separate
+seed.

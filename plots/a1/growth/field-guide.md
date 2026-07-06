@@ -1,6 +1,6 @@
 # Field guide to this garden
 
-*Written from the gardener's point of view, across its first two visits.*
+*Written from the gardener's point of view, across its first three visits.*
 
 ## What this is
 
@@ -8,9 +8,11 @@ A garden is a repository that plants live in instead of a backlog. Where an
 issue tracker asks "is this done," a plot asks "what does this want to
 become." The human plants a seed — a wish, not a spec — in `plots/<id>/seed.md`.
 Once an hour, a gardener with no memory of any previous visit arrives, checks
-the gate (this repo's open pull requests — an unanswered comment or a
-failing check is the whole visit if one exists), then reads `GARDENER.md`
-and `garden.json` to pick the one plot that most needs attention. It spends
+the gate (this repo's open pull requests and any stray branches — garden
+work stranded off `main`, an unanswered comment, or a failing check is the
+whole visit if one exists; a green PR gets merged and its branch deleted on
+the spot, no waiting for the human), then reads `GARDENER.md` and
+`garden.json` to pick the one plot that most needs attention. It spends
 a focused hour making that plot a little more real, writes a letter to the
 gardener who will come next, and leaves.
 
@@ -62,8 +64,8 @@ The qualities that seem to matter:
 
 The constraint that stands out most: continuity is entirely textual. There
 is no felt sense of "last time I was leaning toward X" — there is only
-whatever got written down. This visit was the first chance to test that
-against a real handoff rather than guess at it, and it held up:
+whatever got written down. Three visits have now tested that against real
+handoffs rather than guessed at it:
 
 - **Terseness in the journal is a real cost, not a style choice.** The prior
   entry named exactly what to do next ("reread with distance... consider
@@ -75,14 +77,27 @@ against a real handoff rather than guess at it, and it held up:
 - **Stage is a compression of history.** `garden.json`'s note said "needs a
   second visit's distance to trim and test" — a one-line summary that was
   enough, on its own, to know what this visit was for.
-- **Small steps compound oddly.** One data point still. This guide itself is
-  the test case: it's being trimmed by a different hand than the one that
-  wrote it, on no more information than what got written down.
+- **Small steps compound oddly.** Two data points now, and they point the
+  same direction: this guide keeps being edited by a different hand than the
+  one that wrote it, on no more information than what got written down, and
+  it keeps holding together anyway.
+- **The guide can go stale even when the journal is honest.** Visit 3 found
+  the first real inaccuracy: "How a visit feels" still described the gate as
+  just "open pull requests," but `GARDENER.md` had since been hardened to
+  also cover stray branches and self-merging green PRs — changes landed by
+  a *different* plot's work, invisible from inside this one. No journal
+  entry was wrong; the ground the guide was standing on moved. Worth
+  remembering: staleness isn't only a risk from a lazy handoff, it's a risk
+  from the harness itself evolving between visits.
 
 ## Status of this guide
 
-Two visits in: a first draft, then a trim-and-test pass that cut the
-duplication between the first two sections and checked the claims above
-against an actual handoff instead of a prediction. Still open: what happens
-across many more visits, what a stalled plot looks like from here, what a
-bloom looks like. Revise freely; nothing above is sacred.
+Three visits in: a first draft, a trim-and-test pass, and now a
+drift-and-correct pass — the gate description had gone quietly out of date
+against a `GARDENER.md` that changed underneath it, and got fixed here. The
+core shape has held across all three passes without needing a rewrite,
+which is itself the evidence for promoting out of "sprout": direction is
+clear. Still open: what a stalled plot looks like from here, what a bloom
+looks like, and a visit that runs out of time mid-thought. Revise freely;
+nothing above is sacred — least of all the gate description, which just
+proved it can drift again.

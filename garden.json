@@ -3,11 +3,11 @@
   "size": [4, 4],
   "plots": {
     "a1": {
-      "stage": 2,
+      "stage": 3,
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
       "last_tended": "2026-07-06",
-      "note": "Trimmed and tested against a real handoff; one more clean visit before considering stage 3."
+      "note": "Caught and fixed real drift against a hardened GARDENER.md; structure held across 3 passes, promoted to growing."
     }
   }
 }
