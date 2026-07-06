@@ -19,8 +19,8 @@ the work matures.
 2. In the Claude app, create an hourly scheduled task with this prompt:
 
    > Open the garden repo. Follow GARDENER.md. One visit, one plot.
-   > You have permission to commit and push directly to main — do not
-   > open pull requests.
+   > Finish by opening a pull request for your visit and merging it
+   > yourself, immediately — never leave your work unmerged.
 
 3. Host `viewer/` anywhere static (GitHub Pages works: serve the repo
    root so the viewer can fetch `../garden.json`).
