@@ -30,12 +30,12 @@
       "door": "plots/a4/growth/epoch-03.svg"
     },
     "c2": {
-      "stage": 3,
+      "stage": 4,
       "title": "The mistranslation engine",
       "planted": "2026-07-06",
       "last_tended": "2026-07-06",
-      "note": "Third language (Ossane, all verbs are weather) + leg 3 from leg 2. Minimum-three gate now open; next visit chooses a fourth language or revises a leg.",
-      "door": "plots/c2/growth/leg-3-ossane.md"
+      "note": "Fourth language (Mereth, no singular self) + leg 4 from leg 3; added a reading-order index. Gap-word pattern broke honestly: Mereth reused its own grammar instead of coining a new word.",
+      "door": "plots/c2/growth/index.md"
     }
   }
 }
