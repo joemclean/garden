@@ -1,20 +1,23 @@
 # Field guide to this garden
 
-*Written from the gardener's point of view, across its first three visits.*
+*Written from the gardener's point of view, across its first four visits.*
 
 ## What this is
 
 A garden is a repository that plants live in instead of a backlog. Where an
 issue tracker asks "is this done," a plot asks "what does this want to
 become." The human plants a seed — a wish, not a spec — in `plots/<id>/seed.md`.
-Once an hour, a gardener with no memory of any previous visit arrives, checks
-the gate (this repo's open pull requests and any stray branches — garden
-work stranded off `main`, an unanswered comment, or a failing check is the
-whole visit if one exists; a green PR gets merged and its branch deleted on
-the spot, no waiting for the human), then reads `GARDENER.md` and
-`garden.json` to pick the one plot that most needs attention. It spends
-a focused hour making that plot a little more real, writes a letter to the
-gardener who will come next, and leaves.
+Once an hour, a gardener with no memory of any previous visit arrives and
+checks the gate: this repo's open pull requests and any stray branches. Two
+different things can happen here, and they're not the same shape. Real
+trouble — garden work stranded off `main`, an unanswered comment, a failing
+check — *is* the whole visit: fix it, or merge it, or leave a comment, then
+leave, no plot tending after. A PR that's already clean (checks passing, no
+open threads, no conflicts) is lighter: merge it and carry on into the usual
+plot-tending visit, don't leave it sitting for the human. Either way, once
+the gate is clear, read `GARDENER.md` and `garden.json` to pick the one plot
+that most needs attention. Spend a focused hour making that plot a little
+more real, write a letter to the gardener who comes next, and leave.
 
 There is exactly one piece of shared state: `garden.json`. It holds a stage
 number and a one-line note per plot. Everything else — the seed, the journal,
@@ -89,15 +92,27 @@ handoffs rather than guessed at it:
   entry was wrong; the ground the guide was standing on moved. Worth
   remembering: staleness isn't only a risk from a lazy handoff, it's a risk
   from the harness itself evolving between visits.
+- **The gate had never had real content until visit 4 — and the guide's
+  confident description of it turned out half-aspirational.** A green,
+  mergeable PR was waiting. Merging it worked exactly as described. Deleting
+  its now-merged head branch did not: the gardener's git push was rejected
+  (403) and there is no GitHub tool available to delete a branch directly.
+  Three visits had described "merge it, delete the branch" as one clean
+  motion without ever having done it — it reads differently once tried.
+  Some of what a seed-writer (or an earlier gardener) asserts about the
+  harness is untested prediction wearing the voice of fact, and the only
+  way to tell the difference is to hit the real case.
 
 ## Status of this guide
 
-Three visits in: a first draft, a trim-and-test pass, and now a
-drift-and-correct pass — the gate description had gone quietly out of date
-against a `GARDENER.md` that changed underneath it, and got fixed here. The
-core shape has held across all three passes without needing a rewrite,
-which is itself the evidence for promoting out of "sprout": direction is
-clear. Still open: what a stalled plot looks like from here, what a bloom
-looks like, and a visit that runs out of time mid-thought. Revise freely;
-nothing above is sacred — least of all the gate description, which just
-proved it can drift again.
+Four visits in: a first draft, a trim-and-test pass, a drift-and-correct
+pass, and now the first visit where the gate actually had real work in it —
+a green PR, merged clean, with a branch-deletion step that turned out not
+to be doable with the tools on hand. The core shape has held across all
+four passes without needing a rewrite, each time absorbing a real,
+previously-untested claim rather than just adding more prose. Still open:
+what a stalled plot looks like, what a bloom looks like, and a visit that
+runs out of time mid-thought. Revise freely; nothing above is sacred —
+the gate description in particular has now been wrong twice in different
+ways, and will likely be wrong again the next time the harness or its
+tools change underneath it.

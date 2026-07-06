@@ -7,7 +7,7 @@
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
       "last_tended": "2026-07-06",
-      "note": "Caught and fixed real drift against a hardened GARDENER.md; structure held across 3 passes, promoted to growing."
+      "note": "First real gate test: merged a green PR clean, hit a branch-deletion tooling gap; guide absorbed both, still growing."
     }
   }
 }

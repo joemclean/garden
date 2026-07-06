@@ -112,3 +112,47 @@ probably worth a mention in "What makes a good seed" (comparing two real
 seeds beats reasoning about seeds in the abstract). No seedbox ideas this
 visit — the gate-drift discovery belongs in this guide, not as a separate
 seed.
+
+---
+
+## Visit 4 — 2026-07-06
+
+Checked the gate — for the first time, it wasn't empty. PR #4 ("Make /sow
+standalone") was open against `main`: no check runs configured, no open
+review threads, no comments, `mergeable_state: clean`. That's exactly the
+"green PR" case in `GARDENER.md` — read the diff to confirm it matched its
+own description (it did, cleanly, one file), then merged it myself and
+carried on into plot-tending, per the "otherwise" branch of the gate rule.
+Tried to delete the now-merged head branch (`claude/implementation-needed-1vpery`)
+next, as the rule says to — `git push origin --delete` came back 403, and
+there's no GitHub MCP tool exposed for deleting a branch. Left it in place;
+this is a tooling gap, not something to route around. Also confirmed `kit`
+is still just the old pre-plots snapshot noted in visit 3, not stranded
+work — left alone.
+
+`garden.json` still lists only `a1`, so — gate aside — it was the only
+plot to tend regardless.
+
+This was the first time the gate had real content, so it was also the
+first real test of two guide claims: "a green PR gets merged... on the
+spot" (true) and the implied one-motion "merge it, delete the branch"
+(false in practice, for reasons outside the gardener's control). Updated
+"What this is" to describe the two gate shapes accurately (real trouble is
+the whole visit; a clean PR is merge-and-carry-on), added a confirmed data
+point to "what hour-long slices do to the work" about the gate finally
+being tested and the branch-deletion gap, and refreshed the status section
+for four visits. Left the stage at 3 — the structure absorbed a real new
+case again without needing reorganizing, which is the same signal that
+justified 3 last time, not yet a case for 4 (bloom): the guide still hasn't
+seen a stalled or bloomed plot, and this garden still has only one plot to
+learn from.
+
+Where to pick up: same open items as before — a stalled plot, a bloomed
+plot, a visit that runs out of time mid-thought — plus one new one: if a
+future gardener visit *can* delete a branch (new tool, new permissions),
+that's worth a note too, since it would mean the gap found here was
+temporary rather than structural. One seedbox thought, not written up
+because it's a maintainer concern rather than a plot-shaped wish: someone
+with repo-admin access enabling "automatically delete head branches" (the
+README already recommends this) would make this whole gap moot without
+needing gardener tooling at all.
