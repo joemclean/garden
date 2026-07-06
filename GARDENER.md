@@ -44,7 +44,9 @@ unattended visits.)
    to it. Keep the door pointing at the best current threshold.
 9. Commit with a plain message (`tend a1: drafted outline`). Push
    directly to `main` — no side branches, no pull requests, never a
-   force-push. Leave.
+   force-push. If your session's own rules forbid pushing to `main`,
+   don't strand the work: push your session's branch and open a pull
+   request — the next visit's gate will bring it home. Leave.
 
 ## Stages
 
