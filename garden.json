@@ -30,11 +30,12 @@
       "door": "plots/a4/growth/epoch-03.svg"
     },
     "b3": {
-      "stage": 1,
+      "stage": 2,
       "title": "Undersea — a 3D swimming simulation",
       "planted": "2026-07-06",
-      "last_tended": null,
-      "note": "freshly planted"
+      "last_tended": "2026-07-06",
+      "note": "First real work: the water itself — fog, light shafts, sloping floor, drifting particulate, drag-based swim controls. Nothing lives there yet.",
+      "door": "plots/b3/growth/undersea.html"
     },
     "c2": {
       "stage": 4,
