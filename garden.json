@@ -20,11 +20,11 @@
       "note": "First rooms: vestibule, long hall (unbuilt courtyard), reading room (unfinished book). 3 of dozen-plus."
     },
     "a4": {
-      "stage": 1,
+      "stage": 2,
       "title": "Erosion",
       "planted": "2026-07-06",
-      "last_tended": null,
-      "note": "freshly planted"
+      "last_tended": "2026-07-06",
+      "note": "epoch-00: Aveth Terraces built and frozen. Next visits only weather it."
     },
     "c2": {
       "stage": 2,
