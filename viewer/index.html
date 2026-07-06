@@ -30,6 +30,9 @@
   .card h2{margin:4px 0 6px;font-size:15px;font-weight:600}
   .card .meta{color:var(--ink-dim);font-size:12px;margin:0 0 8px}
   .card .note{margin:0;font-size:13px}
+  .card .links{margin:10px 0 0;font-size:12px;letter-spacing:.04em}
+  .card .links a{color:var(--accent);text-decoration:none;margin-right:14px}
+  .card .links a:hover{text-decoration:underline}
   .hint{color:var(--ink-dim);font-size:11px;margin-top:14px;letter-spacing:.05em}
 </style>
 </head>
@@ -50,6 +53,7 @@
     <h2>tap a plot</h2>
     <p class="meta">each square is a plot. plants grow as work matures.</p>
     <p class="note"></p>
+    <p class="links"></p>
   </div>
 
   <p class="hint">soil → seed → sprout → growing → bloom → gone to seed.
@@ -180,9 +184,18 @@ const rel = iso => {
   const h = Math.floor((Date.now()-Date.parse(iso))/36e5);
   return h<1 ? 'just now' : h<24 ? h+'h ago' : Math.floor(h/24)+'d ago';
 };
+// repo web URL: explicit garden.json "repo", else derived from a
+// github.io project-pages address; null anywhere else (links hidden)
+function repoBase(){
+  if(garden.repo) return garden.repo.replace(/\/+$/,'');
+  const m = location.hostname.match(/^([^.]+)\.github\.io$/);
+  const seg = location.pathname.split('/').filter(Boolean)[0];
+  return (m && seg) ? 'https://github.com/'+m[1]+'/'+seg : null;
+}
 function showCard(c,r){
   sel = [c,r]; render();
   const id = plotId(c,r), p = garden.plots[id], card = document.getElementById('card');
+  card.querySelector('.links').textContent = '';
   if(!p){
     card.querySelector('.id').textContent = id;
     card.querySelector('h2').textContent = 'empty soil';
@@ -195,6 +208,16 @@ function showCard(c,r){
   card.querySelector('.meta').textContent =
     'planted '+(p.planted||'—')+' · tended '+rel(p.last_tended);
   card.querySelector('.note').textContent = p.note || '';
+  const links = card.querySelector('.links');
+  const add = (txt,href)=>{ const a=document.createElement('a');
+    a.href = href; a.textContent = txt; links.append(a); };
+  if(p.door) add('open the work ↗', '../'+encodeURI(p.door));
+  const base = repoBase();
+  if(base){
+    add('growth', base+'/tree/main/plots/'+id+'/growth');
+    add('journal', base+'/blob/main/plots/'+id+'/journal.md');
+    add('seed', base+'/blob/main/plots/'+id+'/seed.md');
+  }
 }
 
 /* ---------- input ---------- */
