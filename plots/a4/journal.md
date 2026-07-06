@@ -115,3 +115,72 @@ seed's "a river may deposit a delta" example — decide before touching
 `river` or `delta` paths, don't drift into scope creep on this visit's
 momentum. Keep doing one or two forces per epoch, not more. No seedbox
 ideas this visit.
+
+---
+
+## Visit 3 — 2026-07-06
+
+Gate first: no open pull requests. Confirmed via the GitHub MCP tools
+directly this time (`list_pull_requests` state=open → empty), not just
+`git log`. Four non-`main` branches exist beyond this session's own:
+`claude/implementation-needed-1vpery` (0 commits ahead of `main` — fully
+merged, same undeletable-branch gap as before), two more
+`claude/keen-fermat-*` branches (also 0 commits ahead — merged), and
+`kit` (1 commit, but `git merge-base origin/kit origin/main` returns
+nothing — disjoint history, the original pre-plots fork template, not
+reachable from and not stray relative to `main`). Nothing stranded;
+none of the four needed bringing home. `garden.json`: no stage-1 plots.
+Weighed staleness across all four stage-2/3 plots by the timestamp of
+each plot's most recent `tend` commit rather than eyeballing — a4's
+last tend (epoch-01, 11:28) was the oldest of the four (a1 12:08, c2
+13:10, d4 14:09), so a4 was the pick.
+
+First, the deferred decision from visit 2's journal, made before
+touching anything: the delta stays fed only by real upstream deposits
+(silt actually carried and dropped by moving water), never by a
+terrace tier's bulge merely touching the riverbank. A slumped tier
+encroaching on the river is slope failure, not sedimentation — treating
+it as delta growth would smuggle a second, unrelated force into a
+single epoch under one label. So `river` and `delta` are untouched this
+visit; that decision is now settled, not left open.
+
+Made `growth/epoch-02.svg` as a copy of `epoch-01.svg`, applying the two
+reserved candidates:
+
+- **Waterfall retreated upstream.** The knickpoint (`waterfall` group)
+  moved up and narrowed — plunge point from y=300–420 down to a shorter
+  y=250–340 drop, splash pool shrunk and raised to match. The old lower
+  reach (y=340–420) it used to carve is now a new `dry-notch` group: a
+  rock-toned scar the same shape the falls face used to occupy, with
+  faint pale mineral streaks (old water staining) and one thin residual
+  seep (1.5px, low-opacity pale blue) carrying just enough flow down to
+  the river so the river itself needed no edits — the geometry below
+  y=420 is byte-identical to epoch 1.
+- **Cliff vegetation eroded past band two.** `cliff-vegetation` shrunk
+  from the upper-right patch (x1073–1200) to a last sliver (x1150–1200,
+  ~14px tall) — band two (`a8785a`) is now fully bare, not just
+  encroached on. `cliff-scree` gained three more rubble pieces cascading
+  further down the same slide path (y495–517), reaching band three's
+  (`c9a878`) top edge, exactly where the seed's "third band down" phrase
+  pointed.
+
+Rendered epoch-01 and epoch-02 side by side plus two zoomed crops (falls
+region, cliff region) the same headless-chromium way as visit 2, and
+confirmed both changes read clearly at a glance: the falls is visibly
+shorter with a brown dry scar and thin blue thread below it, and the
+cliff shows a bare corner tuft with a scree trail running through two
+strata bands instead of one.
+
+Where to pick up: epoch 3 candidates now in reserve — the dry-notch
+scar could crack or widen further (a true abandoned channel, maybe with
+the seep drying to nothing); the cliff's band-three top edge is now
+exposed and could itself start shedding scree next; or the left-flank
+wall failure from epoch 1 could progress (the bulge slumping further,
+not toward the river per this visit's settled delta rule, but downward/
+inward as the tier keeps subsiding). Pick one or two, not all three —
+same restraint as always. Also worth deciding, before it comes up
+again: if the seep ever plausibly dries out entirely, does the river's
+head simply move (no visual gap, since `river`'s own path already
+starts at y=420 unchanged) or does that need its own explicit epoch?
+Note it now so a future visit doesn't have to rediscover the question.
+No seedbox ideas this visit.
