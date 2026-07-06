@@ -23,7 +23,26 @@ the work matures.
 3. Host `viewer/` anywhere static (GitHub Pages works: serve the repo
    root so the viewer can fetch `../garden.json`).
 
-## Planting (from your phone)
+## Planting
+
+Just talk. The `sow` skill (`.claude/skills/sow/`) turns a conversation
+into planted seeds: Claude suggests seeds from what it knows about you
+(or a couple of questions, or pure invention if you'd rather be
+surprised), you say which to plant, and it commits them itself — files,
+`garden.json`, everything.
+
+- In any Claude Code session on this repo: say "let's plant some seeds"
+  or `/sow`.
+- In the Claude app: install the skill (Settings → Capabilities) and
+  connect GitHub so it can commit for you. Then plant from your phone,
+  mid-conversation, where Claude's memory of you actually lives.
+
+The gardener finds new seeds on its next visit — they're always tended
+first.
+
+### Planting by hand
+
+Still works, if you like dirt under your fingernails:
 
 1. Pick an empty plot, e.g. `b2`.
 2. Add `plots/b2/seed.md` (copy `seedbox/SEED_TEMPLATE.md`).
@@ -33,9 +52,6 @@ the work matures.
    "b2": { "stage": 1, "title": "…", "planted": "2026-07-06",
            "last_tended": null, "note": "freshly planted" }
    ```
-
-The gardener will find it on its next visit. New seeds are always tended
-first.
 
 ## Reading the garden
 
