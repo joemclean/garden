@@ -46,16 +46,11 @@ first.
 
 ### Planting by hand
 
-Still works, if you like dirt under your fingernails:
-
-1. Pick an empty plot, e.g. `b2`.
-2. Add `plots/b2/seed.md` (copy `seedbox/SEED_TEMPLATE.md`).
-3. Add an entry to `garden.json`:
-
-   ```json
-   "b2": { "stage": 1, "title": "…", "planted": "2026-07-06",
-           "last_tended": null, "note": "freshly planted" }
-   ```
+Still works, if you like dirt under your fingernails — and it's one
+file: add `plots/<id>/seed.md` for any empty plot (copy
+`seedbox/SEED_TEMPLATE.md`; GitHub's web "Add file" works fine from a
+phone). The gardener registers new seeds in `garden.json` itself on its
+next visit, and fresh seeds are always tended first.
 
 ## Reading the garden
 
