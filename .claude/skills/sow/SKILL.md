@@ -67,8 +67,8 @@ planting; a live conversation with the human is not that.)
    on the repo with this prompt:
 
    > Open the garden repo. Follow GARDENER.md. One visit, one plot.
-   > You have permission to commit and push directly to main — do not
-   > open pull requests.
+   > Finish by opening a pull request for your visit and merging it
+   > yourself, immediately — never leave your work unmerged.
 
 1. **See the garden.** Read `garden.json`: grid size, which plots are
    taken, what already grows. Suggest seeds that make the garden more
