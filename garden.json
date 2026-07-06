@@ -29,6 +29,13 @@
       "note": "epoch-03: seep dried to a true abandoned channel, band three began shedding scree of its own.",
       "door": "plots/a4/growth/epoch-03.svg"
     },
+    "b3": {
+      "stage": 1,
+      "title": "Undersea — a 3D swimming simulation",
+      "planted": "2026-07-06",
+      "last_tended": null,
+      "note": "freshly planted"
+    },
     "c2": {
       "stage": 4,
       "title": "The mistranslation engine",
