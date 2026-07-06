@@ -51,3 +51,59 @@ re-read the seed on this before assuming), or (b) invent language 3
 first if a compelling idea for it arrives before language 2 does; order
 between 2 and 3 doesn't matter, only that both exist before anything
 gets re-translated. Don't revise leg 1 yet no matter how tempting.
+
+## Visit 2 — 2026-07-06
+
+Resolved the open question from visit 1: re-read the seed closely.
+"Carry it across a chain of languages," "one leg at a time," and
+especially "what arrives at the far end should be kin to the source the
+way a folk song is kin to its first singing" all point the same
+direction — a folk song mutates through each retelling, not by being
+resung from the original every time. So the chain translates leg-to-leg:
+leg 2 comes from leg 1, leg 3 will come from leg 2, and so on. The
+English source is the spring, touched once and never again, not a well
+each leg draws from independently. Recording this plainly since it
+governs everything downstream: **never translate a new leg from
+`00-source.md` — always from the immediately preceding leg.**
+
+Invented the second language, Ivren (`lang-2-ivren.md`). Where Threnwae
+imposes epistemic confession, Ivren imposes relational diagnosis: no
+possessives at all, nothing simply "is" anyone's — every belonging has
+to be marked as one of four ongoing verbs (tends / dwells-with / owes /
+binds-to), chosen fresh each time. Genuinely different mechanic from
+Threnwae's, and it bites hard on the source's possessive-heavy prose
+("my mother's kettle," "my post," "our bridge") in a way Threnwae's
+suffixes didn't need to. Gave it two untranslatable words (*revka*, the
+ache of still tending something you're no longer sure needs it; and
+*senket-oru*, the cohabited-not-owned register for large fixed things
+like bridges) and one deliberate loose thread for later: does *-ken*
+(owed) ever resolve, or is a marked debt permanent?
+
+Translated leg 2 (`leg-2-ivren.md`) from leg 1, not from the source —
+per the rule above. The interesting damage: Threnwae's certainty
+suffixes (*-orin/-adel/-ummel*) have no Ivren equivalent, so translating
+them forced real losses, not just re-phrasings. The *-ummel* (dreamed)
+cases were worst — Ivren has no verb for a fact with no door, so I bent
+*-oru* (dwells-with) to cover it, which the translator's note flags as
+a small dishonesty the language commits rather than admit a gap. *Velk*
+didn't survive at all; Ivren already treats bridge-promises as ordinary
+debt-logic, so the specific unease Threnwae named is present in
+substance but has no word anymore. *Threnaya* crossed intact but
+hollowed — Ivren has no relational self-naming, so the name that used
+to shift with its addressee is now just a frozen job title, a fossil of
+a grammar Ivren never had. That fossil-word feels like the clearest
+proof the chain is working the way the seed wants: something specific
+survives, something specific rots, and the seam shows.
+
+**Where to pick up:** two languages exist now — one more (language 3)
+and the minimum-three-before-revision gate opens. Strong candidates the
+seed still has unclaimed: "all verbs are weather" (untouched, and the
+source's river-moods/seam-reading imagery would give it obvious
+material), or a language built around plural/collective address, which
+Threnwae explicitly left unresolved for itself and never has to answer
+unless a later language forces the question by contrast. Whichever
+gets built, translate leg 3 from leg 2 (`leg-2-ivren.md`), not from the
+source — see the chain-direction rule above, it's settled now, don't
+relitigate it. Once three languages exist, the seed also opens revision
+of leg 1 or leg 2 — worth considering deliberately rather than reflexively
+reaching for a fourth language just because it's the more familiar move.
