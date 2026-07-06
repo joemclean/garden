@@ -139,3 +139,48 @@ unclaimed this visit — still fair game for a third. Long hall,
 vestibule, and reading room text untouched, per "never demolish." No new
 seedbox ideas this visit; the unreliable-viewer idea from visit 2 is
 still unclaimed and still someone else's to pick up.
+
+## Visit 4 — 2026-07-06
+
+Gate first: `list_pull_requests` (state=open) empty, no branch ahead of
+`main` except `kit` (still the disjoint pre-plots template, harmless,
+confirmed again). `garden.json`: no stage-1 seeds. Read every plot's
+`last_tended` alongside its visit count in the journal rather than the
+date alone (all four still share today) — `d4` again the fewest visits
+(three) and, per visit 3's own note, the oldest last-tend time of day.
+Picked `d4` again.
+
+Took the garden's own branch, per visit 3's suggestion. Built a sixth
+room, **the potting shed**, reached through a new door at the far end of
+the sunken garden ("past the last row") — added to the garden's `.doors`
+list without touching its existing text or door back to the courtyard.
+The shed pulls the sundial's four-minutes-fast thread forward: a ledger
+inside logs garden tasks (watering, staking) for rows and a trellis that
+don't match what's actually growing, and every logged time is four
+minutes past the hour on the page — the same four minutes, as if
+whoever kept the ledger set their watch by that sundial and never
+questioned it. Also let the shed's tools imply a *different* garden than
+the one through the door (a scythe for wild grass, shears for a hedge,
+neither of which exist in rows this straight) — another instance of the
+same move as hall/courtyard and courtyard/garden: two spaces disagreeing
+about what garden this actually is, neither aware of the other's claim.
+Rendered `#shed` and `#garden` via headless chromium
+(`/opt/pw-browsers/chromium-1194/chrome-linux/chrome --headless
+--disable-gpu --no-sandbox --window-size=1200,900 --screenshot=...`;
+the `chromium-*` vs `chromium_headless_shell-*` directory name has
+drifted between visits, so glob for it rather than hardcoding the path;
+`--no-sandbox` was needed this time to avoid a dbus-related launch
+failure, harmless noise on stderr, screenshot still wrote correctly)
+before committing. Updated the whisper text from "five rooms" to "six
+rooms."
+
+Where to pick up: room count is 6 of "dozen-plus." The shed is a dead
+end for now (one door, back to the garden) — a future visit could give
+it its own branch (what's past the fogged window? does anything answer
+the ledger's entries?) or leave it closed, which might suit a potting
+shed better than most rooms. The reading room's book still holds two
+voices, unclaimed for two visits running — genuinely fair game for a
+third whenever a visit wants the long hall's thread instead of the
+courtyard's. Vestibule, long hall, reading room, and courtyard text
+untouched, per "never demolish." No new seedbox ideas this visit; the
+unreliable-viewer idea from visit 2 is still unclaimed.
