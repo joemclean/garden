@@ -24,7 +24,8 @@
       "title": "Erosion",
       "planted": "2026-07-06",
       "last_tended": "2026-07-06",
-      "note": "epoch-00: Aveth Terraces built and frozen. Next visits only weather it."
+      "note": "epoch-01: cliff vegetation eroded, one retaining wall failed near the river.",
+      "door": "plots/a4/growth/epoch-01.svg"
     },
     "c2": {
       "stage": 2,

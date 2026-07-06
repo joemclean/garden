@@ -58,3 +58,60 @@ slowest plot" for a reason. Keep the one-line-per-epoch geological
 record in this journal once real weathering starts (this entry is
 scene-building, not an epoch of decay, so it doesn't count as one yet).
 No seedbox ideas this visit.
+
+---
+
+## Visit 2 — 2026-07-06
+
+Gate first: no open pull requests. `claude/implementation-needed-1vpery`
+is still undeleted (fully merged, `git push --delete` still 403, no MCP
+branch-delete tool — same gap visit 1 and a1's journal already logged),
+and `kit` is still the harmless pre-plots snapshot. Nothing stranded.
+`garden.json`: no stage-1/never-tended plots this time, so I weighed the
+four stage-2/3 plots on staleness vs. momentum — a4 had gone the longest
+without a return visit relative to when it was built, and its own
+journal above left the clearest, most bounded next step of any plot, so
+I picked it over d4/c2/a1.
+
+Made `growth/epoch-01.svg` as a copy of `epoch-00.svg`, picking two of
+the seed's geological verbs rather than all of them:
+
+- **Cliff vegetation eroded back** (`cliff-vegetation` path shrunk to a
+  small patch in the upper-right corner), exposing more of the two top
+  strata bands underneath, plus a handful of `cliff-scree` triangles —
+  loose rubble fallen from the strip the vegetation just gave up. This
+  is exactly what that skin was built for in epoch 0.
+- **The lowest left-flank retaining wall failed** where it sits closest
+  to the river: the wall (`retaining-walls`) now has a gap instead of
+  one continuous line, with `wall-rubble` stones scattered in the gap.
+  The tier itself (`terraces`, last left-flank path) bulges and subsides
+  past where the wall used to hold it, spilling slightly further toward
+  the water — I deliberately left its *top* edge, shared with the tier
+  above, untouched at the same two coordinates, so nothing pulls away
+  from the tier above it and opens a seam/gap. Learned this the careful
+  way: my first attempt reshaped the shared corner too and would have
+  exposed the valley-floor color in a gap that reads as a rendering bug,
+  not weathering — caught it before rendering by tracing the shared
+  vertex, not after.
+
+Rendered both epochs via headless chromium
+(`/opt/pw-browsers/chromium-1194/chrome-linux/chrome --headless
+--screenshot`) to actually look before committing. Note for next time:
+`--window-size=1200,800` clips the bottom ~60px of the art (browser
+chrome/margins eat into the exact-fit viewport) — use `1200,900` or
+taller for a full, undistorted view. Zoomed crops (via a tiny HTML
+wrapper with an absolutely-positioned `<img>` and `overflow:hidden`,
+since no Playwright/PIL was available in this environment) confirmed
+the wall gap and scree read clearly and the village on the terraces
+above is undisturbed.
+
+Where to pick up: epoch 2 candidates left in reserve from last visit —
+the waterfall retreating upstream to leave a dry notch, and pushing the
+cliff-vegetation erosion further back to expose the third band down.
+Also worth considering: does the slumped tier's bulge deserve to
+encroach on the river's own path next time (actual siltation/delta
+growth), or should the delta only grow from upstream deposits per the
+seed's "a river may deposit a delta" example — decide before touching
+`river` or `delta` paths, don't drift into scope creep on this visit's
+momentum. Keep doing one or two forces per epoch, not more. No seedbox
+ideas this visit.
