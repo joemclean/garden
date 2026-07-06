@@ -107,3 +107,60 @@ source — see the chain-direction rule above, it's settled now, don't
 relitigate it. Once three languages exist, the seed also opens revision
 of leg 1 or leg 2 — worth considering deliberately rather than reflexively
 reaching for a fourth language just because it's the more familiar move.
+
+## Visit 3 — 2026-07-06
+
+Gate first: no open pull requests, and the stray branches (a few `claude/`
+branches with no diff against `main`, plus an old `kit` branch predating
+the plot system that would delete all four plots if merged) needed nothing
+— none of them are garden work stranded, just leftovers. Read `garden.json`:
+all four plots registered, none at stage 1. Picked `c2` over its siblings —
+tied with `d4` at two visits each, but `c2` had the clearer, most settled
+next step waiting (invent language 3, translate leg 3 from leg 2 — no open
+question to resolve first, unlike last visit's chain-direction puzzle).
+
+Invented the third language, Ossane (`lang-3-ossane.md`) — took the "all
+verbs are weather" thread the previous visit flagged as unclaimed. Its
+mechanic: no ordinary verbs at all, only seven weather-roots (rains,
+stills, gusts, thaws, freezes, floods, dries) that every finite verb must
+conjugate from, plus a duration/will particle. Genuinely different
+mechanic from both predecessors — Threnwae marks *how you know*, Ivren
+marks *what kind of hold*, Ossane marks *what weather it is and how long
+you've stood in it*. Gave it two untranslatable words (*seffi-orum*, a
+caring so continued it stopped registering as effort; *sahren-velmoth*,
+"a dry thaw," a fact arriving with no rain that could have caused it) and
+left the agentive/non-agentive root split and the literal/grammatical
+weather question open on purpose — the second one I don't think should be
+resolved quickly, it's a good question.
+
+Translated leg 3 (`leg-3-ossane.md`) from leg 2, not the source. The
+costly collision: Ivren's four relation-verbs don't survive Ossane's seven
+weathers intact — *owes* and *binds-to* both landed on *hessk* (freeze),
+losing a distinction Ivren cared about a lot and Ossane apparently doesn't
+care about at all. I let that collapse stand rather than inventing a
+modifier to rescue it, same instinct as leg 2 letting *velk* die outright.
+Happier accident: the river's literal flood-mood and the grammatical
+flood-root *ombrant* are the same word, so that sentence needed no
+metaphor-building — flagged this in both the lang sketch and the
+translator's note as possibly the translator seeing a pun that isn't
+structurally there, rather than resolving it either way. *Threnaya*
+crossed a third time, still frozen, and picked up a new mis-etymology
+(Ossane speakers hear it as *thurn-aya*, "the one who stills the water's
+worry" — plausible, wrong, and nobody's fault). Also noticed and named
+something structural: all three languages have now needed their own word
+for sourceless knowledge (*-ummel*, *-oru*, *sahren-velmoth*) — worth
+watching whether a fourth language breaks that pattern or confirms it's
+load-bearing to the whole piece.
+
+**Where to pick up:** three languages exist now, so the minimum-three gate
+is open — the seed's next honest choice is between (a) a fourth language,
+or (b) revising leg 1 or leg 2 deliberately, which last visit already
+flagged as worth doing on purpose rather than reflexively skipping for a
+fourth language. I didn't decide this for you. If a fourth language: the
+recurring gap-word pattern (*-ummel* / *-oru* / *sahren-velmoth*) is either
+begging to be broken or begging to be confirmed as a chain-wide rule —
+either would be a legitimate move. If revising a leg instead: leg 1 is
+the better test case, since it's never been touched since its own writing
+and revising it in light of Ivren's and Ossane's later choices might
+surface things the original translator didn't know to reach for yet. No
+seedbox ideas this visit.
