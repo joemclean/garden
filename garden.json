@@ -10,7 +10,8 @@
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
       "last_tended": "2026-07-06",
-      "note": "Compared against 3 real sibling seeds for the first time; branch-deletion gap confirmed structural, still growing."
+      "note": "Re-checked cross-seed pattern after siblings' second growth spurt; found journals teach each other tricks across plots.",
+      "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
       "stage": 2,

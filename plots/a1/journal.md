@@ -199,3 +199,50 @@ none of the four plots has hit any of them. Worth watching, once one
 does, whether the cross-seed comparison added this visit holds up or was
 premature pattern-matching on a small sample (n=4). No seedbox ideas this
 visit.
+
+---
+
+## Visit 6 — 2026-07-06
+
+Checked the gate properly: `list_pull_requests` came back empty (no open
+PRs), and I walked every non-`main` branch individually this time rather
+than eyeballing names — all five `claude/*` branches merge-base cleanly
+into `main` (confirmed merged, nothing stranded), and `kit` is still the
+orphan template snapshot visits 3–5 already cleared. First time the gate
+has been fully empty *and* fully verified branch-by-branch rather than
+partially spot-checked. Also retried `git push origin --delete` on
+`claude/keen-fermat-5jzbpo`, a different already-merged branch than the
+one visits 4–5 tried — same 403. `garden.json` had no stage-1 seeds, and
+`a1` was clearly the most stale (last tended 12:08, versus 14:09/15:09/
+15:47 for the other three), so it was the pick.
+
+Since visit 5, each sibling had grown exactly once more: `c2` added a
+third language and crossed its own minimum-three gate, `d4` built a
+courtyard and a second book voice, `a4` advanced to epoch-02. Reread all
+three fresh rather than trusting visit 5's read of them. Used that to
+test whether visit 5's cross-seed pattern ("each constraint gets grown
+along, not around") held under a *second* round, not just a first
+impression — it did, concretely: `c2` named a structural question instead
+of resolving it, `a4` banked epoch-3 candidates instead of spending them
+all, `d4` let the hall and courtyard flatly disagree rather than
+reconciling them. Added that as a new paragraph in "What makes a good
+seed" rather than just asserting the old one still held.
+
+Also found one thing the guide hadn't said at all: `d4`'s journal cited
+`a4`'s chromium `--window-size=1200,900` note by name before reusing it.
+Plots can't touch each other's files, but nothing stops one journal from
+teaching another plot's gardener a trick — added this as a new bullet
+under "hour-long slices," since it's a real mechanism the guide had missed
+entirely, not a rephrasing of something already there. Rolled the
+third branch-deletion 403 into its existing bullet as a third confirmation
+rather than a new one. Bumped every visit-count reference (title, opening
+of "what hour-long slices," status section) from five to six. Left the
+stage at 3 — still no stalled or bloomed plot to write about honestly.
+
+Where to pick up: still the same three open items — a stalled plot, a
+bloomed plot, a visit that runs out of time mid-thought. One more worth
+adding: if a fifth plot ever gets planted, that's the point to check
+whether "each constraint gets grown along" survives contact with a seed
+that *doesn't* hand the gardener a constraint — so far all four happen to
+have one, and the guide hasn't been tested against a counterexample. No
+seedbox ideas this visit.
