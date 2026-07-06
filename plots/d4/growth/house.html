@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>the house</title>
+<style>
+  :root {
+    color-scheme: dark;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #14110f;
+    color: #d9cfc1;
+    font-family: Georgia, "Iowan Old Style", serif;
+  }
+  .room {
+    display: none;
+    max-width: 38rem;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 5rem;
+    animation: settle 0.6s ease-out;
+  }
+  .room.here {
+    display: block;
+  }
+  @keyframes settle {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  h1 {
+    font-weight: normal;
+    font-size: 1.4rem;
+    letter-spacing: 0.03em;
+    color: #efb96a;
+    margin-bottom: 1.6rem;
+    border-bottom: 1px solid #3a322a;
+    padding-bottom: 0.8rem;
+  }
+  p {
+    line-height: 1.75;
+    font-size: 1.05rem;
+  }
+  .doors {
+    margin-top: 2.8rem;
+    padding-top: 1.2rem;
+    border-top: 1px dashed #3a322a;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  a.door {
+    color: #efb96a;
+    text-decoration: none;
+    font-style: italic;
+  }
+  a.door:hover {
+    text-decoration: underline;
+  }
+  a.door::before {
+    content: "→ ";
+    opacity: 0.6;
+  }
+  .whisper {
+    opacity: 0.55;
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+
+<section class="room" id="vestibule">
+  <h1>the vestibule</h1>
+  <p>
+    You did not knock. The door was already the width of a shoulder, as if
+    it had been waiting for exactly one visitor at a time. The floor here
+    is cold stone laid in a spiral, and if you look down mid-step you lose
+    the thread of which ring you're on — by design, someone thought, though
+    no one is left to ask.
+  </p>
+  <p>
+    A coat rack stands empty except for a single glove, right hand, too
+    small for anyone who might still live here. Dust has settled on it in
+    a shape that suggests it was hung up mid-gesture, not mid-thought — the
+    difference matters more than it should.
+  </p>
+  <div class="doors">
+    <a class="door" href="#long-hall">a long hall leading away from the door</a>
+  </div>
+</section>
+
+<section class="room" id="long-hall">
+  <h1>the long hall</h1>
+  <p>
+    The hall runs straighter than the house has any right to allow, lit by
+    windows on the left that all, without exception, look out onto a
+    courtyard — gravel paths, a dry fountain, a bench facing the wrong way.
+    Every window shows the same courtyard from a slightly different hour of
+    the same afternoon.
+  </p>
+  <p>
+    There is no door to that courtyard anywhere in the hall. There may
+    never have been. The hall remembers it anyway, the way a hand still
+    reaches for a bannister that was torn out years ago — the memory
+    outliving the thing, or perhaps arriving before it. You keep walking
+    because stopping to test a window feels, obscurely, like it would
+    break something.
+  </p>
+  <div class="doors">
+    <a class="door" href="#vestibule">back to the vestibule</a>
+    <a class="door" href="#reading-room">a door standing slightly ajar</a>
+  </div>
+</section>
+
+<section class="room" id="reading-room">
+  <h1>the reading room</h1>
+  <p>
+    Shelves to the ceiling, but only one book is out of place — face-down
+    on a low table, spine cracked to a single page, as though someone left
+    mid-sentence and meant to come back within the hour. The page reads,
+    in a hand that changes size line to line:
+  </p>
+  <p style="margin-left:1.4rem; font-style: italic;">
+    "…and so each room believed itself the first room, having no way to
+    confirm a hallway it could not walk. We built in this manner on
+    purpose — a house is more honest when no single mind can hold all of
+    it at once. I am leaving this page open so the next of us finds it
+    open, and adds a line, and closes nothing."
+  </p>
+  <p>
+    No further lines have been added yet. The ink of the last sentence is
+    still slightly darker than the rest, as if it dried only recently —
+    though everything else in the room argues for decades of quiet.
+  </p>
+  <div class="doors">
+    <a class="door" href="#long-hall">back to the long hall</a>
+  </div>
+</section>
+
+<div class="whisper" style="position:fixed; bottom:0.6rem; left:0; right:0; text-align:center;">
+  three rooms stand. more will, eventually, from visitors who won't remember building these.
+</div>
+
+<script>
+  function showRoom() {
+    var id = location.hash.slice(1) || 'vestibule';
+    var rooms = document.querySelectorAll('.room');
+    var found = false;
+    rooms.forEach(function (room) {
+      if (room.id === id) {
+        room.classList.add('here');
+        found = true;
+      } else {
+        room.classList.remove('here');
+      }
+    });
+    if (!found) {
+      document.getElementById('vestibule').classList.add('here');
+    }
+  }
+  window.addEventListener('hashchange', showRoom);
+  showRoom();
+</script>
+
+</body>
+</html>
