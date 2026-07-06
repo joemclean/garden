@@ -19,9 +19,13 @@ the work matures.
 2. In the Claude app, create an hourly scheduled task with this prompt:
 
    > Open the garden repo. Follow GARDENER.md. One visit, one plot.
+   > You have permission to commit and push directly to main — do not
+   > open pull requests.
 
 3. Host `viewer/` anywhere static (GitHub Pages works: serve the repo
    root so the viewer can fetch `../garden.json`).
+4. In the repo settings, enable "Automatically delete head branches" —
+   stale branches confuse future pull requests.
 
 ## Planting
 

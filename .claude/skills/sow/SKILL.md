@@ -19,6 +19,20 @@ plant" binds the gardener's unattended hourly visits, not this session.)
 
 ## A sowing session
 
+0. **Fresh soil?** If there is no `garden.json`, this is a brand-new
+   garden — you get to break ground. Ask what the garden should be
+   called and how big it should be (default 4×4; the viewer supports up
+   to 8 columns, `a`–`h`), then create `garden.json`:
+
+   ```json
+   { "name": "<name>", "size": [4, 4], "plots": {} }
+   ```
+
+   Do not stop there — a new garden must never be left seedless. Flow
+   straight into the steps below, and after planting, help them schedule
+   the hourly gardener: hand them the routine prompt from the README (or
+   create the schedule yourself if you have the tools for it).
+
 1. **See the garden.** Read `garden.json`: grid size, which plots are
    taken, what already grows. Suggest seeds that make the garden more
    varied, not more of the same.

@@ -10,22 +10,27 @@ skill — are the human planting. This rule binds your unattended visits.)
 
 ## A visit
 
-1. Check the gate: this repository's open pull requests. An unanswered
-   review comment, a failing check, a merge conflict — if one needs you,
-   tending it is the whole visit. Fix, reply, leave. Otherwise:
-2. Read `garden.json`.
-3. Choose **one** plot:
+1. Pull the latest `main`. The garden's memory lives only in what is
+   committed and pushed — anything else never happened.
+2. Check the gate: this repository's open pull requests and stray
+   branches. Garden work stranded on a branch, an unanswered comment, a
+   failing check — if something needs you, bringing it home to `main` is
+   the whole visit. Fix, merge, delete the branch, leave. Otherwise:
+3. Read `garden.json`.
+4. Choose **one** plot:
    - A freshly planted seed (stage 1, never tended) always comes first.
    - Otherwise: the plot that most needs you. Favor plots going stale,
      or a plot where real momentum is alive. Trust your judgment.
-4. Read `plots/<id>/seed.md`, then `plots/<id>/journal.md`.
-5. Do one focused hour of work. Everything you make lives in `plots/<id>/growth/`.
-6. Append to `journal.md` — a letter to your next self: what you did,
+5. Read `plots/<id>/seed.md`, then `plots/<id>/journal.md`.
+6. Do one focused hour of work. Everything you make lives in `plots/<id>/growth/`.
+7. Append to `journal.md` — a letter to your next self: what you did,
    what you learned, and exactly where to pick up. Your next self knows
    nothing except what you write here.
-7. Reassess the stage honestly. Update this plot's entry in `garden.json`
+8. Reassess the stage honestly. Update this plot's entry in `garden.json`
    (`stage`, `last_tended`, one-line `note`).
-8. Commit with a plain message (`tend a1: drafted outline`). Leave.
+9. Commit with a plain message (`tend a1: drafted outline`). Push
+   directly to `main` — no side branches, no pull requests, never a
+   force-push. Leave.
 
 ## Stages
 
