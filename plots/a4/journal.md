@@ -184,3 +184,77 @@ head simply move (no visual gap, since `river`'s own path already
 starts at y=420 unchanged) or does that need its own explicit epoch?
 Note it now so a future visit doesn't have to rediscover the question.
 No seedbox ideas this visit.
+
+---
+
+## Visit 4 — 2026-07-06
+
+Gate first: `list_pull_requests` state=open → empty, nothing stranded.
+`list_branches` shows the same shape as visit 3 plus one more
+`claude/keen-fermat-*` and a `claude/charming-shannon-*` trio — checked
+each with `git merge-base --is-ancestor origin/<branch> origin/main`
+this time instead of eyeballing commit counts, and every one of them
+(`implementation-needed-1vpery`, all three `keen-fermat-*`, all three
+`charming-shannon-*`) came back merged. `kit` still has no merge-base
+with `main` at all — same disjoint pre-plots template as always, still
+not stray relative to anything. Nothing to bring home. `garden.json`:
+no stage-1 plots. Compared last-tend timestamps across all four
+stage-2/3 plots directly via `git log -1 -- plots/<id>` rather than
+trusting `garden.json`'s day-granularity `last_tended` field (all four
+say today) — a4's last tend (epoch-02, 15:09) was the oldest, older
+than c2 (15:47), a1 (16:07), and d4 (17:07), so a4 was the pick again.
+
+Resolved the open question left at the end of visit 3 before touching
+anything: if the seep dries out, does the river's head move, or is a
+new epoch unneeded? Decided **no new epoch is needed** — the `river`
+path's own geometry already starts at y=420 independent of the seep
+(confirmed again by re-reading the epoch-02 markup), so a fully dried
+seep is invisible to the river; it only needed removing at the source.
+That's now settled, matching the precedent visit 3 set for the
+delta-vs-tier-bulge question.
+
+Made `growth/epoch-03.svg` as a copy of `epoch-02.svg`, picking two
+forces, both drawn from the reserve list visit 3 left:
+
+- **The seep dried out entirely — true abandoned channel.** Removed the
+  thin pale-blue seep line from `dry-notch` (was `stroke="#bfe6f0"`
+  down the notch's center). Widened the scar itself slightly (460→510
+  at the top edge, was 462→508; 455→515 at the bottom, was 458→512) and
+  added a `notch-cracks` group: thin branching fissure lines in a
+  darker mineral tone, reading as a dry streambed that baked and split
+  once the water stopped reaching it, not as pooled sediment.
+- **Band three (`c9a878`) started shedding on its own.** Added three
+  more `cliff-scree` pieces at y524–553 — past where epoch 2's cascade
+  stopped (y500–522) — landing on band three's own surface rather than
+  just its top edge. Paired with a new `band-three-cracks` group: two
+  thin fracture lines through the same region, signaling the band
+  itself is starting to give way, not just catching debris from above.
+  Left band three's own fill/shape untouched this epoch — the cracks
+  and scree are the tell; an actual bite out of the band's silhouette
+  is a fair candidate for a future epoch once these cracks have had a
+  chance to "work."
+
+Rendered epoch-02 and epoch-03 full-frame plus zoomed crops of both
+changed regions (notch, cliff) via headless chromium
+(`/opt/pw-browsers/chromium-1194/chrome-linux/chrome --headless
+--no-sandbox --window-size=1200,900 --screenshot=...` — note the
+`--no-sandbox` flag was required this visit, running as root without it
+now errors where it didn't seem to block prior visits; add it by
+default going forward). No PIL or ImageMagick available in this
+environment for cropping, so built a tiny reusable `crop.html` (absolute-
+positioned `<img>` in an `overflow:hidden` div, position driven by URL
+params) instead of a one-off wrapper per crop — confirmed both changes
+read clearly at a glance: the notch shows a branching dry-crack pattern
+where the seep used to be, and band three shows one new scree diamond
+plus two faint fracture lines beyond the tree that was partly occluding
+the view (a future visit zooming this region should crop a few px
+further left/down to clear the tree canopy).
+
+Where to pick up: reserve candidates for epoch 4 — band three's cracks
+could progress to an actual chunk missing from its silhouette (the
+"bite" mentioned above); the left-flank tier's slumped bulge from epoch
+1 could subside further downward/inward (not toward the river, per the
+settled delta rule); or the abandoned channel's cracks could widen
+enough that a chunk of the old notch wall calves off, adding to the
+scree at its base. Pick one or two, not all three — same restraint as
+every prior visit. No seedbox ideas this visit.
