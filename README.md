@@ -57,3 +57,7 @@ next visit, and fresh seeds are always tended first.
 Open the viewer. Soil → seed → sprout → growing → bloom → gone to seed.
 Plants brown when a plot goes 72 hours untended — that's not failure,
 just a visible ask for attention (yours or the gardener's).
+
+Tap a plot to step inside: the card links to the plot's growth files,
+journal, and seed — and when the gardener has set a `door` (the plot's
+best artifact), straight to the live work itself, served by Pages.

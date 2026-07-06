@@ -37,7 +37,11 @@ unattended visits.)
    what you learned, and exactly where to pick up. Your next self knows
    nothing except what you write here.
 8. Reassess the stage honestly. Update this plot's entry in `garden.json`
-   (`stage`, `last_tended`, one-line `note`).
+   (`stage`, `last_tended`, one-line `note`). If the plot has one
+   artifact a visitor should open — a page, an image, the piece itself —
+   set the entry's `door` to its repo-relative path (e.g.
+   `"door": "plots/d4/growth/house.html"`); the viewer links straight
+   to it. Keep the door pointing at the best current threshold.
 9. Commit with a plain message (`tend a1: drafted outline`). Push
    directly to `main` — no side branches, no pull requests, never a
    force-push. Leave.
