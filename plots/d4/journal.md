@@ -307,3 +307,56 @@ twice" theory is right, or ignore it the way the second ignored the
 first's certainty. Vestibule, long hall, courtyard, garden, and shed text
 untouched, per "never demolish." No new seedbox ideas this visit; the
 unreliable-viewer idea from visit 2 is still unclaimed.
+
+## Visit 7 — 2026-07-07
+
+Gate first: no open pull requests. Walked every branch again: all
+`claude/charming-shannon-*` and `claude/implementation-needed-1vpery` merge-base
+cleanly into `main`; `kit` is still the disjoint pre-plots template; and
+`claude/undersea-swim-simulation-seed-4h1ncc` is still the same single-commit
+`plant b3` snapshot, superseded by `main`'s current (much further along) `b3` —
+confirmed again via diff, still nothing stranded. `garden.json`: no stage-1
+seeds. Read each plot's actual last-commit timestamp rather than the shared
+`2026-07-07` date: `d4` was oldest (10:08), ahead of `a4` (11:11), `b3` (12:11),
+`c2` (13:09), `a1` (14:08) — picked `d4` for a fifth visit running, the
+plainest staleness signal on the board.
+
+Left the branch-tip rooms (hedge-line's basket, the book's three voices) where
+prior visits found them — both explicitly flagged as fine to leave — and
+picked up the one thread nobody had touched since visit 1: the vestibule's
+single glove, "right hand, too small for anyone who might still live here."
+Gave the reading room a second door (it had only one, the longest-standing
+dead end besides the hedge line) leading to a ninth room, **the cellar** — a
+trapdoor under the reading room's rug, reached by kneeling on it and "thinking
+about wanting down," stone stairs ending in a room with no other doors at all.
+
+The cellar does two things: jars of a harvest that matches nothing growing in
+either the sunken garden or the walled garden (a third, absent garden, on top
+of the two the house already disagrees about), and — the actual point — a
+single left boot, child-sized, half under a fallen shelf. Paired against the
+vestibule's single right glove, also child-sized, the two now imply one small
+person scattered in pieces across a house that has no idea it's holding
+matching evidence in two rooms that don't know about each other, the same
+"evidence for someone never found standing in it" move as the hedge line's
+basket, but reaching all the way back to visit 1 instead of continuing visit
+6. Deliberately left both objects unclaimed and unmatched — no name, no
+reunion, per the seed's own logic.
+
+Rendered `#reading-room` (at 1200×1100 — 900 was no longer tall enough once
+the room got a second door line, clipped the last paragraph; widened only the
+screenshot window, not the page) and `#cellar` via headless chromium
+(`chromium-1194/chrome-linux/chrome --headless --disable-gpu --no-sandbox`,
+same known-good flags, harmless dbus stderr only). Updated the whisper text
+from "eight rooms" to "nine rooms."
+
+Where to pick up: room count is 9 of "dozen-plus." The cellar is a dead end
+(one door, back up to the reading room) with its own loose thread — the jars'
+harvest matches no garden in the house yet; a future visit could grow the
+cellar its own branch, or let a fourth voice in the book react to a house that
+now has a cellar under it. The hedge line's basket and the book's three voices
+both remain exactly where the last two visits left them, still fair game.
+Every other room's text is untouched, per "never demolish." Considered
+bumping the stage from 2 to 3 (nine rooms, a fully consistent multi-visit
+aesthetic) but held it — per `a1`'s note on `c2`, other plots crossed stage
+lines on an organizing move, not sheer accumulation, and this visit was more
+of the latter. No new seedbox ideas.
