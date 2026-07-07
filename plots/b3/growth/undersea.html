@@ -204,6 +204,128 @@ const particleMat = new THREE.PointsMaterial({
 const particles = new THREE.Points(particleGeo, particleMat);
 scene.add(particles);
 
+// ---------- fish: a school that schools, and scatters when approached ----------
+const fishColors = [0xb9d9d2, 0x8fc7c9, 0x6fa8ab, 0xd7e8d4];
+const fishMats = fishColors.map(
+  (c) =>
+    new THREE.MeshStandardMaterial({ color: c, roughness: 0.7, metalness: 0.05, flatShading: true, fog: true })
+);
+
+function makeFishMesh(mat) {
+  const group = new THREE.Object3D();
+  const body = new THREE.Mesh(new THREE.ConeGeometry(0.13, 0.5, 5), mat);
+  body.rotation.x = -Math.PI / 2; // tip points along -Z (forward)
+  group.add(body);
+  const tail = new THREE.Mesh(new THREE.PlaneGeometry(0.22, 0.22), mat);
+  tail.position.z = 0.32;
+  group.userData.tail = tail;
+  group.add(tail);
+  return group;
+}
+
+const FISH_COUNT = 26;
+const schoolHome = new THREE.Vector3(-15, 0, -48);
+schoolHome.y = floorHeightAt(schoolHome.x, schoolHome.z) + 4.5;
+const HOME_RADIUS = 5;
+const HOME_SPRING = 0.3; // gentle, always-on pull toward home while inside the radius
+const HOME_PULL_BEYOND = 1.8; // stronger correction once scattered past the radius
+const PERCEPTION = 3.2;
+const SEPARATION_DIST = 1.0;
+const FLEE_RADIUS = 6.5;
+const FISH_MAX_SPEED = 2.6;
+const FISH_DRAG = 1.4; // lets velocity respond to changing forces instead of coasting/oscillating
+
+const fish = [];
+for (let i = 0; i < FISH_COUNT; i++) {
+  const mat = fishMats[i % fishMats.length];
+  const mesh = makeFishMesh(mat);
+  const pos = schoolHome.clone().add(
+    new THREE.Vector3((Math.random() - 0.5) * HOME_RADIUS, (Math.random() - 0.5) * 3, (Math.random() - 0.5) * HOME_RADIUS)
+  );
+  mesh.position.copy(pos);
+  scene.add(mesh);
+  fish.push({
+    mesh,
+    pos,
+    vel: new THREE.Vector3((Math.random() - 0.5), 0, (Math.random() - 0.5)).setLength(0.6),
+    wagPhase: Math.random() * Math.PI * 2,
+    wagSpeed: 6 + Math.random() * 2,
+  });
+}
+
+const _sep = new THREE.Vector3();
+const _cohere = new THREE.Vector3();
+const _align = new THREE.Vector3();
+const _flee = new THREE.Vector3();
+const _toHome = new THREE.Vector3();
+const _steer = new THREE.Vector3();
+
+function updateFish(dt, t, swimmerPos) {
+  for (let i = 0; i < fish.length; i++) {
+    const f = fish[i];
+    _sep.set(0, 0, 0);
+    _cohere.set(0, 0, 0);
+    _align.set(0, 0, 0);
+    let neighbors = 0;
+
+    for (let j = 0; j < fish.length; j++) {
+      if (i === j) continue;
+      const o = fish[j];
+      const d = f.pos.distanceTo(o.pos);
+      if (d < PERCEPTION) {
+        _cohere.add(o.pos);
+        _align.add(o.vel);
+        neighbors++;
+        if (d < SEPARATION_DIST && d > 1e-4) {
+          _steer.copy(f.pos).sub(o.pos).divideScalar(d * d);
+          _sep.add(_steer);
+        }
+      }
+    }
+
+    _steer.set(0, 0, 0);
+    if (neighbors > 0) {
+      _cohere.divideScalar(neighbors).sub(f.pos).multiplyScalar(0.9);
+      _align.divideScalar(neighbors).multiplyScalar(0.7);
+      _steer.add(_cohere).add(_align);
+    }
+    _steer.add(_sep.multiplyScalar(2.4));
+
+    // scatter: flee the swimmer when it's close, harder the closer it gets
+    const distToSwimmer = f.pos.distanceTo(swimmerPos);
+    if (distToSwimmer < FLEE_RADIUS) {
+      _flee.copy(f.pos).sub(swimmerPos);
+      const strength = (1 - distToSwimmer / FLEE_RADIUS) * 9;
+      _flee.setLength(strength);
+      _steer.add(_flee);
+    }
+
+    // always drift gently toward the home volume; pull harder once scattered past it
+    _toHome.copy(schoolHome).sub(f.pos);
+    const homeDist = _toHome.length();
+    const homePull = homeDist > HOME_RADIUS ? (homeDist - HOME_RADIUS) * HOME_PULL_BEYOND : homeDist * HOME_SPRING;
+    _toHome.setLength(homePull);
+    _steer.add(_toHome);
+
+    _steer.addScaledVector(f.vel, -FISH_DRAG);
+    f.vel.addScaledVector(_steer, dt);
+    if (f.vel.length() > FISH_MAX_SPEED) f.vel.setLength(FISH_MAX_SPEED);
+    else if (f.vel.length() < 0.4) f.vel.setLength(0.4); // fish don't idle in place
+
+    f.pos.addScaledVector(f.vel, dt);
+
+    // stay clear of the floor and the surface
+    const floorY = floorHeightAt(f.pos.x, f.pos.z) + 0.5;
+    if (f.pos.y < floorY) f.pos.y = floorY;
+    if (f.pos.y > 6) f.pos.y = 6;
+
+    f.mesh.position.copy(f.pos);
+    f.mesh.rotation.y = Math.atan2(f.vel.x, f.vel.z) + Math.PI;
+    f.mesh.rotation.x = -Math.asin(Math.max(-1, Math.min(1, f.vel.y / Math.max(f.vel.length(), 0.001))));
+    f.mesh.userData.tail.rotation.y = Math.sin(t * f.wagSpeed + f.wagPhase) * 0.6;
+  }
+}
+
 // ---------- a shape passing in the far blue, only half-seen ----------
 const wanderer = new THREE.Mesh(
   new THREE.CapsuleGeometry(1.4, 7, 4, 8),
@@ -328,6 +450,8 @@ function tick() {
     if (pp.array[i * 3 + 1] > 20) pp.array[i * 3 + 1] = -20;
   }
   pp.needsUpdate = true;
+
+  updateFish(dt, t, yaw.position);
 
   wandererT += dt * 0.04;
   wanderer.position.x = Math.sin(wandererT) * 40 - 10;
