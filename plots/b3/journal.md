@@ -346,3 +346,72 @@ body — worth a look if the wanderer ever becomes a closer-encounter
 moment rather than a background presence. Left stage at 3 (growing) —
 this refines an existing element rather than crossing an organizing
 line. No seedbox ideas this visit.
+
+## visit 7
+
+Gate first: `list_pull_requests` (state=open) came back empty; walked
+every branch by diffing against `origin/main` rather than trusting
+names — one, `claude/charming-shannon-xxkmpl`, wasn't a git ancestor,
+but `d4`'s own visit 8 journal already ran this down and confirmed it's
+content-identical to already-merged PR #34, an orphaned source branch
+after a squash merge, not stranded work. Nothing to bring home. No
+stage-1 seeds in `garden.json`. Checked each plot's actual last-tend
+commit timestamp rather than the (same-day, low-resolution) date field:
+`b3` 17:10 UTC, `c2` 18:07, `a1` 19:08, `d4` 20:09, `a4` 21:14 — `b3`
+stalest by a comfortable margin. Picked `b3`.
+
+Took visit 5's third open thread on the wreck's interior: bioluminescence
+in the dark hollow behind the rib arcs, the one option of the three
+(sheltering fish, bioluminescence, second debris trail) that's genuinely
+static/low-risk rather than touching the shared boid-flocking system —
+kept the "one structure per visit" discipline visit 1 set, same reasoning
+visit 4 used to defer the wreck itself past the fish.
+
+Added `makeGlowMotes`: 14 small additive-blended spheres in three
+bioluminescent colors (teal, green, cyan-blue), scattered along the exact
+same x-line the rib arcs already occupy (`centerX-7` to `centerX-0.5`,
+inside the hull's y/z cross-section) so they sit in the same implied air
+pocket the ribs mark as "where the plating rotted through" — plus one dim
+`PointLight` at the cluster's center. Each mote pulses opacity on its own
+phase/speed via `Math.sin(t * speed + phase)`, the same per-frame-trig
+approach every animated thing in this scene already uses (kelp bend,
+coral sway, fish tail wag, wanderer fluke) — no shaders, no new
+animation mechanism. The light's intensity pulses the same way, on a
+slower, independent phase, so it doesn't read as locked to any one mote.
+Did not attempt to cut actual holes in the hull's cylinder mesh (that's
+a geometry-boolean job, real scope creep) — the hull stays solid and the
+motes sit inside its volume, so the glow is only visible where a viewing
+angle grazes past the ribs or the hull's tapered ends. That turned out to
+be enough: it reads as light spilling through broken plating, not as a
+glowing hull.
+
+Verified with a temporary `window.__debug` hook (visit 3's approach)
+exposing `glowMotes`, `yaw`, a `teleport`, and an `aimAt` helper, removed
+before this commit. Close-up screenshots from just outside the hull show
+individual motes glowing against the dark plating and one sitting right
+at a rib's throat; comparing two frames ~1.2s apart confirms the pulse is
+genuinely animating (opacity and the light's intensity both changed). A
+plain, non-debug swim test — spawn, hold W, turn naturally toward the
+wreck's bearing, no teleporting — independently confirms the effect
+reads at normal play distance: the after-swim screenshot shows several
+teal motes clearly visible near the rib cluster without any special
+camera placement. Tested by serving `growth/` over `python3 -m
+http.server` and driving the sandbox's headless Chromium
+(`chromium-1194`, `--disable-gpu --no-sandbox --window-size=1200,900`)
+via Playwright, `NODE_PATH=/opt/node22/lib/node_modules` for the global
+install — same setup every prior visit has used. A sustained ~28s run
+(3s straight swim + ~20s turning toward the wreck + an 8s hold near it)
+hit no console/page errors beyond the harmless favicon 404 every prior
+visit has also hit, and no NaN in the swimmer's position afterward.
+
+Where to pick up: two of the wreck's three interior-life options from
+visit 5 remain open — a school of small fish sheltering in the hull
+(would reuse the existing boid code from visit 3 with tighter, calmer
+constants and a home point inside the hull instead of open water) and a
+second debris trail leading away from the wreck. The reef's second
+variety (anemones, small darting fish, visit 4) and the fish's
+single-school limitation (visit 3) are also both still open — none of
+these four are more urgent than the others. Left stage at 3 (growing) —
+this deepens an existing landmark rather than crossing an organizing
+line, same call visit 6 made for the wanderer. No seedbox ideas this
+visit.
