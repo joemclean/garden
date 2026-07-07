@@ -26,8 +26,8 @@
       "title": "Erosion",
       "planted": "2026-07-06",
       "last_tended": "2026-07-07",
-      "note": "epoch-05: the dry channel's cracked wall calved a slab clean off, and band three's reserved crack widened into a second, adjoining bite.",
-      "door": "plots/a4/growth/epoch-05.svg"
+      "note": "epoch-06: band three's third bite opened where the reserved crack finally gave, and the left-flank tier subsided again — the shared edge with the tier above is now a settled invariant, never touched.",
+      "door": "plots/a4/growth/epoch-06.svg"
     },
     "b3": {
       "stage": 3,
