@@ -87,12 +87,48 @@ averaged across. It's a different language's answer, not Threnwae's own
 — but it's the chain's first honest engagement with the thread rather
 than a false resemblance to one.
 
-**Left for later visits:** whether Naveth has a fourth, marked shape for
-addressing the departed specifically — someone who was once *-sol* and
-is now unreachable, which the current system just leaves as *-sol*
-still, unchanged by death, and whether that's a comfort the grammar
-offers or a blindness it has. Also open: Threnwae's own plural-address
-question is still exactly as unanswered on its own terms as it was in
-visit 1 — a sixth language could take it up from Threnwae's side rather
-than Naveth's, or it could stay a permanently open thread, and either
-would be legitimate.
+**The departed, resolved:** the thread this sketch itself left open —
+whether Naveth marks someone who was once *-sol* and is now
+unreachable. It does, but not as a fourth independent shape sitting
+beside the first three. It is a bound suffix on *-sol* itself: *-wen*,
+yielding *-solwen*. Ordinary *-sol* was never about capacity in the
+first place — a bridge, a kettle, a season take it exactly as easily as
+a living person, because *-sol* only ever marked the speaker's chosen
+answerability, not the listener's. *-solwen* marks something *-sol*
+structurally cannot: a capacity that used to be real and is gone, not
+one that was never there to begin with. A bridge is never *-solwen*,
+no matter how long it stands silent — it had nothing to lose. A dead
+mother is.
+
+That answers the question the thread posed, but not the way either of
+its two offered shapes suggested. It is not a comfort — the bond
+survives intact, the speaker doesn't relearn how to address the
+departed, address itself doesn't break. But it is not a blindness
+either — the grammar refuses to let the speaker pretend nothing
+changed. Every clause aimed at the dead carries the change forward,
+whether the speaker wants it named or not. Naveth's answer is neither
+of the options the sketch offered when it left this open: not comfort,
+not blindness, but insistence — a grammar that will not let you elide
+what you already know.
+
+One wrinkle, and the reason a third untranslatable word belongs here:
+the suffix tracks the *speaker's* knowledge, not fact. A listener
+addressed *-sol* whose death the speaker does not yet know of stays
+*-sol* — the grammar hasn't caught up to a truth it doesn't have yet.
+*Tessol* names exactly this: the particular vertigo of a sentence
+correctly marked in the moment and about to become a small, retroactive
+lie the instant the news arrives. Unlike *savrun* and *kelemori* (a
+speaker's private doubt outrunning what the grammar says), *tessol* runs
+the other way — the world outrunning the grammar, and the grammar none
+the wiser yet.
+
+**Left for later visits:** whether a listener presumed *-solwen* who
+turns out to still be alive (lost contact mistaken for death, say) has
+a name for the reverse vertigo — the suffix pointing at a loss that
+didn't happen. Also whether any existing leg has a scene this applies
+to; none of the first five obviously addresses someone dead in the
+second person, so this may stay language-only unless a future
+translation creates the occasion honestly. (Threnwae's own
+plural-address question, left open here in visit 6, was resolved
+directly inside `lang-1-threnwae.md` in visit 7 — see that file and
+`index.md`, not this one.)

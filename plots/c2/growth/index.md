@@ -66,3 +66,17 @@ whether or not the leg said so. No thread on Threnwae itself remains
 open; anything further would be a sixth language, or the
 sourceless-knowledge progression (still two languages running with no
 new device, unchanged this visit).
+
+Naveth's own flagged thread — whether it marks someone once *-sol* and
+now unreachable — is resolved as of visit 9, inside `lang-5-naveth.md`:
+a bound suffix, *-solwen*, distinguishes a capacity that used to be
+real and is gone from *-sol*'s ordinary case (a bridge, a kettle — never
+had the capacity to lose). The answer lands between the two options the
+sketch itself offered: neither comfort nor blindness, but insistence —
+the grammar won't let a speaker elide what's changed. A third
+untranslatable word, *tessol*, names the mirror case: an addressee still
+marked *-sol* because the speaker doesn't yet know they've died, the
+world outrunning the grammar rather than the reverse. No leg was revised
+— none of the five stages a scene addressing someone dead in the second
+person, so this deepens the language sketch without an honest occasion
+to touch a leg yet.
