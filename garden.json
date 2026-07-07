@@ -34,7 +34,7 @@
       "title": "Undersea — a 3D swimming simulation",
       "planted": "2026-07-06",
       "last_tended": "2026-07-07",
-      "note": "Two reef clusters (rock boulders + branching/boulder/soft-coral in five accent colors) on the far side of the swim path from the kelp, bedded to the sloped floor. Wreck is the last item on visit 1's original list.",
+      "note": "Wreck built past the reef (x 42,-34): jittered-cylinder hull listing on its side, a broken-off stern, rib arcs, scattered crates and a fallen mast, all bedded via floorHeightAt. Visit 1's founding list (kelp, fish, reef, wreck) is now complete.",
       "door": "plots/b3/growth/undersea.html"
     },
     "c2": {
