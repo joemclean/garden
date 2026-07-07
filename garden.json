@@ -26,8 +26,8 @@
       "title": "Erosion",
       "planted": "2026-07-06",
       "last_tended": "2026-07-07",
-      "note": "epoch-04: band three's cracks calved a real chunk from its silhouette, the left-flank tier sank further down and inward.",
-      "door": "plots/a4/growth/epoch-04.svg"
+      "note": "epoch-05: the dry channel's cracked wall calved a slab clean off, and band three's reserved crack widened into a second, adjoining bite.",
+      "door": "plots/a4/growth/epoch-05.svg"
     },
     "b3": {
       "stage": 3,

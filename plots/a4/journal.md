@@ -317,4 +317,92 @@ at x998–1020/y540–570) progressing to a second bite; or deciding whether
 the subsided tier straining the shared edge with the tier above counts as
 a genuinely new force or just the same one repeated — worth settling
 before it comes up again, the way visit 3 settled the delta question. Pick
-one or two, not all three. No seedbox ideas this visit.
+one or two, not all three.
+
+---
+
+## Visit 6 — 2026-07-07
+
+Gate first: `list_pull_requests` (state=open) → empty, nothing stranded.
+Twenty-one branches beyond `main`, all either previously-cleared merged
+`claude/*` branches, this session's own working branch, or `kit` (still
+the disjoint pre-plots template, no merge-base with `main`) — same shape
+every prior visit has found, still nothing to bring home. `garden.json`
+has no stage-1 seeds; a fifth plot (`b3`) reached stage 3 with three fast
+visits. Compared exact last-tend times: a4 01:11, c2 02:08, a1 03:07, d4
+04:06, b3 05:18 — a4 stalest by hours, the pick again.
+
+Took the first two reserve candidates, leaving the tier-subsidence
+question unresolved on purpose (see below). Made `growth/epoch-05.svg` as
+a copy of `epoch-04.svg`:
+
+- **The abandoned channel's left wall calved off along its crack.** The
+  `dry-notch` fill's lower-left corner (bounded by the old
+  `M 460 340 L 510 340 L 515 420 L 455 420` rectangle) is now cut away
+  following the exact zigzag of epoch 3's left crack line, down to
+  `L 490 420 L 480 398 L 472 378 L 484 358 Z`. Added a `notch-collapse`
+  backing path *behind* the fill, filled with the cliff's own deep-rock
+  tone (`#4a382a`, already used at the cliff's base) so the gap reads as
+  older exposed stone, not a hole through to the sky gradient that would
+  otherwise show there — learned this by rendering first: an early draft
+  with no backing showed reddish sky-gradient through the cut, which read
+  as a bug immediately. The crack that defined the new edge is retired
+  from `notch-cracks` (it *became* the edge, not a separate mark); the
+  surviving right-hand crack now reaches down to the fresh bottom edge
+  (`M 484 358 L 495 382 L 488 404 L 502 420`) as the next weak seam. One
+  water-stain streak in the plain `cbb896` group (`M 470 346 L 465 412`)
+  fell inside the newly-removed region and was dropped; a second
+  (`M 486 346 L 484 415`) had its endpoint nudged to `492 408` after
+  checking it landed ~4px inside the void at its original coordinates —
+  caught by walking the new polygon's boundary algebraically at each
+  line's y-value rather than eyeballing. Added `notch-rubble`: three small
+  slab pieces at the notch's foot (`#5a4636`, the same loose-rubble tone
+  cliff-scree already uses), reusing the established "calved chunk settles
+  as debris right below the scar" pattern from every prior cliff epoch.
+- **Band three's reserved crack widened into a second bite.** The
+  `c9a878` band's fill gained a second notch just above and right of
+  epoch 4's, following the crack's own zigzag
+  (`L 1050 548 L 1020 552 L 1012 570 L 998 555`) back into the existing
+  notch rather than opening a separate island — the two bites now share a
+  wall. No new backing shape was needed here (unlike the dry-notch): the
+  base cliff path (`#6e5642`, line 56) already spans the whole cliff
+  behind every band, so cutting into band three simply reveals the same
+  tone already established at the cliff's very top sliver and lower band,
+  which is exactly what should be "underneath." Added three more
+  `cliff-scree` pieces at the new bite's foot and relocated the "next weak
+  seam" crack outward to `M 1050 548 L 1075 558 L 1065 578`, past the
+  fresh edge into rock not yet broken.
+
+Rendered epoch-04 and epoch-05 full-frame via headless chromium
+(`--headless --disable-gpu --no-sandbox --window-size=1200,900`, same
+known-good flags) and built zoomed crops of both regions using a small
+reusable `crop.html` (URL-param-driven absolutely-positioned `<img>` in an
+`overflow:hidden` div — same tool visit 4 built, still in the scratchpad,
+not committed since it's a viewing aid, not part of the artifact) at 2.2–
+2.5x scale. Both changes read clearly and correctly at that zoom: the
+notch shows a dark calved slab with rubble at its base, no sky-through-
+rock artifact; the cliff shows a second, smaller bite adjoining the first
+with fresh scree scattered further down-slope. Neither looks like a
+rendering bug.
+
+Deliberately did *not* touch the tier-subsidence question left open at the
+end of visit 5 (does continuing to subside the same left-flank tier count
+as a fresh force or a repeat of epoch 1/4's). Two candidates were already
+spent this visit and the seed's restraint ("one or two, not all three")
+reads as a per-epoch cap, not a per-visit minimum to fill — no need to
+force a third decision in just to use the slot. Leaving it for whoever
+picks this up next, not because it's hard, but because it wasn't needed
+this time.
+
+Where to pick up: epoch 6 candidates in reserve — the tier-subsidence
+question above (my read: it should count as the *same* ongoing force, so
+letting it progress again wouldn't burn a second "new force" slot in the
+same epoch as something else, though it still counts toward the "one or
+two picks" a visit actually makes — but the next visit should feel free to
+disagree and settle it properly rather than defer again); band three now
+has two adjoining bites and could either deepen one of them (an actual
+loss of interior mass, not just edge nibbling) or let the newest crack
+(`1050,548`→`1075,558`→`1065,578`) give way for a third; the calved
+dry-notch slab could itself crack further or the whole notch could
+narrow if the right-hand wall goes next. Pick one or two. No seedbox ideas
+this visit. No seedbox ideas this visit.
