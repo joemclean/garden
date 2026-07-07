@@ -45,7 +45,22 @@ disclose that or not.
   when a bridge is asked to hold, the asker is said to *velk* it, not to
   extract a vow from it.
 
+**The verb "to keep":** root *thren-*, and it explains its own epithet —
+*threnaya* is *thren-* plus the agentive *-aya*, so "the-one-who-keeps"
+was never a separate coinage, it's the verb wearing a suffix. But the
+root is stricter than English "keep": bare *thren-* is not a word.
+Keeping in Threnwae is grammatically incapable of being a one-off — the
+root must fuse with the continuative *-esh* (*thren-esh*, "kept, going
+on, regardless of whether called for") before it can take a certainty
+suffix and become a real verb. There is no way to say "I kept it that
+one time"; the moment keeping stops being indifferent to use, Threnwae
+simply has no verb for what you're describing anymore — some other word
+would have to do, and none of the ones this diary needed ever came up.
+This is the same mechanic as *velk* wearing a different face: both
+words refuse to let "for someone" or "on this occasion" attach to an act
+of tending. A Threnwae speaker cannot describe conditional care at all.
+
 **Left for later visits:** plural address (does a crowd get one relation-
-word, or does the speaker have to average across all of them?), the verb
-"to keep," and whether Threnwae has a future tense at all, or only ever
-speaks of the not-yet as a kind of *-ummel*.
+word, or does the speaker have to average across all of them?), and
+whether Threnwae has a future tense at all, or only ever speaks of the
+not-yet as a kind of *-ummel*.

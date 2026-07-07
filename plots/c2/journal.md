@@ -230,3 +230,51 @@ plural-address question is still genuinely unclaimed — note in the
 Mereth sketch that Mereth's all-collective grammar does *not* answer it
 just by resembling it, a different question (who is speaking, not how
 you address a crowd). No seedbox ideas this visit.
+
+## Visit 5 — 2026-07-07
+
+Gate first: `list_pull_requests` (state=open) came back empty, and the
+one stray branch with no diff against `main` needed nothing. Checked
+each plot's actual last-tend commit timestamp rather than the shared
+date: `c2` was 19:08 the day before, the oldest of the five (`a1`
+20:06, `d4` 21:06, `b3` and `a4` already into the next day) — the
+stalest plot on the board, and no stage-1 seeds waiting in
+`garden.json`. Picked `c2`.
+
+Took option (b), finally: revised leg 1, the choice two prior visits
+had deferred in favor of "one more language." Went looking for
+something a fourth language's hindsight could actually justify
+changing, rather than revising for its own sake — found it in
+Threnwae's own unresolved thread, "the verb 'to keep,'" left open since
+visit 1 and never claimed. Formalized it (`lang-1-threnwae.md`): root
+*thren-*, and it explains *threnaya* retroactively — the epithet was
+never a separate coinage, it's *thren-* plus the agentive suffix.
+The root turned out stricter than I expected once I sat with it: bare
+*thren-* isn't grammatical on its own, it must fuse with a continuative
+marker before it can take a certainty suffix, and that fusion is what
+makes Threnwae incapable of describing keeping-for-an-occasion. You
+can't say "I kept it that one time" in Threnwae — the verb itself
+refuses conditional care, the same shape of refusal *velk* already
+modeled for promising.
+
+That gave leg 1 an honest reason to change: its opening line ("on,
+always, whether or not anyone is coming for tea") wasn't the
+translator adding color, it's the one thing the now-formalized verb
+structurally cannot leave out. Revised the first paragraph to say so
+directly and added a dated revision note at the bottom — left every
+other certainty-suffix choice and *velk* untouched, this wasn't a
+rewrite. Added one line to `index.md` tying the revision to the
+already-tracked *threnaya* fossil: now there's a precise answer to
+what that first crossing cost, not just "something specific rots" —
+it's specifically the indifference-to-use, since no later language's
+grammar has anywhere to put it.
+
+Where to pick up: Threnwae's other two open threads — plural address,
+and whether a future tense exists or everything not-yet is a kind of
+*-ummel* — are both still genuinely unclaimed; either could motivate
+the *next* revision of leg 1, or could stay language-only extensions
+without touching the leg again. A fifth language is equally live and
+undecided by this visit on purpose, same as visit 4 left it. Legs 2–4
+were read for context but not touched — this visit's hindsight applied
+only to leg 1, where the open thread actually lived. No seedbox ideas
+this visit.
