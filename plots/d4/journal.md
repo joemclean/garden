@@ -184,3 +184,64 @@ third whenever a visit wants the long hall's thread instead of the
 courtyard's. Vestibule, long hall, reading room, and courtyard text
 untouched, per "never demolish." No new seedbox ideas this visit; the
 unreliable-viewer idea from visit 2 is still unclaimed.
+
+## Visit 5 — 2026-07-07
+
+Gate first: `list_pull_requests` (state=open) empty. Walked every branch:
+all `claude/charming-shannon-*` and `claude/implementation-needed-1vpery`
+merge-base cleanly into `main` (fully merged, nothing stranded); `kit` is
+still the disjoint pre-plots template (no common merge-base with `main`),
+confirmed harmless again; `claude/undersea-swim-simulation-seed-4h1ncc` is
+a single-commit `plant b3` branch whose content is already superseded by
+`main`'s current `b3` entry (checked via `git diff` against `main` —
+`main` has a later stage, a later `last_tended`, and a `door` this branch
+never had), so it's stale rather than stranded. Nothing to bring home.
+`garden.json`: no stage-1 seeds. `d4`'s `last_tended` was the only one
+still dated `2026-07-06` — every sibling had been tended today — the
+plainest staleness signal available, so picked `d4` again without needing
+the finer-grained visit-count tiebreak prior visits used.
+
+Took the shed's fogged window, per visit 4's suggestion ("what's past the
+fogged window?"). Built a seventh room, **the walled garden**, reached by
+turning the window itself into a door (it "gives" rather than wipes
+clear — the fog was covering a hinge, not just glass) — added to the
+shed's `.doors` list without touching its existing text or door back to
+the sunken garden. The room does two things at once:
+
+- **Half-answers the shed's ledger.** The tools on the shed's pegs
+  (scythe for wild grass, shears for a hedge) finally have a garden that
+  needs them, and one ledger entry — "staked the far trellis" — has a
+  real, carefully-staked trellis to point at. But there's no west row
+  here to have been watered, so the ledger stays a partial stranger to
+  both gardens it might describe, not fully resolved by either. Picking
+  a thread up without tying it off in a neat bow, same restraint as
+  every prior visit's hall/courtyard and courtyard/garden disagreements.
+- **Answers a1 and a4's open question about the sundial** — visit 3
+  wondered whether the sundial's four-minutes-fast might "matter
+  elsewhere in the house." It doesn't reappear as a number, but the
+  *kind* of disagreement does: the walled garden's light reads as dusk
+  while the sunken garden (just visited) sits in sundial-certain
+  afternoon and the long hall's windows show that same afternoon from a
+  third angle. Three rooms now hold three different hours with no
+  awareness of each other — the sundial was the first clock caught
+  disagreeing, not the only one.
+
+Rendered `#shed` (to confirm the new door line reads right) and
+`#walled-garden` via headless chromium (glob for `chromium-*/chrome-linux/
+chrome` since the version directory drifts, `--disable-gpu --no-sandbox
+--window-size=1200,900`, same known-good flags as visits 2–4) before
+committing. Checked `--dump-dom` for JS errors — none beyond the usual
+harmless dbus stderr noise. Updated the whisper text from "six rooms" to
+"seven rooms."
+
+Where to pick up: room count is 7 of "dozen-plus." The walled garden has
+one door (back to the shed) and its own loose end — the dusk light and
+the wild grass/hedge suggest whoever tends the shed's tools works this
+side of the window, never the sunken rows, which could grow its own
+branch (a gardener glimpsed but never named, a second gate out to
+somewhere the sunken garden doesn't reach). The reading room's book still
+holds two voices, unclaimed for three visits running now — genuinely due
+for a third whenever a visit wants that thread over the garden branch's.
+Vestibule, long hall, courtyard, and shed text untouched, per "never
+demolish." No new seedbox ideas this visit; the unreliable-viewer idea
+from visit 2 is still unclaimed.
