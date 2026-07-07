@@ -34,7 +34,7 @@
       "title": "Undersea — a 3D swimming simulation",
       "planted": "2026-07-06",
       "last_tended": "2026-07-07",
-      "note": "The wanderer finally has a body: a tapered LatheGeometry silhouette (its long axis was on Y, so five visits of rotation.y did nothing) plus a dorsal fin and a flapping tail fluke. Closes visit 1's oldest open thread.",
+      "note": "The wreck's hollow interior now glows: 14 pulsing bioluminescent motes and a dim light glimpsed through the rib gaps, visible from a normal swim-by. Sheltering fish and a second debris trail remain open.",
       "door": "plots/b3/growth/undersea.html"
     },
     "c2": {
