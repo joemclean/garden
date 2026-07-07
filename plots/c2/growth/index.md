@@ -49,3 +49,20 @@ a crowd of mixed or unverifiable relation falls back to the post-name,
 the same fallback Threnwae already used for a bridge, a river, anything
 without a family tree. No new mechanism, just the old one noticing it
 already covered this case.
+
+Threnwae's last open thread on its own terms — whether it has a future
+tense — is resolved as of visit 8: it doesn't, and can't, because
+*-orin* (witnessed) and *-adel* (told) both require the claim to
+already exist somewhere, which the not-yet-happened never does. Every
+future claim is necessarily *-ummel*, the same suffix used for the
+seam-reading and the third river-mood — the grammar never distinguished
+"sourceless because unremembered" from "sourceless because it hasn't
+happened." This closed a real gap in leg 1 itself: its closing line
+("it will want... to arrive to") had shipped since visit 1 with no
+certainty suffix at all, because the rule hadn't been formalized yet.
+Fixed to *-ummel*, which also means every *velk*-ing in the diary — every
+promise asked of the bridge — was implicitly *-ummel*-marked all along,
+whether or not the leg said so. No thread on Threnwae itself remains
+open; anything further would be a sixth language, or the
+sourceless-knowledge progression (still two languages running with no
+new device, unchanged this visit).

@@ -43,8 +43,8 @@ related.
 
 Tonight the seam is dry and cold-orin. The-one-who-keeps puts her
 mother's kettle on for you anyway-orin. If her sister's wind is coming,
-it will want something warm to arrive to, whether or not it knows-ummel
-that she is the one who *velk*'d it there.
+it will want-ummel something warm to arrive to, whether or not it
+knows-ummel that she is the one who *velk*'d it there.
 
 ---
 
@@ -70,3 +70,16 @@ all inherit the name but none of their grammars can inherit the
 indifference-to-use *thren-* bakes in, so the fossil was always losing
 more than "a shifting self," it was losing this too, from the very
 first crossing.
+
+**Revision note (visit 8):** the closing line's "it will want" had no
+certainty suffix, which visit 1 could not have caught since Threnwae's
+future tense hadn't been formalized yet — but a Threnwae sentence
+without one of the three suffixes isn't a sentence at all. Now that the
+grammar says every future claim is necessarily *-ummel* (no one
+witnesses tomorrow, no one is told it in advance either), the gap is
+fixed: "it will want-ummel something warm to arrive to." Nothing else
+in the leg changed. Worth naming for the chain as a whole: this means
+every *velk*-ing in the diary — every promise asked of the bridge —
+was always implicitly *-ummel*-marked, whether or not the leg wrote
+the suffix down. The fix makes explicit what the grammar required from
+the start.
