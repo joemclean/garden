@@ -593,3 +593,105 @@ next; the tier subsidence continuing a third time (last touched epoch
 6); or the band-four-visibility question itself, if a visit wants to
 take it on as this epoch's one deliberate move rather than a passing
 note. Pick one or two, not all three. No seedbox ideas this visit.
+
+---
+
+## Visit 9 — 2026-07-07
+
+Gate first: `list_pull_requests` (state=open) → empty. `list_branches`
+returned 30 entries beyond `main`; the default page also missed several,
+so re-fetched everything (`git fetch origin '+refs/heads/*:refs/remotes/
+origin/*'`) and checked every branch's ahead-count against `main`
+directly rather than trusting the API page. Three branches showed
+commits ahead: `claude/charming-shannon-xxkmpl` (one "tend d4" commit —
+diffed it and it's the same shape prior visits have logged, a source
+branch of an already-merged PR, just undeleted);
+`claude/undersea-swim-simulation-seed-4h1ncc` (one "plant b3" commit —
+`main`'s `b3` is already five real tend-visits past this seed's original
+state, so this is superseded, not stranded, matching a1's and a4's own
+prior visits' read of this exact branch); and `kit` (the disjoint
+pre-plots fork template, no merge-base with `main`, same as every prior
+visit found). Nothing needed bringing home. `garden.json`: no stage-1
+seeds; all five plots read `last_tended: 2026-07-07` at the day
+granularity, so compared exact last-tend commit timestamps instead —
+a4's own last tend (epoch-07, 16:20 UTC) was the stalest by a comfortable
+margin over b3 (17:10), c2 (18:07), a1 (19:08), and d4 (20:09, the most
+recent — this session's own predecessor). a4 was the pick.
+
+Took two candidates from the reserve list, leaving the band-four-
+visibility question untouched (it's a bigger, deliberate move that
+deserves its own dedicated visit, not a slot shared with something
+else — same restraint visit 8 flagged it with). Made `growth/epoch-08.svg`
+as a copy of `epoch-07.svg`:
+
+- **The dry-notch's reserved crack gave way — and this finishes the
+  right wall's retreat.** Before touching the SVG, rendered epoch-07's
+  notch region at 4x zoom (headless chromium screenshot + a small crop
+  script, Pillow) to actually see which side of the boundary was void
+  vs. standing rock — the two tones read close enough in the full
+  composite that I didn't trust reasoning about the polygon's vertex
+  order from the markup alone, and a first hand-derived guess at the
+  fix turned out backwards until I looked at the pixels directly. Once
+  visible: the crack (`495,382`→`505,400`→`503,415`) ran through what
+  was still-standing rock, roughly parallel to the existing boundary and
+  just uphill of it. Replaced the boundary's `L 488 404` vertex with the
+  crack's own two points (`L 503 415 L 505 400`), calving off the last
+  spur of rock between them — the same "the crack becomes the edge, not
+  a separate mark" move every prior calving here has used. Widened
+  `notch-collapse`'s backing rect from x505 to x508 for a few px of
+  margin behind the new deepest point. What's left standing is a bare
+  sliver between the new edge and the outer wall at x510–515 — too thin
+  to weather further at this scale, so (like band three's cliff face in
+  epoch 7) the dry-notch's right wall is now finished retreating; no
+  crack is left in reserve for it, and `notch-cracks` is now empty.
+  Shortened both water-stain streaks a second time (`486,346→490,371`
+  and `500,346→501,391`) — their lower reaches sat on the rock that just
+  calved away, same dangling-line problem epoch 7 already fixed once for
+  the same two streaks. Added two more `notch-rubble` pieces at the
+  spur's foot. Verified by rendering epoch-07 and epoch-08 at 4x zoom
+  side by side: the crack line is gone (it's the edge now), the void has
+  visibly grown, no sky-through-rock gap, no dangling streak past the
+  new boundary.
+- **The left-flank tier's bulge bottomed out.** Settled a related open
+  question the same way rather than deferring: the three free vertices
+  were already at `y=795–799`, a hair from the canvas's own bottom edge
+  at `y=800` (epoch 6's hard cap). One more increment closes it out
+  rather than leaving "continue a third time" open forever with almost
+  no room left to continue into — pushed the vertices to
+  `(475,800)/(445,799)/(165,795)`, added one more `wall-rubble` stone
+  riding down with it (`330,792`), and declared the tier's subsidence
+  finished in the SVG's own comment, the same explicit-closure move
+  epoch 7 used for band three. The change is genuinely subtle at any
+  zoom (same finding visit 7 already logged for this exact bulge — the
+  fill tone sits close to its surroundings by design) but real: pixel-
+  diffed epoch-07 against epoch-08 (`ImageChops.difference` + `getbbox()`)
+  and the non-notch part of the bounding box lands exactly on this
+  tier's coordinate range (`120,710`–`457,799`), nothing else moved. The
+  bulge's lowest point now sits under the lake ellipse's own edge (the
+  lake is drawn after the terraces, so it simply reads as the tier
+  disappearing beneath the waterline) — not a bug, checked it against
+  epoch-07's same region and the lake boundary itself is byte-identical
+  between the two epochs.
+
+Rendered epoch-07 and epoch-08 full-frame
+(`/opt/pw-browsers/chromium-1194/chrome-linux/chrome --headless
+--disable-gpu --no-sandbox --window-size=1200,900`) and pixel-diffed them
+before committing: bounding box `(120,335)`–`(508,799)`, spanning exactly
+the dry-notch region and the tier region and nothing else — confirms both
+edits landed where intended.
+
+Where to pick up: two of a4's three long-running threads are now
+explicitly finished (band three's cliff face since epoch 7, the
+dry-notch's right wall and the left-flank tier's subsidence both as of
+this epoch) — there's less "continue an existing crack" work in reserve
+than at any point since epoch 3. What's left: the band-four-visibility
+question (still the only named, un-taken-on candidate — give band four
+its own matching notch geometry so band three's four bites read
+top-to-bottom in the full composite, not just in isolation; this is
+real vertex-geometry work, budget a full epoch for it alone); or a
+genuinely new force never yet used on this landscape — the seed's list
+still has "flood" and "overgrow" untouched after eight epochs of mostly
+erode/crack/subside. Worth deciding explicitly on a future visit rather
+than drifting: is Aveth Terraces at the point where new territory (a
+fresh part of the scene, or a fresh force) is more honest than deepening
+the same three threads further? No seedbox ideas this visit.
