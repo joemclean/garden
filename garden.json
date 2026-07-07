@@ -30,11 +30,11 @@
       "door": "plots/a4/growth/epoch-04.svg"
     },
     "b3": {
-      "stage": 2,
+      "stage": 3,
       "title": "Undersea — a 3D swimming simulation",
       "planted": "2026-07-06",
       "last_tended": "2026-07-07",
-      "note": "First life in the water: two kelp beds, chained tapering segments that curve and sway per-frame, planted on the sloping floor's actual contour. Fish are next.",
+      "note": "Fish: a 26-strong boid school near the second kelp bed that scatters when you swim close and regroups after — tuned drag/spring constants against a standalone sim so it settles instead of oscillating.",
       "door": "plots/b3/growth/undersea.html"
     },
     "c2": {

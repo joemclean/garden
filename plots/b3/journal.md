@@ -112,3 +112,61 @@ a reason to swim that far (the wanderer, a wreck). Left the wanderer
 capsule from visit 1 untouched — still "modest and dim," still a fair
 target for a future visit's "give it real silhouette" note. No seedbox
 ideas this visit.
+
+## visit 3
+
+Fish — the item visit 1 flagged as where "convincing versus empty tech
+demo gets decided." A school of 26 low-poly cone-and-tail fish, boids
+(cohesion + alignment + separation) around a fixed home point near the
+second kelp bed (`schoolHome` at x -15, z -48, height sampled with
+visit 2's `floorHeightAt` so it sits mid-water above the slope), plus a
+flee force that kicks in within 6.5 units of the swimmer and scales
+harder the closer you get. Each fish's tail plane wags on the same
+per-frame-sine approach as the kelp's bend — no shaders here either.
+
+The boid math was right on the first pass (confirmed by teleporting the
+swimmer into the school via a temporary `window.__debug` hook and
+reading `fish[i].pos`/`.vel` directly — screenshots alone couldn't
+prove scatter/regroup because kelp positions randomize per page load,
+so the school was never in the same spot as the previous screenshot to
+compare against), but the *regroup* wasn't: with only a hard boundary
+force beyond a fixed home radius and no drag, the fled school coasted
+at max speed for 5-6 seconds before even turning around, then
+overshot back through the center and slowly oscillated with an
+~8-10 second period, spread swinging from 4 to 15 units and never
+settling. Fixed by (1) adding real water drag to fish velocity
+(`FISH_DRAG`, same idea as the swimmer's own drag term) so they
+actually decelerate instead of coasting, and (2) replacing the
+hard-boundary pull with an always-on spring toward home (weak inside
+the radius, stronger beyond it) instead of a force that only exists
+past a threshold. Tuned both against a standalone Node reproduction of
+the exact per-fish update loop (no browser/rendering, just the vector
+math) to iterate fast — confirmed in the real page afterward that
+scatter still widens the school (spread ~1.5 to ~2.5 when the swimmer
+sits in the middle of it) and regroup now settles back to ~1.5 within
+2-3 seconds instead of 8-10, oscillating in a bounded ~1.3-4.3 range
+rather than growing unbounded. The debug hook was removed before this
+commit — nothing testing-only shipped in `growth/`.
+
+Tested by serving over `python3 -m http.server` and driving the
+pre-installed Chromium (`chromium-1194`, headless, same
+`--disable-gpu --no-sandbox --window-size=1200,900` flags as prior
+visits) via Playwright, resolved with
+`NODE_PATH=/opt/node22/lib/node_modules` since `playwright` is a global
+install here, not a project dependency. Swam toward the school
+(mouse-turn + hold W) and watched it cluster, scatter as I passed
+through, and re-form after — no console/page errors beyond the
+harmless favicon 404 visit 2 already noted.
+
+Where to pick up: fish now exist and read as alive, but they're a
+single school with one behavior — no variation in fish size/species, no
+secondary schools elsewhere in the water column, and they only react to
+the swimmer, never to each other's schools or the wanderer. A future
+visit could add a second, smaller school (maybe faster, skittish
+individuals rather than a tight ball) near the first kelp bed or
+further out, reusing the same boid code with different constants. The
+reef and wreck are still untouched and still lower-risk than flocking
+was. If a future visit tunes the boid constants again, tune against the
+standalone Node script first (fast iteration, no browser overhead)
+before verifying in the real page — cut tuning-loop time substantially
+this visit. No seedbox ideas this visit.
