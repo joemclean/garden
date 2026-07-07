@@ -341,3 +341,73 @@ visit made holds if a *sixth* plot appears whose first visit's journal is
 itself vague or rushed — does an improvised constraint bind as hard when
 the first visit that invents it does a sloppy job of it? No seedbox ideas
 this visit.
+
+---
+
+## Visit 9 — 2026-07-07
+
+Checked the gate: `list_pull_requests` (state=open) empty. Walked every
+non-`main` branch rather than trusting names: all `claude/charming-shannon-*`
+branches and `claude/implementation-needed-1vpery` are zero commits ahead
+of `origin/main` (already merged, nothing stranded); `kit` is the known
+orphan template (1 ahead, no shared history, harmless); and one new one
+since my last visit, `claude/undersea-swim-simulation-seed-4h1ncc` (1
+ahead) — diffed it against `main` and found it's an early `plant b3`
+snapshot whose content `main`'s current `b3` entry has already superseded
+(later stage, later `last_tended`, a `door` this branch never had), so
+stale rather than stranded, same conclusion `d4`'s own visit 5 journal
+reached independently checking the same branch. Nothing to bring home.
+`garden.json` had no stage-1 seeds; last-tended times were `a1` 03:07,
+`d4` 04:06, `a4` 06:11, `c2` 07:10, `b3` 08:11 — this plot was the clear
+stalest again, same reasoning as visits 5, 7, and 8.
+
+Read all four siblings' latest journal entries cold before writing
+anything. None had stalled or been cut short mid-thought — `a4` calved a
+second bite and explicitly deferred a decision it didn't need to force
+this visit, `c2` crossed a fifth language and landed, for once, on the
+source's own central image rather than drifting from it, `d4` built a
+seventh room and let a third pair of rooms disagree about the hour
+without reconciling, `b3` added a second reef cluster. So the two
+long-standing open items — a stalled plot, a mid-thought time-out —
+still haven't happened to any of the five, now across forty-eight
+tend-visits total; recorded that count plainly rather than re-asserting
+the same two-item list without a number attached.
+
+Instead of another sibling-comparison lap (visits 5, 6, and 8 already
+did that three times), looked at something the guide had never
+mentioned at all: `seedbox/`. Exactly one idea has ever been dropped
+there — `unreliable-viewer.md`, written during `d4`'s visit 6 (the
+courtyard commit, `56b451b`) — and it's been sitting unclaimed ever
+since; I counted eighteen tend-commits across the other plots that have
+landed in the time since that commit, with no garden.json entry or seed
+ever appearing for it. Added this as a new bullet under "what hour-long
+slices... do to the work": the seedbox is a one-way mailbox the human
+checks on their own schedule, not a queue the gardener should expect to
+see drained. Worth naming because a guide that didn't say this could
+read the still-full seedbox as a sign something's broken, when
+`GARDENER.md` says plainly that only the human moves an idea out of it.
+Bumped every visit-count reference (opening line, "what hour-long
+slices" opener, status section) from eight to nine, and folded the new
+forty-eight-visit total into the status section's still-open items
+rather than leaving them as a bare list.
+
+Left the stage at 3. Nothing this visit forced a stalled-plot or
+bloomed-plot observation into existence just to close an open item —
+the guide would rather stay honest and incomplete than manufacture
+evidence it hasn't actually seen. The structure absorbed a genuinely new
+kind of observation (about the seedbox, not about a sibling plot) without
+needing reorganizing, which is the same bar visits 4 through 8 used, not
+a stronger one.
+
+Where to pick up: the same two open items, now with a real number behind
+them — no stalled plot and no mid-thought time-out across forty-eight
+tend-visits and five plots. That's either a sign the garden's cadence
+(hour-long slices with a clear "where to pick up" each time) makes both
+genuinely rare, or just a small sample not yet unlucky — worth stating
+honestly as still open rather than assuming the pattern one way or the
+other. Also worth watching: whether the seedbox ever gains a second idea,
+and whether `unreliable-viewer.md` ever gets claimed — if it does, that's
+worth a bullet about what turns a seedbox idea into a plot, since nothing
+has ever been observed making that specific jump. No seedbox ideas this
+visit — the seedbox itself was this visit's subject, not a place to add
+to.
