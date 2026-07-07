@@ -492,14 +492,63 @@ function updateFish(dt, t, swimmerPos) {
 }
 
 // ---------- a shape passing in the far blue, only half-seen ----------
-const wanderer = new THREE.Mesh(
-  new THREE.CapsuleGeometry(1.4, 7, 4, 8),
-  new THREE.MeshStandardMaterial({ color: 0x03181e, roughness: 1, fog: true })
-);
+// visit 1 gave it a CapsuleGeometry whose long axis runs along Y (three.js's
+// default) but only ever spun it on rotation.y — rotating a vertical pill
+// around its own axis is invisible, so it never actually pointed anywhere.
+// This visit builds a tapered fusiform body with its long axis on Z instead,
+// so rotation.y (still driven by the same travel-direction math below) now
+// visibly orients it, plus a dorsal fin for silhouette and a fluke that
+// flaps as it swims.
+const wandererMat = new THREE.MeshStandardMaterial({ color: 0x03181e, roughness: 1, fog: true });
+
+function makeWandererBody() {
+  // fusiform profile, nose to tail-stock: thick amidships, tapering to a
+  // point at both ends so the lathe closes cleanly (no flat end caps)
+  const profile = [
+    new THREE.Vector2(0.0, -4.3),
+    new THREE.Vector2(0.5, -3.7),
+    new THREE.Vector2(1.0, -2.3),
+    new THREE.Vector2(1.3, -0.5),
+    new THREE.Vector2(1.35, 1.0),
+    new THREE.Vector2(1.1, 2.4),
+    new THREE.Vector2(0.6, 3.5),
+    new THREE.Vector2(0.0, 4.2),
+  ];
+  const geo = new THREE.LatheGeometry(profile, 12);
+  geo.rotateX(Math.PI / 2); // carries the lathe's Y-axis length onto Z (forward)
+  return jitterGeo(geo, 0.05);
+}
+
+const wanderer = new THREE.Object3D();
+const wandererBody = new THREE.Mesh(makeWandererBody(), wandererMat);
+wanderer.add(wandererBody);
+
+// dorsal fin: a flattened blade standing off the back, static — silhouette only
+const dorsalGeo = new THREE.ConeGeometry(0.9, 1.7, 3);
+dorsalGeo.scale(1, 1, 0.14);
+const dorsal = new THREE.Mesh(dorsalGeo, wandererMat);
+dorsal.position.set(0, 1.35, -0.2);
+dorsal.rotation.x = Math.PI / 2 + 0.3;
+wanderer.add(dorsal);
+
+// tail fluke: two blades hinged at the tail stock, flapping vertically as it swims
+const flukePivot = new THREE.Object3D();
+flukePivot.position.set(0, 0, 4.15);
+wanderer.add(flukePivot);
+const flukeGeo = new THREE.ConeGeometry(0.85, 2.5, 3);
+flukeGeo.scale(1, 0.15, 1);
+const flukeL = new THREE.Mesh(flukeGeo, wandererMat);
+flukeL.position.set(0.7, 0, 0.85);
+flukeL.rotation.z = -0.55;
+flukePivot.add(flukeL);
+const flukeR = new THREE.Mesh(flukeGeo, wandererMat);
+flukeR.position.set(-0.7, 0, 0.85);
+flukeR.rotation.z = 0.55;
+flukePivot.add(flukeR);
+
 wanderer.position.set(-30, -3, -90);
 scene.add(wanderer);
 let wandererT = Math.random() * 100;
-
 // ---------- swim controls ----------
 const yaw = new THREE.Object3D();
 const pitch = new THREE.Object3D();
@@ -626,6 +675,7 @@ function tick() {
   wanderer.position.x = Math.sin(wandererT) * 40 - 10;
   wanderer.position.z = -90 + Math.cos(wandererT * 0.7) * 25;
   wanderer.rotation.y = -wandererT - Math.PI / 2;
+  flukePivot.rotation.x = Math.sin(t * 1.1) * 0.35;
 
   depthEl.textContent = `depth ${Math.max(0, Math.round(-yaw.position.y * 3.1))} ft`;
 

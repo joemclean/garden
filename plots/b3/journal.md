@@ -282,3 +282,67 @@ silhouette. Any of these deepen an existing place rather than adding a
 fifth; the seed's "one convincing cubic meter" framing suggests depth
 over more landmarks might be the right instinct for this plot's next
 few visits. No seedbox ideas this visit.
+
+## visit 6
+
+Took visit 1's oldest open thread: the wanderer, still "modest and dim"
+five visits later. Found the actual reason it never read as alive: it
+was a plain `CapsuleGeometry`, whose long axis runs along Y (three.js's
+default) by construction, but the only transform ever applied to it was
+`rotation.y` — spinning a vertical pill around its own long axis is
+visually a no-op. So for five visits it's been an inert grey blob that
+happened to drift in a circle, never actually oriented toward where it
+was headed. That's the real gap behind "forgot to texture it," more
+than a missing detail.
+
+Rebuilt it as an `Object3D` group: a tapered fusiform body from a
+jittered `LatheGeometry` profile (thick amidships, pointed at both nose
+and tail so the lathe closes without flat end-caps), rotated so its long
+axis runs along local Z instead of Y — the fix that makes `rotation.y`
+finally mean something. Added a static dorsal fin (a flattened, scaled
+`ConeGeometry`) purely for silhouette, and a tail fluke — two more
+flattened cones hinged on a `flukePivot` — that flaps via
+`Math.sin(t * 1.1) * 0.35` on `rotation.x` each frame, the same
+per-frame-trig-no-shader approach every animated thing in this scene
+already uses (kelp's bend, the coral's sway, the fish's tail wag). Kept
+the same slow circling path and position (`wandererT`-driven, world
+~(-30,-3,-90)) untouched — this was about giving the existing shape a
+body, not moving it.
+
+Verified with a temporary `window.__debug` hook (visit 3's approach,
+removed before this commit) exposing `wanderer`, `flukePivot`, and an
+`aimAt(x,y,z)` helper that sets the module-scoped `yawAngle`/`pitchAngle`
+directly, since the normal look controls are pointer-lock/mouse-driven
+and there's no way to aim the camera at a specific world point from
+outside the page otherwise. Teleported the swimmer's `yaw.position` near
+the wanderer and aimed at it: confirmed close-up screenshots show a
+recognizable tapered-body-plus-fin silhouette (not a blob), confirmed
+`flukePivot.rotation.x` changes value across screenshots ~0.6s apart
+(the flap is genuinely animating), and confirmed at a normal in-game
+viewing distance through the fog (`~28` units out) it now reads as a
+legible dark animal shape rather than a formless smudge — the "only
+half-seen" quality from the seed is intact, it's just recognizably
+something now. Tested by serving over `python3 -m http.server` and
+driving the sandbox's headless Chromium via Playwright, same flags as
+every prior visit. A sustained ~8s swim afterward hit no console/page
+errors beyond the harmless favicon 404 every prior visit has also hit,
+and no NaN/crash. Did not touch pectoral fins or any lateral undulation
+of the body itself — the dorsal fin + flapping fluke was the deliberate
+one-move scope for this visit, per visit 1's "one creature or one
+structure per visit" note.
+
+Where to pick up: the wanderer now has a real, oriented, gently animated
+silhouette — that closes the oldest open thread on this plot. What's
+still open, unchanged from visit 5: the reef's second variety (anemones,
+small darting fish distinct from the main school, visit 4); the fish's
+single-school-one-behavior limitation (visit 3); the wreck's interior
+life (sheltering fish, bioluminescence, a second debris trail, visit 5).
+None of these are urgent over the others — the seed's "one convincing
+cubic meter" framing still argues for depth over a fifth landmark. If a
+future visit wants to keep deepening the wanderer specifically: it still
+has no lateral body undulation as it swims (right now only the fluke
+moves), and at true distance the dorsal fin barely reads against the
+body — worth a look if the wanderer ever becomes a closer-encounter
+moment rather than a background presence. Left stage at 3 (growing) —
+this refines an existing element rather than crossing an organizing
+line. No seedbox ideas this visit.
