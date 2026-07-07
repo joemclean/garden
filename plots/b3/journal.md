@@ -223,3 +223,62 @@ fish distinct from the school) once there's a reason to revisit it, and
 visit 1's note about the wanderer being "modest and dim" rather than
 "enormous" is still open — nobody has given it real silhouette yet. No
 seedbox ideas this visit.
+
+## visit 5
+
+The wreck — the last item on visit 1's original list (kelp, fish, reef,
+wreck), untouched through three intervening visits. Built `makeWreck`
+at world (42, -34), well clear of the reef (x 14..30) so kelp, reef, and
+wreck read as three distinct places a swimmer has to choose between, not
+one cluster near spawn. Reused the reef's exact pattern: an unrotated,
+un-translated `Object3D` container with every child placed at absolute
+world coordinates and bedded via `floorHeightAt`, rather than a
+transformed parent group — tried a rotated-group version first (random
+yaw on the whole wreck, like kelp's per-stalk `group.rotation.y`) and
+caught it before testing: local offsets inside a yawed group don't line
+up with `floorHeightAt`'s world-space formula, so debris would've floated
+or sunk depending on rotation. Reef-style absolute placement sidesteps
+that entirely.
+
+What's in it: a long jittered-cylinder main hull lying on its side and
+listing (same per-vertex jitter trick the reef's boulders used, applied
+to a `CylinderGeometry` instead of an icosahedron), a shorter stern
+section broken off a short distance away at a sharper cant, five
+`TorusGeometry` arcs along the hull standing in for bare rib frames where
+the plating's rotted through, six crates (jittered-rotation boxes) and a
+fallen mast (a thin cylinder) scattered around and bedded individually.
+No animation — static, like the reef, per visit 4's note that this was
+the plan.
+
+Tested by serving over `python3 -m http.server` and driving the
+pre-installed Chromium (`chromium-1194`, headless, same flags as every
+prior visit) via Playwright, `NODE_PATH=/opt/node22/lib/node_modules`
+for the global `playwright` install. Turned to face roughly (42,-34)
+from spawn, swam forward with a sustained descent (worked out the yaw
+math from the camera's actual Euler-YXZ forward vector rather than
+guessing) until depth capped at the world's y=-20 floor, then screenshot
+at three points along the approach: reef and wreck both visible at once
+(confirming they read as separate landmarks, not a merged cluster), a
+close pass showing the hull's faceted plating and a rib arc, and a wider
+angle showing hull + mast + crates all correctly bedded on the slope
+with no floating or sinking. A final 30-second sustained swim through
+and around the whole cluster hit no console/page errors beyond the
+harmless favicon 404 every prior visit has also hit, and no NaN/crash.
+
+Where to pick up: all four items from visit 1's original list now exist
+(kelp, fish, reef, wreck) — this plot has cleared its founding scope for
+the first time. What's still open, all flagged by earlier visits and
+still true: the wanderer is still "modest and dim" rather than
+"enormous," with no real silhouette given to it yet (visit 1); the reef
+could grow a second variety — anemones, small darting fish distinct from
+the main school (visit 4); the fish are a single school with one
+behavior, no second smaller/skittish school added yet (visit 3). New
+from this visit: the wreck itself could grow further without needing a
+new landmark — a second smaller debris trail leading away from it, a
+school of small fish sheltering inside the broken hull the way real
+wrecks attract life, or bioluminescent detail in the dark interior since
+right now nothing distinguishes "inside the hull" from "outside" beyond
+silhouette. Any of these deepen an existing place rather than adding a
+fifth; the seed's "one convincing cubic meter" framing suggests depth
+over more landmarks might be the right instinct for this plot's next
+few visits. No seedbox ideas this visit.

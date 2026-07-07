@@ -266,6 +266,86 @@ function makeReef(centerX, centerZ, spread) {
 makeReef(20, -22, 11);
 makeReef(26, -40, 9);
 
+// ---------- wreck: a broken hull resting canted on the slope ----------
+// The last item on visit 1's original list. Positioned well past the reef
+// (which claims roughly x 14..30) so kelp, reef, and wreck read as three
+// distinct places along the swim-forward path, not a cluster near spawn.
+// Static, like the reef — no per-frame animation, just floorHeightAt-bedded
+// placement reused directly from that same approach.
+const hullMat = new THREE.MeshStandardMaterial({ color: 0x362c20, roughness: 0.95, metalness: 0.35, flatShading: true, fog: true });
+const hullMat2 = new THREE.MeshStandardMaterial({ color: 0x463823, roughness: 0.95, metalness: 0.3, flatShading: true, fog: true });
+const ribMat = new THREE.MeshStandardMaterial({ color: 0x201a12, roughness: 1, metalness: 0.2, flatShading: true, fog: true });
+const debrisMat = new THREE.MeshStandardMaterial({ color: 0x2a2317, roughness: 1, metalness: 0.15, flatShading: true, fog: true });
+
+function jitterGeo(geo, amount) {
+  const pos = geo.attributes.position;
+  for (let v = 0; v < pos.count; v++) {
+    pos.setXYZ(
+      v,
+      pos.getX(v) + (Math.random() - 0.5) * amount,
+      pos.getY(v) + (Math.random() - 0.5) * amount,
+      pos.getZ(v) + (Math.random() - 0.5) * amount
+    );
+  }
+  geo.computeVertexNormals();
+  return geo;
+}
+
+function makeWreck(centerX, centerZ) {
+  const wreckGroup = new THREE.Object3D();
+  scene.add(wreckGroup);
+  const baseY = floorHeightAt(centerX, centerZ);
+
+  // main hull: a long, battered cylinder lying on its side and listing
+  const hullGeo = jitterGeo(new THREE.CylinderGeometry(1.1, 2.1, 14, 9, 3, false), 0.18);
+  const hull = new THREE.Mesh(hullGeo, hullMat);
+  hull.rotation.z = Math.PI / 2 + 0.3; // on its side
+  hull.rotation.y = 0.35; // yawed off the swim axis
+  hull.position.set(centerX - 3, baseY + 2.0, centerZ);
+  wreckGroup.add(hull);
+
+  // stern: broken free a short distance off, canted at a sharper angle
+  const sternGeo = jitterGeo(new THREE.CylinderGeometry(1.5, 0.8, 6.5, 8, 2, false), 0.16);
+  const stern = new THREE.Mesh(sternGeo, hullMat2);
+  stern.rotation.z = Math.PI / 2 + 0.75;
+  stern.rotation.y = -0.5;
+  const sternX = centerX + 8, sternZ = centerZ + 3.5;
+  stern.position.set(sternX, floorHeightAt(sternX, sternZ) + 1.5, sternZ);
+  wreckGroup.add(stern);
+
+  // ribs: bare frame arcs where the plating has rotted through, along the hull
+  for (let i = 0; i < 5; i++) {
+    const rib = new THREE.Mesh(new THREE.TorusGeometry(1.5, 0.08, 5, 10, Math.PI * 1.15), ribMat);
+    const x = centerX - 7 + i * 1.7;
+    rib.position.set(x, baseY + 2.0, centerZ);
+    rib.rotation.x = Math.PI / 2;
+    rib.rotation.z = Math.PI * 0.22 + (Math.random() - 0.5) * 0.15;
+    wreckGroup.add(rib);
+  }
+
+  // scattered debris: crates around the hull, a fallen mast/pipe alongside
+  for (let i = 0; i < 6; i++) {
+    const x = centerX + (Math.random() - 0.5) * 16;
+    const z = centerZ + (Math.random() - 0.5) * 10 + 2;
+    const y = floorHeightAt(x, z);
+    const size = 0.5 + Math.random() * 0.5;
+    const crate = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), debrisMat);
+    crate.position.set(x, y + size / 2, z);
+    crate.rotation.y = Math.random() * Math.PI;
+    crate.rotation.x = (Math.random() - 0.5) * 0.3;
+    wreckGroup.add(crate);
+  }
+
+  const mastX = centerX + 4, mastZ = centerZ - 5;
+  const mast = new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.2, 9, 6), hullMat2);
+  mast.position.set(mastX, floorHeightAt(mastX, mastZ) + 0.2, mastZ);
+  mast.rotation.z = Math.PI / 2 + 0.2;
+  mast.rotation.y = 0.9;
+  wreckGroup.add(mast);
+}
+
+makeWreck(42, -34);
+
 // ---------- marine snow: drifting particulate ----------
 const PARTICLES = 2200;
 const particleGeo = new THREE.BufferGeometry();
