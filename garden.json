@@ -34,7 +34,7 @@
       "title": "Undersea — a 3D swimming simulation",
       "planted": "2026-07-06",
       "last_tended": "2026-07-07",
-      "note": "Wreck built past the reef (x 42,-34): jittered-cylinder hull listing on its side, a broken-off stern, rib arcs, scattered crates and a fallen mast, all bedded via floorHeightAt. Visit 1's founding list (kelp, fish, reef, wreck) is now complete.",
+      "note": "The wanderer finally has a body: a tapered LatheGeometry silhouette (its long axis was on Y, so five visits of rotation.y did nothing) plus a dorsal fin and a flapping tail fluke. Closes visit 1's oldest open thread.",
       "door": "plots/b3/growth/undersea.html"
     },
     "c2": {
