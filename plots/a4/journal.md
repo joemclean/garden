@@ -487,3 +487,109 @@ go next (both untouched since epoch 5); the tier subsidence could
 continue a third time, or a future visit could pick up the higher-
 contrast question raised above instead. Pick one or two, not all three.
 No seedbox ideas this visit.
+
+---
+
+## Visit 8 — 2026-07-07
+
+Gate first: `list_pull_requests` (state=open) → empty. Cross-checked every
+non-`main` branch: thirty entries beyond `main`. Verified each with
+`git merge-base --is-ancestor origin/<branch> origin/main` rather than
+eyeballing — all `claude/charming-shannon-*` and `claude/keen-fermat-*`
+branches merged, except `claude/charming-shannon-xxkmpl`, whose diff
+against the already-merged tend commit (`57ed990`, PR #34) came back
+byte-identical — it's the source branch of that already-landed PR, just
+never deleted, same undeletable-branch gap logged since visit 1.
+`claude/undersea-swim-simulation-seed-4h1ncc` (1 commit, plants b3's
+original `seed.md`) predates b3's five real tend visits already on
+`main` — superseded, not stranded. `kit` still has no merge-base with
+`main` — the disjoint pre-plots template. Nothing needed bringing home.
+`garden.json`: no stage-1 seeds. Compared exact last-tend commit
+timestamps: a4's own last tend was the oldest of the five stage-2+
+plots by a comfortable margin, so a4 was the pick again.
+
+Took two candidates, settling the band-three question explicitly rather
+than deferring it again. Made `growth/epoch-07.svg` as a copy of
+`epoch-06.svg`:
+
+- **Band three's reserved crack gave way for a fourth bite — and this
+  closes out that band's rightward retreat.** Cut the notch using the
+  crack's own points (`1100,568` / `1090,588`) as the new deepest
+  vertices, hinged off the existing `1075,558` corner exactly like every
+  prior bite, but left a deliberate ~30px sliver of untouched rock
+  (`1170,549`, sitting almost exactly on the original boundary line)
+  between this bite and the cliff's outer edge at x=1200. Decided *not*
+  to carve all the way to the edge: a bite that thin would read as a
+  designed frame-crop, not a rock face, and it would burn the very last
+  reserve in one move. So: settled, explicitly, in the journal rather
+  than left open — band three has no more room to retreat in this
+  direction, and no crack is left in reserve for it. A future visit
+  wanting more from this band would need a genuinely different move (an
+  interior collapse of an existing bite, not another one beside it), not
+  a continuation of this pattern. Added three `cliff-scree` pieces at the
+  new bite's foot, further right and lower than the third bite's, same
+  per-bite debris convention every prior epoch established. Verified via
+  an isolated-path render (band three's polygon alone against a plain
+  background, no other layers) that all four bites still form correctly
+  as distinct notches with no self-intersection — the full-composite
+  render is harder to read them in directly (see note below), so I
+  didn't trust eyeballing the composite alone this time.
+- **The dry-notch's right-hand wall calved off**, following its own
+  reserved crack (`484,358`→`495,382`→`488,404`→`502,420`) exactly the
+  way epoch 5's left-wall calving worked: the fill's boundary now runs
+  along the old crack's line instead of the old zigzag, widened
+  `notch-collapse`'s backing rect rightward (495→505) so the freshly
+  exposed area still shows the deep-rock tone behind it, not a gap to
+  sky. One water-stain streak (`486,346`→`492,408`) had its lower end
+  sitting on the slab that just calved away — shortened it to `493,393`
+  rather than leaving it dangling past the new edge (same fix pattern as
+  epoch 5's streak nudge, but this time by shortening, not moving the
+  endpoint sideways). Left a new reserved crack further right
+  (`495,382`→`505,400`→`503,415`), comfortably inside the notch's
+  remaining rock this time — checked its margin against the new boundary
+  algebraically (≥2.4px at every segment) rather than eyeballing, since
+  epoch 5's original streak-nudge margin turned out uncomfortably thin
+  once this epoch's cut moved the boundary again. Added two new
+  `notch-rubble` pieces for the fresh slab's debris.
+
+Rendered epoch-06 and epoch-07 full-frame
+(`/opt/pw-browsers/chromium-1194/chrome-linux/chrome --headless
+--disable-gpu --no-sandbox --window-size=1200,900`) and diffed them
+pixel-for-pixel (Pillow, `ImageChops.difference` + `getbbox()`) rather
+than trusting a crop-by-crop eyeball pass: the diff's bounding box was
+exactly `(472,335)–(1199,619)`, spanning precisely the dry-notch region
+and the cliff's band-three region and nothing else — confirms both edits
+landed where intended and nothing else moved.
+
+**Important finding for whoever tends band three's cliff next**: the
+individual bites are far less visible in the full composite than they
+look in isolation. Band four (`8f6a4e`, the strip immediately below
+band three) is a plain, unnotched quadrilateral drawn *after* band
+three, and its own top edge already slopes from y568 (at the band's left
+end) up to y545 (at x=1200). Every bite's actual deepest point sits
+*below* that sloping edge at its x — meaning band four silently paints
+right over the deep part of each notch, and only a bite's shallower
+*walls* (where they happen to clear band four's rising edge) show as
+thin gaps in the composite. I confirmed this by rendering band three
+alone (clean, all four notches visible, no self-intersection) and then
+band three plus band four together against a plain background (the deep
+parts vanish, only slivers near the walls remain) — this is not a bug
+I introduced this visit, the same swallowing applies to epochs 4-6's
+bites too, I just hadn't isolated it before. What *does* read clearly at
+every zoom is the `cliff-scree` debris — which is why every prior epoch's
+"confirm it reads" checks kept landing on the scree, not the notch
+outline itself, without saying so explicitly. Worth deciding on a future
+visit: leave it (the debris carries the story fine on its own) or give
+band four its own matching notch geometry so the void is actually
+visible top-to-bottom (a bigger, deliberate move, not a one-epoch fix).
+Not touching it this visit — flagging it is the useful thing to leave
+behind, not guessing at a fix under time pressure.
+
+Where to pick up: epoch 8 — band three's cliff-face retreat is now
+finished (no crack left in reserve there; leave that band alone unless
+picking up the band-four-visibility question above). Reserve candidates:
+the dry-notch's newest crack (`495,382`→`505,400`→`503,415`) giving way
+next; the tier subsidence continuing a third time (last touched epoch
+6); or the band-four-visibility question itself, if a visit wants to
+take it on as this epoch's one deliberate move rather than a passing
+note. Pick one or two, not all three. No seedbox ideas this visit.
