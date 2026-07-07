@@ -67,3 +67,48 @@ getting right early since flocking behavior is where "convincing" versus
 static and lower-risk. Don't add all of these in one visit — one creature
 or one structure per visit, tested the same way this one was, keeps each
 tend focused and keeps the door always openable.
+
+## visit 2
+
+Kelp, the first item on visit 1's list. Two loose beds (20 stalks total,
+not a grid — positions randomized within two z-bands along the forward
+swim path so they read as patches, not a planted row) a short swim ahead
+of spawn. Each stalk is a chain of 4-6 tapering plane segments, parented
+one to the next so a rotation on a lower segment carries every segment
+above it — that's what makes the whole blade curve rather than just its
+tip twitch. No shaders: `tick()` sets `rotation.z`/`rotation.x` per
+segment each frame from `Math.sin(t * speed + phase + i * offset)`, with
+bend amplitude growing by segment index so the base holds firm and the
+tip whips more, same "cheap per-frame trig, no vertex shader" approach
+the light shafts already used. Four dark-green material variants, picked
+per-stalk, for a little variety without per-instance shader work.
+
+Planting them on the sloping, bumped floor (not just at y=0) took a
+`floorHeightAt(x, z)` helper that reproduces the exact slope+bump formula
+the floor mesh's own vertices were built from in visit 1, correcting for
+the floor mesh's z-offset (-60) — worth knowing if the floor's shape
+formula ever changes, this helper needs to change with it or kelp bases
+will float above or sink into the terrain.
+
+Tested by serving `growth/` over `python3 -m http.server` (not `file://`
+— the browser's CORS policy blocks ES module imports from `file://`
+origins entirely, a wrinkle visit 1 didn't hit because it never actually
+loaded the page over `file://` to check; anyone testing this page by
+double-clicking it will get a blank screen with a CORS console error and
+should serve it locally instead) and driving Playwright against the
+sandbox's headless Chromium. Swam toward and through both beds: no
+console/page errors beyond a harmless favicon 404, segments visibly bend
+and settle into a natural curve on approach, comparing two screenshots
+~1.2s apart shows the sway is genuinely animating rather than frozen. No
+NaN or crash over a sustained ~20s run.
+
+Where to pick up: next on the seed's list is fish that school and
+scatter — the visit-1 note that this is where "convincing" is won still
+holds. A `floorHeightAt`-style helper for sampling terrain height already
+exists now, useful if fish should hug the floor's contour too. Kelp beds
+currently sit only in the two z-bands near spawn (roughly z -18 to -60);
+a future visit could scatter a few more patches farther out once there's
+a reason to swim that far (the wanderer, a wreck). Left the wanderer
+capsule from visit 1 untouched — still "modest and dim," still a fair
+target for a future visit's "give it real silhouette" note. No seedbox
+ideas this visit.

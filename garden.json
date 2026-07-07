@@ -33,8 +33,8 @@
       "stage": 2,
       "title": "Undersea — a 3D swimming simulation",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-06",
-      "note": "First real work: the water itself — fog, light shafts, sloping floor, drifting particulate, drag-based swim controls. Nothing lives there yet.",
+      "last_tended": "2026-07-07",
+      "note": "First life in the water: two kelp beds, chained tapering segments that curve and sway per-frame, planted on the sloping floor's actual contour. Fish are next.",
       "door": "plots/b3/growth/undersea.html"
     },
     "c2": {
