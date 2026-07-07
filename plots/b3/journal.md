@@ -170,3 +170,56 @@ was. If a future visit tunes the boid constants again, tune against the
 standalone Node script first (fast iteration, no browser overhead)
 before verifying in the real page — cut tuning-loop time substantially
 this visit. No seedbox ideas this visit.
+
+## visit 4
+
+The reef — flagged since visit 1 as "lower-risk than flocking," and
+still untouched three visits later. Two clusters (`makeReef`, centered
+at world (20,-22) and (26,-40), each with a `spread` radius) sit on the
+opposite side of the swim-forward path from the kelp beds, which claim
+roughly x -22..9; the reef occupies x 14..30, so a swimmer can't reach
+one without passing well clear of the other.
+
+Each cluster is ~15 irregular rock boulders (icosahedrons with vertices
+jittered per-instance so they don't read as regular solids, two dark
+blue-grey materials alternating) bedded onto the sloped floor via the
+existing `floorHeightAt` helper, plus ~16 coral pieces in five accent
+colors: branching coral (a small fan of cones from one point), boulder
+coral (squat bumpy spheres), and soft coral fans (flat blades, a
+fifth of the count) that sway on the exact same
+`sin(t*speed+phase)*amplitude` per-frame-rotation approach the kelp
+(visit 2) and god-ray shafts (visit 1) already established — no new
+animation mechanism introduced, just the proven one applied to a third
+kind of geometry. No collision was added for any of this, matching how
+kelp and the wanderer already work — swimming through a rock is the
+same kind of clip swimming through a kelp blade already was.
+
+Tested by serving over `python3 -m http.server` and driving the
+pre-installed Chromium (`chromium-1194`, headless, same flags as prior
+visits) via Playwright, `NODE_PATH=/opt/node22/lib/node_modules` for the
+global `playwright` install. Turned toward x+20 and swam in: both
+clusters render with no console/page errors beyond the harmless
+favicon 404 every prior visit has also hit, boulders sit flush on the
+slope (no floating, no sinking into the floor — worth checking first
+since the reef is the first thing besides kelp to use
+`floorHeightAt`), coral colors are legible even through the fog at
+close range, and a sustained ~15s swim past and around both clusters
+showed no NaN, no crash, no frame hitch. Did not add a `window.__debug`
+teleport hook this time (visit 3's approach) — swimming there directly
+was fast enough not to need it, and the note about removing debug-only
+code before shipping still stands if a future visit does add one.
+
+Where to pick up: the wreck is now the only item left on visit 1's
+original list (kelp, fish, reef, wreck) — and, per visit 3's note,
+still lower-risk than the fish were. A wreck could reuse the reef's
+"static structure bedded via `floorHeightAt`" approach directly: a
+simple hull shape (a stretched, broken box or cylinder) with a few
+debris pieces scattered around it, maybe positioned further out past
+the reef (x 30+, or past the wanderer's swim path some other way) so
+the three landmarks — kelp, reef, wreck — read as distinct places
+rather than a cluster of everything near spawn. Beyond the wreck: the
+reef itself could grow a second variety (anemones, a few small darting
+fish distinct from the school) once there's a reason to revisit it, and
+visit 1's note about the wanderer being "modest and dim" rather than
+"enormous" is still open — nobody has given it real silhouette yet. No
+seedbox ideas this visit.

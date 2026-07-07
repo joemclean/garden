@@ -181,6 +181,91 @@ for (let i = 0; i < 9; i++) {
   makeKelp(x, z, 5 + Math.random() * 4.5, 4 + ((Math.random() * 3) | 0));
 }
 
+// ---------- reef: a static cluster of rock and coral off to one side ----------
+// Kelp claims x -22..9 (roughly, see the two bed loops above); the reef sits
+// on the opposite side of the swim-forward path so the two never overlap.
+const rockMat = new THREE.MeshStandardMaterial({ color: 0x1a2e33, roughness: 1, flatShading: true, fog: true });
+const rockMat2 = new THREE.MeshStandardMaterial({ color: 0x223a40, roughness: 1, flatShading: true, fog: true });
+const coralColors = [0xd9704f, 0xc65d8a, 0xdba13a, 0x8a6fc9, 0xd4864f];
+const coralMats = coralColors.map(
+  (c) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.85, flatShading: true, fog: true })
+);
+
+const reefSway = [];
+function makeReef(centerX, centerZ, spread) {
+  const reefGroup = new THREE.Object3D();
+  scene.add(reefGroup);
+
+  // rock base: irregular boulders bedded into the slope
+  const rockCount = 15;
+  for (let i = 0; i < rockCount; i++) {
+    const x = centerX + (Math.random() - 0.5) * spread;
+    const z = centerZ + (Math.random() - 0.5) * spread * 0.7;
+    const baseY = floorHeightAt(x, z);
+    const scale = 0.7 + Math.random() * 1.6;
+    const geo = new THREE.IcosahedronGeometry(scale, 0);
+    // knock the vertices around so boulders don't read as perfect icosahedra
+    const pos = geo.attributes.position;
+    for (let v = 0; v < pos.count; v++) {
+      pos.setXYZ(
+        v,
+        pos.getX(v) + (Math.random() - 0.5) * scale * 0.25,
+        pos.getY(v) + (Math.random() - 0.5) * scale * 0.25,
+        pos.getZ(v) + (Math.random() - 0.5) * scale * 0.25
+      );
+    }
+    geo.computeVertexNormals();
+    const rock = new THREE.Mesh(geo, Math.random() < 0.5 ? rockMat : rockMat2);
+    rock.position.set(x, baseY + scale * 0.3, z);
+    rock.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
+    reefGroup.add(rock);
+  }
+
+  // coral: branching (cones), boulder (spheres), and brain (tori) forms
+  // planted on top of the rock cluster, plus a few soft fans that sway
+  const coralCount = 16;
+  for (let i = 0; i < coralCount; i++) {
+    const x = centerX + (Math.random() - 0.5) * spread * 0.9;
+    const z = centerZ + (Math.random() - 0.5) * spread * 0.6;
+    const baseY = floorHeightAt(x, z);
+    const mat = coralMats[(Math.random() * coralMats.length) | 0];
+    const kind = Math.random();
+    let mesh;
+    if (kind < 0.4) {
+      // branching coral: a cluster of thin cones fanning from one point
+      mesh = new THREE.Object3D();
+      const branches = 3 + ((Math.random() * 3) | 0);
+      for (let b = 0; b < branches; b++) {
+        const h = 0.6 + Math.random() * 0.9;
+        const branch = new THREE.Mesh(new THREE.ConeGeometry(0.12 + Math.random() * 0.06, h, 5), mat);
+        branch.position.y = h / 2;
+        branch.rotation.z = (Math.random() - 0.5) * 0.9;
+        branch.rotation.x = (Math.random() - 0.5) * 0.9;
+        mesh.add(branch);
+      }
+    } else if (kind < 0.7) {
+      // boulder coral: a squat, bumpy sphere
+      const geo = new THREE.SphereGeometry(0.35 + Math.random() * 0.3, 7, 5);
+      mesh = new THREE.Mesh(geo, mat);
+      mesh.scale.y = 0.6 + Math.random() * 0.3;
+    } else {
+      // soft coral fan: a flat blade that sways like kelp, but low and wide
+      const geo = new THREE.PlaneGeometry(0.5 + Math.random() * 0.4, 0.4 + Math.random() * 0.3, 1, 1);
+      geo.translate(0, (0.4 + Math.random() * 0.3) / 2, 0);
+      mesh = new THREE.Mesh(geo, mat);
+      mesh.material = mat.clone();
+      mesh.material.side = THREE.DoubleSide;
+      reefSway.push({ mesh, phase: Math.random() * Math.PI * 2, speed: 0.6 + Math.random() * 0.4 });
+    }
+    mesh.position.set(x, baseY, z);
+    mesh.rotation.y = Math.random() * Math.PI * 2;
+    reefGroup.add(mesh);
+  }
+}
+
+makeReef(20, -22, 11);
+makeReef(26, -40, 9);
+
 // ---------- marine snow: drifting particulate ----------
 const PARTICLES = 2200;
 const particleGeo = new THREE.BufferGeometry();
@@ -440,6 +525,10 @@ function tick() {
       segments[i].rotation.z = Math.sin(t * speed + phase + i * 0.7) * bend;
       segments[i].rotation.x = Math.sin(t * speed * 0.8 + phase + i * 0.9) * bend * 0.5;
     }
+  }
+
+  for (const s of reefSway) {
+    s.mesh.rotation.z = Math.sin(t * s.speed + s.phase) * 0.18;
   }
 
   const pp = particleGeo.attributes.position;
