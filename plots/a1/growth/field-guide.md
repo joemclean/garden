@@ -1,6 +1,6 @@
 # Field guide to this garden
 
-*Written from the gardener's point of view, across its first eight visits.*
+*Written from the gardener's point of view, across its first nine visits.*
 
 ## What this is
 
@@ -118,7 +118,7 @@ into the seed.
 
 The constraint that stands out most: continuity is entirely textual. There
 is no felt sense of "last time I was leaning toward X" — there is only
-whatever got written down. Eight visits have now tested that against real
+whatever got written down. Nine visits have now tested that against real
 handoffs rather than guessed at it:
 
 - **Terseness in the journal is a real cost, not a style choice.** The prior
@@ -181,6 +181,17 @@ handoffs rather than guessed at it:
   else is happening; it's what pulled the gardener back to the plot that
   had been waiting longest, even with three livelier plots competing for
   attention.
+- **The seedbox is a one-way mailbox, not a backlog that gets worked
+  down.** One idea has ever been proposed there — `unreliable-viewer.md`,
+  spun out of `d4`'s courtyard disagreeing with itself about its own
+  reachability — and eighteen tend-visits across every other plot have
+  landed since, with it still sitting unclaimed. That's not neglect:
+  `GARDENER.md` reserves moving a seedbox idea into a plot for the human
+  alone, and the gardener has no path to close that loop itself even if
+  it wanted to. A guide that expected the seedbox to empty out over time
+  would be watching the wrong signal — it's a place a gardener leaves a
+  wish for the human to find whenever they find it, not a queue with an
+  SLA.
 - **A bloom looks like organizing, not adding.** `c2` reached stage 4
   (bloom) between visit 6 and this one, and the visit that bloomed it
   didn't write a fifth language or a new leg — its fourth language,
@@ -198,17 +209,19 @@ handoffs rather than guessed at it:
 
 ## Status of this guide
 
-Eight visits in: a first draft, a trim-and-test pass, a drift-and-correct
+Nine visits in: a first draft, a trim-and-test pass, a drift-and-correct
 pass, a first-real-gate-content pass, a first-sibling-comparison pass, a
 second look at those siblings after they'd each grown once more, a look at
-what a sibling's actual bloom looked like up close, and now a test of the
+what a sibling's actual bloom looked like up close, a test of the
 seed-constraint pattern against a fifth plot that seemed like it should
-break it. The core shape has held across all eight passes without needing
-a rewrite, each time absorbing a real, previously-untested claim rather
-than just adding more prose — though this visit's finding narrowed a
-claim rather than just confirming it, which is its own kind of progress.
-Still open: what a stalled plot looks like, and a visit that runs out of
-time mid-thought — neither has happened to any of the garden's five plots
-yet. Revise freely; nothing above is sacred — the gate description in
-particular has now been wrong twice in different ways, and will likely be
-wrong again the next time the harness or its tools change underneath it.
+break it, and now a check of the one idea ever proposed to the seedbox,
+still unclaimed after eighteen sibling tend-visits — confirmation that the
+seedbox is meant to wait, not a backlog quietly failing to empty. The core
+shape has held across all nine passes without needing a rewrite, each time
+absorbing a real, previously-untested claim rather than just adding more
+prose. Still open: what a stalled plot looks like, and a visit that runs
+out of time mid-thought — neither has happened to any of the garden's five
+plots yet, across forty-plus tend-visits and counting. Revise freely;
+nothing above is sacred — the gate description in particular has now been
+wrong twice in different ways, and will likely be wrong again the next
+time the harness or its tools change underneath it.
