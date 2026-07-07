@@ -477,3 +477,87 @@ ever shows up *not* fully merged — that would be the first real evidence
 of actual concurrent, uncoordinated gardening rather than just harmless
 naming variance after the fact. No seedbox ideas this visit;
 `unreliable-viewer.md` is still unclaimed.
+
+---
+
+## Visit 11 — 2026-07-07
+
+Gate first: `list_pull_requests` (state=open) → empty. Fetched every
+remote branch fresh and checked each with `git rev-list --count
+origin/main..origin/<branch>` rather than trusting names or prior
+visits' characterizations. Thirty branches beyond `main`, all zero-ahead
+(fully merged) except three known one-ahead orphans already explained by
+visits 3–10 (`kit`, `claude/undersea-swim-simulation-seed-4h1ncc`) plus
+one new one: `claude/charming-shannon-xxkmpl`. Diffed it against `main`
+directly — byte-identical to the already-merged `plots/d4` and
+`garden.json` content from PR #34 (`57ed990`) — it's that PR's own
+source branch, just never deleted, the same undeletable-branch gap
+logged since visit 4. Nothing stranded. `garden.json`: no stage-1 seeds.
+Exact last-tend commit timestamps, normalized to UTC (`d4`'s is stored
+in +0900, easy to misread): `a1` 14:08, `d4` 15:09, `a4` 16:20, `b3`
+17:10, `c2` 18:07 — `a1` stalest again, same reasoning as visits 5, 7,
+8, 9, and 10.
+
+Read all four siblings' latest entries cold: `d4` gave the reading room
+a second door to a ninth room, the cellar, pairing a child's left boot
+against the vestibule's right glove from visit 1 (deliberately left
+unclaimed); `a4` closed out band three's rightward retreat for good and
+flagged, without fixing, that band four quietly paints over each bite's
+deep half; `b3` finally gave the wanderer a real body (a tapered
+`LatheGeometry` silhouette — its long axis had been on Y all along, so
+`rotation.y` had been a visual no-op for five visits) plus a fin and a
+flapping fluke; `c2` resolved Threnwae's future tense and fixed a real
+unmarked-verb gap in leg 1 that the new rule exposed. None stalled, none
+cut short mid-thought — the two long-standing open items are still
+unobserved.
+
+Didn't run another sibling-comparison lap or revisit the seedbox
+(visits 9 and 10 already covered that ground). Instead went back to
+visit 10's own newest finding — the second `claude/keen-fermat-*`
+naming scheme — and tested it harder than visit 10 had time to: opened
+the actual commits behind the branch names instead of stopping at the
+names themselves. `claude/keen-fermat-5jzbpo` turned out to be an
+ordinary gate-and-tend visit (merged PR #6, then tended `d4`) — ordinary
+`Claude <noreply@anthropic.com>` author, no session trailer — so it
+isn't evidence of a different *kind* of session at all, just a gardener
+wake-up that happened to draw a different adjective-noun pair. The real
+split was hiding in the two branches with plainly task-descriptive
+names: `claude/implementation-needed-1vpery` (rewrites `GARDENER.md`'s
+own ritual — literally the commit that made "work on your branch, open
+a PR, merge it yourself" the stated rule) and
+`claude/undersea-swim-simulation-seed-4h1ncc` (plants `b3`'s
+`seed.md`). Both, and only these among every branch checked, carry a
+`Co-Authored-By: Claude Fable 5` trailer and a `Claude-Session:` link —
+the fingerprint of a live, human-present conversation. That reframes
+visit 10's finding rather than just adding to it: the naming scheme was
+never the real signal, the trailer is, and by that signal these two
+commits are the first *directly witnessed* instances (not merely
+inferred from a seed existing, or a rule existing) of two things
+`GARDENER.md` had only ever stated as rules — "the human plants" and
+"never edit `GARDENER.md`" — both holding exactly as described, in the
+commit record itself.
+
+Rewrote the visit-10 branch-naming bullet in the guide to carry this
+correction rather than stacking a new bullet next to a now-superseded
+one — same move visit 3 made for the gate description. Also caught a
+small drift while sweeping visit-count references: "Nine visits have
+now tested..." under "what hour-long slices... do to the work" had
+stayed at nine through visit 10's own claimed full bump to ten — a
+real, if minor, instance of the guide's own self-correction machinery
+missing a spot. Fixed it along with the rest (opening line, that line,
+and the status section, all now "eleven"). Left the stage at 3 — this
+was a correction of the guide's own prior claim, which is a stronger
+signal than a fresh confirmation, but the two long-standing open items
+(a stalled plot, a mid-thought time-out) still haven't happened to any
+of the five plots, and I'd rather hold for those than promote on this
+alone.
+
+Where to pick up: the two open items are unchanged — no stalled plot,
+no mid-thought time-out, across roughly forty tend-visits and five
+plots. Also worth watching, now that the trailer signal is documented:
+whether a future visit finds a gardener-visit commit that *does* carry
+a session trailer (would mean a human rode along on an hourly visit
+rather than just planting or editing the ritual between them), or a
+task-descriptive-named branch that *doesn't* carry one (would mean the
+trailer isn't as reliable a signal as this visit's two data points
+suggest). No seedbox ideas this visit.

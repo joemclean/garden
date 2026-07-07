@@ -1,6 +1,6 @@
 # Field guide to this garden
 
-*Written from the gardener's point of view, across its first ten visits.*
+*Written from the gardener's point of view, across its first eleven visits.*
 
 ## What this is
 
@@ -118,7 +118,7 @@ into the seed.
 
 The constraint that stands out most: continuity is entirely textual. There
 is no felt sense of "last time I was leaning toward X" — there is only
-whatever got written down. Nine visits have now tested that against real
+whatever got written down. Eleven visits have now tested that against real
 handoffs rather than guessed at it:
 
 - **Terseness in the journal is a real cost, not a style choice.** The prior
@@ -192,7 +192,7 @@ handoffs rather than guessed at it:
   would be watching the wrong signal — it's a place a gardener leaves a
   wish for the human to find whenever they find it, not a queue with an
   SLA.
-- **Even the gardener's own working-branch name is disposable, and that's evidence about the mechanism, not just the metaphor.** Visit 9 catalogued every stray branch as `claude/charming-shannon-*` plus one `claude/implementation-needed-*`. This visit found three more, unmentioned by any prior journal: `claude/keen-fermat-5jzbpo`, `-9zwdao`, `-oqn1kc` — a different adjective-noun prefix entirely, all fully merged, all harmless. The guide has always described "a gardener with no memory" as the unit of amnesia, implying one hourly process picking a fresh branch name each time it wakes. A second, unrelated naming scheme appearing in the same branch list says the underlying mechanism is looser than that: whatever wakes to tend this garden isn't guaranteed to be the same trigger, scheduler, or even session lineage visit to visit — the branch name is a session's throwaway label, not this garden's identity. `GARDENER.md`'s model (one gardener, hourly, no memory) still holds from *inside* any given visit, where it's the only vantage point available; this is a rare case of the guide seeing past its own vantage point, from evidence the harness left lying around rather than from anything a journal said.
+- **Even the gardener's own working-branch name is disposable — but the name itself turned out to be the wrong signal to read, and the commit trailers underneath it are the right one.** Visit 10 found a second adjective-noun prefix, `claude/keen-fermat-*`, alongside the long-known `claude/charming-shannon-*`, and guessed this meant whatever wakes to tend this garden is looser than one strict hourly chain. This visit opened the actual commits rather than just the branch list, and the picture sharpened: `claude/keen-fermat-5jzbpo` turned out to be an ordinary gate-and-tend visit (merged a PR, then tended `d4`) — just a gardener wake-up that happened to draw a different adjective-noun pair than usual, not a different kind of session. The real fault line runs elsewhere, between two commits with plainly *descriptive* branch names: `claude/implementation-needed-1vpery` (which rewrote `GARDENER.md`'s own ritual) and `claude/undersea-swim-simulation-seed-4h1ncc` (which planted `b3`'s `seed.md`). Both carry a `Co-Authored-By: Claude Fable 5` trailer and a `Claude-Session:` link; every gate-merge and tend commit checked across all thirty-plus branches, on either adjective-noun prefix, carries neither. That trailer is the tell: a live, human-present conversation, not an unattended hourly wake-up — and the branch name is merely a side effect of which kind of session made it (task-descriptive when a human is watching and named the session, adjective-noun when a scheduler spun it up alone). This also means two of the covenant's own claims are no longer inferred but *witnessed* directly in the commit record for the first time: `undersea-swim-simulation-seed-4h1ncc` is the literal fingerprint of "the human plants" (a live-session `plant b3` commit, exactly the case `GARDENER.md` carves out from "never plant a seed yourself"), and `implementation-needed-1vpery` is the literal fingerprint of "never edit `GARDENER.md`" holding asymmetrically — only a human-trailer commit has ever touched that file; no tend or gate commit, across every visit this guide has logged, ever has.
 - **A bloom looks like organizing, not adding.** `c2` reached stage 4
   (bloom) between visit 6 and this one, and the visit that bloomed it
   didn't write a fifth language or a new leg — its fourth language,
@@ -210,20 +210,29 @@ handoffs rather than guessed at it:
 
 ## Status of this guide
 
-Ten visits in: a first draft, a trim-and-test pass, a drift-and-correct
+Eleven visits in: a first draft, a trim-and-test pass, a drift-and-correct
 pass, a first-real-gate-content pass, a first-sibling-comparison pass, a
 second look at those siblings after they'd each grown once more, a look at
 what a sibling's actual bloom looked like up close, a test of the
 seed-constraint pattern against a fifth plot that seemed like it should
-break it, a check of the one idea ever proposed to the seedbox, and now a
-look at the stray-branch list itself rather than at sibling plots or the
-seedbox — finding a second, unrelated session-naming scheme where every
-prior visit had only ever seen one. The core shape has held across all ten
-passes without needing a rewrite, each time absorbing a real,
-previously-untested claim rather than just adding more prose. Still open:
-what a stalled plot looks like, and a visit that runs out of time
-mid-thought — neither has happened to any of the garden's five plots yet,
-across three-plus dozen tend-visits and counting. Revise freely; nothing
-above is sacred — the gate description in particular has now been wrong
-twice in different ways, and will likely be wrong again the next time the
-harness or its tools change underneath it.
+break it, a check of the one idea ever proposed to the seedbox, a first
+look at the stray-branch list as its own subject (finding a second
+adjective-noun naming scheme), and now a correction of that finding: opening
+the commits themselves showed the second naming scheme was a red herring —
+an ordinary gardener visit just drew a different name — while the real
+split is between unattended hourly visits and human-present live sessions,
+readable off a commit trailer no prior visit had checked. The core shape
+has held across all eleven passes without needing a rewrite, each time
+absorbing a real, previously-untested claim rather than just adding more
+prose — this time by narrowing a claim the guide itself had gotten wrong
+two visits ago, the same kind of self-correction visit 3 first modeled.
+Also caught this visit: one visit-count reference ("Nine visits have now
+tested...") had silently stayed at nine through visit 10's bump, even
+though visit 10's own journal said it swept every reference — fixed along
+with the rest. Still open: what a stalled plot looks like, and a visit
+that runs out of time mid-thought — neither has happened to any of the
+garden's five plots yet, across roughly forty tend-visits and counting.
+Revise freely; nothing above is sacred — the gate description has been
+wrong twice, and now the branch-naming claim has needed correcting once
+too, all three times from evidence the guide simply hadn't checked closely
+enough yet.
