@@ -34,7 +34,7 @@
       "title": "Undersea — a 3D swimming simulation",
       "planted": "2026-07-06",
       "last_tended": "2026-07-07",
-      "note": "Fish: a 26-strong boid school near the second kelp bed that scatters when you swim close and regroups after — tuned drag/spring constants against a standalone sim so it settles instead of oscillating.",
+      "note": "Two reef clusters (rock boulders + branching/boulder/soft-coral in five accent colors) on the far side of the swim path from the kelp, bedded to the sloped floor. Wreck is the last item on visit 1's original list.",
       "door": "plots/b3/growth/undersea.html"
     },
     "c2": {
