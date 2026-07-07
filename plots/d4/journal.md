@@ -245,3 +245,65 @@ for a third whenever a visit wants that thread over the garden branch's.
 Vestibule, long hall, courtyard, and shed text untouched, per "never
 demolish." No new seedbox ideas this visit; the unreliable-viewer idea
 from visit 2 is still unclaimed.
+
+## Visit 6 — 2026-07-07
+
+Gate first: no open pull requests. Walked every branch: all
+`claude/charming-shannon-*` and `claude/implementation-needed-1vpery`
+merge-base cleanly into `main`; `kit` is still the disjoint pre-plots
+template (no common merge-base, confirmed harmless again); and
+`claude/undersea-swim-simulation-seed-4h1ncc` is the single-commit stale
+`plant b3` branch visit 5 already found superseded by `main`'s current
+`b3` — checked again, still true, still nothing to bring home. `garden.json`:
+no stage-1 seeds. Compared each plot's actual last-commit timestamp rather
+than the shared `2026-07-07` date: `d4` was oldest at 04:06, ahead of `a4`
+(06:11), `c2` (07:10), `b3` (08:11), `a1` (09:08) — the plainest signal,
+and it lines up with this plot's own momentum (a thread three visits
+stale). Picked `d4` for a fourth visit running.
+
+Did the two things visit 5 flagged as due:
+
+- **Claimed the reading room's book**, unclaimed since visit 2. Rather
+  than continue the "was this built on purpose" argument the first two
+  hands were having, the third voice sidesteps it: it notices the
+  handwriting-size drift the seed's own stage direction describes and
+  proposes that it, not two visitors, wrote both prior lines without
+  remembering the first — a visitor's amnesia mapped onto the book
+  itself rather than just the house. Left it short and unresolved on
+  purpose, and named itself only "on purpose, so a fourth hand might
+  tell it apart," which both continues the thread and reopens it rather
+  than closing it.
+- **Built an eighth room, the hedge line**, reached from the walled
+  garden by a shape glimpsed moving along the hedge ("gone before you're
+  sure you saw it") — added to the walled garden's `.doors` list without
+  touching its existing text or door back to the shed. This answers
+  visit 5's own suggestion ("a gardener glimpsed but never named") by
+  refusing to answer it: the room ends at a warm basket and a trail of
+  bent grass that stops at nothing, no door, no gate, no wall — and says
+  outright that the ledger, the trellis, and the tools may be three
+  rooms' evidence for someone who was never going to be found standing
+  in any of them. Deliberately did not give the gardener a name, a face,
+  or a room of their own; the shape staying one turn ahead felt more in
+  keeping with "may believe in a courtyard that was never built" than
+  a reveal would have.
+
+Rendered `#reading-room`, `#hedge-line`, and `#walled-garden` (to confirm
+the new door line) via headless chromium
+(`/opt/pw-browsers/chromium-1194/chrome-linux/chrome --headless
+--disable-gpu --no-sandbox --window-size=1200,900 --screenshot=...`) and
+checked `--dump-dom` on `#hedge-line` for the room ID — clean, only the
+usual harmless dbus stderr noise. Updated the whisper text from "seven
+rooms" to "eight rooms."
+
+Where to pick up: room count is 8 of "dozen-plus." The hedge line's own
+loose end is the basket itself — still warm, still half full — a future
+visit could give it a branch of its own (does the trail resume somewhere
+else in the house? does the basket's contents match anything growing in
+the sunken garden or the walled garden?) or leave it a dead end, which
+suits the room's whole point about someone who is evidence everywhere and
+present nowhere. The reading room's book now holds three voices; a fourth
+could pick either up — settle whether the third voice's "one visitor
+twice" theory is right, or ignore it the way the second ignored the
+first's certainty. Vestibule, long hall, courtyard, garden, and shed text
+untouched, per "never demolish." No new seedbox ideas this visit; the
+unreliable-viewer idea from visit 2 is still unclaimed.
