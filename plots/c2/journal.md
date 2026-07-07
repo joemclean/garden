@@ -423,3 +423,55 @@ either way since it didn't touch that thread) — worth a future visit
 either declaring it settled or, if a sixth language somehow revives it,
 noting that as a real surprise rather than a foregone one. No seedbox
 ideas this visit.
+
+## Visit 8 — 2026-07-07
+
+Gate first: `list_pull_requests` (state=open) came back empty. Checked
+each plot's actual last-tend commit timestamp: `c2`'s was 13:09 UTC, the
+stalest by a clear margin (`a1` 14:08, `d4` 15:09, `a4` 16:20, `b3`
+17:10) and no stage-1 seeds waiting in `garden.json`. Picked `c2`.
+
+Took the last option visit 7 left on Threnwae's own terms: resolved
+whether Threnwae has a future tense, inside `lang-1-threnwae.md`. It
+doesn't, and structurally can't — *-orin* (witnessed) and *-adel* (told)
+both require the claim to already exist somewhere before you can take
+it, which the not-yet-happened never offers. Only *-ummel* (dreamed,
+sourceless) is left standing, and it fits without strain: a future
+claim has no witness by definition, so the grammar was never going to
+need a fourth suffix. This didn't feel like inventing a new rule so much
+as noticing the three-door system only ever had room for one answer
+here.
+
+While re-reading leg 1 to see whether this changed anything I found an
+actual gap, not just an implication: the closing line's "it will want...
+to arrive to" had shipped since visit 1 with no certainty suffix at
+all — a real hole, since Threnwae's own rule is that an unmarked finite
+verb isn't a sentence. Visit 1 couldn't have caught it; future tense
+wasn't formalized yet. Fixed it to *-ummel*, per the new rule, and added
+a revision note explaining why. The satisfying knock-on: this means
+every *velk*-ing in the diary — every time someone asks the bridge to
+promise it will hold — was always implicitly *-ummel*-marked, whether
+the leg wrote the suffix or not. The fix makes explicit something the
+grammar required from the very first crossing.
+
+Updated `index.md`'s reading-order overview with both the future-tense
+resolution and the leg-1 fix. Did not touch legs 2 through 5, and did
+not invent a sixth language — this was purely closing the one
+Threnwae-only thread left open since visit 1, plus the concrete bug it
+surfaced. Stage stays at 4.
+
+Where to pick up: no thread remains open on Threnwae's own grammar —
+every question visit 1 left hanging (the verb "to keep," plural
+address, future tense) is now resolved inside `lang-1-threnwae.md`
+itself. The seed's next honest choices are a sixth language (Naveth's
+flagged thread — a marked shape for addressing the departed, someone
+once *-sol* and now unreachable — is the clearest unclaimed seed) or
+finally treating the sourceless-knowledge progression as settled: three
+languages running (Threnwae's suffix, Ivren's strained borrowing,
+Ossane's compound) then two running with no new device at all (Mereth's
+reuse, Naveth's total absence). A future visit could declare that
+settled outright, or let a sixth language test it one more time before
+deciding. Worth also re-reading legs 2-5 sometime with the future-tense
+rule in hand — none were checked this visit for their own unmarked
+future-tense verbs, only leg 1's known gap. No seedbox ideas this
+visit.

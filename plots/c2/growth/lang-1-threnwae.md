@@ -86,6 +86,26 @@ is one more kind of thing without a family tree, whenever you can't be
 sure it's made of just one relation" — and Threnwae already had a word
 for that category before anyone thought to ask about crowds.
 
-**Left for later visits:** whether Threnwae has a future tense at all,
-or only ever speaks of the not-yet as a kind of *-ummel* — untouched,
-still fully open.
+**Future tense (resolved):** Threnwae has no dedicated future tense —
+and could not have one without breaking its own certainty-marking. The
+three suffixes each name a door the knowledge came through: *-orin*
+requires having witnessed the thing, which the not-yet-happened cannot
+offer; *-adel* requires someone else already possessing the claim to
+hand it to you, which is equally impossible before the fact. Only
+*-ummel* is left, and it fits without strain — a future claim is by
+definition sourceless (no one has witnessed tomorrow), held whole, and
+felt as certain regardless. So the not-yet is not a special case
+Threnwae had to make room for; it was always going to be a kind of
+*-ummel*, the same suffix used for the seam-reading and the third
+river-mood, because the grammar never distinguished "no traceable
+origin because it hasn't happened" from "no traceable origin because I
+can't remember learning it." Both are just *-ummel*.
+
+This lands hardest on *velk*: asking a bridge to hold is asking it to
+make a future claim, and a future claim can only ever be *-ummel* — so
+every *velk*-ing was already, silently, a *-ummel*-marked promise. The
+diary's own "I have never once been certain, and I have never once
+been wrong, and I no longer think these two facts are related" is a
+Threnwae speaker rediscovering, from the outside, what her own grammar
+already knew: certainty about the not-yet was never sourced any
+differently than a dream.
