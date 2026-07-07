@@ -41,8 +41,8 @@
       "stage": 4,
       "title": "The mistranslation engine",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-06",
-      "note": "Fourth language (Mereth, no singular self) + leg 4 from leg 3; added a reading-order index. Gap-word pattern broke honestly: Mereth reused its own grammar instead of coining a new word.",
+      "last_tended": "2026-07-07",
+      "note": "First revision: formalized Threnwae's verb 'to keep' and revised leg 1's opening to match, showing the threnaya fossil was always losing more than a shifting self.",
       "door": "plots/c2/growth/index.md"
     }
   }

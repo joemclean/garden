@@ -4,12 +4,15 @@
 the bridge itself, so the speaker names herself* threnaya *— the-one-
 who-keeps*
 
-The-one-who-keeps keeps you the way her mother kept a kettle: on,
-always-orin, whether or not anyone was coming for tea. Six years now,
-witnessed. Below, the river has three moods, and the-one-who-keeps has
-learned all three-orin, though which of them is honest she cannot say —
-that would need a fourth mood, one for telling the truth about the other
-three, and the river has never shown her that one.
+Threnaya *thren-esh*-orin you the way her mother *thren-esh*-orin a
+kettle: on, always, whether or not anyone was coming for tea — Threnwae
+has no shorter way to put it, since bare *thren-* isn't a sentence yet;
+a keeping that noticed whether anyone was coming would already have
+stopped being *thren-* and become some other verb this diary never
+needed. Six years now, witnessed. Below, the river has three moods, and
+threnaya has learned all three-orin, though which of them is honest she
+cannot say — that would need a fourth mood, one for telling the truth
+about the other three, and the river has never shown her that one.
 
 In flood it says nothing and takes what it wants-orin. In drought it
 complains, all afternoon, about a debt somebody owes it-adel — she was
@@ -54,3 +57,16 @@ sorted into witnessed, told, or dreamed, and some of them didn't sort
 cleanly. *Velk* absorbs "promise the bridge will hold" whole, and in
 doing so makes strange what English left smooth: that a bridge cannot
 promise anything back, and everyone asks it to anyway.
+
+**Revision note (visit 5):** the opening line was revised once the verb
+"to keep" got formalized — *thren-* turns out to refuse conditional care
+grammatically, not just tonally, so the diary's "on, always, whether or
+not anyone is coming for tea" isn't color the translator added, it's the
+one thing the verb is structurally incapable of leaving out. Nothing
+else in the leg changed; the certainty-suffix choices and *velk* stand
+as they were. Worth naming for the chain as a whole: every later leg's
+*threnaya* is a job title stripped of this — Ivren, Ossane, and Mereth
+all inherit the name but none of their grammars can inherit the
+indifference-to-use *thren-* bakes in, so the fossil was always losing
+more than "a shifting self," it was losing this too, from the very
+first crossing.

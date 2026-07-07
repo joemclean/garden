@@ -19,8 +19,13 @@ source. Read in order:
    size before the sentence can end.
 
 Watch *threnaya*, the bridge-keeper's self-naming, cross all four —
-misheard fresh each time, never restored. Watch the recurring need for
-a word to hold knowledge with no traceable source: a suffix, then a
+misheard fresh each time, never restored. Leg 1's revision (visit 5)
+pins down exactly what that first crossing already cost: *threnaya* is
+Threnwae's verb "to keep" wearing an agentive suffix, and that verb is
+grammatically incapable of conditional care — every later language
+inherits the name as a bare job title, none inherits the indifference-
+to-use the root itself imposes. Watch also the recurring need for a
+word to hold knowledge with no traceable source: a suffix, then a
 strained borrowing, then a purpose-built compound, then — in Mereth —
 no new word at all, just the same collective-sizing mechanic run to its
 widest setting. That progression is its own small chain, riding inside
