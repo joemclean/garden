@@ -1,0 +1,264 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <title>Aveth Terraces — epoch 4</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#241a3d"/>
+      <stop offset="35%" stop-color="#4a2f52"/>
+      <stop offset="62%" stop-color="#a85a4e"/>
+      <stop offset="80%" stop-color="#e2934f"/>
+      <stop offset="100%" stop-color="#f6c56b"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff2cc" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#ffdd99" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ffdd99" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#bfe6f0"/>
+      <stop offset="100%" stop-color="#2f7089"/>
+    </linearGradient>
+    <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9fd0dc"/>
+      <stop offset="100%" stop-color="#255870"/>
+    </linearGradient>
+    <linearGradient id="falls" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#cdeaf2"/>
+    </linearGradient>
+    <linearGradient id="farmountain" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5c5a7a"/>
+      <stop offset="100%" stop-color="#8b7a8a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- sky -->
+  <rect id="sky-bg" x="0" y="0" width="1200" height="560" fill="url(#sky)"/>
+  <circle id="sun-disc" cx="620" cy="330" r="140" fill="url(#sun)"/>
+  <circle cx="620" cy="330" r="34" fill="#fff6e0"/>
+
+  <!-- distant birds -->
+  <g id="birds" stroke="#2e2436" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M 180 160 q 10 -12 20 0 q 10 -12 20 0"/>
+    <path d="M 250 190 q 8 -10 16 0 q 8 -10 16 0"/>
+    <path d="M 940 140 q 9 -10 18 0 q 9 -10 18 0"/>
+  </g>
+
+  <!-- far mountains -->
+  <g id="far-mountains" fill="url(#farmountain)" opacity="0.75">
+    <path d="M0,380 L120,270 L230,360 L340,240 L470,370 L600,260 L740,380 L860,280 L980,370 L1120,250 L1200,360 L1200,420 L0,420 Z"/>
+  </g>
+
+  <!-- valley floor base, so no gap between terrace edges and the river ever shows sky -->
+  <rect id="valley-floor" x="0" y="400" width="920" height="400" fill="#4f5c33"/>
+
+  <!-- ================= CLIFF (right side, exposed strata core sample) ================= -->
+  <g id="cliff-strata">
+    <path d="M 940 420 L 1200 380 L 1200 760 L 900 760 Z" fill="#6e5642"/>
+    <path d="M 940 420 L 1200 380 L 1200 430 L 935 465 Z" fill="#8f6a4e"/>
+    <path d="M 935 465 L 1200 430 L 1200 480 L 928 512 Z" fill="#a8785a"/>
+    <!-- epoch 4: a chunk calved out of the band's own body, where last epoch's cracks finally gave way -->
+    <path d="M 928 512 L 1200 480 L 1200 545 L 998 555 L 989 522 L 950 526 L 941 561 L 922 568 Z" fill="#c9a878"/>
+    <path d="M 922 568 L 1200 545 L 1200 610 L 916 622 Z" fill="#8f6a4e"/>
+    <path d="M 916 622 L 1200 610 L 1200 680 L 910 686 Z" fill="#6e5642"/>
+    <path d="M 910 686 L 1200 680 L 1200 800 L 900 800 Z" fill="#4a382a"/>
+    <!-- vegetation skin, eroded back to a last tuft in epoch 2: band one is bare, band two now exposed too -->
+    <path id="cliff-vegetation" d="M 1150 420 Q 1175 424 1195 421 Q 1198 419 1200 421 L 1200 434 Q 1178 431 1157 433 Q 1149 432 1150 425 Z" fill="#5b7a3a" opacity="0.9"/>
+    <!-- scree: loose rubble fallen from the strip the vegetation just gave up, now cascading down to band three's top edge -->
+    <g id="cliff-scree" fill="#5a4636" opacity="0.85">
+      <path d="M 942 458 L 952 450 L 962 460 L 950 466 Z"/>
+      <path d="M 965 468 L 974 461 L 984 470 L 972 476 Z"/>
+      <path d="M 990 462 L 998 456 L 1006 464 L 996 470 Z"/>
+      <path d="M 955 480 L 963 474 L 971 482 L 961 487 Z"/>
+      <!-- epoch 2: the fall keeps going, new rubble lower down the same slide path -->
+      <path d="M 948 500 L 957 493 L 966 502 L 955 508 Z"/>
+      <path d="M 972 508 L 980 501 L 989 510 L 978 516 Z"/>
+      <path d="M 935 515 L 944 509 L 952 517 L 942 522 Z"/>
+      <!-- epoch 3: band three's exposed top edge starts shedding on its own -->
+      <path d="M 950 530 L 959 524 L 968 532 L 957 538 Z"/>
+      <path d="M 928 538 L 936 532 L 944 540 L 934 546 Z"/>
+      <path d="M 965 545 L 973 539 L 982 547 L 971 553 Z"/>
+      <!-- epoch 4: the calved chunk itself, broken into pieces settled at the notch's own foot -->
+      <path d="M 942 566 L 958 559 L 972 568 L 956 578 Z"/>
+      <path d="M 968 573 L 984 565 L 998 575 L 981 585 Z"/>
+      <path d="M 926 574 L 940 568 L 950 578 L 936 586 Z"/>
+    </g>
+    <!-- epoch 3's cracks became epoch 4's notch (below); this new one marks the next weak seam,
+         reaching out from the fresh edge toward ground not yet broken -->
+    <g id="band-three-cracks" stroke="#8f6a4e" stroke-width="1.5" opacity="0.6" fill="none">
+      <path d="M 998 540 L 1020 552 L 1012 570"/>
+    </g>
+  </g>
+
+  <!-- ================= VALLEY TERRACES ================= -->
+  <g id="terraces">
+    <!-- left flank, descending toward the river -->
+    <path d="M0,430 L260,410 L300,460 L20,480 Z" fill="#7c8f45"/>
+    <path d="M20,480 L300,460 L340,510 L40,530 Z" fill="#93a24e"/>
+    <path d="M40,530 L340,510 L375,560 L60,582 Z" fill="#b4923b"/>
+    <path d="M60,582 L375,560 L405,610 L80,634 Z" fill="#7c8f45"/>
+    <path d="M80,634 L405,610 L430,660 L100,686 Z" fill="#a68a3f"/>
+    <path d="M100,686 L430,660 L455,710 L120,740 Z" fill="#8a9b4e"/>
+    <!-- epoch 1: top edge unchanged (still shared with the tier above); the tier bulges
+         and subsides on its river-facing side, past where the wall used to hold it.
+         epoch 4: the bulge sinks further and pulls inward on itself — down and left,
+         never further out toward the river, per the settled delta rule -->
+    <path d="M120,740 L455,710 L485,795 L450,785 L150,780 Z" fill="#5c6f34"/>
+
+    <!-- right flank, descending toward the river -->
+    <path d="M900,415 L640,400 L600,450 L900,462 Z" fill="#93a24e"/>
+    <path d="M900,462 L600,450 L565,498 L900,512 Z" fill="#7c8f45"/>
+    <path d="M900,512 L565,498 L535,548 L900,562 Z" fill="#b4923b"/>
+    <path d="M900,562 L535,548 L505,598 L900,616 Z" fill="#8a9b4e"/>
+    <path d="M900,616 L505,598 L480,648 L900,672 Z" fill="#7c8f45"/>
+    <path d="M900,672 L480,648 L460,700 L900,726 Z" fill="#a68a3f"/>
+    <path d="M900,726 L460,700 L450,760 L900,760 Z" fill="#6f8c3e"/>
+
+    <!-- retaining walls: thin stone lines along each tier edge -->
+    <g id="retaining-walls" stroke="#7d746a" stroke-width="4" fill="none" opacity="0.85">
+      <path d="M20,480 L300,460"/>
+      <path d="M40,530 L340,510"/>
+      <path d="M60,582 L375,560"/>
+      <path d="M80,634 L405,610"/>
+      <path d="M100,686 L430,660"/>
+      <!-- epoch 1: this wall crumbled in the middle; two stubs survive at either end -->
+      <path d="M120,740 L260,727"/>
+      <path d="M420,713 L455,710"/>
+      <path d="M900,462 L600,450"/>
+      <path d="M900,512 L565,498"/>
+      <path d="M900,562 L535,548"/>
+      <path d="M900,616 L505,598"/>
+      <path d="M900,672 L480,648"/>
+      <path d="M900,726 L460,700"/>
+    </g>
+
+    <!-- epoch 1: fallen stone from the collapsed wall, tumbled toward the bulge below -->
+    <g id="wall-rubble" fill="#7d746a" opacity="0.9">
+      <rect x="290" y="726" width="10" height="7" transform="rotate(15 295 729)"/>
+      <rect x="325" y="740" width="9" height="6" transform="rotate(-8 329 743)"/>
+      <rect x="355" y="754" width="11" height="7" transform="rotate(20 360 757)"/>
+      <rect x="310" y="750" width="8" height="6" transform="rotate(-25 314 753)"/>
+      <!-- epoch 4: the bulge sank further and dragged this stone down and inward with it -->
+      <rect x="270" y="775" width="9" height="6" transform="rotate(10 274 778)"/>
+    </g>
+  </g>
+
+  <!-- ================= WATERFALL + RIVER ================= -->
+  <!-- epoch 2: the knickpoint has migrated upstream, higher and narrower; the old lower
+       reach it used to carve is now a dry-notch scar (below), fed only by a thin seep -->
+  <g id="waterfall">
+    <path d="M 472 250 L 498 250 L 508 340 L 462 340 Z" fill="url(#falls)"/>
+    <g stroke="#eaf7fb" stroke-width="2" opacity="0.7">
+      <path d="M 477 258 L 471 335"/>
+      <path d="M 486 258 L 484 337"/>
+      <path d="M 495 258 L 499 335"/>
+    </g>
+    <ellipse cx="484" cy="348" rx="32" ry="9" fill="#eaf7fb" opacity="0.8"/>
+  </g>
+
+  <g id="dry-notch">
+    <!-- epoch 3: the seep has dried out completely — no more water reaches the river from here;
+         the river's own head at y=420 needs no edit, it was never fed by this geometry -->
+    <path d="M 460 340 L 510 340 L 515 420 L 455 420 Z" fill="#7d6a52"/>
+    <g stroke="#cbb896" stroke-width="2" opacity="0.5">
+      <path d="M 470 346 L 465 412"/>
+      <path d="M 486 346 L 484 415"/>
+      <path d="M 500 346 L 503 412"/>
+    </g>
+    <!-- true abandoned channel: dry cracks fanning out where the old streambed baked and split -->
+    <g id="notch-cracks" stroke="#5f4e3a" stroke-width="1.2" opacity="0.65" fill="none">
+      <path d="M 484 358 L 472 378 L 480 398 L 468 414"/>
+      <path d="M 484 358 L 495 382 L 488 404 L 498 416"/>
+      <path d="M 478 390 L 490 393"/>
+    </g>
+  </g>
+
+  <path id="river" d="M 470 420
+    C 440 470, 500 500, 470 550
+    C 445 590, 505 620, 478 660
+    C 460 690, 500 715, 480 760
+    L 550 760
+    C 560 715, 525 690, 545 660
+    C 565 620, 515 590, 535 550
+    C 555 500, 505 470, 530 420 Z"
+    fill="url(#water)"/>
+
+  <!-- delta silt fan where river meets the lake -->
+  <g id="delta" opacity="0.9">
+    <path d="M 460 745 L 550 745 L 590 780 L 420 780 Z" fill="#c9b27a"/>
+  </g>
+
+  <!-- lake at the valley floor -->
+  <ellipse id="lake" cx="600" cy="778" rx="260" ry="42" fill="url(#lake)"/>
+  <ellipse cx="600" cy="778" rx="260" ry="42" fill="none" stroke="#1f4a5c" stroke-width="1" opacity="0.4"/>
+
+  <!-- reflection of village + shrine, broken by rippling stroke -->
+  <g id="reflection" opacity="0.35">
+    <g transform="translate(0,1472) scale(1,-1)">
+      <use href="#village-group"/>
+      <use href="#shrine-group"/>
+    </g>
+  </g>
+
+  <!-- ================= TREES ================= -->
+  <g id="trees" fill="#3f5a2a">
+    <g id="tree" transform="translate(150,455)"><rect x="-3" y="0" width="6" height="14" fill="#4a3520"/><circle cy="-6" r="13"/></g>
+    <use href="#tree" x="90" y="20"/>
+    <use href="#tree" x="200" y="45"/>
+    <use href="#tree" x="30" y="70"/>
+    <use href="#tree" x="260" y="90"/>
+    <use href="#tree" x="120" y="115"/>
+    <use href="#tree" x="10" y="150"/>
+    <use href="#tree" x="290" y="150"/>
+    <use href="#tree" x="180" y="180"/>
+    <use href="#tree" x="60" y="205"/>
+    <use href="#tree" x="330" y="215"/>
+    <use href="#tree" x="230" y="245"/>
+    <use href="#tree" x="100" y="270"/>
+    <use href="#tree" x="700" y="10"/>
+    <use href="#tree" x="770" y="35"/>
+    <use href="#tree" x="640" y="55"/>
+    <use href="#tree" x="810" y="80"/>
+    <use href="#tree" x="690" y="105"/>
+    <use href="#tree" x="610" y="135"/>
+    <use href="#tree" x="750" y="155"/>
+    <use href="#tree" x="670" y="185"/>
+    <use href="#tree" x="800" y="210"/>
+    <use href="#tree" x="620" y="235"/>
+    <use href="#tree" x="740" y="260"/>
+  </g>
+
+  <!-- ================= VILLAGE ================= -->
+  <g id="village-group">
+    <g id="village" fill="#c98a4b">
+      <g id="house"><rect x="-14" y="-16" width="28" height="16"/><polygon points="-17,-16 0,-32 17,-16" fill="#4a3728"/><rect x="-4" y="-9" width="6" height="9" fill="#2e2018"/></g>
+      <use href="#house" x="330" y="560"/>
+      <use href="#house" x="365" y="565"/>
+      <use href="#house" x="300" y="590"/>
+      <use href="#house" x="345" y="610"/>
+      <use href="#house" x="390" y="600"/>
+      <use href="#house" x="315" y="640"/>
+      <use href="#house" x="370" y="655"/>
+      <use href="#house" x="410" y="640"/>
+      <use href="#house" x="290" y="670"/>
+      <use href="#house" x="345" y="695"/>
+      <use href="#house" x="400" y="690"/>
+      <use href="#house" x="320" y="720"/>
+      <use href="#house" x="380" y="725"/>
+    </g>
+    <!-- a wisp of hearth smoke, the only soft thing in the whole scene -->
+    <path id="smoke" d="M 330 540 Q 340 520 330 505 Q 320 490 332 472" stroke="#e7e2d8" stroke-width="3" fill="none" opacity="0.55" stroke-linecap="round"/>
+  </g>
+
+  <!-- ================= SHRINE, alone on the ridge ================= -->
+  <g id="shrine-group">
+    <g id="shrine" transform="translate(760,395)">
+      <rect x="-22" y="-10" width="44" height="30" fill="#2e2018"/>
+      <polygon points="-28,-10 0,-38 28,-10" fill="#1c130d"/>
+      <rect x="-3" y="-38" width="6" height="20" fill="#3a281a"/>
+      <path d="M 3 -38 L 30 -46 L 30 -40 L 3 -32 Z" fill="#b1432e"/>
+    </g>
+  </g>
+
+  <!-- foreground vignette -->
+  <rect x="0" y="0" width="1200" height="800" fill="url(#sky)" opacity="0"/>
+</svg>

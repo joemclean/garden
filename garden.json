@@ -25,9 +25,9 @@
       "stage": 2,
       "title": "Erosion",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-06",
-      "note": "epoch-03: seep dried to a true abandoned channel, band three began shedding scree of its own.",
-      "door": "plots/a4/growth/epoch-03.svg"
+      "last_tended": "2026-07-07",
+      "note": "epoch-04: band three's cracks calved a real chunk from its silhouette, the left-flank tier sank further down and inward.",
+      "door": "plots/a4/growth/epoch-04.svg"
     },
     "b3": {
       "stage": 2,
