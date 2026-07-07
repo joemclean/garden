@@ -39,3 +39,13 @@ same mechanic run to its widest setting, then — in Naveth — no mechanic
 left to run at all, just flat unmarked statement. That progression is
 its own small chain, riding inside the larger one, and it has now gone
 two languages running without producing anything new.
+
+Threnwae's own plural-address question — left open since visit 1,
+gestured at by Mereth's all-collective grammar and Naveth's *-fal*
+without either actually answering *Threnwae's* version of it — is
+resolved as of visit 7, inside Threnwae's own sketch: a crowd of
+confirmed single relation takes the ordinary relation-word collectively;
+a crowd of mixed or unverifiable relation falls back to the post-name,
+the same fallback Threnwae already used for a bridge, a river, anything
+without a family tree. No new mechanism, just the old one noticing it
+already covered this case.

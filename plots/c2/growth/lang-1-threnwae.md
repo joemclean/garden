@@ -60,7 +60,32 @@ This is the same mechanic as *velk* wearing a different face: both
 words refuse to let "for someone" or "on this occasion" attach to an act
 of tending. A Threnwae speaker cannot describe conditional care at all.
 
-**Left for later visits:** plural address (does a crowd get one relation-
-word, or does the speaker have to average across all of them?), and
-whether Threnwae has a future tense at all, or only ever speaks of the
-not-yet as a kind of *-ummel*.
+**Plural address (resolved):** the relation-naming was only ever built
+for a single listener — *nemet* to a child, *sowen* to a parent,
+*threnaya* to anything without a family tree. A crowd breaks the
+mechanic the moment it isn't made of one relation: a village gathered
+to ask a favor might hold the speaker's own child, her own mother, and
+forty people she owes nothing in particular, all listening at once, and
+Threnwae has no relation-word that means "child-to-me and stranger-to-
+me simultaneously," nor any rule for averaging a mixed audience into
+one name.
+
+The answer doesn't need a new mechanism, only the one Threnwae already
+has: a speaker facing an audience whose relation to her isn't uniform
+treats that audience the way she'd treat a bridge or a river — as
+something without one family-tree relation to name herself against —
+and falls back to her post-name. A crowd of *confirmed single* relation
+(an address to "my children," all of them actually her children) still
+takes the ordinary relation-word, used collectively with no separate
+plural marker; Threnwae speakers rely on context to know whether
+*nemet* names one child or a room of them. The fallback only engages
+when the crowd's relation to the speaker is mixed, unknown, or
+unverifiable — which, for most speakers facing most crowds, is most of
+the time. The rule was never "average across the crowd"; it's "a crowd
+is one more kind of thing without a family tree, whenever you can't be
+sure it's made of just one relation" — and Threnwae already had a word
+for that category before anyone thought to ask about crowds.
+
+**Left for later visits:** whether Threnwae has a future tense at all,
+or only ever speaks of the not-yet as a kind of *-ummel* — untouched,
+still fully open.

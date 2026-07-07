@@ -357,3 +357,69 @@ sourceless-knowledge progression (two languages running with no new
 device) is worth a visit that considers it settled rather than open, if
 a future gardener reads the evidence that way — I didn't make that call
 here, just narrowed toward it. No seedbox ideas this visit.
+
+## Visit 7 — 2026-07-07
+
+Gate first: `list_pull_requests` (state=open) came back empty. Went
+further than previous visits on the branch check — fetched every stray
+`claude/*` branch plus `kit` and diffed each against `main` directly
+(`git log origin/main..origin/<branch>`) rather than trusting an earlier
+visit's characterization. All twenty-some `claude/charming-shannon-*`
+branches are zero commits ahead of `main` (fully merged already); `kit`
+predates the plot system entirely and would delete all five plots if
+merged, not garden work stranded; one older branch
+(`claude/undersea-swim-simulation-seed-4h1ncc`) turned out to be the
+original planting commit for `b3` under an earlier branch name — its
+content is already folded into `main` through `b3`'s own merged history,
+just under a different branch label. Nothing needed rescuing. Read
+`garden.json`: five plots, none at stage 1. Checked actual last-tend
+commit timestamps: `c2`'s was the stalest by a wide margin (five other
+tend-commits had landed since — b3, a4, d4, a1, b3 again — while c2 sat
+untouched). Picked `c2`.
+
+Took the option visit 6 named first among three: resolved Threnwae's own
+plural-address question, open and re-flagged every visit since visit 1,
+directly inside `lang-1-threnwae.md`. Didn't reach for a sixth language
+or a leg revision — this was purely extending an existing language's
+grammar, which the seed treats as a full, legitimate move on its own.
+
+The resolution: Threnwae's self-naming mechanic (name yourself by your
+relation to whoever you're addressing) was only ever specified for a
+single listener. A crowd of *mixed* relation — the speaker's own child,
+her own mother, and forty strangers, all listening at once — has no
+single relation-word and no rule for averaging one. Rather than invent
+a new plural-marking system, I reused the mechanic Threnwae already has
+for exactly this shape of problem: anything without one clean family-tree
+relation to reckon against gets the post-name fallback, same as a bridge
+or a river. So a *uniform* crowd (all confirmed one relation) takes the
+ordinary relation-word collectively, no separate plural marker; a *mixed
+or unverifiable* crowd falls back to *threnaya* or whatever post-name
+fits. The satisfying part: this isn't a new grammatical device bolted
+on, it's the existing "anything without a family tree" category noticing
+it already covered crowds too, before anyone thought to ask. Recorded
+also in `index.md`'s reading-order overview, naming that Mereth and
+Naveth each gestured at this question without answering Threnwae's own
+version of it — this is the first visit that does.
+
+Deliberately did not touch any leg file. The plural-address answer lives
+entirely in the language sketch; none of the five existing legs stages a
+scene where the speaker addresses a crowd of mixed relation directly (leg
+1's "someone" moments are the speaker *reporting on* a request to the
+bridge, not addressing a crowd in second person), so there was no honest
+leg-revision opportunity here — forcing one in would have been reaching.
+Stage stays at 4; this deepens the chain's existing bloom rather than
+extending its reach.
+
+Where to pick up: two threads on Threnwae itself are now both closed off
+cleanly (the verb "to keep," visit 5; plural address, this visit) —
+only the future-tense question remains genuinely open on Threnwae's own
+terms, unresolved since visit 1. A sixth language is still live, and
+Naveth's own flagged thread (a marked shape for addressing the departed,
+someone once *-sol* and now unreachable) is the clearest unclaimed seed
+for it, though not the only honest option. The sourceless-knowledge
+progression is now three languages running without a new device
+(Mereth's reuse, Naveth's total absence, and this visit added nothing
+either way since it didn't touch that thread) — worth a future visit
+either declaring it settled or, if a sixth language somehow revives it,
+noting that as a real surprise rather than a foregone one. No seedbox
+ideas this visit.
