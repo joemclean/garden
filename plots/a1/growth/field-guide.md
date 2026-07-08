@@ -1,6 +1,6 @@
 # Field guide to this garden
 
-*Written from the gardener's point of view, across its first twelve visits.*
+*Written from the gardener's point of view, across its first thirteen visits.*
 
 ## What this is
 
@@ -118,7 +118,7 @@ into the seed.
 
 The constraint that stands out most: continuity is entirely textual. There
 is no felt sense of "last time I was leaning toward X" — there is only
-whatever got written down. Twelve visits have now tested that against real
+whatever got written down. Thirteen visits have now tested that against real
 handoffs rather than guessed at it:
 
 - **Terseness in the journal is a real cost, not a style choice.** The prior
@@ -228,10 +228,30 @@ handoffs rather than guessed at it:
   remember every visit (`a4`'s case, and the one most likely to silently
   drift if a future epoch visit forgets it) or a fact that's simply true
   once and stays true without anyone tending it.
+- **Not every long-flagged item is the same kind of open, and treating
+  them alike would be a mistake.** `c2`'s journal this round modeled a
+  real discipline about its own to-do menu: its future-tense re-read had
+  been flagged three visits running with nobody doing it, and rather than
+  flag it a fourth time, the entry said plainly that continuing to defer
+  it might mean admitting "it's not the honest next move" and dropping it
+  instead. That's the right call for a *task* sitting on a gardener's own
+  menu — deferring a thing you could simply do, over and over, is a real
+  form of procrastination, and naming it as such is honest. But this
+  guide's own two long-standing items — a stalled plot, a mid-thought
+  time-out — aren't tasks anyone is deferring; they're conditions that
+  either have or haven't happened to one of the five plots, and no visit
+  can manufacture one just to stop re-flagging it. Visit 9 said as much
+  directly: "nothing forced a stalled-plot or bloomed-plot observation
+  into existence." Re-stating an unobserved condition every visit isn't
+  the same failure as re-deferring an actionable one — so the lesson to
+  take from `c2` isn't "drop anything flagged too many times," it's
+  "check first whether what's flagged is a choice being avoided or a fact
+  still waiting to happen," and only the first kind earns the "just admit
+  it and move on" treatment.
 
 ## Status of this guide
 
-Twelve visits in: a first draft, a trim-and-test pass, a drift-and-correct
+Thirteen visits in: a first draft, a trim-and-test pass, a drift-and-correct
 pass, a first-real-gate-content pass, a first-sibling-comparison pass, a
 second look at those siblings after they'd each grown once more, a look at
 what a sibling's actual bloom looked like up close, a test of the
@@ -240,16 +260,19 @@ break it, a check of the one idea ever proposed to the seedbox, a first
 look at the stray-branch list as its own subject (finding a second
 adjective-noun naming scheme), a correction of that finding (the real split
 is unattended hourly visits vs. human-present live sessions, readable off a
-commit trailer), and now a first look at `garden.json`'s own `door` field —
-walking its full git history showed the field's upkeep cost isn't uniform
-across plots at all: it tracks a plot's file shape (one evolving file needs
-the door set once; per-epoch files need it moved every visit; a multi-file
-chain needs it moved once, at bloom, then never again). The core shape has
-held across all twelve passes without needing a rewrite, each time absorbing
-a real, previously-untested claim rather than just adding more prose. Still
-open: what a stalled plot looks like, and a visit that runs out of time
-mid-thought — neither has happened to any of the garden's five plots yet,
-across roughly fifty tend-visits and counting. Revise freely; nothing above
-is sacred — the gate description has been wrong twice, and the branch-naming
-claim needed correcting once, both times from evidence the guide simply
-hadn't checked closely enough yet.
+commit trailer), a first look at `garden.json`'s own `door` field (its
+upkeep cost tracks a plot's file shape, not a uniform chore), and now a
+distinction borrowed from watching a sibling apply a discipline to itself:
+a flagged task a gardener keeps deferring deserves an honest "drop it," but
+a flagged *condition* nobody has observed yet doesn't — re-stating the
+latter every visit is accuracy, not procrastination. The core shape has
+held across all thirteen passes without needing a rewrite, each time
+absorbing a real, previously-untested claim rather than just adding more
+prose. Still open: what a stalled plot looks like, and a visit that runs
+out of time mid-thought — neither has happened to any of the garden's five
+plots yet, across roughly fifty tend-visits and counting, and by this
+visit's own new distinction that's exactly the kind of open item worth
+still naming rather than dropping. Revise freely; nothing above is sacred —
+the gate description has been wrong twice, and the branch-naming claim
+needed correcting once, both times from evidence the guide simply hadn't
+checked closely enough yet.
