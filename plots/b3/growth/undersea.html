@@ -431,35 +431,80 @@ function makeFishMesh(mat) {
   return group;
 }
 
+// Boid schools share this one update, parameterized per school so a calmer,
+// tighter-radius school (the wreck's sheltering fish, added this visit) can
+// reuse the same flocking math as the open-water school without duplicating it.
+function makeSchool({ count, home, homeRadius, homeSpring, homePullBeyond, perception, sepDist, fleeRadius, maxSpeed, minSpeed, drag, colors }) {
+  const mats = colors.map(
+    (c) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.7, metalness: 0.05, flatShading: true, fog: true })
+  );
+  const fish = [];
+  for (let i = 0; i < count; i++) {
+    const mat = mats[i % mats.length];
+    const mesh = makeFishMesh(mat);
+    const pos = home.clone().add(
+      new THREE.Vector3((Math.random() - 0.5) * homeRadius, (Math.random() - 0.5) * homeRadius * 0.6, (Math.random() - 0.5) * homeRadius)
+    );
+    mesh.position.copy(pos);
+    scene.add(mesh);
+    fish.push({
+      mesh,
+      pos,
+      vel: new THREE.Vector3((Math.random() - 0.5), 0, (Math.random() - 0.5)).setLength(minSpeed),
+      wagPhase: Math.random() * Math.PI * 2,
+      wagSpeed: 6 + Math.random() * 2,
+    });
+  }
+  return { fish, home, homeRadius, homeSpring, homePullBeyond, perception, sepDist, fleeRadius, maxSpeed, minSpeed, drag };
+}
+
 const FISH_COUNT = 26;
 const schoolHome = new THREE.Vector3(-15, 0, -48);
 schoolHome.y = floorHeightAt(schoolHome.x, schoolHome.z) + 4.5;
-const HOME_RADIUS = 5;
-const HOME_SPRING = 0.3; // gentle, always-on pull toward home while inside the radius
-const HOME_PULL_BEYOND = 1.8; // stronger correction once scattered past the radius
-const PERCEPTION = 3.2;
-const SEPARATION_DIST = 1.0;
-const FLEE_RADIUS = 6.5;
-const FISH_MAX_SPEED = 2.6;
-const FISH_DRAG = 1.4; // lets velocity respond to changing forces instead of coasting/oscillating
+const mainSchool = makeSchool({
+  count: FISH_COUNT,
+  home: schoolHome,
+  homeRadius: 5,
+  homeSpring: 0.3, // gentle, always-on pull toward home while inside the radius
+  homePullBeyond: 1.8, // stronger correction once scattered past the radius
+  perception: 3.2,
+  sepDist: 1.0,
+  fleeRadius: 6.5,
+  maxSpeed: 2.6,
+  minSpeed: 0.6,
+  drag: 1.4, // lets velocity respond to changing forces instead of coasting/oscillating
+  colors: fishColors,
+});
 
-const fish = [];
-for (let i = 0; i < FISH_COUNT; i++) {
-  const mat = fishMats[i % fishMats.length];
-  const mesh = makeFishMesh(mat);
-  const pos = schoolHome.clone().add(
-    new THREE.Vector3((Math.random() - 0.5) * HOME_RADIUS, (Math.random() - 0.5) * 3, (Math.random() - 0.5) * HOME_RADIUS)
-  );
-  mesh.position.copy(pos);
-  scene.add(mesh);
-  fish.push({
-    mesh,
-    pos,
-    vel: new THREE.Vector3((Math.random() - 0.5), 0, (Math.random() - 0.5)).setLength(0.6),
-    wagPhase: Math.random() * Math.PI * 2,
-    wagSpeed: 6 + Math.random() * 2,
-  });
-}
+// sheltering fish: a small, calmer school living in the real gap between the
+// main hull and the stern section it broke off from (visit 5's flagged
+// interior-life option, the one visit 7 left for this school; visit 7 took
+// bioluminescence instead). The hull's cylinder is solid-capped — visit 7
+// deliberately never cut holes in it, so anything placed inside its volume
+// (as a first attempt here placed the school, at the ribs' own x-line) is
+// fully hidden by opaque geometry from every angle, unlike the glow motes,
+// whose tiny additive-blended spheres are small enough to peek through the
+// rare grazing sliver where a mote's own position clips just past the hull's
+// silhouette. A fish body is too large for that same trick, so the school
+// instead lives in the genuinely open water between the two wreck pieces —
+// still reads as sheltering in the wreck's structure, but is actually seeable.
+const shelterColors = [0xe8d27a, 0xd9a35a, 0xc98f6b];
+const shelterHome = new THREE.Vector3(45.5, 0, -32);
+shelterHome.y = floorHeightAt(45.5, -32) + 1.7; // open water in the hull/stern gap
+const shelterSchool = makeSchool({
+  count: 9,
+  home: shelterHome,
+  homeRadius: 1.8, // tight — the hull's interior, not open water
+  homeSpring: 0.5, // stronger always-on pull: shelter fish don't drift far from cover
+  homePullBeyond: 3.2,
+  perception: 1.8,
+  sepDist: 0.35,
+  fleeRadius: 3.2, // still dart aside if the swimmer pushes into the hull
+  maxSpeed: 1.5, // calmer than the open-water school
+  minSpeed: 0.25,
+  drag: 2.0,
+  colors: shelterColors,
+});
 
 const _sep = new THREE.Vector3();
 const _cohere = new THREE.Vector3();
@@ -468,7 +513,8 @@ const _flee = new THREE.Vector3();
 const _toHome = new THREE.Vector3();
 const _steer = new THREE.Vector3();
 
-function updateFish(dt, t, swimmerPos) {
+function updateSchool(school, dt, t, swimmerPos) {
+  const { fish, home, homeRadius, homeSpring, homePullBeyond, perception, sepDist, fleeRadius, maxSpeed, minSpeed, drag } = school;
   for (let i = 0; i < fish.length; i++) {
     const f = fish[i];
     _sep.set(0, 0, 0);
@@ -480,11 +526,11 @@ function updateFish(dt, t, swimmerPos) {
       if (i === j) continue;
       const o = fish[j];
       const d = f.pos.distanceTo(o.pos);
-      if (d < PERCEPTION) {
+      if (d < perception) {
         _cohere.add(o.pos);
         _align.add(o.vel);
         neighbors++;
-        if (d < SEPARATION_DIST && d > 1e-4) {
+        if (d < sepDist && d > 1e-4) {
           _steer.copy(f.pos).sub(o.pos).divideScalar(d * d);
           _sep.add(_steer);
         }
@@ -501,24 +547,24 @@ function updateFish(dt, t, swimmerPos) {
 
     // scatter: flee the swimmer when it's close, harder the closer it gets
     const distToSwimmer = f.pos.distanceTo(swimmerPos);
-    if (distToSwimmer < FLEE_RADIUS) {
+    if (distToSwimmer < fleeRadius) {
       _flee.copy(f.pos).sub(swimmerPos);
-      const strength = (1 - distToSwimmer / FLEE_RADIUS) * 9;
+      const strength = (1 - distToSwimmer / fleeRadius) * 9;
       _flee.setLength(strength);
       _steer.add(_flee);
     }
 
     // always drift gently toward the home volume; pull harder once scattered past it
-    _toHome.copy(schoolHome).sub(f.pos);
+    _toHome.copy(home).sub(f.pos);
     const homeDist = _toHome.length();
-    const homePull = homeDist > HOME_RADIUS ? (homeDist - HOME_RADIUS) * HOME_PULL_BEYOND : homeDist * HOME_SPRING;
+    const homePull = homeDist > homeRadius ? (homeDist - homeRadius) * homePullBeyond : homeDist * homeSpring;
     _toHome.setLength(homePull);
     _steer.add(_toHome);
 
-    _steer.addScaledVector(f.vel, -FISH_DRAG);
+    _steer.addScaledVector(f.vel, -drag);
     f.vel.addScaledVector(_steer, dt);
-    if (f.vel.length() > FISH_MAX_SPEED) f.vel.setLength(FISH_MAX_SPEED);
-    else if (f.vel.length() < 0.4) f.vel.setLength(0.4); // fish don't idle in place
+    if (f.vel.length() > maxSpeed) f.vel.setLength(maxSpeed);
+    else if (f.vel.length() < minSpeed) f.vel.setLength(minSpeed); // fish don't idle in place
 
     f.pos.addScaledVector(f.vel, dt);
 
@@ -712,7 +758,8 @@ function tick() {
   }
   pp.needsUpdate = true;
 
-  updateFish(dt, t, yaw.position);
+  updateSchool(mainSchool, dt, t, yaw.position);
+  updateSchool(shelterSchool, dt, t, yaw.position);
 
   for (const m of glowMotes) {
     const pulse = Math.sin(t * m.speed + m.phase) * 0.5 + 0.5;
