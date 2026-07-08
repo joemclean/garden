@@ -73,10 +73,13 @@ inventing an artificial home for it.
 
 **Left for later visits:** whether *wen-annoth* is really a satisfying
 answer to the sourceless-knowledge question or a dodge dressed as an
-answer — a later visit revisiting this file with distance is the real
-test, the way a1's field guide got tested by rereading. Also:
-Threnwae's still-open plural-address question is *not* answered by
-Mereth just because Mereth is built entirely from collectives — Mereth
-answers a different question (who is speaking) rather than Threnwae's
-(how do you address a crowd), and conflating the two would be a false
-resolution. Left genuinely open, same as before.
+answer is resolved as of visit 11 — see `index.md`: it's neither, because
+Mereth's defining axis (who else could be speaking this) has no natural
+bearing on a claim's traceability in the first place, so reusing
+*wen-annoth* isn't a dodge of a question Mereth was ever structurally on
+the hook to answer fresh. Also: Threnwae's still-open plural-address
+question is *not* answered by Mereth just because Mereth is built
+entirely from collectives — Mereth answers a different question (who is
+speaking) rather than Threnwae's (how do you address a crowd), and
+conflating the two would be a false resolution. Left genuinely open,
+same as before.

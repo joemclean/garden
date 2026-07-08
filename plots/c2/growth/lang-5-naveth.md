@@ -67,9 +67,12 @@ word for sourceless knowledge, and Mereth (visit 4) didn't coin a fourth
 one but at least reused its own live mechanism (*wen-annoth*) to cover
 the gap. Naveth has no mechanism there to reuse at all — sourceless
 claims just surface as flat, unmarked statement, the same as any other
-fact. Worth watching whether a sixth language restores some version of
-this marking or confirms that, once lost twice in a row (Mereth's
-non-coinage, now Naveth's total absence), it isn't coming back.
+fact. Resolved as of visit 11 (see `index.md`): this isn't decline, it's
+scope — Naveth's defining axis (who is this pointed at) has no more
+natural bearing on a claim's traceability than Mereth's did, so its
+absence here is what the axis predicts, not a fading pattern. A sixth
+language reviving the marking would still be a genuine surprise worth
+naming as one.
 
 **Answering an old thread, carefully:** this is the first language in
 the chain to actually take up the plural-address question Threnwae's

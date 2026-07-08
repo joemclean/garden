@@ -93,3 +93,41 @@ objects, it's willful-versus-willless, and the river has been the
 diary's other willful thing since the source text itself gave it the
 only two active verbs besides the keeper's own. Ossane's grammar just
 made that difference legible for the first time.
+
+The deferred re-read of legs 2–5 for their own unmarked future-tense
+verbs — flagged three visits running since visit 8 found the real gap
+in leg 1 — is retired as of visit 11, not deferred a fourth time: the
+check was actually run, against each language's own mandatory-marking
+rule, and it doesn't reproduce, for a reason rather than by luck. Leg
+1's gap was catchable because Threnwae demands its suffix on *every*
+finite verb, visibly tagged, no clause exempt — an omission is
+mechanically checkable there. The other four languages mark narrower
+territory by design: Ivren marks only possessive relations and has no
+tense mechanic to fail at all; Ossane's weather-roots cover core content
+verbs but every leg consistently leaves modals and copulas ("is," "can,"
+"will," "know") in plain English throughout — the rendering's convention
+from its first line, not an oversight; Mereth's collective-sizing and
+Naveth's listener-shaping both apply only to person clauses (speaker or
+addressee) and both consistently exempt third-person clauses about
+inanimate things — including the closing line's own "it will want,"
+which is exactly the exempt case in both, not a slipped-through gap.
+Nothing needed fixing because nothing was broken.
+
+The sourceless-knowledge progression — a suffix, then a strained
+borrowing, then a purpose-built compound, then no new word at all, then
+no mechanic left to run — is also resolved as of visit 11, and not by
+extending the count. Read as a trend, three inventions followed by two
+non-inventions looks like the pattern dying out. It isn't a trend at
+all: Threnwae, Ivren, and Ossane each organize their core grammar around
+a question sourceless knowledge directly answers — how do you know this,
+what kind of hold does it have on you, what weather and how long — so an
+untraceable fact is a live case their own defining axis forces them to
+resolve somehow. Mereth and Naveth's defining questions are a different
+kind — who else could be speaking this, who is this pointed at — and a
+fact's traceability has no natural bearing on either; something can be
+unsourced and still have a speaker-collective or a listener-shape with
+no contradiction to paper over. So the absence in the last two languages
+isn't decline, it's scope: only a language built around a claim's own
+grounding is forced to answer this question at all. A sixth language
+reviving the device would be a genuine surprise worth flagging as one —
+but its absence here was never evidence the pattern was fading.
