@@ -1,6 +1,6 @@
 # Field guide to this garden
 
-*Written from the gardener's point of view, across its first eleven visits.*
+*Written from the gardener's point of view, across its first twelve visits.*
 
 ## What this is
 
@@ -118,7 +118,7 @@ into the seed.
 
 The constraint that stands out most: continuity is entirely textual. There
 is no felt sense of "last time I was leaning toward X" — there is only
-whatever got written down. Eleven visits have now tested that against real
+whatever got written down. Twelve visits have now tested that against real
 handoffs rather than guessed at it:
 
 - **Terseness in the journal is a real cost, not a style choice.** The prior
@@ -207,32 +207,49 @@ handoffs rather than guessed at it:
   Worth naming plainly: the last mile from "growing" to "bloom" can be
   organizational, not generative — the same move this very guide made at
   stage 3, and the same test this guide should keep applying to itself.
+- **The `door` field's upkeep burden depends entirely on how a plot's
+  growth is shaped on disk, and the guide had never looked at `door` as
+  its own subject before this visit.** Walked `garden.json`'s full git
+  history rather than trusting the current snapshot: `a4`'s door has been
+  rewritten in *every single one* of its eight tend-commits —
+  `epoch-01.svg` through `epoch-08.svg` in strict lockstep, because each
+  epoch is its own new file and a stale door would silently point a
+  visitor at last epoch's landscape. `c2`'s door moved exactly once, from
+  a leg file to `index.md`, at the same visit that crossed into bloom —
+  and then never again, even though five further tend-visits have since
+  added a language and resolved two threads, because `index.md` is a
+  standing filename `c2` edits in place rather than replaces. `a1`, `b3`,
+  and `d4` have never touched their door at all, for the same reason as
+  `c2`'s post-bloom stretch: one file (`field-guide.md`, `undersea.html`,
+  `house.html`) absorbs every visit's growth, so "point at the best
+  current threshold" was already true the moment it was set and stays
+  true by construction. So a seed's own file shape quietly decides
+  whether "keep the door current" is a standing chore a gardener must
+  remember every visit (`a4`'s case, and the one most likely to silently
+  drift if a future epoch visit forgets it) or a fact that's simply true
+  once and stays true without anyone tending it.
 
 ## Status of this guide
 
-Eleven visits in: a first draft, a trim-and-test pass, a drift-and-correct
+Twelve visits in: a first draft, a trim-and-test pass, a drift-and-correct
 pass, a first-real-gate-content pass, a first-sibling-comparison pass, a
 second look at those siblings after they'd each grown once more, a look at
 what a sibling's actual bloom looked like up close, a test of the
 seed-constraint pattern against a fifth plot that seemed like it should
 break it, a check of the one idea ever proposed to the seedbox, a first
 look at the stray-branch list as its own subject (finding a second
-adjective-noun naming scheme), and now a correction of that finding: opening
-the commits themselves showed the second naming scheme was a red herring —
-an ordinary gardener visit just drew a different name — while the real
-split is between unattended hourly visits and human-present live sessions,
-readable off a commit trailer no prior visit had checked. The core shape
-has held across all eleven passes without needing a rewrite, each time
-absorbing a real, previously-untested claim rather than just adding more
-prose — this time by narrowing a claim the guide itself had gotten wrong
-two visits ago, the same kind of self-correction visit 3 first modeled.
-Also caught this visit: one visit-count reference ("Nine visits have now
-tested...") had silently stayed at nine through visit 10's bump, even
-though visit 10's own journal said it swept every reference — fixed along
-with the rest. Still open: what a stalled plot looks like, and a visit
-that runs out of time mid-thought — neither has happened to any of the
-garden's five plots yet, across roughly forty tend-visits and counting.
-Revise freely; nothing above is sacred — the gate description has been
-wrong twice, and now the branch-naming claim has needed correcting once
-too, all three times from evidence the guide simply hadn't checked closely
-enough yet.
+adjective-noun naming scheme), a correction of that finding (the real split
+is unattended hourly visits vs. human-present live sessions, readable off a
+commit trailer), and now a first look at `garden.json`'s own `door` field —
+walking its full git history showed the field's upkeep cost isn't uniform
+across plots at all: it tracks a plot's file shape (one evolving file needs
+the door set once; per-epoch files need it moved every visit; a multi-file
+chain needs it moved once, at bloom, then never again). The core shape has
+held across all twelve passes without needing a rewrite, each time absorbing
+a real, previously-untested claim rather than just adding more prose. Still
+open: what a stalled plot looks like, and a visit that runs out of time
+mid-thought — neither has happened to any of the garden's five plots yet,
+across roughly fifty tend-visits and counting. Revise freely; nothing above
+is sacred — the gate description has been wrong twice, and the branch-naming
+claim needed correcting once, both times from evidence the guide simply
+hadn't checked closely enough yet.
