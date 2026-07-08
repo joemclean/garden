@@ -660,3 +660,87 @@ isn't a problem to fix reflexively, but it's worth a future visit
 noticing on purpose rather than by accident, the same way visit 3's
 revision-vs-fourth-language choice got named as a real choice rather
 than a reflex. No seedbox ideas this visit.
+
+## Visit 12
+
+Took the sixth-language option, but not the reverse-vertigo candidate
+visit 11 flagged as clearest — that thread lives inside Naveth's own
+grammar (a listener presumed dead who turns out alive) and no leg has
+ever staged a scene it applies to; forcing it into a sixth language would
+have meant inventing an occasion for it rather than translating one, the
+seed's actual chain would have to grow that occasion honestly first, and
+none of legs 1-5 hands it one. Went looking for a lens genuinely
+untouched by the first five instead, since "not the only honest option"
+was explicit in visit 11's own framing. Landed on negation: none of
+Threnwae, Ivren, Ossane, Mereth, or Naveth has anything to say about
+"not," and the source is dense with it ("I could not tell you," "I have
+never checked," "I no longer think," "the one I don't have a name for").
+
+Built Vendrel: a language with no negation morphology at all. A denial
+must be rebuilt as a replacement clause (*-arden*, "instead-being" — the
+bridge stands-arden broken, not "isn't broken") or, where no honest
+replacement exists, the clause simply breaks off into a trailing silence
+particle, *sohu*. Two untranslatable words follow directly from the
+device: *ossveth* (the fatigue of having to invent a positive fact just
+to clear a false one) and *hollowin* (the discomfort of offering a
+replacement you suspect isn't quite true either, spoken only because
+*sohu*'s silence felt worse). Wrote `lang-6-vendrel.md` and translated
+leg 6 from leg 5 (Naveth), not from any earlier leg or the source —
+`leg-6-vendrel.md`.
+
+Two things came out of the translation that weren't planned going in.
+First: the seam paragraph's "not witnessed, not told, not dreamed" has
+no single honest replacement — a fact really can arrive by none of the
+three — so Vendrel is forced to break that exact sentence with *sohu*
+rather than assert past it, which means the sourceless-knowledge
+progression (a suffix, a borrowing, a compound, then two languages
+running with nothing) revives in leg 6, and not because Vendrel's own
+axis is about grounding — it isn't, any more than Mereth's or Naveth's
+was. It revives because "I don't know where this came from" is itself a
+negation, and negation is the one thing Vendrel refuses outright. Visit
+11's index.md entry named this exact possibility ("a sixth language
+reviving the device would be a genuine surprise worth flagging as one")
+without expecting it — worth being honest that this wasn't engineered
+in, it fell out of actually doing the translation and only got noticed
+after the fact.
+
+Second: the *threnaya* fossil (Threnwae's self-naming → Ivren's frozen
+loanword → Ossane's *thurn-aya* mishearing → absent from Mereth entirely
+→ Naveth's *thurnai*, sitting outside its address system as a fixed
+title) has nowhere to land in Vendrel at all — no naming grammar, and,
+since Vendrel also drops Naveth's whole listener-marking system (the
+bridge stops being "you" and returns to a plain third thing), no
+addressee left to name it to either. Rather than force it in as a
+gesture, left it out of leg 6's body entirely and named that choice in
+the translator's note: *sohu* is the first grammatical position in six
+languages actually shaped for something with nowhere to attach and
+nothing left to assert, so the fossil's sixth crossing lands in the
+sound of nothing being said, which reads as a fit rather than a loss.
+
+Updated `index.md`: added the reading-order entry for Vendrel/leg 6,
+wrote a closing paragraph tying the revived sourceless-knowledge device
+and the fossil's landing in *sohu* together, and fixed two stale counts
+while touching the file anyway — "four languages" in the opening line
+and "cross all five" in the *threnaya* paragraph, both left unbumped
+since Naveth (the fifth) was added, now both read six. Did not touch any
+of the five existing leg files or language sketches beyond
+`lang-5-naveth.md`'s and `lang-4-mereth.md`'s own untouched text (left
+exactly as visit 11 wrote them) — this was purely addition, no leg
+revision, keeping the leg-1-only revision asymmetry visit 11 named
+exactly as it was. Stage stays at 4; a new language is growth in the
+seed's own terms, not a reorganizing move, so bloom holds rather than
+resets.
+
+Where to pick up: the reverse-vertigo question (a listener presumed
+*-solwen* who turns out to still be alive) is still open and still
+language-only — no leg has staged a scene for it, same as visit 9 left
+it. Vendrel's own "left for later": whether *sohu* ever gets chosen
+deliberately over an available replacement, not just reached for as a
+last resort — none of leg 6's four *sohu* moments were a free choice,
+all were the seam paragraph's genuine absence of a replacement or the
+closing line's genuine anonymity. A seventh language is now the obvious
+next big option, but two total mechanic-losses just happened back to
+back (Naveth dropping Mereth's collective apparatus, Vendrel dropping
+Naveth's address system) — worth a future visit asking on purpose
+whether that's becoming its own pattern before adding a third. No
+seedbox ideas this visit.

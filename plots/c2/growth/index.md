@@ -1,6 +1,6 @@
 # The mistranslation engine — reading order
 
-One page, carried through four languages that don't exist, one leg at a
+One page, carried through six languages that don't exist, one leg at a
 time — each leg translated from the leg before it, never back from the
 source. Read in order:
 
@@ -20,8 +20,11 @@ source. Read in order:
 6. [Naveth](lang-5-naveth.md) → [leg 5](leg-5-naveth.md) — marks nothing
    of the speaker; every clause instead shapes its listener as one
    bonded ear, a settled throng, or an open toss to whoever, if anyone.
+7. [Vendrel](lang-6-vendrel.md) → [leg 6](leg-6-vendrel.md) — no way to
+   negate a clause; every denial must build a replacement fact
+   (*-arden*) or break off into the silence particle *sohu*.
 
-Watch *threnaya*, the bridge-keeper's self-naming, cross all five —
+Watch *threnaya*, the bridge-keeper's self-naming, cross all six —
 misheard fresh each time, never restored. Leg 1's revision (visit 5)
 pins down exactly what that first crossing already cost: *threnaya* is
 Threnwae's verb "to keep" wearing an agentive suffix, and that verb is
@@ -131,3 +134,22 @@ isn't decline, it's scope: only a language built around a claim's own
 grounding is forced to answer this question at all. A sixth language
 reviving the device would be a genuine surprise worth flagging as one —
 but its absence here was never evidence the pattern was fading.
+
+Vendrel, the sixth language, is that surprise, and it arrives sideways.
+Vendrel's own defining axis — a grammar with no way to flatly deny
+anything, only replace (*-arden*) or fall silent (*sohu*) — has nothing
+to do with a claim's grounding, the same as Mereth and Naveth before it.
+But "I don't know where I learned this" is itself phrased as a
+negation, and negation is the one move Vendrel refuses categorically —
+so the sourceless-knowledge question resurfaces in leg 6 not because
+Vendrel went looking for it, but because its own unrelated ban happens
+to fall across that exact sentence. The device that ran dry for two
+languages running returns for a third shape it was never designed to
+take: not a suffix, not a borrowing, not a compound, but a sentence
+broken on purpose and left to *sohu*'s silence to finish (see leg 6's
+translator's note). Also settled in that same leg, without a scene
+requiring it: the fossil name — *threnaya*, carried as a loanword,
+mis-heard, dropped entirely, found a title-shaped niche — has nowhere to
+land in Vendrel's grammar at all, and lands instead in *sohu*, the first
+of six languages built for a word with nothing left to assert and no one
+left to address.
