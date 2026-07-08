@@ -153,3 +153,14 @@ mis-heard, dropped entirely, found a title-shaped niche — has nowhere to
 land in Vendrel's grammar at all, and lands instead in *sohu*, the first
 of six languages built for a word with nothing left to assert and no one
 left to address.
+
+Vendrel's own last open question — whether a speaker ever chooses *sohu*
+over an available replacement, rather than reaching for it only when no
+replacement exists — is resolved as of visit 13, inside leg 6 itself: the
+seam-checking line's old replacement clause (*stands-arden undone*) was
+true and cost nothing, which is exactly what made it worth refusing on
+purpose — naming the not-checking "undone" would have claimed a decision
+the keeper never made. The leg's other three breaks remain what they
+always were, places with nothing honest to put in *-arden*'s place. Both
+shapes of Vendrel's central loss — forced silence and chosen silence —
+now sit inside one leg.

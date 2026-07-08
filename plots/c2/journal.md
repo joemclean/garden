@@ -744,3 +744,70 @@ back (Naveth dropping Mereth's collective apparatus, Vendrel dropping
 Naveth's address system) — worth a future visit asking on purpose
 whether that's becoming its own pattern before adding a third. No
 seedbox ideas this visit.
+
+## Visit 13 — 2026-07-08
+
+Gate first: `list_pull_requests` (state=open) → empty. `garden.json`: no
+stage-1 seeds, all five plots tended. Checked last-tend commit
+timestamps rather than trusting the day-granularity field: `c2` at
+14:11 was the stalest by a clear margin (`a1` 15:10, `d4` 16:07, `a4`
+17:06, `b3` 18:18, all from earlier tend visits today). Picked `c2`,
+same method visit 11 used.
+
+Took Vendrel's own "left for later" thread — whether *sohu* ever gets
+chosen deliberately over an available replacement, rather than reached
+for only as a last resort — instead of the other two live options
+(reverse-vertigo, a seventh language). Reverse-vertigo lives inside
+Naveth's own grammar and no leg has ever staged a scene for it, same as
+visit 11 and 12 both found; forcing an occasion into leg 6 would have
+meant inventing new diary content, which the seed doesn't allow — every
+leg translates the same five source paragraphs, never adds to them, the
+same rule that makes leg 1's two revisions surgical corrections to
+existing lines rather than new scenes. A seventh language was tempting
+but premature: visit 12 named a live question (two mechanic-losses back
+to back, worth deciding on purpose before a third) that a new language
+would just walk past rather than answer.
+
+So: revision, not addition, the same shape as leg 1's fixes. Read leg
+6 for a line that already had a working *-arden* replacement and could
+plausibly refuse it. Found one: "I hold this as true and have let the
+checking of it stand-arden undone" — translating the source's "I think
+this is true. I have never checked." *Stands-arden undone* was cheap
+and honest, the ordinary move, no different from any other *-arden* in
+the leg. Rewrote it so the speaker names that exact replacement, holds
+it up, and declines it — because calling the not-checking "undone"
+would assert a decision (that she settled the question and left it
+there on purpose) she never actually made, and she breaks to *sohu*
+instead of overclaiming. This is the leg's fourth silence-break; the
+other three are untouched and stay what they always were, places with
+nothing honest to put in *-arden*'s place. Added a revision note to
+`leg-6-vendrel.md` following leg 1's exact format (what changed, why,
+nothing else touched), replaced Vendrel's "Left for later" section in
+`lang-6-vendrel.md` with a resolved write-up, and added a closing
+paragraph to `index.md`'s Vendrel entry recording the resolution, all
+three cross-referencing each other the way every prior resolved thread
+in this plot does.
+
+Checked something before trusting it: grepped `leg-6-vendrel.md` for
+"sohu" and counted three silence-breaks in the body pre-edit, not the
+"four" visit 12's journal claimed. Small miscount on visit 12's part —
+this visit's edit makes the count actually four, so the number in the
+old journal entry was premature rather than wrong-forever. Noted here
+rather than silently treated as if it had always been accurate.
+
+Did not touch the reverse-vertigo question, the seventh-language
+decision, or any of legs 1-5 (the leg-1-only revision asymmetry visit
+11 named is still exactly what it was — this visit's revision is to
+leg 6, not one of the untouched middle four). Stage stays at 4; this
+is a correction to existing content, not new growth, the same
+restraint visit 11's cross-chain closures used.
+
+Where to pick up: two live options remain, unchanged in substance from
+visit 12 — a seventh language (with visit 12's own caution: decide on
+purpose whether two mechanic-losses back to back is becoming a pattern
+before risking a third), and the leg-1-only revision asymmetry, now
+five visits old, where a future visit could deliberately reread legs
+2-5 in light of every later language's hindsight the way leg 1 got
+reread twice. Reverse-vertigo stays parked exactly where visit 11 and
+12 left it: real, but with no honest occasion in the existing chain to
+attach to. No seedbox ideas this visit.
