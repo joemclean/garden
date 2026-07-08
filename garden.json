@@ -33,8 +33,8 @@
       "stage": 3,
       "title": "Undersea — a 3D swimming simulation",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-07",
-      "note": "The wreck's hollow interior now glows: 14 pulsing bioluminescent motes and a dim light glimpsed through the rib gaps, visible from a normal swim-by. Sheltering fish and a second debris trail remain open.",
+      "last_tended": "2026-07-08",
+      "note": "A small school of fish now shelters in the wreck, clustered in the real open gap between the hull and its severed stern — a first attempt inside the hull's solid volume was invisible from every angle and got moved. Second debris trail remains open.",
       "door": "plots/b3/growth/undersea.html"
     },
     "c2": {

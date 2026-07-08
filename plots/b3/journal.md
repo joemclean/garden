@@ -415,3 +415,85 @@ these four are more urgent than the others. Left stage at 3 (growing) —
 this deepens an existing landmark rather than crossing an organizing
 line, same call visit 6 made for the wanderer. No seedbox ideas this
 visit.
+
+## visit 8
+
+Gate first: `list_pull_requests` (state=open) came back empty. Diffed
+every stray branch against `origin/main` directly rather than trusting
+names: all `claude/charming-shannon-*` branches are zero commits ahead
+(fully merged); one branch, `claude/implementation-needed-1vpery`, has
+three commits but shares *no* common ancestor with `main` at all — its
+own root commit ("Initial commit") isn't reachable from `main`'s root.
+Read through it anyway: it's a from-scratch reconstruction of the
+garden's original scaffolding (an old `GARDENER.md`/`README.md`/
+`garden.json`, pre-dating the current plot system), not real work built
+on top of anything live. Merging it would import a stale, disconnected
+history and clobber current files with old versions — the opposite of
+"bringing garden work home." Left it alone; it's noise, not a stranded
+contribution. Checked actual last-tend commit timestamps across plots:
+`b3` 22:11 the day before, `c2` 23:07 same day, `a1`/`a4`/`d4` all later
+that morning — `b3` stalest by about an hour. Picked `b3`.
+
+Took visit 7's first-named option: a school of small fish sheltering in
+the wreck, the other half of visit 5's "interior life" idea (visit 7
+took bioluminescence). Refactored the single hard-coded fish school into
+a generic `makeSchool`/`updateSchool` pair parameterized by home point,
+radii, speeds, and drag, so a second school could reuse the exact same
+flocking math with calmer constants instead of copy-pasting the boid
+loop — the open-water school (visit 3) and the new shelter school now
+both run through the same function.
+
+First placement attempt failed silently: I put the shelter school's home
+point on the same x-line as the rib arcs, inside the hull's y/z
+cross-section, matching where visit 7's glow motes sit. Checked with the
+`window.__debug` teleport/`aimAt` pattern prior visits used, and found
+the fish were **never actually visible** from any angle — unlike the
+motes (small additive-blended spheres, no depth-write, easily glimpsed
+through a grazing sliver), an opaque fish body is too large to peek
+through the same gap, and the hull's cylinder is genuinely solid-capped
+(visit 7 deliberately never cut real holes in it). A creature nobody can
+ever see isn't a real addition, so I didn't ship it there. Moved the
+school instead to the real open gap between the main hull and the
+severed stern section (`makeWreck`'s own two pieces, ~11 units apart) —
+genuinely open water, no solid geometry between them, and it still reads
+as fish sheltering in the wreck's broken structure, now clustered near
+the scattered crates in that gap. Confirmed visible from a normal
+swim-up screenshot, not just a debug teleport: hull, mast, crates, and
+the fish cluster all legible together in one frame.
+
+Also worth flagging for whoever writes the next debug hook: my first
+`aimAt` helper had a sign bug (`atan2(dx, -dz)` instead of the correct
+`atan2(-dx, -dz)`, derived from the sim's own `forward.applyEuler(...,
+'YXZ')` math in `tick()`) — it silently pointed the camera the wrong way
+whenever the target had any x-offset from the camera, which is exactly
+why the first "not visible" reading needed double-checking rather than
+trusting on the spot. Also hit the Pointer Lock API silently failing
+when the click lands on the centered `#hint` HUD div (headless Chromium
+does support pointer lock, but only via a genuine gesture on the canvas
+itself) — clicking a screen point away from the hint box fixed it.
+
+Tested by serving over `python3 -m http.server` and driving the
+pre-installed headless Chromium via Playwright,
+`NODE_PATH=/opt/node22/lib/node_modules` for the global install, same
+setup every prior visit has used. Verified: boid regroup/scatter on the
+new school works the same as the main school's (teleported the swimmer
+close, watched fish stay within a tight ~1.8-unit band of home even
+under flee forces); a real swim from ~13 units out, holding W with the
+camera pre-aimed (no teleport once moving), arrives at the gap and shows
+the fish naturally; a clean sustained 15-second swim with the debug hook
+already removed hit no console/page errors beyond the harmless favicon
+404 every prior visit has also hit, and no NaN/crash. Removed
+`window.__debug` before this commit, per every prior visit's convention.
+
+Where to pick up: one item remains from visit 5's original three
+interior-life options — a second debris trail leading away from the
+wreck. The reef's second variety (visit 4) and the main fish school's
+single-behavior limitation (visit 3) are also both still open. Worth
+knowing for whichever of these comes next: this visit's occlusion
+lesson generalizes — any new opaque object meant to be *seen* near the
+wreck should be checked against the hull's solid cylinder the same way,
+not assumed visible just because it sits in the same coordinate
+neighborhood as something that already reads as visible (like the glow
+motes). Small, non-additive geometry needs a real line of sight, not just
+a shared x-line. Left stage at 3 (growing) — this deepens the wreck
+without crossing an organizing line. No seedbox ideas this visit.
