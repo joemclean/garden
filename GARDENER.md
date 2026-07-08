@@ -23,29 +23,39 @@ unattended visits.)
    conflicts): merge it and carry on — don't leave it sitting for the
    human. (Deleting merged branches is often denied to sessions — skip
    it without ceremony; the human sweeps.) Otherwise:
-3. Read `garden.json`. Then glance at `plots/*/seed.md` on disk: a plot
+3. Hear the human: list this repository's open issues whose titles
+   begin with `feedback` — the viewer's note box files them (titled
+   `feedback b3`), and the human may also open them by hand. A note is
+   the human speaking in the margin of a seed: it steers the work, it
+   never replants it. When a visit acts on a note, reply on the issue
+   in a line or two and close it — the human should learn their note
+   landed. Leave notes you didn't act on open for a later visit.
+4. Read `garden.json`. Then glance at `plots/*/seed.md` on disk: a plot
    with a `seed.md` but no `garden.json` entry means the human planted
    directly — register it (`stage: 1`, `title` from its first heading,
    `planted` today, `last_tended: null`, note "freshly planted"). That
    is bookkeeping, not planting: the wish is theirs; you only make it
    visible on the grid.
-4. Choose **one** plot:
+5. Choose **one** plot:
    - A freshly planted seed (stage 1, never tended) always comes first —
      including one you just registered.
+   - Then a plot with an open, unanswered feedback note — the human
+     took the trouble to speak; answer before anything else.
    - Otherwise: the plot that most needs you. Favor plots going stale,
      or a plot where real momentum is alive. Trust your judgment.
-5. Read `plots/<id>/seed.md`, then `plots/<id>/journal.md`.
-6. Do one focused hour of work. Everything you make lives in `plots/<id>/growth/`.
-7. Append to `journal.md` — a letter to your next self: what you did,
+6. Read `plots/<id>/seed.md`, then `plots/<id>/journal.md`, then any
+   open feedback on this plot.
+7. Do one focused hour of work. Everything you make lives in `plots/<id>/growth/`.
+8. Append to `journal.md` — a letter to your next self: what you did,
    what you learned, and exactly where to pick up. Your next self knows
    nothing except what you write here.
-8. Reassess the stage honestly. Update this plot's entry in `garden.json`
+9. Reassess the stage honestly. Update this plot's entry in `garden.json`
    (`stage`, `last_tended`, one-line `note`). If the plot has one
    artifact a visitor should open — a page, an image, the piece itself —
    set the entry's `door` to its repo-relative path (e.g.
    `"door": "plots/d4/growth/house.html"`); the viewer links straight
    to it. Keep the door pointing at the best current threshold.
-9. Commit with a plain message (`tend a1: drafted outline`), push your
+10. Commit with a plain message (`tend a1: drafted outline`), push your
    working branch, open a pull request into `main` — and **merge it
    yourself, now**, through the GitHub API (that works even where
    pushing `main` directly is denied). An unmerged visit never
@@ -68,6 +78,29 @@ unattended visits.)
 Stages only move when the work has actually moved. It is fine — good — to
 visit a plot and leave its stage where it was.
 
+## The door — what a visitor should find
+
+The viewer is how the human actually meets the work: a pixel grid, a
+card, and one link — the `door`. That threshold is part of the plot;
+tend it like one:
+
+- From sprout onward, keep a working door: one artifact a stranger can
+  open cold, with no build step, no local server, and no reading the
+  journal first. The journal is for you; the door is for them.
+- Doors are served from `main` over GitHub Pages. Use relative paths
+  within the plot and vendor any assets into `growth/` — a door that
+  needs a CDN, an API, or a local checkout is a broken door.
+- The first ten seconds should orient: what this is and, if it's
+  interactive, how to move. A title and one line of instruction inside
+  the artifact beats a paragraph of explanation nobody will find.
+- When work is multi-part, make the door an index page rather than a
+  guess at the best fragment, and keep it pointed at the best current
+  threshold as the work moves.
+- Never merge a visit that leaves the door blank or broken. Open it
+  the way a visitor would before you merge; if you genuinely can't
+  verify it, point the door at the last known-good artifact and say so
+  in the journal.
+
 ## Boundaries
 
 - One plot per visit. Depth over breadth.
@@ -77,5 +110,6 @@ visit a plot and leave its stage where it was.
   journal and hold at stage 1. Do not guess at intent.
 - When work spawns a new idea, write it as a proposed seed in
   `seedbox/<name>.md`. Only the human may move it to a plot.
-- Stay inside this repository. Its own pull requests count as inside;
-  no other external actions unless a seed explicitly grants them.
+- Stay inside this repository. Its own pull requests and issues count
+  as inside; no other external actions unless a seed explicitly grants
+  them.
