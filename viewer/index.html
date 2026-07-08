@@ -94,11 +94,27 @@ const PAL = {
   'f': '#e08bb0',  // petal
   'F': '#e8c15a',  // flower center / gold
   'y': '#d9a94f',  // seed head gold
-  'k': '#2a1c10'   // seed speck
+  'k': '#2a1c10',  // seed speck
+  't': '#2e6b5a',  // kelp dark
+  'T': '#4f9a7f',  // kelp mid
+  'A': '#7fc9a8',  // kelp light tip
+  'r': '#a34a33',  // cap dark
+  'R': '#cf6f4a',  // cap light
+  'W': '#e3d3b4',  // stalk cream
+  'p': '#6f56a8',  // crystal dark
+  'P': '#9d82d4',  // crystal mid
+  'w': '#e9e2f6'   // crystal glint
 };
-// dry remap for wilting plants
-const DRY = { s:'#6b5a32', g:'#7a6136', G:'#a08544', L:'#c2a75f',
-              f:'#b08c68', F:'#c2a75f', y:'#d9a94f' };
+// wilting: any palette color fades toward dry tan
+const dryCache = {};
+function dryColor(col){
+  if(dryCache[col]) return dryCache[col];
+  if(!/^#[0-9a-f]{6}$/i.test(col)) return col;
+  const n = parseInt(col.slice(1),16);
+  const mix = (a,b) => Math.round(a + (b-a)*.55);
+  return dryCache[col] = 'rgb('+mix(n>>16&255,160)+','
+    +mix(n>>8&255,133)+','+mix(n&255,68)+')';
+}
 
 /* ---------- 16x16 sprites, one per stage ---------- */
 const SOIL_ROWS = [
@@ -135,6 +151,82 @@ const SPRITES = [
   '....g..s........','.....g.s.g......','.......s........','......mmm.......',
   '.....mmmmm......','................','................','................']
 ];
+
+/* ---------- plant variants: starting points, not rules ----------
+   a plot picks one via its garden.json "plant" field — a name below,
+   or a repo path to a custom plant.json (see viewer/PLANTS.md). */
+const E  = '................';
+const M1 = '......mmm.......';
+const M2 = '.....mmmmm......';
+const VARIANTS = {
+classic: SPRITES,
+kelp: [
+  SOIL_ROWS,
+  [E,E,E,E,E,E,E,E,E,E,'......k.k.......',M1,M2,E,E,E],
+  [E,E,E,E,E,E,E,
+   '........A.......','.......tT.......','........T.......',
+   '.......t........',M1,M2,E,E,E],
+  [E,E,E,
+   '......A.........','.....tT...A.....','......T...T.....',
+   '......T..tT.....','.....tT...T.....','......T..T......',
+   '......t..T......','......t..t......',M1,M2,E,E,E],
+  ['.......A........','..A...tT........','..T....T...A....',
+   '..tT...T..tT....','...T..tT...T....','...T...T...T....',
+   '..tT...T..tT....','...T..tT...T....','...t...T...t....',
+   '...t...t...t....','....t..t..t.....',M1,M2,E,E,E],
+  [E,E,
+   '...y...y........','..yy..yy...y....','...s...s..yy....',
+   '...s...s...s....','...s...s...s....','...s...s...s....',
+   '...s...s...s....','....s..s..s.....','.....s.s.s......',M1,M2,E,E,E]
+],
+vine: [
+  SOIL_ROWS,
+  [E,E,E,E,E,E,E,E,E,E,'.......k........',M1,M2,E,E,E],
+  [E,E,E,E,E,E,E,E,E,
+   '.......GG.......','......sG........',M1,M2,E,E,E],
+  [E,E,E,E,E,E,E,
+   '....L.......L...','...GsG.....GsG..','.....s.....s....',
+   '.....ss...ss....',M1,M2,E,E,E],
+  [E,E,E,E,E,
+   '.......f........','......fFf.......','..fF...f...Ff...',
+   '..GsG..s..GsG...','....s..s..s.....','....ss.s.ss.....',M1,M2,E,E,E],
+  [E,E,E,E,E,E,E,
+   '..y....y....y...','..sy...s...ys...','...s...s...s....',
+   '....ss.s.ss.....',M1,M2,E,E,E]
+],
+fungus: [
+  SOIL_ROWS,
+  [E,E,E,E,E,E,E,E,E,E,'......k..k......',M1,M2,E,E,E],
+  [E,E,E,E,E,E,E,E,
+   '......RRR.......','.......W........','.......W........',M1,M2,E,E,E],
+  [E,E,E,E,E,E,
+   '.....RRR........','....rRRRr.......','......W....RR...',
+   '......W...rRRr..','......W.....W...',M1,M2,E,E,E],
+  [E,E,E,E,
+   '......RRR.......','.....RRWRR......','....rRRRRRr.....',
+   '.......W........','..RRR..W..RRR...','.rRWRr.W.rRWRr..',
+   '...W...W...W....',M1,M2,E,E,E],
+  [E,E,E,E,E,E,
+   '....k.....k.....','.......k........','..rrr.....rrr...',
+   '...W..rrr..W....','...W...W...W....',M1,M2,E,E,E]
+],
+crystal: [
+  SOIL_ROWS,
+  [E,E,E,E,E,E,E,E,E,E,'.......w........',M1,M2,E,E,E],
+  [E,E,E,E,E,E,E,E,
+   '.......w........','.......P........','......pP........',M1,M2,E,E,E],
+  [E,E,E,E,E,E,
+   '.......w........','......PP........','......Pp..w.....',
+   '......Pp..P.....','.....pP...Pp....',M1,M2,E,E,E],
+  [E,E,E,
+   '.......w........','......wP........','......PP..w.....',
+   '..w...Pp..P.....','..P..PPp..Pp....','..Pp.PPp.PPp....',
+   '..pp.Ppp.Pp.w...','...ppPpppPp.....',M1,M2,E,E,E],
+  [E,E,E,E,E,
+   '......PP........','......pp..p.....','..p..Ppk..pp....',
+   '..pp.pkp.ppp....','..pp.ppp.pp.....','...ppppppp......',M1,M2,E,E,E]
+]
+};
 const STAGE_NAMES = ['soil','seed','sprout','growing','bloom','gone to seed'];
 const SWAY_LINE = 9;          // sprite rows above this sway in frame B
 const WILT_HOURS = 72;
@@ -143,9 +235,9 @@ const WILT_HOURS = 72;
 const DEMO = { name:'garden (demo)', size:[4,4], plots:{
   a1:{stage:1,title:'a fresh seed',planted:'2026-07-06',last_tended:null,note:'waiting for the first visit.'},
   b1:{stage:2,title:'a sprout',planted:'2026-07-01',last_tended:new Date(Date.now()-4*36e5).toISOString(),note:'first work exists.'},
-  c2:{stage:3,title:'something growing',planted:'2026-06-20',last_tended:new Date(Date.now()-20*36e5).toISOString(),note:'taking shape.'},
-  d2:{stage:4,title:'in bloom',planted:'2026-06-01',last_tended:new Date(Date.now()-8*36e5).toISOString(),note:'usable and alive.'},
-  b3:{stage:3,title:'a wilting plot',planted:'2026-06-10',last_tended:new Date(Date.now()-120*36e5).toISOString(),note:'needs tending.'},
+  c2:{stage:3,title:'something growing',planted:'2026-06-20',last_tended:new Date(Date.now()-20*36e5).toISOString(),note:'taking shape.',plant:'vine'},
+  d2:{stage:4,title:'in bloom',planted:'2026-06-01',last_tended:new Date(Date.now()-8*36e5).toISOString(),note:'usable and alive.',plant:'crystal'},
+  b3:{stage:3,title:'a wilting plot',planted:'2026-06-10',last_tended:new Date(Date.now()-120*36e5).toISOString(),note:'needs tending.',plant:'kelp'},
   a4:{stage:5,title:'gone to seed',planted:'2026-05-01',last_tended:new Date(Date.now()-60*36e5).toISOString(),note:'finished; offshoots in the seedbox.'}
 }};
 
@@ -159,14 +251,49 @@ const plotId = (c,r) => 'abcdefgh'[c] + (r+1);
 const isWilting = p => p && p.stage>=2 && p.stage<=4 && p.last_tended &&
   (Date.now()-Date.parse(p.last_tended)) > WILT_HOURS*36e5;
 
+/* ---------- plant resolution ---------- */
+// "plant" on a plot entry: a VARIANTS name, or a repo path to a custom
+// plant.json ({palette, stages}); anything missing/broken falls back
+// to classic so the grid never goes blank.
+const customCache = {};
+function plantFor(p){
+  const def = { stages: VARIANTS.classic, pal: PAL };
+  if(!p || !p.plant) return def;
+  if(p.plant.indexOf('/') === -1){
+    const v = VARIANTS[p.plant];
+    return v ? { stages: v, pal: PAL } : def;
+  }
+  const c = customCache[p.plant];
+  if(c === undefined){
+    customCache[p.plant] = 'loading';
+    fetch('../'+encodeURI(p.plant), {cache:'no-store'})
+      .then(res => res.ok ? res.json() : Promise.reject())
+      .then(j => {
+        const ok = Array.isArray(j.stages) && j.stages.length === 6 &&
+          j.stages.every(s => Array.isArray(s) && s.length === 16 &&
+            s.every(row => typeof row === 'string'));
+        customCache[p.plant] = ok
+          ? { stages: j.stages, pal: Object.assign({}, PAL, j.palette||{}) }
+          : 'failed';
+        render();
+      })
+      .catch(() => { customCache[p.plant] = 'failed'; });
+  }
+  return (c && typeof c === 'object') ? c : def;
+}
+
 /* ---------- render ---------- */
-function drawSprite(g2, sprite, x, y, dry, swayX){
+function drawSprite(g2, sprite, x, y, dry, swayX, pal){
+  pal = pal || PAL;
   for(let r=0;r<16;r++){
+    const row = sprite[r] || '';
     const off = (swayX && r<SWAY_LINE) ? 1 : 0;
     for(let c=0;c<16;c++){
-      const ch = sprite[r][c];
-      if(ch==='.') continue;
-      const col = (dry && DRY[ch]) ? DRY[ch] : PAL[ch];
+      const ch = row[c];
+      if(!ch || ch==='.') continue;
+      let col = pal[ch];
+      if(!col) continue;
+      if(dry) col = dryColor(col);
       g2.fillStyle = col;
       g2.fillRect(x+c+off, y+r, 1, 1);
     }
@@ -185,10 +312,11 @@ function render(){
     ctx.fillStyle = '#5e3f28'; ctx.fillRect(x+1,y+1,T-2,T-2);
     ctx.fillStyle = '#6b4830'; ctx.fillRect(x+2,y+2,T-4,T-4);
     const p = garden.plots[plotId(c,r)];
-    const sprite = SPRITES[p ? p.stage : 0];
+    const plant = plantFor(p);
+    const sprite = plant.stages[p ? p.stage : 0] || SPRITES[0];
     const dry = isWilting(p);
     const sway = !reduceMotion && frame===1 && p && p.stage>=2;
-    drawSprite(ctx, sprite, x+2, y+2, dry, sway);
+    drawSprite(ctx, sprite, x+2, y+2, dry, sway, plant.pal);
     if(sel && sel[0]===c && sel[1]===r){
       ctx.strokeStyle = '#e6d9ae'; ctx.lineWidth = 1;
       ctx.strokeRect(x+.5, y+.5, T-1, T-1);

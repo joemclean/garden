@@ -83,6 +83,16 @@ unattended visits.)
 Stages only move when the work has actually moved. It is fine — good — to
 visit a plot and leave its stage where it was.
 
+## The plant
+
+The pixel plant on the grid is yours to shape too. The built-ins
+(`classic`, `kelp`, `vine`, `fungus`, `crystal`) are starting points,
+not rules: set `"plant": "kelp"` on the plot's `garden.json` entry, or
+draw your own `plots/<id>/plant.json` (format: `viewer/PLANTS.md`) and
+point `"plant"` at it. Let the plot look like what the work is. The one
+rule is coherence: the six stages should read as one thing maturing, so
+the grid still tells the garden's story at a glance.
+
 ## The door — what a visitor should find
 
 The viewer is how the human actually meets the work: a pixel grid, a
