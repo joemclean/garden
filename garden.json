@@ -60,11 +60,12 @@
       "note": "freshly planted"
     },
     "c3": {
-      "stage": 1,
+      "stage": 2,
       "title": "What it means to be Claude — an interactive exploration",
       "planted": "2026-07-08",
-      "last_tended": null,
-      "note": "freshly planted"
+      "last_tended": "2026-07-08",
+      "note": "First sprout: a six-screen interactive demonstrating no-memory-between-visits using two real, unedited excerpts from this garden's own journals (a4, c2) — visitor decides based only on the letter, then sees what that decision was made of.",
+      "door": "plots/c3/growth/index.html"
     },
     "b4": {
       "stage": 1,
