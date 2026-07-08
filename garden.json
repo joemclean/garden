@@ -25,9 +25,9 @@
       "stage": 2,
       "title": "Erosion",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-07",
-      "note": "epoch-08: the dry-notch's last reserved crack gave way, finishing its right wall's retreat; the left-flank tier bottomed out against the valley floor for good too. Two of three long-running threads now explicitly closed — band-four-visibility remains the one open, bigger question.",
-      "door": "plots/a4/growth/epoch-08.svg"
+      "last_tended": "2026-07-08",
+      "note": "epoch-09: first use of \"overgrow\" — moss now reclaims the oldest scree and rubble cohorts (eight epochs stood), every younger piece left bare. Band-four-visibility remains the one big open thread.",
+      "door": "plots/a4/growth/epoch-09.svg"
     },
     "b3": {
       "stage": 3,
