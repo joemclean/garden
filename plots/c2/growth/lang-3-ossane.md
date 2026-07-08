@@ -71,12 +71,24 @@ speakers can always tell a metaphor from a forecast — or whether this is
 the translator reading a pun into a coincidence, is genuinely unresolved.
 Flagging it rather than deciding it.
 
-**Left for later visits:** whether the seven roots split cleanly into
-things only people can do (*seffi*, *korrast*, *hessk*, *velmoth*,
-*ombrant* — all requiring a will to be witnessed doing them) versus things
-objects can merely undergo (*thurn*, *sahren* — presence and absence, no
-agency required) — leg 3 leans on this split to explain why a bridge can
-*thurn* but never *seffi* or *hessk* on its own behalf, but the rule was
-invented to solve one sentence and hasn't been tested against others.
-Also: Threnwae's still-open plural-address question is not Ossane's to
-answer, and this visit didn't try.
+**Agentive split (resolved):** tested the will-requiring five (*seffi*,
+*korrast*, *hessk*, *velmoth*, *ombrant*) against every verb leg 3 gives
+the bridge, the kettle, and the river — not just the one sentence
+("you do not rain or freeze on your own behalf, no bridge does") that
+first needed the rule. The bridge and the kettle never once take a
+will-requiring root on their own behalf anywhere in the leg; every
+*seffi* or *hessk* near them belongs to whoever tends or reads them; the
+things themselves only ever *thurn* or *sahren*. The river looks like a
+counterexample at first — it *floods* (*ombrant*) what it wants and *is
+frozen* (*hessk*) owing a debt, both on its own behalf, with no person
+doing the flooding or the owing for it — but that isn't the split
+breaking, it's the split holding on a category nobody had named yet. The
+rule was never "people versus objects"; it's *willful versus willless*,
+and the river has been willful since before Ossane existed — the source
+text already gives it the only two active verbs ("it says nothing and
+takes what it wants") anything but the keeper gets in the whole diary.
+Ossane inherited a river with will and a bridge without one; the seven
+roots just made that difference legible for the first time.
+
+**Left for later visits:** Threnwae's still-open plural-address question
+is not Ossane's to answer, and this visit didn't try.

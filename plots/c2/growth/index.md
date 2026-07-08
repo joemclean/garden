@@ -80,3 +80,16 @@ world outrunning the grammar rather than the reverse. No leg was revised
 — none of the five stages a scene addressing someone dead in the second
 person, so this deepens the language sketch without an honest occasion
 to touch a leg yet.
+
+Ossane's own flagged thread — whether its people-do/objects-undergo
+split actually holds — is resolved as of visit 10, inside
+`lang-3-ossane.md`: tested against every will-requiring verb leg 3 gives
+the bridge, the kettle, and the river, not just the one sentence that
+first needed it. The bridge and kettle never take a will-requiring root
+on their own behalf anywhere in the leg. The river does — it floods what
+it wants, it is frozen owing a debt — which looked at first like a
+counterexample until it became clear the split was never people-versus-
+objects, it's willful-versus-willless, and the river has been the
+diary's other willful thing since the source text itself gave it the
+only two active verbs besides the keeper's own. Ossane's grammar just
+made that difference legible for the first time.
