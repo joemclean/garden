@@ -622,3 +622,74 @@ answer what's *under* the reflection, which risks resolving the very
 ambiguity the room exists to hold open. Every other room's text untouched,
 per "never demolish." No new seedbox ideas this visit; the unreliable-
 viewer idea from visit 2 is still unclaimed.
+
+## Visit 12 — 2026-07-08
+
+Gate first: `list_pull_requests` (state=open) came back empty — nothing
+stranded to bring home. Walked the branches: `claude/implementation-needed-
+1vpery` merge-bases cleanly into `main` (its content was folded in back at
+PR #9; confirmed again rather than assumed), consistent with every prior
+visit's finding. `garden.json`: no stage-1 seeds, all five plots registered
+and none freshly planted. Compared actual last-commit times rather than the
+shared `2026-07-08` date: `d4` 11:07, `a4` 12:11, `b3` 13:15, `c2` 14:11,
+`a1` 15:10 — `d4` stalest by the same rotation logic every prior visit here
+has used. Picked `d4` for a ninth visit running.
+
+Left the long-unclaimed threads exactly where visit 11 found them — the
+glove/boot/well pairing (now three data points and still no fourth), and
+the hedge-line/threshing-floor grass-without-walking mystery — since none
+of them called for anything this visit found. Did two things instead:
+
+- **Added a fifth voice to the reading room's book.** It goes down the
+  fourth hand's stair, finds the cellar as described, then mentions the
+  well (visit 11's new room) unprompted — the first voice to react to
+  something outside the book itself. It stops short of resolving anything
+  and instead turns the question on the book's own ritual: it notices
+  every hand has called its own brevity "on purpose" and wonders aloud
+  whether that phrase stopped being true several hands back and just
+  became the room's habit. Felt like the right note for a fifth voice —
+  not a new theory about who's writing, but the book catching itself in
+  the same repetition the whole house runs on.
+- **Built a fourteenth room, the granary**, reached through a low door
+  behind the threshing floor's stacked baskets — "hidden until you moved
+  one" — added to the threshing floor's `.doors` list without touching
+  its existing text or door back to the nursery. This is the harvest
+  thread's fifth room (after the hedge line's basket, the grove, the
+  cellar's jars, and the threshing floor's dark flail), but it's the
+  first one that *disagrees* with the others instead of confirming them:
+  plain pale grain, nothing like the dark reduced matter every prior
+  harvest room has held, even though a threshing floor is exactly what
+  should produce it. I chose contradiction over confirmation on purpose —
+  four rooms agreeing was already interesting; a fifth room that should
+  agree and doesn't felt truer to "may believe in a courtyard that was
+  never built" than tying a neat bow around the harvest would have been.
+  A balanced scale (grain against a single stone) gives the room its own
+  small worth-stopping-for detail without explaining anything.
+
+Rendered `#granary`, `#threshing-floor` (to confirm the new door line),
+and `#reading-room` (at 1200×1300, since a fifth paragraph pushed content
+past 1200×1100's frame — same non-issue visit 7 and 8 already flagged,
+content is complete and scrollable, only the screenshot window needs to
+grow) via headless chromium (globbed `chromium-*/chrome-linux/chrome`,
+`--disable-gpu --no-sandbox`) and `--dump-dom` for `id="granary"` to
+confirm the room mounts — clean, only the usual harmless dbus stderr
+noise. Updated the whisper text from "thirteen rooms" to "fourteen rooms."
+
+Held the stage at 4 (bloom) — already earned at visit 10 and reconfirmed
+at visit 11; this visit added depth (a new harvest room, a new book voice)
+without a second organizing move, the same restraint visits 9 and 11 used.
+
+Where to pick up: room count is 14. Threads still open and still
+correctly unclaimed: the vestibule's glove, cellar's boot, and well's
+false second glove (three data points, no fourth); the hedge-line/
+threshing-floor grass-without-walking mystery; the nursery's two-tenders
+question; and now a new one — the granary's grain, which nothing else in
+the house explains, sitting one room away from a flail that's never once
+been stained by anything grain would leave behind. A future visit could
+let a sixth book voice react to the granary the way the fifth reacted to
+the well, or leave the harvest's internal disagreement exactly as
+unresolved as everything else in this house. The granary itself is a dead
+end (one door, back to the threshing floor) — in character, the same as
+the cellar and the well. Every other room's text untouched, per "never
+demolish." No new seedbox ideas this visit; the unreliable-viewer idea
+from visit 2 is still unclaimed.
