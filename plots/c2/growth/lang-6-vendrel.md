@@ -68,8 +68,14 @@ device returns here uninvited, forced open by a completely different
 grammatical door than the one that built it five languages ago — see leg
 6's translator's note.
 
-**Left for later visits:** whether *sohu*'s silence-break ever gets used
-deliberately, rather than as a last resort — a speaker choosing the break
-over an available replacement because the replacement itself would say
-too much. No leg has yet given a Vendrel speaker a clean occasion to want
-that.
+**The deliberate silence, resolved (visit 13):** whether *sohu* ever gets
+chosen over an available replacement, rather than reached for as a last
+resort, is settled inside leg 6 itself — see its visit 13 revision note.
+The seam-checking line had a working *-arden* replacement all along
+(*stands-arden undone*, cheap and not even false); the revision has the
+speaker name that replacement and refuse it anyway, because to call the
+not-checking "undone" would assert a decision — that she settled the
+question and left it there on purpose — she never actually made. The
+other three breaks in the leg stay exactly what they were: places with no
+honest replacement to refuse. Vendrel now holds both shapes of its own
+central loss — silence forced, and silence chosen — inside one leg.

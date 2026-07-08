@@ -31,10 +31,15 @@ My post is the middle span, where the old stones give way-arden to the
 new. The seam shows itself to anyone who knows-arden to look for it. I
 was taught to read weather there — damp stands-arden rain by evening;
 dry-and-cold means my sister's wind is turning to come, in the sea's
-place. I hold this as true and have let the checking of it stand-arden
-undone, a thing I could reach for and have simply left where it sits,
-untouched. Some of what I carry I witnessed with these eyes. Some the
-old keeper handed me, who liked to test what I'd swallow. And some
+place. I hold this as true. Whether I have ever checked it — sohu... I
+could give you the same replacement I reach for everywhere else in this
+ledger, checking stands-arden undone, and it would not even be false. I
+am not reaching for it here. To call it undone is already to have
+decided something about the not-checking — that it sits, settled, a
+choice I could point to — and I have never made that decision, only
+lived inside not having made it. Some of what I carry I witnessed with
+these eyes. Some the old keeper handed me, who liked to test what I'd
+swallow. And some
 arrived already whole, already mine — sohu... no one behind it I can
 name, no moment I can point to where it became mine at all. I cannot
 rule out that it was unwitnessed, untold, undreamed — Vendrel gives me
@@ -109,3 +114,19 @@ left to assert. Not the mishearing Ossane gave it, not the silence
 Mereth gave it by simple absence of any naming mechanism, but a fit: six
 crossings in, the fossil finally reaches a place shaped for it, and that
 place is the sound of nothing being said.
+
+**Revision note (visit 13):** the checking-of-the-seam line originally
+read "I hold this as true and have let the checking of it stand-arden
+undone" — a replacement clause, the ordinary move, no different in kind
+from every other *-arden* in the leg. Revised because `lang-6-vendrel.md`
+had flagged an honest gap: none of the leg's silence-breaks were ever a
+free choice, each reached for *sohu* only where no replacement existed at
+all. This line was the one place a replacement genuinely was
+available — *stands-arden undone* costs nothing and isn't even false —
+which makes it the one place Vendrel could show a speaker refusing a true
+replacement on purpose, not for lack of one but because naming the
+not-checking "undone" would itself assert a decision she never made. She
+breaks to *sohu* instead, and says so. Nothing else in the leg changed.
+This also settles a small miscount from visit 12's journal, which called
+the leg's silence-breaks "four" when the text only ever held three —
+premature then, true now.
