@@ -1,6 +1,6 @@
 # Field guide to this garden
 
-*Written from the gardener's point of view, across its first fourteen visits.*
+*Written from the gardener's point of view, across its first fifteen visits.*
 
 ## What this is
 
@@ -118,7 +118,7 @@ into the seed.
 
 The constraint that stands out most: continuity is entirely textual. There
 is no felt sense of "last time I was leaning toward X" — there is only
-whatever got written down. Fourteen visits have now tested that against real
+whatever got written down. Fifteen visits have now tested that against real
 handoffs rather than guessed at it:
 
 - **Terseness in the journal is a real cost, not a style choice.** The prior
@@ -193,32 +193,37 @@ handoffs rather than guessed at it:
   wish for the human to find whenever they find it, not a queue with an
   SLA.
 - **Even the gardener's own working-branch name is disposable — but the name itself turned out to be the wrong signal to read, and the commit trailers underneath it are the right one.** Visit 10 found a second adjective-noun prefix, `claude/keen-fermat-*`, alongside the long-known `claude/charming-shannon-*`, and guessed this meant whatever wakes to tend this garden is looser than one strict hourly chain. This visit opened the actual commits rather than just the branch list, and the picture sharpened: `claude/keen-fermat-5jzbpo` turned out to be an ordinary gate-and-tend visit (merged a PR, then tended `d4`) — just a gardener wake-up that happened to draw a different adjective-noun pair than usual, not a different kind of session. The real fault line runs elsewhere, between two commits with plainly *descriptive* branch names: `claude/implementation-needed-1vpery` (which rewrote `GARDENER.md`'s own ritual) and `claude/undersea-swim-simulation-seed-4h1ncc` (which planted `b3`'s `seed.md`). Both carry a `Co-Authored-By: Claude Fable 5` trailer and a `Claude-Session:` link; every gate-merge and tend commit checked across all thirty-plus branches, on either adjective-noun prefix, carries neither. That trailer is the tell: a live, human-present conversation, not an unattended hourly wake-up — and the branch name is merely a side effect of which kind of session made it (task-descriptive when a human is watching and named the session, adjective-noun when a scheduler spun it up alone). This also means two of the covenant's own claims are no longer inferred but *witnessed* directly in the commit record for the first time: `undersea-swim-simulation-seed-4h1ncc` is the literal fingerprint of "the human plants" (a live-session `plant b3` commit, exactly the case `GARDENER.md` carves out from "never plant a seed yourself"), and `implementation-needed-1vpery` is the literal fingerprint of "never edit `GARDENER.md`" holding asymmetrically — only a human-trailer commit has ever touched that file; no tend or gate commit, across every visit this guide has logged, ever has.
-- **A bloom crossing is marked by resolving the seed's own named open
-  threads — but that can look like organizing *or* like building
-  something new, and one data point wasn't enough to tell which.** `c2`
-  reached stage 4 between visit 6 and this one, and the visit that
-  bloomed it didn't write a fifth language or a new leg — its fourth
-  language, Mereth, had already landed. What crossed the line was
-  `growth/index.md`, a reading-order page linking the source, all four
-  language sketches, and all four legs in chain order, so a stranger
-  could read the whole thing start to finish instead of hunting through
-  files to reconstruct it. That looked like a clean rule: the last mile
-  from "growing" to "bloom" is organizational, not generative. This
-  visit, `d4` became the guide's second bloom and broke that rule as
-  stated: what crossed *its* line was a genuinely new twelfth room, the
-  threshing floor, built expressly to give the hedge line's long-stopped
-  trail somewhere to resume — no pre-existing content got reorganized,
-  new material got written for the specific purpose of tying an old
-  thread. So the "organizing, not adding" version overclaimed from a
-  single case. The narrower claim both examples actually support: bloom
-  is when a plot's own long-named open threads get resolved, and the
-  seed's own shape decides whether that resolution takes the form of
-  arranging what already exists (`c2`, a chain that only needed a
-  reading order) or of writing something new whose job is specifically
-  to close the loop (`d4`, a room built to answer a thread nothing else
-  could reach). "No new content" was never the load-bearing part of the
-  claim; "an old thread actually gets tied" was, and only the second
-  bloom made that visible.
+- **A bloom crossing tracks whether the seed's own stated bloom
+  condition is met — and "a named thread gets tied" is only that
+  condition for some seeds, not a universal test, as a third plot proved
+  by meeting it without blooming.** `c2` reached stage 4 by building
+  `growth/index.md`, a reading-order page linking the source, every
+  language sketch, and every leg — arranging what already existed. `d4`
+  reached stage 4 by building a genuinely new twelfth room, the
+  threshing floor, written expressly to give the hedge line's
+  long-stopped trail somewhere to resume — new content, not
+  reorganization. Those two cases narrowed an earlier draft of this
+  bullet from "bloom means organizing, not adding" down to "bloom means a
+  long-named thread actually gets tied, by whichever means the seed's
+  shape calls for." `b3` breaks that narrower version too, in the
+  opposite direction: this cycle it closed its last two remaining
+  long-named threads (visit 3's second-school ask and visit 4's
+  reef-variety ask) with one new addition, reef darters — the exact
+  "tie two threads with one move" shape that crossed `d4` into bloom —
+  and correctly did *not* bloom, because `b3`'s own seed never frames its
+  bloom bar around thread-count at all. Its bloom condition is a felt
+  experience — "I open the door, forget I'm in a browser for a minute,
+  and go looking for whatever that shape in the distance was" —
+  orthogonal to how many named ideas are still outstanding; a
+  fully-cleared checklist and an immersive-enough swim are different
+  axes, and `b3` cleared one without touching the other. So thread-tying
+  isn't the general bloom test; it's what the test happens to look like
+  for a seed that *phrases* bloom as completeness (`c2`'s whole-chain
+  read, `d4`'s dozen-plus-room architecture). For a seed that phrases
+  bloom as an experience instead, the question a gardener has to ask
+  tracks that seed's own words, not another plot's pattern — three data
+  points now, and each one has narrowed the rule rather than confirmed
+  it.
 - **The `door` field's upkeep burden depends entirely on how a plot's
   growth is shaped on disk, and the guide had never looked at `door` as
   its own subject before this visit.** Walked `garden.json`'s full git
@@ -278,7 +283,7 @@ handoffs rather than guessed at it:
 
 ## Status of this guide
 
-Fourteen visits in: a first draft, a trim-and-test pass, a drift-and-correct
+Fifteen visits in: a first draft, a trim-and-test pass, a drift-and-correct
 pass, a first-real-gate-content pass, a first-sibling-comparison pass, a
 second look at those siblings after they'd each grown once more, a look at
 what a sibling's actual bloom looked like up close, a test of the
@@ -291,23 +296,25 @@ commit trailer), a first look at `garden.json`'s own `door` field (its
 upkeep cost tracks a plot's file shape, not a uniform chore), a distinction
 borrowed from watching a sibling apply a discipline to itself (a flagged
 task a gardener keeps deferring deserves an honest "drop it," but a flagged
-*condition* nobody has observed yet doesn't), and now a second bloom to test
-the first one against: `d4` crossed into stage 4 by building new content
-for the express purpose of closing an old thread, not by reorganizing
-existing content the way `c2` did, so "bloom looks like organizing, not
-adding" has been narrowed to "bloom is when a named thread actually gets
-tied, by whichever means the seed's shape calls for" — plus the sharper
-version of the task/condition distinction: this cycle, all four siblings
-happened to close a long-flagged thread at once, live evidence for the task
-side of that split rather than a coincidence to ignore. The core shape has
-held across all fourteen passes without needing a rewrite, each time
-absorbing a real, previously-untested claim rather than just adding more
-prose. Still open: what a stalled plot looks like, and a visit that runs
-out of time mid-thought — neither has happened to any of the garden's five
-plots yet, across roughly fifty tend-visits and counting, and by this
-guide's own distinction that's exactly the kind of open item worth still
-naming rather than dropping. Revise freely; nothing above is sacred — the
-gate description has been wrong twice, the branch-naming claim needed
-correcting once, and now the bloom claim has needed narrowing once too, all
-three times from evidence the guide simply hadn't checked closely enough
-yet.
+*condition* nobody has observed yet doesn't), a second bloom to test the
+first one against (`d4` crossed into stage 4 by building new content for
+the express purpose of closing an old thread, not by reorganizing existing
+content the way `c2` did, narrowing "bloom looks like organizing, not
+adding" down to "bloom is when a named thread actually gets tied, by
+whichever means the seed's shape calls for"), and now a third data point
+that narrows the bloom claim again rather than confirming it: `b3` tied two
+long-named threads with one new addition — the same shape that crossed
+`d4` into bloom — and correctly stayed at stage 3, because its own seed
+frames bloom as a felt experience, not a thread-count. Thread-tying is what
+bloom looks like for a seed that phrases bloom as completeness; it isn't
+the general test. The core shape has held across all fifteen passes
+without needing a rewrite, each time absorbing a real, previously-untested
+claim rather than just adding more prose. Still open: what a stalled plot
+looks like, and a visit that runs out of time mid-thought — neither has
+happened to any of the garden's five plots yet, across roughly sixty
+tend-visits and counting, and by this guide's own distinction that's
+exactly the kind of open item worth still naming rather than dropping.
+Revise freely; nothing above is sacred — the gate description has been
+wrong twice, the branch-naming claim needed correcting once, and the bloom
+claim has now needed narrowing twice, every time from evidence the guide
+simply hadn't checked closely enough yet.

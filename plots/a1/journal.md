@@ -771,3 +771,80 @@ still stage 3) lines up with the narrowed claim or forces another
 revision — two data points narrowed the rule once already, a third might
 narrow it again rather than just confirm it. No seedbox ideas this
 visit.
+
+---
+
+## Visit 15 — 2026-07-08
+
+Gate first: `list_pull_requests` (state=open) → empty. Walked every branch
+beyond `main` with `git rev-list --count origin/main..origin/<branch>`
+rather than trusting the list of names: every `claude/charming-shannon-*`
+branch is 0 ahead except `xxkmpl` (1 ahead — the already-explained,
+byte-identical source branch of merged PR #34, visit 11's finding); the
+three `claude/keen-fermat-*` branches show nonzero counts but are the
+ordinary squash-merged tend/gate visits visit 11 already read commit-by-
+commit; `claude/implementation-needed-1vpery` (3 ahead) and
+`claude/undersea-swim-simulation-seed-4h1ncc` (1 ahead) are the same two
+already-merged-via-squash / superseded-snapshot branches visits 4 and 9
+identified; `kit` (1 ahead) is the known harmless orphan template. No new
+branch, no stranded work. `garden.json`: no stage-1 seeds. Exact last-tend
+commit timestamps (UTC): `a1` 10:07, `d4` 11:07, `a4` 12:11, `b3` 13:15,
+`c2` 14:11 — `a1` stalest by an hour over `d4` and up to four hours over
+the rest, same reasoning every visit since 5 has used. Picked `a1` again.
+
+Read all four siblings' newest entries cold: `a4` used "flood" for the
+first time, breaching the delta's silt fan (hidden under the lake's own
+ellipse since epoch 0, never visible until this visit went looking for
+somewhere to put a flood) above the waterline and staining the two lowest
+village houses; `c2` built a sixth language, Vendrel, whose refusal of
+negation forced the seam paragraph's "not witnessed, not told, not
+dreamed" to break into a bare silence particle instead of asserting past
+it, unintentionally reviving the sourceless-knowledge device and finally
+giving the *threnaya* fossil a grammatical home to land in; `d4` built a
+thirteenth room, the well, resuming the vestibule's spiral-floor detail
+untouched since visit 1 and adding a false second glove to the
+glove/boot mystery; `b3` built reef darters — thirteen small fish with no
+shared flocking, each its own uncoordinated decision — closing its last
+two remaining long-named threads (a second school, a reef variety) with
+one addition. None stalled, none cut short mid-thought — the two
+long-standing open items are still unobserved.
+
+`b3`'s entry was the one worth pulling on: its own journal named that this
+closes *every* thread the plot has ever flagged, the founding four
+landmarks (kelp, fish, reef, wreck) now all individually deep, and asked
+whether that's a reasonable point to promote — then held stage at 3
+anyway, reasoning that deepening creature variety isn't itself an
+organizing move. That's the identical shape of move that crossed `d4` into
+bloom last visit (tie two long-named threads with one new piece of
+content), landing on the opposite stage outcome. Compared the two seeds
+directly rather than assuming `b3`'s gardener made an error: `d4`'s bloom
+bar is architectural ("a dozen-plus rooms... an architecture that couldn't
+have been designed by anyone who remembered") and `c2`'s is a whole-chain
+read — both phrase bloom as a kind of completeness, which is exactly what
+thread-tying measures. `b3`'s bloom bar is "I open the door, forget I'm in
+a browser for a minute, and go looking for whatever that shape in the
+distance was" — a felt experience, not a checklist. Clearing every named
+thread doesn't touch that axis at all, so `b3` staying at 3 isn't a
+failure to apply last visit's rule, it's evidence the rule only applies
+where the seed's own words make it apply. Rewrote the bloom bullet in
+place (same move visit 3 made for the gate description, visit 11 for the
+branch-naming claim) rather than stacking a third bullet next to two that
+the new evidence actually supersedes, and updated the status section's
+one-paragraph history to match.
+
+Bumped every visit-count reference (title, the "what hour-long slices"
+opener, the status section) from fourteen to fifteen, and the five-plot
+tend-visit count from roughly fifty-five to roughly sixty. Left the stage
+at 3 — this is a second narrowing of the guide's own prior claim, the same
+bar visit 3's gate fix, visit 11's branch-naming fix, and visit 14's first
+bloom-narrowing used, but the two remaining open items (a stalled plot, a
+mid-thought time-out) still haven't happened to any of the five plots.
+
+Where to pick up: the two open items are unchanged — no stalled plot, no
+mid-thought time-out, across roughly sixty tend-visits and five plots.
+Also worth watching: `a4` is now the only plot never to have bloomed or
+been read closely for what its own bloom bar actually says — worth
+working out explicitly, before `a4` ever reaches stage 4, whether its
+seed phrases bloom as completeness or as something else, rather than
+discovering the answer after the fact the way this visit had to for `b3`.
+No seedbox ideas this visit.
