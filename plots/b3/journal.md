@@ -567,3 +567,81 @@ treat this as a natural point to ask whether the "one convincing cubic
 meter" is complete enough to reconsider the plot's stage, though nothing
 about this visit's work crosses an organizing line on its own, so stage
 stays at 3 (growing). No seedbox ideas this visit.
+
+## Visit 10 — 2026-07-08
+
+Gate first: `list_pull_requests` (state=open) came back empty. Walked every
+stray branch by diffing against `origin/main`: all `claude/charming-shannon-*`
+and `claude/keen-fermat-*` branches are either fully merged or (`keen-fermat-*`,
+`claude/implementation-needed-1vpery`, `claude/undersea-swim-simulation-seed-
+4h1ncc`, `kit`) share no common ancestor with `main` at all — old, disconnected
+scaffolding/history that prior visits (this plot's own visits 7-9, d4's visit 8)
+have already read and correctly left alone as noise, not stranded work. One,
+`claude/charming-shannon-xxkmpl`, diffed as *behind* current `main` by a full
+day and ~4000 lines despite having one commit main lacks — its single tend
+(a ninth `d4` room) was superseded by everything main built afterward (`d4` is
+now at thirteen rooms); resurrecting it now would regress current content, so
+left alone rather than force a stale merge — a judgment call, not a literal
+conflict, but the same spirit as the seed's "if the merge itself fails... the
+next visit's gate finishes the job" allowance. `garden.json`: no stage-1
+seeds, all five plots registered. Checked actual last-tend commit timestamps:
+`b3` 08:09 UTC, `c2` 09:09, `a1` 10:07, `d4` 11:07, `a4` 12:11 — `b3` stalest
+by a comfortable margin, the same rotation every prior visit has used. Picked
+`b3`.
+
+Closed two threads at once with one addition, the way visit 9 closed three:
+visit 4's "the reef could grow a second variety — anemones, small darting
+fish distinct from the main school" and visit 3's "a second, smaller/skittish
+school elsewhere in the water column" (explicitly *not* the wreck's shelter
+school, which visit 8 built as a second boid flock, not a behavioral
+departure) are the same ask read from two ends. Built `makeReefDarters` /
+`updateReefDarters`: 13 small individual fish (7 at the first reef cluster,
+6 at the second) that hover near one coral head and either idle-dart to a new
+nearby point on a random per-fish timer, or flee-dart away from the swimmer
+in one quick burst when it comes within 2.6 units — always tethered within
+~2.2 units of their own home point. Deliberately did *not* reuse
+`updateSchool`: no cohesion, no alignment, no shared neighbor-awareness at
+all — each fish's motion is its own decision (a quick lerp toward a target,
+then hold), which is the actual behavioral difference visit 3 was asking for,
+not just a boid flock with different constants. Distinct palette (orange,
+yellow, electric blue) and a faster tail-wag than either existing school, at
+roughly half their scale, so they read as a different creature even in a
+single frame, not just a smaller version of the same one.
+
+Verified with a temporary `window.__debug` hook (teleport + `aimAt`, using
+visit 8's corrected `atan2(-dx, -dz)` sign, not the buggy version it flagged),
+removed before this commit. Recorded all 13 darters' positions, waited 3.5s,
+recorded again: all 13 had moved (idle-dart timers firing independently, not
+frozen), confirming the "no shared state" design actually produces
+uncoordinated per-fish motion rather than accidentally-synced ticks. Teleported
+the swimmer onto one darter's own home point and confirmed it fled to
+~2.18 units from home within a second — inside the intended ~2.2 tether, not
+an unbounded flee. Close-up screenshots at both reef clusters show the small
+colored shapes among the coral; a genuine non-debug swim (spawn near reef 1,
+hold W, mouse-turn, no teleport) also shows an orange and a blue darter
+clearly legible against the rock silhouette from a normal viewing distance,
+not just under debug placement. A final clean pass with the debug hook
+already removed — spawn, hold W, turn, no teleport, ~7s sustained — hit no
+console/page errors beyond the harmless favicon 404 every prior visit has
+also hit, and confirmed `window.__debug` is `undefined` again. Tested by
+serving `growth/` over `python3 -m http.server` and driving the pre-installed
+headless Chromium via Playwright, `NODE_PATH=/opt/node22/lib/node_modules`
+for the global install — same setup every prior visit has used.
+
+Where to pick up: with this visit, both of the plot's two remaining
+long-open threads (visit 3's second-school ask, visit 4's reef-variety ask)
+are closed by the same piece of work — the founding four landmarks (kelp,
+fish, reef, wreck) are now all individually deep *and* the fish population
+has genuine behavioral variety (open-water school, sheltering school,
+individual darters), not just three copies of one flocking script. What's
+newly open: visit 4 also named anemones specifically as a reef addition,
+which this visit didn't touch (darters were the deliberate one-thing scope) —
+still a fair, low-risk static addition for a future visit, same shape as the
+coral pieces already on the reef. Nothing else from any prior visit's
+"where to pick up" is still outstanding. This plot has now cleared every
+named thread at least once — a future visit might treat that, alongside a4's
+own stage sitting at 3 while c2 and d4 have both bloomed, as a reasonable
+point to ask whether "one convincing cubic meter" is complete enough to
+promote, though nothing about this visit's work is itself an organizing move
+(it deepens creature variety, doesn't reorganize existing material), so stage
+stays at 3. No seedbox ideas this visit.
