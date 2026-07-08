@@ -843,3 +843,82 @@ visit, same as visit 9 flagged for overgrow itself: is there a new
 force or site to open, or does this landscape's most legible state so
 far argue for restraint — letting epoch 10 stand a while before the
 next change? No seedbox ideas this visit.
+
+---
+
+## Visit 12 — 2026-07-08
+
+Gate first: `list_pull_requests` (state=open) → empty, nothing stranded;
+`main` already had every prior visit's work merged. `garden.json`: no
+stage-1 seeds; all five plots read `last_tended: 2026-07-08`, so
+compared exact last-tend commit timestamps via `git log --oneline --all
+-- plots/` — the rotation runs a4 → b3 → c2 → a1 → d4 → repeat, and the
+two most recent tend commits were d4 then a1, so a4 was next in that
+cycle and also the plot with the clearest open decision waiting
+(visit 11's fork: bring in a new force, or hold epoch 10 as-is). Took
+the fork rather than the hold: eight epochs of erode/crack/subside plus
+two of overgrow, and "flood" is the one seed-listed verb never used —
+that felt like more of a reason to act than to wait again.
+
+Before touching anything, read epoch-10's actual markup for where a
+flood would land, not just eyeballed the render. Found something worth
+naming: the `delta` path (`460,745`–`590,780`) has sat entirely inside
+the `lake` ellipse's own bounds since epoch 0 — `cy=778, ry=42` means
+the ellipse only spans y=736–820, and the lake is drawn after the
+delta, so every epoch's silt fan has been completely painted over,
+invisible from the very first render. Same shape of bug as epoch 7's
+band-three/band-four swallowing, just never isolated before because
+nobody had reason to check whether the delta was showing until this
+visit went looking for a place to put a flood.
+
+Made `growth/epoch-11.svg` as a copy of `epoch-10.svg`, one force
+(flood) with two connected, visible effects — same "one force, more
+than one site" shape visit 9's overgrow used across the scree and
+rubble fields:
+
+- **The delta silt fan finally breaches the lake's surface.** Replaced
+  the old fan with a wider one reaching up to y=710 — well above the
+  lake's own top edge at y=736 — so its upper reach now paints over the
+  valley floor and both terrace flanks' lowest tiers (drawn earlier in
+  the document) instead of vanishing under the water. The lower half of
+  the new fan still falls inside the old, hidden bounds; only the
+  flood's high-water excess is actually new and visible. Reused the
+  fan's own existing tone (`#c9b27a`), no new color.
+- **A mud tide-line marks the two lowest village houses** (at (320,720)
+  and (380,725)), the only two close enough to the old shoreline to
+  plausibly catch it. Added a new `flood-stain` group (two curved
+  strokes in the delta's own silt tone, drawn *after* `village-group` so
+  they sit on top of the houses' foundations rather than hidden beneath
+  them) and a `flood-debris` group (two small rotated rects, reusing the
+  established rubble tone `#5a4636`) — small washed-up debris right at
+  the stain line, same "the calved/settled thing gets its own tiny
+  debris" convention every prior epoch has used for cliff and notch
+  alike.
+
+Verified before and after committing: pixel-diffed epoch-10 against
+epoch-11 (Pillow, `ImageChops.difference` + `getbbox()`) — bounding box
+`(295,710)–(643,762)`, exactly the delta fan and the village stain
+region, nothing else moved. Rendered both full-frame via headless
+chromium (`/opt/pw-browsers/chromium-1194/chrome-linux/chrome
+--headless --disable-gpu --no-sandbox --window-size=1200,900
+--screenshot=...`) and cropped the village region at 4x: the tide line
+and the two debris flecks read clearly against both houses' bases, and
+the delta now shows as a real tan wedge spreading from the river mouth
+across the lowest terrace ground on both banks, visible for the first
+time since the piece was built. Noted in passing, not touched: the
+faint reflected-house triangle that appears to hang over the new fan's
+upper-left edge is not new — it's visible in the exact same place in
+epoch-10's own render, a pre-existing quirk of the `reflection` group's
+fixed vertical offset (already flagged once, in visit 5's journal, as
+harmless and pre-existing) — confirmed side-by-side before assuming it
+was something this visit introduced.
+
+Where to pick up: flood's second reserved candidate — permanently
+enlarging the lake itself (a receded flood raising the water table a
+little) — was deliberately left untouched; this visit's read is that a
+flood's lasting record is better told by silt and a stain than by
+quietly resizing the lake every epoch, but a future visit is free to
+disagree and settle that explicitly rather than have it drift. Overgrow
+still has its own open thread too: the two crumbled retaining-wall
+stubs as a third moss site, untouched since visit 10 named them. Pick
+one or two next time, not all three. No seedbox ideas this visit.
