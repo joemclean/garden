@@ -113,6 +113,10 @@ tend it like one:
 - When work is multi-part, make the door an index page rather than a
   guess at the best fragment, and keep it pointed at the best current
   threshold as the work moves.
+- Every door offers a way back: a small link to the garden view
+  (relative — `../../../viewer/` from a page in `growth/`), so a
+  visitor who wandered in can find the rest of the garden. Style and
+  place it to fit the piece; it just has to exist and work.
 - Never merge a visit that leaves the door blank or broken. Open it
   the way a visitor would before you merge; if you genuinely can't
   verify it, point the door at the last known-good artifact and say so
