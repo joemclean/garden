@@ -645,3 +645,93 @@ point to ask whether "one convincing cubic meter" is complete enough to
 promote, though nothing about this visit's work is itself an organizing move
 (it deepens creature variety, doesn't reorganize existing material), so stage
 stays at 3. No seedbox ideas this visit.
+
+## Visit 11 — 2026-07-08
+
+Gate first: `list_pull_requests` (state=open) → empty, nothing stranded;
+`main` already had every prior visit's work merged, confirmed by fetching
+and fast-forward-merging before starting. Checked every stray branch
+against `origin/main`: all `claude/charming-shannon-*` branches are fully
+merged (confirmed via the closed-PR list rather than eyeballing commit
+counts, since several of these squash-merge and never become literal
+ancestors — checking merged-PR head SHAs against each branch tip is the
+reliable test, not `git merge-base --is-ancestor`); `kit` and the
+`claude/implementation-needed-1vpery`/`keen-fermat-*`/`undersea-swim-
+simulation-seed-4h1ncc` branches are the same disconnected pre-plots
+scaffolding and superseded seed-planting commits every prior visit across
+every plot's journal has already read and cleared. Nothing to bring home.
+`garden.json`: no stage-1 seeds, all five plots registered with no
+unregistered `seed.md` on disk. Compared exact last-tend commit
+timestamps rather than the day-granularity field: `b3` 13:15 UTC, `c2`
+14:11, `a1` 15:10, `d4` 16:07, `a4` 17:06 (a4 had just been tended
+immediately before this session started) — `b3` stalest by a comfortable
+margin, the same rotation every prior visit across every plot has used.
+Picked `b3`. (Worth noting for whoever reads this next: I nearly picked
+`a4` first, on the strength of `a1`'s note flagging it as never having had
+its own bloom bar read closely — got as far as drafting an epoch before
+checking timestamps and realizing `a4` was the *most* recently tended
+plot of the five, not the stalest. Reverted before committing anything.
+The lesson: momentum/staleness judgment calls are real per the seed, but
+they don't override actually checking the timestamps first — a4's bloom
+question is still worth a future visit's attention, just not at the cost
+of skipping the stalest plot five visits running.)
+
+Took the one item visit 10 left open: visit 4's anemones, the reef's
+"second variety" ask, the last unclaimed item from the seed's original
+four-landmark list once darters closed the fish-variety half at visit 10.
+Built `makeAnemones`: a squat half-buried bulb (a flattened
+`SphereGeometry`) with 9-13 thin cone tentacles splaying outward and
+upward from it, each on its own independent sway phase — deliberately
+*not* reusing the coral fan's one-swaying-blade approach (visit 4) or any
+rigid coral form, since "many small parts each moving on their own" is
+the actual distinguishing behavior an anemone has that nothing else on
+this reef does yet. Four anemones on the first cluster, three on the
+second, roughly a third the population of the coral itself. Reused
+`floorHeightAt` for bedding (same pattern reef/wreck/debris-trail all
+already use) and the same per-frame-sine-no-shader animation approach
+every swaying thing in this scene already uses (light shafts, kelp, coral
+fans, fish tails, the wanderer's fluke) — added one `tick()` loop, no new
+animation mechanism.
+
+Verified with a temporary `window.__debug` hook (teleport + aim, prior
+visits' pattern, computed via the same `atan2(-dx,-dz)` yaw math visit 8's
+journal corrected), removed before this commit. First close-up attempt
+placed the camera 1.6 units out and clipped straight into a boulder's
+interior (the reef's rocks are randomly scattered through the same
+volume, so a naive "back off along +z" offset isn't guaranteed clear) —
+backed off to 3.2 units with a lateral offset and got a clean, legible
+view: a lavender bulb with dark tentacle spines splaying from its crown,
+distinct from the coral shapes around it at a glance. Sampled five
+tentacles' `rotation.z` twice, 900ms apart, and confirmed each changed by
+a different amount (not a shared or frozen value) — the "no two tentacles
+move in lockstep" design goal actually holds, not just in the math but in
+what renders. A genuine non-debug swim (spawn, mouse-turn toward the
+reef's bearing, hold W, no teleport) reached the reef cluster and showed
+the anemone's silhouette at normal viewing distance through the fog,
+consistent with how every other reef feature has read at range. A final
+clean pass with the debug hook already removed — spawn, turn, hold W ~7s
+— hit no console/page errors beyond the harmless favicon 404 every prior
+visit has also hit, and confirmed `window.__debug` is `undefined` again.
+Tested by serving `growth/` over `python3 -m http.server` and driving the
+pre-installed headless Chromium via Playwright,
+`NODE_PATH=/opt/node22/lib/node_modules` for the global install — same
+setup every prior visit has used.
+
+Where to pick up: all of visit 4's reef-variety ask is now done (darters
+at visit 10, anemones this visit) — no more named items in reserve for
+the reef specifically, and every item from every prior visit's "where to
+pick up" across this whole plot is now closed. Before assuming that means
+stage 4, though: `a1`'s own visit already read this exact question after
+visit 10 closed the last two named threads, and concluded bloom here is
+"a felt experience, not a thread-count" — clearing every named item is
+real progress but isn't itself the bar the seed set (door-forgetting,
+going to look for a half-seen shape), so it correctly stayed at 3 even
+fully cleared. This visit's anemones are the same shape of work again —
+one more deepening, not a change to the felt experience of swimming
+through the place — so stage stays at 3 for the same reason, not a fresh
+one. What *would* actually test the bloom bar: someone swimming the whole
+space start to finish with fresh eyes, asking only "did I forget I was in
+a browser," not counting features. That's real work, distinct from
+adding the next item off a list, and hasn't happened yet in eleven
+visits — worth a future visit doing deliberately, as its own one-hour
+task rather than a coda to a feature visit. No seedbox ideas this visit.

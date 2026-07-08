@@ -266,6 +266,62 @@ function makeReef(centerX, centerZ, spread) {
 makeReef(20, -22, 11);
 makeReef(26, -40, 9);
 
+// ---------- anemones: the reef's second variety, distinct from every coral shape ----------
+// The last open item from visit 4's "reef could grow a second variety — anemones,
+// small darting fish distinct from the main school" (the darting-fish half closed
+// at visit 10). Every existing coral piece is either one rigid solid (branching,
+// boulder) or one swaying blade (the soft fan) — an anemone is neither: a squat
+// bulbous base with many thin tentacles that each sway on their own independent
+// phase, so a single head reads as several small waving parts, not one shape
+// swaying as a whole. That per-tentacle independence is the actual distinguishing
+// behavior, not just a new silhouette.
+const anemoneColors = [0xe488b0, 0xb08ee8, 0xcdead2];
+const anemoneMats = anemoneColors.map(
+  (c) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.7, flatShading: true, fog: true })
+);
+const anemoneTentacles = [];
+function makeAnemones(centerX, centerZ, spread, count) {
+  for (let i = 0; i < count; i++) {
+    const x = centerX + (Math.random() - 0.5) * spread * 0.85;
+    const z = centerZ + (Math.random() - 0.5) * spread * 0.55;
+    const baseY = floorHeightAt(x, z);
+    const mat = anemoneMats[(Math.random() * anemoneMats.length) | 0];
+
+    const group = new THREE.Object3D();
+    group.position.set(x, baseY, z);
+    scene.add(group);
+
+    // bulbous base, half-buried in the rock/sand like the coral pieces above it
+    const baseRadius = 0.22 + Math.random() * 0.12;
+    const base = new THREE.Mesh(new THREE.SphereGeometry(baseRadius, 8, 6), mat);
+    base.scale.y = 0.55;
+    group.add(base);
+
+    // a ring of thin tentacles splaying outward and up from the base, each
+    // swaying on its own phase — the piece's whole point, so no two tentacles
+    // ever move in lockstep even on the same head
+    const tentacleCount = 9 + ((Math.random() * 5) | 0);
+    for (let tI = 0; tI < tentacleCount; tI++) {
+      const angle = (tI / tentacleCount) * Math.PI * 2 + Math.random() * 0.3;
+      const len = 0.35 + Math.random() * 0.25;
+      const tentacle = new THREE.Mesh(new THREE.ConeGeometry(0.035, len, 4), mat);
+      tentacle.position.set(Math.cos(angle) * baseRadius * 0.7, baseRadius * 0.35, Math.sin(angle) * baseRadius * 0.7);
+      tentacle.rotation.z = Math.cos(angle) * 0.5;
+      tentacle.rotation.x = -Math.sin(angle) * 0.5;
+      group.add(tentacle);
+      anemoneTentacles.push({
+        mesh: tentacle,
+        baseRotZ: tentacle.rotation.z,
+        baseRotX: tentacle.rotation.x,
+        phase: Math.random() * Math.PI * 2,
+        speed: 0.9 + Math.random() * 0.6,
+      });
+    }
+  }
+}
+makeAnemones(20, -22, 11, 4);
+makeAnemones(26, -40, 9, 3);
+
 // ---------- wreck: a broken hull resting canted on the slope ----------
 // The last item on visit 1's original list. Positioned well past the reef
 // (which claims roughly x 14..30) so kelp, reef, and wreck read as three
@@ -911,6 +967,11 @@ function tick() {
 
   for (const s of reefSway) {
     s.mesh.rotation.z = Math.sin(t * s.speed + s.phase) * 0.18;
+  }
+
+  for (const a of anemoneTentacles) {
+    a.mesh.rotation.z = a.baseRotZ + Math.sin(t * a.speed + a.phase) * 0.22;
+    a.mesh.rotation.x = a.baseRotX + Math.cos(t * a.speed * 0.8 + a.phase) * 0.15;
   }
 
   const pp = particleGeo.attributes.position;
