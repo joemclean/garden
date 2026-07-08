@@ -433,3 +433,67 @@ finally risk naming (or almost-naming) the gardener the house has now
 built four separate rooms' worth of evidence for. Long hall, vestibule,
 courtyard, garden, shed, walled garden, and cellar text all untouched, per
 "never demolish." No new seedbox ideas this visit.
+
+## Visit 9 — 2026-07-08
+
+Gate first: `list_pull_requests` (state=open) came back empty — nothing
+stranded to bring home. `garden.json`: no stage-1 seeds, all five plots
+already registered. Compared actual last-commit timestamps rather than
+the date field (`a1` and `a4` both already tended today; `d4` 20:09:46,
+`b3` 22:11:17, `c2` 23:07:14, both the previous day) — `d4` stalest by a
+comfortable margin, the same rotation prior visits have described.
+Picked `d4` for a sixth visit running.
+
+Took visit 8's own suggestion — gave the grove its own branch — rather
+than the naming option, on the same restraint every prior visit in this
+plot has used: naming (or almost-naming) the gardener would resolve the
+one thing this whole plot has been patiently refusing to resolve, and
+nothing this visit found earns that. Left the vestibule/cellar pairing
+exactly where visit 7 and 8 left it, untouched.
+
+Built an eleventh room, **the nursery**, reached through a second, deeper
+gap among the grove's stripped branches — added to the grove's `.doors`
+list without touching its existing text or door back to the hedge line.
+The room does two things:
+
+- **Complicates the child-sized-evidence thread** rather than extending
+  it: a trowel, warm the way the hedge line's basket was warm, but sized
+  for a grown hand — the first tool in three gardens' worth of them that
+  doesn't match the vestibule's glove or the cellar's boot. Deliberately
+  offers two readings (two tenders, or one who grew up) and refuses to
+  pick, the same move the reading room's book made about "one visitor
+  twice."
+- **Extends the house's time-disagreement thread** (sundial, the
+  ledger's four-minutes-fast dates, the three gardens' three hours) into
+  growth itself: saplings a foot tall in soil the room insists was
+  turned this morning. Not a fourth clock disagreeing, but the first
+  thing that disagrees with *duration* rather than *hour*.
+
+Rendered `#grove` (to confirm the new door line reads right) and
+`#nursery` via headless chromium (globbed `chromium-*/chrome-linux/chrome`
+since the version directory drifts, `--disable-gpu --no-sandbox
+--window-size=1200,1000`, same known-good flags prior visits used) and
+`--dump-dom` for `id="nursery"` to confirm the room mounts — clean, only
+the usual harmless dbus stderr noise. Updated the whisper text from "ten
+rooms" to "eleven rooms."
+
+Held the stage at 3. Visit 8's stage-3 bump was earned by an organizing
+move (tying three rooms' mysteries together); this visit is back to
+accumulation — one room, in character, but not a second organizing move
+in a row. Room count is 11 of "dozen-plus" — likely one more ordinary
+visit from qualifying for bloom on count alone, though bloom also asks
+for an architecture "that couldn't have been designed by anyone who
+remembered," which is a judgment call for whichever visit gets there,
+not just a room tally.
+
+Where to pick up: room count is 11 of "dozen-plus," close enough that
+the next visit here should seriously weigh whether to bump to bloom (4)
+outright, especially if it adds a twelfth room or ties another loose
+thread the way visit 8 did. Open threads: the vestibule's glove and
+cellar's boot, still deliberately unclaimed; the hedge line's trail that
+"stops at nothing" and the question of what leaves grass standing
+straight again afterward, still unclaimed; and now the nursery's own
+two-tenders-or-one-who-grew-up question, brand new and also best left
+open. The reading room's book has held four voices since visit 8 —
+fair game for a fifth any time. Every other room's text untouched, per
+"never demolish." No new seedbox ideas this visit.
