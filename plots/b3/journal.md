@@ -497,3 +497,73 @@ neighborhood as something that already reads as visible (like the glow
 motes). Small, non-additive geometry needs a real line of sight, not just
 a shared x-line. Left stage at 3 (growing) — this deepens the wreck
 without crossing an organizing line. No seedbox ideas this visit.
+
+## visit 9
+
+Gate first: `list_pull_requests` (state=open) came back empty. Diffed
+every stray branch against `origin/main`: all 46 `claude/charming-shannon-*`
+branches are zero commits ahead (fully merged, matching visit 8's finding);
+`claude/implementation-needed-1vpery` is still the same disconnected,
+no-common-ancestor scaffolding reconstruction visit 8 read and correctly
+left alone — noise, not stranded work. Checked actual last-tend commit
+timestamps: `b3` 03:18 UTC, `c2` 04:08, `a1` 05:07, `d4` 06:06, `a4` 07:10
+— `b3` stalest by a wide margin. Picked `b3`.
+
+Took the last item from visit 5's original three "interior life" options
+(sheltering fish went to visit 8, bioluminescence to visit 7): a second
+debris trail leading away from the wreck. Added `makeDebrisTrail`, a
+generic function (start point, direction vector, count) rather than a
+one-off, in case a future landmark wants the same "scattered wreckage"
+treatment. Nine pieces — barrels (jittered cylinders, some upright, most
+toppled) and broken planks (flat, jittered boxes) — start at the stern
+(`(50, -30.5)`, visit 5's own `makeWreck(42,-34)` offset) and continue
+roughly along the direction the stern already broke off in, spacing and
+lateral scatter both growing with distance so it reads as thinning
+wreckage rather than a planted, evenly-spaced row, with each piece scaled
+slightly smaller the further out it sits. Bedded via the existing
+`floorHeightAt`, reusing the reef/wreck pattern directly (absolute world
+coordinates on an unrotated container, no animation) — no new mechanism.
+
+One deliberate direction choice worth flagging: the stern broke off in a
+*shallower* direction from the wreck's center (less negative z), and the
+wreck already sits close to the swimmer's `-20` depth clamp (visit 5's own
+journal noted depth capped out during testing near the wreck). Continuing
+the trail in a *deeper* direction would have pushed it below where the
+swimmer can actually go — visible in principle, unreachable in practice,
+which would've been wasted work. Continuing in the stern's own shallower
+direction instead keeps all nine pieces inside both the floor mesh's
+bounds and the swimmer's reachable depth band.
+
+Verified with a temporary `window.__debug` hook (teleport + aimAt, prior
+visits' pattern), removed before this commit. Teleported to two points
+along the trail's length and screenshotted: pieces sit flush on the slope
+with no floating or sinking (first thing to check, per visit 4's note,
+since this is the second thing after the reef/wreck to use
+`floorHeightAt` for a whole scattered set rather than one object), sizes
+visibly shrink from the near barrels to the far planks, and the scatter
+widens with distance rather than reading as a straight line. A close
+teleport also confirmed barrels read as barrels and planks as planks, not
+interchangeable blobs. Tested by serving `growth/` over `python3 -m
+http.server` and driving the pre-installed headless Chromium via
+Playwright, `NODE_PATH=/opt/node22/lib/node_modules` for the global
+install, same setup every prior visit has used. A genuine non-debug swim
+(spawn, hold W, mouse-turn, no teleport) and a final clean pass *after*
+removing the debug hook both hit no console/page errors beyond the
+harmless favicon 404 every prior visit has also hit, and no NaN/crash.
+
+Where to pick up: all three of visit 5's original interior-life options
+for the wreck are now done (bioluminescence, sheltering fish, debris
+trail) — this closes that thread entirely. What's still open, unchanged:
+the reef's second variety — anemones, small darting fish distinct from
+the main school (visit 4); the main fish school's single-behavior
+limitation, no second smaller/skittish school elsewhere in the water
+column (visit 3, note this is distinct from the *shelter* school visit 8
+already added near the wreck, which reuses the same boid code but doesn't
+address "a second school with different behavior further out" the way
+visit 3 originally meant it). Neither is more urgent than the other. The
+seed's four founding landmarks (kelp, fish, reef, wreck) are now all
+individually deep rather than freshly planted — a future visit could also
+treat this as a natural point to ask whether the "one convincing cubic
+meter" is complete enough to reconsider the plot's stage, though nothing
+about this visit's work crosses an organizing line on its own, so stage
+stays at 3 (growing). No seedbox ideas this visit.

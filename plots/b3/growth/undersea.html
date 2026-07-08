@@ -389,6 +389,71 @@ function makeGlowMotes(centerX, centerZ, baseY) {
 
 makeWreck(42, -34);
 
+// ---------- a second debris trail, leading away from the wreck ----------
+// The last of visit 5's three "interior life" ideas for the wreck (the other
+// two — bioluminescence, sheltering fish — were taken by visits 7 and 8).
+// Not more life inside the hull this time: evidence of how the wreck got
+// here. A scatter of barrels and broken planking trailing off past the
+// stern, the way real wreckage drags and spills as a hull goes down and
+// settles unevenly. Reuses the reef/wreck pattern directly — an unrotated
+// container with children at absolute world coordinates, bedded via
+// floorHeightAt, no animation.
+const barrelMat = new THREE.MeshStandardMaterial({ color: 0x3a2c1a, roughness: 0.9, metalness: 0.1, flatShading: true, fog: true });
+const plankMat = new THREE.MeshStandardMaterial({ color: 0x241c12, roughness: 1, metalness: 0.05, flatShading: true, fog: true });
+
+function makeDebrisTrail(startX, startZ, dirX, dirZ, count) {
+  const len = Math.hypot(dirX, dirZ);
+  const ux = dirX / len, uz = dirZ / len;
+  const perpX = -uz, perpZ = ux;
+  const trailGroup = new THREE.Object3D();
+  scene.add(trailGroup);
+  for (let i = 0; i < count; i++) {
+    // spacing and scatter both grow with distance, so the trail thins and
+    // widens the further it gets from the wreck rather than reading as a
+    // straight, evenly-spaced line
+    const dist = 4 + i * 2.4 + Math.random() * 1.5;
+    const drift = (Math.random() - 0.5) * (1.5 + i * 0.9);
+    const x = startX + ux * dist + perpX * drift;
+    const z = startZ + uz * dist + perpZ * drift;
+    const y = floorHeightAt(x, z);
+    // pieces read slightly smaller the further they've scattered
+    const scale = Math.max(0.4, 1 - i / (count + 1));
+
+    if (Math.random() < 0.45) {
+      // a barrel — some still upright, most toppled at odd angles
+      const r = (0.28 + Math.random() * 0.12) * scale;
+      const h = (0.7 + Math.random() * 0.25) * scale;
+      const barrel = new THREE.Mesh(jitterGeo(new THREE.CylinderGeometry(r, r, h, 8), r * 0.12), barrelMat);
+      const toppled = Math.random() < 0.6;
+      barrel.position.set(x, y + (toppled ? r : h * 0.45), z);
+      barrel.rotation.set(
+        toppled ? Math.PI / 2 + (Math.random() - 0.5) * 0.4 : (Math.random() - 0.5) * 0.25,
+        Math.random() * Math.PI,
+        (Math.random() - 0.5) * 0.3
+      );
+      trailGroup.add(barrel);
+    } else {
+      // a broken plank, flat on the seabed
+      const w = (0.9 + Math.random() * 0.8) * scale;
+      const plank = new THREE.Mesh(jitterGeo(new THREE.BoxGeometry(w, 0.08 * scale, 0.28 * scale), 0.03), plankMat);
+      plank.position.set(x, y + 0.05 * scale, z);
+      plank.rotation.y = Math.random() * Math.PI;
+      plank.rotation.x = (Math.random() - 0.5) * 0.2;
+      plank.rotation.z = (Math.random() - 0.5) * 0.2;
+      trailGroup.add(plank);
+    }
+  }
+}
+
+// Starts at the stern (centerX+8, centerZ+3.5 from makeWreck(42,-34), i.e.
+// (50, -30.5)) and continues past it in roughly the same direction the stern
+// already broke off in — but shallower (z drifting toward less negative), so
+// the trail stays inside the swimmer's reachable depth band instead of
+// running the floor down into the -20 depth clamp the way straight-out
+// deepening would. Nine pieces keep it inside the floor mesh's bounds and
+// well within fog-visible range of the wreck.
+makeDebrisTrail(50, -30.5, 1, 0.3, 9);
+
 // ---------- marine snow: drifting particulate ----------
 const PARTICLES = 2200;
 const particleGeo = new THREE.BufferGeometry();
