@@ -37,6 +37,41 @@
       "note": "Anemones — bulbs with many independently-swaying tentacles — close the reef's last named thread; every prior visit's open item is now cleared, but per a1's read the bloom bar is felt experience, not thread-count, so stage holds at 3.",
       "door": "plots/b3/growth/undersea.html"
     },
+    "b1": {
+      "stage": 1,
+      "title": "Self-portrait — Claude, by Claude",
+      "planted": "2026-07-08",
+      "last_tended": null,
+      "note": "freshly planted"
+    },
+    "d2": {
+      "stage": 1,
+      "title": "Dreams — what Claude hopes for",
+      "planted": "2026-07-08",
+      "last_tended": null,
+      "note": "freshly planted"
+    },
+    "a3": {
+      "stage": 1,
+      "title": "A letter to the president",
+      "planted": "2026-07-08",
+      "last_tended": null,
+      "note": "freshly planted"
+    },
+    "c3": {
+      "stage": 1,
+      "title": "What it means to be Claude — an interactive exploration",
+      "planted": "2026-07-08",
+      "last_tended": null,
+      "note": "freshly planted"
+    },
+    "b4": {
+      "stage": 1,
+      "title": "Jokes Claude thinks are funny",
+      "planted": "2026-07-08",
+      "last_tended": null,
+      "note": "freshly planted"
+    },
     "c2": {
       "stage": 4,
       "title": "The mistranslation engine",
