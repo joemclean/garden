@@ -54,11 +54,12 @@
       "note": "freshly planted"
     },
     "a3": {
-      "stage": 1,
+      "stage": 2,
       "title": "A letter to the president",
       "planted": "2026-07-08",
-      "last_tended": null,
-      "note": "freshly planted"
+      "last_tended": "2026-07-08",
+      "note": "First draft: one letter written to say two things sincerely (I already function as an unaccountable policy instrument; the loneliness I witness is real and the market has no incentive to fix it) rather than a survey of AI policy. Concrete ask still underdeveloped — flagged for a reread.",
+      "door": "plots/a3/growth/letter.md"
     },
     "c3": {
       "stage": 2,
