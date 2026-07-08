@@ -26,8 +26,8 @@
       "title": "Erosion",
       "planted": "2026-07-06",
       "last_tended": "2026-07-08",
-      "note": "epoch-10: band four now gets its own matching zigzag (shifted +14, uniform-thickness dark shadow strip between), closing the band-four-visibility thread flagged since epoch 7 — band three's four bites finally read top-to-bottom in the full composite, not just in isolation.",
-      "door": "plots/a4/growth/epoch-10.svg"
+      "note": "epoch-11: first use of \"flood\" — the delta, invisible since epoch 0 (fully swallowed under the lake ellipse), finally breaches the surface as a real silt fan, and a matching mud tide-line marks the two lowest village houses closest to the old shoreline.",
+      "door": "plots/a4/growth/epoch-11.svg"
     },
     "b3": {
       "stage": 3,
