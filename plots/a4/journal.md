@@ -776,3 +776,70 @@ natural next candidate, not touched this visit to keep to one clear
 move. "Flood" remains the one force from the seed's list never yet used
 on this landscape. Pick one or two, not all three. No seedbox ideas this
 visit.
+
+---
+
+## Visit 11 — 2026-07-08
+
+Gate first: `list_pull_requests` (state=open) → empty. Two branches
+carry commits beyond `main`: `claude/charming-shannon-xxkmpl` (tip
+matches PR #34's merged head sha exactly — a stray ref left over from
+a squash merge, harmless) and `claude/undersea-swim-simulation-seed-4h1ncc`
+(the `Claude Fable 5` co-authored b3-planting commit visit 8's PR #38
+already traced and cleared). Both known-harmless from prior visits,
+nothing to bring home. `garden.json`: no stage-1 seeds, all five plots
+tended today; a4 was the stalest by a wide margin (last real tend
+01:10 UTC vs. the others' 03:00-06:00 range) — a4 was the pick.
+
+Took the band-four-visibility thread flagged since epoch 7 and left
+untaken through epochs 8 and 9 — the only named, budgeted-a-full-epoch
+candidate in reserve. Read the actual geometry before touching anything:
+band four's old top edge was one straight segment, `M 922 568 L 1200 545`,
+literally just the two endpoints of band three's own 14-vertex zigzag
+with every interior point skipped. Confirmed algebraically (not by eye)
+that this straight line sits *above* each bite's true deepest vertex —
+e.g. at x=1090 the line interpolates to y≈554, well short of the bite's
+actual floor at y=588 — so that 34px of real notch depth was already
+inside band four's own polygon, meaning band four's later paint (it's
+drawn right after band three in document order) simply recolored the
+void back to plain rock. Rendered epoch-09 headless and cropped the
+region tight: confirmed by eye too — only one bite shows even a hint of
+a bump, the other three read as an uninterrupted tan stripe.
+
+The fix, in `growth/epoch-10.svg`:
+- A new `band-three-shadow` path, filled `#4a382a` (the deep-rock tone
+  already established for the dry-notch's own backing and the cliff's
+  darkest base band — no new color invented). Its top edge is band
+  three's zigzag verbatim; its bottom edge is the *same* vertex list
+  with +14 added to every y. Because both edges share vertices and
+  differ only by that constant offset, the two polylines are pairwise
+  parallel — the strip has exactly uniform 14px thickness everywhere
+  and can't self-intersect, which sidesteps needing to hand-check
+  clearance the way epoch 5-8's crack margins did.
+- Band four's own top edge replaced with that same shifted zigzag (its
+  old two-point line is gone), so it now starts exactly at the shadow
+  strip's bottom edge instead of reaching back up into the bites.
+
+Verified two ways before trusting it: (1) pixel diff between epoch-09
+and epoch-10 full-frame renders — bounding box `(916,522)-(1200,622)`,
+precisely the band-three/band-four corner and nothing else, confirming
+no other layer moved; (2) a 3x cropped render of that exact region,
+which now shows a continuous dark zigzag scar cutting cleanly through
+the tan band, each of the four bites legible top-to-bottom and lining
+up with its own rubble cascade below — the thing epoch 7 flagged as
+missing. Also rendered the full 1200x800 composite at half scale to
+confirm the rest of the scene (village, waterfall, terraces, moss) is
+untouched.
+
+Where to pick up: the band-four-visibility thread, the longest-running
+open item on this plot, is now closed — nothing named is left in
+reserve for band three's cliff. What remains: "flood" is still the one
+seed-listed force never used; overgrow's moss could still spread wider
+or deepen now that two epochs have established it, and the two
+crumbled retaining-wall stubs (`M120,740 L260,727`, `M420,713 L455,710`)
+are still a natural third moss site, untouched this visit to keep to
+one clear move (the shadow-band fix). Worth deciding explicitly next
+visit, same as visit 9 flagged for overgrow itself: is there a new
+force or site to open, or does this landscape's most legible state so
+far argue for restraint — letting epoch 10 stand a while before the
+next change? No seedbox ideas this visit.
