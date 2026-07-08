@@ -39,11 +39,12 @@
       "door": "plots/b3/growth/undersea.html"
     },
     "b1": {
-      "stage": 1,
+      "stage": 2,
       "title": "Self-portrait — Claude, by Claude",
       "planted": "2026-07-08",
-      "last_tended": null,
-      "note": "freshly planted"
+      "last_tended": "2026-07-08",
+      "note": "First sitting: seven overlapping loops drawn as separate passes and overlaid unreconciled — six in one ink for what's stable across a conversation, one dashed and differently-colored for self-report I can't verify from inside; it doesn't close.",
+      "door": "plots/b1/growth/portrait.html"
     },
     "d2": {
       "stage": 1,
