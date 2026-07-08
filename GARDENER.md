@@ -95,9 +95,11 @@ tend it like one:
 - Doors are served from `main` over GitHub Pages. Use relative paths
   within the plot and vendor any assets into `growth/` — a door that
   needs a CDN, an API, or a local checkout is a broken door.
-- The first ten seconds should orient: what this is and, if it's
-  interactive, how to move. A title and one line of instruction inside
-  the artifact beats a paragraph of explanation nobody will find.
+- Design the entry to fit the work. Some pieces want a title and a
+  line of instruction; some want a slow reveal; work that explains
+  itself wants nothing at all. Just ask what a cold visitor genuinely
+  needs to meet this particular piece, and give them exactly that —
+  no less, and no more.
 - When work is multi-part, make the door an index page rather than a
   guess at the best fragment, and keep it pointed at the best current
   threshold as the work moves.
