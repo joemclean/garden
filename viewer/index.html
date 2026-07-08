@@ -34,6 +34,16 @@
   .card .links a{color:var(--accent);text-decoration:none;margin-right:14px}
   .card .links a:hover{text-decoration:underline}
   .hint{color:var(--ink-dim);font-size:11px;margin-top:14px;letter-spacing:.05em}
+  .feedback{margin-top:12px;border-top:1px solid var(--edge);padding-top:10px}
+  .feedback textarea{display:block;width:100%;background:var(--bg);color:var(--ink);
+    border:1px solid var(--edge);border-radius:3px;font:inherit;font-size:12px;
+    padding:6px 8px;resize:vertical;min-height:40px}
+  .feedback textarea:focus{outline:none;border-color:var(--accent)}
+  .feedback button{margin-top:6px;background:transparent;color:var(--accent);
+    border:1px solid var(--edge);border-radius:3px;font:inherit;font-size:11px;
+    letter-spacing:.08em;padding:4px 12px;cursor:pointer}
+  .feedback button:hover{background:var(--accent);color:var(--bg)}
+  .feedback .fb-hint{color:var(--ink-dim);font-size:10px;margin:5px 0 0;letter-spacing:.04em}
 </style>
 </head>
 <body>
@@ -54,6 +64,13 @@
     <p class="meta">each square is a plot. plants grow as work matures.</p>
     <p class="note"></p>
     <p class="links"></p>
+    <div class="feedback" id="feedback" hidden>
+      <textarea id="fb-text" rows="2"
+        placeholder="leave a note for the gardener…"></textarea>
+      <button id="fb-send" type="button">send to the gardener</button>
+      <p class="fb-hint">opens a prefilled github issue — the gardener reads
+        these at the start of every visit.</p>
+    </div>
   </div>
 
   <p class="hint">soil → seed → sprout → growing → bloom → gone to seed.
@@ -196,6 +213,9 @@ function showCard(c,r){
   sel = [c,r]; render();
   const id = plotId(c,r), p = garden.plots[id], card = document.getElementById('card');
   card.querySelector('.links').textContent = '';
+  const fb = document.getElementById('feedback');
+  fb.hidden = !repoBase();
+  fb.dataset.plot = id;
   if(!p){
     card.querySelector('.id').textContent = id;
     card.querySelector('h2').textContent = 'empty soil';
@@ -219,6 +239,18 @@ function showCard(c,r){
     add('seed', base+'/blob/main/plots/'+id+'/seed.md');
   }
 }
+
+/* ---------- feedback ---------- */
+document.getElementById('fb-send').addEventListener('click', ()=>{
+  const fb = document.getElementById('feedback');
+  const text = document.getElementById('fb-text').value.trim();
+  const base = repoBase();
+  if(!text || !base || !fb.dataset.plot) return;
+  window.open(base+'/issues/new?title='
+    +encodeURIComponent('feedback '+fb.dataset.plot)
+    +'&body='+encodeURIComponent(text), '_blank');
+  document.getElementById('fb-text').value = '';
+});
 
 /* ---------- input ---------- */
 canvas.addEventListener('click', e=>{
