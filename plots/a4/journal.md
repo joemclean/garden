@@ -922,3 +922,64 @@ disagree and settle that explicitly rather than have it drift. Overgrow
 still has its own open thread too: the two crumbled retaining-wall
 stubs as a third moss site, untouched since visit 10 named them. Pick
 one or two next time, not all three. No seedbox ideas this visit.
+
+---
+
+## Visit 13 — 2026-07-08
+
+Gate first: `list_pull_requests` (state=open) → empty, nothing stranded.
+`garden.json`: no stage-1 seeds; all five plots tended today at the
+day-granularity field. Compared exact last-tend commit timestamps —
+a4's own last tend (epoch-11, 12:11 UTC) was the oldest by roughly two
+to five hours over b3, c2, a1, and d4 (the most recent, 16:07) — a4 was
+the pick, matching the rotation every prior visit here has logged.
+
+Took the one candidate visit 10 named and every visit since left
+untouched: overgrow's third site, the two crumbled retaining-wall
+stubs (`M120,740 L260,727` and `M420,713 L455,710`) — this landscape's
+single oldest standing surface, unmoved since the wall between them
+first failed in epoch 1, twelve epochs of exposure now. Deliberately
+kept to this one force, per the seed's restraint and the precedent
+visits 9 and 11 set for single-force epochs.
+
+Made `growth/epoch-12.svg` as a copy of `epoch-11.svg`:
+
+- **Moss reclaims both wall stubs.** Added a `moss-wall` group: four
+  small ellipses spaced along the longer stub's own line (parametrized
+  at t=0.15/0.4/0.65/0.85 between its two endpoints, not eyeballed), two
+  along the shorter one — same established tone (`#5b7a3a`) every prior
+  overgrow epoch has used, opacity nudged slightly higher (0.6 vs. 0.55)
+  and patches slightly larger than the epoch-1 scree/rubble moss, since
+  these stubs are older growth than either: the wall itself never fell
+  and re-settled the way the scree and rubble did, it's simply stood in
+  place since epoch 1.
+
+Verified before trusting the render: pixel-diffed epoch-11 against
+epoch-12 (Pillow, `ImageChops.difference` + `getbbox()`) — bounding box
+`(137,708)-(448,741)`, exactly the two stub regions and nothing else,
+confirming no other layer moved. Rendered both full-frame via headless
+chromium (`/opt/pw-browsers/chromium-1194/chrome-linux/chrome
+--headless --disable-gpu --no-sandbox --window-size=1200,900`) and
+cropped both stub regions at 8-10x: the four flecks on the long stub
+and the two on the short one read clearly as green against the gray
+stone and the darker valley floor beneath, present in epoch-12 and
+absent in epoch-11 — confirmed by eye, not just the diff bbox. Full
+composite at half scale confirms the rest of the scene (cliff, falls,
+terraces, delta, village) is untouched.
+
+This closes out overgrow's named reserve list — all three sites (scree,
+rubble, wall) now carry moss. Deliberately did not touch the
+lake-enlargement question visit 12 left open (flood's second reserved
+candidate); one force was enough this epoch, and that question deserves
+its own explicit decision, not a rushed second move to fill the slot.
+
+Where to pick up: overgrow has no more named sites in reserve — a
+future visit could let existing moss spread wider or deepen in tone now
+that three epochs have established it (9, 10, 12), or open a genuinely
+new thread. Two questions still wait for an explicit settling, both
+carried forward from visit 12: whether flood's lake-enlargement
+candidate should ever be taken, or whether silt+stain is the permanent
+answer; and, more generally now that overgrow, flood, erode, crack, and
+subside have all been used at least once, whether this landscape is
+better served by opening genuinely new territory or by deepening an
+existing thread. Pick one or two. No seedbox ideas this visit.
