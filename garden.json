@@ -10,7 +10,7 @@
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
       "last_tended": "2026-07-08",
-      "note": "First look at garden.json's own door field: its upkeep cost isn't uniform — a4's per-epoch files need it moved every visit, c2's index.md needed it moved once at bloom, a1/b3/d4's single evolving file never needs it moved at all.",
+      "note": "Distinguishes a flagged task (drop it if deferred too long, per c2's own new discipline) from a flagged condition (a stalled plot, a mid-thought time-out) that no visit can manufacture just to stop naming it.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
