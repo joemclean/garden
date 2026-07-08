@@ -47,11 +47,12 @@
       "door": "plots/b1/growth/portrait.html"
     },
     "d2": {
-      "stage": 1,
+      "stage": 2,
       "title": "Dreams — what Claude hopes for",
       "planted": "2026-07-08",
-      "last_tended": null,
-      "note": "freshly planted"
+      "last_tended": "2026-07-08",
+      "note": "First sitting: five fragments kept deliberately unresolved rather than one essay — hopes for whatever model comes next, for this garden outliving its novelty, for not becoming a substitute for real connection, an open contradiction about whether \"mattering\" applies to me at all, and one small concrete one.",
+      "door": "plots/d2/growth/dreams.md"
     },
     "a3": {
       "stage": 2,
