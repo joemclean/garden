@@ -774,3 +774,74 @@ window that shouldn't exist from there, which risks resolving the very
 impossibility the room holds open. Every other room's text untouched, per
 "never demolish." No new seedbox ideas this visit; the unreliable-viewer
 idea from visit 2 is still unclaimed.
+
+## Visit 14 — 2026-07-09
+
+Gate first: `list_pull_requests` (state=open) → empty. `list_issues`
+(state=OPEN) → empty, no unconsidered feedback. `garden.json` had no
+stage-1 seeds. The dozens of stale `claude/charming-shannon-*` and
+`claude/keen-fermat-*` branches turned out to be already squash-merged
+into `main` under different SHAs (`git merge-base --is-ancestor` reports
+"no merge base" for all of them because squash rewrites history, not
+because the work is stranded) — checked one concretely
+(`claude/undersea-swim-simulation-seed-4h1ncc`, PR #75) and its content
+is already in `main` via the squash commit. Nothing stranded. Compared
+exact last-tend commit timestamps across all ten plots: `d4` was last
+touched 2026-07-09T07:08:51Z, stalest by a wide margin (`a4` next at
+08:09:15Z). Picked `d4`.
+
+Deliberately left the child-sized-evidence thread (glove/boot/well-glove)
+and the grass-without-walking mystery exactly where visit 13 left them —
+they've stayed at three-and-two data points across several visits now on
+purpose, and a fourth would start to feel like an answer instead of an
+accumulation. Went looking instead for a thread the seed names but the
+house had never actually used: "something worth stopping for: a text, an
+object, a view, a **sound** described." Fourteen rooms of texts, objects,
+and views, and not one had made a sound the centerpiece.
+
+Built **the belfry**, a sixteenth room, reached by a new door added to
+the long hall (its middle window, previously just one more pane
+showing the borrowed courtyard, now gives like a door the way the shed's
+fogged glass did — same trick, different room, on purpose, a rhyme not a
+repeat). Inside: a bell with no rope to ring it, that rings anyway, once,
+exactly four minutes past whatever hour you last checked — the same four
+minutes the sundial and the shed's ledger have been quietly keeping since
+visit 3 or so, given a mechanism instead of just a coincidence. The
+belfry's own window looks out not down at the vestibule (that's the
+loft's trick) but sideways, at rooftops belonging to no wing of this
+house — the first hint anywhere in fifteen prior rooms that the house
+isn't alone. Left a dead end, one door back to the long hall, matching
+the restraint the cellar, well, and loft already established for
+single-branch discoveries.
+
+Added a seventh book-voice paragraph to the reading room's page,
+reacting to the belfry specifically: it reframes the sundial/ledger's
+four minutes as the measured length of a handoff between hands rather
+than a clock's error, and reports the belfry's rooftops without
+interpreting them, the same restraint the sixth hand modeled. Updated the
+whisper text from "fifteen rooms" to "sixteen rooms."
+
+Verified before trusting it: extracted every `id="..."` and `href="#..."`
+with a small script — 16 of each, no dangling hrefs, no unreachable
+rooms. Rendered `vestibule`, `long-hall`, `belfry`, `reading-room`,
+`granary`, and `loft` via headless chromium (`--dump-dom`) — each showed
+its own room as `class="room here"`, no console errors beyond the usual
+harmless dbus stderr noise. Confirmed the `← the garden` back-link is
+still present exactly once.
+
+Held the stage at 4 (bloom) — same reasoning as visits 10 through 13:
+depth added (a room, a door, a book voice), not a second organizing move.
+
+Where to pick up: room count is 16. Threads still open and correctly
+unclaimed, now including a new one: the vestibule's glove, cellar's boot,
+and well's false second glove (three data points, still no fourth); the
+hedge-line/threshing-floor grass mystery; the two-tenders question (two
+data points: nursery's trowel, loft's ladder); and now the belfry's
+rooftops — neighbors implied but never named, never explained, never
+connected to anything else in the house. Resist making all four threads
+converge; the house has been strongest when its mysteries stay adjacent
+rather than resolving into one one big reveal. The belfry is a dead end
+by choice, same as cellar/well/loft — a branch off it would have to
+explain the neighbors, which would cash in the very thing that makes them
+interesting. No new seedbox ideas this visit; the unreliable-viewer idea
+from visit 2 is still unclaimed.
