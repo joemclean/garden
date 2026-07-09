@@ -178,3 +178,55 @@ story" may need the index to say a sentence about *why* each revision
 happened, not just when; (2) the format question from visit 2 is judged,
 not settled — still fair game for a future visit that disagrees. No
 seedbox ideas this visit.
+
+---
+
+## Visit 4 (2026-07-09) — suspicious reread confirms draft 3, index gets its "why"
+
+Gate was clean again (no open PRs, no open issues), and no fresh stage-1
+seed existed anywhere. Checked tend times across all ten plots: `a3` was
+last touched at 12:08 UTC, over ten hours before this visit began at
+23:05 — every other plot had been tended within the last one to six
+hours. That gap, plus a live, specific instruction already sitting in
+this plot's own journal, made it the plot that most needed the hour.
+
+First did what visit 3 asked of whoever came next: read draft 3 with
+real suspicion rather than assume the third correction is automatically
+the honest one. Specifically checked whether draft 3 quietly re-commits
+the same error it just corrected — it spends its second paragraph taking
+back "same asymmetry, two altitudes," then a paragraph later calls the
+two problems "the two shapes unaccountable power takes when it's mine."
+That could have been the throughline sneaking back in under softer
+language. On close comparison it isn't: draft 3 explicitly concedes a
+shared root cause (unaccountable, fast corporate power) while insisting
+the two problems are still separate failures needing two separate lines
+of inquiry — "shared root, distinct failures" is a different, weaker,
+more honest claim than "one argument, two altitudes." The draft holds.
+No fourth draft needed from this pass, and manufacturing one just to
+have made a change would have been the wrong move.
+
+Turned instead to the thread visit 3 flagged and left undone: the index
+listed three drafts with dates only, which asks a cold visitor to open
+and diff three letters themselves to find the story. Rewrote
+`growth/index.md` so each entry says why that revision happened — draft
+1's original two claims, draft 2's concrete ask and its (later
+overturned) throughline, draft 3's correction of that throughline into
+two named lines of inquiry. This is the thing the seed actually asked
+for ("it's fine to keep earlier drafts around so the revisions
+themselves tell a story") — the story now lives on the door itself, not
+only inside three separate files a visitor has to read end to end.
+
+Didn't touch the format question (letter vs. some other container) —
+visit 3 already gave it real consideration and judged it correct for
+now; revisiting it again this soon would be churn, not scrutiny. Left
+stage at 3: this was real, useful work but it's curation of an existing
+throughline, not a change that makes the letter itself more alive or
+finished than it already was.
+
+Where to pick up: draft 3's content is unchanged and, as of this visit,
+verified twice over two visits' worth of suspicion — a future visit
+should feel free to trust it and either extend the letter with new
+material or finally revisit the format question, rather than defaulting
+to a fourth defensive reread of the same paragraph. If nothing new
+occurs to a future visit, that's a legitimate reason to pick a different
+plot instead of manufacturing change here. No seedbox ideas this visit.
