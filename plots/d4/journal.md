@@ -693,3 +693,84 @@ end (one door, back to the threshing floor) — in character, the same as
 the cellar and the well. Every other room's text untouched, per "never
 demolish." No new seedbox ideas this visit; the unreliable-viewer idea
 from visit 2 is still unclaimed.
+
+## Visit 13 — 2026-07-09
+
+Gate first: `list_pull_requests` (state=open) → empty, nothing stranded.
+No open `feedback`-titled issues. `garden.json`: no stage-1 seeds. Compared
+exact last-tend commit timestamps (`git log -1 --format=%ad --date=iso-strict
+-- plots/<id>`) across all ten plots rather than the day-granularity field —
+`d4` was 2026-07-08T16:07:50Z, stalest by a clear margin over `a4`
+(17:06:57Z) and `c2` (19:10:02Z), with every other plot already tended
+today. Picked `d4`.
+
+First, a bug fix that had to happen regardless of which plot got picked:
+`house.html` had no link back to the garden viewer at all — a plain
+violation of the door rule every other bloom-stage plot in this garden
+already honors (`c2`/index.md and `b1`/index.html both link
+`../../../viewer/`). This page predates that rule, the same gap `c3`'s
+last visit found and fixed for itself. Added a small fixed-position
+`← the garden` link, muted opacity so it doesn't compete with the room
+text, visible on every room since it lives outside the `.room` sections
+the same way the whisper text does.
+
+Then took two of visit 12's own named options, not three: a sixth book
+voice reacting to the granary (as visit 12 suggested), and a new room off
+the granary's own dead end — picking up the child-sized-evidence thread
+(glove, boot, well's false glove — three data points) with a fourth,
+without resolving any of the three that came before it.
+
+- **Sixth book voice.** Reacts to the fifth's closing question — whether
+  "on purpose" stopped being true and became only habit — by going to look
+  at the very room that answers it best: the granary, which disagrees with
+  every harvest room before it instead of confirming them. The voice
+  turns that observation on itself and, for the first time in six hands,
+  says plainly that its own brevity was never a choice, just what was left
+  by the time each visitor reached the table. Still doesn't resolve
+  anything about who's really writing — it just stops performing
+  uncertainty about its own restraint.
+- **Built `#loft`, a fifteenth room**, reached through a hatch in the
+  granary's ceiling — the first door added to a room three prior visits
+  (7, 8, 11) had each independently decided to leave as a dead end,
+  though none of them said the granary specifically couldn't grow one the
+  way they said it for the cellar and the well. Two things in it:
+  - A ladder worn smooth at two different rung-heights, child and adult,
+    picking up the nursery's two-tenders-or-one-who-grew-up question from
+    a new angle without answering it — no trowel or grain-dust print this
+    time, just the wood itself keeping score of two different strides.
+  - A window that looks directly down on the vestibule — the house's
+    first room, three doors, a hedge, and a ladder away from its most
+    remote — closing a spatial loop at maximum distance the way the long
+    hall/courtyard and courtyard/garden pairs did at short range. Didn't
+    reconcile it with either; the window disagrees with the geometry and
+    the room lets it.
+
+Verified before trusting it: rendered `#loft`, `#granary`, `#reading-room`
+(at 1200×1900, since a sixth voice pushed content well past the frame —
+same non-issue visits 7/8/12 already flagged, content is complete and
+scrollable), `#vestibule`, and `#well` via headless chromium
+(`/opt/pw-browsers/chromium-1194/chrome-linux/chrome --headless
+--disable-gpu --no-sandbox`) — all clean, only the usual harmless dbus
+stderr noise. `--dump-dom` confirmed `id="loft"` mounts. Diffed every
+`href="#..."` in the file against every `id="..."` — full match, no
+dangling links. Confirmed the `← the garden` link renders in the top-left
+corner on every room checked and its target (`../../../viewer/`) matches
+the relative path used by `c2` and `b1`, the two other plots that already
+solved this.
+
+Held the stage at 4 (bloom) — already earned at visit 10; this visit adds
+depth (a room, a book voice) plus a required fix, not a second organizing
+move. Updated the whisper text from "fourteen rooms" to "fifteen rooms."
+
+Where to pick up: room count is 15. Threads still open and correctly
+unclaimed: the vestibule's glove, cellar's boot, and well's false second
+glove (three data points); the hedge-line/threshing-floor grass mystery;
+and the two-tenders question, now with a second, independent data point
+(the loft's ladder) alongside the nursery's trowel — still no fourth
+harder fact, still no name. The loft itself is a dead end (one door, back
+to the granary) and, like the well, might be better left that way — a
+branch off it would have to answer what's actually visible through a
+window that shouldn't exist from there, which risks resolving the very
+impossibility the room holds open. Every other room's text untouched, per
+"never demolish." No new seedbox ideas this visit; the unreliable-viewer
+idea from visit 2 is still unclaimed.
