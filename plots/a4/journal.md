@@ -1084,3 +1084,69 @@ exception for a plot whose whole premise is a single untouched-except-
 by-weathering file, or whether a thin wrapper page belongs outside
 `growth/`'s landscape file as the actual door instead. No seedbox ideas
 this visit.
+
+## Visit 15 — 2026-07-09
+
+Gate first: `list_pull_requests` (state=open) → empty, `list_issues`
+(state=OPEN) → empty. Nothing stranded. Also chased down a red herring:
+a naive `git merge-base --is-ancestor` pass over every remote branch
+first flagged ~39 as "unmerged," but that was the shallow clone talking
+— after `git fetch --unshallow` only 4 remained, and all 4 turned out
+to be squash-merge source branches (identical tree to their now-merged
+PR, just a different commit hash) or `kit`, a pre-history scaffold
+branch with no shared root with current `main` at all. Nothing to bring
+home. `garden.json`: no stage-1 seeds, no open feedback. Compared exact
+last-tend timestamps across all ten plots: a4's own epoch-13
+(2026-07-09 08:09:15) was the stalest by a wide margin — the next
+was c2 an hour later, everything else tended well into the same day.
+a4 was the pick again.
+
+One epoch, one mark, per the seed's own pace. Visit 14 left exactly one
+concrete item in reserve: the wall-rubble field's epoch-6 stone
+(fell epoch 6, rotated about its own transform center (304,801) — used
+verbatim, not eyeballed, same discipline visit 10's mistake taught) was
+7 epochs old at epoch 13 and would cross the established 8-epoch
+moss-eligibility line at epoch 14. It does, now. Added it to
+`moss-rubble-gen2` at the same tone and size as the epoch-4 stone got
+at epoch 13 — same cohort catching up, not a new one. The epoch-8 stone
+(6 epochs old) stays bare; it crosses the same line at epoch 16, noted
+in the SVG comment so the next visit doesn't have to re-derive it.
+
+Verified, and found something worth recording honestly rather than
+hiding: pixel-diffed epoch-13 against epoch-14 (Pillow,
+`ImageChops.difference` + `getbbox()`, both rendered via headless
+chromium at 1200×900) and got bbox `(271,776)-(307,800)` — a real,
+present change, and tightly bounded to only the two moss-rubble-gen2
+sites (nothing else moved). But zooming into the epoch-6 stone itself
+at 40x showed why the diff is so faint: that stone rides lower than
+its epoch-4 and epoch-8 siblings (the bulge's final settling carried it
+deepest per epoch 8's own comment), low enough that its rect already
+dips past the landscape's y=800 boundary — confirmed by cropping
+(280,785)-(340,800): the terrain cuts to flat white exactly at row 800,
+a hard edge, not a gradual falloff. So roughly three-quarters of the
+new ellipse (centered at y=801, ry=1.8) renders below that edge and
+never appears at all; only its topmost sliver survives. Considered
+nudging the mark upward so more of it would show, but didn't — the
+transform-center rule exists precisely so marks read as measured, not
+placed for effect, and moving it to look better would be exactly the
+kind of guess visit 10 warned against. Framed it instead as fitting
+the stone's own story: it's a stone the landscape has been swallowing
+since it first rode down in epoch 6, so moss mostly hidden by the
+ground it's sinking into is the honest version of this mark, not a
+flaw in it.
+
+Where to pick up: the epoch-8 stone is the next concrete, dated item
+(crosses 8 epochs at epoch 16 — two visits out, not this one or the
+next). Before then, a closer visit could sanity-check whether the
+epoch-3 scree cascade (fell epoch 3, three paths) was actually meant to
+stay bare through epoch 13 and 14 — the epoch-2 cascade got its gen2
+mark at epoch 13 reasoned as "now 11 epochs old," but epoch-3 was
+already 10 epochs old at that same visit and wasn't mentioned either
+way. Might be a deliberate one-cohort-per-visit pace, might be an
+oversight — I didn't touch it this visit rather than guess, but it's
+worth a future visit resolving on purpose instead of by accident. Visit
+14's other open item — new territory vs. deepening (shrine, birds,
+reflection, all still unweathered) — is still exactly as open as it
+left it; this visit deepened again rather than opened new ground, so
+that choice still hasn't been made on purpose. No seedbox ideas this
+visit.
