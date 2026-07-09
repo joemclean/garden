@@ -53,7 +53,47 @@ survives after the grammar that produced it is gone. Ivren speakers
 who use it don't know it once meant "the-one-who-keeps" and shifted
 with its addressee; to them it's just a job title, worn smooth.
 
-**Left for later visits:** whether *-ken* (owed) can ever resolve — does
-Ivren have a verb for a debt actually being paid off, or is *-ken*
-permanent once marked? — and what happens grammatically when two people
-disagree about which of the four verbs applies to the same thing.
+**Debt resolution (resolved):** whether *-ken* can ever close, rather
+than stand marked forever. The answer splits Ivren's four verbs along a
+line that was already latent in how they were first described: *tends*
+and *dwells-with* are activities a person can simply stop, no residue
+required, the language needs no special word for their ending any more
+than English needs one for a habit lapsing. *Binds-to*, by contrast, was
+built not to close — "compulsory, can't be put down" was never a
+description of debt's difficulty, it names a hold with no discharge
+mechanism at all, and that stays true; asking how a *-thal* resolves is
+asking Ivren a question its own grammar refuses to have an answer to,
+the same shape of refusal Threnwae's *thren-* gives conditional care.
+*Owes* sits between them, and it turns out to be the one relation Ivren
+built an ending for on purpose: a debt marked *-ken* carries an
+understanding that it wants returning, and when it is, the clause takes
+the completive suffix *-dro* (*-ken-dro*, "was owed, is no longer"). A
+debt closed this way cannot be reopened as the same debt — *-ken-dro* is
+not a pause, it retires the relation, the way you cannot re-tend
+something Threnwae's *thren-esh* has already declared indifferent to
+occasion. Plain *-ken*, unmarked, is Ivren's default and does not imply
+the debt is still live by contrast with some other, more temporary
+form — it simply hasn't been closed, which for most of the debts anyone
+actually mentions in speech, is most of the time.
+
+**Disagreement (resolved):** what happens when two speakers name the
+same relation with different verbs. Nothing adjudicates it, because
+Ivren's four-way choice was never a classification the language hands
+down — it's a diagnosis each speaker performs fresh, the same "activity,
+not fact" premise the whole grammar rests on applied to itself. Two
+people can mark one thing *-vash* and *-thal* in the same breath and
+both sentences are grammatical; Ivren has no verb-of-adjudication, no
+mechanism that prefers one speaker's hold-verb over another's, because
+disagreement here isn't an error state, it's two people tending,
+dwelling, owing, or being bound differently to the same thing, which is
+exactly the kind of fact Ivren was built to let stand ungeneralized.
+This lands hardest between *-ken* and *-thal* specifically, since both
+mark an unchosen hold and differ only in whether release is
+conceivable — one party calling a thing *-ken* (owed, closeable in
+principle) while another calls the very same thing *-thal* (bound,
+never closeable) isn't a disagreement about facts so much as a
+disagreement about whether an ending is possible at all, and Ivren lets
+both stand. Untranslatable word for it: *thevka* — the specific ache of
+hearing your own hold on something named by a verb you would not have
+chosen for it, sibling to *revka*'s ache of a private, unwitnessed
+relation to a verb rather than a contested, public one.

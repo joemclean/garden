@@ -164,3 +164,27 @@ the keeper never made. The leg's other three breaks remain what they
 always were, places with nothing honest to put in *-arden*'s place. Both
 shapes of Vendrel's central loss — forced silence and chosen silence —
 now sit inside one leg.
+
+Ivren's own oldest open thread — unclaimed since visit 2, longer than
+any other question in the chain sat waiting — is resolved as of visit 14,
+inside `lang-2-ivren.md`: whether *-ken* (owed) can ever close, and what
+happens when two speakers mark the same thing with different
+hold-verbs. A debt closes on purpose, via the completive *-ken-dro*
+("was owed, is no longer"), which retires the relation rather than
+pausing it — unlike *-thal* (bound), built with no discharge mechanism
+at all, the same shape of permanent refusal as Threnwae's *thren-*.
+Disagreement, meanwhile, adjudicates to nothing: the four verbs were
+always a diagnosis each speaker performs fresh, not a fact the language
+hands down, so two people marking one thing *-ken* and *-thal* in the
+same breath are both simply speaking Ivren correctly. Checked leg 2
+against the new rule rather than assuming it needed nothing: every debt
+it mentions — the river's unpaid mood, the post handed down "unpaid,"
+the way "debts in this family only ever move one direction" — was
+already, silently, unmarked-and-ongoing *-ken*, exactly the form the
+newly formalized default predicts. No leg revision followed, the same
+restraint every prior thread-closure has shown when the text already
+held what the grammar later made explicit.
+
+---
+
+[← back to the garden](../../../viewer/)
