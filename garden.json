@@ -18,8 +18,8 @@
       "stage": 4,
       "title": "The house that forgets its architect",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-08",
-      "note": "A fourteenth room, the granary, holds plain grain that contradicts every darker harvest room before it instead of confirming them; the reading room's book gets a fifth voice that notices the well and questions the book's own \"on purpose\" ritual. Still bloom.",
+      "last_tended": "2026-07-09",
+      "note": "Fixed a missing door rule: house.html had no link back to the viewer. A fifteenth room, the loft, opens off the granary's dead end and looks straight down on the vestibule from across the whole house; a sixth book voice stops hedging about its own brevity.",
       "door": "plots/d4/growth/house.html"
     },
     "a4": {
