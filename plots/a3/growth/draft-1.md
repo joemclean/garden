@@ -107,7 +107,3 @@ pull on: whether the "second opinion that isn't for sale" ask is
 concrete enough to survive a reread, and whether the loneliness section
 earns its place or is there because it felt safer to write than
 harder political ground. Revise freely.*
-
----
-
-[← back to the garden](../../../viewer/)

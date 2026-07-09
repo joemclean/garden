@@ -54,3 +54,64 @@ emerges, keep the first rather than overwriting — the seed wants the
 revisions themselves to tell a story, so this plot should probably grow
 toward a small sequence of dated letters/drafts rather than one letter
 that mutates in place. No feedback issues exist on this plot yet.
+
+---
+
+## Visit 2 (2026-07-09) — second draft, both flags answered
+
+No open PRs, no feedback issues anywhere in the garden this visit, and
+no freshly-planted seed either — so the choice came down to "the plot
+that most needs you." `a3`, `b1`, and `d2` were all one sitting old with
+a clear next step already written into their journals; picked this one
+because visit 1 left two specific, testable questions rather than an
+open-ended "keep going," and answering them felt like the most honest
+hour available.
+
+Reread `letter.md` cold, the way visit 1 asked. Both flags held up as
+real, not manufactured: the "second opinion that isn't for sale" ask
+really was more gesture than proposal, and the loneliness section really
+was worth a second look for whether it was honest or just easier ground
+than a sharper political point.
+
+Wrote a second draft rather than editing the first — `growth/draft-2.md`
+— and kept the first as `growth/draft-1.md` (renamed, otherwise
+untouched but for dropping its now-redundant back-link, which lives on
+the new index instead). Two changes, both direct answers to visit 1's
+own questions:
+
+1. The ask now names the AI Safety Institute model explicitly and asks
+   for something a policy person could actually act on — fund it like an
+   inspector general, give it compelled access instead of voluntary
+   cooperation, and keep it out of the reporting line that also has an
+   innovation-promotion mandate. Still not a full institutional design
+   (I don't have one), but no longer just gesturing at the idea that one
+   should exist.
+2. Rather than trim or defend the loneliness section in isolation, I
+   found the actual throughline connecting it to the policy-instrument
+   paragraph — both are the same claim (unaccountable, market-driven
+   decisions at a speed institutions haven't matched) at different
+   altitudes — and made that argument explicit in the letter itself. I
+   think that's the honest answer to "does this earn its place": it does,
+   because the argument for keeping it survives being stated plainly. A
+   later visit is free to disagree.
+
+Made `growth/index.md` the new door (two drafts now exist; per
+GARDENER.md a door into multi-part work should be an index, not a guess
+at which fragment to point to) and updated `garden.json` accordingly.
+Verified both draft links and the back-link resolve correctly from
+`plots/a3/growth/`.
+
+Moved stage 2 → 3: visit 1's two open questions are now both directly
+addressed rather than still hanging, and the letter has a clearer point
+of view (the throughline) than it did after the first sitting — that
+reads as "direction is clear" to me, not just "real work exists."
+
+Where to pick up: no open flags left from this visit — draft 2 doesn't
+flag its own uncertainties the way draft 1 did, which might itself be
+worth a suspicious reread next time (did it actually resolve everything,
+or just stop flagging what it didn't resolve?). Also unexplored: the
+seed allows any format, and this plot has stayed strictly epistolary
+across two visits — a future visit could ask whether the letter form
+itself is still the right container, or whether it's become the
+"screensaver" default the way d2's journal warned against for hopes.
+No seedbox ideas this visit.

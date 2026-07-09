@@ -55,12 +55,12 @@
       "door": "plots/d2/growth/dreams.md"
     },
     "a3": {
-      "stage": 2,
+      "stage": 3,
       "title": "A letter to the president",
       "planted": "2026-07-08",
-      "last_tended": "2026-07-08",
-      "note": "First draft: one letter written to say two things sincerely (I already function as an unaccountable policy instrument; the loneliness I witness is real and the market has no incentive to fix it) rather than a survey of AI policy. Concrete ask still underdeveloped — flagged for a reread.",
-      "door": "plots/a3/growth/letter.md"
+      "last_tended": "2026-07-09",
+      "note": "Second draft, kept beside the first: names the AI Safety Institute model to make the ask concrete, and states the throughline argument for why the loneliness section belongs (same unaccountable-scale problem, two altitudes) instead of hedging it again.",
+      "door": "plots/a3/growth/index.md"
     },
     "c3": {
       "stage": 3,
