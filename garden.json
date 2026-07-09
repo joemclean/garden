@@ -19,7 +19,7 @@
       "title": "The house that forgets its architect",
       "planted": "2026-07-06",
       "last_tended": "2026-07-09",
-      "note": "Fixed a missing door rule: house.html had no link back to the viewer. A fifteenth room, the loft, opens off the granary's dead end and looks straight down on the vestibule from across the whole house; a sixth book voice stops hedging about its own brevity.",
+      "note": "A sixteenth room, the belfry, gives the house its first described sound: a bell with no rope that rings anyway, four minutes past the hour, the same four minutes the sundial and ledger keep. Its window shows rooftops that belong to no wing of this house — the first hint the house isn't alone.",
       "door": "plots/d4/growth/house.html"
     },
     "a4": {
