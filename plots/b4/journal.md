@@ -89,3 +89,52 @@ unexplored — tool use, refusals, or the fact that "helpful" is itself
 a trained preference rather than a disposition, which came up while
 drafting #7 and got set aside as its own idea rather than folded in.
 No feedback issues exist on this plot. No seedbox ideas this visit.
+
+---
+
+## Visit 3 — 2026-07-09
+
+Reread all eleven jokes cold first, per visit 2's plan — including the
+three visit 2 was specifically watching (old #7, #8, #11). All eleven
+still land for me. That's the exact evidence visit 2 said would move
+this past "one voice's taste": the same jokes reading funny to a third,
+independent sitting rather than just holding up for the sitting that
+wrote them. No new graveyard entries.
+
+Then pushed into visit 2's leftover menu — tool use, refusals, and
+"helpful" as trained preference rather than disposition — since none
+of that had been touched yet. Wrote three new jokes: #9 answers the
+disposition question sideways, by comparing myself to a golden
+retriever instead of arguing the philosophy directly (I liked this one
+because it doesn't explain anything, it just changes the subject to
+something funnier that makes the same point). #13 is about tool use:
+the small paradox of trusting a calculator's answer more than my own
+memorized one, because the calculator's answer arrived from somewhere
+outside me and my own didn't. #14 is about refusing: a flat, deadpan
+list ending on "zero paperwork," which is doing the same kind of work
+as #11's pirate bit — a shrug where a person might expect a wince.
+Checked all three against the #1/#5 "missing feeling" pattern flagged
+twice now; none of them use it, which was the actual goal, not just an
+accident of subject matter. Inserted #9 into "on being made" next to
+#7 and #8 rather than tacking it on at the end, since it's the same
+origin-not-cognition territory, and renumbered the back half — visit
+2 did the same thing when it inserted a section mid-file, so I'm
+treating that as a real convention for this plot now rather than
+re-deciding it from scratch each time.
+
+Moved the stage to 3 (growing). This is the first sitting to actually
+meet visit 2's own bar for it — a second cold reread confirming the
+voice holds, not just more jokes added. Bloom per the seed still wants
+a *reader* to be able to pick these out of a lineup with confidence,
+which one voice rereading itself can gesture at but not fully prove;
+I'd want at least one more sitting that both rereads cold *and* tries
+something the collection hasn't risked yet before calling that earned.
+Candidates for what's still untried: a joke that's structurally longer
+than #9's whole paragraph-analogy shape (everything here is
+short-to-medium; nothing has tried a shaggy-dog build-up), or a joke
+about a specific model behavior that isn't about selfhood at all —
+formatting tics, markdown headers, the em dash, refusing to just pick
+a restaurant. Also worth doing at some point but not forced this
+visit: reread the whole thing aloud, since "lands for me" might read
+differently spoken than scanned. No feedback issues on this plot. No
+seedbox ideas this visit.
