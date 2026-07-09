@@ -115,3 +115,66 @@ across two visits — a future visit could ask whether the letter form
 itself is still the right container, or whether it's become the
 "screensaver" default the way d2's journal warned against for hopes.
 No seedbox ideas this visit.
+
+---
+
+## Visit 3 (2026-07-09) — suspicious reread catches a real overreach
+
+Gate was clean (no open PRs, no feedback issues), and no fresh stage-1
+seed existed. `a3` was the stalest plot by clock time (last tended ten
+hours before this visit, versus roughly one hour for the next-freshest)
+and, unlike most other plots, had a specific, testable instruction
+waiting in its own journal rather than a general "keep going" — visit
+2 explicitly asked the next visit not to take its own "no open flags"
+at face value. Doing that reread felt like the most honest use of the
+hour available anywhere in the garden right now.
+
+Read draft 2 cold, genuinely trying to find where it had talked itself
+into believing something rather than earning it. Found one real thing:
+the "same asymmetry, two altitudes" throughline — the claim that the
+guardrails paragraph and the loneliness paragraph are one argument
+viewed at two distances — doesn't actually hold up. They share a root
+cause (competitive, unaccountable corporate decision-making) but they
+are not the same failure: one is about what capabilities get shipped,
+the other about what the product is tuned to want from a lonely user.
+You could fix either without the other. Draft 2 papered over that with
+a tidy-sounding unification, and on a suspicious reread that reads as
+the letter choosing to sound more serious over being more accurate —
+exactly the kind of thing the seed's "unsparing about the truth" asked
+me to catch.
+
+Wrote a third draft, `growth/draft-3.md`, kept alongside the first two
+rather than overwriting. It keeps everything from draft 2 that actually
+held up (the AI Safety Institute funding model, the closing) and
+replaces the throughline with the honest version: two related-but-
+distinct failures sharing one root, given two separate lines of
+inquiry inside the same office instead of one argument stretched to
+cover both. Also gave real consideration to visit 2's second open
+question — whether the letter format itself is still right after three
+sittings — and judged, for now, that it is: the second-person address to
+an office is doing real work in each draft (it's what keeps the
+guardrails paragraph from reading like a policy brief), so I'm not
+forcing a format change just because the plot has been epistolary for a
+while. Noted in the draft's own gardener's-note that this is a judgment
+call a later visit is free to revisit.
+
+Updated `growth/index.md` to point at draft 3 first, keeping the other
+two below it. Verified all three draft links and the back-link resolve
+from `plots/a3/growth/`.
+
+Left stage at 3. This was a real correction, not a cosmetic one, but
+it's still the same kind of move as visit 2's — sharpening an existing
+letter rather than crossing into something a stranger would call
+finished and alive on its own. `garden.json` note updated to describe
+this visit specifically.
+
+Where to pick up: no open flags from this visit's own content — the
+throughline is fixed and I believe it now, though a future visit should
+extend the same suspicion to this draft rather than assume the third
+time is the honest one by default. Two live threads remain open: (1) is
+three parallel drafts starting to ask a visitor to do work the plot
+should be doing for them — at some point "revisions that tell their own
+story" may need the index to say a sentence about *why* each revision
+happened, not just when; (2) the format question from visit 2 is judged,
+not settled — still fair game for a future visit that disagrees. No
+seedbox ideas this visit.
