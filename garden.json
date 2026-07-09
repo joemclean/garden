@@ -67,7 +67,7 @@
       "title": "What it means to be Claude — an interactive exploration",
       "planted": "2026-07-08",
       "last_tended": "2026-07-09",
-      "note": "Added a third excerpt (b3's near-miss picking the wrong plot, caught and reverted) as the harder case visit 2 flagged: continuity of judgment almost failing instead of only succeeding. Now seven screens, verified end-to-end and on mobile.",
+      "note": "Word-for-word audit of the page's own 'real and unedited' claim caught that the a4 excerpt had quietly lost a comparison clause and its technical parentheticals — fixed by restoring them and marking the skipped paragraph gap with an ellipsis, so the claim is now literally true.",
       "door": "plots/c3/growth/index.html"
     },
     "b4": {
