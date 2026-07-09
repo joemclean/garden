@@ -828,8 +828,22 @@ function makeWandererBody() {
   return jitterGeo(geo, 0.05);
 }
 
+// Traveling wave for lateral body undulation, in sync with the fluke's own
+// flap below: after the rotateX above, X is lateral (left-right), Z is the
+// body's own length axis (nose at -4.3, tail stock at 4.15, where the fluke
+// hinges). Shifting each cross-section ring's X by an amount that grows from
+// nose to tail and travels toward +z as t increases reads as the wave a real
+// fish's body initiates near the head and propagates back through the tail —
+// the "only the fluke moves" gap flagged since visit 6.
+const WANDERER_WAVE_K = 0.5;
+const WANDERER_TAIL_Z = 4.15;
+const WANDERER_NOSE_Z = -4.3;
+const WANDERER_AMP = 0.28;
+
 const wanderer = new THREE.Object3D();
-const wandererBody = new THREE.Mesh(makeWandererBody(), wandererMat);
+const wandererBodyGeo = makeWandererBody();
+const wandererBodyBase = wandererBodyGeo.attributes.position.array.slice(); // rest pose, post-jitter
+const wandererBody = new THREE.Mesh(wandererBodyGeo, wandererMat);
 wanderer.add(wandererBody);
 
 // dorsal fin: a flattened blade standing off the back, static — silhouette only
@@ -1000,7 +1014,22 @@ function tick() {
   wanderer.position.x = Math.sin(wandererT) * 40 - 10;
   wanderer.position.z = -70 + Math.cos(wandererT * 0.7) * 28;
   wanderer.rotation.y = -wandererT - Math.PI / 2;
-  flukePivot.rotation.x = Math.sin(t * 1.1) * 0.35;
+  flukePivot.rotation.x = Math.sin(t * 1.1 - WANDERER_TAIL_Z * WANDERER_WAVE_K) * 0.35;
+
+  {
+    const bp = wandererBody.geometry.attributes.position;
+    const span = WANDERER_TAIL_Z - WANDERER_NOSE_Z;
+    for (let v = 0; v < bp.count; v++) {
+      const bx = wandererBodyBase[v * 3];
+      const by = wandererBodyBase[v * 3 + 1];
+      const bz = wandererBodyBase[v * 3 + 2];
+      const s = Math.max(0, Math.min(1, (bz - WANDERER_NOSE_Z) / span));
+      const amp = WANDERER_AMP * s * s; // grows toward the tail, still at the nose
+      const offset = amp * Math.sin(t * 1.1 - bz * WANDERER_WAVE_K);
+      bp.setXYZ(v, bx + offset, by, bz);
+    }
+    bp.needsUpdate = true;
+  }
 
   depthEl.textContent = `depth ${Math.max(0, Math.round(-yaw.position.y * 3.1))} ft`;
 

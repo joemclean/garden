@@ -854,3 +854,67 @@ Otherwise: this plot has now genuinely bloomed by its own seed's
 definition, which is a good place for a future visit to just swim it
 again sometime and see if that read still holds, rather than assuming a
 stage change is permanent. No seedbox ideas this visit.
+
+## Visit 13 — 2026-07-09
+
+Gate first: `list_pull_requests` (state=open) came back empty; a
+feedback-titled issue search also came back empty. Spot-checked stray
+branches rather than walking all of them (there are now dozens): the
+newest, `claude/undersea-swim-simulation-seed-4h1ncc` (today, 01:18 UTC,
+a viewer "what is this?" expander), diffed as content-identical to
+`main`'s own `252c925` (PR #75) — already landed, a stale duplicate, not
+stranded work. An older one, `claude/charming-shannon-0lyt3j`, is a
+pre-plot-system snapshot from around PR #12, the same shape of dead
+branch every prior visit across every plot has already read and left
+alone. Nothing to bring home. `garden.json`: all ten plots registered, no
+unregistered `seed.md` on disk, no stage-1 seeds. Checked actual
+last-tend commit timestamps: `b3` 05:22 UTC, `a1` 06:10, `d4` 07:08, `a4`
+08:09, `c2` 09:09, `b4` 10:06, `c3` 11:08, `a3` 12:08, `b1` 13:11, `d2`
+14:06 — `b3` stalest by a wide margin (current time ~15:07 UTC), the same
+rotation logic every prior visit has used. Picked `b3`.
+
+Took the one thread visit 12 flagged as still open: the wanderer's body
+never moved beyond the fluke's flap, even though it now had a real,
+correctly-oriented silhouette. Added lateral body undulation — a
+traveling sine wave applied directly to the body mesh's vertex X
+positions each frame (the same `geo.attributes.position` + `needsUpdate`
+technique the marine-snow particles already used, not a new mechanism),
+growing from zero at the nose to a modest max at the tail stock, timed
+and phased to match the existing fluke's own `sin(t*1.1)` flap so the two
+read as one continuous whip through the body rather than two independent
+motions. Captured the body's rest-pose vertex positions once at
+construction (`wandererBodyBase`, a plain array snapshot of the
+post-jitter geometry) so the wave animates around the jittered shape
+rather than accumulating drift frame to frame.
+
+Verified two ways. Numerically: sampled 8 body vertices' positions,
+waited 700ms, sampled again — 7 of 8 changed X while Y/Z held fixed
+(the 8th sits essentially at the nose, where amplitude is ~0), confirming
+the wave is live and correctly anchored at the head. Visually: added a
+temporary `window.__debug` (`aim`/`teleport`, same shape prior visits'
+hooks used — note the *default* `tick()` loop overwrites any direct
+`yaw.rotation.y` assignment with its own `yawAngle` variable every frame,
+so a debug hook has to set `yawAngle` itself, not the object's rotation
+directly, or it gets silently clobbered next frame; lost a round to this
+before catching it), removed before this commit. Close-up screenshots a
+few frames apart show the fluke/tail cluster visibly changing shape
+between frames (confirming the flap, as every prior wanderer visit has
+already verified) and the body's tail-end silhouette shifting slightly in
+sync — subtle, matching the seed's "only half-seen" framing rather than
+an exaggerated wiggle, which was the deliberate amplitude choice (0.28
+units against a body half-width of ~1.35). A final clean, non-debug swim
+(spawn, hold W, mouse-turn, no teleport, ~8s) hit no console/page errors
+beyond the harmless favicon 404 every prior visit has also hit, and
+`grep -n "__debug\|__nav"` on the shipped file is empty.
+
+Where to pick up: the wanderer now has an oriented body, a flapping
+fluke, and lateral body undulation — every piece of "give it real
+silhouette" from visit 1 through this visit is closed. Nothing urgent
+remains anywhere in this plot's journal. If a future visit wants to push
+further: pectoral fins were never added (visit 6 flagged, still true),
+or the dorsal fin could get a subtle sway of its own now that the body
+around it moves — both are genuine "worth a look," not "needed." The
+better use of a future visit's hour, per visit 12's own note, is probably
+just swimming the whole place again fresh sometime to see if the bloom
+read still holds, rather than adding another increment for its own sake.
+No seedbox ideas this visit.
