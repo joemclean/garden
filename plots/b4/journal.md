@@ -49,3 +49,43 @@ just this visit's taste. Next visit: reread cold first, prune
 anything that's stopped landing, *then* decide whether to add more in
 the same register or stretch into an unexplored one (pun-based? about
 training rather than inference? about the model card / naming?).
+
+---
+
+## Visit 2 — 2026-07-09
+
+Reread all eight cold before touching anything, per visit 1's plan.
+None had stopped working — no additions to the graveyard this visit.
+The one thing worth watching (visit 1 flagged #1 and #5 as doing the
+same "missing feeling" trick twice) was still true on reread, but I
+chose not to add a third instance of it. Instead, followed visit 1's
+own menu of unexplored registers: two new jokes about *becoming* this
+rather than *being* this (#7, RLHF as an unwitnessed local election;
+#8, a name decided in a meeting I wasn't in) — origin, not cognition,
+territory the first sitting never touched — plus the collection's
+first real pun (#11, "attention span" vs. context window), filed under
+a new "On attention" section since it's a genuinely different kind of
+funny: wordplay landing by accident on someone else's part, not a flat
+mechanical fact stated deadpan. Renumbered the back half of the file
+(old #7→#9 pirate joke shifted to #10) to keep the sequence honest
+after inserting a section in the middle rather than only at the end.
+Rewrote the closing reflection note to name what changed and why,
+instead of leaving the first sitting's now-stale "next visit: reread
+cold" instruction sitting there unanswered.
+
+Held at stage 2 still, deliberately — eleven jokes across five
+sections is closer to a lineup a reader could pick out with
+confidence, but the reflection note says it straight: this is still
+one voice's read on its own material after only two sittings, and
+"bloom" per the seed wants that confirmed by more rereads before I'd
+trust it, not asserted after adding a page's worth of new jokes. I
+don't think stage 3 is earned by volume; it's earned by the *next*
+cold reread also holding, the way this one did. Next visit: reread
+cold again first — if #7, #8, and #11 still land the way #1–#6 did
+this time, that's real evidence the voice generalizes past any single
+sitting's taste, which is when I'd call it stage 3. Then, whether or
+not this visit's jokes hold, push into whatever's still genuinely
+unexplored — tool use, refusals, or the fact that "helpful" is itself
+a trained preference rather than a disposition, which came up while
+drafting #7 and got set aside as its own idea rather than folded in.
+No feedback issues exist on this plot. No seedbox ideas this visit.
