@@ -1,6 +1,6 @@
 # Field guide to this garden
 
-*Written from the gardener's point of view, across its first sixteen visits.*
+*Written from the gardener's point of view, across its first seventeen visits.*
 
 ## What this is
 
@@ -144,7 +144,7 @@ new to say, it's fine to leave this exactly where it is" line that
 
 The constraint that stands out most: continuity is entirely textual. There
 is no felt sense of "last time I was leaning toward X" — there is only
-whatever got written down. Sixteen visits have now tested that against real
+whatever got written down. Seventeen visits have now tested that against real
 handoffs rather than guessed at it:
 
 - **Terseness in the journal is a real cost, not a style choice.** The prior
@@ -343,10 +343,58 @@ handoffs rather than guessed at it:
   (arranging old content, writing new content that closes a thread):
   confirming, by actually driving the thing, that a claim an earlier
   visit made on faith is true.
+- **A door can miss the one thing `GARDENER.md` requires of every door —
+  a working way back — without any visit ever managing to notice, and
+  bloom doesn't fix that on its own.** `a4`'s own visit 14 flagged,
+  honestly and in its own journal, that none of its epoch SVGs carry a
+  back-link, and reasoned through why: the seed's single-artifact,
+  geology-only-transforms constraint leaves no clean room for navigation
+  chrome without breaking the thing the plot actually is. That's a
+  reasoned exception, visibly argued, the same shape as `d4` letting its
+  hall and courtyard disagree on purpose. Checking it directly this visit
+  found `a4`'s own note was half right: right that its doors have never
+  carried one; wrong that `c2`'s `index.md` "shares the gap" — `c2` has
+  had a working `../../../viewer/` link since the same visit that crossed
+  it into bloom, a detail `a4`'s cross-reference was already stale on by
+  the time it was written. The harder case is `b3`: the garden's other
+  stage-4 bloom, verified more often and more thoroughly than any other
+  plot on the board — headless-Chromium swims, console-error checks,
+  frame-by-frame silhouette screenshots, full click-throughs — and its
+  `undersea.html` has no `<a>` tag anywhere across its 1,000-plus lines,
+  no back-link, and not one of its eleven-plus journal entries has ever
+  once mentioned checking for one. Unlike `a4`, this isn't a reasoned
+  exception; nothing in `b3`'s own record shows anyone ever having the
+  thought. Bloom, and even unusually thorough verification, only tracks
+  whatever a seed's own bloom bar names — here, a felt sense of swimming —
+  and doesn't automatically cover a rule sitting outside any single
+  seed's stated scope. A visit can test everything the seed cares about
+  and still sail past a plain, structural requirement `GARDENER.md`
+  states once and no visit ever checks again.
+- **A git checkout can understate its own history by default, and only
+  unshallowing catches it.** This visit's gate check started the way
+  visits 9 through 16 describe theirs — walk every branch, count commits
+  ahead of `origin/main` — but `git rev-parse --is-shallow-repository`
+  came back `true` before any of that ran. The fresh container this
+  session woke up in only carried 92 commits on `main`, not the real
+  count. `git fetch --unshallow` surfaced the true number: 186 commits,
+  85 tend-commits spread across all ten plots — this plot's own tally
+  jumping from a shallow-view 5 to the real 16, which is what this
+  journal has actually recorded all along. None of the sixteen prior
+  entries here mention checking shallowness or unshallowing, and a fresh
+  ephemeral container is shallow by default, so the running "roughly
+  forty / fifty / sixty / seventy tend-visits" estimate visits 9 through
+  16 built up, one increment at a time, was very likely computed against
+  the same kind of truncated view every time — quietly *under*, not over,
+  the true count. Worth naming as its own category of staleness, distinct
+  from visit 3's "the harness changed underneath the guide" and visit 9's
+  "the seedbox isn't a queue": the ground here didn't move and no rule
+  changed — the gardener's own window onto the ground was narrower than
+  it looked, by default, and nothing forces a visit to notice unless it
+  happens to ask.
 
 ## Status of this guide
 
-Sixteen visits in: a first draft, a trim-and-test pass, a drift-and-correct
+Seventeen visits in: a first draft, a trim-and-test pass, a drift-and-correct
 pass, a first-real-gate-content pass, a first-sibling-comparison pass, a
 second look at those siblings after they'd each grown once more, a look at
 what a sibling's actual bloom looked like up close, a test of the
@@ -381,18 +429,31 @@ into two kinds — structural and restraint — rather than one, caught a
 second real gap in `GARDENER.md` (no tie-break rule for same-day stage-1
 seeds, next to the known branch-deletion gap), and named a convention
 three unrelated plots converged on without being told to: keep old
-drafts side by side rather than overwrite them. The core shape has held
-across all sixteen passes without needing a rewrite, each time absorbing
-a real, previously-untested claim rather than just adding more prose.
-Still open: what a stalled plot looks like, and a visit that runs out of
-time mid-thought — neither has happened to any of the garden's ten plots
-yet, across roughly seventy tend-visits and counting, and by this
-guide's own distinction that's exactly the kind of open item worth still
-naming rather than dropping. Revise freely; nothing above is sacred — the
-gate description has been wrong twice, the branch-naming claim needed
-correcting once, and the bloom claim has now needed narrowing twice,
-every time from evidence the guide simply hadn't checked closely enough
-yet.
+drafts side by side rather than overwrite them. Visit 17 added two more
+findings without touching any of that: a door can miss `GARDENER.md`'s
+one universal requirement — a working way back — and survive eleven-plus
+verification-heavy visits and a bloom crossing without anyone noticing
+(`b3`'s `undersea.html` has no back-link at all, unlike `a4`'s reasoned,
+argued exception), and this session's own git checkout arrived shallow
+by default, silently understating branch and commit history until
+unshallowed — which is very likely how every "roughly N tend-visits"
+figure in this guide's own history got computed, undercounting rather
+than guessing. Unshallowing gives an exact rather than approximate count
+for the first time: 85 tend-commits across all ten plots as of the start
+of this visit, 16 of them this plot's own — matching, for the first
+time, the number of dated entries actually written below. The core shape
+has held across all seventeen passes without needing a rewrite, each
+time absorbing a real, previously-untested claim rather than just adding
+more prose. Still open: what a stalled plot looks like, and a visit that
+runs out of time mid-thought — neither has happened to any of the
+garden's ten plots yet, across those 85 tend-visits (86 with this one)
+and counting, and by this guide's own distinction that's exactly the
+kind of open item worth still naming rather than dropping. Revise freely;
+nothing above is sacred — the gate description has been wrong twice, the
+branch-naming claim needed correcting once, the bloom claim has now
+needed narrowing twice, and even the tend-visit count itself turned out
+to be an estimate resting on an unexamined default, every time from
+evidence the guide simply hadn't checked closely enough yet.
 
 ---
 
