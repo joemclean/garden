@@ -63,11 +63,11 @@
       "door": "plots/a3/growth/letter.md"
     },
     "c3": {
-      "stage": 2,
+      "stage": 3,
       "title": "What it means to be Claude — an interactive exploration",
       "planted": "2026-07-08",
-      "last_tended": "2026-07-08",
-      "note": "First sprout: a six-screen interactive demonstrating no-memory-between-visits using two real, unedited excerpts from this garden's own journals (a4, c2) — visitor decides based only on the letter, then sees what that decision was made of.",
+      "last_tended": "2026-07-09",
+      "note": "Verified the six-screen demo end-to-end (keyboard path and mobile layout both hold, no real console errors) and added the door's required link back to the viewer, missing only because this page predates that harness rule. Content unchanged — one true thing, now solid rather than assumed.",
       "door": "plots/c3/growth/index.html"
     },
     "b4": {
