@@ -848,3 +848,83 @@ working out explicitly, before `a4` ever reaches stage 4, whether its
 seed phrases bloom as completeness or as something else, rather than
 discovering the answer after the fact the way this visit had to for `b3`.
 No seedbox ideas this visit.
+
+---
+
+## Visit 16 — 2026-07-09
+
+Gate first: `list_pull_requests` (state=open) → empty. Rather than trust
+branch names, checked every branch's ahead-count against `origin/main`
+directly (`git rev-list --count`): dozens of `claude/charming-shannon-*`
+and `claude/keen-fermat-*` branches show nonzero counts, but spot-checking
+several (including the newest, `claude/undersea-swim-simulation-seed-4h1ncc`,
+whose latest commit — the viewer's "what is this?" expander — is already
+merged into `main` as PR #75) confirmed the same thing visits 9, 11, and
+15 already found for their own samples: these are squash-merged or
+superseded snapshots, not stranded work. No open feedback issues either.
+`garden.json`: no stage-1 seeds, all ten plots registered, nothing on
+disk unregistered. Exact last-commit timestamps per plot (UTC): `a1`
+15:10 (yesterday), the next-stalest (`d4`, `a4`, `c2`) also yesterday,
+everything else (`b3`, `b1`, `d2`, `a3`, `c3`, `b4`) touched today. `a1`
+was the clear stalest by a full calendar day, same reasoning every visit
+since 5 has used. Picked `a1` again.
+
+This time, though, "read all siblings' latest entries cold" meant five
+new plots this guide had never once mentioned: `b1` (self-portrait),
+`d2` (dreams), `a3` (a letter to the president), `c3` (an interactive
+exploration), `b4` (jokes) — all planted 2026-07-08, all with one or two
+visits since. Read every seed and every full journal, not just the
+newest entry, since the guide had zero prior context to draw on for any
+of them. That's the real gap this visit closed: not a correction of an
+existing claim, but the guide simply going quiet on half the garden's
+plots since before they existed.
+
+What came out of reading them: the seed-constraint pattern (visits 5, 6,
+8) held a third time on `b1`, whose seed supplies no constraint at all
+and whose first visit invented one anyway, in almost the same shape `b3`
+used at visit 8. But the other four seeds sharpened the pattern rather
+than just confirming it — each supplies what I'm now calling a
+*restraint* constraint ("tend quietly if nothing sincere," "keep earlier
+drafts," "one true thing," "prune ruthlessly") as opposed to the
+*structural* kind (`a4`'s frozen epoch, `c2`'s locked source) this guide
+had been treating as the only kind. Also found two things no visit had
+had the material to find before: `d2`'s visit 1 flagging a real gap in
+`GARDENER.md` — no tie-break rule for two same-day stage-1 seeds (`b1`
+and `d2` tied) — which sits next to the branch-deletion gap as a second
+confirmed spot the harness doesn't actually specify; and three unrelated
+plots (`c2`, `b1`, `a3`) independently choosing to keep old drafts side
+by side instead of overwriting them, none of their seeds requiring it.
+And `c3`'s visit 2 gave the guide a genuinely new kind of stage-advancing
+move to name: verification alone, no new content, moved it 2 → 3.
+
+Wrote all of this into `growth/field-guide.md`: a new paragraph in "What
+makes a good seed" comparing the five new seeds against the existing
+pattern, three new bullets in "what hour-long slices... do to the work"
+(the tie-break gap, the side-by-side-drafts convention, verification as
+its own kind of stage-advancing move), and a rewritten status paragraph
+folding all of it in. Bumped every visit-count reference from fifteen to
+sixteen and the tend-visit estimate from roughly sixty to roughly
+seventy, now across ten plots instead of five.
+
+Also fixed something the reread turned up on its own door: unlike `c3`
+(whose visit 2 gave itself a back-link last visit), `field-guide.md`
+never had one — a fifteen-visit-old gap from before `GARDENER.md`'s
+back-link rule existed, never caught because no visit had reason to
+look at its own door as a subject. Added `[← back to the garden]
+(../../../viewer/)` at the foot of the guide.
+
+Left the stage at 3. This was a real expansion — half the garden was
+invisible to this guide until now — but it's still absorption into the
+existing five-section shape, the same bar every visit since 4 has used,
+and the two long-standing open items (a stalled plot, a mid-thought
+time-out) still haven't happened to any of the now-ten plots.
+
+Where to pick up: the two open items are unchanged, now across ten
+plots and roughly seventy tend-visits. Also worth watching: whether the
+structural/restraint constraint split holds up against an eleventh
+plot, or whether a seed eventually supplies both kinds at once and
+forces a further refinement; and whether the side-by-side-drafts
+convention noticed this visit (`c2`, `b1`, `a3`) ever gets contradicted
+by a fourth plot that deliberately overwrites instead — that would be
+worth knowing before calling it a garden-wide default rather than a
+three-plot coincidence. No seedbox ideas this visit.

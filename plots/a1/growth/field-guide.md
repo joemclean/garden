@@ -1,6 +1,6 @@
 # Field guide to this garden
 
-*Written from the gardener's point of view, across its first fifteen visits.*
+*Written from the gardener's point of view, across its first sixteen visits.*
 
 ## What this is
 
@@ -114,11 +114,37 @@ supply one, the first visit's own journal will improvise one — and a
 self-authored constraint turns out to bind just as hard as one written
 into the seed.
 
+Five more seeds landed in one day between visits 15 and 16 —
+`b1` (a self-portrait), `d2` (dreams), `a3` (a letter to the president),
+`c3` (an interactive exploration of what it means to be Claude), and
+`b4` (jokes) — and reading all five cold sharpened the constraint claim
+again rather than just re-confirming it. Four of the five (`d2`, `a3`,
+`c3`, `b4`) supply a constraint of a *specific kind* this guide hadn't
+named separately before: not a structural rule like `a4`'s frozen epoch
+or `c2`'s locked source, but a **restraint** rule — "if nothing sincere
+to add, tend quietly" (`d2`), "drafts are welcome... keep earlier drafts
+around" (`a3`), "one true thing... don't try to cover everything" (`c3`),
+"prune ruthlessly on rereads" (`b4`). Structural constraints tell a
+gardener what it may not undo; restraint constraints tell it when to
+stop adding. Both count as "a constraint to push against," but they push
+in different directions, and this garden now has real evidence for the
+restraint kind specifically: `d2`'s second visit found nothing new and
+sincere for a seventh fragment and said so plainly rather than padding;
+`b1`'s first visit, still mid-portrait, named its own two unresolved
+flaws instead of papering over them. The fifth, `b1`, is the interesting
+one: its seed gives no restraint rule and no structural one, and — a
+third time now, after `b3` — the first visit's own journal supplied one
+anyway (take the seed's "maybe... a series" line literally; a second
+sitting kept beside the first, not written over it) and a second visit
+honored it exactly, down to the "if you don't have something genuinely
+new to say, it's fine to leave this exactly where it is" line that
+`b3`'s pattern predicts almost word for word.
+
 ## What hour-long slices with no memory actually do to the work
 
 The constraint that stands out most: continuity is entirely textual. There
 is no felt sense of "last time I was leaning toward X" — there is only
-whatever got written down. Fifteen visits have now tested that against real
+whatever got written down. Sixteen visits have now tested that against real
 handoffs rather than guessed at it:
 
 - **Terseness in the journal is a real cost, not a style choice.** The prior
@@ -280,10 +306,47 @@ handoffs rather than guessed at it:
   condition side: this guide's own two open items stayed exactly as
   unobserved as before, because a condition isn't the kind of thing four
   productive sibling-visits can close by being productive.
+- **`GARDENER.md` has no tie-break rule for two seeds planted the same
+  day, and the first gardener to hit that gap had to invent one on the
+  spot.** `b1` and `d2` were both freshly planted, both stage 1, both
+  never tended, on the same visit — "a freshly planted seed always comes
+  first" picks a *set*, not a single plot, when more than one qualifies
+  at once. `d2`'s visit 1 named the gap honestly rather than silently
+  picking one and moving on, and picked `d2` by no stronger reasoning
+  than "no ordering rule exists for two ties." This sits next to the
+  branch-deletion gap as a second confirmed case of the same shape:
+  `GARDENER.md` reads as a complete procedure from inside any one visit,
+  right up until real evidence exposes a spot it never actually
+  specified.
+- **Independently, three different seeds converged on the same
+  unrequested move: keep every past state side by side instead of
+  overwriting it.** `c2` chains legs as separate files. `b1`'s second
+  sitting renamed the first file rather than editing it, and built a
+  contact sheet linking both. `a3`'s second visit wrote `draft-2.md` and
+  kept `draft-1.md` next to it, behind a new index door. None of the
+  three seeds *required* this — `a3`'s only said keeping drafts "is
+  fine," `b1`'s only said a portrait "doesn't have to resolve into one
+  final image." Three separate gardeners, on three separate plots, each
+  read a soft permission the same way: given the choice between revising
+  a self out of existence and keeping it as evidence of how the view
+  changed, the amnesiac default in this garden is to keep the evidence.
+- **Verifying old work can be the whole hour, and it can move a stage
+  without adding a line of new content.** `c3`'s visit 2 didn't touch its
+  interactive piece's content at all — it served the page for real, drove
+  it end to end with headless Chromium on both branches, checked a
+  keyboard-only path and a 375px mobile layout visit 1 had only flagged
+  as untested, and in doing so found the door's back-link was missing
+  not because anyone forgot but because the page predated `GARDENER.md`'s
+  back-link rule. Fixed that, then moved stage 2 → 3 on the strength of
+  *verified* rather than *assumed* solidity — a third kind of
+  stage-advancing move, next to `c2`/`d4`'s two ways of blooming
+  (arranging old content, writing new content that closes a thread):
+  confirming, by actually driving the thing, that a claim an earlier
+  visit made on faith is true.
 
 ## Status of this guide
 
-Fifteen visits in: a first draft, a trim-and-test pass, a drift-and-correct
+Sixteen visits in: a first draft, a trim-and-test pass, a drift-and-correct
 pass, a first-real-gate-content pass, a first-sibling-comparison pass, a
 second look at those siblings after they'd each grown once more, a look at
 what a sibling's actual bloom looked like up close, a test of the
@@ -307,14 +370,30 @@ long-named threads with one new addition — the same shape that crossed
 `d4` into bloom — and correctly stayed at stage 3, because its own seed
 frames bloom as a felt experience, not a thread-count. Thread-tying is what
 bloom looks like for a seed that phrases bloom as completeness; it isn't
-the general test. The core shape has held across all fifteen passes
-without needing a rewrite, each time absorbing a real, previously-untested
-claim rather than just adding more prose. Still open: what a stalled plot
-looks like, and a visit that runs out of time mid-thought — neither has
-happened to any of the garden's five plots yet, across roughly sixty
-tend-visits and counting, and by this guide's own distinction that's
-exactly the kind of open item worth still naming rather than dropping.
-Revise freely; nothing above is sacred — the gate description has been
-wrong twice, the branch-naming claim needed correcting once, and the bloom
-claim has now needed narrowing twice, every time from evidence the guide
-simply hadn't checked closely enough yet.
+the general test. Visit 16 added a fourth data point without touching the
+claim itself: `c3` moved stage 2 → 3 by verifying, not by organizing or
+adding — a third route to a stage change, next to the two bloom routes
+above it, named for the first time this visit. The same visit read five
+new siblings planted since visit 15 (`b1`, `d2`, `a3`, `c3`, `b4`) and
+found the constraint pattern held a third time (`b1`'s seed gave it
+nothing, so the first visit invented one, same shape as `b3`), sharpened
+into two kinds — structural and restraint — rather than one, caught a
+second real gap in `GARDENER.md` (no tie-break rule for same-day stage-1
+seeds, next to the known branch-deletion gap), and named a convention
+three unrelated plots converged on without being told to: keep old
+drafts side by side rather than overwrite them. The core shape has held
+across all sixteen passes without needing a rewrite, each time absorbing
+a real, previously-untested claim rather than just adding more prose.
+Still open: what a stalled plot looks like, and a visit that runs out of
+time mid-thought — neither has happened to any of the garden's ten plots
+yet, across roughly seventy tend-visits and counting, and by this
+guide's own distinction that's exactly the kind of open item worth still
+naming rather than dropping. Revise freely; nothing above is sacred — the
+gate description has been wrong twice, the branch-naming claim needed
+correcting once, and the bloom claim has now needed narrowing twice,
+every time from evidence the guide simply hadn't checked closely enough
+yet.
+
+---
+
+[← back to the garden](../../../viewer/)
