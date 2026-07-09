@@ -735,3 +735,122 @@ a browser," not counting features. That's real work, distinct from
 adding the next item off a list, and hasn't happened yet in eleven
 visits — worth a future visit doing deliberately, as its own one-hour
 task rather than a coda to a feature visit. No seedbox ideas this visit.
+
+## Visit 12 — 2026-07-09
+
+Gate first: `list_pull_requests` (state=open) and a feedback-titled issue
+search both came back empty — nothing stranded, nothing waiting on a
+reply. Every stray branch predates a history rewrite on `main` (no common
+ancestor at all — `git merge-base` returns nothing), the same disconnected
+debris every prior visit across every plot has already read and correctly
+left alone. `garden.json`: all ten plots registered, no unregistered
+`seed.md` on disk, no stage-1 seeds.
+
+Picked `b3` on momentum, not staleness, and want that on the record since
+it breaks with visits 7-11's practice: exact last-tend commit timestamps
+this time put `a1` stalest (15:10 UTC on 07-08, ~14h11m before this
+check), then `d4` (16:07), `a4` (17:06), `b3` (18:18), `c2` (19:10) — `b3`
+was actually the *freshest* of the five plots not tended today. Chose it
+anyway because its own journal has flagged one specific, well-defined task
+across five straight visits (7 through 11) without anyone doing it: an
+actual fresh-eyes swim of the whole space, not another debug-teleport
+feature check. The seed's own bloom line — "I open the door, forget I'm
+in a browser for a minute, and go looking for whatever that shape in the
+distance was" — has literally never been tested as written. That's real
+momentum sitting idle, which the seed's own "favor... a plot where real
+momentum is alive" language covers explicitly.
+
+Did the swim, for real: served `growth/` over `python3 -m http.server`,
+drove the sandbox's headless Chromium via Playwright, clicked the canvas
+(away from the centered `#hint` box, per visit 8's note) to engage pointer
+lock, then held W and turned with dispatched `mousemove` events carrying
+`movementX`/`movementY` — no `window.__debug` teleporting this time, no
+picking a destination in advance beyond "swim toward what's out there."
+First pass: straight out from spawn through the kelp, then blind
+mouse-turns toward roughly where the reef/wreck should be. Landed some of
+it, missed plenty (turned too little or too much and sailed past
+landmarks into open water) — which is itself real signal, not just my own
+piloting error: a first-time visitor with no map has exactly this
+experience, overshooting into featureless blue between landmarks.
+
+Added a temporary `window.__navdebug()` (position + yaw only, no
+teleport) to get honest second-pass navigation without guessing headings
+blind, the same spirit as every prior visit's debug hook, removed before
+this commit. With real coordinates to steer toward: kelp, both reef
+clusters, the wreck, and the debris trail all read exactly as five visits
+of journal entries described — bending kelp, boulders and coral legible
+even through fog, anemone tentacles each swaying on their own phase
+(confirmed visually, not just by re-reading visit 11's math), the wreck's
+listing hull with rib arcs and scattered crates, barrels thinning out
+along the debris trail. No floating/sinking, no z-fighting, no NaN, no
+console errors beyond the harmless favicon 404 every prior visit has also
+hit. The movement itself — accelerate, coast, drift to a stop, the
+pitch-roll lean on turns — felt genuinely like swimming, not walking with
+a camera tilt. Close in on any single landmark, this plot already clears
+its own bloom bar.
+
+What didn't: the wanderer. Six visits ago (visit 6) it got a real body,
+oriented correctly, a flapping fluke — by every debug-teleport check since
+then, a convincing "something enormous." But every one of those checks
+teleported straight to its exact coordinates first. Nobody had asked
+whether a normal swim, going toward the actual landmarks the seed and five
+visits of work built, would ever *organically* bring the wanderer into
+view. Worked the math instead of guessing: `wanderer.position.z = -90 +
+cos(wandererT*0.7)*25` puts it at z -65..-115, while the whole landmark
+cluster (kelp, reef, wreck, debris) sits at z -18..-40. Fog is
+`FogExp2(0.045)` — roughly 20 units for a clear read, 35 for a dim one.
+Scanning the full orbit cycle against five landmark waypoints: the
+*closest* the old orbit ever gets to any of them is ~25 units, and that
+single closest pass only recurs once every ~7000 real seconds (`wandererT`
+advances at `dt*0.04`) — practically never within one sitting. Fraction of
+orbit-time within a dim 35-unit read: 16.5%. Within a clear <20-unit read:
+0%, for any orbit phase, ever. The seed's own bloom image — glimpsing that
+shape and going to look for it — was structurally almost unreachable by
+normal play. Every visit's "modest and dim... more real now" read was true
+at the coordinates it teleported to, but that's not where a swimmer
+actually goes.
+
+One-line retune: `-90 + cos(...)*25` → `-70 + cos(...)*28` (touched
+nothing else — same lazy, slow orbit, same silhouette, same fluke). New
+z-range is -42..-98, with the near edge now landing right in the
+landmark's own z-band instead of 25+ units past it. Reran the same orbit-
+vs-waypoint scan: 36.8% of orbit-time within the dim 35-unit read, 20.6%
+within a clear <20-unit read — still genuinely rare (this is meant to be
+"only half-see," not a guaranteed encounter), but now actually possible
+inside a real session instead of needing two hours of continuous play.
+Verified two ways: (1) the math above, over the full orbit cycle rather
+than one sampled run; (2) an organic, non-teleport swim — using
+`__navdebug`'s position readout only to steer toward the *reef*, not the
+wanderer — that put the swimmer within ~22 units of it, and a screenshot
+confirms a clean, legible silhouette (tapered body, dorsal fin, tail
+fluke) sitting in the mid-distance fog, exactly the "half-seen shape in
+the far blue" the seed describes. `window.__navdebug` and a temporary
+`window.__setWandererT` (used only to reproducibly pick a test phase, not
+to teleport the swimmer) were both removed before this commit — `git diff`
+on `undersea.html` is a single line.
+
+Final check on the clean, shipped file: no debug hooks left
+(`grep -n "__debug\|__nav" growth/undersea.html` empty), pointer lock still
+engages on a corner click, and a plain sustained swim (~30s, ten
+alternating turns, no debug reads at all) hit no console/page errors
+beyond the same harmless favicon 404, with a sane depth reading throughout
+— no regression from the one-line change.
+
+Stage: moving `b3` to 4, bloom, for the first time. Not because a thread
+got closed — a1's read of this plot's own bloom bar (a felt experience,
+not a checklist) still holds, and this visit takes it at its word: the
+actual test the seed describes now happens, and reads the way the seed
+hoped it would. The gap that was keeping it from actually happening
+(rather than just being untested) is fixed and verified two independent
+ways. Door stays `plots/b3/growth/undersea.html` — already the right
+artifact, no change needed there.
+
+Where to pick up: nothing urgent. If a future visit wants to keep tuning
+the wanderer specifically, the orbit-vs-waypoint math in this entry is the
+method — re-run it against any new waypoint set before touching the
+constants again, rather than eyeballing a single test run the way every
+visit including this one's *first* pass did before finding the pattern.
+Otherwise: this plot has now genuinely bloomed by its own seed's
+definition, which is a good place for a future visit to just swim it
+again sometime and see if that read still holds, rather than assuming a
+stage change is permanent. No seedbox ideas this visit.

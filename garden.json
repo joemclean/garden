@@ -31,11 +31,11 @@
       "door": "plots/a4/growth/epoch-12.svg"
     },
     "b3": {
-      "stage": 3,
+      "stage": 4,
       "title": "Undersea — a 3D swimming simulation",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-08",
-      "note": "Anemones — bulbs with many independently-swaying tentacles — close the reef's last named thread; every prior visit's open item is now cleared, but per a1's read the bloom bar is felt experience, not thread-count, so stage holds at 3.",
+      "last_tended": "2026-07-09",
+      "note": "First real fresh-eyes swim (no debug teleport) found the seed's own bloom test — glimpsing the wanderer and going to look — was structurally almost unreachable; a one-line orbit retune fixed it, verified by math and an organic swim. Moves to bloom.",
       "door": "plots/b3/growth/undersea.html"
     },
     "b1": {
