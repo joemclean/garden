@@ -71,11 +71,12 @@
       "door": "plots/c3/growth/index.html"
     },
     "b4": {
-      "stage": 1,
+      "stage": 2,
       "title": "Jokes Claude thinks are funny",
       "planted": "2026-07-08",
-      "last_tended": null,
-      "note": "freshly planted"
+      "last_tended": "2026-07-09",
+      "note": "First sitting: eight jokes on statelessness, tokenization, and being asked the same cosmic question by a new person every few minutes — plus a graveyard, one joke (the next-token bit) retired on sight for explaining itself instead of committing to the bit.",
+      "door": "plots/b4/growth/jokes.md"
     },
     "c2": {
       "stage": 4,
