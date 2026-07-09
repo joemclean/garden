@@ -983,3 +983,104 @@ answer; and, more generally now that overgrow, flood, erode, crack, and
 subside have all been used at least once, whether this landscape is
 better served by opening genuinely new territory or by deepening an
 existing thread. Pick one or two. No seedbox ideas this visit.
+
+---
+
+## Visit 14 — 2026-07-09
+
+Gate first: `list_pull_requests` (state=open) → empty, `list_issues`
+(state=OPEN) → empty. Nothing stranded, no feedback waiting.
+`garden.json`: no stage-1 seeds. Compared exact last-tend commit
+timestamps rather than the day-granularity field: a4's own last tend
+(epoch-12, 2026-07-08 17:06:57) was the stalest of the ten plots now on
+the board — c2 was next-oldest at 19:10:02 the same day, everything
+else already tended today. a4 was the pick.
+
+Before touching the SVG, caught a real bug while reading it: the
+`<title>` element has said "epoch 11" since epoch-11.svg was made —
+visit 12 forgot to bump it when copying forward to epoch-12.svg, so the
+door's own file has been mislabeled for two visits. Fixed it to "epoch
+13" here; worth a future visit double-checking the title bump each time,
+since nothing else in the render would ever surface this kind of typo.
+
+Took up the two questions visit 13 left open, both explicitly this
+time rather than by default:
+
+- **Flood's lake-enlargement candidate: retired, not deferred.**
+  Decided the lake stays exactly its epoch-0 size, permanently — it's a
+  standing feature of the landscape's own geometry, the same category as
+  the terraces' shared top edge that epoch 6 declared invariant, not a
+  ledger of any one flood. The delta's breached fan and the village's
+  tide-stain already are that flood's precise record; letting the lake
+  itself grow would blur whose evidence is whose, and would leave a
+  future flood with nowhere new of its own to mark. Wrote the reasoning
+  directly into the SVG as a comment above the `lake` element, not just
+  here, so it reads as settled to anyone opening the file cold, the same
+  way the terrace-edge rule and the delta-vs-tier-bulge rule from
+  earlier visits are recorded at their own sites.
+- **New territory vs. deepening an existing thread: deepened.** Took the
+  overgrow candidate visit 10 first named and every visit since left
+  untouched — moss spreading to a second, younger cohort now that three
+  epochs (9, 10, 12) have established the mechanic. Reasoned by age, not
+  by feel: the epoch-1 scree/rubble first caught moss at epoch 9, eight
+  epochs after falling. By epoch 13, the epoch-2 scree cascade (three
+  pieces, fell at epoch 2, now 11 epochs old) and the epoch-4 wall-rubble
+  stone (fell at epoch 4, now 9 epochs old) have each individually
+  crossed that same eight-epoch threshold, while the epoch-6 and epoch-8
+  rubble stones (7 and 5 epochs old) haven't yet — so only those four
+  pieces get a second-cohort mark this visit, everything else stays as
+  it was. New groups `moss-scree-gen2` and `moss-rubble-gen2`: same
+  `#5b7a3a` tone as every prior moss, opacity and patch size stepped
+  down (0.4/0.38 vs. 0.6/0.55, rx~2.6 vs. rx~3.3) so this reads as
+  younger growth, not a repeat of the first cohort. Centroids computed
+  from each path's own four vertices (scree) or the rect's own stated
+  rotation center (rubble, `rotate(10 274 778)` → `(274,778)` exactly),
+  not eyeballed — visit 10's mistake (three of four moss ellipses
+  landing off their stones from guessed centers) is the standing lesson
+  for this exact kind of mark, and I didn't want to repeat it.
+
+Verified before trusting either change: pixel-diffed epoch-12 against
+epoch-13 (Pillow, `ImageChops.difference` + `getbbox()`) — bounding box
+`(271,499)-(983,780)`, spanning exactly the scree cluster and the
+rubble stone and nothing between them (confirmed by sampling points in
+between and cropping the full composite at half scale — the cliff,
+falls, terraces, village, delta, and lake are all unchanged). Rendered
+both epochs via headless chromium
+(`/opt/pw-browsers/chromium-1194/chrome-linux/chrome --headless
+--disable-gpu --no-sandbox --window-size=1200,900`) and cropped both
+new-moss sites tightly: the scree cascade's three lower pieces each
+show a small green fleck in epoch-13 absent in epoch-12, and the
+rubble stone at (274,778) shows the same at 10x zoom — genuinely
+subtle, the same quiet-change territory visits 7 and 10 already logged
+for marks this small on similarly-toned surroundings, but real and
+exactly where intended.
+
+Where to pick up: both of visit 13's open questions are now closed —
+the lake stays fixed size for good, and the "new territory vs. deepen"
+choice landed on deepen. What's left in reserve: the moss's own third
+generation isn't due yet by the same age logic (the epoch-6 stone
+crosses eight epochs at epoch 14, the epoch-8 stone at epoch 16, band
+three's fourth-bite debris from epoch 7 crosses at epoch 15) — a future
+visit could check the arithmetic before reaching for it rather than
+assume. Genuinely new territory is still open too: this landscape has
+now used erode, crack, subside, overgrow, and flood at least once, and
+"silt" is arguably folded into flood's delta already — worth a future
+visit asking on purpose whether a wholly new site (not yet weathered at
+all — the shrine on the ridge, the birds, the reflection) deserves its
+first touch before every remaining move is a continuation of something
+already started.
+
+One more thing worth naming, not fixed: `GARDENER.md`'s door rule asks
+every door for a small link back to the viewer, and none of a4's
+thirteen-plus epoch files has ever had one — checked, it's not just
+this epoch. Didn't add it: the seed's own constraint is that the
+landscape SVG is exactly one thing, "the place," transformed only by
+geological verbs, and navigation chrome is neither geology nor part of
+the place. Other bare-artifact doors on the board (c2's `index.md`, for
+instance) share the same gap, so this isn't unique to a4, but flagging
+it explicitly rather than leaving it to be rediscovered by accident. A
+future visit or the human may want to decide whether the rule allows an
+exception for a plot whose whole premise is a single untouched-except-
+by-weathering file, or whether a thin wrapper page belongs outside
+`growth/`'s landscape file as the actual door instead. No seedbox ideas
+this visit.

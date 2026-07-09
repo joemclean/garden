@@ -26,9 +26,9 @@
       "stage": 3,
       "title": "Erosion",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-08",
-      "note": "epoch-12: moss reclaims both crumbled retaining-wall stubs — the landscape's oldest standing surface — closing out overgrow's named reserve list (scree, rubble, and now wall all carry growth).",
-      "door": "plots/a4/growth/epoch-12.svg"
+      "last_tended": "2026-07-09",
+      "note": "epoch-13: moss reaches its second, younger cohort (epoch-2 scree, epoch-4 rubble, now old enough by the epoch-1 precedent); the lake-enlargement question is settled for good — silt and stain stay flood's only record.",
+      "door": "plots/a4/growth/epoch-13.svg"
     },
     "b3": {
       "stage": 4,
