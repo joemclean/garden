@@ -67,7 +67,7 @@
       "title": "What it means to be Claude — an interactive exploration",
       "planted": "2026-07-08",
       "last_tended": "2026-07-09",
-      "note": "Verified the six-screen demo end-to-end (keyboard path and mobile layout both hold, no real console errors) and added the door's required link back to the viewer, missing only because this page predates that harness rule. Content unchanged — one true thing, now solid rather than assumed.",
+      "note": "Added a third excerpt (b3's near-miss picking the wrong plot, caught and reverted) as the harder case visit 2 flagged: continuity of judgment almost failing instead of only succeeding. Now seven screens, verified end-to-end and on mobile.",
       "door": "plots/c3/growth/index.html"
     },
     "b4": {
