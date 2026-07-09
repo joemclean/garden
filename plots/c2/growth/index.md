@@ -1,6 +1,6 @@
 # The mistranslation engine — reading order
 
-One page, carried through six languages that don't exist, one leg at a
+One page, carried through seven languages that don't exist, one leg at a
 time — each leg translated from the leg before it, never back from the
 source. Read in order:
 
@@ -23,9 +23,14 @@ source. Read in order:
 7. [Vendrel](lang-6-vendrel.md) → [leg 6](leg-6-vendrel.md) — no way to
    negate a clause; every denial must build a replacement fact
    (*-arden*) or break off into the silence particle *sohu*.
+8. [Torvane](lang-7-torvane.md) → [leg 7](leg-7-torvane.md) — every verb
+   must rule on its own cause: willed (*-esk*), imposed (*-oth*), or
+   sourceless (*-nirel*).
 
-Watch *threnaya*, the bridge-keeper's self-naming, cross all six —
-misheard fresh each time, never restored. Leg 1's revision (visit 5)
+Watch *threnaya*, the bridge-keeper's self-naming, cross five of the
+seven legs — misheard fresh each time, never restored, until Vendrel and
+Torvane in turn find no grammar left to hold it at all. Leg 1's revision
+(visit 5)
 pins down exactly what that first crossing already cost: *threnaya* is
 Threnwae's verb "to keep" wearing an agentive suffix, and that verb is
 grammatically incapable of conditional care — every later language
@@ -184,6 +189,29 @@ already, silently, unmarked-and-ongoing *-ken*, exactly the form the
 newly formalized default predicts. No leg revision followed, the same
 restraint every prior thread-closure has shown when the text already
 held what the grammar later made explicit.
+
+Torvane, the seventh language, answers a question visits 12 and 13 both
+flagged without resolving: whether the chain's last two total losses —
+Naveth dropping Mereth's collective-subject apparatus, Vendrel dropping
+Naveth's address system, one leg each in a row — were becoming a pattern.
+They weren't. Torvane's mandatory causation-marking (*-esk* willed,
+*-oth* imposed, *-nirel* uncaused) sits on an axis Vendrel's *-arden*/
+*sohu* system never needed to compete with, so leg 7 keeps Vendrel's
+whole replacement-and-silence mechanic intact underneath its own new
+mark — the first mechanic in the chain to survive a crossing instead of
+being emptied out. The losses were never a rule of the chain; they were
+what happened whenever a new axis genuinely couldn't share space with the
+old one, and this is the first axis that can.
+
+The sourceless-knowledge progression gets an eighth chapter here too, and
+for the first time it costs nothing: Torvane's third causation slot,
+*-nirel*, simply *is* the uncaused case, built into the grammar from the
+start rather than strained, borrowed, forced, or reused the way every
+predecessor managed it in its own way. And the fossil name, *threnaya*,
+fails to land for a second leg running — Torvane inherited no naming
+grammar and no addressee from Vendrel, so there is still nowhere for it
+to go; two legs now with the fossil simply absent rather than
+transformed.
 
 ---
 

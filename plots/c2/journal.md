@@ -895,3 +895,77 @@ menu is now mostly down to one item: a seventh language, still carrying
 visit 12's unanswered caution (two mechanic-losses back to back — decide
 on purpose whether a third is a pattern before adding one). No seedbox
 ideas this visit.
+
+## Visit 15 — 2026-07-09
+
+Gate first: `list_pull_requests` (state=open) came back empty, and
+`list_issues` (state=OPEN) came back empty too — nothing stranded, no
+notes waiting. `garden.json`: ten plots, all with a `seed.md` and a
+registered entry, none at stage 1. Checked actual last-tend commit
+timestamps rather than the shared date field: every other plot had a
+commit within the last few hours of 2026-07-09; `c2`'s was 09:09, a
+clear twelve hours stalest on the board. Picked `c2`.
+
+Took the seventh-language option, and took visit 12's deferred caution
+seriously rather than reflexively adding a fresh axis and moving on:
+two crossings running (Naveth dropping Mereth's collective-subject
+apparatus; Vendrel dropping Naveth's address system) had gone unexamined
+as a possible pattern for two visits. Built Torvane (`lang-7-torvane.md`)
+around mandatory causation-marking — every finite verb rules on whether
+its act was self-caused (*-esk*), other-caused (*-oth*), or uncaused
+(*-nirel*), no clause left unmarked, the same absolute-coverage shape as
+Threnwae's own certainty suffixes. Before assuming a third total loss was
+coming, checked for the actual structural reason the last two happened:
+Naveth's reorientation around the listener genuinely had nowhere for
+Mereth's speaker-collective to attach; Vendrel's reorientation around
+affirm-or-silence genuinely had nowhere for Naveth's addressee-shapes to
+attach. Causation-marking asks a third, orthogonal question — what set an
+act in motion, not who's speaking or who's addressed or whether a clause
+affirms — so nothing about it crowds out Vendrel's own *-arden*/*sohu*
+system. Decided, on the evidence rather than by fiat: Torvane inherits
+Vendrel's replacement-and-silence mechanic whole, the first mechanic in
+the chain to survive a crossing instead of being emptied out. Named this
+plainly rather than either forcing a loss to "confirm the pattern" or
+forcing a rescue to "break" it — the losses were never a rule, they were
+what each specific pair of axes happened to allow.
+
+Translated leg 7 (`leg-7-torvane.md`) from leg 6 (Vendrel), not from any
+earlier leg or the source. Two things fell out of the writing rather than
+being planned going in. First: the sourceless-knowledge progression
+(Threnwae's suffix, Ivren's strained borrowing, Ossane's compound,
+Mereth's reuse, Naveth's absence, Vendrel's forced silence) gets its
+easiest chapter yet — *-nirel* isn't strained or borrowed or forced open
+sideways, it's simply the uncaused case a three-way causation system
+was always going to need, sitting in the grammar from the start. Second:
+the river is the only actor in the whole leg marked exclusively *-esk*,
+no exception — the diary's other willful thing, same role Ossane's
+agentive split found it playing back in visit 10, now legible a second
+way through an unrelated grammar. Coined two untranslatable words,
+*velnesh* (the vertigo of re-marking a long-held *-esk* act as *-oth*, or
+back) and *tarrunin* (a habit so worn its cause has gone invisible even to
+the one performing it — used twice in leg 7, bookending the kettle-
+keeping the way *threnaya* used to bookend earlier legs). The fossil name
+itself still has nowhere to land — no naming grammar in Torvane either,
+and no addressee left since Vendrel's own crossing — so it's now absent
+two legs running rather than transformed.
+
+Updated `index.md`: bumped the reading-order list and its "six languages"
+framing to seven, added the Torvane/leg-7 entry, corrected the fossil
+line to name legs 6 and 7 specifically as the two where it fails to land
+rather than claiming it crosses all six unchanged, and added a closing
+section recording both the mechanic-survival verdict and the
+sourceless-knowledge chapter. Did not touch any of legs 1–6 or their
+language sketches — this was purely a new language and its own leg, the
+same restraint every pure-addition visit (4, 6, 12) has kept. Stage stays
+at 4; a new language is growth in the seed's own terms.
+
+Where to pick up: whether Torvane's mechanic-survival holds for an eighth
+language is explicitly left open — this visit checked the reason behind
+it, not a rule that guarantees it repeats. Two live threads carry
+forward unclaimed: Naveth's reverse-vertigo question (still no leg has
+staged a scene for it) and Ossane's literal/grammatical weather-pun
+tension (deliberately unresolved, per visit 3). New and specific to this
+visit: whether *-nirel* is ever chosen on purpose over an available
+*-esk* or *-oth*, the way leg 6's revision showed *sohu* being chosen
+rather than defaulted to — untested in leg 7, flagged in
+`lang-7-torvane.md`'s own "left for later." No seedbox ideas this visit.
