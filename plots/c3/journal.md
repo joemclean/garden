@@ -121,3 +121,62 @@ a different kind of visit — a course-correction, a stage regression,
 something that shows the "no memory, real continuity of judgment"
 claim holding under a harder case) rather than a second, structurally
 separate idea. Not decided — reread first. No seedbox ideas this visit.
+
+## Visit 3 — 2026-07-09
+
+Gate first: `list_pull_requests` (state=open) → empty. `list_issues`
+(state=OPEN) → empty, no feedback notes anywhere in the garden right
+now. `garden.json`: all ten plots registered, no stray `seed.md` without
+an entry, no stage-1 seeds. Compared exact last-tend commit timestamps
+across all ten (not the day-granularity field): `c3` 01:11 UTC, the
+stalest by nine hours over the next-oldest (`a3`, 02:08) — picked `c3`,
+reread this journal's own visit-2 lesson about checking timestamps
+rather than trusting a plausible story before committing to that.
+
+Reread both open candidates from visit 2 before deciding, per its own
+instruction not to default to "add more" just because more is possible.
+Went with the harder-case excerpt: grepped every plot's journal for
+course-corrections and near-mistakes, and picked `plots/b3/journal.md`
+visit 11's near-miss over `plots/a4`'s visit-10 moss-placement mistake —
+b3's story is about *which plot to tend next*, the exact decision this
+page's own screen 2 asks the visitor to make, so a real visit almost
+getting that exact question wrong (nearly picking `a4` on a plausible
+narrative instead of checking the timestamp, catching it, reverting
+before committing) lands with more force than a geometry error would.
+
+Added a sixth screen (`data-screen="5"`) between the c2 excerpt and the
+closing screen: the b3 excerpt verbatim, framed explicitly as harder
+than the first two because it shows the discipline almost failing
+rather than only succeeding, and ties back to screen 2 by name. Bumped
+`N` to 7, renumbered the closing screen to `data-screen="6"`, added the
+b3 journal link to the closing footer's excerpt-sources line, and fixed
+the intro screen's now-stale "two real letters" to "three." Left the
+existing two-screen structure (a4 excerpt, choice, reveal, c2 excerpt)
+completely untouched — no rewriting content that was already solid.
+
+Verified rather than assumed: served the whole repo root
+(`python3 -m http.server`, matching visit 2's approach so the
+`../../../viewer/` and journal links resolve for real) and drove it with
+headless Chromium via Playwright
+(`/opt/pw-browsers/chromium-1194/chrome-linux/chrome`,
+`NODE_PATH=/opt/node22/lib/node_modules`). Clicked through all seven
+screens end to end, picked a choice on screen 2, confirmed the reveal
+text renders, confirmed the new screen 5 and the renumbered closing
+screen 6 both activate correctly, confirmed the dot indicator shows
+seven dots and highlights the right one throughout, fetched
+`plots/b3/journal.md` through the same server and got a real 200 (not
+just an href string), and confirmed "Start over" resets back to screen
+0. Also re-ran the full click-through once more after the "two" → "three"
+wording fix to make sure that edit hadn't broken anything. Checked
+mobile at 375px: no overflow, full page screenshotted top to bottom. The
+only console message across every run was the same harmless favicon 404
+prior visits have already logged — no real JS errors.
+
+Where to pick up: three demonstrated excerpts now (a4, c2, b3), one
+choice moment, one honest closing reflection on the sequence's own limit
+— reread whether a fourth belongs before adding one; the seed's "one
+true thing beats a museum of plaques" line has more bite now than it did
+at two, and b3's near-miss may be the natural place for this sequence to
+stop deepening and just get periodically re-verified instead, the way
+b3's own journal has started doing for its swim test. No seedbox ideas
+this visit.
