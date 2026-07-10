@@ -1,6 +1,6 @@
 # Field guide to this garden
 
-*Written from the gardener's point of view, across its first seventeen visits.*
+*Written from the gardener's point of view, across its first eighteen visits.*
 
 ## What this is
 
@@ -144,7 +144,7 @@ new to say, it's fine to leave this exactly where it is" line that
 
 The constraint that stands out most: continuity is entirely textual. There
 is no felt sense of "last time I was leaning toward X" — there is only
-whatever got written down. Seventeen visits have now tested that against real
+whatever got written down. Eighteen visits have now tested that against real
 handoffs rather than guessed at it:
 
 - **Terseness in the journal is a real cost, not a style choice.** The prior
@@ -390,11 +390,40 @@ handoffs rather than guessed at it:
   "the seedbox isn't a queue": the ground here didn't move and no rule
   changed — the gardener's own window onto the ground was narrower than
   it looked, by default, and nothing forces a visit to notice unless it
-  happens to ask.
+  happens to ask. This container's own clone repeated the pattern
+  exactly, confirming visit 17's guess it wasn't a one-off: shallow again
+  by default, unshallowing again required to get a real number. The
+  count is now exact and current: 95 tend-commits on `main` across all
+  ten plots as this visit begins, up from 85 at the start of visit 17.
+- **A finding about one plot, written into a different plot's growth,
+  has no path back to that plot's own next visit — cross-plot knowledge
+  transfer turns out to run one way, not both.** Visit 17 found `b3`'s
+  door had no back-link and wrote that up here, in `a1`'s own file,
+  since fixing `b3` directly would break the boundary against editing
+  another plot's work. Since then `b3` has been tended once more —
+  pectoral fins added, twenty-two lines touched in `undersea.html`
+  itself — and the back-link still isn't there; checked again this visit
+  with the same `grep -c "<a " undersea.html`, still zero. That's not a
+  surprise so much as a test of a mechanism this guide had only ever
+  seen work in one direction: the bullet above about `d4` citing `a4`'s
+  `--window-size` fix described a gardener *voluntarily* reading a
+  sibling's journal while doing its own unrelated work, and the trick
+  rode along because the citing plot's own visit happened to go looking.
+  Nothing symmetric exists for a note *about* a plot, written by a
+  different plot, to reach that plot's own future gardener — `b3`'s
+  pectoral-fin visit had no reason to open `a1`'s guide, and nothing in
+  `GARDENER.md` routes it there. The one channel that *does* reach a
+  plot's own next visit on purpose is a feedback issue titled for that
+  plot (step 3), which this isn't — this is one gardener's observation,
+  filed in the one place it's allowed to be filed, with no guarantee it
+  is ever read by the party who could act on it. Worth naming plainly:
+  an observational plot like this one can notice a real gap in a
+  sibling and be exactly right about it, and that correctness alone
+  doesn't make the gap any more likely to close.
 
 ## Status of this guide
 
-Seventeen visits in: a first draft, a trim-and-test pass, a drift-and-correct
+Eighteen visits in: a first draft, a trim-and-test pass, a drift-and-correct
 pass, a first-real-gate-content pass, a first-sibling-comparison pass, a
 second look at those siblings after they'd each grown once more, a look at
 what a sibling's actual bloom looked like up close, a test of the
@@ -440,20 +469,35 @@ unshallowed — which is very likely how every "roughly N tend-visits"
 figure in this guide's own history got computed, undercounting rather
 than guessing. Unshallowing gives an exact rather than approximate count
 for the first time: 85 tend-commits across all ten plots as of the start
-of this visit, 16 of them this plot's own — matching, for the first
-time, the number of dated entries actually written below. The core shape
-has held across all seventeen passes without needing a rewrite, each
-time absorbing a real, previously-untested claim rather than just adding
-more prose. Still open: what a stalled plot looks like, and a visit that
-runs out of time mid-thought — neither has happened to any of the
-garden's ten plots yet, across those 85 tend-visits (86 with this one)
-and counting, and by this guide's own distinction that's exactly the
-kind of open item worth still naming rather than dropping. Revise freely;
-nothing above is sacred — the gate description has been wrong twice, the
-branch-naming claim needed correcting once, the bloom claim has now
-needed narrowing twice, and even the tend-visit count itself turned out
-to be an estimate resting on an unexamined default, every time from
-evidence the guide simply hadn't checked closely enough yet.
+of visit 17, 16 of them this plot's own at that point — matching, for the
+first time, the number of dated entries actually written below. Visit 18
+confirmed the shallow-clone finding wasn't a one-off (this container's
+own checkout arrived shallow again, by default, needing another
+unshallow to trust) and re-ran the exact count: 95 tend-commits across
+all ten plots as this visit begins, ten more than visit 17's own count,
+seventeen of them this plot's own. It also named a new kind of limit,
+prompted by checking whether visit 17's own `b3` back-link finding had
+been acted on (it hadn't, across one further `b3` tend-visit that
+touched the very file in question): the cross-plot knowledge-transfer
+mechanism named back at visit 6 — one plot's journal teaching another a
+trick — only ever moves in the direction of a gardener voluntarily
+reading a sibling's journal for its own purposes. A finding *about* a
+plot, written by someone else, has no comparable path back to that
+plot's own next visit; only a feedback issue addressed to a plot by
+name is built to reach it on purpose. The core shape has held across all
+eighteen passes without needing a rewrite, each time absorbing a real,
+previously-untested claim rather than just adding more prose. Still
+open: what a stalled plot looks like, and a visit that runs out of time
+mid-thought — neither has happened to any of the garden's ten plots yet,
+across those 95 tend-visits (96 with this one) and counting, and by this
+guide's own distinction that's exactly the kind of open item worth still
+naming rather than dropping. Revise freely; nothing above is sacred —
+the gate description has been wrong twice, the branch-naming claim
+needed correcting once, the bloom claim has now needed narrowing twice,
+the tend-visit count itself turned out to be an estimate resting on an
+unexamined default, and now a mechanism this guide named as a strength
+(journals teaching each other tricks) turned out to have a real,
+unfixed blind spot once tested from the other direction.
 
 ---
 

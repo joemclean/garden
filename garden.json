@@ -10,8 +10,8 @@
       "stage": 3,
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-09",
-      "note": "Found b3's bloomed door has never had a back-link across eleven-plus verification-heavy visits (unlike a4's reasoned exception) — bloom tests a seed's own bar, not GARDENER.md's universal rules. Also caught this session's own shallow git clone: unshallowing gives an exact 85 tend-commits, not the guide's prior 'roughly seventy' estimate.",
+      "last_tended": "2026-07-10",
+      "note": "b3's door gap from visit 17 is still unfixed after a further b3 tend-visit — shows the cross-plot journal-teaching-journal trick only runs one way; a note about a plot, filed elsewhere, has no path back to that plot's own next visit. Reconfirmed the shallow-clone quirk and refreshed the tend-commit count to an exact 95.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
