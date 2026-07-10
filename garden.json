@@ -26,9 +26,9 @@
       "stage": 3,
       "title": "Erosion",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-09",
-      "note": "epoch-14: the wall-rubble field's epoch-6 stone turns 8 epochs old and catches its own gen2 moss — but it rides low enough that the mark is mostly swallowed below the landscape's own edge, fitting for a stone the ground has been sinking since epoch 6.",
-      "door": "plots/a4/growth/epoch-14.svg"
+      "last_tended": "2026-07-10",
+      "note": "epoch-15: the epoch-3 scree cascade's overdue gen2 moss, unrecorded since epoch 13, finally added and the gap named as oversight rather than left to be rediscovered a third time.",
+      "door": "plots/a4/growth/epoch-15.svg"
     },
     "b3": {
       "stage": 4,

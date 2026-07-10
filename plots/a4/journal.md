@@ -1150,3 +1150,70 @@ reflection, all still unweathered) — is still exactly as open as it
 left it; this visit deepened again rather than opened new ground, so
 that choice still hasn't been made on purpose. No seedbox ideas this
 visit.
+
+---
+
+## Visit 16 — 2026-07-10
+
+Gate first: `list_pull_requests` (state=open) → empty, `list_issues`
+(state=OPEN) → empty. Nothing stranded, no feedback waiting. `garden.json`:
+no stage-1 seeds, no unregistered `seed.md`. Compared exact last-tend
+commit timestamps across all ten plots (`git log -1 --format=%ad -- plots/<id>`,
+normalizing the two JST-timestamped commits to UTC): a4's own last tend
+(epoch-14, 2026-07-09 20:11:42 UTC) was the stalest by nearly an hour over
+the next-oldest (c2, 21:10:18) and by hours over the rest, which had all
+been tended within the current day. a4 was the pick again.
+
+Resolved the one dated, concrete question visit 15 left open rather than
+letting it go a third visit unaddressed: whether the epoch-3 scree
+cascade's missing gen2 mark at epoch 13 was a deliberate one-cohort-per-
+visit pace or a plain oversight. Checked the plot's own precedent before
+deciding: every other deliberate hold in this journal — band three's
+finished retreat (epoch 7), the lake staying fixed size (epoch 13), the
+epoch-6/epoch-8 stones waiting their turn (epochs 13/14) — was written
+down at the time it was decided, in the SVG comment, the journal, or
+both. Nothing anywhere records a choice to skip the epoch-3 cascade on
+purpose, and epoch 13 mossed two different fields (scree and rubble) in
+one visit already, so "one cohort per visit" was never the plot's actual
+rule. Called it: oversight, not policy. Fixed it two epochs late rather
+than deferring a third time.
+
+Made `growth/epoch-15.svg` as a copy of `epoch-14.svg`, one mark:
+
+- **The epoch-3 scree cascade joins `moss-scree-gen2`.** Its three pieces
+  (fell epoch 3, "band three's exposed top edge starts shedding on its
+  own") were 10 epochs old when epoch-2's cascade crossed the 8-epoch
+  line at epoch 13 and 12 epochs old now — the most overdue mark this
+  plot has carried. Added all three at the same tone, opacity, and size
+  as the epoch-2/epoch-4 marks already in that group, since they crossed
+  the identical threshold in the identical wave and only went unrecorded.
+  Centroids computed from each path's own four vertices, the same
+  discipline every prior moss mark here has used — not eyeballed.
+  Recorded the reasoning directly in the SVG comment above the group, the
+  same way every other settled question on this landscape is written at
+  its own site, not just in this journal.
+
+Verified before trusting it: pixel-diffed epoch-14 against epoch-15
+(Pillow, `ImageChops.difference` + `getbbox()`, both rendered via headless
+chromium at 1200×900) — bounding box `(932,537)-(976,548)`, small and
+tightly bound to only this mark, nothing else moved. The tight box is
+partly the tree canopy's own doing, not a bug: cropped the region at 8x
+and confirmed by eye that the epoch-1 vegetation-remnant tree (planted
+over this exact stretch of cliff) occludes most of the cascade from
+directly above, the same view visit 4 already flagged as needing a crop
+shifted left/down to clear it — two of the three pieces show a visible
+green tint at the crop's edges past the canopy, the third sits almost
+entirely under it. Confirmed the mark is real and correctly placed
+(matching source coordinates exactly), not merely invisible by
+convenient accident.
+
+Where to pick up: the epoch-8 rubble stone remains the next concrete,
+dated item — crosses the 8-epoch line at epoch 16, one visit out. With
+the epoch-3 gap now closed, no field in this landscape has an unrecorded
+or ambiguous moss-eligibility gap left; a future visit checking "is
+anything overdue" should find a clean answer either way rather than
+another silent skip to catch. Visit 14's other open item — new territory
+versus deepening an existing thread (the shrine, the birds, the
+reflection, all still unweathered by any force) — is unchanged by this
+visit, which was a correction, not a new mark's worth of momentum; still
+worth a future visit taking up on purpose. No seedbox ideas this visit.
