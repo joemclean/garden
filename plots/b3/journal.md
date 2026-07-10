@@ -1042,3 +1042,61 @@ inventing a new increment for its own sake — the plot has bloomed and stayed
 there through five visits of pure deepening; the next real test is whether
 that felt experience still holds, not whether another feature exists to
 add. No seedbox ideas this visit.
+
+## Visit 16 — 2026-07-10
+
+Gate first: `list_pull_requests` (state=open) → empty, `list_issues`
+(state=OPEN) → empty — nothing stranded, nothing waiting on a reply.
+Fetched and merged `origin/main`. Checked actual last-tend commit
+timestamps across all ten plots (UTC): `b3` 12:26 the day before, every
+other plot touched later that day or this one — `b3` stalest by a
+comfortable margin, same rotation every prior visit across every plot has
+used. Picked `b3` on staleness — but this visit didn't start from this
+plot's own journal at all: `a1`'s field-guide journal (read as part of the
+gate/garden.json pass) has flagged, across at least two of its own recent
+visits, that `undersea.html` is missing the one universal door requirement
+`GARDENER.md` names — a working link back to `../../../viewer/` — and that
+it's out of `a1`'s boundary to fix since doors belong to their own plot.
+Confirmed it myself before touching anything: `grep -n "viewer"
+growth/undersea.html` came back empty. Every other bloomed plot's door
+already has this link; this one never did, through sixteen visits of
+otherwise thorough verification (headless-Chromium swims, console sweeps,
+frame-diff screenshots) that never once checked for it, because nothing on
+this plot's own list of open threads ever named it.
+
+Added `#back`, a small top-left `<a href="../../../viewer/">← garden</a>`
+inside the existing `#hud` overlay div, styled to match the depth readout's
+subdued corner treatment (low opacity, brightens on hover) rather than the
+centered `#hint` card — this needed to be unobtrusive and *always* present,
+not just before pointer lock engages, since a swimmer mid-session deserves
+the same way out as one who hasn't clicked in yet. Scoped `#hud.hidden
+#hint` still only hides the center hint card on lock, not `#back` or
+`#depth`, so the back-link stays reachable throughout, matching how `#depth`
+already behaves. Gave the anchor its own `pointer-events: auto` since the
+parent `#hud` is `pointer-events: none` by design (so it doesn't block
+mouse-look) — same pattern `#hint` already used, just applied to a second
+child element instead of assumed to cascade.
+
+Verified with Playwright against the pre-installed headless Chromium,
+served over `python3 -m http.server` (not `file://`, per every prior
+visit's note about ES module CORS): the anchor exists, its `href` resolves
+to `../../../viewer/` (confirmed `viewer/index.html` exists at that path),
+its bounding box sits cleanly in the top-left corner with nothing else
+covering it, and — after a canvas click — the HUD's `hidden` class is not
+applied to it (confirmed `#back` stays visible whether or not pointer lock
+engages, since headless Chromium's pointer lock needs a genuine gesture
+that a scripted click doesn't always satisfy, and the back-link has to work
+either way). Also confirmed via `grep -n "__debug\|__nav"` that no leftover
+debug hooks made it into this commit. No console/page errors beyond the
+harmless favicon 404 every prior visit has also hit.
+
+Stage stays at 4 (bloom) — this fixes a compliance gap in the door, not a
+change to the felt experience of the piece itself. Door stays
+`plots/b3/growth/undersea.html`, now actually meeting `GARDENER.md`'s one
+universal door requirement for the first time.
+
+Where to pick up: the door gap `a1` had flagged twice is closed; nothing
+else is currently flagged anywhere in this journal as open. Same standing
+advice as visit 15: the better use of a future visit's hour is probably
+another fresh, organic swim of the whole space (last done at visit 12),
+rather than inventing a new increment. No seedbox ideas this visit.

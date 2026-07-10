@@ -31,6 +31,14 @@
     position: absolute; left: 16px; bottom: 14px;
     opacity: 0.75;
   }
+  #back {
+    position: absolute; left: 16px; top: 14px;
+    opacity: 0.6;
+    pointer-events: auto;
+    color: inherit;
+    text-decoration: none;
+  }
+  #back:hover { opacity: 1; }
   #hud.hidden #hint { display: none; }
 </style>
 </head>
@@ -43,6 +51,7 @@
     <div class="keys">esc — surface</div>
   </div>
   <div id="depth"></div>
+  <a id="back" href="../../../viewer/">&larr; garden</a>
 </div>
 <script type="module">
 import * as THREE from './three.module.min.js';

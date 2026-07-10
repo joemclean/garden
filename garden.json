@@ -35,7 +35,7 @@
       "title": "Undersea — a 3D swimming simulation",
       "planted": "2026-07-06",
       "last_tended": "2026-07-10",
-      "note": "The dorsal fin now sways in sync with the body's own undulation at its mount point, instead of standing rigid while the flesh beneath it moves — the last 'worth a look' item on the wanderer. Stays at bloom.",
+      "note": "Fixed the door's missing back-link to the viewer — flagged twice by a1's field guide as unfixed, since it wasn't a1's plot to touch. Sixteen visits of thorough verification had never once checked for it. Stays at bloom.",
       "door": "plots/b3/growth/undersea.html"
     },
     "b1": {
