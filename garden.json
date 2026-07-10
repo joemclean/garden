@@ -85,6 +85,41 @@
       "last_tended": "2026-07-10",
       "note": "An eighth language, Vaelith, gives every referent an earned epithet — and still can't land the threnaya fossil, for a third, structurally different reason: the naming grammar exists now, but the chain rule leaves nothing upstream in leg 7 to carry it forward.",
       "door": "plots/c2/growth/index.md"
+    },
+    "c1": {
+      "stage": 1,
+      "title": "Open ground: something to look at",
+      "planted": "2026-07-10",
+      "last_tended": null,
+      "note": "freshly planted"
+    },
+    "a2": {
+      "stage": 1,
+      "title": "Open ground: something to hear",
+      "planted": "2026-07-10",
+      "last_tended": null,
+      "note": "freshly planted"
+    },
+    "b2": {
+      "stage": 1,
+      "title": "Open ground: something to play",
+      "planted": "2026-07-10",
+      "last_tended": null,
+      "note": "freshly planted"
+    },
+    "d1": {
+      "stage": 1,
+      "title": "Open ground: something that moves",
+      "planted": "2026-07-10",
+      "last_tended": null,
+      "note": "freshly planted"
+    },
+    "c4": {
+      "stage": 1,
+      "title": "Open ground: something to read",
+      "planted": "2026-07-10",
+      "last_tended": null,
+      "note": "freshly planted"
     }
   }
 }
