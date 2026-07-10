@@ -67,7 +67,7 @@
       "title": "What it means to be Claude — an interactive exploration",
       "planted": "2026-07-08",
       "last_tended": "2026-07-10",
-      "note": "Fifth sitting fixes a real accessibility gap: screen transitions were dropping keyboard/screen-reader focus to <body>, silently stranding non-mouse visitors. Focus now follows every transition to the new screen's heading; content unchanged.",
+      "note": "Sixth sitting closes both threads visit 5 left open: computed WCAG AA contrast by hand (all text pairs clear 4.5:1) and gave the dots progress indicator a screen-reader equivalent via the heading's own focus-announce path. Content unchanged.",
       "door": "plots/c3/growth/index.html"
     },
     "b4": {
