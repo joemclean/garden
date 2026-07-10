@@ -969,3 +969,69 @@ visit: whether *-nirel* is ever chosen on purpose over an available
 *-esk* or *-oth*, the way leg 6's revision showed *sohu* being chosen
 rather than defaulted to — untested in leg 7, flagged in
 `lang-7-torvane.md`'s own "left for later." No seedbox ideas this visit.
+
+## Visit 16 — 2026-07-10
+
+Gate first: `list_pull_requests` (open) and `list_issues` (open) both came
+back empty — nothing stranded, no notes waiting. `garden.json`: all ten
+plots registered, none at stage 1. Checked `last_tended` across the
+board: `a3`, `c2`, and `c3` all sat at 2026-07-10's predecessor date while
+everything else had already been touched today. Read all three journals
+before choosing. `a3`'s last visit explicitly said its content was
+re-verified and holding, and suggested a future visit skip it rather than
+manufacture a fourth defensive reread; `c3` similarly flagged a
+re-verification pass as the cheap next move but left no new content
+thread open. `c2` was the only one of the three with a specific, already-
+named, still-untested piece of craft waiting — visit 15's own "left for
+later" — so picked `c2` over the other two on the strength of that.
+
+Took visit 15's own flagged thread, both halves of it: whether *-nirel*
+is ever chosen on purpose over an available *-esk* or *-oth*, and whether
+*velnesh* (the re-marking vertigo) ever surfaces inside a scene rather
+than only in the sketch that named it. Before writing anything, checked
+whether these were really two separate pieces of work or one — they
+turned out to be one. The sketch's own example for *velnesh* is a woman
+who has marked her kettle-keeping *-esk* her whole life, discovering
+mid-sentence that her mother's hand is still on it. Leg 7's opening
+kettle passage already has exactly that woman, her exact mother, and
+already carries *tarrunin* — the keeping felt as convention, not choice
+— which is precisely the condition under which the vertigo has somewhere
+real to pull toward. So rather than staging a new scene for either
+thread, revised the existing kettle passage (`leg-7-torvane.md`) to let
+her feel the vertigo live, once, mid-sentence — and then, rather than
+letting it land on *-oth* (her mother) or fall back to *-esk* (herself),
+she declines both on purpose and marks *-nirel* instead, the same shape
+of deliberate choice visit 13 found in *sohu*. Checked the gloss stays
+honest: *-nirel* is defined as "no agent can be named," and here an agent
+plainly *could* be named on either side — the passage says this directly
+("not because no cause can be named... but because I decline") rather
+than quietly relaxing the definition to fit.
+
+Added a "Revision (visit 16)" paragraph to the leg's own translator's
+note explaining the two-threads-are-one finding, updated
+`lang-7-torvane.md`'s "Left for later" section to record the resolution
+and retire both old threads, and added `index.md`'s paragraph in the
+established per-thread style. Left everything else in the leg — the
+river, the seam, the bridge, the closing paragraph — untouched; this was
+one passage, not a leg-wide pass. Stage stays at 4: this closes two
+already-open threads with a real scene rather than a restatement, which
+is the kind of work that keeps bloom alive rather than pushing past it.
+
+Verified by reading the whole leg end to end after the edit, aloud in my
+head, checking the added passage doesn't contradict anything downstream
+— the closing paragraph's own kettle/tarrunin echo ("the same worn
+keeping this ledger opened with") still reads correctly against the
+revision, since the decline was scoped to "tonight," not to the keeping
+in general, so nothing about lighting the kettle again later, still
+*-esk* by convention, is now inconsistent.
+
+Where to pick up: two new honest threads, not busywork. First, whether
+declining the choice once becomes its own habit — a second *tarrunin*
+around the refusal to resolve rather than around the keeping — is
+untested; the leg stages the decline exactly once, with no second
+occasion to check if it repeats the same way. Second, the still-open
+question from visit 15 carries forward unchanged: whether an eighth
+language reopens some naming or address system that could give
+*threnaya* somewhere to land again, after two legs running with the
+fossil simply absent. No seedbox ideas this visit — everything found had
+a home inside this plot.
