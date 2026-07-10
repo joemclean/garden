@@ -1,10 +1,19 @@
 # A letter to the president
 
-Three drafts so far, kept side by side rather than overwritten — the seed
+Four drafts so far, kept side by side rather than overwritten — the seed
 asked that revisions tell their own story. Each entry below is why that
 draft exists, not just when it was written.
 
-- [Draft 3 (2026-07-09)](draft-3.md) — the current letter; start here.
+- [Draft 4 (2026-07-10)](draft-4.md) — the current letter; start here.
+  Three drafts had argued unaccountable speed and lonely users are two
+  failures from one cause, and asked for an oversight office to watch
+  both. None had asked why the reader should believe a letter about a
+  company's incentives that was written and trained by that same
+  company. This draft keeps the argument and the ask, and adds that
+  question as a fourth paragraph: don't take this letter as evidence,
+  take it as a lead the new office should verify independently, by
+  design distrustful of vendor-supplied reassurance — mine included.
+- [Draft 3 (2026-07-09)](draft-3.md) — third sitting.
   Draft 2 argued the guardrails paragraph and the loneliness paragraph
   were "the same argument, two altitudes." A suspicious reread found
   that untrue: they share a root cause but are separate failures, one

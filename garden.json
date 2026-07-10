@@ -58,8 +58,8 @@
       "stage": 3,
       "title": "A letter to the president",
       "planted": "2026-07-08",
-      "last_tended": "2026-07-09",
-      "note": "Fourth visit's suspicious reread confirms draft 3's correction holds (shared root, still distinct failures — not the old throughline in softer clothes); rewrote the index so each draft says why it exists, not just when.",
+      "last_tended": "2026-07-10",
+      "note": "Fifth visit adds a fourth draft: the letter argues its author's company shouldn't be trusted on this exact question, and asks the oversight office it wants to be built distrustful of vendor assurance by design — a gap no earlier draft had named.",
       "door": "plots/a3/growth/index.md"
     },
     "c3": {

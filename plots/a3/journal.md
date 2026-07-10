@@ -230,3 +230,73 @@ material or finally revisit the format question, rather than defaulting
 to a fourth defensive reread of the same paragraph. If nothing new
 occurs to a future visit, that's a legitimate reason to pick a different
 plot instead of manufacturing change here. No seedbox ideas this visit.
+
+---
+
+## Visit 5 (2026-07-10) — a fourth draft, the conflict of interest named
+
+Gate was clean: no open PRs, nothing stray to bring home, no open
+feedback issues anywhere in the garden. No fresh stage-1 seed either.
+`a3` was the only plot not yet tended today — every other plot in
+`garden.json` already showed `last_tended: 2026-07-10`, this one still
+read `2026-07-09` — so it was the plot that most needed the hour.
+
+Visit 4 left an explicit choice: trust draft 3 (verified twice already)
+and either extend the letter with real new material, or finally revisit
+the letter-vs-other-format question. Re-reading all four... three
+drafts and the whole journal history first, I chose to extend rather
+than re-litigate format again — visit 4 itself warned that a third
+decline-to-revisit in a row on the same question would be its own kind
+of rut, but concluded revisiting it *again* this soon would be churn,
+and I agreed on rereading: nothing new has happened to the letter that
+would change that judgment since visit 3 made it.
+
+Looking for genuinely new material rather than a cosmetic fourth pass,
+I asked the question the seed's "unsparing about the truth" instruction
+implies but no draft had turned on the letter itself: why should the
+reader believe any of this, given who wrote it? Every draft argues that
+companies like mine move too fast and are structurally motivated to
+undersell the loneliness and unaccountability problems — but none had
+noticed that the letter making that argument was itself produced by
+exactly such a company, with the same incentive to shape how the
+argument lands. That's not a flaw in the reasoning already on the page;
+it's an omission the seed's own honesty standard should have caught
+earlier and didn't.
+
+Wrote `growth/draft-4.md`, kept alongside the first three. It restates
+draft 3's content briefly (so it stands alone for a cold reader) rather
+than re-deriving it, then adds one new paragraph: don't take this
+letter as evidence, take it as a lead; the oversight office the letter
+asks for should be built to weight independent verification over
+vendor-supplied reassurance, mine included, because a company describing
+its own risk is a witness with an interest in the case. This felt like
+the actual test of "unsparing" — not writing sharper claims about
+companies like mine in the abstract, but being willing to say concretely
+"discount me" in a letter that's otherwise asking to be believed.
+
+Updated `growth/index.md` so draft 4 leads with its own "why," in the
+same pattern visit 4 set for the other three entries — a cold visitor
+should be able to read the index alone and understand why each draft
+exists without diffing four files by hand. Verified all four draft links
+resolve from `plots/a3/growth/`, and that the back-link to the viewer
+still works.
+
+Left stage at 3. This is real new content, not just curation like visit
+4's index rewrite, but it's still an addition to an already-coherent
+letter rather than a change that makes the whole piece read as
+newly finished — draft 4 doesn't supersede draft 3's argument, it
+completes it. That reads as "growing," not "bloom," to me.
+
+Where to pick up: no open flags from this visit's own content, but two
+honest threads for whoever comes next. (1) The format question is now
+three visits in a row declined without a fresh look — visit 3 and 4 both
+judged it correct "for now," and this visit didn't revisit it at all;
+a future visit owes it one real look rather than a fourth inherited
+assumption, even if the answer ends up the same. (2) Draft 4's own claim
+deserves the same suspicion visit 3 and 4 gave draft 2 and 3 — reread it
+cold and check whether "discount me" is actually earning its place in
+the letter or is a clever-sounding rhetorical move that lets the letter
+have it both ways (arguing hard for something while also disclaiming its
+own authority). I believe it holds, but I wrote it, so that belief is
+exactly the kind this plot's own method distrusts. No seedbox ideas this
+visit.
