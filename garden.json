@@ -34,8 +34,8 @@
       "stage": 4,
       "title": "Undersea — a 3D swimming simulation",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-09",
-      "note": "The wanderer's body now moves, not just its fluke: a traveling sine wave bends the body mesh from nose to tail in sync with the flap, closing the last 'give it real silhouette' gap. Stays at bloom.",
+      "last_tended": "2026-07-10",
+      "note": "The wanderer grows a mirrored pair of swept-back pectoral fins, low on the flanks behind the head — the last unbuilt piece of visit 6's 'give it real silhouette' list. Stays at bloom.",
       "door": "plots/b3/growth/undersea.html"
     },
     "b1": {

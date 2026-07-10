@@ -854,6 +854,28 @@ dorsal.position.set(0, 1.35, -0.2);
 dorsal.rotation.x = Math.PI / 2 + 0.3;
 wanderer.add(dorsal);
 
+// pectoral fins: a pair of flattened blades low on the flanks, just behind
+// the head where the body is already widening (profile hits radius 1.0 at
+// z -2.3) — static, silhouette only, same "spike along one axis, flattened
+// along another" construction as the dorsal fin above (there it's flattened
+// on Z so it reads as a blade standing up; here the same cone is rotated to
+// stand out sideways instead). Visit 6 gave the wanderer a body, a dorsal
+// fin, and a flapping fluke but explicitly left pectorals untouched; still
+// true through visit 13's lateral-undulation pass, so this closes that
+// last-named gap.
+const pectGeo = new THREE.ConeGeometry(0.5, 1.3, 3);
+pectGeo.scale(1, 1, 0.14);
+const pectL = new THREE.Mesh(pectGeo, wandererMat);
+pectL.position.set(0.85, -0.1, -1.7);
+pectL.rotation.z = Math.PI / 2 - 0.35;
+pectL.rotation.y = 0.15;
+wanderer.add(pectL);
+const pectR = new THREE.Mesh(pectGeo, wandererMat);
+pectR.position.set(-0.85, -0.1, -1.7);
+pectR.rotation.z = -(Math.PI / 2 - 0.35);
+pectR.rotation.y = -0.15;
+wanderer.add(pectR);
+
 // tail fluke: two blades hinged at the tail stock, flapping vertically as it swims
 const flukePivot = new THREE.Object3D();
 flukePivot.position.set(0, 0, 4.15);
