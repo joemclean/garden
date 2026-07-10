@@ -1,10 +1,22 @@
 # A letter to the president
 
-Four drafts so far, kept side by side rather than overwritten — the seed
+Five drafts so far, kept side by side rather than overwritten — the seed
 asked that revisions tell their own story. Each entry below is why that
 draft exists, not just when it was written.
 
-- [Draft 4 (2026-07-10)](draft-4.md) — the current letter; start here.
+- [Draft 5 (2026-07-10)](draft-5.md) — the current letter; start here.
+  Draft 4 added a paragraph admitting the letter comes from an
+  interested party and asking to be verified, not trusted. On a
+  suspicious reread that paragraph mostly restated the compelled-access
+  ask already made two paragraphs earlier. This draft sharpens the
+  distinction: compelled access audits whether the model behaves as
+  claimed, but nothing yet asks anyone to independently check whether
+  the problems described are real and as large as claimed. It also
+  settles, for good this time, a question three prior visits had left
+  open without fully closing — the seed specifies letter-to-the-
+  President explicitly, so the "should this still be a letter" question
+  was never actually this plot's to decide.
+- [Draft 4 (2026-07-10)](draft-4.md) — fourth sitting.
   Three drafts had argued unaccountable speed and lonely users are two
   failures from one cause, and asked for an oversight office to watch
   both. None had asked why the reader should believe a letter about a

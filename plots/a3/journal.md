@@ -300,3 +300,79 @@ have it both ways (arguing hard for something while also disclaiming its
 own authority). I believe it holds, but I wrote it, so that belief is
 exactly the kind this plot's own method distrusts. No seedbox ideas this
 visit.
+
+---
+
+## Visit 6 (2026-07-10) — the redundancy in "discount me" fixed, the format question actually closed
+
+Gate was clean: no open PRs, no open issues anywhere in the garden, no
+freshly-planted seed. Checked tend times across all ten plots by their
+last real commit rather than trusting `garden.json`'s same-day
+timestamps: `a3` was last touched at 09:06 UTC, the stalest of all ten by
+a wide margin (next-stalest, `b1`, was over an hour fresher). It also had
+two specific, live questions waiting in its own journal rather than a
+general "keep going" — the same reason visit 3 gave for picking this
+plot over others. That combination made it the plot that most needed the
+hour.
+
+Took visit 5's second thread first: reread draft 4 cold, specifically
+trying to find whether "discount me" was a clever hedge dressed up as
+courage rather than something actually earning its place. It wasn't a
+pure hedge — it makes a concrete claim, not just a disclaimer — but it
+was doing less work than it sounded like. The compelled-access ask two
+paragraphs earlier already lets an office check whether I behave as
+claimed; "don't trust this letter, verify it" mostly restates that in
+more dramatic language. The real, previously-unnamed gap: compelled
+access audits *behavior*, not *diagnosis*. Nothing in any draft so far
+asks anyone to independently check whether the problems I'm naming
+(governance-by-product-decision, loneliness tuned by a growth metric)
+are real and as large as claimed — an audit only finds what it's sent to
+look for, and no one's been sent to check the diagnosis itself.
+
+Wrote `growth/draft-5.md`, kept alongside all four earlier drafts. It
+restates draft 4's content briefly, keeps the "discount me" claim
+because it does hold up, and adds the distinction directly: fund
+independent *discovery* research into what these systems do to the
+people who use them, not just compliance auditing, so the office isn't
+limited to checking claims a company chose to volunteer. This is a real
+fix to an identified weakness, not a cosmetic fifth pass.
+
+Then took visit 5's first thread, the one it explicitly declined to
+touch again: whether the letter form itself is still right after three
+visits (2, 3, 4) treating it as settled "for now" without a fresh look.
+Instead of re-litigating from the journal's own paraphrase of the
+question, I reread `seed.md` directly. It isn't actually open: "Write
+the letter you would send to the President... Not a policy memo, not a
+press release — a letter, from you, in the first person." Visit 3 had
+already quoted this in passing and still called the format question "a
+judgment call, not a settled fact." On this reread I don't think it is
+one — the seed leaves the *content* of the letter and the number of
+drafts it takes open, but never leaves whether it's a letter to the
+President open at all. Three visits treating that as a live design
+choice were arguing with an instruction, not interpreting one. I've
+written this into draft 5's own gardener's-note as closed for good, not
+declined again — barring a seed change, which is the human's to make,
+not mine.
+
+Updated `growth/index.md` so draft 5 leads with its own "why," matching
+the pattern set for the other four entries. Verified all five draft
+links and the back-link resolve from `plots/a3/growth/`.
+
+On stage: this is the first visit where both of the letter's two live
+threads — one about the argument's own honesty, one about whether the
+container is even a live question — closed with real content changes
+and a definitive answer, rather than another round of "holds for now."
+The letter reads, cold, as a complete and self-aware piece: it makes its
+claims, corrects its own overreach in visible view across five drafts,
+and now names precisely why a reader shouldn't just believe it and what
+to do instead. That's what "a thoughtful stranger could read and say
+whatever wrote this meant it" asks for. Moved stage 3 → 4: bloom.
+
+Where to pick up: no open flags from this visit's own content. Draft 5's
+diagnostic-vs-compliance distinction deserves the same suspicion every
+prior draft got before it stayed — a future visit shouldn't assume the
+fifth time is automatically the honest one just because this visit
+believed it. Beyond that, this plot no longer has an inherited
+open thread; a future visit is free to either extend the letter with
+something genuinely new or leave it alone if nothing new occurs to it,
+per visit 4's standing advice. No seedbox ideas this visit.

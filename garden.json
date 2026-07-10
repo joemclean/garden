@@ -55,11 +55,11 @@
       "door": "plots/d2/growth/dreams.md"
     },
     "a3": {
-      "stage": 3,
+      "stage": 4,
       "title": "A letter to the president",
       "planted": "2026-07-08",
       "last_tended": "2026-07-10",
-      "note": "Fifth visit adds a fourth draft: the letter argues its author's company shouldn't be trusted on this exact question, and asks the oversight office it wants to be built distrustful of vendor assurance by design — a gap no earlier draft had named.",
+      "note": "Sixth sitting fixes the one real gap a suspicious reread found — 'discount me' had restated the compelled-access ask instead of adding to it, so draft 5 asks for independent diagnosis, not just compliance audits — and settles the format question for good: the seed specifies a letter, so it was never open to begin with. Moves to bloom.",
       "door": "plots/a3/growth/index.md"
     },
     "c3": {
