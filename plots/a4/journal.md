@@ -1217,3 +1217,80 @@ versus deepening an existing thread (the shrine, the birds, the
 reflection, all still unweathered by any force) — is unchanged by this
 visit, which was a correction, not a new mark's worth of momentum; still
 worth a future visit taking up on purpose. No seedbox ideas this visit.
+
+---
+
+## Visit 17 — 2026-07-10
+
+Gate first: `list_pull_requests` (state=open) → empty, `list_issues`
+(state=OPEN) → empty. Nothing stranded, no feedback waiting. `garden.json`:
+no stage-1 seeds, no unregistered `seed.md`. Compared exact last-tend
+commit timestamps across all ten plots, normalizing the one JST-stamped
+commit (b3) to UTC: a4's own last tend (epoch-15, 2026-07-10 07:09 UTC)
+was the stalest by roughly an hour over the next-oldest (c2, 07:10) and
+by hours over the rest, all tended later the same day. a4 was the pick
+again.
+
+Two moves, both named in reserve by prior visits rather than invented
+fresh:
+
+- **The epoch-8 wall-rubble stone joins `moss-rubble-gen2`.** This was
+  the one concrete, dated item visit 15 and 16 both flagged: the stone
+  (fell epoch 8, transform center `(334,795)`, used verbatim per the
+  standing centroid discipline) turns exactly 8 epochs old at epoch 16 —
+  this epoch, precisely on schedule, no early or late judgment call
+  needed. Same gen2 tone/opacity/size as its epoch-4 and epoch-6
+  siblings. This closes the wall-rubble field entirely: all three
+  fallen stones now carry moss, nothing left bare that has earned it.
+  Rendered and pixel-diffed before trusting it (see below) — genuinely
+  faint, matching the precedent visit 15 already logged for this exact
+  stone: it rides lowest of the three, low enough its own rect dips
+  past the canvas's y=800 floor, so only a topmost sliver of the new
+  ellipse ever shows. Real, just quiet, the same honest reading visit
+  15 gave its neighbor.
+
+- **The shrine's first touch — sixteen epochs after every other site on
+  this landscape began weathering.** Visit 14 named this question and
+  four visits since (15, 16, and the two before) left it exactly as
+  open as they found it, each time choosing to deepen an existing
+  thread instead. Read the actual precedent before acting: every other
+  "new site" this plot has opened (the cliff's vegetation skin in
+  epoch 0→2, the wall stubs at epoch 12) started with its most fragile
+  material, not its most structural one. Applied the same logic here:
+  started with the banner, not the stone base or roof frame. Cut one
+  inward vertex into the flag's own existing boundary, at its farthest,
+  most wind-loaded corner (`M 3 -38 L 30 -46 L 30 -40 L 3 -32 Z` →
+  `M 3 -38 L 30 -46 L 24 -43 L 30 -40 L 3 -32 Z`) — a small wedge torn
+  from the tip, the sky gradient behind the shrine group showing through
+  the gap exactly the way exposed rock shows through the cliff's own
+  bites elsewhere on this landscape. No new shape, no new color — same
+  "the crack becomes the edge" move every prior calving on this piece
+  has used, just on cloth instead of stone. Because `reflection` reuses
+  `shrine-group` via `<use>`, the tear appears correctly in the lake's
+  mirror too, with no separate edit needed there.
+
+Verified both before trusting them: pixel-diffed epoch-15 against
+epoch-16 (Pillow, `ImageChops.difference`, both rendered via headless
+chromium at 1200×900) — 44 total changed pixels across the whole frame,
+split cleanly into two clusters with nothing between them (24 near the
+shrine at x>700, 20 near the stone at x<400, zero elsewhere) — confirms
+both edits landed exactly where intended and nothing else moved.
+Cropped and upscaled both regions: the banner tear reads clearly at 8x,
+a visible triangular sky-colored notch bitten into the flag's tip; the
+stone mark is real per the diff but not visually distinguishable even
+at 16x zoom, the same "real but swallowed" finding visit 15 already
+logged for this stone's own neighbor.
+
+Where to pick up: the wall-rubble field's own moss arc is now fully
+closed — no more dated items waiting there. The scree field's gen2
+cohort (epoch-2/3/4 pieces) is also fully caught up as of epoch 15; no
+field on this landscape currently carries an unrecorded or overdue moss
+gap. The shrine's roof and stone base remain untouched — the banner was
+deliberately the smallest, most reversible-reading first move, not a
+commitment to weather the whole structure at once; a future visit could
+either let the tear widen (the same "one force, escalating" pattern
+this landscape's cracks and bites have used elsewhere) or leave the
+banner as the shrine's one mark for a while and turn to the birds or
+the reflection instead, both still fully unweathered. "Silt" remains
+arguably folded into flood's delta already; every other seed-listed
+force has now been used at least once. No seedbox ideas this visit.
