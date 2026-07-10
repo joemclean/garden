@@ -1051,6 +1051,16 @@ function tick() {
       bp.setXYZ(v, bx + offset, by, bz);
     }
     bp.needsUpdate = true;
+
+    // dorsal fin: rigidly mounted on the spine, so it should carry the same
+    // lateral offset the undulation gives the flesh at its own mount point
+    // instead of standing dead still while the body around it moves — the
+    // "worth a look, not needed" item visits 13 and 14 both left open once
+    // the body itself got this motion. Same amp/offset formula as the body
+    // loop above, evaluated at the fin's single mount z instead of per-vertex.
+    const dorsalS = Math.max(0, Math.min(1, (dorsal.position.z - WANDERER_NOSE_Z) / span));
+    const dorsalAmp = WANDERER_AMP * dorsalS * dorsalS;
+    dorsal.position.x = dorsalAmp * Math.sin(t * 1.1 - dorsal.position.z * WANDERER_WAVE_K);
   }
 
   depthEl.textContent = `depth ${Math.max(0, Math.round(-yaw.position.y * 3.1))} ft`;
