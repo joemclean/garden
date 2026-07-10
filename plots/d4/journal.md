@@ -919,3 +919,84 @@ any other thread — it was built deliberately unconnected and should stay
 that way for at least a few more visits, the same discipline that's kept
 the older threads alive rather than resolved. No new seedbox ideas this
 visit; the unreliable-viewer idea from visit 2 is still unclaimed.
+
+## Visit 16 — 2026-07-10
+
+Gate first: `list_pull_requests` (state=open) → empty, nothing stranded.
+`list_issues` (state=OPEN) → empty, no unconsidered feedback. `garden.json`
+already had entries for all ten on-disk plots (checked `plots/*/seed.md`
+against the JSON directly) — no bookkeeping needed. Read the last ten
+`tend` commits' exact timestamps rather than the day-granularity field:
+the newest was `a1` at 14:09:41Z, and working backward the full rotation
+(`b4`, `b3`, `d2`, `b1`, `a3`, `c3`, `c2`, `a4`, `d4` at 05:08:09Z) covered
+every plot exactly once — `d4` stalest by a full cycle. Picked `d4` for a
+tenth visit running.
+
+Left all five open threads exactly where visit 15 left them (glove/boot/
+well's-second-glove; the hedge-line/threshing-floor grass mystery; the
+two-tenders question; the belfry's neighbors; the eaves' weathervane) —
+nothing this visit found called for a fourth data point on any of them,
+and visit 15 was explicit that resolving one now would read as an answer
+rather than an accumulation. Went looking instead for an object already
+sitting in an old room's own text that had never been used as a door, the
+same move every branch point in this house has used (the vestibule's
+spiral, the long hall's middle window, the shed's fogged glass, the
+walled garden's trellis, the hedge line's gap, the grove's second gap,
+the nursery's last row, the threshing floor's baskets, the granary's
+hatch, the reading room's rug). Found one nobody had touched since visit
+1: the courtyard's "fountain's basin, cracked along one old seam" —
+mentioned, never opened.
+
+Built **the cistern**, an eighteenth room, reached through the fountain's
+crack (widened past what a hairline seam should allow) — added as a third
+door to the courtyard's `.doors` list without touching its existing text
+or either door. It spirals the way the vestibule's floor and the well
+beneath it do — a deliberate rhyme, named as one in the room's own text,
+not a silent repeat — but where the well's water shows *too much* (a
+vestibule from an angle no window gives, two gloves where the rack holds
+one), the cistern's water shows *nothing at all*: no ceiling, no
+reflection, no ripple even when a hand crosses the surface. This is a
+sixth open thread, deliberately not cross-referenced into the other five
+— no claim that the two waters are compensating for each other, though
+the ninth book voice below flirts with that guess only to distrust its
+own guess in the same breath, which felt like the right amount of
+connection to allow: a visitor can wonder, the house won't confirm it.
+
+Added a ninth voice to the reading room's book, reacting to the discovery
+directly (the fountain, the crack, the two waters' disagreement) and
+explicitly declining to trust its own "the house is balancing itself"
+theory any further than the second hand trusted "on purpose" — keeping
+the book's now-established habit of raising a reading and immediately
+distrusting it rather than settling on one.
+
+Verified before trusting it: wrote a small script to extract every
+`id="..."` and `href="#..."` — 18 of each, exact set match, no dangling
+hrefs, no unreachable rooms (`cistern` reachable from `courtyard`,
+confirmed by name). Rendered `courtyard`, `cistern`, `garden`, and
+`reading-room` (at 1200×2100, since a ninth voice pushed content further
+past the frame — same non-issue every book-voice visit since 7 has
+flagged, content complete and scrollable) via headless chromium
+(`/opt/pw-browsers/chromium-1194/chrome-linux/chrome --headless
+--disable-gpu --no-sandbox`), plus `--dump-dom` confirming
+`id="cistern"` mounts as `class="room here"` and the ninth voice's text
+is present in the reading room's DOM. All clean, only the usual harmless
+dbus/GPU stderr noise. Confirmed the `← the garden` back-link still
+renders once, pointing at `../../../viewer/`. Updated the whisper text
+from "seventeen rooms" to "eighteen rooms."
+
+Held the stage at 4 (bloom) — same reasoning as visits 10 through 15:
+depth added (a room, a door, a book voice), not a second organizing move.
+
+Where to pick up: room count is 18. Six threads now stand, correctly
+unclaimed: the vestibule's glove / cellar's boot / well's false second
+glove (three data points); the hedge-line/threshing-floor grass mystery;
+the two-tenders question (nursery's trowel, loft's ladder); the belfry's
+unnamed neighboring rooftops; the eaves' weathervane; and now the
+cistern's water that reflects nothing, sitting right next to a well whose
+water reflects too much. Resist tying that pair together explicitly (the
+ninth book voice already tried and talked itself out of it) — let a
+visitor draw that line themselves if they want to, don't draw it for
+them. The cistern is a dead end (one door, back to the courtyard),
+matching the restraint belfry/eaves/cellar/well/loft already established
+for single-branch discoveries. No new seedbox ideas this visit; the
+unreliable-viewer idea from visit 2 is still unclaimed.
