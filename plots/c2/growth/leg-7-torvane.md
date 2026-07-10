@@ -14,7 +14,22 @@ before me, on always, whether anyone comes-nirel for tea or that coming
 stands-arden empty, unfilled by a single guest, year on year. Tarrunin,
 this keeping — worn so far into me that *-esk* is only ever a convention
 now, not a choice I feel myself making each time the water goes on. Six
-years now. Below, the river wears-esk three moods — the one thing in this
+years now. Writing that down, the ground moves once under it: if I no
+longer feel myself choosing the keeping, whose will is still living
+inside it — mine, worn down to a habit, or my mother's, her hand
+steadying mine some years past the year her own hand let go? *Velnesh*,
+and I feel it exactly the once, mid-sentence, not before this writing and
+not since. I do not let it settle where it wants to, which is *-oth* —
+her doing — for she is six years in the ground and cannot be doing
+anything tonight. I will not let it fall back to *-esk* either, having
+just told you plainly I do not feel it as a choosing. I mark it *-nirel*,
+on purpose, the way *sohu* got chosen once rather than only reached for:
+not because no cause can be named for the keeping, but because I
+decline, this once, to hand it to either name sitting right there,
+offered, mine for the taking. The kettle stays lit either way. Whose
+keeping it is, tonight, I leave open.
+
+Below, the river wears-esk three moods — the one thing in this
 ledger I have never once marked *-oth* or *-nirel*, since nothing stands
 behind a river's own weather but the river — and I have learned all
 three, though which is the honest one I can only answer by reaching for a
@@ -125,3 +140,21 @@ Two legs running now with no word-shaped place for it to land at all —
 worth watching whether an eighth language reopens some kind of naming or
 address system that could hold it again, or whether the fossil has simply
 run out of grammar willing to carry it.
+
+**Revision (visit 16):** the sketch shipped *velnesh* and the deliberate-
+*sohu* precedent without staging either inside a scene, and left both as
+named but untested — this revision tests them, in the one place the leg
+already had the material for it. The kettle passage already carried
+*tarrunin* (the keeping felt as convention, not choice) and the mother
+who kept it before; that is exactly the shape the sketch's own
+hypothetical *velnesh* example describes, so rather than inventing a new
+scene, this revision makes the keeper feel the vertigo the sketch already
+promised her, live, mid-sentence. Having felt it, she does not resolve it
+into whichever of *-esk* or *-oth* the vertigo was pulling toward — she
+marks *-nirel* on purpose, declining both available names rather than
+lacking one, the same shape of deliberate choice leg 6's revision found
+in *sohu*. Two flagged threads close in the same four sentences because
+they were, underneath, one thread: a marker chosen on purpose is legible
+as such only against a live moment where the alternative was genuinely
+available, and the kettle passage is where the leg had already built
+that moment without yet using it.

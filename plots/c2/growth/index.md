@@ -213,6 +213,19 @@ grammar and no addressee from Vendrel, so there is still nowhere for it
 to go; two legs now with the fossil simply absent rather than
 transformed.
 
+Torvane's own two flagged threads — whether *-nirel* is ever chosen
+deliberately over an available *-esk* or *-oth*, and whether *velnesh*
+ever surfaces inside a scene rather than only in the sketch — are
+resolved as of visit 16, inside leg 7 itself, and turn out to be one
+thread rather than two: the kettle passage, which already carried
+*tarrunin* (the keeping felt as convention, not choice) and the memory of
+a mother who kept it before, is revised so the keeper feels the vertigo
+live, mid-sentence, and then declines to let it resolve into either
+*-oth* (her mother's hand) or *-esk* (her own), marking *-nirel* on
+purpose instead — the same shape of deliberate choice leg 6 found in
+*sohu*, staged for the first time inside a scene rather than only
+described in a sketch.
+
 ---
 
 [← back to the garden](../../../viewer/)

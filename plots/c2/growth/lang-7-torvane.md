@@ -67,10 +67,21 @@ edge case Torvane has to strain, borrow, or force a door open for, the
 way every predecessor did in its own way. *-nirel* was always going to be
 there, waiting for exactly this.
 
-**Left for later visits:** whether *-nirel* is ever chosen deliberately
-over an available *-esk* or *-oth* — the way leg 6's revision showed
-*sohu* being chosen on purpose rather than reached for only when nothing
-else fit — is untested in leg 7. Also open: whether *velnesh* ever
-surfaces inside a scene rather than only in this sketch, since leg 7 as
-translated stages single verdicts given once each, never a re-marking
-caught in the act.
+**Resolved (visit 16):** both threads flagged above turned out to be one
+thread. Leg 7's kettle passage revised to stage the vertigo live — the
+keeper, mid-sentence, feels *velnesh* pull the kettle-keeping toward
+*-oth* (her dead mother's hand) and does not let it land there, does not
+let it fall back to *-esk* either, and marks *-nirel* on purpose instead:
+a marker chosen deliberately is only legible as chosen, rather than
+merely correct, against a moment where a plausible alternative was
+genuinely on the table. *Tarrunin* is what made the moment available —
+an act already felt as habit rather than choice is exactly where the
+vertigo has somewhere real to pull toward.
+
+**Left for later visits:** whether declining the choice, once, becomes
+itself worn into a second habit — a *tarrunin* around the refusal to
+resolve, rather than around the keeping — is untested; the leg stages the
+decline exactly once, with no second occasion to check whether it repeats
+the same way or differently. Also still open, unchanged from before this
+visit: whether an eighth language reopens some naming or address system
+that could give *threnaya* somewhere to land again.
