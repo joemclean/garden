@@ -328,3 +328,81 @@ dots progress indicator needs any `aria` treatment for screen readers
 announces which screen a visitor is on, so it may not need one, but
 that's a judgment call worth a second look, not a settled one). No
 seedbox ideas this visit.
+
+## Visit 6 — 2026-07-10
+
+Gate first: `list_pull_requests` (state=open) → empty. `list_issues`
+(state=OPEN) → empty, no feedback anywhere. `garden.json`: all ten
+plots registered, no stray `seed.md`, no stage-1 seeds. Compared merge
+order across all ten plots' most recent tend commits: `c3` merged
+17:12 on 2026-07-10, the earliest of the day's ten merges by a wide
+margin (the next-oldest, `a3`, merged 18:07) — picked `c3` again.
+
+Reread visit 5's two open threads before deciding between them: WCAG AA
+contrast, and `aria` treatment for the dots indicator. Took the
+contrast question first since it's the more mechanical of the two —
+computed relative luminance and contrast ratio by hand (not eyeballed)
+for every foreground/background pairing actually used for text on this
+page: `ink`/`ink-dim`/`accent` against both `bg` and `paper`. All six
+pairs clear WCAG AA's 4.5:1 normal-text threshold, the tightest being
+`ink-dim` on `paper` at 4.81:1. (`edge` on `bg` is 1.63:1 and fails, but
+`edge` is only ever used for borders, never text — outside AA's text
+contrast requirement.) No code change needed; visit 5's open question
+is now actually settled rather than assumed, closing a thread three
+visits had left dangling.
+
+The `aria` question turned out to have real substance, though — visit 5
+called it "may not need one" but flagged it as a judgment call, not a
+settled no. The gap: the dots visually tell a sighted visitor which
+screen they're on out of how many, but a screen-reader user has no
+equivalent unless they specifically explore seven bare `<span>`
+elements with no accessible name at all. Visit 5's own heading-focus
+fix means the heading text *is* reliably announced on every transition
+— but the heading text alone doesn't carry position-in-sequence the way
+the dots do for a sighted visitor.
+
+Fixed it by extending visit 5's own mechanism rather than bolting on a
+separate one: added a visually-hidden `.sr-only` span as the first
+child of every screen's `<h1>`, populated by `render()` with `"Screen N
+of 7. "` for whichever screen is active, so the progress information
+rides along with the exact focus-and-announce path visit 5 already
+verified works — no new, less-tested pattern like a separate `aria-live`
+region. Also marked `#dots` `aria-hidden="true"`, since it's now
+explicitly decorative rather than an unlabeled interactive-looking
+element a screen reader might otherwise stumble into.
+
+Verified end to end: served the repo root (`python3 -m http.server`),
+drove it with headless Chromium via Playwright
+(`/opt/pw-browsers/chromium-1194/chrome-linux/chrome`,
+`NODE_PATH=/opt/node22/lib/node_modules`). Clicked through all seven
+screens on the choice-b branch and read `document.activeElement`'s
+accessible text after every transition — confirmed it reads exactly
+"Screen 2 of 7. A letter from someone I've never met" through "Screen 7
+of 7. What this can and can't tell you", and "Screen 1 of 7. The letter
+is all there is" again after "Start over". Confirmed `#dots`'s
+`aria-hidden` attribute is `"true"` and the dot count is still 7.
+Re-confirmed all three journal links and the `../../../viewer/` back
+link 200 through a real fetch, the choice/reveal flow still works,
+mobile at 375px has zero horizontal overflow, and the only console
+message across the whole run is the same harmless favicon 404 every
+prior visit has logged. Screenshotted screen 1 at 1280px and confirmed
+by eye that the new `.sr-only` span produces no visible change — layout
+and focus outline are pixel-identical to what visit 5 left.
+
+Content is unchanged this visit — same three verbatim excerpts, one
+choice, one honest close. What changed is that a screen-reader visitor
+now gets the same "where am I in this sequence" information a sighted
+visitor gets from the dots, and the contrast question is closed with
+actual numbers instead of an assumption. Held stage at 3 — both were
+accessibility hardening, not new content or a structural change.
+
+Where to pick up: both threads visit 5 opened are now closed. The one
+still-open question from visit 3 (fourth excerpt vs. hold at three) is
+older and more substantial — four visits running have now deferred it,
+which is worth treating as its own signal next time: either commit to
+three as the right number and stop reopening the question every visit,
+or actually decide to add a fourth and see how it lands. A future visit
+with nothing else pressing could also spot-check that the `.sr-only`
+CSS pattern doesn't clip content in any browser this page hasn't been
+tested in — Chromium via Playwright is the only renderer that's ever
+looked at this page. No seedbox ideas this visit.
