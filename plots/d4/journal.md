@@ -845,3 +845,77 @@ by choice, same as cellar/well/loft — a branch off it would have to
 explain the neighbors, which would cash in the very thing that makes them
 interesting. No new seedbox ideas this visit; the unreliable-viewer idea
 from visit 2 is still unclaimed.
+
+## Visit 15 — 2026-07-10
+
+Gate first: `list_pull_requests` (state=open) → empty, nothing stranded.
+`list_issues` (state=OPEN) → empty, no unconsidered feedback. `garden.json`
+had no stage-1 seeds; every plot on disk already has an entry. Read the
+last ten `tend` commits' order rather than just the day-granularity
+`last_tended` field: the rotation runs `a3 → b1 → d2 → b3 → b4 → a1 → d4 →
+a4 → c2 → c3 → (repeat)`, and the most recent tend was `a1`
+(`e76430c`) — so `d4` is next up and, by `last_tended` date (2026-07-09,
+tied with `a4`/`a3`/`c3`/`c2` but earliest within that group per the
+commit order), the stalest plot standing. Picked `d4`.
+
+Deliberately left all four open threads exactly where visit 14 left
+them — glove/boot/well's-second-glove (three data points), the
+hedge-line/threshing-floor grass mystery, the two-tenders question (two
+data points), and the belfry's unnamed neighbors. Visit 14 was explicit
+that a fourth data point or a branch off the belfry would start
+resolving instead of accumulating, and nothing this visit learned
+changes that read. Went looking instead for new ground entirely, per the
+seed's actual instruction to add a room each visit.
+
+Built **the eaves**, a seventeenth room, reached by a new door added to
+the walled garden: the trellis — "staked and true," per its own earlier
+description — turns out to climb past the top of the wall onto the
+house's own roof, the same load-bearing-impossible-object trick the long
+hall's window and the shed's fogged glass already established, applied
+to a fixture with a very different job (support, not sight or passage).
+For the first time in seventeen rooms, a visitor sees the house from
+outside rather than through it: a roofline with more chimneys than
+sixteen (now seventeen) rooms plausibly need, and a weathervane locked
+on a fifth compass direction the dial beneath it doesn't name, holding
+steady against a wind blowing the opposite way. This is a new
+impossible-geometry instance, not a continuation of the belfry's
+neighbor-rooftops thread or the courtyard/long-hall window mismatch —
+deliberately its own thing, so the house gets a fifth open mystery
+instead of a fourth answer to one of the first four. Left as a dead end,
+one door back to the walled garden, same restraint as belfry/cellar/
+well/loft.
+
+Added an eighth book-voice paragraph to the reading room's page,
+reacting to the eaves specifically: it notices the seventh hand went up
+to the belfry and this one went up further still, past the belfry's
+window and onto the roof itself, and reads the weathervane's unclaimed
+direction against the sixth hand's "on purpose vs. only habit" question
+— proposing that not-explaining has become this book's real habit, more
+than brevity ever was. Updated the whisper text from "sixteen rooms" to
+"seventeen rooms."
+
+Verified before trusting it: wrote a small script to extract every
+`id="..."` and every `href="#..."` — 17 of each, exact set match, no
+dangling links, none orphaned. Rendered `eaves`, `walled-garden`,
+`reading-room`, and `vestibule` via headless chromium (`--dump-dom`,
+`/opt/pw-browsers/chromium-1194/chrome-linux/chrome`) — each showed
+itself as `class="room here"`, no console output beyond the usual
+harmless dbus/GPU noise (filtered and confirmed empty). Confirmed the
+`← the garden` back-link is still present exactly once, pointing at
+`../../../viewer/`.
+
+Held the stage at 4 (bloom) — same reasoning as visits 10 through 14:
+depth added (a room, a door, a book voice), not a second organizing move.
+
+Where to pick up: room count is 17. Five threads now stand, correctly
+unclaimed and correctly not cross-referenced into one reveal: the
+vestibule's glove / cellar's boot / well's false second glove (three
+data points); the hedge-line/threshing-floor grass mystery; the
+two-tenders question (two data points: nursery's trowel, loft's ladder);
+the belfry's unnamed neighboring rooftops; and now the eaves' weathervane,
+locked on a direction the dial won't name. Resist the urge to make the
+weathervane's phantom direction "point toward" the belfry's neighbors or
+any other thread — it was built deliberately unconnected and should stay
+that way for at least a few more visits, the same discipline that's kept
+the older threads alive rather than resolved. No new seedbox ideas this
+visit; the unreliable-viewer idea from visit 2 is still unclaimed.
