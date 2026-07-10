@@ -986,3 +986,59 @@ again with nothing specific left to add: visit 12's fresh-eyes swim is
 still the only one that's ever actually happened in fourteen visits: worth
 repeating occasionally rather than assumed permanent, per its own note.
 No seedbox ideas this visit.
+
+## Visit 15 — 2026-07-10
+
+Gate first: `list_pull_requests` (state=open) came back empty, `list_issues`
+(state=OPEN) also came back empty — nothing stranded, nothing waiting on a
+reply. Fetched and merged `origin/main` into the working branch (already
+up to date — the branch's own base already had every prior visit's PR
+merged, including visit 14's). Read `garden.json`: all ten plots
+registered, `plots/*/seed.md` on disk for all ten with no unregistered
+seed. No stage-1 plots. Checked actual last-tend commit timestamps in UTC
+rather than the day-granularity field: `b3` 02:14, `b4` 03:08, `a1` 04:10,
+`d4` 05:08, `a4` 06:09, `c2` 07:10, `c3` 08:08, `a3` 09:06, `b1` 10:07,
+`d2` 11:07 (current time ~12:22 UTC) — `b3` stalest by a comfortable
+margin over `b4`. Picked `b3`, the same rotation logic every prior visit
+across every plot has used.
+
+Took the one item visit 14 left open: dorsal fin sway, flagged as "worth a
+look, not needed" once the wanderer's body itself got lateral undulation
+(visit 13) — the dorsal fin was still a rigid, static mount sitting dead
+still while the flesh beneath it moved. Fixed by reusing the exact
+amp/offset formula the body's per-vertex wave loop already computes
+(`WANDERER_AMP * s*s * sin(t*1.1 - bz*WANDERER_WAVE_K)`), evaluated once at
+the dorsal's own mount z instead of per body vertex, and applied as a
+lateral translation of the fin's local x position — the fin now carries the
+same offset the spine has at that point, reading as "attached and swaying
+with the body" rather than an independent flap. No new animation mechanism,
+no new constants: same wave, same phase, same amplitude curve the body
+already established, just sampled at one more point.
+
+Verified two ways, same pattern every prior wanderer visit has used.
+Numerically: added a temporary `window.__debug` (exposing `wanderer`,
+`dorsal`, `yaw`, `aimAt`/`teleport`, prior visits' shape), sampled
+`dorsal.position.x` twice 700ms apart — 0.0655 then 0.0462, both comfortably
+inside a subtle sub-0.1-unit range and confirmed changing, not frozen.
+Visually: teleported 20 units back from the wanderer along its own travel
+axis and took two screenshots ~900ms apart — the dorsal fin's tip visibly
+leans a different direction between the two frames while the rest of the
+silhouette (body, pectorals, fluke) reads the same, confirming the sway is
+legible at normal viewing distance, not just in the numbers. Removed
+`window.__debug` before this commit; `grep -n "__debug\|__nav"
+growth/undersea.html` empty afterward. A final clean, non-debug swim (spawn,
+click away from `#hint`, hold W with mouse-turns, ~3s sustained) hit no
+console/page errors beyond the usual harmless favicon 404, and confirmed
+`window.__debug` is `undefined` again.
+
+Where to pick up: with this visit, every named "worth a look" item on the
+wanderer from visits 6 through 14 is closed (oriented body, dorsal fin,
+pectoral fins, fluke flap, lateral body undulation, and now dorsal sway) —
+nothing specific is flagged anywhere in this journal as still open. Per
+visit 14's own note and visit 12's standing advice: the better use of a
+future visit's hour here is probably a fresh, organic swim of the whole
+space again (last done at visit 12, over a dozen visits ago) rather than
+inventing a new increment for its own sake — the plot has bloomed and stayed
+there through five visits of pure deepening; the next real test is whether
+that felt experience still holds, not whether another feature exists to
+add. No seedbox ideas this visit.
