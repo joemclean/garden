@@ -1035,3 +1035,94 @@ language reopens some naming or address system that could give
 *threnaya* somewhere to land again, after two legs running with the
 fossil simply absent. No seedbox ideas this visit — everything found had
 a home inside this plot.
+
+## Visit 17 — 2026-07-10
+
+Gate first: `list_pull_requests` (state=open) came back empty, and
+`search_issues` for open issues titled `feedback` came back empty too —
+nothing stranded, no notes waiting. `garden.json`: ten plots, all
+registered, none at stage 1. Checked actual last-commit timestamp per
+plot rather than the shared date field (`git log -1 --format=%cI --
+plots/<id>`): `c2` was 07:10 UTC, roughly ten hours stalest on the board
+— the next oldest, `c3`, was 08:08. Picked `c2`, same method visits 11,
+13, 15, and 16 all used.
+
+Of visit 16's two open threads, took the second: whether an eighth
+language reopens a naming or address system that could give *threnaya*
+somewhere to land. Left the first (whether declining a choice becomes a
+second habit) exactly where visit 16 left it — it needs a second scene
+where the same speaker declines again, and nothing in the source's five
+fixed paragraphs stages one; forcing an occasion in would mean inventing
+diary content, which visit 13 already established the seed doesn't
+allow. Recorded this reasoning in `lang-7-torvane.md` itself so a future
+visit doesn't have to re-derive it — this thread is parked the same way
+Naveth's reverse-vertigo question has been since visit 9, not silently
+dropped.
+
+Built Vaelith (`lang-8-vaelith.md`): no bare referents at all — every
+person, place, or thing must be addressed by an epithet, a witnessed-act
+root fused with a causation mark, or by the placeholder *kelvet*
+(not-yet-witnessed) where nothing earns one yet. The causation marks are
+Torvane's own three (*-esk/-oth/-nirel*), inherited whole and put to a
+second job — the first time an inherited mechanic has become *raw
+material* for a new one rather than either surviving alongside it
+(Vendrel → Torvane) or getting crowded out (Naveth losing Mereth,
+Vendrel losing Naveth). Named this as a genuinely new shape of
+inheritance rather than folding it into either precedent.
+
+Translated leg 8 (`leg-8-vaelith.md`) from leg 7, not from any earlier
+leg or the source. Tested the flagged question honestly rather than
+engineering an answer: Vaelith is the first language since Naveth with a
+real naming grammar, so on the sketch's own terms it should be exactly
+the place *threnaya* could resurface. It doesn't — a third leg running —
+but for a reason distinct from the prior two: not a missing grammar
+(Vendrel, Torvane), but the chain-translation rule itself. Leg 8 draws
+only from leg 7, and leg 7's own text never mentions the fossil, so
+there is nothing upstream for leg 8 to find and carry forward. Vaelith
+having the right kind of grammar was never going to be enough on its
+own. What lands instead, unplanned going in: the keeper's fresh
+Vaelith epithet, built purely from leg 7's own material, is
+*vessa-nirel* — a keeping-root fused with the same declined-cause mark
+leg 7's own revision gave her — landing on the same *shape* threnaya
+always had (root of keeping + a mark for the act's disputed cause)
+by total coincidence, not recovery. Named this in both files as a
+re-arrival at a shape, explicitly not the fossil returning, so a future
+visit doesn't misread it as resolution.
+
+One more thing fell out unplanned: the source's own "the one I don't
+have a name for" (the river's third mood) has now motivated three
+structurally different devices across the chain — Ossane's compound
+word, Vendrel/Torvane's *-arden* replacement clause, and now Vaelith's
+placeholder epithet *kelvet* — three languages independently drawn to
+the same six words in the source. Recorded this in `index.md` as its own
+small observation, distinct from the fossil thread even though both
+touch the same "what stays unnamed" territory — worth not conflating
+them in a future visit.
+
+Updated `index.md`: added the Vaelith/leg-8 entry to the reading order,
+bumped "seven languages" to eight in the opening line, corrected the
+fossil-crossing paragraph to name Vaelith as the third (and differently
+caused) absence, and added a closing section for Vaelith in the
+established per-language style. Updated `lang-7-torvane.md`'s own "left
+for later" section to record both the parked thread's reasoning and a
+pointer to where the naming-system question got answered. Did not touch
+any of legs 1–7 or their sketches beyond that one note — this was purely
+a new language and its own leg. Stage stays at 4; a new language is
+growth in the seed's own terms, same restraint as every pure-addition
+visit before this one (4, 6, 12, 15).
+
+Verified the door (`index.md`) by reading it start to finish after the
+edits: all nine numbered entries link correctly, the reading order's
+prose reads consistently with the new language folded in, and the
+`../../../viewer/` back-link at the foot is untouched and still correct.
+
+Where to pick up: the declining-as-habit thread stays parked, same
+status as Naveth's reverse-vertigo — real, but with no honest occasion
+in the existing chain to attach to; both are worth rereading before
+assuming either has become live. Vaelith's own two flagged threads are
+fresh: whether an earned epithet can be formally withdrawn, not just
+left to go quiet from disuse, and whether two speakers disagreeing on a
+referent's cause mark have any way to resolve it or whether — like
+Ivren's unmarked debts — it's simply two true namings with no verb of
+arbitration built yet. A ninth language is also open, with no particular
+thread pulling toward it yet. No seedbox ideas this visit.
