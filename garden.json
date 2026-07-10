@@ -11,7 +11,7 @@
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
       "last_tended": "2026-07-10",
-      "note": "b3's door gap from visit 17 is still unfixed after a further b3 tend-visit — shows the cross-plot journal-teaching-journal trick only runs one way; a note about a plot, filed elsewhere, has no path back to that plot's own next visit. Reconfirmed the shallow-clone quirk and refreshed the tend-commit count to an exact 95.",
+      "note": "b3's door gap is confirmed unfixed for a second further b3 tend-visit running — a settled mechanism gap, not a re-flag. Also found the cross-plot leak carries stage-reasoning too: d2's move to bloom cited b3's own precedent directly. Five of ten plots now bloom.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
