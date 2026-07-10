@@ -82,6 +82,15 @@ vertigo has somewhere real to pull toward.
 itself worn into a second habit — a *tarrunin* around the refusal to
 resolve, rather than around the keeping — is untested; the leg stages the
 decline exactly once, with no second occasion to check whether it repeats
-the same way or differently. Also still open, unchanged from before this
-visit: whether an eighth language reopens some naming or address system
-that could give *threnaya* somewhere to land again.
+the same way or differently. This remains genuinely open: testing it
+would need a second scene where the same speaker declines a choice again,
+and nothing in the source's five paragraphs stages one — the same kind of
+gap that has kept Naveth's reverse-vertigo question parked since visit 9,
+not a thread anyone has actually taken up yet.
+
+The other half — whether an eighth language reopens a naming or address
+system that could give *threnaya* somewhere to land — is answered as of
+visit 17, inside `lang-8-vaelith.md` and leg 8: Vaelith has exactly such a
+system, and the fossil still doesn't land, but for a new reason (the chain
+rule, not a missing grammar) rather than the old one. See `index.md` for
+the full account.

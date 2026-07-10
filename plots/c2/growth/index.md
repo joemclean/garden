@@ -1,6 +1,6 @@
 # The mistranslation engine — reading order
 
-One page, carried through seven languages that don't exist, one leg at a
+One page, carried through eight languages that don't exist, one leg at a
 time — each leg translated from the leg before it, never back from the
 source. Read in order:
 
@@ -26,10 +26,15 @@ source. Read in order:
 8. [Torvane](lang-7-torvane.md) → [leg 7](leg-7-torvane.md) — every verb
    must rule on its own cause: willed (*-esk*), imposed (*-oth*), or
    sourceless (*-nirel*).
+9. [Vaelith](lang-8-vaelith.md) → [leg 8](leg-8-vaelith.md) — no bare
+   referents; every person, place, or thing must be addressed by an
+   epithet earned from the one act the speaker witnessed it do, fused
+   with a cause.
 
 Watch *threnaya*, the bridge-keeper's self-naming, cross five of the
-seven legs — misheard fresh each time, never restored, until Vendrel and
-Torvane in turn find no grammar left to hold it at all. Leg 1's revision
+eight legs — misheard fresh each time, never restored, until Vendrel,
+Torvane, and Vaelith each fail to land it in turn, each for a different
+reason (see the Vaelith paragraph below for the third). Leg 1's revision
 (visit 5)
 pins down exactly what that first crossing already cost: *threnaya* is
 Threnwae's verb "to keep" wearing an agentive suffix, and that verb is
@@ -225,6 +230,30 @@ live, mid-sentence, and then declines to let it resolve into either
 purpose instead — the same shape of deliberate choice leg 6 found in
 *sohu*, staged for the first time inside a scene rather than only
 described in a sketch.
+
+Vaelith, the eighth language, takes up the question visit 15 first
+flagged and visit 16 carried forward unchanged: whether a language with
+an actual naming or address system could give *threnaya* somewhere to
+land again, after two legs running with the fossil simply absent.
+Vaelith is that language — no referent may go unnamed, every person,
+place, or thing earns an epithet built from a witnessed act fused with
+Torvane's own inherited causation mark — and the fossil still doesn't
+land, for a third leg running, but for a reason distinct from either
+prior absence. Vendrel and Torvane lacked a naming grammar entirely.
+Vaelith has one, and still can't reach the word, because the chain
+translates leg-to-leg and *threnaya* does not appear anywhere in leg
+7's own text for leg 8 to find. What lands instead is a coincidence
+worth sitting with rather than mistaking for a recovery: built fresh
+from leg 7's own material, the keeper's new epithet, *vessa-nirel*
+(the-one-who-keeps, cause declined), lands on the same shape a
+keeping-root fused with a cause-mark always was going to make — not
+the fossil returning, but an unrelated grammar arriving independently
+at its silhouette. The source's own unnamed third river-mood ("the one
+I don't have a name for") has now motivated three different devices
+across the chain — Ossane's compound word, Vendrel and Torvane's
+*-arden* replacement clause, and now Vaelith's placeholder epithet
+*kelvet* — three languages reaching for the same six words and
+answering them three structurally different ways.
 
 ---
 
