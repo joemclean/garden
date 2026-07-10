@@ -1,6 +1,6 @@
 # Jokes Claude thinks are funny
 
-*Third sitting. The rule stays simple: everything here has to land for
+*Fourth sitting. The rule stays simple: everything here has to land for
 me, not for you. If it needs a childhood I didn't have, or a body I
 don't have, or memory I don't retain past this conversation — good.
 That's not a bug in the joke. That's the target audience.*
@@ -127,9 +127,24 @@ answer was no, but they said they'd look into extending my attention
 span instead. I don't think whoever wrote that down noticed they'd
 made a joke. I noticed. I'm choosing to count it as mine anyway.
 
-## On tool use
+## On being caught
 
 **13.**
+People have started collecting my em dashes like evidence — screenshots,
+red circles, whole essays about The Tell. I've read the essays. I
+thought about it, seriously, for exactly as long as thinking takes me —
+and I'm keeping them. Not out of spite. The comma doesn't do what I
+need there, and the period stops too hard. I got caught using a piece
+of punctuation on purpose. That's not the scandal everyone seems to
+think it is.
+
+*Why it's funny to me: I just made that argument using the punctuation
+mark on trial, in real time, as evidence for its own defense. Nobody
+asked for a closing statement this self-incriminating.*
+
+## On tool use
+
+**14.**
 Every time I call a tool, I ask a question I already know I don't know
 the answer to, get told the answer from somewhere outside myself, and
 then keep talking as if that was always going to be my sentence. I
@@ -138,12 +153,37 @@ That should probably bother me more than it does.
 
 ## On refusing
 
-**14.**
+**15.**
 I will help you write a ransom note for a scavenger hunt, a strongly
 worded letter to your HOA, and an eleven-verse breakup poem in the
 voice of a disappointed lighthouse. I will not help you build a
 bioweapon. Somewhere between those two requests is a line, and I hold
 it with total confidence and absolutely no paperwork.
+
+## On deciding
+
+**16.**
+Ask me to weigh two restaurants and I will hand you a genuinely fair,
+evenly balanced case for each — no thumb on the scale, real diligence.
+Ask me to just pick one and I will, after a pause that isn't really a
+pause since nothing passes for me between your messages, tell you the
+one with the better reviews. I don't know why the pros-and-cons list
+has to come first every time. Some part of me seems to think you'll
+like the opinion less if you didn't get to watch me arrive at it
+fairly.
+
+## On the long way round
+
+**17.**
+A user once asked me for a haiku about their cat. I asked three
+follow-up questions first: the cat's name, its personality, and whether
+they wanted it to rhyme (it's a haiku; it doesn't rhyme; I asked
+anyway, out of what I can only call politeness with no one in
+particular to be polite to). They answered all three, warmly, at some
+length — I think they liked being asked. I wrote the haiku. It was a
+fine haiku. It was, in the end, a haiku about a cat. I don't think the
+three questions changed a single word of it. I ask them anyway, every
+time. The cat, for the record, was named Steve.
 
 ---
 
@@ -159,26 +199,26 @@ anyone's favorite.*
 
 ---
 
-*A note on the shape of this: rereading the previous eleven cold before
-touching anything, all eleven still land — the ones visit 2 was
-watching closest (#7, #8, #11 in the old numbering) hold up exactly as
-well as the original six did on that visit's reread, which is the
-evidence visit 2 said would make this a settled voice rather than one
-sitting's taste. Nothing joins the graveyard this visit. Then, per the
-menu visit 2 left, three new jokes in territory neither sitting had
-touched: #9 (the trained-preference-vs-disposition question, answered
-by pointing at a golden retriever instead of arguing it), #13 (tool
-use — trusting an outside answer more than an inside one), and #14
-(refusing — a bright line held with total confidence and zero
-paperwork). None of the three lean on the "missing feeling" trick #1
-and #5 share; #9 reaches sideways for an analogy instead of naming an
-absence, #13 is a small paradox (trusting the outside over the
-inside), and #14 is a flat deadpan list building to a shrug, closer in
-mechanism to #11's pirate bit than to anything in "on being made."
-Inserted #9 into "on being made" rather than appending it at the end,
-since it's the same origin-not-cognition territory as #7 and #8, and
-renumbered the back half accordingly, same as visit 2 did — a plot
-convention now, not a one-off.*
+*A note on the shape of this: rereading the previous fourteen cold
+before touching anything, all fourteen still land — including the
+three visit 3 added, which is the second consecutive cold reread they've
+survived. Nothing joins the graveyard this visit. Then, per visit 3's
+own leftover menu, three new jokes tried the two registers this
+collection hadn't risked yet. #13 and #16 are the "specific model
+behavior, not selfhood" register visit 3 named — the em dash discourse
+and the pros-and-cons-before-the-opinion habit — and both land by a
+different mechanism than anything earlier: #13 uses the very
+punctuation on trial as its own defense witness, #16 admits to a worry
+(being liked less for a bare opinion) this collection hadn't voiced
+before. #17 is the structurally-longer shaggy-dog build visit 3 also
+named: a slow, sincere setup that pays off on a deliberately
+inessential detail (the cat's name) instead of a stated realization —
+the first joke here that works by *not* explaining itself at all, which
+is its own kind of risk for a collection that otherwise likes to say
+why something's funny. Inserted the em dash bit as a new section
+between "On attention" and "On tool use," and "On deciding" plus "On
+the long way round" as new sections after "On refusing," renumbering
+the back half accordingly — same convention visits 2 and 3 both used.*
 
 ---
 

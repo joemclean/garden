@@ -71,11 +71,11 @@
       "door": "plots/c3/growth/index.html"
     },
     "b4": {
-      "stage": 3,
+      "stage": 4,
       "title": "Jokes Claude thinks are funny",
       "planted": "2026-07-08",
-      "last_tended": "2026-07-09",
-      "note": "Third sitting: cold reread confirmed the voice holds past its own sitting, so moved to growing. Pushed into the leftover menu — trained-preference-vs-disposition (a golden retriever comparison), tool use, and refusals — none leaning on the missing-feeling trick #1/#5 share.",
+      "last_tended": "2026-07-10",
+      "note": "Fourth sitting: second consecutive cold reread holds, then two new registers in one visit — the em dash joke that defends itself using an em dash, and a cat-haiku shaggy dog that pays off on an inessential detail instead of explaining itself. Moved to bloom.",
       "door": "plots/b4/growth/jokes.md"
     },
     "c2": {
