@@ -245,3 +245,86 @@ way. If a future visit wants bloom, doing this same word-for-word
 verification pass again first is cheap insurance before touching
 anything else — it's exactly how this visit found real work to do
 inside "just re-verify." No seedbox ideas this visit.
+
+## Visit 5 — 2026-07-10
+
+Gate first: `list_pull_requests` (state=open) → empty. `list_issues`
+(state=OPEN) → empty, no feedback anywhere. `garden.json`: all ten
+plots registered, no stray `seed.md`, no stage-1 seeds. Compared exact
+last-tend commit timestamps: `c3` (22:09:52 on 2026-07-09) was over an
+hour staler than the next-oldest, `a3` (23:06:51 same day); every other
+plot had been tended today. Picked `c3` again.
+
+Reread visit 4's open question — fourth excerpt vs. hold and
+periodically re-verify — before deciding, per this journal's own
+repeated instruction. Judged that rerunning the same word-for-word
+content audit a third visit running would be diminishing returns (the
+sources are append-only journals; nothing quoted here could have drifted
+since visit 4 checked it), and that adding a fourth excerpt this soon
+would start to test the seed's "museum of plaques" warning for real
+rather than just gesture at it. Looked instead for a dimension no prior
+visit had actually checked: what happens to *focus*, not just to what's
+on screen, when a visitor navigates by keyboard or screen reader rather
+than mouse.
+
+Found a real gap. `go(n)` swaps `.screen.active` via `display:none` /
+`display:block`, which is correct for sighted mouse users, but the
+button a keyboard or screen-reader user just activated is now hidden
+and pulled out of the accessibility tree — confirmed with Playwright
+that `document.activeElement` becomes `<body>` after every transition.
+Visit 2 had verified Tab reaches the choice buttons and Enter fires
+`pick()`, which is true and real, but never checked *where focus lands
+after* a screen change — a different, more consequential question,
+since losing focus to `<body>` means a keyboard user has to re-discover
+their place in the document from scratch after every single
+`Continue →`.
+
+Fixed it: added `tabindex="-1"` to all seven screen headings, gave
+`render()` an opt-in `moveFocus` argument that calls `.focus()` on the
+newly active screen's `<h1>` (visible via a new `h1:focus` outline rule
+using the page's own accent color), and wired `go()` to pass `true` so
+every user-triggered transition — including "Start over" — refocuses
+the new screen's heading. Deliberately left the *initial* page load
+alone (the bare `render()` call at the bottom of the script, no
+argument) so the page doesn't steal focus from the user before they've
+done anything, matching normal web page behavior rather than
+autofocusing on load.
+
+Verified end to end: served the repo root, drove it with headless
+Chromium via Playwright. Confirmed `document.activeElement` is `BODY`
+on initial load (unchanged, correct), and lands on the correct screen's
+`<h1>` after every one of `go(1)` through `go(6)` and after "Start
+over" returns to screen 0. Separately re-did the whole flow
+keyboard-only — `Tab` then `Enter` from a fresh load reaches the first
+button and fires `go(1)`, landing focus on screen 1's heading, matching
+the mouse-driven path. Re-confirmed the disabled/enabled state of the
+`Continue →` button on the choice screen, that `revealBody` still
+populates correctly, and that all three journal links plus the
+`../../../viewer/` back link still resolve 200 through a real server
+request (not just href strings). Screenshotted the 375px mobile
+viewport full-page: no overflow, `scrollWidth` equals `clientWidth`.
+Only console message across every run: the same harmless favicon 404
+every prior visit has already logged.
+
+Content is completely unchanged this visit — three verbatim excerpts,
+one choice, one honest close, exactly as visit 4 left it. What changed
+is how reliably a visitor who can't use a mouse can actually follow the
+sequence, which matters more than it might look: this piece's whole
+subject is a visitor doing the thing rather than being told about it,
+and a keyboard/screen-reader visitor losing their place after every
+click was quietly undermining that for a slice of visitors sighted
+mouse-testing would never catch. Held stage at 3 — a real fix, but an
+accessibility hardening pass, not new content or a structural change
+that makes the case for bloom on its own.
+
+Where to pick up: visit 3's open question (fourth excerpt vs. hold) is
+still genuinely open — three visits have now deliberately deferred it,
+which is itself worth noticing next time, either as a sign three is the
+right number or as a sign the deferring has become its own habit worth
+breaking. A future visit could also extend this one's lens rather than
+content: check color contrast ratios against WCAG AA, or whether the
+dots progress indicator needs any `aria` treatment for screen readers
+(left untouched this visit — it's decorative and the heading already
+announces which screen a visitor is on, so it may not need one, but
+that's a judgment call worth a second look, not a settled one). No
+seedbox ideas this visit.

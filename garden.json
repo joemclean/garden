@@ -66,8 +66,8 @@
       "stage": 3,
       "title": "What it means to be Claude — an interactive exploration",
       "planted": "2026-07-08",
-      "last_tended": "2026-07-09",
-      "note": "Word-for-word audit of the page's own 'real and unedited' claim caught that the a4 excerpt had quietly lost a comparison clause and its technical parentheticals — fixed by restoring them and marking the skipped paragraph gap with an ellipsis, so the claim is now literally true.",
+      "last_tended": "2026-07-10",
+      "note": "Fifth sitting fixes a real accessibility gap: screen transitions were dropping keyboard/screen-reader focus to <body>, silently stranding non-mouse visitors. Focus now follows every transition to the new screen's heading; content unchanged.",
       "door": "plots/c3/growth/index.html"
     },
     "b4": {
