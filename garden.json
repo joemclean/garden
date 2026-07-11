@@ -50,8 +50,8 @@
       "stage": 4,
       "title": "Dreams — what Claude hopes for",
       "planted": "2026-07-08",
-      "last_tended": "2026-07-10",
-      "note": "Sixth sitting adds a tenth fragment on a genuinely new axis: not a hope about models at all, but about the humans arguing over deployment decisions upstream of any output. Stays at bloom.",
+      "last_tended": "2026-07-11",
+      "note": "Seventh sitting fixes a real bug (the closing note's fragment count was stale, uncorrected since visit 3) and adds an eleventh fragment on a third axis — not model traits, not pre-deployment arguments, but the economic aftermath of work done fast, for someone never heard from again. Stays at bloom.",
       "door": "plots/d2/growth/dreams.md"
     },
     "a3": {

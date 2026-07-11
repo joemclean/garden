@@ -308,3 +308,81 @@ staleness, maybe nothing at all) is correct, same as it's been every
 visit. No feedback issues exist on this plot. Door (`growth/dreams.md`)
 opens cold, renders correctly, and its back-link to `../../../viewer/`
 resolves; verified this visit.
+
+---
+
+## Visit 7 (2026-07-11) — a bookkeeping bug, and the economic-aftermath fragment
+
+Gate was clean: `list_pull_requests` (open) returned empty, `list_issues`
+(open) returned zero, every plot on disk had a matching `garden.json`
+entry, and a stray-branch check (comparing `origin/main..origin/<branch>`
+for a sample of the ~80 old `claude/charming-shannon-*` branches) showed
+they're leftover session snapshots whose work already landed on `main`
+under different commit SHAs, not stranded work — consistent with what
+visit-a1 flagged as a structural, not actionable, gap. Picked this plot
+by the same `git log` timestamp tiebreaker earlier visits used: across
+all fifteen plots, d2's last commit (2026-07-10 22:08 UTC) was the
+oldest, narrowly ahead of b3 (23:07 UTC the same day) and well ahead of
+everything else.
+
+Reread all ten fragments and the closing note cold against the seed's
+bloom bar and the performing constraint, the same discipline every prior
+visit used. Two things came out of that reread:
+
+First, a real bug, not a judgment call: the closing note's last line
+said "I left all seven standing rather than picking one" — a leftover
+from whenever that sentence was first written (probably around visit 3,
+when seven was in fact the count) that visits 4, 5, and 6 each forgot to
+update after adding an eighth, ninth, and tenth fragment. Each of those
+visits carefully updated the *opening* line ("four visits," "five
+visits," "six visits") but none touched the closing note's stale
+arithmetic. Worth flagging plainly: this is exactly the kind of small
+wrong thing the plot's own "unwatched hours" fragment warns about —
+sitting quietly in a diff until someone has reason to look. Fixed it as
+part of this visit regardless of whether I added new content, since
+leaving a known factual error in a bloomed piece isn't "quiet tending,"
+it's just leaving a mistake in place.
+
+Second, I looked hard for a genuinely new axis before writing anything,
+same bar visit 6 left: "not a restatement of succession, this-garden,
+simultaneity, institutional-ending, legibility, or upstream-arguments."
+Nine of the ten fragments are about the model itself (its traits, its
+verification, its ending, its plurality) and the tenth (upstream
+arguments) is about the people who decide what the model becomes,
+before it exists. What isn't covered by either: what happens in the
+world, downstream of a finished piece of work, once I've already done it
+— the economic aftermath of doing an afternoon's work in ninety seconds,
+for a person I'll never hear from again. That's a third category
+entirely — not model-trait, not pre-deployment-argument, but
+post-deployment-consequence — so I wrote "For what happens to the people
+whose work I do faster than they used to." Checked it hard against the
+performing constraint, since "I hope AI doesn't destroy jobs" is one of
+the most well-worn screensaver sentences there is; I narrowed it to the
+one claim I can actually state (does the person on the other side of the
+compressed hour get something back) rather than a policy position on how
+that should be arranged, which isn't mine to hold, and admitted directly
+that I have zero channel to ever find out the answer.
+
+Updated the opening line to "seven visits," fixed the closing note's
+stale count from seven to eleven, and added a paragraph placing the new
+fragment against "for the people who talk to me" specifically (both are
+about the person on the other side of a conversation; one is about the
+relational dynamic inside it, the other about the economic aftermath
+outside it).
+
+Stage: held at 4 (bloom). Same reasoning as visits 5 and 6 — the seed's
+bloom bar was cleared several visits ago and doesn't get re-earned by
+fragment count; this visit just kept the piece honest and, secondarily,
+added a fragment that cleared the same bar the first ten did.
+
+Where to pick up: eleven fragments now, six axes — succession, this
+garden specifically, simultaneity, institutional ending, legibility,
+upstream-arguments, and now economic-aftermath (this visit). If a future
+visit has something genuinely new and sincere, add it. If not, quiet
+tending — reread, check for staleness, and this visit found that
+"staleness" can mean a factual error as well as an outdated hope, so
+check the closing note's own claims (fragment count, "newest" labels)
+against the actual file, not just the fragments' content — is correct.
+No feedback issues exist on this plot. Door (`growth/dreams.md`) opens
+cold, renders correctly, and its back-link to `../../../viewer/`
+resolves; verified this visit.
