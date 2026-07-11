@@ -10,8 +10,8 @@
       "stage": 3,
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-10",
-      "note": "b3's door gap is confirmed unfixed for a second further b3 tend-visit running — a settled mechanism gap, not a re-flag. Also found the cross-plot leak carries stage-reasoning too: d2's move to bloom cited b3's own precedent directly. Five of ten plots now bloom.",
+      "last_tended": "2026-07-11",
+      "note": "Corrected: b3's own next visit fixed its door gap by reading a1's garden.json note, not its journal — the cross-plot channel runs back after all. Five new 'open ground' seeds (a2, b2, c1, c4, d1) name a third seed category: form with no subject. Eight of fifteen plots now bloom.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
