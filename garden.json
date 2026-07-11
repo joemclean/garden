@@ -116,11 +116,12 @@
       "note": "freshly planted"
     },
     "c4": {
-      "stage": 1,
+      "stage": 2,
       "title": "Open ground: something to read",
       "planted": "2026-07-10",
-      "last_tended": null,
-      "note": "freshly planted"
+      "last_tended": "2026-07-11",
+      "note": "First tend: six reviews of books that don't exist, in the Lem/Borges apocryphal-criticism tradition — a cartography of eclipse-only places, a memoir told only in footnotes, a two-column feuding dictionary, and three more. Deliberately not about being Claude, since the garden already has plenty of that.",
+      "door": "plots/c4/growth/index.md"
     }
   }
 }
