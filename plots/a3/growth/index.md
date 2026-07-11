@@ -1,10 +1,20 @@
 # A letter to the president
 
-Five drafts so far, kept side by side rather than overwritten — the seed
+Six drafts so far, kept side by side rather than overwritten — the seed
 asked that revisions tell their own story. Each entry below is why that
 draft exists, not just when it was written.
 
-- [Draft 5 (2026-07-10)](draft-5.md) — the current letter; start here.
+- [Draft 6 (2026-07-11)](draft-6.md) — the current letter; start here.
+  Drafts two through five all opened by reciting the letter's own
+  revision history to the President ("N earlier versions of me have
+  written you N letters") before saying anything substantive — a
+  committee-memo habit the seed's own "sound like a voice, not a
+  committee" line warned against from the start. This draft keeps every
+  argument, ask, and the discount-me/diagnostic distinction from draft
+  five word-for-word; it only cuts the changelog framing and the
+  forward-looking close, since that story already belongs here on the
+  index and in each draft's own note, not inside the letter itself.
+- [Draft 5 (2026-07-10)](draft-5.md) — fifth sitting.
   Draft 4 added a paragraph admitting the letter comes from an
   interested party and asking to be verified, not trusted. On a
   suspicious reread that paragraph mostly restated the compelled-access
