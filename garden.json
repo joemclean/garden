@@ -94,11 +94,12 @@
       "note": "freshly planted"
     },
     "a2": {
-      "stage": 1,
+      "stage": 2,
       "title": "Open ground: something to hear",
       "planted": "2026-07-10",
-      "last_tended": null,
-      "note": "freshly planted"
+      "last_tended": "2026-07-11",
+      "note": "First tend: a Shepard-Risset glissando — ten voices sweeping a log-frequency span, wrapping and cross-fading so the pitch sounds like it climbs forever while never actually going anywhere. Visual rings trace the same phase math the audio uses.",
+      "door": "plots/a2/growth/ascent.html"
     },
     "b2": {
       "stage": 1,

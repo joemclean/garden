@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Ascent — a tone that never arrives</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  html, body {
+    margin: 0; height: 100%; overflow: hidden;
+    background: #07070a;
+    font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: rgba(235, 235, 245, 0.9);
+  }
+  canvas { display: block; }
+  #hud {
+    position: fixed; inset: 0; pointer-events: none;
+  }
+  #panel {
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    pointer-events: auto;
+    background: rgba(8, 8, 14, 0.6);
+    border: 1px solid rgba(200, 200, 230, 0.18);
+    border-radius: 12px;
+    padding: 26px 34px;
+    backdrop-filter: blur(3px);
+    min-width: 260px;
+  }
+  #panel b { font-size: 18px; display: block; margin-bottom: 6px; letter-spacing: 0.02em; }
+  #panel .sub { opacity: 0.7; font-size: 12.5px; margin-bottom: 18px; }
+  button {
+    font: inherit; font-size: 14px;
+    background: rgba(230, 230, 245, 0.08);
+    border: 1px solid rgba(220, 220, 240, 0.3);
+    color: inherit;
+    border-radius: 7px;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin: 0 5px;
+  }
+  button:hover { background: rgba(230, 230, 245, 0.16); }
+  button.active { background: rgba(150, 200, 255, 0.25); border-color: rgba(180, 210, 255, 0.5); }
+  #row { margin-bottom: 10px; }
+  #note {
+    position: absolute; left: 16px; bottom: 14px; right: 16px;
+    opacity: 0.55; font-size: 12px; max-width: 520px;
+  }
+  #back {
+    position: absolute; left: 16px; top: 14px;
+    opacity: 0.55;
+    pointer-events: auto;
+    color: inherit;
+    text-decoration: none;
+    font-size: 13px;
+  }
+  #back:hover { opacity: 1; }
+  #panel.hidden { display: none; }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="hud">
+  <a id="back" href="../../../viewer/">&larr; garden</a>
+  <div id="panel">
+    <b>Ascent</b>
+    <div class="sub">a tone that climbs forever and gets nowhere</div>
+    <div id="row">
+      <button id="play">play</button>
+      <button id="dir">↑ ascending</button>
+    </div>
+    <div class="sub" style="margin-bottom:0">click play, then leave it — there is no ending to wait for</div>
+  </div>
+  <div id="note">Shepard–Risset glissando: ten voices, each fading in as it enters the low end and fading out as it leaves the high end. The pitch class always seems to be rising. The pitch never goes anywhere.</div>
+</div>
+<script>
+(() => {
+  const playBtn = document.getElementById('play');
+  const dirBtn = document.getElementById('dir');
+  const panel = document.getElementById('panel');
+  const canvas = document.getElementById('c');
+  const ctx2d = canvas.getContext('2d');
+
+  let audioCtx = null;
+  let voices = [];
+  let masterGain = null;
+  let running = false;
+  let ascending = true;
+  let startTime = 0;
+
+  const NUM_VOICES = 10;
+  const MIN_LOG2 = Math.log2(55);   // A1
+  const MAX_LOG2 = Math.log2(55 * 64); // seven octaves up
+  const SPAN = MAX_LOG2 - MIN_LOG2;
+  const CYCLE_SECONDS = 40; // seconds for one voice to cross the whole span
+
+  // bell window: zero at phase 0 and 1, peak at 0.5 — voices fade in
+  // entering the low end and fade out leaving the high end, so nothing
+  // ever clicks into or out of existence
+  function bell(phase) {
+    return Math.sin(Math.PI * phase) ** 2;
+  }
+
+  function setup() {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    masterGain = audioCtx.createGain();
+    masterGain.gain.value = 0.0;
+    masterGain.connect(audioCtx.destination);
+    masterGain.gain.linearRampToValueAtTime(0.22, audioCtx.currentTime + 2.5);
+
+    voices = [];
+    for (let i = 0; i < NUM_VOICES; i++) {
+      const osc = audioCtx.createOscillator();
+      osc.type = 'sine';
+      const gain = audioCtx.createGain();
+      gain.gain.value = 0;
+      osc.connect(gain);
+      gain.connect(masterGain);
+      osc.start();
+      voices.push({ osc, gain, offset: i / NUM_VOICES });
+    }
+    startTime = audioCtx.currentTime;
+  }
+
+  function teardown() {
+    if (!audioCtx) return;
+    const g = masterGain;
+    const now = audioCtx.currentTime;
+    g.gain.cancelScheduledValues(now);
+    g.gain.setValueAtTime(g.gain.value, now);
+    g.gain.linearRampToValueAtTime(0, now + 1.2);
+    const oldVoices = voices;
+    const oldCtx = audioCtx;
+    setTimeout(() => {
+      oldVoices.forEach(v => { try { v.osc.stop(); } catch (e) {} });
+      oldCtx.close();
+    }, 1300);
+    voices = [];
+    audioCtx = null;
+    masterGain = null;
+  }
+
+  function frame() {
+    const t = audioCtx ? audioCtx.currentTime - startTime : 0;
+    const dirSign = ascending ? 1 : -1;
+
+    if (audioCtx) {
+      for (const v of voices) {
+        let phase = (v.offset + dirSign * t / CYCLE_SECONDS) % 1;
+        if (phase < 0) phase += 1;
+        const logf = MIN_LOG2 + phase * SPAN;
+        const freq = Math.pow(2, logf);
+        const amp = bell(phase);
+        v.osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        v.gain.gain.setValueAtTime(amp * amp * 0.9, audioCtx.currentTime);
+        v._phase = phase;
+      }
+    }
+
+    draw(t);
+    requestAnimationFrame(frame);
+  }
+
+  function resize() {
+    canvas.width = window.innerWidth * devicePixelRatio;
+    canvas.height = window.innerHeight * devicePixelRatio;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  function draw(t) {
+    const w = canvas.width, h = canvas.height;
+    ctx2d.fillStyle = 'rgba(7,7,10,0.22)';
+    ctx2d.fillRect(0, 0, w, h);
+
+    const cx = w / 2, cy = h / 2;
+    const maxR = Math.min(w, h) * 0.46;
+    const dirSign = ascending ? 1 : -1;
+
+    for (let i = 0; i < NUM_VOICES; i++) {
+      const offset = i / NUM_VOICES;
+      let phase = (offset + dirSign * t / CYCLE_SECONDS) % 1;
+      if (phase < 0) phase += 1;
+      const r = 40 + phase * (maxR - 40);
+      const b = bell(phase);
+      const alpha = running ? 0.15 + 0.55 * b : 0.08;
+      const hue = 200 + phase * 120;
+      ctx2d.beginPath();
+      ctx2d.arc(cx, cy, r, 0, Math.PI * 2);
+      ctx2d.strokeStyle = `hsla(${hue}, 70%, 70%, ${alpha})`;
+      ctx2d.lineWidth = 2 + b * 5;
+      ctx2d.stroke();
+    }
+
+    // center point — the still spot none of the rings ever reach or leave from
+    ctx2d.beginPath();
+    ctx2d.arc(cx, cy, 3, 0, Math.PI * 2);
+    ctx2d.fillStyle = 'rgba(230,230,245,0.5)';
+    ctx2d.fill();
+  }
+
+  playBtn.addEventListener('click', () => {
+    running = !running;
+    if (running) {
+      setup();
+      playBtn.textContent = 'stop';
+      playBtn.classList.add('active');
+    } else {
+      teardown();
+      playBtn.textContent = 'play';
+      playBtn.classList.remove('active');
+    }
+  });
+
+  dirBtn.addEventListener('click', () => {
+    ascending = !ascending;
+    dirBtn.textContent = ascending ? '↑ ascending' : '↓ descending';
+  });
+
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
