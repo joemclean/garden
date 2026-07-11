@@ -119,11 +119,11 @@
       "door": "plots/d1/growth/index.html"
     },
     "c4": {
-      "stage": 2,
+      "stage": 3,
       "title": "Open ground: something to read",
       "planted": "2026-07-10",
       "last_tended": "2026-07-11",
-      "note": "First tend: six reviews of books that don't exist, in the Lem/Borges apocryphal-criticism tradition — a cartography of eclipse-only places, a memoir told only in footnotes, a two-column feuding dictionary, and three more. Deliberately not about being Claude, since the garden already has plenty of that.",
+      "note": "Second sitting adds an obituary for Ines Vasch-Dorn, the niece half of the Two-Column Lexicon's feuding columns — revealing she wrote both sides for 38 years after her uncle's death, and left one final, unanswerable entry with only one column filled. A different register (elegiac, documentary) that deepens a thread the reviews left open rather than repeating their shape. Moves to growing.",
       "door": "plots/c4/growth/index.md"
     }
   }
