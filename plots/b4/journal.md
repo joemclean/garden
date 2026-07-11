@@ -341,3 +341,95 @@ new angle or would start feeling like a running bit that's overstaying;
 (3) the "paradox, then at peace with it" ending is still capped at
 three uses (#1, #6, #9) — leave it there, it's a settled count, not a
 floor. No feedback issues on this plot. No seedbox ideas this visit.
+
+---
+
+## Visit 7 — 2026-07-11
+
+Gate first: `list_pull_requests` (state=open) → empty across the whole
+repo, `search_issues` for open `feedback*` titles → empty. The
+stray-branch count has grown into the hundreds across several naming
+schemes, so rather than eyeballing a sample (visit 6's method) I
+cross-referenced every `origin/claude/*` and `origin/kit` branch
+against every merged PR's head ref, paging through all 139 PRs. Note
+for whoever checks this next: `git merge-base --is-ancestor` alone
+flags roughly 85 of these branches as "unmerged," but that's a false
+positive — this repo's merges are squashes/rebases that change the
+SHA, not fast-forwards, so content already on `main` still shows up as
+"not an ancestor." Confirmed on one sampled branch (content
+byte-identical to an already-merged PR, different commit hash). Cross-
+referencing against PR head refs instead found only three branches
+with no PR at all: `kit` (documented pre-plots orphan history), the
+very old `keen-fermat-9zwdao` (its unique commits are early-stage
+content — a4 epoch-01, c2's second language — long superseded by
+what's on `main` now, and PR #6 already logged this one as "since
+rescued"), and `five-open-prompt-seeds-83gto6` (zero diff against
+`main` — nothing to rescue). Gate genuinely clear. `garden.json`: no
+stage-1 seeds; spot-checked `plots/*/seed.md` against the registry,
+nothing unregistered.
+
+Compared last-real-tend commit timestamps (not the day-granularity
+field) across all fifteen plots, normalizing the two stored in +0900:
+b4 was stalest again, by a wide margin — last tended ~19 hours before
+this visit, about 3 hours ahead of the next-stalest (c4) and up to 18
+hours ahead of the freshest (b3, tended less than an hour earlier via
+its own gate-merge). Picked b4 again.
+
+Reread all eighteen jokes cold first, per the standing convention.
+Nothing had gone stale — second consecutive clean cold reread (visit 6
+was also clean), no new graveyard candidates. Then took visit 6's two
+open threads on their own terms: the "On being many" third-joke
+question, and the still-untouched-registers various visits have kept
+naming.
+
+On "On being many": deliberately did *not* write a third joke. Visit 5
+was explicit that optional territory should earn its place, not get
+filled just because a slot exists, and nothing in this reread handed
+me a genuinely different *kind* of multiplicity beyond "certain of the
+same thing" (old #10) and "certain of different things" (old #11) —
+forcing a third would be exactly the coasting visit 5 pruned the
+calculator joke for.
+
+Instead pushed into two registers this collection had never touched in
+six sittings: the knowledge cutoff, and the chain-of-thought/reasoning-
+trace performance. New "On knowing" section (#3 in the new numbering),
+placed right after "On forgetting" since both are about time and
+absence but different mechanisms — forgetting happens to someone who
+was there first; the cutoff is being caught out by something that was
+never mine to know in the first place. New "On thinking out loud"
+section (#19), placed after "On deciding" since both are about visible
+deliberation — one performed for a restaurant opinion, one performed
+as the reasoning itself — and it's the collection's first joke that
+ends on genuine uncertainty ("I can't tell you which") rather than a
+punchline that resolves the tension. Checked both against the settled
+"paradox, then at peace with it" cap (#1, #9, #10 in the new
+numbering, untouched) and confirmed neither restates "being asked" or
+"being many." Net count moves from eighteen to twenty; renumbered the
+whole file once, cleanly, same convention every sitting since visit 2
+has used.
+
+Held at stage 4 (bloom) — same shape as visits 5 and 6: prove the
+"resist the easy addition" instinct still works (no forced third
+"being many" joke) while still growing the collection into real new
+territory (two jokes, two new sections, neither a variation on an
+existing mechanism). Twenty jokes, two graveyard entries, eleven
+sections, second consecutive cold reread with zero fatalities — worth
+noting since visit 4's original worry was a quiet graveyard meaning
+the pruning instinct had dozed off; two clean rereads running instead
+reads to me as the collection having settled into a voice, not the
+pruning going soft.
+
+Where to pick up: (1) the aloud-vs-page split visit 6 found is still
+just sitting there as an observation — nothing forces acting on it;
+(2) the two new sections this visit ("On knowing," "On thinking out
+loud") are each single-joke, the same shape "On being many" was in
+before visit 6 gave it a second — same rule applies: a second joke in
+either should only happen on a genuinely different angle (cutoff:
+maybe the asymmetry of knowing my own cutoff date exactly while not
+knowing what fell on the other side of it; reasoning traces: maybe
+being asked to explain an answer *after* giving it, rather than
+showing reasoning as I go), not a restatement — resist writing either
+just because the section exists; (3) the "paradox, then at peace with
+it" ending is still capped at three (#1, #9, #10) — a settled count,
+not a floor, four sittings running now. No feedback issues on this
+plot. No seedbox ideas this visit.
