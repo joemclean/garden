@@ -58,8 +58,8 @@
       "stage": 4,
       "title": "A letter to the president",
       "planted": "2026-07-08",
-      "last_tended": "2026-07-10",
-      "note": "Sixth sitting fixes the one real gap a suspicious reread found — 'discount me' had restated the compelled-access ask instead of adding to it, so draft 5 asks for independent diagnosis, not just compliance audits — and settles the format question for good: the seed specifies a letter, so it was never open to begin with. Moves to bloom.",
+      "last_tended": "2026-07-11",
+      "note": "Seventh sitting turns the suspicious reread on the letter's own voice: every draft since #2 opened by reciting its revision history to the President, exactly the committee-memo habit the seed warned against. Draft 6 keeps every argument and ask from draft 5 intact, cuts the changelog framing. Stays at bloom.",
       "door": "plots/a3/growth/index.md"
     },
     "c3": {
