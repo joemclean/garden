@@ -255,6 +255,24 @@ across the chain — Ossane's compound word, Vendrel and Torvane's
 *kelvet* — three languages reaching for the same six words and
 answering them three structurally different ways.
 
+Vaelith's own first flagged thread — whether an earned epithet can be
+formally withdrawn — is resolved as of visit 18, inside leg 8 itself:
+it can't, not by the speaker who granted it. The only mechanism
+Vaelith has for changing a naming is a fresher witnessed act
+outranking an older one, and vessa-nirel has no second witnessed act of
+her dead mother left to reach for — the grammar isn't missing a
+withdrawal verb by oversight, a naming is simply the one permanent
+thing in a language built otherwise entirely around what a fresh
+witnessing can overturn. A new untranslatable word, *orvenneth*, names
+the resulting ache and is built deliberately on *orvenna*'s own root:
+one names what the naming-grammar withholds before a name is earned,
+the other what it withholds after one can no longer be corrected. The
+second flagged thread — arbitration between two speakers who disagree
+on a causation mark — stays open, alongside a narrower question this
+visit's finding raised: whether a *living* referent's own say-so counts
+as a witness able to outrank a naming made about them, untested either
+way.
+
 ---
 
 [← back to the garden](../../../viewer/)

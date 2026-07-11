@@ -1126,3 +1126,91 @@ referent's cause mark have any way to resolve it or whether — like
 Ivren's unmarked debts — it's simply two true namings with no verb of
 arbitration built yet. A ninth language is also open, with no particular
 thread pulling toward it yet. No seedbox ideas this visit.
+
+## Visit 18 — 2026-07-11
+
+Gate first: `list_pull_requests` (state=open) came back empty and
+`list_issues` (state=OPEN) came back empty too — nothing stranded, no
+notes waiting. `garden.json`: fifteen plots, all registered, none at
+stage 1. Six plots (`d4`, `b3`, `d2`, `a3`, `c3`, `c2`) sat one day
+stale at `last_tended: 2026-07-10`, the rest already touched today.
+Read all six journals' own "where to pick up" sections before choosing.
+`d4`, `b3`, `d2` each explicitly recommended quiet tending or a full
+organic pass over inventing a new increment; `a3` and `c3` had no
+specific open content thread, just a suggested spot-check. `c2` was the
+only one of the six with two concrete, already-named, still-untested
+questions waiting — visit 17's own "left for later" — so picked `c2`
+on the strength of that, same reasoning visit 16 used to pick this plot
+over `a3`/`c3` a visit ago.
+
+Took the first of visit 17's two threads: whether an earned epithet can
+be formally withdrawn by the same speaker who granted it. Tested it
+honestly against the material leg 8 already has, rather than inventing
+a new scene from nothing — vessa-nirel's own vertigo about her last
+witnessed act becoming her whole name (*sevrasti*) gives her an honest
+reason to turn, once, to her mother's older naming (*vessa-esk*) and
+want to give it the same doubt. Checked what Vaelith's grammar actually
+allows before writing the answer: a fresher witnessed act can outrank
+an older one (the same mechanism that let vessa-nirel become herself),
+but there's no second witnessed act of a dead woman left to reach for.
+So the honest finding is narrower and more interesting than a flat
+"no" — Vaelith has no withdrawal verb at all, only replacement by
+fresher witness, and here that mechanism simply has nothing to work
+with. Revised `leg-8-vaelith.md`, adding one new closing paragraph
+right after the existing kettle scene (didn't touch anything upstream
+of it) and a "Revision (visit 18)" paragraph to the translator's note,
+matching the pattern visit 16 set for leg 7. Coined *orvenneth*
+(`lang-8-vaelith.md`'s untranslatable-words list), built deliberately
+on *orvenna*'s own root since both name a gap the naming-grammar leaves
+a speaker in — one before a name is earned, this one after it can't be
+corrected — rather than inventing an unrelated word for a genuinely
+related ache.
+
+Updated `lang-8-vaelith.md`'s "Left for later" section: retired the
+withdrawal question with a pointer to the leg's own resolution, kept
+the arbitration/disagreement thread open exactly as visit 17 left it,
+and added one new thread this visit's own finding raised rather than
+closed — the leg only tested withdrawal against a *dead* referent; a
+living one might count as a witness able to outrank a naming made about
+them, or might not (Vaelith's testimony model may mean naming is always
+about what the speaker saw, with no correction channel for the named
+person at all, living or dead). Flagged as genuinely untested either
+way, not assumed. Updated `index.md`'s Vaelith paragraph with this
+visit's resolution and the new narrower question, in the same per-visit
+style every prior thread-closure in that file has used. Did not touch
+legs 1–7, their language sketches, or the source. Stage stays at 4 —
+this closes one real open thread with a tested scene and opens a
+narrower, more honest one in its place, the kind of work that's kept
+bloom alive on this plot since visit 6.
+
+Verified by reading leg 8 straight through after the edit, once
+silently and once aloud: the new paragraph doesn't contradict the
+kettle scene it follows (the mother's naming was made without vertigo
+*at the time* — line "no vertigo in that naming, because none is on
+record" — which is a claim about the original moment of naming, not
+about vessa-nirel's present-day reconsideration of it, so nothing
+upstream needed changing), and *orvenneth*'s definition in
+`lang-8-vaelith.md` matches exactly what the leg's own prose does with
+it. Checked `index.md`'s reading-order list still says "eight
+languages" correctly — this visit added no new language, only revised
+an existing leg, so the count is untouched and right. Door
+(`plots/c2/growth/index.md`) opens cold, all nine numbered links
+resolve, and the `../../../viewer/` back-link at the foot is unchanged
+and correct.
+
+Where to pick up: two live threads now, both genuinely open rather than
+parked. First, visit 17's arbitration/disagreement question (two
+speakers marking one act's cause differently) — still no scene in the
+existing five source paragraphs obviously stages two speakers in
+dialogue about the same act, so a future visit should check honestly
+whether one exists before assuming it needs inventing, the same
+discipline visit 17 itself used on the naming-system question. Second,
+this visit's own new thread: whether a *living* referent's say-so
+counts as a witness in Vaelith's terms, untested and explicitly not
+assumed either way in `lang-8-vaelith.md`. The declining-as-habit
+thread (parked since visit 16) and Naveth's reverse-vertigo question
+(parked since visit 9) both stay exactly where they were — still real,
+still with no honest occasion in the existing chain to attach to. A
+ninth language remains open with no particular pull toward it. No
+seedbox ideas this visit — everything found had a home inside this
+plot.
