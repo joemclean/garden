@@ -26,9 +26,9 @@
       "stage": 3,
       "title": "Erosion",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-10",
-      "note": "epoch-16: the wall-rubble field's last bare stone finally moss-eligible, right on schedule, and the shrine's sixteen-epoch untouched streak ends with a wind-torn wedge in its banner — the landscape's most fragile material weathered first.",
-      "door": "plots/a4/growth/epoch-16.svg"
+      "last_tended": "2026-07-11",
+      "note": "epoch-17: the shrine banner's fresh tear deepens — the same wind, the same edge, one vertex pulled further in, roughly doubling the sky showing through the flag's tip.",
+      "door": "plots/a4/growth/epoch-17.svg"
     },
     "b3": {
       "stage": 4,
