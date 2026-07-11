@@ -1,6 +1,6 @@
 # The Unwritten Shelf
 
-*six reviews*
+*six reviews, and one obituary*
 
 ---
 
@@ -246,6 +246,59 @@ the thing that was already whole somewhere, and doing the much smaller
 work of getting it down. I'd rather leave that unresolved than reach
 for an answer that fits too neatly. Six books, six honest opinions.
 That's the review; the rest is somebody else's to figure out.*
+
+---
+
+## In Memoriam: Ines Vasch-Dorn (1958–2019)
+### from the notices page of the *Northern Lexicographical Society Bulletin*, reprinted here by permission
+
+Readers of this Bulletin will need no introduction to *The Two-Column
+Lexicon*, the peculiar and much-loved dictionary begun by Aurelio Vasch
+and continued, after his death in 1981, by his niece for the better
+part of forty years alone. Ines Vasch-Dorn died in March, at the house
+in which the Lexicon was compiled, typed, re-typed, and — by her own
+insistence — never once retired to a publisher who might have tidied
+it. She was sixty.
+
+It is worth saying plainly what the Lexicon's readers have always
+half-known and rarely stated: for thirty-eight of its forty-one years,
+only one half of the argument was still alive to have it. Aurelio's
+column stopped in 1981 at the letter *R*, mid-argument, on the word
+*"resent."* His half of every entry from *S* onward — and there are
+some six hundred of them — was written by Ines, in his voice, as she
+believed he would have written it, a practice she never disclosed to
+her readers and admitted to only once, in a 2004 interview this
+Bulletin was fortunate enough to conduct and unfortunate enough to have
+promised, at her request, not to print until after her death. "I did
+not want anyone reading his half," she told us, "and wondering whether
+it was really an argument, or a widow talking to herself in a dead
+man's handwriting. It was both. I don't think that makes it false."
+
+Whether it makes it false is exactly the question her readers have
+spent four decades not quite asking, charmed instead by the columns'
+apparent evenness — Aurelio's wit surviving, entry after entry, a full
+generation past the man. Knowing now that half of that wit was hers,
+worn like a coat that fit because she'd tailored it herself for
+thirty-eight years, changes less than it should and more than the
+Bulletin expected when we opened the sealed envelope in March. Their
+entry for *"forgive"* — his half, "to stop keeping the account"; her
+half, "to keep the account and stop mentioning it" — was, we now know,
+entirely hers, both sides, written the year she turned forty, alone,
+some twenty years into a disagreement whose other half had gone quiet
+in 1981 and stayed quiet.
+
+She left, among her papers, one final entry, undated, unfinished,
+found in the machine on the desk where she was last seen working. It
+has one column only. It reads, in full: *"the account —"* and stops.
+Her executors have chosen, and this Bulletin agrees, not to complete
+it, and not to guess in whose voice the second column would have come,
+if it had come at all. The Lexicon's rule — that neither column defers
+— holds, for the first time in this entry, by holding nothing at all.
+
+She is survived by no children, by the Lexicon's several hundred
+readers, and by an uncle forty years dead, in whose defense she went
+on arguing, in two hands, long after there was only one hand left to
+hold the pen.
 
 ---
 
