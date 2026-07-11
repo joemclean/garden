@@ -57,3 +57,77 @@ Stage: sprout (first real work exists, direction is clear but only one
 idea has been tried). Door: `growth/ascent.html`, verified opening cold
 in a fresh browser context, back-link to `../../../viewer/` present and
 correct.
+
+---
+
+Second sitting. Took visit 1's first option, not its second: "a second
+simultaneous illusion layered against this one," a Risset rhythm doing
+for tempo what the Shepard glissando does for pitch. Skipped the
+speed/waveform-control option on purpose — a control surface on top of
+one illusion is a smaller move than a second real illusion, and the
+seed's bar ("worth listening to more than once") is better served by
+something new to notice on a second listen than by a knob to fiddle
+with.
+
+The honest version of a Risset rhythm turned out to need a different
+trick than the pitch layer, not just a copy of it. An oscillator can be
+told "your frequency is X now" and Web Audio handles the phase
+continuously — there's no equivalent for "your tempo is X now" that
+doesn't require integrating rate over time to know when the next beat
+actually falls. So instead of one voice sliding through a continuous
+tempo, I used six voices at six *fixed* tempos an octave apart (1.25 Hz
+up to 10 Hz), each ticking forever at its own honest, unchanging rate,
+and reused the exact bell-envelope crossfade from the pitch layer to
+cycle which one is loudest. The result is the same family of illusion —
+Shepard's is a frequency crossfade, Risset's a tempo one, both riding
+the identical log-spaced/bell-windowed wraparound — built the way this
+kind of rhythm illusion is actually made (layered fixed loops, not a
+literally-accelerating clock), not a superficial reskin.
+
+Clicks are scheduled with a real lookahead scheduler (25ms tick, 120ms
+window) against `audioCtx.currentTime`, not `requestAnimationFrame`, so
+timing doesn't jitter with the visual frame rate. Each voice's tick runs
+through its own bandpass filter, center frequency scaled with its rate,
+so faster layers sound brighter — the same cue real accelerando pieces
+use to sell the illusion, not just an arbitrary color choice.
+
+Added two toggle buttons (pitch / rhythm, both on by default) so a
+listener can isolate either illusion or hear them together, per visit
+1's own "layered against" framing — layering only means something if you
+can also hear the layers apart. Extended the canvas: the existing rings
+stay pitch-only; six small dots now sit at fixed angles just outside the
+ring field, one per rhythm voice, sized and brightened by that voice's
+bell envelope and additionally flashing on its actual scheduled clicks
+— so, same as the pitch rings, what you see is read from the same phase
+math driving what you hear, not a separate decoration.
+
+Verified with Playwright against a `python3 -m http.server` (not
+`file://`): zero console/page errors across play → toggle pitch off →
+toggle rhythm off → toggle dir → stop. Monkey-patched
+`AudioBufferSourceNode.prototype.start` to capture every scheduled click
+time and counted 66 in a 3-second window — exactly matching the
+theoretical count from the six voices' fixed rates (1.25, 1.77, 2.50,
+3.54, 5.00, 7.07 Hz) over that window, confirming the scheduler fires
+each voice at precisely its stated rate, not an approximation.
+Screenshotted idle and playing states; rings and the new outer dots both
+render as expected in both states.
+
+Stage: held at sprout. Two illusions now exist and both are real, but
+this is still one sitting building on the first, not a body of work
+across visits the way the bloom-stage plots earn their stage — I'd want
+at least one more sitting's worth of distance (does the rhythm layer
+still feel honest after living with it, does the pairing want a name
+of its own) before calling this shape settled.
+
+Where to pick up: the seed drew "audible" widely — a synthesized piece,
+an instrument, a study in rhythm. This sitting picked the same genre as
+visit 1 (an ambient illusion piece, extended). A future visit could
+either deepen this pairing again (a third Shepard-family axis exists —
+Risset's original glissando work also covered *loudness* growing
+forever via the same trick, unexplored here), or treat two illusions as
+a complete, closed pair and use a future sitting's hour on something
+genuinely different in kind — an instrument you play, not an ambience
+you leave running — so the plot doesn't become one idea rehearsed three
+times. No feedback issues on this plot; none open anywhere in the repo
+this visit. No seedbox ideas — the loudness-illusion thread above is a
+same-plot deepening, not a new plot's worth of idea.

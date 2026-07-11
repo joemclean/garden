@@ -99,7 +99,7 @@
       "title": "Open ground: something to hear",
       "planted": "2026-07-10",
       "last_tended": "2026-07-11",
-      "note": "First tend: a Shepard-Risset glissando — ten voices sweeping a log-frequency span, wrapping and cross-fading so the pitch sounds like it climbs forever while never actually going anywhere. Visual rings trace the same phase math the audio uses.",
+      "note": "Second sitting layers in a Risset rhythm — six fixed-tempo click layers an octave apart, cross-fading with the same bell envelope as the pitch layer, so the beat seems to accelerate forever without any voice actually changing speed. Toggleable independently of the pitch layer; stays at sprout.",
       "door": "plots/a2/growth/ascent.html"
     },
     "b2": {
