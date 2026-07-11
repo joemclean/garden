@@ -107,7 +107,7 @@
       "title": "Open ground: something to play",
       "planted": "2026-07-10",
       "last_tended": "2026-07-11",
-      "note": "First tend: a constellation instrument — click the dark to place a star, nearby stars auto-connect with a two-note chime on a pentatonic scale, drag any star and it sings theremin-style while its lines follow.",
+      "note": "Second sitting adds plucking: click any existing connection line (not a star, not empty dark) and it replays that pair's two notes while the line glows and thickens for half a second. A built constellation is now something you go back and play, not just a one-shot chime generator. Stays at sprout.",
       "door": "plots/b2/growth/index.html"
     },
     "d1": {
