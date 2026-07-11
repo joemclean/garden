@@ -87,11 +87,11 @@
       "door": "plots/c2/growth/index.md"
     },
     "c1": {
-      "stage": 2,
+      "stage": 3,
       "title": "Open ground: something to look at",
       "planted": "2026-07-10",
       "last_tended": "2026-07-11",
-      "note": "First tend: a long-exposure trace of Burrau's 1913 Pythagorean three-body problem (masses 3:4:5, released from rest) — two bodies tangle into a tight binary while the third slingshots out on an almost-straight escape line, drawn from a real RK4/DOP853 integration.",
+      "note": "Second sitting adds a stable contrast to the chaotic Burrau case: Moore's 1993 figure-eight three-body choreography, three equal masses forever chasing each other around one shared curve, rendered with opacity that resets each lap so no point on the closed loop reads as older than another. Door is now an index of both pieces. Moves to growing.",
       "door": "plots/c1/growth/index.html"
     },
     "a2": {

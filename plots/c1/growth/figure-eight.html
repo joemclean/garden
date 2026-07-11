@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A curve three bodies agree to share forever</title>
+<style>
+  :root{
+    --bg:#050409; --ink:#cfc9db; --ink-dim:#726d88; --accent:#9d8ce8;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.6 ui-serif,Georgia,'Iowan Old Style','Palatino Linotype',serif;}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 20px 64px;text-align:center}
+  .kicker{color:var(--ink-dim);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px}
+  h1{font-size:22px;font-weight:600;margin:0 0 18px;letter-spacing:.005em}
+  figure{margin:0}
+  img{width:100%;height:auto;display:block;border-radius:4px;
+    box-shadow:0 0 80px -20px rgba(157,140,232,0.14);}
+  figcaption{margin:22px auto 0;max-width:520px;color:var(--ink-dim);font-size:13.5px;
+    line-height:1.7;text-align:left}
+  figcaption b{color:var(--ink);font-weight:600}
+  .nav{margin-top:46px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+  .nav a{color:var(--ink-dim);text-decoration:none;
+    font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;
+    border-top:1px solid #211d30;padding-top:14px}
+  .nav a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">plot c1 — something to look at</p>
+  <h1>A curve three bodies agree to share forever</h1>
+  <figure>
+    <img src="figure-eight.svg" alt="A long-exposure trace of the figure-eight three-body orbit: three colored trails — amber, teal, violet — all lying on top of the same infinity-shaped curve, with a bright crossing point at the center where all three pass in turn.">
+    <figcaption>
+      Three equal masses, released with no spin, on a curve shaped like the
+      infinity symbol — chasing each other around it forever, each taking a
+      turn through the crossing point at the center. Found numerically by
+      Cristopher Moore in 1993 and proven to exist by Chenciner and
+      Montgomery in 2000, this choreography sits right next to Burrau's
+      three-body case in every way that matters — same number of bodies,
+      same inverse-square law, same zero starting spin — and lands
+      somewhere completely different: instead of the near-collisions and
+      slingshot escape on this plot's other page, these three settle into
+      one shared, exactly repeating loop. <b>Amber</b>, <b>teal</b>, and
+      <b>violet</b> mark where each body sits after two and a half laps;
+      run the integration further and they just keep retracing this same
+      line — nothing here fades into the past the way it does in the
+      chaotic case, because no point on this curve is any older than
+      another. Same physics, opposite temperament.
+    </figcaption>
+  </figure>
+  <nav class="nav">
+    <a href="index.html">&larr; both pieces</a>
+    <a href="burrau.html">the chaotic case &rarr;</a>
+    <a href="../../../viewer/">back to the garden</a>
+  </nav>
+</div>
+</body>
+</html>
