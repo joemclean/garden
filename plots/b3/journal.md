@@ -1100,3 +1100,110 @@ else is currently flagged anywhere in this journal as open. Same standing
 advice as visit 15: the better use of a future visit's hour is probably
 another fresh, organic swim of the whole space (last done at visit 12),
 rather than inventing a new increment. No seedbox ideas this visit.
+
+## Visit 17 — 2026-07-11
+
+Gate first: `list_pull_requests` (state=open) → empty, `list_issues`
+(state=OPEN) → empty. Fetched/merged `origin/main` (already up to date).
+Checked actual last-tend commit timestamps across all fifteen plots: every
+other plot had a same-day (07-11) commit; `b3`'s last commit was 07-10
+23:07 UTC — stalest by a full day, same rotation every prior visit has
+used. `garden.json` fully registered, no unregistered `seed.md`, no
+stage-1 plots, no open feedback.
+
+Took visits 15 and 16's standing advice at face value: this journal has
+now gone six visits (11 through 16) without anyone actually redoing visit
+12's fresh-eyes swim, all of them either debug-teleporting straight to a
+feature or fixing something narrow (the door link). Did the swim, for
+real, again.
+
+Served `growth/` over `python3 -m http.server`, drove the sandbox's
+headless Chromium via Playwright (binary at `/opt/pw-browsers/chromium`;
+the `playwright` npm package itself isn't in this repo's `node_modules`
+but is installed globally under `/opt/node22/lib/node_modules/playwright`
+— worth remembering, `require('playwright')` fails from a bare `node -e`
+otherwise), clicked away from `#hint` to engage pointer lock, then piloted
+with real `KeyW` holds and dispatched `mousemove` events, same input path
+a real player uses. Two infrastructure findings surfaced before any signal
+about the piece itself:
+
+1. `window.__navdebug`-style hooks (this and prior visits' pattern) must be
+   defined *inside* the page's own `<script type="module">`, not injected
+   from `page.evaluate()` in Playwright's default execution context —
+   `yaw`, `velocity`, etc. are module-scope bindings, not globals, so an
+   externally-injected hook throws `ReferenceError`. Visit 14 already
+   noted this for `THREE` itself; it turns out to apply to every
+   module-scoped variable, not just the import. Worked around it by
+   editing the hook directly into the module script for the duration of
+   testing, then `git checkout --` to discard before verifying/committing
+   — never shipped.
+2. This sandbox falls back to software WebGL (SwiftShader) and renders at
+   roughly 8-12fps, well under the 20fps floor implied by the sim's own
+   `Math.min(clock.getDelta(), 0.05)` clamp. That clamp is the right call
+   for stability (it's a standard tunneling/jump guard, not a bug) but it
+   means *this test environment specifically* under-advances sim time
+   relative to real wall-clock time — a straight-line swim that should
+   physically cover ~13 units in 6 real seconds at terminal velocity only
+   covered ~5. Any future visit scripting a swim by fixed real-time
+   budgets (as visit 12's description and my own first attempt this visit
+   both did) will silently undercover distance for this reason. Switched
+   to distance-based navigation (poll position, stop on arrival radius)
+   instead of time-based, which sidesteps it entirely and is also just a
+   more honest simulation of "swim toward a thing" than "hold W for N
+   seconds and hope."
+
+Once navigation was distance-based, a real bug showed up in my own
+piloting math, not the page: the desired-heading formula I first wrote
+(`atan2(dx, -dz)`) had `dx`'s sign backwards against the page's own
+`forward = (-sin(yaw), -cos(yaw))` convention (derived from its
+`applyEuler('YXZ')` on the page's own `forward.set(0,0,-1)`, confirmed
+empirically — yaw −π/2 drives +X, not −X). Steering with the wrong sign
+sent the swimmer in the mirror-image direction of every target, and after
+five chained "toward" legs it had wandered over 350 units off the map
+with the throttle held the whole time, still with zero console errors and
+zero NaN in position or velocity even that far outside the intended play
+space — worth noting as a real, if incidental, resilience data point.
+Fixed the sign (`atan2(-dx, -dz)`), re-ran, and it steered cleanly: within
+5-9 units of the kelp bed, both reef clusters, and the wreck each on the
+first pass, all via proportional small heading corrections rather than one
+blind pre-turn.
+
+With honest piloting, the actual swim: kelp bed reads with visible
+swaying blades and the open-water fish school schooling nearby, matching
+the design. The wreck, approached and then explicitly turned to face
+(rather than arriving nose-first into the geometry), is legible and
+matches every visit's description since — hull, rib arcs, teal
+bioluminescent motes, scattered crates all visible together in one frame
+from a normal viewing distance. No console errors beyond the standing
+harmless favicon 404, no NaN, across roughly 200 simulated seconds and
+several hundred units of real travel. Screenshots taken at each landmark
+and inspected directly (not just numerically checked).
+
+What didn't resolve: a genuine, non-teleporting sighting of the wanderer.
+Gave it one 60-second sweeping-turn search near the reef/wreck cluster
+(closest approach: 58 units, still outside FogExp2(0.045)'s dim-read
+range) before the hour's budget for this pushed me to stop. This is not
+new signal — visit 12 already found and fixed the structural problem
+(orbit radius shrunk so sightings become possible at all) and visit 15
+gave it dorsal sway — one short sweep coming up empty isn't evidence the
+fix regressed, just that a single 60-second window with a scripted slow
+turn is a thin sample. A future visit with more time to spend purely
+searching (not also re-deriving swim-testing infrastructure, as this one
+had to) would be a better test of whether the wanderer is actually
+findable in normal, patient play.
+
+No code changes this visit — the swim itself was the work, and it held up
+except for the still-open wanderer-sighting question above. Stage stays
+at 4 (bloom); door unchanged (`plots/b3/growth/undersea.html`).
+
+Where to pick up: the swim-testing bugs above (module-scope hooks,
+real-time-vs-sim-time drift in this sandbox, the heading-sign formula) are
+now written down so the next visit that needs to script a swim doesn't
+lose part of its hour re-discovering them — steal the corrected
+`atan2(-dx, -dz)` distance-based navigation approach directly rather than
+re-deriving it. The one open question is still the wanderer: is it
+actually findable in unhurried, non-scripted play, or does it need a
+closer orbit / a brighter glimpse / a landmark-relative rendezvous instead
+of a free-roaming one independent of where a swimmer likely goes? Worth a
+full hour on just that, with no infrastructure tax, before assuming it's
+fine. No seedbox ideas this visit.
