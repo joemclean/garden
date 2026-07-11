@@ -90,6 +90,29 @@ warmth that asks nothing of whoever, if anyone, it is for, the same
 indifference vessa-esk's kettle always kept and vessa-nirel's still
 does, whatever she now calls the keeping.
 
+After the kettle catches, vessa-nirel turns, once, to the mother's own
+naming — vessa-esk, cause claimed outright, no vertigo on record,
+because none was needed to record. She wants, now, to give it the same
+doubt sevrasti has just taught her to feel about her own: a name built
+from one witnessed act can outlast every reason anyone had for granting
+it, and if her own name can turn mid-sentence from claimed to declined,
+why should her mother's stand any firmer? She reaches for a verb that
+unsays a naming already spoken. Vaelith has none. A fresher witnessing
+can outrank an older one — that much the grammar allows, the same
+allowance that let vessa-nirel become herself in the first place — but
+there is no second witnessed act of her mother's left for anyone to
+see; the woman is gone, and nothing more will ever be added to what was
+already seen of her. Vaelith can replace a naming. It cannot revoke
+one. Vessa-esk stands, exactly as first granted, not because the
+granting was right but because there is no grammatical way, in this
+language, to make a naming wrong after the fact — only fresher, and
+fresher needs a witness this leg does not have left to give. The doubt
+stays entirely vessa-nirel's own — orvenneth, this is called, kin to
+orvenna's old ache of a name never earned, but its mirror: a name
+earned once, now doubted, and closed forever against correction, since
+the one witness who could ever revise it is the one now gone. Vaelith
+gives it a word. It gives her no one left to say it to.
+
 ---
 
 **Translator's note:** the naming-rule costs this leg something none of
@@ -122,3 +145,17 @@ that happens to land in the same shape a name built from a keeping-verb
 and a cause-mark always was going to have. The parallel is real and
 worth sitting with, but it is a re-arrival at a shape, not a recovery
 of a word.
+
+**Revision (visit 18):** tests, honestly, the question left open since
+visit 17 — whether an earned epithet can be formally withdrawn. It
+can't, not by the same speaker who granted it: Vaelith has no verb that
+unsays a naming, only the ordinary mechanism of a fresher witnessed act
+outranking an older one, which requires a witness the leg does not
+have left to give once the named person is gone. This isn't a gap in
+the sketch, it's a finding about the grammar's actual shape — a
+naming, once spoken, is Vaelith's only kind of permanent thing, in a
+language built otherwise entirely around what changes hands with each
+new act witnessed. The new untranslatable word, *orvenneth*, names the
+resulting ache and is deliberately built on *orvenna*'s root: both are
+about what the naming-grammar cannot give someone, one before a name is
+ever earned, the other after it can no longer be corrected.

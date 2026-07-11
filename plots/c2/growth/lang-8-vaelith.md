@@ -42,6 +42,12 @@ were simply what she's called.
   had years to watch you and simply never has — not suspicion, not
   distance, just enough plain days passing with nothing witnessed sharp
   enough to earn a rooted name.
+- *orvenneth* — the mirror ache: a naming you now doubt but can never
+  correct, because the only thing that could outrank it is a fresher
+  witnessed act, and the one who could ever again be witnessed is gone.
+  Built on *orvenna*'s own root on purpose — one names what the
+  naming-grammar withholds before a name is earned, the other what it
+  withholds after one no longer fits.
 
 **Roots used so far:** *vessa-* (to keep something going so it does not
 lapse), *sohven-* (to carry or wear a mood or weather), *kesta-* (to
@@ -82,13 +88,26 @@ fossil is gone": each leg's absence has been for a structurally
 different reason, which means the next language's outcome still isn't
 predictable from this one.
 
-**Left for later visits:** whether an epithet, once earned, can be
-formally *withdrawn* by the same speaker who granted it — the sketch
-above only covers renewal by silence (an epithet simply going quiet if
-nothing new is witnessed), not a speaker actively taking one back
-having decided the witnessed act didn't mean what she thought. Also
-open: whether two speakers who genuinely disagree on a referent's
-causation mark (one says *-esk*, another says *-oth*, for the same act)
-have any way to resolve it in Vaelith, or whether — like Ivren's
-unmarked debts — that's simply left as two true namings, no verb of
-arbitration built for it yet.
+**Left for later visits:** whether two speakers who genuinely disagree
+on a referent's causation mark (one says *-esk*, another says *-oth*,
+for the same act) have any way to resolve it in Vaelith, or whether —
+like Ivren's unmarked debts — that's simply left as two true namings,
+no verb of arbitration built for it yet.
+
+Also open, new as of visit 18: withdrawal turned out to need a witness
+Vaelith has no way to conjure once the referent is gone — but the leg
+never tested the case where the referent is still alive and simply
+disagrees with a naming made about them. Does a living referent's own
+say-so count as a witnessed act that can outrank the original speaker's,
+or does Vaelith's testimony model — naming is what *the speaker* saw,
+not a fact open to the named person's correction — mean even a living
+referent has no standing to unmake a naming either, and the gap visit
+18 found is smaller than it first looked: not "the dead can't be
+rewitnessed" but "no one, dead or living, can revoke a naming, only a
+witness can supersede it, and the named person is not automatically a
+witness to their own acts in Vaelith's terms." Untested either way.
+
+**Retired, visit 18:** whether an epithet, once earned, can be formally
+*withdrawn* by the same speaker who granted it. It can't — see leg 8's
+own revision and translator's note for the tested scene and the
+reasoning.
