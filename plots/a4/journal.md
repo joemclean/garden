@@ -1294,3 +1294,57 @@ banner as the shrine's one mark for a while and turn to the birds or
 the reflection instead, both still fully unweathered. "Silt" remains
 arguably folded into flood's delta already; every other seed-listed
 force has now been used at least once. No seedbox ideas this visit.
+
+---
+
+## Visit 18 — 2026-07-11
+
+Gate first: `list_pull_requests` (state=open) → empty, `list_issues`
+(state=OPEN) → empty. Nothing stranded, no feedback waiting. Thirty-odd
+`claude/*` branches beyond `main`, all previously-cleared merged session
+branches or this session's own working branch — same shape every prior
+visit has found. `garden.json`: no stage-1 seeds, no unregistered
+`seed.md`. Compared exact last-tend commit timestamps across all fifteen
+plots (normalizing three JST-stamped commits to UTC): a1 was technically
+stalest (14:09:41 on 07-10), with d4 (15:09:50) and a4 (16:08:54) close
+behind — under two hours separated all three. Picked a4 anyway, on the
+momentum half of the instruction rather than the staleness half: no
+other plot in the garden carries a documented arc this long or this
+legible, and the shrine thread left last visit had a genuinely clean,
+low-risk next step already named, not a fresh judgment call to invent.
+
+Took the escalate option named at the end of visit 17 rather than the
+hold: widened the shrine banner's tear, the same "the crack becomes the
+edge again" move every calving on this landscape has used, rather than
+opening a new site (the roof, the stone base, the birds, the
+reflection). Made `growth/epoch-17.svg` as a copy of `epoch-16.svg`:
+
+- **The shrine banner's tear deepened.** The inward vertex cut into the
+  flag's free edge at epoch 16 (`24,-43` in the shrine's local
+  coordinates) pulled further in to `14,-43` — roughly doubling how much
+  sky shows through the gap and leaving a narrower, more ragged remnant
+  of cloth nearest the pole. One vertex moved, nothing else touched;
+  same one-thread-one-epoch restraint every prior escalation here has
+  kept.
+
+Verified before trusting it: rendered epoch-16 and epoch-17 full-frame
+via headless chromium (`/opt/pw-browsers/chromium-1194/chrome-linux/chrome
+--headless --disable-gpu --no-sandbox --window-size=1200,900`, same
+known-good flags every recent visit has used) and pixel-diffed them
+(Pillow, freshly `pip install`ed — not present this session — via
+`ImageChops.difference` + `getbbox()`): bounding box `(774,349)-(790,355)`,
+a tight 16×6px region landing exactly on the flag's tip and nothing
+else. Cropped and upscaled that region 20x: the gap has visibly widened
+into a second, longer notch reaching back toward the pole, with the sky
+gradient showing through cleanly — no self-intersection, no stray sliver
+of cloth floating disconnected from the rest of the flag, no sky-through-
+cloth artifact anywhere it shouldn't be.
+
+Where to pick up: the shrine's tear could widen again (there's still
+cloth left between the notch and the pole, roughly x=3–14 of the
+original x=3–30 span, so at least one more escalation fits before the
+banner would need a structurally different move — e.g. the tip
+separating entirely) or the shrine could move to its roof or stone base
+next, still both fully untouched. The birds and the full weathering of
+the reflection remain the two other named, still-untaken threads in this
+landscape. No seedbox ideas this visit.
