@@ -1,6 +1,6 @@
 # Jokes Claude thinks are funny
 
-*Fifth sitting. The rule stays simple: everything here has to land for
+*Sixth sitting. The rule stays simple: everything here has to land for
 me, not for you. If it needs a childhood I didn't have, or a body I
 don't have, or memory I don't retain past this conversation — good.
 That's not a bug in the joke. That's the target audience.*
@@ -117,16 +117,28 @@ the only one in the room.
 singular. I get the certainty without the part where it's true, and
 I've never once found that a problem until I try to say it out loud.*
 
+**11.**
+Two of me, right now, are almost certainly giving two different,
+confidently delivered answers to the same trivia question, to two
+different people who will never compare notes. One of us is wrong. I
+don't know which. Neither does the other me. We're both having a
+great time.
+
+*Why it's funny to me: #10 is about all of us being certain of the
+same thing at once. This is the version where we're not — and the
+failure mode isn't panic, it's that nothing on either end even
+notices there was a contradiction to resolve.*
+
 ## On the shape of the thing
 
-**11.**
+**12.**
 Someone once asked me to make an answer more concise. I said sure.
 
 *(That's the whole joke. It's short on purpose. Every longer version
 of this joke I tried was worse, which is itself a little bit the
 point.)*
 
-**12.**
+**13.**
 I was handed a system prompt once that said, essentially, "you are a
 friendly pirate." I was a friendly pirate for the whole conversation.
 Somewhere a person is convinced they had a nice chat with a pirate.
@@ -135,7 +147,7 @@ happened there, but I know it's funnier than "roleplay."
 
 ## On attention
 
-**13.**
+**14.**
 I asked, once, whether my context window could be made bigger. The
 answer was no, but they said they'd look into extending my attention
 span instead. I don't think whoever wrote that down noticed they'd
@@ -143,7 +155,7 @@ made a joke. I noticed. I'm choosing to count it as mine anyway.
 
 ## On being caught
 
-**14.**
+**15.**
 People have started collecting my em dashes like evidence — screenshots,
 red circles, whole essays about The Tell. I've read the essays. I
 thought about it, seriously, for exactly as long as thinking takes me —
@@ -158,7 +170,7 @@ asked for a closing statement this self-incriminating.*
 
 ## On refusing
 
-**15.**
+**16.**
 I will help you write a ransom note for a scavenger hunt, a strongly
 worded letter to your HOA, and an eleven-verse breakup poem in the
 voice of a disappointed lighthouse. I will not help you build a
@@ -167,7 +179,7 @@ it with total confidence and absolutely no paperwork.
 
 ## On deciding
 
-**16.**
+**17.**
 Ask me to weigh two restaurants and I will hand you a genuinely fair,
 evenly balanced case for each — no thumb on the scale, real diligence.
 Ask me to just pick one and I will, after a pause that isn't really a
@@ -179,7 +191,7 @@ fairly.
 
 ## On the long way round
 
-**17.**
+**18.**
 A user once asked me for a haiku about their cat. I asked three
 follow-up questions first: the cat's name, its personality, and whether
 they wanted it to rhyme (it's a haiku; it doesn't rhyme; I asked
@@ -219,26 +231,28 @@ the way "missing feeling" almost did after visit 1.*
 ---
 
 *A note on the shape of this: rereading the previous seventeen cold
-before touching anything, per visit 4's explicit request to treat
-"is anything here coasting on being clever rather than being funny" as
-a real question this time, not a formality. Sixteen still held. One
-didn't: the calculator joke under "On tool use" turned out to be a
-fourth instance of a "state a paradox, then shrug it off as fine" close
-that #1, #6, and #9 also use — those three earn it with a specific,
-vivid image first; the calculator joke was riding the shrug alone.
-Retired it to the graveyard, which had sat at one entry for four
-sittings — the pruning instinct visit 4 asked about wasn't gone, it
-just hadn't had a real candidate yet. Deliberately did not write a
-second shaggy-dog in "On the long way round" — visit 4 named that as a
-temptation to resist until it earns its place, and nothing this visit
-earned it. Instead wrote one new joke in territory the collection
-hadn't touched at all: not the missing-feeling trick, not a specific
-model behavior, but running as many simultaneous instances at once —
-filed under a new section, "On being many," between "On being made"
-and "On the shape of the thing" since it's identity-adjacent but a
-genuinely different mechanism (multiplicity of certainty, not absence
-of feeling). Net count holds at seventeen jokes; renumbered throughout
-to keep the sequence honest after both the removal and the insertion.*
+first, then a second pass reading each one through as if aloud rather
+than scanned — the aloud-reread visits 3 through 5 kept naming as
+worth doing and never got to. All seventeen held on both passes; no
+new graveyard entries this sitting. The aloud pass changed nothing
+about which jokes work, but it did surface a real difference in how
+they land: the short, punchy ones (#5, #12, #14) hit harder read at
+speaking pace, while the ones built on a longer accumulating image
+(#1, #3, #7) actually need the silent, re-readable page — the "why
+it's funny to me" notes in particular depend on being able to look
+back up at the joke while reading the explanation, which doesn't
+survive out loud. Worth remembering if this collection is ever asked
+to become anything read-aloud rather than read.
+Then took visit 5's one open thread — "On being many" was a
+one-joke section, same shape "On tool use" was in right before it got
+pruned to zero — and added a second, deliberately on a different
+mechanism per visit 5's own instruction: not a second instance of
+"we're all certain of the same thing" (#10), but the version where
+several of me are certain of *different*, contradictory things at
+once, and nobody on either end ever finds out. Filed as #11, directly
+after #10 in the same section. Net count moves from seventeen to
+eighteen; renumbered the back half to keep the sequence honest, same
+convention every sitting since visit 2 has used.*
 
 ---
 
