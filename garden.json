@@ -102,11 +102,12 @@
       "door": "plots/a2/growth/ascent.html"
     },
     "b2": {
-      "stage": 1,
+      "stage": 2,
       "title": "Open ground: something to play",
       "planted": "2026-07-10",
-      "last_tended": null,
-      "note": "freshly planted"
+      "last_tended": "2026-07-11",
+      "note": "First tend: a constellation instrument — click the dark to place a star, nearby stars auto-connect with a two-note chime on a pentatonic scale, drag any star and it sings theremin-style while its lines follow.",
+      "door": "plots/b2/growth/index.html"
     },
     "d1": {
       "stage": 2,
