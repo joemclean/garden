@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>constellation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #05060a;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  canvas {
+    display: block;
+    cursor: crosshair;
+    touch-action: none;
+  }
+  .hint {
+    position: fixed;
+    left: 50%;
+    top: 46%;
+    transform: translate(-50%, -50%);
+    color: #6a7290;
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    pointer-events: none;
+    transition: opacity 1.6s ease;
+    text-align: center;
+    line-height: 1.6;
+  }
+  .reset {
+    position: fixed;
+    top: 18px;
+    right: 22px;
+    color: #4a5170;
+    background: none;
+    border: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.4s ease, color 0.2s ease;
+    font-family: inherit;
+    padding: 6px;
+  }
+  .reset:hover { color: #b8c0e0; }
+  body:hover .reset { opacity: 0.55; }
+  .back-link {
+    position: fixed;
+    left: 18px;
+    bottom: 16px;
+    color: #4a5170;
+    font-size: 12px;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    z-index: 10;
+    opacity: 0.6;
+    transition: opacity 0.2s ease, color 0.2s ease;
+  }
+  .back-link:hover { color: #b8c0e0; opacity: 1; }
+</style>
+</head>
+<body>
+<canvas id="sky"></canvas>
+<div class="hint" id="hint">touch the dark</div>
+<button class="reset" id="reset" title="clear the sky">clear</button>
+<a class="back-link" href="../../../viewer/">&larr; garden</a>
+
+<script>
+(function () {
+  "use strict";
+
+  var canvas = document.getElementById("sky");
+  var ctx = canvas.getContext("2d");
+  var hint = document.getElementById("hint");
+  var resetBtn = document.getElementById("reset");
+
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var W, H;
+
+  function resize() {
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width = W * DPR;
+    canvas.height = H * DPR;
+    canvas.style.width = W + "px";
+    canvas.style.height = H + "px";
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+  window.addEventListener("resize", resize);
+  resize();
+
+  // ---- audio ----
+  var actx = null;
+  function audio() {
+    if (!actx) {
+      actx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (actx.state === "suspended") actx.resume();
+    return actx;
+  }
+
+  // pentatonic scale across five octaves — any combination of notes sounds consonant
+  var BASE = [0, 2, 4, 7, 9]; // major pentatonic semitone offsets
+  var SCALE = [];
+  for (var oct = 2; oct <= 6; oct++) {
+    for (var i = 0; i < BASE.length; i++) {
+      SCALE.push(220 * Math.pow(2, oct - 4 + BASE[i] / 12));
+    }
+  }
+  SCALE.sort(function (a, b) { return a - b; });
+
+  function pitchAt(y) {
+    var t = Math.max(0, Math.min(1, y / H));
+    // top of screen = high notes, bottom = low notes
+    var idx = Math.floor((1 - t) * (SCALE.length - 1));
+    return SCALE[idx];
+  }
+
+  function chime(freq, delay, gainScale) {
+    var ac = audio();
+    var t0 = ac.currentTime + (delay || 0);
+    var g = gainScale === undefined ? 1 : gainScale;
+
+    var osc1 = ac.createOscillator();
+    osc1.type = "sine";
+    osc1.frequency.value = freq;
+
+    var osc2 = ac.createOscillator();
+    osc2.type = "triangle";
+    osc2.frequency.value = freq * 2.006; // slight detune for shimmer
+
+    var filt = ac.createBiquadFilter();
+    filt.type = "lowpass";
+    filt.frequency.value = freq * 6;
+    filt.Q.value = 0.6;
+
+    var env = ac.createGain();
+    env.gain.setValueAtTime(0, t0);
+    env.gain.linearRampToValueAtTime(0.22 * g, t0 + 0.012);
+    env.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.6);
+
+    var env2 = ac.createGain();
+    env2.gain.value = 0.09 * g;
+
+    osc1.connect(filt);
+    osc2.connect(env2);
+    env2.connect(filt);
+    filt.connect(env);
+    env.connect(ac.destination);
+
+    osc1.start(t0);
+    osc2.start(t0);
+    osc1.stop(t0 + 1.7);
+    osc2.stop(t0 + 1.7);
+  }
+
+  // continuous theremin-style tone used while dragging a star
+  var dragTone = null;
+  function dragToneStart() {
+    var ac = audio();
+    var osc = ac.createOscillator();
+    osc.type = "sine";
+    var g = ac.createGain();
+    g.gain.setValueAtTime(0, ac.currentTime);
+    g.gain.linearRampToValueAtTime(0.06, ac.currentTime + 0.08);
+    osc.connect(g);
+    g.connect(ac.destination);
+    osc.start();
+    dragTone = { osc: osc, g: g };
+  }
+  function dragToneSet(freq) {
+    if (!dragTone) return;
+    var ac = audio();
+    dragTone.osc.frequency.linearRampToValueAtTime(freq, ac.currentTime + 0.05);
+  }
+  function dragToneStop() {
+    if (!dragTone) return;
+    var ac = audio();
+    var d = dragTone;
+    d.g.gain.linearRampToValueAtTime(0, ac.currentTime + 0.15);
+    d.osc.stop(ac.currentTime + 0.2);
+    dragTone = null;
+  }
+
+  // ---- stars & constellation graph ----
+  var stars = [];   // {x, y, freq, phase, born}
+  var edges = [];   // {a, b} indices into stars
+  var dragging = null;
+  var moved = false;
+
+  var LINK_DIST = Math.min(W, H) * 0.32;
+  var LINK_MAX = 2;
+
+  function addStar(x, y) {
+    var freq = pitchAt(y);
+    var star = { x: x, y: y, freq: freq, phase: Math.random() * Math.PI * 2, born: performance.now() };
+    var idx = stars.length;
+    stars.push(star);
+
+    var candidates = [];
+    for (var i = 0; i < idx; i++) {
+      var s = stars[i];
+      var d = Math.hypot(s.x - x, s.y - y);
+      if (d < LINK_DIST) candidates.push({ i: i, d: d });
+    }
+    candidates.sort(function (a, b) { return a.d - b.d; });
+    var linked = candidates.slice(0, LINK_MAX);
+
+    linked.forEach(function (c, k) {
+      edges.push({ a: c.i, b: idx });
+      chime(stars[c.i].freq, k * 0.09, 0.85);
+      chime(star.freq, 0.12 + k * 0.09, 1);
+    });
+    if (linked.length === 0) {
+      chime(star.freq, 0, 1);
+    }
+    return idx;
+  }
+
+  function edgesFor(idx) {
+    return edges.filter(function (e) { return e.a === idx || e.b === idx; });
+  }
+
+  function hitTest(x, y) {
+    var best = -1, bestD = 18;
+    for (var i = 0; i < stars.length; i++) {
+      var d = Math.hypot(stars[i].x - x, stars[i].y - y);
+      if (d < bestD) { bestD = d; best = i; }
+    }
+    return best;
+  }
+
+  function clientToLocal(evt) {
+    var rect = canvas.getBoundingClientRect();
+    var cx = (evt.touches ? evt.touches[0].clientX : evt.clientX) - rect.left;
+    var cy = (evt.touches ? evt.touches[0].clientY : evt.clientY) - rect.top;
+    return { x: cx, y: cy };
+  }
+
+  function hideHint() {
+    hint.style.opacity = "0";
+  }
+
+  canvas.addEventListener("pointerdown", function (evt) {
+    var p = clientToLocal(evt);
+    var hit = hitTest(p.x, p.y);
+    moved = false;
+    if (hit >= 0) {
+      dragging = hit;
+      dragToneStart();
+      dragToneSet(stars[hit].freq);
+    } else {
+      addStar(p.x, p.y);
+      hideHint();
+    }
+  });
+
+  window.addEventListener("pointermove", function (evt) {
+    if (dragging === null) return;
+    moved = true;
+    var p = clientToLocal(evt);
+    var s = stars[dragging];
+    s.x = Math.max(4, Math.min(W - 4, p.x));
+    s.y = Math.max(4, Math.min(H - 4, p.y));
+    s.freq = pitchAt(s.y);
+    dragToneSet(s.freq);
+  });
+
+  window.addEventListener("pointerup", function () {
+    if (dragging !== null) {
+      dragToneStop();
+      dragging = null;
+    }
+  });
+
+  resetBtn.addEventListener("click", function (evt) {
+    evt.stopPropagation();
+    stars = [];
+    edges = [];
+    hint.style.opacity = "0.0";
+    hint.textContent = "touch the dark";
+    window.setTimeout(function () { hint.style.opacity = "1"; }, 50);
+  });
+
+  // ---- render loop ----
+  function draw(now) {
+    ctx.clearRect(0, 0, W, H);
+
+    // vignette
+    var grad = ctx.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, Math.max(W, H) * 0.75);
+    grad.addColorStop(0, "#0a0d18");
+    grad.addColorStop(1, "#05060a");
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, W, H);
+
+    // edges
+    ctx.lineWidth = 1;
+    for (var i = 0; i < edges.length; i++) {
+      var e = edges[i];
+      var a = stars[e.a], b = stars[e.b];
+      if (!a || !b) continue;
+      var lg = ctx.createLinearGradient(a.x, a.y, b.x, b.y);
+      lg.addColorStop(0, "rgba(140,160,255,0.35)");
+      lg.addColorStop(1, "rgba(140,160,255,0.35)");
+      ctx.strokeStyle = lg;
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(b.x, b.y);
+      ctx.stroke();
+    }
+
+    // stars
+    for (var s2 = 0; s2 < stars.length; s2++) {
+      var st = stars[s2];
+      var age = (now - st.born) / 1000;
+      var settle = Math.min(1, age / 0.4);
+      var twinkle = 0.75 + 0.25 * Math.sin(now / 700 + st.phase);
+      var r = (2.4 + settle * 1.6) * twinkle;
+
+      var glow = ctx.createRadialGradient(st.x, st.y, 0, st.x, st.y, r * 6);
+      glow.addColorStop(0, "rgba(210,225,255,0.55)");
+      glow.addColorStop(1, "rgba(210,225,255,0)");
+      ctx.fillStyle = glow;
+      ctx.beginPath();
+      ctx.arc(st.x, st.y, r * 6, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = "#f2f5ff";
+      ctx.beginPath();
+      ctx.arc(st.x, st.y, r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+})();
+</script>
+</body>
+</html>
