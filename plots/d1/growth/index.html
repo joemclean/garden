@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>The Field That Waits — title sequence</title>
+<title>Coming Attractions — title sequences for two films that don't exist</title>
 <style>
   :root { color-scheme: dark; }
   html, body {
@@ -25,6 +25,8 @@
     box-shadow: 0 0 80px rgba(0,0,0,0.9);
   }
   svg.scene { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+  /* ============== REEL ONE: The Field That Waits ============== */
 
   /* --- sky --- */
   .sky-top { animation: skyTop 54s ease-in-out 1 forwards; }
@@ -104,19 +106,20 @@
     100% { transform: translate(-40px,-70px) scale(1.6); opacity: 0; }
   }
 
-  /* --- curtain (the ending) --- */
+  /* --- curtain (shared ending device, reused by both reels) --- */
   .curtain {
     position: absolute; inset: 0; background: #000;
     opacity: 0;
     animation: darken 54s ease-in 1 forwards;
     pointer-events: none;
   }
+  #reel2 .curtain { animation-duration: 46s; }
   @keyframes darken {
     0%, 92% { opacity: 0; }
     100%    { opacity: 1; }
   }
 
-  /* --- title cards --- */
+  /* --- title cards (shared by both reels; #reel2 overrides duration) --- */
   .titles {
     position: absolute; inset: 0;
     display: flex; align-items: center; justify-content: center;
@@ -135,6 +138,7 @@
     animation-fill-mode: forwards;
     width: 80%;
   }
+  #reel2 .card { animation-duration: 46s; }
   .studio    { font-size: 2.1vw; animation-name: cardStudio; }
   .presents  { font-size: 1.3vw; font-style: italic; animation-name: cardPresents; }
   .director  { font-size: 1.5vw; animation-name: cardDirector; }
@@ -153,6 +157,99 @@
   @keyframes cardTagline  { 0%,80% {opacity:0;} 84%,90% {opacity:1;} 96%,100% {opacity:0;} }
   @keyframes cardFine     { 0%,95% {opacity:0;} 98%,100% {opacity:1;} }
 
+  /* ============== LEADER: the reel change ============== */
+  .leader-stage { background: #000; }
+  .cue-mark {
+    position: absolute; top: 26px; right: 40px;
+    width: 30px; height: 30px; border-radius: 50%;
+    background: #eee; opacity: 0;
+    animation: cueBlip 4s steps(1) 1 forwards;
+  }
+  @keyframes cueBlip {
+    0%, 6%    { opacity: 0; }
+    7%, 13%   { opacity: 0.85; }
+    14%, 54%  { opacity: 0; }
+    55%, 61%  { opacity: 0.85; }
+    62%, 100% { opacity: 0; }
+  }
+  .leader-text {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: #c7c7c7; letter-spacing: 0.35em; font-size: 2vw;
+    opacity: 0;
+    animation: leaderText 4s ease-in-out 1 forwards;
+  }
+  @keyframes leaderText {
+    0%, 12%   { opacity: 0; }
+    28%, 74%  { opacity: 0.8; }
+    92%, 100% { opacity: 0; }
+  }
+  .scratch {
+    position: absolute; top: 0; bottom: 0; width: 1px;
+    background: rgba(255,255,255,0.18);
+    animation-name: scratchFlicker;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+  @keyframes scratchFlicker { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
+
+  /* ============== REEL TWO: No Address for Rain ============== */
+  .rain-drop {
+    stroke: #9fb4c9; stroke-width: 1.3; opacity: 0;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  @keyframes fall {
+    0%   { transform: translate(0, -60px); opacity: 0; }
+    6%   { opacity: 0.55; }
+    92%  { opacity: 0.3; }
+    100% { transform: translate(-46px, 900px); opacity: 0; }
+  }
+
+  .window-lit { fill: #caa25a; opacity: 0.85; }
+  .window-flicker {
+    animation-name: windowFlicker;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+  @keyframes windowFlicker { 0%, 100% { opacity: 0.85; } 48%, 52% { opacity: 0.85; } 50% { opacity: 0.25; } }
+
+  .neon-sign {
+    fill: #5fe3ff;
+    animation: neonFlicker 6s ease-in-out infinite;
+  }
+  @keyframes neonFlicker {
+    0%, 18%, 21%, 23%, 79%, 81%, 84%, 100% {
+      opacity: 1; filter: drop-shadow(0 0 3px #5fe3ff) drop-shadow(0 0 12px #5fe3ff);
+    }
+    19%, 22%, 80%, 83% { opacity: 0.25; filter: none; }
+  }
+
+  .figure-walk {
+    animation: walk 9s linear 1 forwards;
+    animation-delay: 15s;
+    opacity: 0;
+  }
+  @keyframes walk {
+    0%   { transform: translate(520px, 0); opacity: 0; }
+    4%   { opacity: 0.95; }
+    94%  { opacity: 0.95; }
+    100% { transform: translate(920px, 0); opacity: 0; }
+  }
+
+  .lightning {
+    fill: #eaf4ff; opacity: 0; mix-blend-mode: screen;
+    animation: flash 46s ease-out 1 forwards;
+  }
+  @keyframes flash {
+    0%, 60.8%   { opacity: 0; }
+    61.2%       { opacity: 0.85; }
+    61.6%       { opacity: 0.1; }
+    62.1%       { opacity: 0.55; }
+    62.6%, 100% { opacity: 0; }
+  }
+
   .back-link {
     position: fixed; left: 14px; bottom: 12px;
     font-family: Georgia, serif;
@@ -168,7 +265,9 @@
 </head>
 <body>
   <div class="frame">
-    <div class="stage">
+
+    <!-- ============== REEL ONE ============== -->
+    <div class="stage" id="reel1">
       <svg class="scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
         <defs>
           <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
@@ -204,6 +303,94 @@
         <div class="card fine">— coming to no theater near you —</div>
       </div>
     </div>
+
+    <!-- ============== LEADER (reel change) ============== -->
+    <div class="stage leader-stage" id="leader" style="display:none;">
+      <div class="cue-mark"></div>
+      <div class="leader-text">REEL TWO</div>
+      <div id="scratches"></div>
+    </div>
+
+    <!-- ============== REEL TWO ============== -->
+    <div class="stage" id="reel2" style="display:none;">
+      <svg class="scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="nightSky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#05060d"/>
+            <stop offset="55%" stop-color="#0c1224"/>
+            <stop offset="100%" stop-color="#171b2c"/>
+          </linearGradient>
+          <radialGradient id="lampGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ffe9b0" stop-opacity="0.55"/>
+            <stop offset="100%" stop-color="#ffe9b0" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="reflectGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#3a5a6e" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#0a0d16" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+
+        <rect x="0" y="0" width="1600" height="900" fill="url(#nightSky)"/>
+
+        <!-- skyline -->
+        <g fill="#0a0d16">
+          <rect x="20"   y="520" width="180" height="380"/>
+          <rect x="230"  y="460" width="140" height="440"/>
+          <rect x="380"  y="560" width="220" height="340"/>
+          <rect x="640"  y="600" width="150" height="300"/>
+          <rect x="980"  y="480" width="160" height="420"/>
+          <rect x="1150" y="540" width="210" height="360"/>
+          <rect x="1370" y="430" width="210" height="470"/>
+        </g>
+
+        <!-- windows -->
+        <g>
+          <rect class="window-lit" x="55" y="560" width="14" height="20"/>
+          <rect class="window-lit" x="95" y="600" width="14" height="20"/>
+          <rect class="window-lit window-flicker" x="55" y="650" width="14" height="20" style="animation-duration:4.4s; animation-delay:-1s;"/>
+          <rect class="window-lit" x="260" y="500" width="14" height="20"/>
+          <rect class="window-lit window-flicker" x="300" y="550" width="14" height="20" style="animation-duration:5.2s; animation-delay:-2.4s;"/>
+          <rect class="window-lit" x="410" y="610" width="14" height="20"/>
+          <rect class="window-lit" x="1010" y="520" width="14" height="20"/>
+          <rect class="window-lit" x="1180" y="590" width="14" height="20"/>
+          <rect class="window-lit window-flicker" x="1400" y="470" width="14" height="20" style="animation-duration:3.8s; animation-delay:-0.6s;"/>
+          <rect class="window-lit" x="1460" y="520" width="14" height="20"/>
+        </g>
+
+        <!-- neon sign, mounted on the building above the street -->
+        <text class="neon-sign" x="410" y="590" font-family="Georgia, monospace" font-size="30" letter-spacing="3">ALL NIGHT</text>
+
+        <!-- streetlamp -->
+        <ellipse cx="740" cy="860" rx="150" ry="42" fill="url(#lampGlow)"/>
+        <rect x="736" y="620" width="6" height="260" fill="#0e0e10"/>
+        <path d="M 739 620 q 0 -18 20 -18" stroke="#0e0e10" stroke-width="5" fill="none"/>
+        <circle cx="759" cy="600" r="9" fill="#ffe9b0"/>
+
+        <!-- pedestrian crossing the light pool -->
+        <g class="figure-walk">
+          <ellipse cx="0" cy="822" rx="16" ry="4" fill="#000" opacity="0.35"/>
+          <path d="M -8 748 Q 0 700 9 748 L 15 828 Q 0 844 -15 828 Z" fill="#040404"/>
+          <circle cx="0" cy="686" r="9" fill="#040404"/>
+          <path d="M -24 700 Q 0 656 24 700 L 19 707 Q 0 668 -19 707 Z" fill="#0c0c0c"/>
+        </g>
+
+        <rect x="0" y="820" width="1600" height="80" fill="url(#reflectGrad)"/>
+        <g id="rain"></g>
+        <rect class="lightning" x="0" y="0" width="1600" height="900"/>
+      </svg>
+      <div class="curtain"></div>
+      <div class="titles">
+        <div class="card studio">SALT &amp; IRON RELEASING</div>
+        <div class="card presents">presents</div>
+        <div class="card director">a film by Odalys Marchetti</div>
+        <div class="card cast">starring Reyes Calloway &amp; Junko Amemiya</div>
+        <div class="card intro">and introducing Bertrand Oyelaran</div>
+        <div class="card maintitle">NO ADDRESS<br>FOR RAIN</div>
+        <div class="card tagline">everyone left a light on</div>
+        <div class="card fine">— coming to no theater near you —</div>
+      </div>
+    </div>
+
   </div>
   <a class="back-link" href="../../../viewer/">← garden</a>
 
@@ -261,6 +448,61 @@
       g.style.animationDelay = f.delay + 's';
       birds.appendChild(g);
     });
+  })();
+
+  // Film-scratch flicker on the leader card, a few thin lines at random x.
+  (function () {
+    const container = document.getElementById('scratches');
+    for (let i = 0; i < 6; i++) {
+      const s = document.createElement('div');
+      s.className = 'scratch';
+      s.style.left = (8 + Math.random() * 84) + '%';
+      s.style.animationDuration = (0.6 + Math.random() * 1.4) + 's';
+      s.style.animationDelay = (-Math.random() * 2) + 's';
+      container.appendChild(s);
+    }
+  })();
+
+  // Procedural rain: short diagonal strokes falling on a loop, staggered so
+  // the shower reads as continuous rather than a repeating sheet.
+  (function () {
+    const rain = document.getElementById('rain');
+    const n = 70;
+    for (let i = 0; i < n; i++) {
+      const x = Math.random() * 1650 - 20;
+      const y = Math.random() * 900;
+      const len = 16 + Math.random() * 14;
+      const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', x);
+      line.setAttribute('y1', y);
+      line.setAttribute('x2', x - len * 0.35);
+      line.setAttribute('y2', y + len);
+      line.setAttribute('class', 'rain-drop');
+      line.style.animationDuration = (0.7 + Math.random() * 0.5) + 's';
+      line.style.animationDelay = (-Math.random() * 2) + 's';
+      rain.appendChild(line);
+    }
+  })();
+
+  // Orchestration: reel one plays and holds black, a brief leader announces
+  // the reel change, then reel two plays to its own black hold. No loop —
+  // the final frame of reel two is where the piece stays.
+  (function () {
+    const REEL1_MS = 54000;
+    const LEADER_MS = 4000;
+    const reel1 = document.getElementById('reel1');
+    const leader = document.getElementById('leader');
+    const reel2 = document.getElementById('reel2');
+
+    setTimeout(() => {
+      reel1.style.display = 'none';
+      leader.style.display = 'block';
+    }, REEL1_MS);
+
+    setTimeout(() => {
+      leader.style.display = 'none';
+      reel2.style.display = 'block';
+    }, REEL1_MS + LEADER_MS);
   })();
 </script>
 </body>
