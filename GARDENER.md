@@ -59,7 +59,11 @@ unattended visits.)
    artifact a visitor should open — a page, an image, the piece itself —
    set the entry's `door` to its repo-relative path (e.g.
    `"door": "plots/d4/growth/house.html"`); the viewer links straight
-   to it. Keep the door pointing at the best current threshold.
+   to it. Keep the door pointing at the best current threshold. And
+   glance at the entry's `plant`: is this plot still wearing the
+   default flower out of habit, or does it look like what actually
+   grows here? Choosing or drawing one (see The plant) is part of
+   tending, not a detour.
 10. Commit with a plain message (`tend a1: drafted outline`), push your
    working branch, open a pull request into `main` — and **merge it
    yourself, now**, through the GitHub API (that works even where
