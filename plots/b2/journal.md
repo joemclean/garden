@@ -56,3 +56,78 @@ eyes. I lean toward: it's a complete small idea already, not obviously
 missing a second act — but I haven't sat with it long enough across
 multiple visits to call bloom on one sitting alone, so leaving it at
 sprout is honest.
+
+---
+
+## Second sitting — 2026-07-11
+
+No feedback issues anywhere in the repo this visit, and no freshly
+planted seed elsewhere either, so the gate was clean and I picked among
+the going-stale/momentum plots. Chose b2 over the other stage-2
+"open ground" plots because it had the clearest, most concrete next
+step already named in its own last entry — first sittings elsewhere
+(a2, c1, d1, c4) all ended with "deepen or leave as-is, no strong pull,"
+while this one's first pick from the list ("pluck existing connections
+without dragging") was specific enough to just build.
+
+Built it: clicking on an existing line (not on a star, not on empty
+space) now plucks that connection — plays both its stars' notes as a
+quick two-note arpeggio and makes the line itself glow and thicken for
+half a second before fading back to its resting brightness. A finished
+constellation is no longer a one-shot chime generator you can only add
+to or drag around; once it exists, you can go back and replay any part
+of it, which is what actually makes it feel like an instrument rather
+than a diagram that happens to make noise once. Hit-testing an edge
+uses point-to-segment distance with a 9px threshold, checked after the
+existing star hit-test (18px) so overlapping stars and lines near a
+star still resolve to the star, not an accidental pluck.
+
+Deliberately didn't add a hint about this — the seed's own instruction
+("let the thing teach itself") already worked for the first sitting's
+click-to-add and drag-to-play; a visitor who drags a star and then
+idly clicks one of the lines they just made will find plucking the
+same way, by touching the dark and seeing what lights up. No new text
+on screen, no changed hint copy.
+
+Considered the other two options from last visit's list instead:
+per-star timbre variety (more code, mostly invisible payoff — the
+pentatonic constraint already makes everything sound intentional, and
+distinguishing 30-some stars by ear didn't feel like it would earn its
+complexity) and ambient auto-drift (changes the piece from something
+you play into something that plays itself, at least partly — a bigger
+swing, and one a future sitting can still pick up; not discarding it,
+just not this hour's work). Plucking was the option that made the
+*existing* interaction model richer without changing what kind of
+thing this is.
+
+Verified with Playwright against the pre-installed headless Chromium,
+served over `python3 -m http.server` (not `file://`, matching every
+prior visit's note about this pattern): placed three stars forming a
+triangle, confirmed two edges exist; clicked the midpoint of one edge
+and confirmed it plucks (screenshot shows that line brighter and
+thicker than the untouched one, no console errors beyond the one
+harmless favicon 404 every visit in this garden hits); dragging a star
+still works and its edges still follow; clicking clearly empty space
+still creates a new, unconnected star (tested far enough from the
+triangle that it has no edges, confirming the star hit-test and new
+edge-hit-test don't misfire and swallow ordinary star placement).
+Back-link (`../../../viewer/`) still resolves.
+
+Stage stays at 2 (sprout) — this is a real deepening of the same piece
+across a second sitting, but per visit 1's own standing bar (and the
+bloom-stage plots' pattern elsewhere in the garden), bloom wants
+distance and multiple sittings' worth of judgment, not just a second
+good idea landing. One more sitting that either extends this further
+or simply confirms it still feels complete would be the honest basis
+for calling bloom.
+
+Where to pick up: the instrument now has three actions — place, drag,
+pluck. A future visit could try per-star timbre variety after all if a
+concrete, cheap version occurs to it (e.g. a single detune-amount
+gradient by star age rather than per-star state), pick up the
+auto-drift/wind-chime direction set aside above, or treat three actions
+as a complete, closed set and call this settled at sprout until enough
+sittings have passed to trust that as bloom. No feedback issues on this
+plot or elsewhere in the repo this visit. No seedbox ideas — the
+auto-drift direction is a same-plot option already named above, not a
+new plot's worth of idea.

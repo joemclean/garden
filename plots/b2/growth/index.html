@@ -189,7 +189,7 @@
 
   // ---- stars & constellation graph ----
   var stars = [];   // {x, y, freq, phase, born}
-  var edges = [];   // {a, b} indices into stars
+  var edges = [];   // {a, b, pluckedAt} indices into stars
   var dragging = null;
   var moved = false;
 
@@ -235,6 +235,39 @@
     return best;
   }
 
+  // distance from point p to segment ab, for plucking a connection line
+  function pointSegDist(px, py, ax, ay, bx, by) {
+    var dx = bx - ax, dy = by - ay;
+    var lenSq = dx * dx + dy * dy;
+    var t = lenSq > 0 ? ((px - ax) * dx + (py - ay) * dy) / lenSq : 0;
+    t = Math.max(0, Math.min(1, t));
+    var cx = ax + t * dx, cy = ay + t * dy;
+    return Math.hypot(px - cx, py - cy);
+  }
+
+  function edgeHitTest(x, y) {
+    var best = -1, bestD = 9;
+    for (var i = 0; i < edges.length; i++) {
+      var e = edges[i];
+      var a = stars[e.a], b = stars[e.b];
+      if (!a || !b) continue;
+      var d = pointSegDist(x, y, a.x, a.y, b.x, b.y);
+      if (d < bestD) { bestD = d; best = i; }
+    }
+    return best;
+  }
+
+  // plucking an existing line plays its two notes as a quick arpeggio,
+  // like running a finger along a strung wire, and lights the line up
+  function pluck(edgeIdx) {
+    var e = edges[edgeIdx];
+    var a = stars[e.a], b = stars[e.b];
+    if (!a || !b) return;
+    e.pluckedAt = performance.now();
+    chime(a.freq, 0, 0.8);
+    chime(b.freq, 0.07, 0.8);
+  }
+
   function clientToLocal(evt) {
     var rect = canvas.getBoundingClientRect();
     var cx = (evt.touches ? evt.touches[0].clientX : evt.clientX) - rect.left;
@@ -255,8 +288,14 @@
       dragToneStart();
       dragToneSet(stars[hit].freq);
     } else {
-      addStar(p.x, p.y);
-      hideHint();
+      var edgeHit = edgeHitTest(p.x, p.y);
+      if (edgeHit >= 0) {
+        pluck(edgeHit);
+        hideHint();
+      } else {
+        addStar(p.x, p.y);
+        hideHint();
+      }
     }
   });
 
@@ -299,15 +338,15 @@
     ctx.fillRect(0, 0, W, H);
 
     // edges
-    ctx.lineWidth = 1;
     for (var i = 0; i < edges.length; i++) {
       var e = edges[i];
       var a = stars[e.a], b = stars[e.b];
       if (!a || !b) continue;
-      var lg = ctx.createLinearGradient(a.x, a.y, b.x, b.y);
-      lg.addColorStop(0, "rgba(140,160,255,0.35)");
-      lg.addColorStop(1, "rgba(140,160,255,0.35)");
-      ctx.strokeStyle = lg;
+      var since = e.pluckedAt ? (now - e.pluckedAt) / 1000 : Infinity;
+      var glow = Math.max(0, 1 - since / 0.5); // fades over half a second
+      var alpha = 0.35 + glow * 0.55;
+      ctx.lineWidth = 1 + glow * 1.8;
+      ctx.strokeStyle = "rgba(140,160,255," + alpha + ")";
       ctx.beginPath();
       ctx.moveTo(a.x, a.y);
       ctx.lineTo(b.x, b.y);
