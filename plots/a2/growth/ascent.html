@@ -41,7 +41,8 @@
   }
   button:hover { background: rgba(230, 230, 245, 0.16); }
   button.active { background: rgba(150, 200, 255, 0.25); border-color: rgba(180, 210, 255, 0.5); }
-  #row { margin-bottom: 10px; }
+  #row { margin-bottom: 8px; }
+  #row2 { margin-bottom: 10px; }
   #note {
     position: absolute; left: 16px; bottom: 14px; right: 16px;
     opacity: 0.55; font-size: 12px; max-width: 520px;
@@ -64,28 +65,41 @@
   <a id="back" href="../../../viewer/">&larr; garden</a>
   <div id="panel">
     <b>Ascent</b>
-    <div class="sub">a tone that climbs forever and gets nowhere</div>
+    <div class="sub">a tone that climbs forever, a beat that rushes forever — neither arrives</div>
     <div id="row">
       <button id="play">play</button>
       <button id="dir">↑ ascending</button>
     </div>
+    <div id="row2">
+      <button id="pitchToggle" class="active">pitch</button>
+      <button id="rhythmToggle" class="active">rhythm</button>
+    </div>
     <div class="sub" style="margin-bottom:0">click play, then leave it — there is no ending to wait for</div>
   </div>
-  <div id="note">Shepard–Risset glissando: ten voices, each fading in as it enters the low end and fading out as it leaves the high end. The pitch class always seems to be rising. The pitch never goes anywhere.</div>
+  <div id="note">Two Shepard–Risset illusions, layered. <b>Pitch</b>: ten sine voices fade in at the low end and out at the high end; the pitch class always seems to rise, and never goes anywhere. <b>Rhythm</b>: six fixed-tempo click layers, an octave apart, cross-fade through the same rising-and-wrapping window; the tempo always seems to speed up, and the beat you actually hear never accelerates. Toggle either layer off to hear the other alone.</div>
 </div>
 <script>
 (() => {
   const playBtn = document.getElementById('play');
   const dirBtn = document.getElementById('dir');
+  const pitchToggle = document.getElementById('pitchToggle');
+  const rhythmToggle = document.getElementById('rhythmToggle');
   const panel = document.getElementById('panel');
   const canvas = document.getElementById('c');
   const ctx2d = canvas.getContext('2d');
 
   let audioCtx = null;
   let voices = [];
+  let rhythmVoices = [];
+  let clickBuffer = null;
   let masterGain = null;
+  let pitchGain = null;
+  let rhythmGain = null;
+  let schedulerId = null;
   let running = false;
   let ascending = true;
+  let pitchOn = true;
+  let rhythmOn = true;
   let startTime = 0;
 
   const NUM_VOICES = 10;
@@ -94,11 +108,37 @@
   const SPAN = MAX_LOG2 - MIN_LOG2;
   const CYCLE_SECONDS = 40; // seconds for one voice to cross the whole span
 
+  // rhythm layer: same trick as the pitch layer, aimed at tempo instead
+  // of frequency. Each voice ticks at its own FIXED rate (rates an octave
+  // apart); what cycles over time is only which voice is loudest. As the
+  // loud one hands off to its double-speed neighbor and wraps back to the
+  // slowest, the ear hears one continuously accelerating beat that in
+  // fact never changes speed at all.
+  const NUM_RHYTHM_VOICES = 6;
+  const MIN_LOG2_R = Math.log2(1.25);      // one tick every 0.8s
+  const MAX_LOG2_R = Math.log2(1.25 * 8);  // three octaves up: 10 Hz
+  const SPAN_R = MAX_LOG2_R - MIN_LOG2_R;
+  const CYCLE_SECONDS_R = 24; // shorter and unsynced from the pitch cycle, so the two never lock into a repeating pattern together
+  const LOOKAHEAD = 0.12;
+  const SCHED_INTERVAL_MS = 25;
+  const CLICK_DUR = 0.09;
+
   // bell window: zero at phase 0 and 1, peak at 0.5 — voices fade in
   // entering the low end and fade out leaving the high end, so nothing
   // ever clicks into or out of existence
   function bell(phase) {
     return Math.sin(Math.PI * phase) ** 2;
+  }
+
+  function makeClickBuffer(ctx) {
+    const len = Math.ceil(ctx.sampleRate * CLICK_DUR);
+    const buf = ctx.createBuffer(1, len, ctx.sampleRate);
+    const data = buf.getChannelData(0);
+    for (let i = 0; i < len; i++) {
+      const t = i / ctx.sampleRate;
+      data[i] = (Math.random() * 2 - 1) * Math.exp(-t * 45);
+    }
+    return buf;
   }
 
   function setup() {
@@ -108,6 +148,14 @@
     masterGain.connect(audioCtx.destination);
     masterGain.gain.linearRampToValueAtTime(0.22, audioCtx.currentTime + 2.5);
 
+    pitchGain = audioCtx.createGain();
+    pitchGain.gain.value = pitchOn ? 1 : 0;
+    pitchGain.connect(masterGain);
+
+    rhythmGain = audioCtx.createGain();
+    rhythmGain.gain.value = rhythmOn ? 1 : 0;
+    rhythmGain.connect(masterGain);
+
     voices = [];
     for (let i = 0; i < NUM_VOICES; i++) {
       const osc = audioCtx.createOscillator();
@@ -115,15 +163,48 @@
       const gain = audioCtx.createGain();
       gain.gain.value = 0;
       osc.connect(gain);
-      gain.connect(masterGain);
+      gain.connect(pitchGain);
       osc.start();
       voices.push({ osc, gain, offset: i / NUM_VOICES });
     }
     startTime = audioCtx.currentTime;
+
+    clickBuffer = makeClickBuffer(audioCtx);
+    rhythmVoices = [];
+    for (let i = 0; i < NUM_RHYTHM_VOICES; i++) {
+      const offset = i / NUM_RHYTHM_VOICES;
+      const rate = Math.pow(2, MIN_LOG2_R + offset * SPAN_R);
+      const filter = audioCtx.createBiquadFilter();
+      filter.type = 'bandpass';
+      filter.frequency.value = 260 + rate * 90;
+      filter.Q.value = 3.5;
+      const gain = audioCtx.createGain();
+      gain.gain.value = 0;
+      filter.connect(gain);
+      gain.connect(rhythmGain);
+      rhythmVoices.push({ filter, gain, offset, rate, nextClickTime: audioCtx.currentTime + offset / rate });
+    }
+
+    schedulerId = setInterval(scheduleClicks, SCHED_INTERVAL_MS);
+  }
+
+  function scheduleClicks() {
+    if (!audioCtx) return;
+    const horizon = audioCtx.currentTime + LOOKAHEAD;
+    for (const v of rhythmVoices) {
+      while (v.nextClickTime < horizon) {
+        const src = audioCtx.createBufferSource();
+        src.buffer = clickBuffer;
+        src.connect(v.filter);
+        src.start(v.nextClickTime);
+        v.nextClickTime += 1 / v.rate;
+      }
+    }
   }
 
   function teardown() {
     if (!audioCtx) return;
+    if (schedulerId !== null) { clearInterval(schedulerId); schedulerId = null; }
     const g = masterGain;
     const now = audioCtx.currentTime;
     g.gain.cancelScheduledValues(now);
@@ -136,8 +217,12 @@
       oldCtx.close();
     }, 1300);
     voices = [];
+    rhythmVoices = [];
+    clickBuffer = null;
     audioCtx = null;
     masterGain = null;
+    pitchGain = null;
+    rhythmGain = null;
   }
 
   function frame() {
@@ -153,6 +238,13 @@
         const amp = bell(phase);
         v.osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
         v.gain.gain.setValueAtTime(amp * amp * 0.9, audioCtx.currentTime);
+        v._phase = phase;
+      }
+      for (const v of rhythmVoices) {
+        let phase = (v.offset + dirSign * t / CYCLE_SECONDS_R) % 1;
+        if (phase < 0) phase += 1;
+        const amp = bell(phase);
+        v.gain.gain.setValueAtTime(amp * amp * 1.1, audioCtx.currentTime);
         v._phase = phase;
       }
     }
@@ -177,19 +269,49 @@
     const maxR = Math.min(w, h) * 0.46;
     const dirSign = ascending ? 1 : -1;
 
-    for (let i = 0; i < NUM_VOICES; i++) {
-      const offset = i / NUM_VOICES;
-      let phase = (offset + dirSign * t / CYCLE_SECONDS) % 1;
-      if (phase < 0) phase += 1;
-      const r = 40 + phase * (maxR - 40);
-      const b = bell(phase);
-      const alpha = running ? 0.15 + 0.55 * b : 0.08;
-      const hue = 200 + phase * 120;
-      ctx2d.beginPath();
-      ctx2d.arc(cx, cy, r, 0, Math.PI * 2);
-      ctx2d.strokeStyle = `hsla(${hue}, 70%, 70%, ${alpha})`;
-      ctx2d.lineWidth = 2 + b * 5;
-      ctx2d.stroke();
+    if (pitchOn) {
+      for (let i = 0; i < NUM_VOICES; i++) {
+        const offset = i / NUM_VOICES;
+        let phase = (offset + dirSign * t / CYCLE_SECONDS) % 1;
+        if (phase < 0) phase += 1;
+        const r = 40 + phase * (maxR - 40);
+        const b = bell(phase);
+        const alpha = running ? 0.15 + 0.55 * b : 0.08;
+        const hue = 200 + phase * 120;
+        ctx2d.beginPath();
+        ctx2d.arc(cx, cy, r, 0, Math.PI * 2);
+        ctx2d.strokeStyle = `hsla(${hue}, 70%, 70%, ${alpha})`;
+        ctx2d.lineWidth = 2 + b * 5;
+        ctx2d.stroke();
+      }
+    }
+
+    // rhythm layer: one tick mark per voice, planted at a fixed angle
+    // (its position never moves — only its brightness cycles), flashing
+    // in time with the clicks that voice is actually emitting right now
+    if (rhythmOn) {
+      const tickR = maxR + 22;
+      for (let i = 0; i < NUM_RHYTHM_VOICES; i++) {
+        const offset = i / NUM_RHYTHM_VOICES;
+        let phase = (offset + dirSign * t / CYCLE_SECONDS_R) % 1;
+        if (phase < 0) phase += 1;
+        const rate = Math.pow(2, MIN_LOG2_R + offset * SPAN_R);
+        const b = bell(phase);
+        // clicks for this voice land at t = offset/rate + n/rate (see
+        // setup()'s nextClickTime), so subtract the offset before wrapping
+        let beatPhase = (t * rate - offset) % 1;
+        if (beatPhase < 0) beatPhase += 1;
+        const flash = running ? Math.pow(1 - beatPhase, 6) : 0;
+        const alpha = running ? (0.08 + 0.5 * b) * (0.35 + 0.65 * flash) : 0.06;
+        const angle = (i / NUM_RHYTHM_VOICES) * Math.PI * 2 - Math.PI / 2;
+        const x = cx + Math.cos(angle) * tickR;
+        const y = cy + Math.sin(angle) * tickR;
+        const hue = 30 + phase * 60;
+        ctx2d.beginPath();
+        ctx2d.arc(x, y, 3 + b * 5, 0, Math.PI * 2);
+        ctx2d.fillStyle = `hsla(${hue}, 80%, 65%, ${alpha})`;
+        ctx2d.fill();
+      }
     }
 
     // center point — the still spot none of the rings ever reach or leave from
@@ -215,6 +337,26 @@
   dirBtn.addEventListener('click', () => {
     ascending = !ascending;
     dirBtn.textContent = ascending ? '↑ ascending' : '↓ descending';
+  });
+
+  function rampLayerGain(node, on) {
+    if (!audioCtx || !node) return;
+    const now = audioCtx.currentTime;
+    node.gain.cancelScheduledValues(now);
+    node.gain.setValueAtTime(node.gain.value, now);
+    node.gain.linearRampToValueAtTime(on ? 1 : 0, now + 0.3);
+  }
+
+  pitchToggle.addEventListener('click', () => {
+    pitchOn = !pitchOn;
+    pitchToggle.classList.toggle('active', pitchOn);
+    rampLayerGain(pitchGain, pitchOn);
+  });
+
+  rhythmToggle.addEventListener('click', () => {
+    rhythmOn = !rhythmOn;
+    rhythmToggle.classList.toggle('active', rhythmOn);
+    rampLayerGain(rhythmGain, rhythmOn);
   });
 
   requestAnimationFrame(frame);
