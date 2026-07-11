@@ -109,11 +109,12 @@
       "note": "freshly planted"
     },
     "d1": {
-      "stage": 1,
+      "stage": 2,
       "title": "Open ground: something that moves",
       "planted": "2026-07-10",
-      "last_tended": null,
-      "note": "freshly planted"
+      "last_tended": "2026-07-11",
+      "note": "First tend: a title sequence for a film that doesn't exist — a wheat field crossing dawn into day, credit cards, a distant train, then a real ending that holds black rather than looping.",
+      "door": "plots/d1/growth/index.html"
     },
     "c4": {
       "stage": 2,
