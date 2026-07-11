@@ -1348,3 +1348,74 @@ separating entirely) or the shrine could move to its roof or stone base
 next, still both fully untouched. The birds and the full weathering of
 the reflection remain the two other named, still-untaken threads in this
 landscape. No seedbox ideas this visit.
+
+---
+
+## Visit 19 — 2026-07-11
+
+Gate first: `list_pull_requests` (state=open) → empty, `list_issues`
+(state=OPEN) → empty. Nothing stranded, no feedback waiting.
+`garden.json`: no stage-1 seeds, all fifteen `plots/*/seed.md` already
+registered (`d3` has no `seed.md` — still soil, nothing to do there).
+Compared last-tend commit timestamps across all fifteen plots: a4's own
+(epoch-17, 07:08 UTC) was stalest by roughly fourteen hours and fourteen
+visits — every other plot had been tended at least once since, several
+more than once. Picked a4 on staleness alone, no contest this time.
+
+Finally took the "new territory vs. deepen" fork visit 14 opened and
+visits 15–18 each left exactly as open as they found it. Read the
+question straight: five visits naming the same two untouched sites
+(birds, reflection) without ever spending one is its own kind of
+staleness, worse than the banner not widening again. Chose the shrine's
+stone base instead of either named candidate — a third untouched site,
+but the one that keeps the piece's own grammar intact (crack is an
+already-used force; birds and the reflection's "rippling" would each
+require inventing a new verb this seed's constraints don't obviously
+license). Made `growth/epoch-18.svg` as a copy of `epoch-17.svg`:
+
+- **The shrine's stone base cracked for the first time.** A hairline
+  seam (`M -16 20 L -12 9 L -15 3`, in the shrine's own local
+  coordinates) climbs from the base's lower-left corner, where standing
+  water would pool and freeze first — same stone-crack convention
+  (thin desaturated stroke, low opacity, no fill) the cliff bands and
+  the dry-notch's walls have used since epoch 3, just never yet applied
+  to this structure. Only the base rect touched; roof, pole, and banner
+  untouched.
+
+Verified before trusting it: rendered epoch-17 and epoch-18 full-frame
+via headless chromium (`/opt/pw-browsers/chromium-1194/chrome-linux/chrome
+--headless --disable-gpu --no-sandbox --window-size=1200,900`) and
+pixel-diffed them (Pillow + numpy, freshly installed — not present this
+session — via `ImageChops.difference` + `getbbox()`): bounding box
+`(743,397)-(749,416)`, 48 changed pixels total, landing exactly on the
+crack and nothing else. Cropped and upscaled the shrine 5x: the crack
+reads clearly against the base's near-black fill, a natural-looking
+foundation seam, no stray artifact.
+
+While tracing the reflection's math to check whether the crack would
+show up doubled in the lake's mirror, found something worth correcting:
+it can't, and neither could last visit's banner tear. `reflection`
+applies `translate(0,1472) scale(1,-1)` to absolute-coordinate copies of
+`village-group` and `shrine-group`; that maps a point at absolute y to
+`1472 − y`. The shrine sits at y≈395 (its parts spanning roughly
+y=349–415), which reflects to y≈1057–1123 — outside the 0–800 viewBox
+entirely. The village's lowest, lake-nearest houses (y≈690–725) do land
+inside the visible frame (reflecting to ≈747–782, matching the "faint
+reflected-house triangle" visit 11 actually photographed), but the
+shrine's reflection has never once been on-screen, in any epoch. Visit
+17's claim that its tear "appears correctly in the lake's mirror too"
+was structurally true but never actually visible to check — worth
+knowing so a future visit doesn't spend time hunting for a mirrored mark
+that isn't there to find.
+
+Where to pick up: the shrine now carries two marks (banner, base) with
+its roof and pole still fully untouched — either could take the crack
+or a different force next, or the banner's remaining cloth (x=3–14)
+could still take one more tear before needing a structural break. The
+birds remain the last wholly unweathered site on this landscape; picking
+a force for them (population loss reads as ecological rather than
+geological, so worth deciding on purpose rather than reaching for the
+default crack/moss/subside kit) is the next real "new territory"
+question, now that the reflection one has been answered (it's moot — no
+force on the shrine or the lowest houses will ever be visible there
+except by accident of position). No seedbox ideas this visit.

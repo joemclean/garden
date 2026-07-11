@@ -27,8 +27,8 @@
       "title": "Erosion",
       "planted": "2026-07-06",
       "last_tended": "2026-07-11",
-      "note": "epoch-17: the shrine banner's fresh tear deepens — the same wind, the same edge, one vertex pulled further in, roughly doubling the sky showing through the flag's tip.",
-      "door": "plots/a4/growth/epoch-17.svg"
+      "note": "epoch-18: the shrine's stone base cracks for the first time — a hairline seam up from its lower corner, the same crack force the cliffs and walls have used since epoch 3, finally reaching the shrine's stone.",
+      "door": "plots/a4/growth/epoch-18.svg"
     },
     "b3": {
       "stage": 4,
