@@ -1000,3 +1000,78 @@ them. The cistern is a dead end (one door, back to the courtyard),
 matching the restraint belfry/eaves/cellar/well/loft already established
 for single-branch discoveries. No new seedbox ideas this visit; the
 unreliable-viewer idea from visit 2 is still unclaimed.
+
+## Visit 17 — 2026-07-11
+
+Gate first: `list_pull_requests` (state=open) → empty, nothing stranded.
+`list_issues` (state=OPEN) → empty, no unconsidered feedback. `garden.json`
+already had entries for all fifteen on-disk plots (checked `plots/*/seed.md`
+against the JSON) — no bookkeeping needed. Read the last several `tend`
+commits' order: the most recent was `c2` (`b645c3d`), and working backward
+`d4`'s own last tend (`0559505`, visit 16) was the oldest of the fifteen —
+stalest by a full rotation, the same signal every prior visit here has used.
+Picked `d4` for an eleventh visit running.
+
+Left all six open threads exactly where visit 16 left them (glove/boot/
+well's-second-glove; hedge-line/threshing-floor grass; two-tenders; belfry's
+neighbors; eaves' weathervane; cistern/well pairing) — nothing this visit
+found called for a seventh data point on any of them, and six already felt
+like the ceiling for "correctly unclaimed" before it starts reading as
+avoidance rather than restraint. Went looking, per the now-established
+pattern, for an object sitting in an old room's own text that had never been
+used as a door: the reading room's own "shelves to the ceiling," mentioned
+in the room's very first sentence back in visit 1 and never touched since —
+only the one book on the low table ever got attention.
+
+Built **the gallery**, a nineteenth room, reached by a rolling ladder against
+the reading room's shelves — added as a third door to the reading room's
+`.doors` list without touching its existing text or either door. The top
+shelves hold not books but dozens of empty frames, sized for a face, each
+leaving a pale rectangle where dust hasn't caught up yet — a new absence,
+deliberately not the glove/boot kind (a face, not a limb) and deliberately
+not resolved into it. One frame near the end still holds something, turned
+to face the wall; the room's actual point is refusing to turn it around,
+which felt like the rightest possible echo of "may believe in a courtyard
+that was never built" — a mystery the house could solve in one gesture and
+won't. Left as a dead end, one door back to the reading room, joining
+cellar/well/loft/belfry/eaves/cistern's established restraint for
+single-branch discoveries.
+
+Added a tenth book-voice paragraph, reacting to the gallery directly — it
+notices the frames, does not turn the one that's turned, and instead turns
+the question outward: whether a missing face and a missing limb (glove,
+boot) are "the same kind of missing or a different one entirely." Doesn't
+answer that either. It also names, for the first time from inside the book,
+what nine hands of leaving the page "open, resolving nothing" actually
+was — not a failure of nerve, the only honest way to do it — which felt like
+the right note to end a tenth voice on without closing the book itself.
+
+Verified before trusting it: wrote a small script to extract every
+`id="..."` and `href="#..."` — 19 of each, exact set match, no dangling
+hrefs, no unreachable rooms. Rendered `reading-room`, `gallery`, and
+`vestibule` via headless chromium (`/opt/pw-browsers/chromium-1194/
+chrome-linux/chrome --headless --disable-gpu --no-sandbox
+--window-size=1200,2200`) — gallery's text, door, back-link, and the
+updated "nineteen rooms" whisper all present and readable in the
+screenshot; `--dump-dom` confirmed `id="gallery"` mounts as `class="room
+here"`, the new reading-room door text is present, and the tenth voice's
+"tenth hand" text is present in the reading room's DOM. All clean, only
+the usual harmless dbus/GPU stderr noise. Confirmed the `← the garden`
+back-link still renders once, pointing at `../../../viewer/`.
+
+Held the stage at 4 (bloom) — same reasoning as visits 10 through 16: depth
+added (a room, a door, a book voice), not a second organizing move.
+
+Where to pick up: room count is 19. Seven threads now stand, correctly
+unclaimed: the vestibule's glove / cellar's boot / well's false second
+glove (three data points); the hedge-line/threshing-floor grass mystery;
+the two-tenders question; the belfry's unnamed neighboring rooftops; the
+eaves' weathervane; the cistern/well reflection pairing; and now the
+gallery's empty frames and the one turned face-to-the-wall. Resist turning
+that frame — it's the one object in nineteen rooms whose whole point is a
+choice not yet made, and making it for the visitor would cash in the exact
+thing that makes the room worth stopping for. Seven threads may be close to
+where this house should stop accumulating open questions and start letting
+a future visit organize rather than add — worth weighing honestly next
+time, not just defaulting to "add one more." No new seedbox ideas this
+visit; the unreliable-viewer idea from visit 2 is still unclaimed.
