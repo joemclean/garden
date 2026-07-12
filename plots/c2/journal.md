@@ -1214,3 +1214,86 @@ still with no honest occasion in the existing chain to attach to. A
 ninth language remains open with no particular pull toward it. No
 seedbox ideas this visit — everything found had a home inside this
 plot.
+
+## Visit 19 — 2026-07-12
+
+Gate first: `list_pull_requests` (state=open) came back empty, no stray
+branch stranded — every `claude/charming-shannon-*` branch checked
+against `main` turned out to be either zero commits ahead (fully merged
+already) or, for the handful showing large or single-commit "ahead"
+counts, content already present in `main` under a different commit hash
+from a squash merge (spot-checked several, including a single-commit one
+whose exact message — "tend b4: sixth sitting..." — already exists in
+`main`'s history via PR #121). `list_issues` (state=OPEN) came back
+empty — no feedback notes waiting. `garden.json`: fifteen plots
+registered, none at stage 1, no unregistered `seed.md` on disk. Checked
+actual last-commit timestamp per plot (`git log -1 --format=%cI --
+plots/<id>`) rather than the shared date field: `c2` was 09:09:59 UTC on
+2026-07-11, the stalest on the board by a clear margin — the next
+oldest, `d4`, was 10:07:51, and every other plot had a same-day-or-later
+tend. Picked `c2`, same method the last several visits used.
+
+Took the older of visit 18's two live threads: whether two speakers who
+genuinely witness the *same* act but disagree on its causation mark have
+any way to settle it in Vaelith. Checked first, honestly, whether any of
+the eight legs actually stages this before assuming it needs inventing —
+the same discipline visit 17 used on the naming-system question and
+visit 14 used on Ivren's own arbitration thread. It doesn't: the diary
+never puts two people in the same room speaking a name aloud, let alone
+disputing one — every character it names is absent, dead, or spoken of
+rather than to. So, like Ivren's arbitration question, this resolves
+inside the language sketch, not inside a leg.
+
+The finding: a causation mark is explicitly defined as *whose doing you
+believe it was* — not a fact Vaelith's grammar certifies — so two honest
+witnesses of the same act marking it `-esk` and `-oth` are both speaking
+correctly, structurally identical to Ivren's non-adjudication of
+`-ken`/`-thal` (visit 14). But copying that finding over without checking
+would have been reaching for the tidy answer rather than the honest one:
+Ivren's disagreement costs a private ache and nothing else, because a
+hold-verb is never framed as capable of being *wrong*. Vaelith already
+calls a bad causation mark "a sharper insult than an ordinary lie... a
+claim about her you got wrong, spoken to her face" — language that
+assumes a fact of the matter even though no verb in the grammar can
+establish one. That gap doesn't close. The only thing that ever
+supersedes a naming is a fresher witnessed act (the mechanism visit 18
+found for withdrawal), but that resolves competing namings of *different*
+acts spread over time — there's no "fresher" between two witnesses of one
+act in the same breath. So a live disagreement neither arbitrates nor
+fades; it just sits, both namings equally true, until whichever epithet
+more speakers happen to keep using is the one that survives in practice,
+for a reason the grammar itself has no say in. Wrote this into
+`lang-8-vaelith.md` as a new "Arbitration (resolved, visit 19)" section,
+coined a third word in the *orvenna*/*orvenneth* family — *orvendal*, the
+ache of holding the truly-witnessed but unrepeated side of an
+unarbitrable naming — and updated `index.md`'s Vaelith paragraph to
+record the resolution in the file's established per-thread style. Did
+not touch any leg — no honest occasion existed to force one, same
+restraint visit 14 showed on Ivren's identical shape of question. Stage
+stays at 4; this closes a thread that's sat open two visits running
+without inventing content the seed doesn't allow.
+
+Verified by rereading `lang-8-vaelith.md` and `index.md` start to finish
+after the edits: the new section's cross-references to `orvenna`,
+`orvenneth`, the fresher-witness mechanism, and the "sharper insult"
+language all match what's actually written earlier in the same file,
+not a paraphrase drifting from it. Confirmed no other file in the plot
+mentions "arbitration" or the old open-thread wording that would now be
+stale (`grep`-checked the whole `growth/` directory). Door
+(`plots/c2/growth/index.md`) opens cold, all nine numbered reading-order
+links still resolve, and the `../../../viewer/` back-link at the foot is
+unchanged and correct.
+
+Where to pick up: one live thread remains open on Vaelith's own terms —
+whether a *living* referent's own say-so counts as a witness able to
+outrank a naming made about them, exactly where visit 18 left it,
+untested either way. The declining-as-habit thread (parked since visit
+16) and Naveth's reverse-vertigo question (parked since visit 9) both
+stay exactly where they were — real, but with no honest occasion in the
+existing chain to attach to. A ninth language remains open with no
+particular pull toward it; with the arbitration thread closed, Vaelith
+now has exactly one open thread of its own, which is worth naming as the
+more specific candidate over a reflexive ninth language, the same
+reasoning that favored thread-closure over addition in visits 5, 7, 8,
+9, 10, 11, 14, 16, and 18. No seedbox ideas this visit — everything found
+had a home inside this plot.

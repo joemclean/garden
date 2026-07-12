@@ -266,12 +266,32 @@ thing in a language built otherwise entirely around what a fresh
 witnessing can overturn. A new untranslatable word, *orvenneth*, names
 the resulting ache and is built deliberately on *orvenna*'s own root:
 one names what the naming-grammar withholds before a name is earned,
-the other what it withholds after one can no longer be corrected. The
-second flagged thread — arbitration between two speakers who disagree
-on a causation mark — stays open, alongside a narrower question this
-visit's finding raised: whether a *living* referent's own say-so counts
-as a witness able to outrank a naming made about them, untested either
-way.
+the other what it withholds after one can no longer be corrected.
+
+Vaelith's second flagged thread — arbitration between two speakers who
+disagree on a referent's causation mark for the same witnessed act — is
+resolved as of visit 19, inside `lang-8-vaelith.md`, and settles the way
+Ivren's own arbitration question did (visit 14): checked first whether
+any of the eight legs actually stages two people present and disputing
+a naming, and none does — the diary never puts two speakers in the same
+room — so the answer lives in the sketch, not a leg. A causation mark is
+explicitly what a witness *believes*, not a fact the grammar certifies,
+so two honest witnesses of one act can mark it *-esk* and *-oth* and
+both be speaking Vaelith correctly, same non-adjudication as Ivren's
+*-ken*/*-thal*. But the stakes differ, and this visit named the
+difference rather than papering over it: Vaelith already calls a wrong
+causation mark "a sharper insult than an ordinary lie," language that
+assumes a fact of the matter the grammar has no verb to establish — so
+a live disagreement never arbitrates and never fades, it just sits,
+both namings equally true, until whichever epithet more speakers happen
+to keep using is the one that survives in practice. A third
+untranslatable word, *orvendal*, names holding the losing (or merely
+unrepeated) side of that standoff, built on *orvenna*'s root for a
+second time — *orvenna* before a witness exists, *orvenneth* after the
+only witness is gone, *orvendal* when two witnesses exist at once and
+neither outranks the other. The narrower thread visit 18 also raised —
+whether a *living* referent's own say-so counts as a witness able to
+outrank a naming made about them — stays open, untested either way.
 
 ---
 
