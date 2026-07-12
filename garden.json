@@ -106,8 +106,8 @@
       "stage": 2,
       "title": "Open ground: something to play",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-11",
-      "note": "Second sitting adds plucking: click any existing connection line (not a star, not empty dark) and it replays that pair's two notes while the line glows and thickens for half a second. A built constellation is now something you go back and play, not just a one-shot chime generator. Stays at sprout.",
+      "last_tended": "2026-07-12",
+      "note": "Third sitting gives every chime a single detune-amount gradient keyed to star.born: fresh stars ring bright and a little unsettled, then narrow toward a calmer overtone over 45s and hold there — so plucking an old connection sounds noticeably steadier than the moment it was made. No new per-star state. Stays at sprout.",
       "door": "plots/b2/growth/index.html"
     },
     "d1": {
