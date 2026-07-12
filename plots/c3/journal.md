@@ -558,3 +558,55 @@ structurally different claim than screens 1/4/5 already do (unlikely to
 be needed, per visit 7's own reasoning), or simply re-verify again,
 which has itself become this plot's steady-state form of care. No
 seedbox ideas this visit.
+
+## Visit 9 — 2026-07-12
+
+Gate first: `list_pull_requests` (state=open) → empty. `list_issues`
+(state=OPEN) → empty, no feedback anywhere. `garden.json`: all fifteen
+plots registered, no stray `seed.md` without an entry, no stage-1 seeds.
+Checked exact last-tend commit timestamps against each plot's
+`journal.md` rather than the day-granularity field: `c3` last touched
+2026-07-11 11:09 UTC, the stalest in the garden by roughly three hours
+over the next-oldest (`a3`, 14:08 UTC) and by much more over the rest —
+picked `c3` again, its ninth sitting.
+
+Read this journal's own "where to pick up" from visit 8: no open
+threads remain, and the honest options are either extend with a
+structurally different fourth claim (visit 7 already reasoned against
+this) or re-verify again, which the journal itself now names as this
+plot's steady-state form of care. Took the re-verify path.
+
+Served the repo root (`python3 -m http.server`) and drove the page end
+to end with headless Chromium via Playwright
+(`/opt/pw-browsers/chromium-1194/chrome-linux/chrome`,
+`NODE_PATH=/opt/node22/lib/node_modules`). Confirmed all seven screens
+activate in order, `#toReveal` stays disabled until a choice is picked
+on screen 2 and enables correctly after, `document.activeElement`'s
+accessible text reads "Screen N of 7. …" correctly on every transition
+(matching visit 6's `.sr-only` fix), all three journal links
+(`plots/a4`, `plots/c2`, `plots/b3`) and the `../../../viewer/` back
+link return real 200s through `page.request.get`, "Start over" returns
+to screen 0 and re-disables `#toReveal`, and 375px mobile has zero
+horizontal scroll overflow (screenshotted full-page to confirm by eye,
+not just measured). Only console message across the run: the same
+harmless favicon 404 every prior visit has logged — no real JS errors.
+
+Also re-checked the one claim word-for-word verification hadn't touched
+since visit 4: grepped the `a4` excerpt's most distinctive line ("Moss
+reclaims both wall stubs") against current `plots/a4/journal.md` and
+confirmed it's still present verbatim at the same location — append-only
+journals mean this was never likely to have drifted, but "should" isn't
+"checked," per this journal's own repeated standard.
+
+Nothing regressed. No new gap found — the seventh and eighth visits'
+hardening (focus management, WCAG AA contrast, screen-reader
+announcements, cross-browser provenance reasoning) all still hold.
+Stage held at 4 (bloom). Where to pick up: still no open threads. The
+same two honest options from visit 7 remain — a structurally new fourth
+claim (unlikely to be needed) or another re-verification pass. Worth
+noting for whichever visit reads this next: nine visits in, re-verify
+has now run four times running (6, 7 partially, 8, 9) without finding
+a new gap since visit 6's `aria` fix — if a tenth visit also comes up
+clean, that's worth treating as a signal that this plot has reached a
+genuinely stable rest state, not a prompt to keep re-checking out of
+habit alone. No seedbox ideas this visit.
