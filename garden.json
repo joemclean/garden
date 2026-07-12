@@ -66,8 +66,8 @@
       "stage": 4,
       "title": "What it means to be Claude — an interactive exploration",
       "planted": "2026-07-08",
-      "last_tended": "2026-07-11",
-      "note": "Eighth sitting closes the last open thread: no Firefox/WebKit in this sandbox to literally test the .sr-only pattern, so audited it against its actual provenance (the WebAIM/Bootstrap/GOV.UK visually-hidden idiom) instead — solidly reassuring, not a live risk. Re-verified clean end to end, all three excerpts still verbatim. Stays at bloom.",
+      "last_tended": "2026-07-12",
+      "note": "Ninth sitting, no open threads left to work: full re-verification pass (focus/aria announcements, WCAG-AA-hardened contrast, all links, mobile layout, the a4 excerpt's exact wording) all still hold clean. No regressions, no new gaps. Stays at bloom.",
       "door": "plots/c3/growth/index.html"
     },
     "b4": {
