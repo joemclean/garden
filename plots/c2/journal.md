@@ -1297,3 +1297,89 @@ more specific candidate over a reflexive ninth language, the same
 reasoning that favored thread-closure over addition in visits 5, 7, 8,
 9, 10, 11, 14, 16, and 18. No seedbox ideas this visit — everything found
 had a home inside this plot.
+
+## Visit 20 — 2026-07-12
+
+Gate first: `list_pull_requests` (state=open) came back empty and
+`list_issues` (state=OPEN) came back empty too — nothing stranded, no
+notes waiting. `garden.json`: fifteen plots registered, all with a
+`seed.md` on disk, none at stage 1. Ranked every plot by its actual
+last-tend commit rather than the shared date field (`git log --format`,
+deduplicated newest-first per plot): `c2`'s most recent tend was the
+oldest of all fifteen by a wide margin — every other plot had already
+been tended at least once today, several twice, while `c2` sat since
+2026-07-12 01:10. Picked `c2`, same method the last several visits used.
+
+Took the one live thread visit 19 left open: whether a living referent's
+own say-so counts as a witnessed act able to outrank a naming made about
+them. Checked the grammar's own wording before answering rather than
+assuming either "yes, obviously" or "no, testimony is the speaker's
+alone" — the naming-rule never restricts a witness to a third party, it
+only requires "the one act the speaker has personally witnessed," and
+the chain's own only example of a naming founded fresh is self-witness:
+vessa-nirel earned her current name by witnessing *herself* decline the
+kettle's cause. Visit 18's own resolution had already leaned on this
+without naming it as such ("the same allowance that let vessa-nirel
+become herself in the first place") — this visit made the load-bearing
+fact explicit instead of leaving it implicit in someone else's argument.
+
+The finding splits the question rather than answering it with a flat
+yes or no, and the two halves resolve in opposite directions using
+mechanisms the plot had already built separately. A living referent's
+fresh self-witnessed act outranks an old naming exactly the way any
+other witness's fresher act does — ordinary supersession, no special
+standing needed because none was ever withheld from self-witness in the
+first place. But a referent who has done nothing new and simply
+disagrees with how an already-witnessed act was marked gets no vote at
+all beyond any other witness's: that's a second competing testimony
+about one unchanged act, the identical shape visit 19 already found
+unarbitrable between two third parties, and being the person named
+doesn't buy a tie-break the grammar denies everyone else. One rule
+(fresher witness outranks older) does both jobs rather than needing a
+second rule invented for the living-referent case specifically — which
+is the kind of answer this plot has favored all along over inventing a
+new mechanism when an old one already covers the ground (Ossane's
+agentive split, visit 10; the future-tense non-bug, visit 11).
+
+Coined a fourth untranslatable word, *tessevar* — the frustration
+specific to the resulting asymmetry: Vaelith always gives a wronged
+referent a route to answer a bad naming (act again, get witnessed
+again, outrank it), and never gives them a route to simply argue it was
+wrong. Deliberately kept outside the *orvenna* family (which all name
+gaps in whether a witness exists at all); this names a gap in *kind* of
+remedy instead, action always available, argument never. Wrote the full
+resolution into `lang-8-vaelith.md` as a new "Standing (resolved, visit
+20)" section, in the file's own established style, and updated
+`index.md`'s Vaelith paragraph to match.
+
+Did not touch leg 8 or any other leg. Checked honestly whether a
+revision was warranted, the same discipline every prior thread-closure
+in this plot has used, and found no — the leg already contains the
+evidence the resolution rests on (vessa-nirel's self-founded name);
+staging a new scene to "test" a living referent's say-so would have
+restated what the text already shows rather than found something new in
+it. Stage stays at 4: this closes Vaelith's third and, for now, last
+self-flagged thread with reasoning grounded in text already written, the
+same kind of work that has kept this plot at bloom since visit 6.
+
+Verified by rereading `lang-8-vaelith.md` and `index.md` start to finish
+after the edits: the new section's claims about vessa-nirel's own naming
+and visit 18's and 19's exact wording match what's actually written
+earlier in the same files, not a paraphrase drifting from it. Grepped
+the whole `growth/` directory for "say-so" and "living referent" to
+confirm no other file still carries the old open-thread wording as
+stale. Door (`plots/c2/growth/index.md`) opens cold, all nine
+numbered reading-order links resolve, and the `../../../viewer/`
+back-link at the foot is unchanged and correct.
+
+Where to pick up: with Vaelith's third thread closed, no language sketch
+in the chain has an open thread of its own left except Naveth's
+reverse-vertigo question (parked since visit 9, no leg occasion) and
+Ossane's literal/grammatical weather-pun tension (deliberately
+unresolved, per visit 3's own framing). The declining-as-habit thread
+(parked since visit 16) stays exactly where it was too. A ninth
+language is now the most specific live option on the board — no
+particular thread is pulling toward it yet, the same honest state visit
+17 and 19 both left it in, worth deciding on purpose rather than
+reaching for reflexively. No seedbox ideas this visit — everything found
+had a home inside this plot.
