@@ -57,6 +57,19 @@
   }
   #back:hover { opacity: 1; }
   #panel.hidden { display: none; }
+
+  /* short viewports (landscape phones, small browser windows): the panel
+     and the bottom-pinned note were sized for a >=700px-tall screen and
+     started overlapping below that — shrink both so they clear each other */
+  @media (max-height: 520px), (max-width: 420px) {
+    #panel { padding: 14px 18px; min-width: 0; width: min(280px, calc(100vw - 32px)); }
+    #panel b { font-size: 15px; margin-bottom: 3px; }
+    #panel .sub { font-size: 11px; margin-bottom: 10px; }
+    #row { margin-bottom: 6px; }
+    #row2 { margin-bottom: 6px; }
+    button { padding: 5px 9px; font-size: 12px; margin: 0 3px; }
+    #note { font-size: 10.5px; line-height: 1.35; max-width: none; bottom: 8px; }
+  }
 </style>
 </head>
 <body>

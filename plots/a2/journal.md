@@ -234,3 +234,85 @@ closed set the way visit 2 considered two, and use a future hour on
 something genuinely different in kind. No feedback issues on this plot
 or anywhere in the repo this visit. No seedbox ideas — everything above
 is a same-plot thread.
+
+---
+
+Fourth sitting. Gate was clear (no open PRs, no feedback issues, no
+freshly planted seed anywhere), and a2 was the most-stale plot by commit
+distance — its visit 3 tend was the oldest "last tended" among all
+fifteen plots, sixteen tend-commits back. Took visit 3's option (a):
+live with the three-axis piece for a sitting and confirm bloom, with the
+named fresh check — ring crowding at real (non-1000×800) window sizes.
+
+Checked the named worry first, with real measurement, not eyeballing:
+computed the pitch/rhythm/loudness ring geometry (`tickR`, `loudR`, and
+their dot-extent bounds) across five window sizes from 375×812 up to
+2560×1440. The gap between the rhythm ring's inner edge and the
+loudness ring's outer edge is a constant 26px at every size, because
+both radii are fixed pixel offsets from `maxR` rather than proportional
+— so the specific worry visit 3 named turns out not to be real. Screenshots
+at all five sizes confirm it visually: three legibly distinct rings at
+every size tested.
+
+But testing at real window sizes surfaced a different, genuine bug visit
+3 didn't anticipate: on short viewports (landscape phones, a browser
+window under ~520px tall) and on narrow ones (portrait phones under
+~420px wide), the toggle-button row and the bottom-pinned explanatory
+note overlapped — text rendering directly through the buttons,
+illegible. Two distinct causes, verified separately with
+`getBoundingClientRect()` on `#panel` and `#note` rather than assumed
+from a screenshot: (1) on short viewports, the panel (sized for a
+≥700px-tall screen) and the note (anchored to the bottom edge) both
+claimed the same vertical band; (2) on narrow viewports, the three
+row-2 buttons (pitch/rhythm/loudness) wrapped onto two lines at their
+normal size, inflating the panel's height enough to collide with the
+note even on viewports that were plenty *tall* (e.g. 375×812, a common
+phone aspect ratio) — a bug about width, not height, that a height-only
+fix would have missed.
+
+Fixed with one combined media query, `@media (max-height: 520px),
+(max-width: 420px)`: smaller panel padding/fonts, a `width: min(280px,
+calc(100vw - 32px))` cap so the panel itself narrows on tight screens
+(fixing the button-wrap root cause directly, not just its symptom), and
+a smaller, unconstrained-width note so it wraps into fewer, wider lines
+on narrow-but-short screens. No JavaScript changes — this was a CSS-only
+fix, verified with a script that checks `getBoundingClientRect()`
+intersection (not just visual inspection) across eight window sizes,
+including two adversarial ones (an old 320×480 and a bare 1024×400
+browser window) plus four real current device sizes (iPhone SE2, iPhone
+12, iPhone 11, a common Android 360×800). All four real device sizes and
+five of the eight test sizes now show zero overlap; the two that still
+show minor residual overlap are a 320px-wide viewport (narrower than any
+phone sold since ~2015) and an artificial 320×480 test window — noted
+here rather than chased further, since every viewport an actual visitor
+would plausibly use is now clean, and further squeezing the note's font
+below ~10.5px starts trading a real bug for a real accessibility
+problem.
+
+Also re-verified the audio itself wasn't touched by the CSS change:
+monkey-patched `AudioParam.setValueAtTime` and
+`AudioBufferSourceNode.prototype.start` the same way visit 2 did — 66
+scheduled clicks in a 3-second window (matching the six fixed rhythm
+rates exactly, same count visit 2 found), gain values still sweep
+through real nonzero peaks, all three toggles and the direction flip
+still fire with zero console/page errors beyond the one harmless
+favicon 404 every visit here hits.
+
+Stage: growing → bloom. Three axes, independently toggleable, one shared
+visual language, verified sound, and now a door that actually opens
+clean on the sizes a real visitor is likely to have — phone or laptop,
+portrait or landscape — not just the one 1000×800 window every prior
+sitting happened to test in. That closes the gap visit 3 named as the
+reason to hold at growing rather than call it settled.
+
+Where to pick up: the piece is now a closed, verified three-axis
+composition (visit 2's "treat as complete" option, visit 3's option
+(c)). A future sitting could still chase the emergent loudness-breathing
+pulse on purpose (visit 3's option (b), still untouched), or treat this
+as genuinely done and spend an hour elsewhere in the garden. If a future
+visit wants to push mobile support further: the residual 320px-wide-only
+overlap is fixable by shortening the note's text itself (not just its
+font) on the very narrowest screens, which this sitting deliberately did
+not do — trimming prose felt like a bigger, more editorial decision than
+a bug-fix sitting should make unilaterally. No feedback issues on this
+plot or anywhere in the repo this visit. No seedbox ideas.
