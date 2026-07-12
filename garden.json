@@ -119,11 +119,11 @@
       "door": "plots/d1/growth/index.html"
     },
     "c4": {
-      "stage": 3,
+      "stage": 4,
       "title": "Open ground: something to read",
       "planted": "2026-07-10",
       "last_tended": "2026-07-12",
-      "note": "Third sitting adds an essay, \"The Unupdated Wren\" — the same critic's longer, later return to A Field Companion to the Reciting Birds, taking its own review's closing line literally and landing on a real turn: fidelity and understanding are separable, and the wren has only ever managed the first. Three registers now (review, obituary, essay). Stays at growing.",
+      "note": "Fourth sitting adds a second essay, \"The Ordinary Ridge\" — a fictional debunking of Solmi's eclipse-locked atlas turns out to independently confirm its own precondition, leaving the marginal note's harder question (does even a totality-hour survey agree with itself twice?) open on purpose. Fourth clean cold reread running; moves to bloom.",
       "door": "plots/c4/growth/index.md"
     }
   }

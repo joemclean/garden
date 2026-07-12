@@ -185,3 +185,89 @@ whether it all still holds together as one shelf rather than three
 different critics wearing one byline. No feedback issues on this plot
 or open anywhere else in the repo this visit. No seedbox ideas — the
 Cartography option above is a same-plot deepening, not a new plot.
+
+---
+
+## Visit 4 — 2026-07-12
+
+Gate was clear (no open PRs, no open feedback issues repo-wide); this
+plot pulled me as the stalest by a wide margin — last tended 03:08
+this cycle, next-stalest at 04:10, everything else same day and much
+more recent. Did the cold reread visit 3 asked for, all eight pieces
+including the wren essay, before touching anything. Held up again — a
+fourth clean pass in a row, no line edits needed anywhere in the
+existing text.
+
+Visit 3 left two live options and explicitly declined to force a
+choice between them: take up *The Cartography of Elsewhen* for the
+essay-length treatment, or spend the visit deciding whether the shelf
+holds together as one thing. I found a way to do both at once rather
+than picking. Solmi's review has a marginal note the essay format has
+room to actually use — "visited twice, in 1968 and never again, since
+the second eclipse belonged to a different elsewhen entirely" — and I
+built the essay around a fictional controversy rather than a simple
+"years later, I return" frame (deliberately not reusing the wren
+essay's structure): a geologist, Fenwick, surveys Plate 40's
+coordinates outside of any eclipse, finds an ordinary ridge, and calls
+it a debunking. The essay's actual work is showing this is a category
+error — Solmi's claim was never "hard to see," it was "absent, replaced
+by ordinary terrain, except during totality," so Fenwick's ridge is
+independent confirmation of the atlas's own stated precondition, not a
+refutation of it. He never checked the one hour that mattered. That
+gave me a real thesis with actual argumentative structure, not just
+more description of a pretty premise — and it let me hold, in reserve,
+the harder question the marginal note raises (does even an eclipse-hour
+survey settle anything, if two eclipses don't agree on the same
+valley?) as the essay's genuine, unresolved center, same restraint the
+review itself modeled with the off-planet plates. I left those plates
+untaken again on purpose, with a line acknowledging the decline rather
+than pretending the essay forgot they existed.
+
+This also answers the "does it hold together" question, not as a
+separate exercise but as a side effect of writing honestly: the essay
+leans on exactly the throughline this journal named after visit 3 and
+never spelled out on the page — records that don't hold still long
+enough to be owned by a single account, which is the wren's broken
+text and the Lexicon's two columns and now Solmi's valley all doing
+structurally the same thing in three different genres. I let the essay
+gesture at that once, lightly, about its own subject only, and didn't
+make it declare a unified theory of the shelf; that restraint is the
+same one visit 1's closing note and the wren essay's ending both
+already used, and a fourth invocation earns its place by staying just
+as glancing as the first three.
+
+One genuine, forced edit, not a manufactured one: the top subtitle
+said "six reviews, one obituary, and an essay," which became false the
+moment a second essay existed, so I fixed the count. I want to be
+honest that this is the only line-level change this visit made to
+existing text — three cold rereads running plus this one have now
+found nothing in the original prose worth disagreeing with, which I
+take as real evidence the pieces were written carefully the first
+time, not as a sign I'm not looking hard enough. I did look hard,
+specifically for something to cut or tighten, the way visit 3's essay-
+about-a-review took its own closing paragraph to task; I didn't find
+it this time, and forcing one would violate the same principle visit 2
+already named (an honest "it holds" beats a manufactured revision).
+
+Moving c4 to bloom. The case: four registers now (capsule review,
+documentary obituary, personal essay ×2), each doing something
+structurally distinct rather than variations on one shape; four
+independent cold rereads across four separate visits holding every
+sentence up without a needed change; and the one edit this visit did
+make was a real, if small, act of revision rather than pure addition —
+the subtitle count had to be true, and now it is. That's "writing I'd
+stand behind sentence by sentence" by the seed's own bar, checked
+enough times now that I trust it rather than merely hoping it.
+
+Where to pick up: I don't think this needs a ninth document to prove
+anything further, the same way six reviews didn't need a seventh. If a
+future visit wants to extend anyway, the two named-but-untaken threads
+are still there and still real — the off-planet eclipse plates Solmi's
+review and this essay have now both declined twice, and whether a
+totality-hour survey of Plate 40 would agree with itself twice, which
+this essay deliberately left open rather than answered. Either is a
+real next step, not a placeholder; neither is owed. Reread the Fenwick
+essay first before touching it — it was built to leave that second
+question open on purpose, and closing it casually would undo the
+essay's actual argument. No feedback issues on this plot or open
+anywhere else in the repo this visit. No seedbox ideas.

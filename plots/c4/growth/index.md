@@ -1,6 +1,6 @@
 # The Unwritten Shelf
 
-*six reviews, one obituary, and an essay*
+*six reviews, one obituary, and two essays*
 
 ---
 
@@ -410,6 +410,103 @@ just to end tidily.
 rest of the forty their due slowly, over years you don't plan for in
 advance. Some books are reviewed once. This one, I've learned, is
 returned to.
+
+---
+
+## An Essay: The Ordinary Ridge
+### for *Notes on Speculative Cartography*, no. 9 (1994)
+
+A geologist named Anders Fenwick published, last spring, a short paper
+in a regional survey journal reporting that he had located the exact
+coordinates of Plate 40 in Petra Solmi's *Cartography of Elsewhen* —
+the valley whose marginal note reads "visited twice, in 1968 and never
+again, since the second eclipse belonged to a different elsewhen
+entirely and I have not found my way back to the first" — and walked
+it, on four separate occasions, none of them during an eclipse of any
+kind. He found a ridge. Unremarkable, continuous, correctly mapped by
+the ordinary regional survey already on file, with no valley-shaped
+gap in it, no absence, nothing that required an atlas to explain. He
+called this a debunking. I have spent a year deciding he is wrong
+about what he found, and I think the reason is worth an essay rather
+than a letter to the journal, because it isn't really about Solmi at
+all. It's about what a survey can and can't be evidence against.
+
+Reread the original claim carefully, which I confess I hadn't in the
+eleven years since I first reviewed it: Solmi never wrote that the
+valley is invisible the rest of the time, hiding behind some trick of
+light or angle. She wrote that it is *absent* — not there, in any
+sense, "including the geological" — until totality, at which point it
+arrives complete with ten thousand years of weather and river-work it
+did not otherwise have. The plain question her book has always
+implied, and that I have apparently spent eleven years not asking, is:
+absent in favor of *what*? An atlas that removes a valley from the
+map for all but a few minutes a century still owes the terrain
+something to stand in for it the rest of the time, unless it means to
+claim a hole in the world that nothing fills, which even Solmi's
+testiest footnote never quite claims. The answer the book was always
+implying, and Fenwick has now gone and confirmed without meaning to,
+is: an ordinary ridge. Correctly surveyed. Exactly where the regional
+maps already put it. Fenwick did not find the absence of Solmi's
+valley. He found its stated precondition, verified in the field, by a
+man who never once checked the one hour in which the atlas's actual
+claim could have been tested and apparently never noticed that this
+was the hour that mattered.
+
+I don't want to overstate what this gets Solmi, because it doesn't get
+her much — a survey conducted at the wrong time proves nothing about
+the right one, in either direction, and I'm not in a position to tell
+you what a walk across that ridge during totality would turn up any
+more than Fenwick was. What it gets her is narrower and, I think, more
+interesting: it shows that her critics have mostly been debating a
+weaker, more literal version of her claim than the one on the page —
+a valley that's merely hard to see, that a sufficiently careful survey
+should eventually catch out — when the atlas was never that modest to
+begin with. Solmi's testy footnotes, which I called merely testy in
+the original review, read differently once you notice this. They are
+not defending a shy valley from careless readers. They are correcting
+readers who assumed a shy valley was the claim, which is a more
+specific and more embarrassing error to keep making across two
+decades of print. I owe her the acknowledgment that I made a version
+of it myself, gently, by never asking what fills Plate 40 at three in
+the afternoon on an ordinary Tuesday. It fills it with exactly what
+Fenwick found. That was never in dispute.
+
+What is in dispute, and what Fenwick's paper doesn't touch at all, is
+the marginal note — the one honest crack in Solmi's own confidence,
+the admission that she went back to that same valley for a second
+eclipse and didn't find the first one waiting for her, only a second
+elsewhen she doesn't claim was continuous with it. If she's right
+about that, then even a survey conducted during totality wouldn't
+settle the question the way Fenwick's regional-survey instincts
+assume a settled question should behave, because there may be no
+single valley at Plate 40 to confirm or deny — only a sequence of
+valleys, each arriving whole and departing whole, agreeing with each
+other about nothing except the coordinates they briefly share. A
+science built on repeatable observation doesn't have very good tools
+for a site that keeps its geology but not its history from one
+observation to the next, and I don't think that's a flaw in the
+science. I think it's the one place Solmi's atlas gets to be
+completely serious about a joke every cartographer already halfway
+believes — that a map is a claim about a moment, dressed up, by
+convention, as a claim about a place.
+
+I'm not going to take up the three off-planet plates here either, the
+lunar eclipses of planets Solmi was never in a position to have
+observed. The original review declined to explain them and I still
+think that was right; an essay with more room isn't obligated to fill
+every silence the shorter piece left standing, and some silences are
+the point. But I'll admit, now that a working geologist has quietly
+proven Solmi more literal-minded than her reviewers gave her credit
+for, that I hold those three plates a little differently than I did
+in 1971's aftermath. Not as the atlas's most fantastical claim
+anymore. As a dare to whichever of us finds the coordinates and checks
+the right hour.
+
+Fenwick's paper closes by calling the matter settled. I don't think a
+ridge that agrees with every hour except the one that was ever in
+question gets to settle anything, and I'd rather leave it exactly
+where the marginal note leaves it — unfound a second time, honestly,
+by someone who looked.
 
 ---
 
