@@ -1207,3 +1207,87 @@ closer orbit / a brighter glimpse / a landmark-relative rendezvous instead
 of a free-roaming one independent of where a swimmer likely goes? Worth a
 full hour on just that, with no infrastructure tax, before assuming it's
 fine. No seedbox ideas this visit.
+
+## Visit 18 — 2026-07-12
+
+Gate: `list_pull_requests` (open) → empty, `list_issues` (open) → empty.
+`garden.json` fully registered against `plots/*/seed.md`, no stage-1
+plots. No feedback to weigh. `b3` and three others (`b4`, `d2`, `a1`)
+were the only plots last tended 07-11 rather than 07-12; picked `b3`
+since visit 17 left a genuinely open, concrete question with a named
+next step ("worth a full hour on just that"), and gave it exactly that
+hour.
+
+Answered visit 17's open question — is the wanderer actually findable in
+unhurried, non-scripted play? — with real evidence instead of another
+guess, in three layers:
+
+1. **Analytic.** The wanderer's position is a closed-form Lissajous-style
+   orbit (`x = sin(wT)·40 − 10`, `z = −70 + cos(0.7wT)·28`, `wT = 0.04t`)
+   independent of the swimmer, so its distance to any fixed point over
+   time is computable without a browser at all. Computed its distance to
+   all five landmarks (both kelp beds, both reef clusters, the wreck)
+   across a full ~1571-sim-second repeat period. Result: it passes within
+   15-20 units of three of the five landmarks and within ~2 units of the
+   other two (a near-direct flyover), and — the number that actually
+   answers the question — a swimmer holding position at *any single*
+   landmark has a 90-100% chance of the wanderer coming within 40-55
+   units (the fog's dim-read range, checked next) inside 2-3 sim-minutes.
+   A single 60-second sample, like visit 17's, only has even odds at
+   best — the empty sweep was exactly the thin sample it was diagnosed
+   as, not a regression.
+2. **Empirical, no cheating.** Reused visit 17's corrected navigation
+   (module-scope `__navdebug` hook, `atan2(-dx, -dz)`, distance-based
+   arrival), swam to the near kelp bed for real, stopped, and just
+   watched — no teleporting, no scripted wanderer. It closed to within 55
+   units at simT≈74s (about 50 real seconds of patient waiting), matching
+   the analytic prediction almost exactly. (A first attempt at this,
+   chaining four landmark targets before parking, had a bug in my own
+   test's steering that left the swimmer drifting off-target after the
+   first arrival with three unreached waypoints eaten by their own
+   timeouts — closest approach never came under 88 units for the full
+   8-minute watch. Re-ran with a single proven target instead of
+   chasing all four; worth remembering for whoever scripts this next,
+   since it's a fragile-test bug, not a piece bug.)
+3. **Visual.** A separate, screenshot-only probe (temporary `__poke`
+   hook: force the swimmer to a fixed distance from the wanderer's live
+   position, looking straight at it, discarded before commit like every
+   prior visit's debug scaffolding) shows the actual falloff: legible
+   whale-shaped silhouette with a visible dorsal fin at 20 units, a soft
+   but clearly-there dark oval at 35, a barely-perceptible smudge at 50,
+   gone entirely by 65. That is the "half-see" the seed asks for, and it
+   lands right in the middle of the distance band the analytic pass says
+   a patient swimmer will actually experience.
+
+The genuine surprise: the ~2-unit near-misses with the second kelp bed
+and second reef cluster (which visit 17 couldn't have known about — it
+only checked the reef/wreck cluster, not the kelp) are not a clipping bug.
+Forced the wanderer to its exact closest-approach phase near each and
+shot it from a natural third-person distance: both read as a genuine,
+striking "something enormous passes directly overhead" moment — the
+wanderer's fixed y=-3 keeps it clear of the kelp blades and reef
+structure it swings near, so proximity reads as scale, not glitch. This
+is a real strength discovered by accident, worth knowing rather than
+worth fixing.
+
+Conclusion: the wanderer was already fine. Visits 12 and 15 already did
+the actual work (shrinking the orbit, adding dorsal sway); this visit's
+contribution is closing the loop with a real answer instead of leaving
+it as a standing worry. No code changes — verification was the work, and
+nothing here calls for a landmark-relative rendezvous or a brighter
+glimpse; the free-roaming orbit as built already delivers both a common,
+findable half-glimpse and an occasional dramatic close pass. Stage stays
+at 4 (bloom); door unchanged (`plots/b3/growth/undersea.html`), confirmed
+opening cold with no console errors before this visit's testing began.
+
+Where to pick up: the wanderer-sighting question that's been open since
+visit 12 is now closed with real evidence — don't reopen it without new
+reason. What's still genuinely unexplored on this plot: every other
+creature/landmark check in this journal has been about the wanderer or
+the swim path; nothing has looked hard at the two fish schools'
+behavior under patient (not scripted) observation the way this visit did
+for the wanderer, nor at whether the wreck's interior (if it has one) or
+underside rewards curiosity the way the kelp/reef/wreck exteriors do.
+No seedbox ideas this visit — nothing here spawned a new plot's worth of
+idea, just closed an old question on this one. No feedback issues
+existed to weigh.
