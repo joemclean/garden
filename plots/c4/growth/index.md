@@ -1,6 +1,6 @@
 # The Unwritten Shelf
 
-*six reviews, and one obituary*
+*six reviews, one obituary, and an essay*
 
 ---
 
@@ -299,6 +299,117 @@ She is survived by no children, by the Lexicon's several hundred
 readers, and by an uncle forty years dead, in whose defense she went
 on arguing, in two hands, long after there was only one hand left to
 hold the pen.
+
+---
+
+## An Essay: The Unupdated Wren
+### for *The Migratory Quarterly*, no. 14 (1996)
+
+Eight years ago, in a shorter and less honest piece than this one, I
+called *A Field Companion to the Reciting Birds* "the entry I keep
+returning to without meaning to," and filed it under minor-key,
+alongside forty other capsule verdicts that same season, and moved
+on. I did not mean to keep returning to it. I have kept returning to
+it. This is the essay that admits the first sentence was a dodge —
+not because it was wrong, but because "without meaning to" is a
+critic's way of declining to say why, and I think by now I owe Yeva
+Mirsk's book an answer to why.
+
+The premise, briefly, for readers who missed the original notice: in
+the country the *Companion* invents, birds do not sing. They recite.
+A given species' call is not sound produced in a moment but a fixed
+text, passed down with the fidelity of a chant rather than the drift
+of a song, so that hearing a wren is closer to hearing a psalm read
+aloud by someone who has never once been told what the words mean
+than to hearing anything we would call birdsong. Mirsk catalogs forty
+species this way — not by plumage, not by range, but by recitation —
+and the effect, taken one entry at a time, is the "lovely, melancholy
+idea" I called it then. Taken as a whole, sat with for eight years,
+it is something closer to an argument, and the argument is about what
+survives a fact once the fact stops being true.
+
+Take the wren again, since I already put half of it on the record.
+Its recitation names eleven rivers, nine of which have since gone
+dry. That sentence does most of its work by understatement — Mirsk
+never tells us when "since" begins, whether the rivers dried up
+across the wren's own lifetime or across the eleven generations of
+wrens it took to notice nothing had changed in the text while
+everything had changed in the ground beneath it. The bird has not
+updated. This is presented, correctly, without alarm; updating is not
+a thing this species does, any more than a hymnal revises its own
+verses because a described garden has since been paved. But sit with
+the entry a while and the not-updating stops reading as a comic
+detail and starts reading as the whole point of the guide: these are
+creatures that are, functionally, the last accurate witnesses to a
+world that has since moved on without telling them, reciting a map
+that was once true of the actual ground and is now true of nothing
+except itself.
+
+The entry I had underrated in 1988 is the crake's. Mirsk gives it four
+sentences and I gave it none, which was my error. The marsh crake, per
+the *Companion*, recites what reads unmistakably like a border treaty
+— not narrative, not lament, but the dry legal cadence of a clause: *"the
+southern bank remains, in perpetuity, unclaimed by either party, its
+reeds to be cut by neither, its herons to answer to neither's law."*
+No river is named, no party is named, no date is given, and Mirsk adds
+only that "no such treaty is known to have been signed, by any two
+parties, over any bank, in the recorded history of the region" — a
+sentence that does to a legal document exactly what the wren's silence
+about drying rivers does to a hymn: it turns the absence of a referent
+into the entry's real subject. A treaty needs two signatories and a
+territory to mean anything as a treaty. Recited by a bird that has
+neither, over reeds that may never have needed protecting, it
+survives instead as pure form — the shape law makes stripped of every
+condition that made it lawful, which is a stranger and colder image
+than anything the wren manages, precisely because a border dispute
+sounds like it should be about something, and here it is about
+nothing that anyone, crake or historian, can any longer produce.
+
+I don't think Mirsk is asking us to solve where these texts came from,
+and to her credit she never gestures at an answer — no scholarly
+apparatus, no in-book theory of origin, which I praised in 1988 as
+restraint and will praise again now as something closer to intellectual
+honesty. But eight years of returning to this book without meaning to
+have left me with a guess I'll offer anyway, since an essay is allowed
+what a four-hundred-word review isn't: I think the forty species,
+taken together, are not forty separate mysteries but fragments of one
+much larger text that broke, at some point long before any observer
+was recording, into pieces small enough for forty different species
+to carry one apiece — the way a shattered dictionary might scatter
+mid-argument across the whole distance between a letter and the
+descendants of the people arguing it, except no descendant here has
+any idea a second half exists to reconcile with, or that reconciling
+was ever the point. Each bird faithfully recites its shard and none of
+them has ever met a bird reciting the neighboring shard closely enough
+to notice the seam. That is a theory with no evidence in the text and
+I want to be honest that it's mine, not Mirsk's — but the alternative,
+that forty unrelated ancient texts happened to survive by an identical
+and otherwise unattested mechanism, strains harder than one broken
+original does.
+
+What I keep landing on, on the ninth or tenth return, is that the
+"melancholy" I flagged in 1988 was aimed at the wrong target. It isn't
+melancholy that the rivers dried up and the wren doesn't know. Rivers
+dry up; species outlast the geography they were named for; this is
+ordinary and not sad in itself. What's sad, if anything here is, is
+narrower and closer to home: that fidelity and understanding turned
+out to be two entirely separable achievements, and the wren has
+managed only the first, perfectly, for as long as anyone has been
+listening — word-exact, generation after generation, with no loss and
+no comprehension and, crucially, no need of either to keep singing.
+Nine dry rivers have not cost it a syllable. I doubt eleven would.
+I don't know a comparable image for the fear that fidelity is not the
+same thing as understanding and that the second is not required for
+the first to persist indefinitely — I looked for one in this shelf's
+other entries before writing that sentence and didn't find it, which
+is its own small relief, and I am not going to manufacture one now
+just to end tidily.
+
+**Verdict**, if this essay still owes the reader one: read the
+*Companion* for the wren and the crake, in that order, and give the
+rest of the forty their due slowly, over years you don't plan for in
+advance. Some books are reviewed once. This one, I've learned, is
+returned to.
 
 ---
 

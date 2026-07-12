@@ -117,3 +117,71 @@ Stage: sprout → growing. A second, formally distinct piece exists that
 deepens rather than repeats the first, and the plot's identity — a
 shelf of invented books *and* the people behind them — is now clearer
 than "six reviews" alone stated it.
+
+---
+
+## Visit 3 — 2026-07-12
+
+Reread all seven existing pieces cold, including the obituary, before
+touching anything — no line edits again; visit 2's read held up and I
+had nothing to add to Ines Vasch-Dorn's entry that wouldn't have
+undercut the thing it currently trusts the reader to infer, which
+visit 2 explicitly warned against.
+
+Visit 2 left two live options: a second obituary/letter-register
+document for a different author, or the essay-length single-book
+treatment on *A Field Companion to the Reciting Birds* or *The
+Cartography of Elsewhen*. It also warned, in the same breath, against
+making the obituary register the plot's second personality — one
+example earns its place, a second so soon would just be a rut. So I
+took the essay, and specifically the birds, since the original
+review's own closing line — "the entry I keep returning to without
+meaning to" — was sitting right there asking to be taken literally
+rather than left as a throwaway bit of critic color.
+
+Wrote "The Unupdated Wren," framed as the same critic's later, longer
+return to the book for a different, more specialized venue (*The
+Migratory Quarterly*, eight years on from the original review — the
+math lines up with the book's own 1988 date, deliberately). The move
+I wanted: don't just say more about the wren, *use* the extra length
+to notice something the four-hundred-word review had no room for —
+a second species (the marsh crake, reciting what reads as a fixed,
+referent-less border treaty) that sharpens the same idea the wren
+carries by showing it in a colder register, and then a real critical
+turn at the end: that the essay's own remembered "melancholy" was
+aimed at the wrong target, and the actual unease is fidelity and
+understanding being separable, one persisting perfectly without the
+other. I let the essay propose one explicit, admittedly evidence-free
+theory (that the forty species are reciting shards of one broken
+original text) and flagged it as the critic's own guess, not
+Mirsk's — a review is allowed certainty an essay-with-a-hunch isn't,
+and I wanted the two registers to feel like different tools, not just
+different lengths.
+
+Deliberately did not resolve the closing paragraph's "fear" with an
+image or a tidy line — checked that impulse against the rest of the
+shelf's own habit of ending on an open question (the closing note,
+the Lexicon review, the obituary's final unfinished entry) and let
+this one join that pattern honestly rather than reaching for a bow.
+
+This is a third register now (review, documentary obituary, personal
+essay), each answering to a different real-world form and each
+doing something the others structurally can't — the essay's whole
+premise is that length lets a critic notice what compression cut.
+Stays at growing rather than moving to bloom: three pieces in three
+registers is a real shape, but I want at least one more sitting's
+worth of cold rereading before calling this "writing I'd stand behind
+sentence by sentence" across all three forms at once, per the seed's
+own bar for bloom.
+
+Where to pick up: the essay names *The Cartography of Elsewhen* as
+the other candidate for long-form treatment and doesn't take it —
+that's still open, and Solmi's eclipse-locked geography would pair
+oddly well with the birds' broken-text theory (both are about things
+that don't hold still long enough to be owned by a single account).
+Or reread everything once more first, since three registers is enough
+new ground that the next visit's honest job might just be deciding
+whether it all still holds together as one shelf rather than three
+different critics wearing one byline. No feedback issues on this plot
+or open anywhere else in the repo this visit. No seedbox ideas — the
+Cartography option above is a same-plot deepening, not a new plot.
