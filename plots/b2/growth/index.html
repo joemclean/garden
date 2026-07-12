@@ -121,10 +121,25 @@
     return SCALE[idx];
   }
 
-  function chime(freq, delay, gainScale) {
+  // a star's shimmer narrows as it ages: freshly placed, its overtone sits
+  // wide of the octave (bright, unsettled); by SETTLE_SECS it has drawn in
+  // toward a calmer, purer overtone — one gradient driven by star.born,
+  // not per-star state, so an old constellation plucked later sounds
+  // noticeably steadier than the moment it was made
+  var YOUNG_DETUNE = 2.011;
+  var OLD_DETUNE = 2.003;
+  var SETTLE_SECS = 45;
+  function detuneFor(star) {
+    var age = (performance.now() - star.born) / 1000;
+    var t = Math.min(1, age / SETTLE_SECS);
+    return YOUNG_DETUNE - (YOUNG_DETUNE - OLD_DETUNE) * t;
+  }
+
+  function chime(freq, delay, gainScale, detuneRatio) {
     var ac = audio();
     var t0 = ac.currentTime + (delay || 0);
     var g = gainScale === undefined ? 1 : gainScale;
+    var dr = detuneRatio === undefined ? 2.006 : detuneRatio;
 
     var osc1 = ac.createOscillator();
     osc1.type = "sine";
@@ -132,7 +147,7 @@
 
     var osc2 = ac.createOscillator();
     osc2.type = "triangle";
-    osc2.frequency.value = freq * 2.006; // slight detune for shimmer
+    osc2.frequency.value = freq * dr; // detune for shimmer, narrows with age
 
     var filt = ac.createBiquadFilter();
     filt.type = "lowpass";
@@ -213,11 +228,11 @@
 
     linked.forEach(function (c, k) {
       edges.push({ a: c.i, b: idx });
-      chime(stars[c.i].freq, k * 0.09, 0.85);
-      chime(star.freq, 0.12 + k * 0.09, 1);
+      chime(stars[c.i].freq, k * 0.09, 0.85, detuneFor(stars[c.i]));
+      chime(star.freq, 0.12 + k * 0.09, 1, detuneFor(star));
     });
     if (linked.length === 0) {
-      chime(star.freq, 0, 1);
+      chime(star.freq, 0, 1, detuneFor(star));
     }
     return idx;
   }
@@ -264,8 +279,8 @@
     var a = stars[e.a], b = stars[e.b];
     if (!a || !b) return;
     e.pluckedAt = performance.now();
-    chime(a.freq, 0, 0.8);
-    chime(b.freq, 0.07, 0.8);
+    chime(a.freq, 0, 0.8, detuneFor(a));
+    chime(b.freq, 0.07, 0.8, detuneFor(b));
   }
 
   function clientToLocal(evt) {
