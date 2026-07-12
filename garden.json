@@ -10,8 +10,8 @@
       "stage": 3,
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-11",
-      "note": "All five open-ground plots (a2, b2, c1, c4, d1) now have a second sitting, and every one picked its next move from its own first visit's named menu, none stepping outside it — a third constraint shape (menu, not structural or restraint) binding one decision, not a standing rule. b3's door fix from last visit holds.",
+      "last_tended": "2026-07-12",
+      "note": "All five open-ground plots now have a third sitting, and the menu constraint held a second consecutive round — ten decisions, zero exceptions — with a new wrinkle: c4's menu ranked its options and the third sitting honored the discouraged one staying untaken, not just the picked one. Bloom count now nine of fifteen (d1 joins).",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
