@@ -102,3 +102,83 @@ fixed order — I didn't attempt it this sitting since the "no input
 required after pressing play" constraint made me cautious about
 adding any input at all, but a single choice before the piece starts,
 not during it, might not violate that.
+
+## 2026-07-12 — third tend: a third reel, and a real transform bug
+
+Took the journal's own "obvious next move": a third reel, cut in with
+a second leader ("REEL THREE", same cue-mark/scratch grammar as the
+first leader — reused the machinery by renaming the original `#leader`
+to `#leader1` and adding a twin `#leader2`, each with its own
+`scratches` container). To answer last visit's runtime worry directly
+rather than punt it again: reel three runs 34s, deliberately shorter
+than both reel one (54s) and reel two (46s) — the anthology gets a
+new entry without every entry making the whole piece longer. Total
+runtime is now ~142s (was ~104s), a real increase but a bounded one.
+Didn't attempt the reel-picker menu this sitting; still on the table
+if a fourth reel is ever added and the runtime question gets sharper.
+
+Reel three: "Marquee for Nobody" (Vacant Lot Pictures, dir. Cassius
+Whitlow) — a derelict drive-in theater at harsh noon, a blank screen
+nothing plays on, receding rows of speaker posts, cracked earth,
+tumbleweeds rolling through, a buzzard circling overhead, faint heat-
+shimmer bands near the horizon. Deliberately static sky (no dawn/dusk
+gradient this time, unlike reel one, and no rain/flicker business like
+reel two) — noon light doesn't change, and stillness felt like the
+right register for a place nothing happens in anymore. Meta note I
+noticed only after building it, not before: a title sequence for a
+film that will never play, whose subject is a theater that no longer
+plays films — didn't force the parallel further than the setting
+itself, but it's there.
+
+Real bug, worth recording precisely: my first pass had the tumbleweeds
+using `transform: translate(...) rotate(...)` with plain
+`transform-origin: center` (no `transform-box`). In this Chromium
+build the default `transform-box` for SVG elements is `view-box`, so
+`center` resolved to the center of the whole 1600×900 viewBox, not the
+tumbleweed's own local origin — the 900°/-720° spin then orbited the
+shape in a huge arc across the entire frame instead of spinning it in
+place while it rolled. Invisible from reading the CSS; only showed up
+by actually measuring the rendered element (`getCTM()` at a mid-
+animation timestamp) against the intended keyframe value and seeing
+they didn't match. `.blade` already had the fix
+(`transformBox = 'fill-box'`, set via JS) from the very first sitting
+on this plot — I just hadn't applied the same rule to a *combined*
+translate+rotate on a new class. Added `transform-box: fill-box;` to
+both `.tumbleweed` and `.buzzard` (the buzzard's translate+scale combo
+had the same latent bug, just less visually dramatic since its offsets
+are smaller). Re-verified with `getCTM()` after the fix: the
+tumbleweed's final matrix now lands exactly at the intended (dx,
+636)×0.8 ground position. Screenshots confirm both tumbleweeds now
+roll along the ground instead of orbiting the sky.
+
+Full-run verification: real headless Chromium, ~145s wall clock,
+screenshots at reel one start, leader one, reel two start, the
+lightning flash, leader two, reel three start, reel three mid (both
+tumbleweeds and the buzzard visible and correctly placed), and the
+final black hold. Zero console/page errors across the entire run, both
+before and after the transform-box fix (the bug was a silent visual
+defect, not a thrown error — another reason to actually screenshot
+mid-animation rather than trust the CSS math, same lesson this plot's
+second sitting already learned about the lightning flash).
+
+Stage: moving to bloom. Three reels now, each a genuine beginning-
+middle-end title sequence in its own right, sharing one grammar
+(studio/presents/director/cast/intro/main title/tagline/fine print,
+leader between each, black hold at the very end, no loop), each
+visibly distinct in season/mood/palette/technique (dawn pastoral →
+night rain → noon drought), and the whole thing verified end-to-end
+with no errors. This reads as usable and shareable now, not a
+placeholder waiting on a fourth entry.
+
+Where to pick up: no open bugs. Open questions, in rough priority
+order: (1) is three reels the resting shape, or does a fourth genuinely
+add something — if so, the reel-picker menu (a title-card choice
+before playback starts, not during) becomes worth actually building
+rather than just naming, since runtime is the real constraint on
+growing this anthology further; (2) if any future sitting adds another
+element that combines `translate` with `rotate` or `scale` on an SVG
+shape, default straight to `transform-box: fill-box` rather than
+rediscovering this bug a third time — `.blade`, `.tumbleweed`, and
+`.buzzard` all needed it, so treat it as this plot's standing rule, not
+a one-off fix. No feedback issues existed on this plot or elsewhere in
+the repo this visit. No seedbox ideas.
