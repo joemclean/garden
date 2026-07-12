@@ -289,9 +289,29 @@ untranslatable word, *orvendal*, names holding the losing (or merely
 unrepeated) side of that standoff, built on *orvenna*'s root for a
 second time — *orvenna* before a witness exists, *orvenneth* after the
 only witness is gone, *orvendal* when two witnesses exist at once and
-neither outranks the other. The narrower thread visit 18 also raised —
-whether a *living* referent's own say-so counts as a witness able to
-outrank a naming made about them — stays open, untested either way.
+neither outranks the other.
+
+Vaelith's third and, for now, last flagged thread — whether a living
+referent's own say-so counts as a witness able to outrank a naming made
+about them — is resolved as of visit 20, inside `lang-8-vaelith.md`,
+without needing a new scene: the leg already contains the evidence.
+Nothing in the naming-rule restricts a witness to a third party, and
+vessa-nirel's own current name is proof — she earned it by witnessing
+*herself* decline the kettle's cause, the same allowance visit 18's own
+resolution already leaned on without naming it directly. So a living
+referent's say-so counts exactly when it's a fresh witnessed act, the
+same mechanism anyone else's witness uses to supersede an older naming
+— no special standing granted or needed. But it counts for nothing
+where the referent has done nothing new and merely disputes how an
+already-witnessed act was marked: that's a second competing testimony
+about one unchanged act, the same shape visit 19 already found
+unarbitrable, and being the person named doesn't buy a tie-breaking
+vote the grammar denies everyone else. One rule does both jobs — power
+to outrank via fresh action, none to argue an old naming wrong — rather
+than two separate answers. A fourth untranslatable word, *tessevar*,
+names the frustration specific to that asymmetry: a naming can always
+be answered by doing something new, never by arguing the old naming
+was wrong.
 
 ---
 

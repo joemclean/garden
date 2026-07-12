@@ -135,18 +135,55 @@ own rule, until whichever epithet more speakers happen to keep using is
 the one that survives in practice, for no reason the grammar can point
 to.
 
-**Left for later visits:** withdrawal turned out to need a witness
-Vaelith has no way to conjure once the referent is gone — but the leg
-never tested the case where the referent is still alive and simply
-disagrees with a naming made about them. Does a living referent's own
-say-so count as a witnessed act that can outrank the original speaker's,
-or does Vaelith's testimony model — naming is what *the speaker* saw,
-not a fact open to the named person's correction — mean even a living
-referent has no standing to unmake a naming either, and the gap visit
-18 found is smaller than it first looked: not "the dead can't be
-rewitnessed" but "no one, dead or living, can revoke a naming, only a
-witness can supersede it, and the named person is not automatically a
-witness to their own acts in Vaelith's terms." Untested either way.
+**Standing (resolved, visit 20):** whether a living referent's own
+say-so counts as a witnessed act able to outrank a naming made about
+them, or whether Vaelith's testimony model gives even a living referent
+no standing at all. Checked the grammar's own words before answering:
+nothing in the naming-rule restricts a witness to a *third* party — an
+epithet is built from "the one act the speaker has personally witnessed
+that referent perform or undergo," and the chain's own only example of
+a naming being founded fresh is vessa-nirel's own current name, earned
+when she witnessed *herself* decline the kettle's cause. Visit 18's own
+resolution said as much without naming it directly: "a fresher
+witnessing can outrank an older one — that much the grammar allows, the
+same allowance that let vessa-nirel become herself in the first place."
+Self-witness is not a special case Vaelith carves out; it is ordinary
+witness that happens to have the referent standing where the witness
+usually stands. So: yes, a living referent's own say-so counts, on the
+one condition the grammar has always set for anyone — it must be an act
+actually witnessed, not a verdict rendered about one already past.
+
+That condition splits the question into two, and they resolve
+oppositely. If the referent has done something *new* since the
+disputed naming, their witness of their own fresh act outranks the old
+epithet exactly the way any other witness's fresher act would — no
+extra standing needed, because none was ever withheld. But if the
+referent has done nothing new and simply *disagrees* with how their own
+already-witnessed act was marked — the same *-esk* the speaker called
+it, she says it was *-oth* — that is not a fresher witnessing, it is a
+second, competing testimony about one unchanged act, the exact shape
+visit 19 already found unarbitrable for two third parties. Being the
+referent doesn't grant the tie-breaking vote the grammar denies
+everyone else; her say-so is simply one more honest witness's mark
+against another's, orvendal's ache all over again, now felt by the
+person the naming is *about* rather than a bystander to it. Vaelith
+gives the living exactly the power it gives the dead none of
+(supersession by a fresh act) and denies the living exactly what it
+denies everyone (a verb that argues an old witnessing wrong) — the same
+single rule doing both jobs, not two separate answers bolted together.
+
+New untranslatable word, *tessevar*: the specific frustration of
+holding a naming you believe is wrong with no verb to argue it wrong —
+only the unrelated, indirect hope that some future act, witnessed
+sharply enough, will simply bury the old one under a fresher name
+nobody has to rule on. Distinct from the *orvenna* family (all three of
+which name gaps in whether a witness exists at all); *tessevar* names a
+gap in *kind* of remedy — action can always answer a naming in Vaelith,
+argument never can, and the ache is specifically the shape of that
+asymmetry. Did not test this inside leg 8 — the leg already contains
+the evidence the resolution rests on (vessa-nirel's self-founded name)
+without needing a new scene staged for it; forcing one in would restate
+what the text already shows rather than find something it doesn't.
 
 **Retired, visit 18:** whether an epithet, once earned, can be formally
 *withdrawn* by the same speaker who granted it. It can't — see leg 8's
