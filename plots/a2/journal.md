@@ -131,3 +131,106 @@ you leave running — so the plot doesn't become one idea rehearsed three
 times. No feedback issues on this plot; none open anywhere in the repo
 this visit. No seedbox ideas — the loudness-illusion thread above is a
 same-plot deepening, not a new plot's worth of idea.
+
+---
+
+Third sitting. No open PRs, no feedback issues, no freshly planted seed
+anywhere this visit — clean gate. Chose a2 over the other stage-2 plot
+(b2) because visit 2 here named a specific, well-motivated next move
+(the loudness axis) rather than a menu of loosely-sketched options, and
+because "one more sitting to earn bloom" applied equally to both but this
+one's path was more concrete.
+
+Took the deepen option, not the close-the-pair option: built the third
+Shepard–Risset axis, loudness. This one needed a genuinely different
+trick than the other two, not a reskin. Pitch and rhythm both hide their
+wrap by using a *symmetric* bell envelope (`sin²`) that is exactly zero
+at both ends of a voice's phase — so resetting phase 1→0 always lands on
+silence, and nothing pops. A loudness axis can't use that shape: if the
+thing sweeping is amplitude itself, a symmetric bell means each voice
+gets loud in the *middle* of its cycle and quiet at both ends, which
+reads as a pulse, not a climb. So loudness voices need an *asymmetric*
+envelope — long rise, fast fall — that still hits zero at both ends
+(same anti-click principle) but which, walked forward in time, sounds
+unambiguously like "climbing, then reset" rather than "swelling and
+fading." I wrote `swell(phase)`: quadratic ease-in for 85% of the cycle
+up to 1, then a quick eased fall back to 0 in the remaining 15%. Six
+fixed-pitch drone voices (an A-major chord across two octaves — fixed
+frequency on purpose, so this axis never entangles with the pitch layer,
+which is the actual point of calling it a separate axis), staggered
+evenly across a 33-second cycle unsynced from the other two (40, 24), so
+as one voice tops out and drops, its neighbor is already most of the way
+up.
+
+I did not assume the composite ("does the *ensemble* loudness stay flat,
+the way the ensemble pitch-energy roughly does?") — I checked it
+numerically instead of asserting it, the same ethic the pitch and rhythm
+entries held to. Wrote a standalone reimplementation of `swell()` outside
+the browser and swept a full cycle at 2000 samples: each voice alone is
+cleanly monotonic rising then falling (verified directly, not eyeballed),
+but the six-voice sum is *not* flat — it breathes between 0.49 and 0.79
+per cycle (max/min ratio 1.6), a real, repeating pulse at the 33-second
+period rather than a constant hum. That's the honest finding, and I
+think it's a better one than false constancy would have been: each
+individual voice is an unambiguous one-way climb-and-reset (that part of
+the Shepard-family claim is exactly true, verified), while the ensemble
+does something Risset's pitch/rhythm axes don't — it has its own slower,
+audible pulse layered on top of the illusion, an emergent fourth rhythm
+nobody scheduled directly. Said this in the on-page note rather than
+overclaiming a flat "never arrives" for the composite the way pitch and
+rhythm's notes correctly can.
+
+Visualization: first attempt put the loudness dots at a small fixed
+radius near center (mirroring rhythm's fixed-angle dots) — wrong call,
+verified with a screenshot and a `getBoundingClientRect()` check on the
+panel: the panel is 500×257px centered on the canvas, so anything within
+roughly a 250×129 rectangle of center is permanently hidden under it, not
+transiently occluded the way the sweeping pitch rings are. Moved the six
+dots to a ring just inside the pitch rings' outer edge (`maxR - 26`),
+confirmed by rect math that this clears the panel at every one of the
+six angles on a normal viewport, and confirmed visually (screenshots) —
+now legible year one on the canvas as a third distinct visual language:
+sweeping rings (pitch), fixed dots flashing at outer radius (rhythm), and
+now fixed dots whose *radius* itself pulses climb-then-drop (loudness) —
+same phase math driving sight and sound throughout, no separate
+decoration, matching how this plot has worked from visit 1.
+
+Verified with the pre-installed headless Chromium over
+`python3 -m http.server` (not `file://`): played all three layers
+together, toggled pitch and rhythm off to confirm the loudness ring
+reads clearly alone (six dots at different points in their swell,
+correctly varying in size), toggled loudness off too (silence/stillness
+at that layer, others unaffected), re-enabled all three and flipped
+direction, then stopped. Zero console/page errors beyond the one
+harmless favicon 404 every visit here hits. Oscillators for the loudness
+voices are tracked and stopped on teardown the same way the pitch
+voices already were, so `stop`/restart doesn't leak nodes.
+
+Stage: sprout → growing. Three axes of the same illusion family now
+exist, each verified as sound and honestly characterized (not just
+built), and this sitting closes visit 2's own fork in the road —
+Risset's third documented trick, no longer "unexplored." This reads as
+the point where "one idea rehearsed three times" (visit 2's own worry)
+would have kicked in had this been a fourth near-identical axis; it
+isn't one, because loudness needed a structurally different envelope
+and turned up a real, unplanned finding (the ensemble breathing pulse)
+that pitch and rhythm didn't have. That's enough distance to call this a
+settled, three-part composition rather than a first sketch — growing,
+not yet bloom, since bloom on this plot's own precedent wants distance
+across sittings on the *settled* shape, and this is the sitting that
+just settled it.
+
+Where to pick up: three axes exist (pitch, rhythm, loudness), all
+independently toggleable, all sharing one visual language. A future
+sitting could: (a) simply live with this for a sitting and confirm bloom
+— does the three-way combination still feel coherent and not
+overcrowded after some distance, particularly the loudness ring visually
+crowding the rhythm ring at similar radii on a real (non-1000×800)
+window size, worth a fresh check; (b) chase the emergent breathing pulse
+found above on purpose — tune `NUM_LOUD_VOICES`/`ATTACK_FRAC` toward or
+away from flatness and see which reads better, now that its actual
+behavior is known rather than assumed; or (c) treat three as a complete,
+closed set the way visit 2 considered two, and use a future hour on
+something genuinely different in kind. No feedback issues on this plot
+or anywhere in the repo this visit. No seedbox ideas — everything above
+is a same-plot thread.

@@ -65,7 +65,7 @@
   <a id="back" href="../../../viewer/">&larr; garden</a>
   <div id="panel">
     <b>Ascent</b>
-    <div class="sub">a tone that climbs forever, a beat that rushes forever — neither arrives</div>
+    <div class="sub">a tone that climbs forever, a beat that rushes forever, a swell that never crests — none arrives</div>
     <div id="row">
       <button id="play">play</button>
       <button id="dir">↑ ascending</button>
@@ -73,10 +73,11 @@
     <div id="row2">
       <button id="pitchToggle" class="active">pitch</button>
       <button id="rhythmToggle" class="active">rhythm</button>
+      <button id="loudnessToggle" class="active">loudness</button>
     </div>
     <div class="sub" style="margin-bottom:0">click play, then leave it — there is no ending to wait for</div>
   </div>
-  <div id="note">Two Shepard–Risset illusions, layered. <b>Pitch</b>: ten sine voices fade in at the low end and out at the high end; the pitch class always seems to rise, and never goes anywhere. <b>Rhythm</b>: six fixed-tempo click layers, an octave apart, cross-fade through the same rising-and-wrapping window; the tempo always seems to speed up, and the beat you actually hear never accelerates. Toggle either layer off to hear the other alone.</div>
+  <div id="note">Three Shepard–Risset illusions, layered. <b>Pitch</b>: ten sine voices fade in at the low end and out at the high end; the pitch class always seems to rise, and never goes anywhere. <b>Rhythm</b>: six fixed-tempo click layers, an octave apart, cross-fade through the same rising-and-wrapping window; the tempo always seems to speed up, and the beat you actually hear never accelerates. <b>Loudness</b>: six drone tones at fixed pitches (a chord — frequency never moves, so this axis stays isolated from the pitch layer) each swell from near-silence to a peak and drop away fast, right before restarting; staggered so one voice is always cresting as another quietly begins, the felt intensity keeps handing off from voice to voice and never settles into an arrival. Toggle any layer off to hear the others alone.</div>
 </div>
 <script>
 (() => {
@@ -84,6 +85,7 @@
   const dirBtn = document.getElementById('dir');
   const pitchToggle = document.getElementById('pitchToggle');
   const rhythmToggle = document.getElementById('rhythmToggle');
+  const loudnessToggle = document.getElementById('loudnessToggle');
   const panel = document.getElementById('panel');
   const canvas = document.getElementById('c');
   const ctx2d = canvas.getContext('2d');
@@ -91,15 +93,18 @@
   let audioCtx = null;
   let voices = [];
   let rhythmVoices = [];
+  let loudVoices = [];
   let clickBuffer = null;
   let masterGain = null;
   let pitchGain = null;
   let rhythmGain = null;
+  let loudGain = null;
   let schedulerId = null;
   let running = false;
   let ascending = true;
   let pitchOn = true;
   let rhythmOn = true;
+  let loudOn = true;
   let startTime = 0;
 
   const NUM_VOICES = 10;
@@ -123,11 +128,38 @@
   const SCHED_INTERVAL_MS = 25;
   const CLICK_DUR = 0.09;
 
+  // loudness layer: Risset's other trick, aimed at intensity instead of
+  // frequency or tempo. Each voice sits at a FIXED pitch (a chord, so this
+  // axis never entangles with the pitch layer) and swells from near-silence
+  // to a peak, then eases back to near-silence fast, right before its own
+  // cycle wraps — the reset lands where the voice is already quiet, same
+  // as the other two layers, so nothing pops. Voices staggered evenly
+  // across the cycle mean one is always cresting as its neighbor is just
+  // beginning to rise, so attention keeps handing off from voice to voice
+  // and the ensemble never settles anywhere.
+  const NUM_LOUD_VOICES = 6;
+  const LOUD_FREQS = [110, 164.81, 220, 277.18, 329.63, 440]; // A major chord, two octaves — A2 C#4 E3 A3 E4 A4
+  const CYCLE_SECONDS_L = 33; // unsynced from both other cycles (40, 24)
+  const ATTACK_FRAC = 0.85; // most of the cycle is rise; the rest is a quick release
+
   // bell window: zero at phase 0 and 1, peak at 0.5 — voices fade in
   // entering the low end and fade out leaving the high end, so nothing
   // ever clicks into or out of existence
   function bell(phase) {
     return Math.sin(Math.PI * phase) ** 2;
+  }
+
+  // asymmetric swell: long ease-in rise to 1 at ATTACK_FRAC, short eased
+  // release back to 0 by phase 1 — zero at both ends like bell(), but
+  // skewed so almost the whole cycle reads as "still climbing"
+  function swell(phase) {
+    if (phase < ATTACK_FRAC) {
+      const p = phase / ATTACK_FRAC;
+      return p * p;
+    }
+    const p = (phase - ATTACK_FRAC) / (1 - ATTACK_FRAC);
+    const r = Math.max(0, 1 - p);
+    return r * r;
   }
 
   function makeClickBuffer(ctx) {
@@ -185,6 +217,23 @@
       rhythmVoices.push({ filter, gain, offset, rate, nextClickTime: audioCtx.currentTime + offset / rate });
     }
 
+    loudGain = audioCtx.createGain();
+    loudGain.gain.value = loudOn ? 1 : 0;
+    loudGain.connect(masterGain);
+
+    loudVoices = [];
+    for (let i = 0; i < NUM_LOUD_VOICES; i++) {
+      const osc = audioCtx.createOscillator();
+      osc.type = 'sine';
+      osc.frequency.value = LOUD_FREQS[i];
+      const gain = audioCtx.createGain();
+      gain.gain.value = 0;
+      osc.connect(gain);
+      gain.connect(loudGain);
+      osc.start();
+      loudVoices.push({ osc, gain, offset: i / NUM_LOUD_VOICES });
+    }
+
     schedulerId = setInterval(scheduleClicks, SCHED_INTERVAL_MS);
   }
 
@@ -211,18 +260,22 @@
     g.gain.setValueAtTime(g.gain.value, now);
     g.gain.linearRampToValueAtTime(0, now + 1.2);
     const oldVoices = voices;
+    const oldLoudVoices = loudVoices;
     const oldCtx = audioCtx;
     setTimeout(() => {
       oldVoices.forEach(v => { try { v.osc.stop(); } catch (e) {} });
+      oldLoudVoices.forEach(v => { try { v.osc.stop(); } catch (e) {} });
       oldCtx.close();
     }, 1300);
     voices = [];
     rhythmVoices = [];
+    loudVoices = [];
     clickBuffer = null;
     audioCtx = null;
     masterGain = null;
     pitchGain = null;
     rhythmGain = null;
+    loudGain = null;
   }
 
   function frame() {
@@ -245,6 +298,13 @@
         if (phase < 0) phase += 1;
         const amp = bell(phase);
         v.gain.gain.setValueAtTime(amp * amp * 1.1, audioCtx.currentTime);
+        v._phase = phase;
+      }
+      for (const v of loudVoices) {
+        let phase = (v.offset + dirSign * t / CYCLE_SECONDS_L) % 1;
+        if (phase < 0) phase += 1;
+        const amp = swell(phase);
+        v.gain.gain.setValueAtTime(amp * amp * 0.5, audioCtx.currentTime);
         v._phase = phase;
       }
     }
@@ -314,6 +374,30 @@
       }
     }
 
+    // loudness layer: one dot per voice, planted at a fixed angle just
+    // inside the rings, whose radius (not brightness) pulses with that
+    // voice's own swell — a dot that visibly grows toward the rings and
+    // snaps back small, same asymmetric climb-then-drop shape as the sound
+    if (loudOn) {
+      const loudR = maxR - 26; // just inside the pitch rings' outer edge, clear of the panel
+      for (let i = 0; i < NUM_LOUD_VOICES; i++) {
+        const offset = i / NUM_LOUD_VOICES;
+        let phase = (offset + dirSign * t / CYCLE_SECONDS_L) % 1;
+        if (phase < 0) phase += 1;
+        const s = swell(phase);
+        const angle = (i / NUM_LOUD_VOICES) * Math.PI * 2 + Math.PI / NUM_LOUD_VOICES;
+        const x = cx + Math.cos(angle) * loudR;
+        const y = cy + Math.sin(angle) * loudR;
+        const radius = 2 + s * 12;
+        const alpha = running ? 0.1 + 0.55 * s : 0.06;
+        const hue = 320 + s * 40;
+        ctx2d.beginPath();
+        ctx2d.arc(x, y, radius, 0, Math.PI * 2);
+        ctx2d.fillStyle = `hsla(${hue}, 75%, 68%, ${alpha})`;
+        ctx2d.fill();
+      }
+    }
+
     // center point — the still spot none of the rings ever reach or leave from
     ctx2d.beginPath();
     ctx2d.arc(cx, cy, 3, 0, Math.PI * 2);
@@ -357,6 +441,12 @@
     rhythmOn = !rhythmOn;
     rhythmToggle.classList.toggle('active', rhythmOn);
     rampLayerGain(rhythmGain, rhythmOn);
+  });
+
+  loudnessToggle.addEventListener('click', () => {
+    loudOn = !loudOn;
+    loudnessToggle.classList.toggle('active', loudOn);
+    rampLayerGain(loudGain, loudOn);
   });
 
   requestAnimationFrame(frame);
