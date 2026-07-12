@@ -95,11 +95,11 @@
       "door": "plots/c1/growth/index.html"
     },
     "a2": {
-      "stage": 3,
+      "stage": 4,
       "title": "Open ground: something to hear",
       "planted": "2026-07-10",
       "last_tended": "2026-07-12",
-      "note": "Third sitting adds the loudness axis — six fixed-pitch drone voices swelling from near-silence to a peak on a long rise then a fast eased fall, staggered across their own cycle so the felt intensity keeps handing off between voices. Verified each voice climbs unambiguously, but the honest finding is the ensemble total isn't flat: it breathes 0.49-0.79 (numerically checked, not assumed) — a real emergent pulse layered on the illusion. Moves to growing.",
+      "note": "Fourth sitting confirms bloom: visit 3's named ring-crowding worry checked and found not real (constant 26px gap at any window size), but testing at real sizes surfaced a genuine bug it didn't anticipate — the panel and note overlapping on short and narrow viewports. Fixed with a CSS media query, verified overlap-free on all real device sizes tested via getBoundingClientRect, audio re-verified unaffected.",
       "door": "plots/a2/growth/ascent.html"
     },
     "b2": {
