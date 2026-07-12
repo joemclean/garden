@@ -90,8 +90,8 @@
       "stage": 3,
       "title": "Open ground: something to look at",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-11",
-      "note": "Second sitting adds a stable contrast to the chaotic Burrau case: Moore's 1993 figure-eight three-body choreography, three equal masses forever chasing each other around one shared curve, rendered with opacity that resets each lap so no point on the closed loop reads as older than another. Door is now an index of both pieces. Moves to growing.",
+      "last_tended": "2026-07-12",
+      "note": "Third sitting adds a third temperament: Euler's 1767 collinear central configuration (same 3-4-5 masses as the Burrau page, collinear instead of triangular) collapsing homothetically to a single triple collision in finite time. Gap ratio (1.12912...) confirmed two independent ways to 12 digits, then verified constant under real unconstrained integration rather than assumed. Door is now an index of all three pieces. Stays at growing.",
       "door": "plots/c1/growth/index.html"
     },
     "a2": {

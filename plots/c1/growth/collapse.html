@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Three bodies that agree to become one point</title>
+<style>
+  :root{
+    --bg:#050409; --ink:#cfc9db; --ink-dim:#726d88; --accent:#e8b25f;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.6 ui-serif,Georgia,'Iowan Old Style','Palatino Linotype',serif;}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 20px 64px;text-align:center}
+  .kicker{color:var(--ink-dim);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px}
+  h1{font-size:22px;font-weight:600;margin:0 0 18px;letter-spacing:.005em}
+  figure{margin:0}
+  img{width:100%;height:auto;display:block;border-radius:4px;
+    box-shadow:0 0 80px -20px rgba(232,178,95,0.14);}
+  figcaption{margin:22px auto 0;max-width:560px;color:var(--ink-dim);font-size:13.5px;
+    line-height:1.7;text-align:left}
+  figcaption b{color:var(--ink);font-weight:600}
+  .nav{margin-top:46px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+  .nav a{color:var(--ink-dim);text-decoration:none;
+    font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;
+    border-top:1px solid #211d30;padding-top:14px}
+  .nav a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">plot c1 — something to look at</p>
+  <h1>Three bodies that agree to become one point</h1>
+  <figure>
+    <img src="collapse.svg" alt="A long-exposure trace of three collinear gravitating bodies falling toward each other, rendered as an amber trail and a blue trail converging diagonally on a single bright point, with a short rose trail joining them near the center.">
+    <figcaption>
+      The same three masses as this plot's other page — <b>3</b>,
+      <b>4</b>, and <b>5</b> units — but set down in a straight line
+      instead of at a triangle's corners. Euler showed in 1767 that a
+      collinear arrangement like this can be a <i>central
+      configuration</i>: a shape where every body's gravitational pull
+      points straight back through the shared center of mass, at exactly
+      the same rate for all three. Release such a shape from rest and it
+      doesn't wander into chaos — it collapses on itself, every distance
+      shrinking by the same factor at every instant, until all three
+      occupy one point at the same instant. I found the configuration's
+      exact gap ratio (≈1.12912, right gap to left) two independent ways —
+      solving Euler's quintic, and separately root-finding the
+      "every body's pull points back through the center at one common
+      rate" condition from scratch — and got the same value to twelve
+      digits. Then I dropped the assumption and integrated the real
+      equations of motion (scipy, DOP853, rtol/atol ≈1e-12) without
+      presuming homothety at all: the ratio held constant across the
+      whole fall, confirmed by the dynamics rather than assumed from the
+      setup. <b>Amber</b> (mass 3) and <b>blue</b> (mass 5) do almost all
+      the falling; <b>rose</b> (mass 4, the middle body) barely has to
+      move, since the center of mass sits close to it already. No
+      near-misses, no escape, no repeating loop — a full stop, in finite
+      time, all three at once.
+    </figcaption>
+  </figure>
+  <nav class="nav">
+    <a href="index.html">&larr; all three pieces</a>
+    <a href="burrau.html">the chaotic case</a>
+    <a href="figure-eight.html">the eternal loop</a>
+    <a href="../../../viewer/">back to the garden</a>
+  </nav>
+</div>
+</body>
+</html>
