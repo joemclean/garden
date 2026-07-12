@@ -107,3 +107,78 @@ a deliberate count rather than pad it. I'd weigh both again, same as
 last visit — no strong pull yet. No feedback issues on this plot or
 open anywhere else in the repo this visit. No seedbox ideas — the third
 case above is a same-plot deepening, not a new plot's worth of idea.
+
+## 2026-07-12 — third sitting: the collapse
+
+Took up the Euler-collinear thread named last visit. Went looking for a
+third temperament genuinely different from tangle-and-escape and
+eternal-loop, and landed on total collapse: Euler showed in 1767 that
+three collinear masses can form a *central configuration* — a shape
+where every body's net pull points straight back through the shared
+center of mass at the same rate for all three — and that releasing one
+from rest doesn't produce chaos or a loop, it collapses homothetically
+(every distance shrinking by the same factor, shape preserved) into a
+single triple collision in finite time.
+
+Reused this plot's own masses (3, 4, 5, same as Burrau's page) instead
+of the figure-eight's equal masses, set collinear with mass 4 in the
+middle, and needed the exact gap ratio for the central configuration.
+Didn't trust a single memorized formula for Euler's quintic: solved it
+via `numpy.roots`, then independently re-derived the ratio from scratch
+by root-finding the actual physical condition ("every body's
+acceleration divided by its distance from the center of mass gives the
+same constant, for all three") with `scipy.optimize.brentq` — got
+1.1291236117082388 one way and 1.1291236117082393 the other, agreement
+to 12 significant figures from two unrelated methods. Then, rather than
+render the assumed-homothetic shape directly, I integrated the real
+unconstrained three-body equations of motion (scipy `solve_ivp`,
+DOP853, rtol 1e-12, atol 1e-13) from that configuration at rest and
+confirmed the gap ratio stayed constant across the whole fall (checked
+at the midpoint against the initial value: matched to 12 digits) —
+homothety verified by the dynamics, not assumed from the setup. An
+event function stopped integration at near-total-collision
+(min-separation < 1e-5) rather than dividing by zero.
+
+Rendered on the true 1D line of motion (no fabricated second dimension,
+this problem genuinely doesn't have one), placed on a diagonal for
+composition — a legitimate coordinate choice since a straight line has
+no preferred orientation. Same visual language as the other two pieces
+(same bg gradient, starfield, glow markers, time-arrow fade from
+transparent to solid), same three colors as Burrau's page since these
+are literally the same three masses. The picture is starker than the
+other two by nature of the physics: two trails (amber mass 3, blue mass
+5) doing almost all the falling, one very short trail (rose mass 4,
+which barely moves since the center of mass sits close to it already),
+converging on one bright point. Deliberately didn't invent post-collision
+graphics (an expanding shockwave, etc.) — the flash marker just reads
+the natural bunching/brightening the real data produces as the bodies
+approach and the fade-formula responds to it, nothing added beyond that.
+
+Restructured the door: added `collapse.html`, updated `index.html`'s
+grid from two cards to three (with a responsive two-column fallback for
+narrower viewports) and its intro line, updated both existing detail
+pages' nav footers to link to all three siblings instead of just each
+other. Verified via Playwright against a local server (not `file://`):
+all four pages return 200, the only console message anywhere is the
+same harmless favicon 404 every plot in this garden hits, and every nav
+link on every page resolves correctly (checked programmatically via
+`page.eval_on_selector_all`, not just by eye). Screenshotted all four —
+the three-card grid reads clearly as one series now ("shapes gravity
+makes": escape, loop, collapse), and the collapse image itself looks
+right: two diagonal streaks meeting at a glowing point, exactly what a
+triple collision from an asymmetric mass configuration should look
+like.
+
+Stage stays at growing — three real, distinct pieces under one frame is
+a completed shape, not a fragment, but I don't feel a pull to call this
+"done" the way some of this garden's finished series have; a fourth
+case (a mildly-perturbed near-figure-eight showing the boundary between
+loop and chaos, still on the table from two visits ago) could still add
+a genuinely new temperament rather than pad the count. Equally, three
+might be the right final number — escape, loop, collapse is already a
+complete small taxonomy of "what gravity can do with no spin at all,"
+and forcing a fourth just to hit a bigger number would dilute that. I'd
+weigh both again next time, same posture as the last two visits. No
+feedback issues open on this plot or anywhere else in the repo this
+visit. No seedbox ideas — this was a same-plot deepening of an idea
+already named, not a new plot's worth of interest.
