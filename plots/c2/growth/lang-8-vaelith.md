@@ -48,6 +48,15 @@ were simply what she's called.
   Built on *orvenna*'s own root on purpose — one names what the
   naming-grammar withholds before a name is earned, the other what it
   withholds after one no longer fits.
+- *orvendal* — third of the family, resolved this visit: the ache of
+  holding a naming you witnessed truly while another equally honest
+  witness holds a different one for the same act, and knowing nothing in
+  Vaelith will ever rule between you — only which epithet more mouths
+  happen to keep repeating. Built on *orvenna*'s root a second time on
+  purpose: *orvenna* names what the grammar withholds before a witness
+  exists, *orvenneth* what it withholds after the only witness is gone,
+  *orvendal* what it withholds when two witnesses exist at once and
+  neither outranks the other.
 
 **Roots used so far:** *vessa-* (to keep something going so it does not
 lapse), *sohven-* (to carry or wear a mood or weather), *kesta-* (to
@@ -88,13 +97,45 @@ fossil is gone": each leg's absence has been for a structurally
 different reason, which means the next language's outcome still isn't
 predictable from this one.
 
-**Left for later visits:** whether two speakers who genuinely disagree
-on a referent's causation mark (one says *-esk*, another says *-oth*,
-for the same act) have any way to resolve it in Vaelith, or whether —
-like Ivren's unmarked debts — that's simply left as two true namings,
-no verb of arbitration built for it yet.
+**Arbitration (resolved, visit 19):** whether two speakers who genuinely
+disagree on a referent's causation mark — one says *-esk*, another says
+*-oth*, for the *same* witnessed act, not two different acts — have any
+way to settle it. Checked first, honestly, whether any of the eight legs
+already stages this rather than assuming it needs inventing, the same
+discipline visit 17 used on the naming-system question and visit 14 used
+on Ivren's own arbitration thread: none does. The diary is a monologue
+addressed to no one who answers back, and every character it names is
+either absent, dead, or spoken of rather than to — there is no scene
+anywhere in the chain where two people are both present and both
+speaking a name aloud, let alone disputing one. So this resolves the way
+Ivren's did, inside the sketch, not inside a leg.
 
-Also open, new as of visit 18: withdrawal turned out to need a witness
+The mechanism, once checked against Vaelith's own rule rather than
+assumed by analogy to Ivren: a causation mark is explicitly "whose doing
+you *believe* it was," not a fact the grammar certifies — so two honest
+witnesses of one act can mark it *-esk* and *-oth* and both be speaking
+Vaelith correctly, exactly Ivren's non-adjudication of *-ken*/*-thal*.
+But the stakes aren't the same, and it would be dishonest to just copy
+Ivren's finding over without naming the difference: Ivren's disagreement
+costs a private ache (*thevka*) and nothing more, because a hold-verb is
+never framed as capable of being *wrong* — only felt differently. Vaelith
+already calls a bad causation mark "a sharper insult than an ordinary
+lie... a claim about *her* you got wrong, spoken to her face" — language
+that presupposes a fact of the matter even though the grammar has no verb
+to establish one. That gap is real and doesn't close: Vaelith's speakers
+can commit what their own culture recognizes as the sharpest available
+insult with no mechanism to prove they've done it and none to correct it
+if they have. The only thing that ever supersedes a naming is a fresher
+witnessed act (the mechanism visit 18 found for withdrawal) — but that
+resolves competing namings of *different* acts spread over time, not two
+witnesses disputing one act in the same breath; there is no "fresher"
+between simultaneous witnesses. So a live disagreement doesn't arbitrate
+and doesn't fade — it just sits, both namings equally true by Vaelith's
+own rule, until whichever epithet more speakers happen to keep using is
+the one that survives in practice, for no reason the grammar can point
+to.
+
+**Left for later visits:** withdrawal turned out to need a witness
 Vaelith has no way to conjure once the referent is gone — but the leg
 never tested the case where the referent is still alive and simply
 disagrees with a naming made about them. Does a living referent's own
