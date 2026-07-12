@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Coming Attractions — title sequences for two films that don't exist</title>
+<title>Coming Attractions — title sequences for three films that don't exist</title>
 <style>
   :root { color-scheme: dark; }
   html, body {
@@ -114,6 +114,7 @@
     pointer-events: none;
   }
   #reel2 .curtain { animation-duration: 46s; }
+  #reel3 .curtain { animation-duration: 34s; }
   @keyframes darken {
     0%, 92% { opacity: 0; }
     100%    { opacity: 1; }
@@ -139,6 +140,7 @@
     width: 80%;
   }
   #reel2 .card { animation-duration: 46s; }
+  #reel3 .card { animation-duration: 34s; }
   .studio    { font-size: 2.1vw; animation-name: cardStudio; }
   .presents  { font-size: 1.3vw; font-style: italic; animation-name: cardPresents; }
   .director  { font-size: 1.5vw; animation-name: cardDirector; }
@@ -250,6 +252,54 @@
     62.6%, 100% { opacity: 0; }
   }
 
+  /* ============== REEL THREE: Marquee for Nobody ============== */
+  .tumbleweed {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation-name: roll;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+  @keyframes roll {
+    0%   { transform: translate(-60px, 636px) rotate(0deg); opacity: 0; }
+    5%   { opacity: 0.8; }
+    95%  { opacity: 0.8; }
+    100% { transform: translate(1720px, 636px) rotate(900deg); opacity: 0; }
+  }
+  @keyframes rollFar {
+    0%   { transform: translate(-40px, 604px) rotate(0deg); opacity: 0; }
+    5%   { opacity: 0.7; }
+    95%  { opacity: 0.7; }
+    100% { transform: translate(1740px, 604px) rotate(-720deg); opacity: 0; }
+  }
+
+  .buzzard {
+    animation: circle 17s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  @keyframes circle {
+    0%   { transform: translate(880px, 90px) scale(1); }
+    25%  { transform: translate(1080px, 130px) scale(0.85); }
+    50%  { transform: translate(880px, 170px) scale(1); }
+    75%  { transform: translate(680px, 130px) scale(0.85); }
+    100% { transform: translate(880px, 90px) scale(1); }
+  }
+
+  .shimmer-band {
+    fill: #f4ede0; opacity: 0.05;
+    transform-origin: center;
+    animation-name: shimmer;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+  @keyframes shimmer {
+    0%, 100% { transform: skewX(-1.2deg) scaleY(1); }
+    50%      { transform: skewX(1.2deg) scaleY(1.02); }
+  }
+
   .back-link {
     position: fixed; left: 14px; bottom: 12px;
     font-family: Georgia, serif;
@@ -305,10 +355,10 @@
     </div>
 
     <!-- ============== LEADER (reel change) ============== -->
-    <div class="stage leader-stage" id="leader" style="display:none;">
+    <div class="stage leader-stage" id="leader1" style="display:none;">
       <div class="cue-mark"></div>
       <div class="leader-text">REEL TWO</div>
-      <div id="scratches"></div>
+      <div class="scratches" id="scratches1"></div>
     </div>
 
     <!-- ============== REEL TWO ============== -->
@@ -391,6 +441,91 @@
       </div>
     </div>
 
+    <!-- ============== LEADER (second reel change) ============== -->
+    <div class="stage leader-stage" id="leader2" style="display:none;">
+      <div class="cue-mark"></div>
+      <div class="leader-text">REEL THREE</div>
+      <div class="scratches" id="scratches2"></div>
+    </div>
+
+    <!-- ============== REEL THREE ============== -->
+    <div class="stage" id="reel3" style="display:none;">
+      <svg class="scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="noonSky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#bcdcef"/>
+            <stop offset="70%" stop-color="#e7ddc4"/>
+            <stop offset="100%" stop-color="#f2ede0"/>
+          </linearGradient>
+        </defs>
+
+        <rect x="0" y="0" width="1600" height="900" fill="url(#noonSky)"/>
+
+        <!-- distant buzzard, circling the whole reel -->
+        <path class="buzzard" d="M -14 0 q 14 -14 28 0 q 14 -14 28 0" fill="none" stroke="#2a2015" stroke-width="2" stroke-linecap="round"/>
+
+        <!-- cracked earth plain -->
+        <rect x="0" y="560" width="1600" height="340" fill="#8a6b45"/>
+        <g stroke="#5e4527" stroke-width="2" fill="none" opacity="0.6">
+          <path d="M 80 620 L 140 660 L 110 720 L 200 760"/>
+          <path d="M 400 600 L 460 650 L 430 700"/>
+          <path d="M 900 640 L 970 680 L 940 740 L 1040 780"/>
+          <path d="M 1300 610 L 1360 660 L 1320 710"/>
+          <path d="M 620 700 L 700 730"/>
+          <path d="M 1120 720 L 1190 750"/>
+        </g>
+
+        <!-- drive-in screen, long dark, nothing plays -->
+        <g>
+          <rect x="700" y="270" width="420" height="250" fill="#cfcabb" opacity="0.9"/>
+          <rect x="700" y="270" width="420" height="250" fill="none" stroke="#8f8a78" stroke-width="3"/>
+          <rect x="850" y="520" width="120" height="10" fill="#5e4527"/>
+          <rect x="880" y="530" width="16" height="60" fill="#3a2e1c"/>
+          <rect x="924" y="530" width="16" height="60" fill="#3a2e1c"/>
+        </g>
+
+        <!-- speaker posts, two receding rows -->
+        <g fill="#3a2e1c" opacity="0.85">
+          <rect x="560" y="640" width="6" height="46"/><rect x="552" y="628" width="22" height="14" rx="2"/>
+          <rect x="660" y="648" width="6" height="42"/><rect x="652" y="636" width="22" height="13" rx="2"/>
+          <rect x="1060" y="648" width="6" height="42"/><rect x="1052" y="636" width="22" height="13" rx="2"/>
+          <rect x="1160" y="640" width="6" height="46"/><rect x="1152" y="628" width="22" height="14" rx="2"/>
+        </g>
+        <g fill="#4a3a24" opacity="0.6">
+          <rect x="600" y="600" width="4" height="30"/><rect x="595" y="592" width="14" height="9" rx="1"/>
+          <rect x="1100" y="600" width="4" height="30"/><rect x="1095" y="592" width="14" height="9" rx="1"/>
+        </g>
+
+        <!-- heat shimmer near the horizon -->
+        <g id="shimmer">
+          <rect class="shimmer-band" x="0" y="540" width="1600" height="14" style="animation-duration:2.6s; animation-delay:0s;"/>
+          <rect class="shimmer-band" x="0" y="556" width="1600" height="10" style="animation-duration:3.1s; animation-delay:-1.2s;"/>
+          <rect class="shimmer-band" x="0" y="568" width="1600" height="8"  style="animation-duration:2.2s; animation-delay:-0.4s;"/>
+        </g>
+
+        <!-- tumbleweeds crossing at their own moments -->
+        <g class="tumbleweed" style="animation-duration:7s; animation-delay:1s;" stroke="#6b4a24" stroke-width="1.6" fill="none">
+          <circle cx="0" cy="0" r="13"/>
+          <path d="M -13 0 L 13 0 M 0 -13 L 0 13 M -9 -9 L 9 9 M -9 9 L 9 -9"/>
+        </g>
+        <g class="tumbleweed" style="animation-name:rollFar; animation-duration:9s; animation-delay:19s;" stroke="#7a5730" stroke-width="1.4" fill="none">
+          <circle cx="0" cy="0" r="9"/>
+          <path d="M -9 0 L 9 0 M 0 -9 L 0 9 M -6 -6 L 6 6 M -6 6 L 6 -6"/>
+        </g>
+      </svg>
+      <div class="curtain"></div>
+      <div class="titles">
+        <div class="card studio">VACANT LOT PICTURES</div>
+        <div class="card presents">presents</div>
+        <div class="card director">a film by Cassius Whitlow</div>
+        <div class="card cast">starring Delphine Roux &amp; Amos Featherstone</div>
+        <div class="card intro">and introducing Nadia Okonkwo-Vance</div>
+        <div class="card maintitle">MARQUEE FOR<br>NOBODY</div>
+        <div class="card tagline">the last show never closed</div>
+        <div class="card fine">— coming to no theater near you —</div>
+      </div>
+    </div>
+
   </div>
   <a class="back-link" href="../../../viewer/">← garden</a>
 
@@ -450,17 +585,19 @@
     });
   })();
 
-  // Film-scratch flicker on the leader card, a few thin lines at random x.
+  // Film-scratch flicker on each leader card, a few thin lines at random x.
   (function () {
-    const container = document.getElementById('scratches');
-    for (let i = 0; i < 6; i++) {
-      const s = document.createElement('div');
-      s.className = 'scratch';
-      s.style.left = (8 + Math.random() * 84) + '%';
-      s.style.animationDuration = (0.6 + Math.random() * 1.4) + 's';
-      s.style.animationDelay = (-Math.random() * 2) + 's';
-      container.appendChild(s);
-    }
+    ['scratches1', 'scratches2'].forEach((id) => {
+      const container = document.getElementById(id);
+      for (let i = 0; i < 6; i++) {
+        const s = document.createElement('div');
+        s.className = 'scratch';
+        s.style.left = (8 + Math.random() * 84) + '%';
+        s.style.animationDuration = (0.6 + Math.random() * 1.4) + 's';
+        s.style.animationDelay = (-Math.random() * 2) + 's';
+        container.appendChild(s);
+      }
+    });
   })();
 
   // Procedural rain: short diagonal strokes falling on a loop, staggered so
@@ -484,25 +621,38 @@
     }
   })();
 
-  // Orchestration: reel one plays and holds black, a brief leader announces
-  // the reel change, then reel two plays to its own black hold. No loop —
-  // the final frame of reel two is where the piece stays.
+  // Orchestration: three reels in sequence, each holding black at its own
+  // end, a brief leader announcing each change. No loop — the final frame
+  // of reel three is where the piece stays.
   (function () {
     const REEL1_MS = 54000;
     const LEADER_MS = 4000;
+    const REEL2_MS = 46000;
     const reel1 = document.getElementById('reel1');
-    const leader = document.getElementById('leader');
+    const leader1 = document.getElementById('leader1');
     const reel2 = document.getElementById('reel2');
+    const leader2 = document.getElementById('leader2');
+    const reel3 = document.getElementById('reel3');
 
     setTimeout(() => {
       reel1.style.display = 'none';
-      leader.style.display = 'block';
+      leader1.style.display = 'block';
     }, REEL1_MS);
 
     setTimeout(() => {
-      leader.style.display = 'none';
+      leader1.style.display = 'none';
       reel2.style.display = 'block';
     }, REEL1_MS + LEADER_MS);
+
+    setTimeout(() => {
+      reel2.style.display = 'none';
+      leader2.style.display = 'block';
+    }, REEL1_MS + LEADER_MS + REEL2_MS);
+
+    setTimeout(() => {
+      leader2.style.display = 'none';
+      reel3.style.display = 'block';
+    }, REEL1_MS + LEADER_MS + REEL2_MS + LEADER_MS);
   })();
 </script>
 </body>

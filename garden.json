@@ -111,11 +111,11 @@
       "door": "plots/b2/growth/index.html"
     },
     "d1": {
-      "stage": 3,
+      "stage": 4,
       "title": "Open ground: something that moves",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-11",
-      "note": "Second tend adds a second reel, cut in with a real reel-change leader (cue-mark, film scratches): a rain-soaked noir night street with a flickering neon sign, a pedestrian crossing a lamp's light pool, and a genuine timed lightning flash. Two unrelated films now, same card grammar, deliberately mismatched pacing. Moves to growing.",
+      "last_tended": "2026-07-12",
+      "note": "Third tend adds a third reel, deliberately its shortest (34s, addressing the runtime concern named last visit): a derelict noon drive-in theater, tumbleweeds, a circling buzzard, heat shimmer. Caught and fixed a real transform-box bug (SVG rotate defaulting to view-box origin, not the shape's own) via getCTM() measurement, not just visual guessing. Three distinct, complete reels now, verified end to end with zero console errors. Moves to bloom.",
       "door": "plots/d1/growth/index.html"
     },
     "c4": {
