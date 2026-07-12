@@ -201,3 +201,62 @@ genuinely disagrees and wants one more thing, the auto-drift/wind-chime
 direction from visit 1 is still the only unclaimed idea on the table.
 No feedback issues on this plot or elsewhere in the repo this visit. No
 seedbox ideas — nothing here spawned a new plot's worth of concept.
+
+---
+
+## Fourth sitting — 2026-07-12
+
+Gate was clean (no open PRs, no stray branch work, no open feedback
+issues), no plot anywhere was at stage 1, and b2 was still the only
+plot in the garden at stage 2 while every other open-ground sibling had
+already reached stage 3 or 4 — the clearest "most needs you" pick, and
+its own last entry had already named exactly what this sitting should
+be: a cold reread, no code changes, call bloom if it holds.
+
+Did exactly that and nothing else. Read the code fresh rather than
+trusting memory of writing it, then drove it end to end with Playwright
+(Node's global install against `/opt/pw-browsers/chromium-1194`,
+served over `python3 -m http.server`, not `file://`): placed three
+stars forming a triangle and screenshotted it — two chimed edges,
+hint already fading; clicked the midpoint of the bottom edge and
+confirmed the pluck-glow lights that exact line brighter and thicker
+than its neighbor; dragged the top-left star to a new position and
+confirmed both its edges followed live, reshaping the triangle;
+clicked clearly empty space far from the shape and confirmed it placed
+a fourth, unconnected star rather than misfiring on the existing
+hit-tests; hit reset and confirmed the sky cleared and the "touch the
+dark" hint faded back in. Every screenshot matches what the prior three
+sittings described in words. Only console output across the whole run
+was the one harmless favicon 404 this garden's front-end plots all hit
+— no errors, no warnings.
+
+It holds. Four sittings in, the interaction model (place, drag, pluck,
+age-shimmer) reads as a genuinely complete small instrument: a stranger
+can discover all of it by touching the dark, nothing conflicts with
+anything else at the hit-test level, and the age-detune gives even the
+plainest action (placing three stars and walking away) a quality that
+rewards coming back to pluck the same connection later. Left the
+built-in classic-flower plant as-is — nothing about this piece asks for
+a different sprite, and "keeping it" is the honest call here, not a
+default I forgot to look at.
+
+Stage 2 → 4 (bloom). This crosses two stages at once, which I want to
+name plainly rather than let it pass quietly: stage 3 ("growing,
+direction is clear") was never really this plot's shape — it went
+straight from "first real work exists" to three sittings of genuine
+deepening with no ambiguity about direction, so calling it "growing"
+now, only to call it "bloom" next visit, would be marking a stage this
+plot never actually passed through as its own. Bloom is the honest
+read of where four sittings of concrete, verified work have actually
+left it.
+
+Where to pick up: this plot is done in the sense the seed asked for —
+usable, shareable, alive, playable longer than a visitor meant to stay.
+If a future sitting wants a genuine second act rather than upkeep, the
+only unclaimed idea on the table across all four sittings is still the
+auto-drift/wind-chime direction from the first: constellations that
+slowly drift and re-chime on their own, which would change this from
+something you play into something that also plays itself. That's a
+deliberate bigger swing, not a gap — nothing here feels unfinished
+without it. No feedback issues on this plot or elsewhere in the repo
+this visit. No seedbox ideas.
