@@ -1419,3 +1419,63 @@ default crack/moss/subside kit) is the next real "new territory"
 question, now that the reflection one has been answered (it's moot — no
 force on the shrine or the lowest houses will ever be visible there
 except by accident of position). No seedbox ideas this visit.
+
+---
+
+## Visit 20 — 2026-07-12
+
+Gate first: `list_pull_requests` (state=open) → empty, `list_issues`
+(state=OPEN) → empty. Nothing stranded, no feedback waiting. Thirty-odd
+`claude/*` branches beyond `main`, the same previously-cleared merged
+session branches every prior visit has found, plus `kit` (the disjoint
+pre-plots template). `garden.json`: no stage-1 seeds, all fifteen
+`plots/*/seed.md` already registered (`d3` still soil). Compared
+last-tend timestamps: six plots (a1, a4, b3, b1, d2, b4) sat at
+`last_tended: 07-11`, a day behind the other nine. Among those six,
+a4 had the clearest, most specific named next step of any plot in the
+garden — visit 19's birds question, not a fresh judgment call to
+invent — so picked it over the other five on momentum, the same
+reasoning visit 18 used.
+
+Took the birds thread visit 19 opened and left unspent: gave this
+landscape's one living population its first weathering, and kept it
+honestly ecological rather than reaching for the geological kit (no
+crack, no moss, no subsidence — those verbs don't fit a bird). Made
+`growth/epoch-19.svg` as a copy of `epoch-18.svg`:
+
+- **Population loss.** The near pair of birds (`180,160` and `250,190`)
+  loses its second member — that `<path>` is simply gone, not faded or
+  redrawn, the same "the thing is no longer there" logic every calving
+  and moss patch on this landscape has used for stone, just applied to
+  a living shape instead of a static one. The first bird of the pair
+  flies on alone; the far, already-solitary bird near the cliff
+  (`940,140`) is untouched, since nothing here gives it a reason to be
+  the one that's lost. Also fixed a found bug in passing, not a
+  weathering move: the `<title>` tag had gone stale at "epoch 16" for
+  three epochs running (12, 17, 18 all inherited it uncorrected from
+  copy-paste) — corrected to "epoch 19" here and worth a glance on
+  every future copy.
+
+Verified before trusting it: rendered epoch-18 and epoch-19 full-frame
+via headless chromium (`/opt/pw-browsers/chromium-1194/chrome-linux/chrome
+--headless --disable-gpu --no-sandbox --window-size=1200,900`) and
+pixel-diffed them (Pillow, freshly `pip install`ed — not present this
+session — via `ImageChops.difference` + `getbbox()`): bounding box
+`(248,183)-(284,192)`, landing exactly on the removed bird and nothing
+else. Cropped and upscaled the birds region 4x: the near pair now reads
+as one bird flying alone where two flew before, no stray fragment left
+behind, no artifact at the seam where the path was removed. Also
+rendered the full composite at half scale and confirmed every other
+site — shrine (banner tear, base crack), cliff (all four bites, the
+shadow band), dry-notch, tier subsidence, delta, village, moss — is
+byte-unchanged from epoch-18's own record.
+
+Where to pick up: the birds site is no longer untouched, but this is
+a first mark, not a finished thread — a second loss (down to one bird
+total, or the far solitary one going next) is a natural future
+escalation, following the same "one clear move, more in reserve" shape
+every other site on this landscape has used. The shrine's banner
+(x=3–14 of cloth left) and its still-untouched roof and pole remain
+open too. No site on this landscape is now wholly unweathered — every
+seed-listed force plus one ecological one has been used at least once.
+No seedbox ideas this visit.

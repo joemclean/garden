@@ -26,9 +26,9 @@
       "stage": 3,
       "title": "Erosion",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-11",
-      "note": "epoch-18: the shrine's stone base cracks for the first time — a hairline seam up from its lower corner, the same crack force the cliffs and walls have used since epoch 3, finally reaching the shrine's stone.",
-      "door": "plots/a4/growth/epoch-18.svg"
+      "last_tended": "2026-07-12",
+      "note": "epoch-19: the birds get their first weathering, and it's ecological rather than geological — the near pair loses its second member, leaving the first to fly on alone. No site on this landscape is wholly unweathered anymore.",
+      "door": "plots/a4/growth/epoch-19.svg"
     },
     "b3": {
       "stage": 4,
