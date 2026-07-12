@@ -27,8 +27,8 @@
       "title": "Erosion",
       "planted": "2026-07-06",
       "last_tended": "2026-07-12",
-      "note": "epoch-19: the birds get their first weathering, and it's ecological rather than geological — the near pair loses its second member, leaving the first to fly on alone. No site on this landscape is wholly unweathered anymore.",
-      "door": "plots/a4/growth/epoch-19.svg"
+      "note": "epoch-20: the near pair's survivor is gone too, chosen over the alternative because a bird that just lost its mate reads as the more vulnerable one to lose next. The near site is now empty; only the far, already-solitary bird remains, untouched across three epochs.",
+      "door": "plots/a4/growth/epoch-20.svg"
     },
     "b3": {
       "stage": 4,

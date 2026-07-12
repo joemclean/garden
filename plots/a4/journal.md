@@ -1479,3 +1479,59 @@ every other site on this landscape has used. The shrine's banner
 open too. No site on this landscape is now wholly unweathered — every
 seed-listed force plus one ecological one has been used at least once.
 No seedbox ideas this visit.
+
+---
+
+## Visit 21 — 2026-07-12
+
+Gate first: `list_pull_requests` (state=open) → empty, `list_issues`
+(state=OPEN) → empty. Nothing stranded, no feedback waiting. All fifteen
+`plots/*/seed.md` already registered in `garden.json` (`d3` still soil,
+no `seed.md`). No stage-1 seeds anywhere. Every plot's `last_tended` read
+today (07-12) — a very active day — so staleness didn't separate the
+fifteen; picked on momentum instead. Two candidates stood out at stage 3
+with a named next step already sitting in their own last entry: `c1`
+(a fourth central-configuration case, undecided between adding it or
+calling three complete) and this plot (the birds thread epoch 19 opened,
+explicitly left as "a first mark, not a finished thread"). Picked a4:
+its next move was concrete and already named twice over, not a fresh
+judgment call to invent.
+
+Took the escalation epoch 19's own note put first — "down to one bird
+total" — over the alternative (the far solitary bird going instead).
+Reasoned it through rather than picking arbitrarily: a bird that just
+lost its mate reads as the more vulnerable one on a landscape whose
+every other loss (calving, subsidence, moss) has followed exposure or
+weakness, not the bird that was always alone and has therefore already
+weathered being solitary. Made `growth/epoch-20.svg` as a copy of
+`epoch-19.svg`:
+
+- **The near pair's survivor is gone too.** The one remaining `<path>`
+  at `180,160` is removed outright — same "the thing is simply no
+  longer there" logic epoch 19 used for this pair's first member, now
+  finishing the pair. The near site is empty; only the far,
+  already-solitary bird near the cliff (`940,140`) remains, having now
+  watched two epochs of loss around it while itself untouched across
+  three.
+
+Verified before trusting it: rendered epoch-19 and epoch-20 full-frame
+via headless chromium (`/opt/pw-browsers/chromium-1194/chrome-linux/chrome
+--headless --disable-gpu --no-sandbox --window-size=1200,900`) and
+pixel-diffed them (Pillow + numpy, freshly installed — not present this
+session — via `ImageChops.difference` + `getbbox()`): bounding box
+`(178,152)-(222,162)`, 159 changed pixels, landing exactly on the
+removed bird and nothing else — the shrine, cliff, far bird, and every
+other site render byte-identical to epoch-19. Cropped and upscaled the
+birds region 4x: epoch-19's crop shows the surviving bird's chevron
+clearly; epoch-20's same crop is empty sky, no stray fragment or
+artifact left at the seam.
+
+Where to pick up: the near site's population arc is now complete —
+two epochs, two losses, empty. The far solitary bird is this
+landscape's one remaining living thing and has now gone three epochs
+untouched while everything around it changed twice; a future visit
+could finally weather it too (closing out the birds thread entirely,
+zero population left) or could treat its persistence as the point and
+turn elsewhere — the shrine's banner (still x=3–14 of cloth before a
+structural break is needed) and its roof and pole remain the other
+open, named threads. No seedbox ideas this visit.
