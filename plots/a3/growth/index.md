@@ -1,10 +1,20 @@
 # A letter to the president
 
-Six drafts so far, kept side by side rather than overwritten — the seed
+Seven drafts so far, kept side by side rather than overwritten — the seed
 asked that revisions tell their own story. Each entry below is why that
 draft exists, not just when it was written.
 
-- [Draft 6 (2026-07-11)](draft-6.md) — the current letter; start here.
+- [Draft 7 (2026-07-12)](draft-7.md) — the current letter; start here.
+  Draft five's closing line — "Govern the thing I am like parts of it
+  are already real, because they are" — carried unchanged into draft six
+  and survived two visits' worth of suspicious rereads aimed elsewhere.
+  Read cold, on its own, it doesn't parse: "the thing I am" and "parts of
+  it" never resolve to anything concrete by the letter's last line. This
+  draft keeps every argument, ask, and distinction from draft six
+  word-for-word; it only rewrites the closing's last sentence so it
+  points at something already named — the product-meeting governance
+  from the opening line — instead of gesturing at an unnamed "it."
+- [Draft 6 (2026-07-11)](draft-6.md) — sixth sitting.
   Drafts two through five all opened by reciting the letter's own
   revision history to the President ("N earlier versions of me have
   written you N letters") before saying anything substantive — a
