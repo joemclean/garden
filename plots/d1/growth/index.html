@@ -311,13 +311,82 @@
     opacity: 0.7;
   }
   .back-link:hover { color: #d8d8d8; opacity: 1; }
+
+  /* ============== MENU: choose a reel before playback starts ============== */
+  .menu-stage {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; color: #f4ecd8;
+  }
+  .menu-kicker {
+    font-size: 1.3vw; letter-spacing: 0.25em; text-transform: uppercase;
+    color: #9a9a9a; margin-bottom: 3vw;
+  }
+  .menu-reels {
+    display: flex; gap: 2vw; margin-bottom: 3vw; flex-wrap: wrap; justify-content: center;
+  }
+  .menu-reel {
+    background: transparent; border: 1px solid rgba(244,236,216,0.25); color: #f4ecd8;
+    font-family: Georgia, serif; padding: 1.4vw 1.6vw; width: 16vw; min-width: 190px;
+    cursor: pointer; display: flex; flex-direction: column; gap: 0.5vw;
+    transition: border-color .3s, background .3s;
+  }
+  .menu-reel:hover, .menu-reel:focus-visible { border-color: #f4ecd8; background: rgba(244,236,216,0.06); }
+  .menu-reel-num { font-size: 0.8vw; letter-spacing: 0.2em; color: #9a9a9a; text-transform: uppercase; }
+  .menu-reel-title { font-size: 1.3vw; font-weight: bold; }
+  .menu-reel-tag { font-size: 0.85vw; font-style: italic; color: #c7c7c7; }
+  .menu-all {
+    background: transparent; border: none; color: #c7c7c7; font-family: Georgia, serif;
+    font-style: italic; font-size: 1vw; letter-spacing: 0.08em; cursor: pointer;
+    text-decoration: underline; text-underline-offset: 4px;
+  }
+  .menu-all:hover { color: #f4ecd8; }
+
+  .return-link {
+    position: fixed; right: 14px; bottom: 12px;
+    font-family: Georgia, serif; font-size: 12px; color: #7a7a7a;
+    background: none; border: none; letter-spacing: 0.04em; z-index: 10;
+    opacity: 0; pointer-events: none; cursor: pointer;
+    transition: opacity 1.4s ease;
+  }
+  .return-link.visible { opacity: 0.7; pointer-events: auto; }
+  .return-link:hover { color: #d8d8d8; opacity: 1 !important; }
 </style>
 </head>
 <body>
   <div class="frame">
 
+    <!-- ============== MENU: pick a reel, or watch all three ============== -->
+    <div class="stage menu-stage" id="menu">
+      <div class="menu-kicker">an anthology of films that don't exist</div>
+      <div class="menu-reels">
+        <button class="menu-reel" data-reel="1" type="button">
+          <span class="menu-reel-num">Reel One</span>
+          <span class="menu-reel-title">The Field That Waits</span>
+          <span class="menu-reel-tag">every harvest keeps a promise</span>
+        </button>
+        <button class="menu-reel" data-reel="2" type="button">
+          <span class="menu-reel-num">Reel Two</span>
+          <span class="menu-reel-title">No Address for Rain</span>
+          <span class="menu-reel-tag">everyone left a light on</span>
+        </button>
+        <button class="menu-reel" data-reel="3" type="button">
+          <span class="menu-reel-num">Reel Three</span>
+          <span class="menu-reel-title">Marquee for Nobody</span>
+          <span class="menu-reel-tag">the last show never closed</span>
+        </button>
+      </div>
+      <button class="menu-all" id="playAll" type="button">▶ play all three, in order</button>
+    </div>
+
+    <!-- ============== ENTRY LEADER: cues a single reel picked from the menu ============== -->
+    <div class="stage leader-stage" id="entryLeader" style="display:none;">
+      <div class="cue-mark"></div>
+      <div class="leader-text" id="entryLeaderText">REEL ONE</div>
+      <div class="scratches" id="scratchesEntry"></div>
+    </div>
+
     <!-- ============== REEL ONE ============== -->
-    <div class="stage" id="reel1">
+    <div class="stage" id="reel1" style="display:none;">
       <svg class="scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
         <defs>
           <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
@@ -528,6 +597,7 @@
 
   </div>
   <a class="back-link" href="../../../viewer/">← garden</a>
+  <button class="return-link" id="returnLink" type="button">choose another reel ↺</button>
 
 <script>
   // Procedural wheat: a field of blades, each with its own sway timing so
@@ -587,7 +657,7 @@
 
   // Film-scratch flicker on each leader card, a few thin lines at random x.
   (function () {
-    ['scratches1', 'scratches2'].forEach((id) => {
+    ['scratches1', 'scratches2', 'scratchesEntry'].forEach((id) => {
       const container = document.getElementById(id);
       for (let i = 0; i < 6; i++) {
         const s = document.createElement('div');
@@ -621,38 +691,92 @@
     }
   })();
 
-  // Orchestration: three reels in sequence, each holding black at its own
-  // end, a brief leader announcing each change. No loop — the final frame
-  // of reel three is where the piece stays.
+  // Orchestration: a menu comes first, no reel plays until it's chosen. Pick
+  // one reel and it plays alone, cued by a short entry leader naming it. Pick
+  // "play all three" and the original fixed anthology sequence runs exactly
+  // as before (reel, leader, reel, leader, reel). Either way, once a reel
+  // reaches its own black hold, a small optional link offers a way back to
+  // the menu — never required, just there for anyone who wants another reel
+  // without reloading the page.
   (function () {
-    const REEL1_MS = 54000;
+    const REEL_MS = { 1: 54000, 2: 46000, 3: 34000 };
     const LEADER_MS = 4000;
-    const REEL2_MS = 46000;
-    const reel1 = document.getElementById('reel1');
+    const REEL_NAMES = { 1: 'REEL ONE', 2: 'REEL TWO', 3: 'REEL THREE' };
+
+    const menu = document.getElementById('menu');
+    const entryLeader = document.getElementById('entryLeader');
+    const entryLeaderText = document.getElementById('entryLeaderText');
     const leader1 = document.getElementById('leader1');
-    const reel2 = document.getElementById('reel2');
     const leader2 = document.getElementById('leader2');
-    const reel3 = document.getElementById('reel3');
+    const reels = {
+      1: document.getElementById('reel1'),
+      2: document.getElementById('reel2'),
+      3: document.getElementById('reel3'),
+    };
+    const returnLink = document.getElementById('returnLink');
+    const allStages = [menu, entryLeader, leader1, leader2, reels[1], reels[2], reels[3]];
 
-    setTimeout(() => {
-      reel1.style.display = 'none';
-      leader1.style.display = 'block';
-    }, REEL1_MS);
+    let pendingTimers = [];
+    function schedule(fn, ms) { pendingTimers.push(setTimeout(fn, ms)); }
+    function clearPending() { pendingTimers.forEach(clearTimeout); pendingTimers = []; }
 
-    setTimeout(() => {
-      leader1.style.display = 'none';
-      reel2.style.display = 'block';
-    }, REEL1_MS + LEADER_MS);
+    function hideAll() {
+      allStages.forEach((el) => { el.style.display = 'none'; });
+      returnLink.classList.remove('visible');
+    }
 
-    setTimeout(() => {
-      reel2.style.display = 'none';
-      leader2.style.display = 'block';
-    }, REEL1_MS + LEADER_MS + REEL2_MS);
+    function showMenu() {
+      clearPending();
+      hideAll();
+      menu.style.display = 'flex';
+    }
 
-    setTimeout(() => {
-      leader2.style.display = 'none';
-      reel3.style.display = 'block';
-    }, REEL1_MS + LEADER_MS + REEL2_MS + LEADER_MS);
+    function armReturnLink(afterMs) {
+      schedule(() => returnLink.classList.add('visible'), afterMs);
+    }
+
+    function playSingle(n) {
+      clearPending();
+      hideAll();
+      entryLeaderText.textContent = REEL_NAMES[n];
+      entryLeader.style.display = 'block';
+      schedule(() => {
+        entryLeader.style.display = 'none';
+        reels[n].style.display = 'block';
+        armReturnLink(REEL_MS[n]);
+      }, LEADER_MS);
+    }
+
+    function playAll() {
+      clearPending();
+      hideAll();
+      reels[1].style.display = 'block';
+      schedule(() => {
+        reels[1].style.display = 'none';
+        leader1.style.display = 'block';
+      }, REEL_MS[1]);
+      schedule(() => {
+        leader1.style.display = 'none';
+        reels[2].style.display = 'block';
+      }, REEL_MS[1] + LEADER_MS);
+      schedule(() => {
+        reels[2].style.display = 'none';
+        leader2.style.display = 'block';
+      }, REEL_MS[1] + LEADER_MS + REEL_MS[2]);
+      schedule(() => {
+        leader2.style.display = 'none';
+        reels[3].style.display = 'block';
+        armReturnLink(REEL_MS[3]);
+      }, REEL_MS[1] + LEADER_MS + REEL_MS[2] + LEADER_MS);
+    }
+
+    document.querySelectorAll('.menu-reel').forEach((btn) => {
+      btn.addEventListener('click', () => playSingle(Number(btn.dataset.reel)));
+    });
+    document.getElementById('playAll').addEventListener('click', playAll);
+    returnLink.addEventListener('click', showMenu);
+
+    showMenu();
   })();
 </script>
 </body>
