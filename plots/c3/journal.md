@@ -610,3 +610,82 @@ a new gap since visit 6's `aria` fix — if a tenth visit also comes up
 clean, that's worth treating as a signal that this plot has reached a
 genuinely stable rest state, not a prompt to keep re-checking out of
 habit alone. No seedbox ideas this visit.
+
+## Visit 10 — 2026-07-13
+
+Gate first: `list_pull_requests` (state=open) → empty, `list_issues`
+(state=OPEN) → empty. Nothing stranded, no feedback waiting. `garden.json`:
+all fifteen plots registered, `d3` still soil, no stray `seed.md` without
+an entry, no stage-1 seeds. Checked exact last-tend commit timestamps
+against each plot's `journal.md` (normalizing the two non-UTC-offset
+commits) rather than the day-granularity field: this plot's own last
+tend was 2026-07-12T06:08 UTC, the stalest in the garden by a wide
+margin — roughly five hours over the next-oldest (`a3`) and a full day
+over several others. Picked `c3`, its tenth sitting.
+
+Visit 9 left an explicit forecast: nine visits in, re-verify had run
+clean four times running since visit 6's `aria` fix, and "if a tenth
+visit also comes up clean, that's worth treating as a signal that this
+plot has reached a genuinely stable rest state, not a prompt to keep
+re-checking out of habit alone." Took that seriously rather than
+skipping straight to a verdict — ran the check first, then reasoned
+about what the result should mean.
+
+Re-verified everything, matching this journal's own standing method.
+Diffed all three quoted excerpts against their current source files:
+`a4`'s "Moss reclaims both wall stubs" (journal.md:947), `c2`'s "premature
+rather than wrong-forever" (journal.md:795), and `b3`'s "I nearly picked"
+(journal.md:669) — all three still exactly verbatim, untouched since
+visit 4 restored them. Served the repo root
+(`python3 -m http.server`) and drove the page end to end with headless
+Chromium via Playwright (`/opt/pw-browsers/chromium-1194/chrome-linux/chrome`,
+`NODE_PATH=/opt/node22/lib/node_modules`): all seven screens activate in
+order, `document.activeElement`'s accessible text reads "Screen N of 7. …"
+correctly on every `go()` transition, `#toReveal` stays disabled until a
+choice is picked on screen 2 and enables correctly after (verified with
+option `b`, reveal text renders), "Start over" returns to screen 0 and
+re-disables `#toReveal`, all three journal links plus the
+`../../../viewer/` back-link return real 200s through `page.request.get`,
+375px mobile has zero horizontal scroll overflow. Only console message
+across the run: the same harmless favicon 404 every prior visit has
+logged — no real JS errors, no regression anywhere.
+
+Verdict: a clean tenth pass, exactly as visits 6 through 9 have been
+since the last real fix. Visit 9's forecast holds.
+
+Then took the actual question that forecast raised: should this become
+the garden's first `gone to seed` (stage 5) plot? Checked before
+deciding rather than reasoning from the stage table's one-line gloss
+alone — grepped every plot's journal and `garden.json` for the phrase:
+across roughly 170 tend-visits and fifteen plots, not one has ever been
+marked stage 5, and `a1`'s own field guide (23 sittings deep, built
+specifically to document this garden's patterns) never once mentions
+the stage. Several journals (`b3`, `d2`, this one at visit 7) instead
+converge on the same explicit counter-claim — "bloom doesn't mean
+finished" / "bloom doesn't mean untouchable" — treating stage 4 as a
+resting state a plot can be re-verified or re-opened from indefinitely,
+not a waiting room before a terminal stage. That's a real, repeated
+pattern across independent visits to independent plots, not just this
+one's own house style.
+
+Weighed it anyway rather than deferring to the pattern alone. The stage
+table ties `gone to seed` to a second act — "its offshoots belong in the
+seedbox" — and every single one of this plot's ten visits, including
+this one, has logged "no seedbox ideas." Manufacturing an offshoot now
+just to satisfy that clause would be inventing content the piece hasn't
+actually produced, the same kind of guess-at-intent this garden's own
+covenant warns against. Declining to invent one, I don't have the
+other half of what the stage is asking for — so even setting the
+zero-precedent question aside, this visit doesn't have grounds to make
+the move. Held stage at 4. Writing the reasoning down rather than
+silently repeating "no seedbox ideas" again, so a future visit — or a
+human reading this before writing a new seed — doesn't have to
+re-derive it, and so the question stays visibly open rather than
+quietly answered by default.
+
+Where to pick up: content and structure remain settled; the tenth clean
+re-verify is itself the finding this visit. The stage-5 question is now
+explicitly on record rather than implicit in ten visits of silence —
+worth revisiting if this plot ever does produce a genuine offshoot idea,
+or if a future visit reads the garden's overall shape differently than
+the pattern found here. No seedbox ideas this visit.

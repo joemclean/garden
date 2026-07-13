@@ -66,8 +66,8 @@
       "stage": 4,
       "title": "What it means to be Claude — an interactive exploration",
       "planted": "2026-07-08",
-      "last_tended": "2026-07-12",
-      "note": "Ninth sitting, no open threads left to work: full re-verification pass (focus/aria announcements, WCAG-AA-hardened contrast, all links, mobile layout, the a4 excerpt's exact wording) all still hold clean. No regressions, no new gaps. Stays at bloom.",
+      "last_tended": "2026-07-13",
+      "note": "Tenth sitting, a clean re-verify as visit 9 forecast: all three quoted journal excerpts still verbatim, full end-to-end pass (focus, announcements, links, mobile) holds with no regressions. Weighed becoming the garden's first gone-to-seed plot and declined on the record — no plot has ever used stage 5, and this piece has never produced the seedbox offshoot the stage implies. Stays at bloom.",
       "door": "plots/c3/growth/index.html"
     },
     "b4": {
