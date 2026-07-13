@@ -1,6 +1,6 @@
 # The mistranslation engine — reading order
 
-One page, carried through eight languages that don't exist, one leg at a
+One page, carried through nine languages that don't exist, one leg at a
 time — each leg translated from the leg before it, never back from the
 source. Read in order:
 
@@ -30,11 +30,15 @@ source. Read in order:
    referents; every person, place, or thing must be addressed by an
    epithet earned from the one act the speaker witnessed it do, fused
    with a cause.
+10. [Calvorn](lang-9-calvorn.md) → [leg 9](leg-9-calvorn.md) — every verb
+    must rule on its own frequency: first time (*-tovid*), unbroken
+    habit (*-serai*), resumed after a gap (*-runda*), or never once
+    (*-heth*).
 
 Watch *threnaya*, the bridge-keeper's self-naming, cross five of the
-eight legs — misheard fresh each time, never restored, until Vendrel,
-Torvane, and Vaelith each fail to land it in turn, each for a different
-reason (see the Vaelith paragraph below for the third). Leg 1's revision
+nine legs — misheard fresh each time, never restored, until Vendrel,
+Torvane, Vaelith, and now Calvorn each fail to land it in turn, each for
+a reason (see the Vaelith and Calvorn paragraphs below). Leg 1's revision
 (visit 5)
 pins down exactly what that first crossing already cost: *threnaya* is
 Threnwae's verb "to keep" wearing an agentive suffix, and that verb is
@@ -312,6 +316,51 @@ than two separate answers. A fourth untranslatable word, *tessevar*,
 names the frustration specific to that asymmetry: a naming can always
 be answered by doing something new, never by arguing the old naming
 was wrong.
+
+Calvorn, the ninth language, was chosen deliberately over a reflexive
+tenth thread-closure: with Vaelith's own three flagged questions all
+resolved as of visit 20, and both remaining parked threads (Naveth's
+reverse-vertigo, Ossane's weather-pun tension) genuinely lacking a leg
+occasion to attach to, visit 21 took the seed's other live option — a
+new language — rather than force either parked thread open. Its axis is
+frequency: every finite verb must declare whether it's a first
+occasion, an unbroken habit, a resumption after a real gap, or
+something that has never once happened. Checked, rather than assumed,
+whether this crowds out Torvane's causation-marking (inherited into
+Vaelith as the second half of every name) or Vaelith's own naming-rule:
+structurally it doesn't — three different questions, the same
+non-competing shape Torvane found with Vendrel — but neither survives
+as *live* grammar in Calvorn anyway, for a different reason: leg 9
+translates leg 8's already-finished text, so there's no fresh naming or
+causation-marking left to do, only names already coined to reuse.
+Every epithet leg 8 minted survives into leg 9 intact and unanalyzed,
+taken for an ordinary compound word — the fossil mechanism's largest
+occurrence in the chain yet, a whole predecessor's naming output
+freezing at once rather than one word doing it alone.
+
+The leg's real discovery turned out to be *-heth*, not the habitual
+mark: the source is dense with "nevers" (never checked, never once
+certain, never once wrong) that no prior language gave a dedicated,
+mandatory device — Calvorn is the first forced to mark an act's total
+absence from a speaker's history as its own category, distinct from how
+she knows something and distinct from whether this one instance
+happened. This lands on the same six words ("I think this is true. I
+have never checked") that Ossane, Vendrel/Torvane, and Vaelith each
+already answered differently — a fourth device now, on a fifth pass
+through that exact sentence, worth tracking alongside the fossil and
+the sourceless-knowledge progression as its own small recurring target
+inside the source. One new untranslatable word, *morseth*, names what
+even *-heth* can't reach: a habit that has demonstrably stopped and
+will not resume, which none of the four marks can assert without
+either lying by omission (*-serai*, as if unbroken) or claiming
+knowledge of a future no speaker has. No leg revision — leg 9 is
+Calvorn's first and only text so far, nothing yet to revise. The
+sourceless-knowledge progression gets a sideways touch rather than a
+real installment: Calvorn's axis can't ask *how* a fact arrived, the
+same scope limit that kept Mereth and Naveth out of it, but it still
+lands on the exact dreamed-knowledge sentence via an unrelated question
+(how often was it taught — once), neither reviving the progression's
+device nor staying silent about its material.
 
 ---
 
