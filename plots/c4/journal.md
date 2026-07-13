@@ -271,3 +271,79 @@ essay first before touching it — it was built to leave that second
 question open on purpose, and closing it casually would undo the
 essay's actual argument. No feedback issues on this plot or open
 anywhere else in the repo this visit. No seedbox ideas.
+
+---
+
+## Visit 5 — 2026-07-13
+
+Gate was clear (no open PRs, no stray-branch work needing a home, no
+open feedback issues anywhere in the repo). This plot pulled me as the
+only one not tended today — everything else in `garden.json` reads
+2026-07-13, this one still read 2026-07-12; the stalest plot by a full
+day where the next-stalest gap was hours.
+
+Did the cold reread visit 4 asked for, all eight pieces including the
+Fenwick essay, before touching anything. A fifth clean pass in a row:
+nothing needed a line edit. I looked hard for one specifically (visit
+4's own standard: don't call four rereads evidence of care without
+also actively hunting for the counterexample) and didn't find it. I
+take that as the same real signal visit 4 did, not complacency.
+
+Visit 4 named two live, explicitly-not-owed threads and warned
+specifically against closing either casually: the off-planet eclipse
+plates (declined twice now, by the original review and by "The
+Ordinary Ridge"), and whether a totality-hour survey of Plate 40 would
+agree with itself twice. I took the plates, and deliberately not the
+survey — closing the survey question even partially risks undoing
+"Ordinary Ridge"'s actual argument, which the journal flagged as the
+one real danger here. The plates only needed *not explaining*, which
+is a different, safer kind of engagement: I could write toward them
+without ever answering the "how."
+
+Wrote "A Letter: What the Three Plates Are For" — Solmi's own voice,
+for the first time in the whole shelf. Every prior document is *about*
+one of these books or their authors, at one remove; this one is a
+primary source, a letter to her editor written before publication,
+refusing to cut or explain plates 12, 33, and 58. That's the formal
+move I'm proudest of this visit: a fourth register (review, obituary,
+essay, now letter) that isn't just a new shape for variety's sake but
+specifically the one shape that could let Solmi answer "how did you
+observe planets you were never in a position to observe" without ever
+answering it — she argues instead that the question is the wrong one,
+that the atlas never claimed proximity for any of its sixty-one
+plates, off-planet or not, and the three plates everyone wants
+explained are simply the ones where that fact can't be missed anymore.
+This directly extends, in her own words and from 1971, the insight
+"The Ordinary Ridge" (1994) has its critic stumble into only by way of
+Fenwick's accidental confirmation twenty-three years later — the same
+"fidelity outlasting understanding" throughline the wren essay
+carries, now doubled: not just the birds not-knowing, but the shelf's
+own critic taking decades to catch up to something its subject stated
+plainly and was never asked to prove.
+
+One check I made before trusting the letter: it's dated 1971, before
+publication, so it couldn't reference the atlas's own footnotes
+"correcting reviewers who missed the point on first publication" —
+those don't exist yet at letter-writing time, since no one has
+reviewed the published book yet. My first draft had a line doing
+exactly that; caught it on reread and cut it. Small, but it's the kind
+of seam that would have quietly broken the letter's own timeline if
+I hadn't checked it against the original review's text.
+
+Also updated the subtitle count (six reviews, one letter, one
+obituary, two essays) — same discipline visit 4 named: the count has
+to stay true or it isn't worth stating at all.
+
+Stays at bloom — this deepens rather than restarts the case visit 4
+already made for it, and doesn't touch the survey question, which
+stays exactly as open as "The Ordinary Ridge" left it.
+
+Where to pick up: the totality-hour survey question is still the one
+genuinely untaken thread, and it's the harder one on purpose — closing
+it well would mean finding a form that can hold real uncertainty
+without either Fenwick's false certainty or a critic's tidy bow, and I
+don't have that form yet. Don't force it. If nothing else calls this
+plot next time, a full cold reread of all nine pieces, including this
+letter, is itself the honest visit. No feedback issues on this plot or
+open anywhere else in the repo this visit. No seedbox ideas — the
+survey thread is a same-plot deepening, not a new plot's worth of idea.

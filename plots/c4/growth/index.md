@@ -1,6 +1,6 @@
 # The Unwritten Shelf
 
-*six reviews, one obituary, and two essays*
+*six reviews, one letter, one obituary, and two essays*
 
 ---
 
@@ -507,6 +507,72 @@ ridge that agrees with every hour except the one that was ever in
 question gets to settle anything, and I'd rather leave it exactly
 where the marginal note leaves it — unfound a second time, honestly,
 by someone who looked.
+
+---
+
+## A Letter: What the Three Plates Are For
+### Petra Solmi to Frederick Voss, her editor at Voss & Kerr · 14 March 1971, recovered from the firm's archive and printed here for the first time
+
+Frederick —
+
+You asked, in your last letter, why plates 12, 33, and 58 must stay,
+and I have spent a week deciding how much of an answer you actually
+want. You want a sentence you can put in front of the printer and a
+shorter one you can put in front of a nervous reviewer if it comes to
+that. I don't have either. What I have is this: cut the three
+off-planet plates and you have not made the atlas more reasonable,
+you have made it a liar, because you will have kept fifty-eight plates
+that ask the reader to believe a valley can be absent from the world
+except for forty minutes a century, and cut three that merely ask the
+reader to notice how little that claim ever depended on my having been
+anywhere at all.
+
+You keep asking how I observed an eclipse of a moon around a planet no
+instrument I own has ever reached, as though the other fifty-eight
+plates were observed in some more ordinary sense you'd feel better
+about. They were not. I did not watch the valley at Plate 40 arrive
+out of nothing and I did not watch it leave again; I was there for
+forty minutes out of however many years that valley has or hasn't
+existed the rest of the time, and I drew what the totality allowed
+itself to be seen as, once, and trusted the drawing more than I trust
+any claim to have understood the whole of it. The three off-planet
+plates are the same act performed with the pretense of proximity
+removed. I was not on Plate 40's hillside pretending I'd walked there
+either — I was in a rented room in Odur with a borrowed lens, doing
+the only kind of seeing this book was ever capable of, which is a kind
+that has never required a body in the right place at the right time.
+It only ever required being willing to draw the hour honestly once
+someone, anyone, however impossibly, had been in a position to look.
+That is a smaller claim than "I went there," and I think it is the
+only claim the atlas has actually been making from Plate 1 onward. The
+three plates you want gone are simply the ones where the distance
+between the claim and the pretense of firsthand travel finally shows.
+
+Cut them and the atlas becomes exactly the book your reviewers already
+suspect it secretly is — a travelogue with sixty-one stops, some more
+convenient to verify than others, and every plate becomes a dare to go
+check, which is not what the book is for and never was. Keep them,
+honestly labeled and unexplained, and the atlas has to be read the
+other way, the way I actually made it: as a record of what a small
+number of impossible hours were willing to show anyone in a position
+to be looking during them, my having a body in the room being the
+least interesting condition of the sighting, not the first one.
+
+I will not write you a paragraph explaining plates 12, 33, and 58,
+Frederick, because the paragraph you want would explain them by making
+them ordinary, and they are the three plates in this book I am least
+willing to make ordinary. Print the atlas with them or don't print it.
+I have redrawn Plate 40 four times this year trying to make its
+coastline defensible to a reader who has never once had to defend a
+coastline in his life, and every version was worse than the first,
+because the first was honest about not knowing and the later ones were
+honest about wanting you to stop asking. I am sending you the first
+version back.
+
+— Petra
+
+*The atlas was published the following year, plates 12, 33, and 58
+unexplained and unremoved. No later edition has added a note.*
 
 ---
 
