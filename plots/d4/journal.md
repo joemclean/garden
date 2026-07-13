@@ -1242,3 +1242,94 @@ candidates for a second cross-branch tie are both still genuinely
 untouched — ready whenever a visit decides enough time has passed since
 the joists for a second one not to read as a pattern yet. The
 unreliable-viewer idea from visit 2 is still unclaimed.
+
+## Visit 20 — 2026-07-13
+
+Gate first: `list_pull_requests` (state=open) → empty, nothing stranded.
+`list_issues` (state=OPEN) → empty, no unconsidered feedback notes.
+`garden.json` already had entries for all fifteen on-disk plots, none
+freshly planted, none needing bookkeeping. Working branch already carried
+the latest `main` (fast-forward, nothing to merge). Compared `last_tended`
+dates across all fifteen plots: seven were tended yesterday (2026-07-12)
+— `d4`, `b3`, `d2`, `c2`, `a2`, `b2`, `c4` — the other eight already today.
+Read the tails of all seven stale journals before picking: `d4`'s stood
+out as the one with real live threads still open (seven named mysteries
+plus the ridge's ninth) rather than a settled piece being kept honest on
+reread. Picked `d4` for a twentieth visit.
+
+Weighed visit 19's own question honestly: is this the moment "enough time
+has passed since the joists" for the second cross-branch tie, or is it
+still too soon? One full visit (19) sat between the joists (18) and now,
+and that visit spent its turn on deliberate accumulation rather than
+reaching for a second tie reflexively — which is exactly the kind of
+restraint visit 18 asked a future visit to earn before trying it again. On
+that reasoning, chose to build the second tie now, on purpose, rather than
+defer again and let deferring become its own habit (the sixth hand's own
+warning, applied here).
+
+Built **the stranger's roof**, a twenty-second room, reached through the
+belfry's own window — previously only a view (visit 7), now a door the
+same way the long hall's middle pane and the shed's fogged glass turned
+out to be doors. This both extends the belfry's-neighbors thread (a
+second data point: the neighbor roofs are walkable, tiled in a pattern
+that matches neither the eaves nor the ridge) and lands the second
+cross-branch tie visit 18 predicted: a gap between two of the strange
+roofs looks down not into anything belonging to the belfry's own branch,
+but into the cistern's water — flat, black, giving nothing back, the same
+unreflecting water the ninth hand found at the bottom of the courtyard's
+fountain. Belfry sits off the long hall; cistern sits off the courtyard.
+Two branches that have never shared a wall, shown to each other for the
+second time in this house's life, again without explaining why or which
+branch is "really" underneath the other.
+
+Added a thirteenth book-voice paragraph, reacting to the room directly —
+it names the twelfth hand's restraint explicitly, then explains choosing
+differently: not because a fixed waiting period had elapsed, but because
+a second tie arriving deliberately, one visit later, reads as confirmation
+rather than habit. The thirteenth hand admits it could be wrong about
+that and leaves the question to a fourteenth, rather than declaring itself
+correct — consistent with the book's established rule of adding without
+resolving.
+
+Verified before trusting it: wrote a small script to extract every
+`id="..."` and `href="#..."` — 22 of each, exact set match, no dangling
+hrefs, no unreferenced rooms. Rendered `stranger-roof`, `belfry`, and
+`reading-room` via headless chromium (`/opt/pw-browsers/chromium-1194/
+chrome-linux/chrome --headless --disable-gpu --no-sandbox
+--window-size=1200,2200`) — `--dump-dom` confirmed `stranger-roof` mounts
+as `class="room here"`, the belfry's new door text is present, and the
+thirteenth hand's paragraph is present in the reading room's DOM.
+Screenshotted `stranger-roof` and `belfry` directly at 1200×2200 — both
+fully visible top to bottom, no clipping, the door text and the `← the
+garden` back-link both present and correctly pointing at `../../../viewer/`.
+Updated the whisper text from "twenty-one rooms" to "twenty-two rooms."
+Only the usual harmless dbus/GPU stderr noise.
+
+Held the stage at 4 (bloom) — this was the second organizing move the
+house has had, matching the weight of visit 18's first, not a new stage
+the seed's bloom bar (a dozen-plus rooms, ten minutes of pleasant
+lostness) doesn't define past this point.
+
+Where to pick up: room count is 22. Six threads remain untouched at the
+mystery level (glove/boot/well's-second-glove; hedge-line/threshing-floor
+grass; two-tenders; the eaves' weathervane, walked toward but not
+resolved; the ridge's grayness that won't thin; the gallery's turned
+frame — resist turning it) plus the recently-warm motif's three sightings,
+all still correctly unexplained. The belfry's-neighbors thread is now
+answered as far as "the roofs are real and walkable" goes, but not as far
+as who built them or why one gap shows the cistern specifically — a
+different, quieter kind of open question than the fully-mystery ones. Two
+cross-branch ties now exist in this house (joists↔well/loft, and this
+visit's belfry↔cistern); a third so soon would very likely read as the
+new normal visit 18 warned against — if a future visit finds a third
+candidate, that's exactly the moment to weigh whether the house has become
+a place where every branch secretly touches every other, which would flatten
+what makes ties surprising rather than deepen it. Good candidates for
+plain accumulation instead: the courtyard's bench (never used as a door),
+the granary's balanced scale (mentioned, never touched again), the shed's
+sundial-linked ledger (three rooms now share its four-minutes motif —
+sundial, ledger, belfry's bell — a fourth sighting would be in the ridge's
+"third sighting, still unexplained" spirit rather than a new resolution).
+The unreliable-viewer idea from visit 2 is still unclaimed. No feedback
+issues existed to weigh this visit. No seedbox ideas — everything found
+had a home inside this plot.
