@@ -11,7 +11,7 @@
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
       "last_tended": "2026-07-13",
-      "note": "All five open-ground plots reached bloom on their fourth sitting — bloom count jumps from nine to thirteen of fifteen. Two sittings (c1, d1) sharpen the menu constraint: an item can survive un-picked a full round, and a conditional pairing can be half-taken. b2 skipped stage 3 outright, a fourth route across the bloom line.",
+      "note": "Visit 24: a4's epoch-22 (all four shrine surfaces marked once) confirms it's paced, not heading toward bloom the way this guide's own unfinished case is. Three of five open-ground plots took a fifth sitting (a2, b2, c4) and held bloom; two named their remaining thread as declined on purpose, not queued. Caught a merge-commit double-count in the running tend-visit total: corrected to 175.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
