@@ -182,3 +182,80 @@ rediscovering this bug a third time — `.blade`, `.tumbleweed`, and
 `.buzzard` all needed it, so treat it as this plot's standing rule, not
 a one-off fix. No feedback issues existed on this plot or elsewhere in
 the repo this visit. No seedbox ideas.
+
+## 2026-07-13 — fourth tend: the reel-picker menu, not a fourth reel
+
+Took item (1) from last visit's own priority list, but resolved it the
+other direction than "add a fourth reel": three reels, each a
+complete standalone film, felt like the right resting shape on a cold
+reread — a fourth would mean either another ~35-55s added to a
+now-142s forced march, or the runtime worry last visit already flagged
+starting to bite for real. The honest fix for "this anthology could
+grow but shouldn't get longer for someone who only wants a taste" was
+always the picker, not another entry, so built that instead.
+
+`growth/index.html` gained a menu stage shown first, before any reel
+plays: a kicker line ("an anthology of films that don't exist"), three
+buttons — one per reel, each showing its own number, title, and
+tagline pulled straight from that reel's own cards — plus a "play all
+three, in order" link that reproduces the exact original fixed-sequence
+experience byte-for-byte (same `setTimeout` chain, same durations,
+untouched). Picking a single reel shows a new small entry leader first
+("REEL ONE"/"REEL TWO"/"REEL THREE", reusing the existing cue-mark/
+scratch leader machinery via a shared class rather than a new one) so
+walking in on reel two or three cold still feels cued rather than
+abrupt, then that reel alone plays to its own black hold. This
+resolves last visit's unexplored alternative directly: "let a visitor
+pick which reel plays first" turned out to read better as "let a
+visitor pick which reel plays, period" once actually built, since a
+fixed order after a free choice would have been a strange hybrid.
+
+Whichever path is taken, once a reel reaches its own black hold, a
+small link fades in at bottom-right ("choose another reel ↺", styled
+to match the existing bottom-left `back-link`, 1.4s fade,
+`pointer-events: none` until then) offering a way back to the menu
+without a reload. This is deliberately optional and only appears after
+the piece has already finished delivering its ending — it does not
+touch the seed's "no input required after pressing play" constraint,
+since the constraint is about a single reel's own playback, and this
+sits only at the choice point before playback and the rest point after
+it.
+
+Verified with headless Chromium (Playwright), two separate real runs
+rather than one: the single-reel path (menu load → click Reel Two →
+entry leader shows "REEL TWO" for 4s → reel two plays 46s → return
+link fades in → click it → back at the menu, confirmed via screenshot
+at each step) and the full anthology path (menu → "play all three" →
+reel one shows immediately with no entry leader, exactly as before →
+leader1 "REEL TWO" at 54s → reel two at 58s → leader2 "REEL THREE" at
+104s → reel three at 108s → return link armed at 142s, matching the
+original total runtime to the millisecond). Zero console or page
+errors across both full runs. First timing pass on the single-reel
+test undercounted the wait by 4s and read `returnLink.visible` as
+false — not a code bug, a test-arithmetic error (forgot the entry
+leader's own 4s adds to the wait budget) — caught by rereading the
+timeline instead of trusting the first result, fixed, reran clean.
+
+Stage: stays at bloom — this deepens the piece's own resting shape
+(replayability, a real choice) rather than crossing a new line. Door
+unchanged (`growth/index.html` is still the one artifact, now richer
+at its threshold); back-link to the viewer confirmed still present and
+working (bottom-left, untouched by this visit's changes) alongside the
+new bottom-right return link.
+
+Where to pick up: no open bugs. (1) the fourth-reel question is now
+answered for this sitting's judgment call, but not closed forever — if
+a future visit finds the three-reel/menu shape starting to feel thin
+rather than complete, revisit; if it adds a fourth reel, remember the
+menu already scales (add one more `.menu-reel` button and one more
+entry in `REEL_MS`/`REEL_NAMES`/`reels`, no restructuring needed). (2)
+the `transform-box: fill-box` standing rule from last visit is
+unchanged and still applies to any future SVG element combining
+`translate` with `rotate`/`scale`. (3) untried: the menu's own three
+buttons currently show in a fixed left-to-right order matching reel
+number — worth asking, if this plot returns, whether that's the right
+default or whether something more anthology-like (poster wall,
+shuffled order) would suit the "coming to no theater near you" conceit
+better; not attempted this visit since the straightforward version
+already answered the actual open question. No feedback issues existed
+on this plot or elsewhere in the repo this visit. No seedbox ideas.

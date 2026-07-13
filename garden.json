@@ -114,8 +114,8 @@
       "stage": 4,
       "title": "Open ground: something that moves",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-12",
-      "note": "Third tend adds a third reel, deliberately its shortest (34s, addressing the runtime concern named last visit): a derelict noon drive-in theater, tumbleweeds, a circling buzzard, heat shimmer. Caught and fixed a real transform-box bug (SVG rotate defaulting to view-box origin, not the shape's own) via getCTM() measurement, not just visual guessing. Three distinct, complete reels now, verified end to end with zero console errors. Moves to bloom.",
+      "last_tended": "2026-07-13",
+      "note": "Fourth tend resolves last visit's own open question the other way: not a fourth reel, but a menu shown before playback — pick one reel (cued by a new short entry leader) or play all three in the original fixed order, unchanged. A quiet return link appears after any reel's own black hold, never required. Verified both paths end to end via headless Chromium, zero console errors. Stays at bloom.",
       "door": "plots/d1/growth/index.html"
     },
     "c4": {
