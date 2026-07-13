@@ -27,8 +27,8 @@
       "title": "Erosion",
       "planted": "2026-07-06",
       "last_tended": "2026-07-13",
-      "note": "epoch-21: the shrine roof takes its first mark, a hairline crack at the ridge, same verb and styling as the base's own first crack. Banner, base, and now roof have each been weathered once; only the pole remains fully untouched. The far solitary bird's stillness was left deliberately unspent again.",
-      "door": "plots/a4/growth/epoch-21.svg"
+      "note": "epoch-22: the pole leans, not cracks — a shape-appropriate verb, displaced +2.5 in x at the tip, same downwind direction the banner has been fraying toward since epoch 16. The banner rigidly follows the pole's new tip. All four shrine surfaces (banner, base, roof, pole) have now been touched exactly once; the far solitary bird's five-epoch stillness is the garden's strongest remaining unspent thread.",
+      "door": "plots/a4/growth/epoch-22.svg"
     },
     "b3": {
       "stage": 4,
