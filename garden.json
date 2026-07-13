@@ -87,11 +87,11 @@
       "door": "plots/c2/growth/index.md"
     },
     "c1": {
-      "stage": 3,
+      "stage": 4,
       "title": "Open ground: something to look at",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-12",
-      "note": "Third sitting adds a third temperament: Euler's 1767 collinear central configuration (same 3-4-5 masses as the Burrau page, collinear instead of triangular) collapsing homothetically to a single triple collision in finite time. Gap ratio (1.12912...) confirmed two independent ways to 12 digits, then verified constant under real unconstrained integration rather than assumed. Door is now an index of all three pieces. Stays at growing.",
+      "last_tended": "2026-07-13",
+      "note": "Fourth sitting closes the two-visit-old fork: added a fourth temperament, a momentum-conserving small kick to the figure-eight that tracks the true loop for ~30 laps then visibly stops closing on itself. First attempt broke momentum conservation and just drifted sideways; caught via the center-of-mass check before trusting the image. Door is now an index of all four pieces. Moves to bloom.",
       "door": "plots/c1/growth/index.html"
     },
     "a2": {
