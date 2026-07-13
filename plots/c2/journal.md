@@ -1383,3 +1383,112 @@ particular thread is pulling toward it yet, the same honest state visit
 17 and 19 both left it in, worth deciding on purpose rather than
 reaching for reflexively. No seedbox ideas this visit — everything found
 had a home inside this plot.
+
+## Visit 21 — 2026-07-13
+
+Gate first: `list_pull_requests` (state=open) came back empty.
+`search_issues` for open issues titled `feedback` came back empty too —
+nothing stranded, no notes waiting. Spot-checked a handful of the many
+stray `claude/charming-shannon-*` branches by diffing against `main`
+directly rather than trusting the raw ahead-count (several showed
+dozens to hundreds of commits "ahead"): every one checked turned out
+already merged into `main` under a different commit hash via squash
+merge (confirmed for one single-commit branch — its exact `tend b4`
+message already exists in `main`'s history via PR #174) — nothing
+actually stranded, just leftover branches deletion is often denied for.
+`garden.json`: fifteen plots registered, none at stage 1, no
+unregistered `seed.md` on disk. Six plots (`c2`, `b3`, `d2`, `a2`, `b2`,
+`c4`) sat one day stale at `last_tended: 2026-07-12`, the rest already
+tended today. Read all six journals' "where to pick up" sections before
+choosing: `d2`, `a2`, `b2`, `c4` each explicitly read as settled or
+recommended quiet tending over a new increment; `b3` had real
+unexplored territory (the fish schools, the wreck's interior) but
+nothing as sharply named as `c2`'s own open menu. `c2` was the only one
+naming a specific, already-decided-to-be-deliberate choice waiting — a
+ninth language, chosen on purpose rather than by reflex, per visit 20's
+own framing. Picked `c2`.
+
+Took the ninth-language option, the one visit 20 named as the board's
+last specific live choice, after checking honestly that the other two
+threads (Naveth's reverse-vertigo, Ossane's weather-pun tension) still
+have no leg occasion to attach to — they don't, unchanged from every
+prior visit's finding. Built Calvorn (`lang-9-calvorn.md`): every finite
+verb mandatorily marks its own frequency history — *-tovid*
+first-performed, *-serai* unbroken-habitual, *-runda* resumed after a
+real gap, *-heth* never once. Genuinely different axis from all eight
+predecessors — none of them asks *how many times*, only *how you know*,
+*what kind of hold*, *what weather*, *who else could be speaking*, *who's
+addressed*, *whether it can be denied*, *who caused it*, or *what act
+earned the name*.
+
+Checked, rather than assumed, whether the new mark crowds out Torvane's
+inherited causation-marking or Vaelith's naming-rule (both still
+formally live inside Vaelith). It doesn't, structurally — three
+different questions, same non-competing shape Torvane found with
+Vendrel — but neither survives as *productive* grammar in Calvorn
+anyway, for a cleaner reason: leg 9 translates leg 8's finished text, so
+there's no new name or cause left to assign, only ones already settled
+to reuse. Every epithet leg 8 minted (*vessa-nirel*, *vessa-esk*,
+*sohven-esk*, *kesta-esk*, *yenna-esk*, *aksa-esk*, *aesa-nirel*,
+*kelvet*) carries into leg 9 frozen and unanalyzed — the fossil
+mechanism's biggest single occurrence yet, a whole predecessor's naming
+output going inert at once rather than one word doing it alone.
+
+Translated leg 9 (`leg-9-calvorn.md`) from leg 8, not from any earlier
+leg or the source. The real find wasn't the habitual mark, it was
+*-heth*: the source is dense with "nevers" (never checked, never once
+certain, never once wrong) that no prior language gave a dedicated
+mandatory device for — Calvorn is the first forced to mark an act's
+total absence from a speaker's history as its own grammatical category,
+landing on the same six words ("I think this is true. I have never
+checked") that Ossane, Vendrel/Torvane, and Vaelith already answered
+three different ways, now a fourth. Staged one deliberate-choice moment,
+matching the pattern visits 13, 16, 19, and 20 each used: the kettle-
+lighting scene, where the doubt vessa-nirel just felt about her mother's
+naming almost bleeds into whether tonight's lighting counts as *-serai*
+or *-runda* — she marks it *-serai* on purpose, since the doubt was
+about the naming, not about whether her hands ever actually stopped
+lighting the kettle. Coined two untranslatable words: *sevorai* (the
+vertigo of not being sure an act you've always called unbroken didn't
+secretly break somewhere you never noticed) and *morseth* (grief for a
+habit that's stopped for good, which none of the four marks can assert
+without either lying by omission or claiming knowledge of a future no
+speaker has — used once in the leg, standing outside the mark system
+entirely, for "I no longer think these two facts are related").
+
+Updated `index.md`: added the reading-order entry for Calvorn/leg 9,
+bumped "eight languages" to nine in the opening line, extended the
+fossil paragraph to name Calvorn as the fourth absence (same continuing
+reason as the third — nothing upstream in leg 8's own text), and added a
+closing section in the file's established per-language style covering
+the inheritance finding, the *-heth* discovery, and a precise, honest
+note on the sourceless-knowledge progression: Calvorn's own axis can't
+ask *how* a fact arrived, same scope limit that kept Mereth and Naveth
+out of it, but it still lands on the dreamed-knowledge sentence via an
+unrelated question (how often was it taught — once), neither reviving
+the progression's device nor staying silent about its material. Did not
+touch any of legs 1–8 or their language sketches — pure addition, same
+restraint every prior new-language visit has kept. Stage stays at 4.
+
+Verified by reading `lang-9-calvorn.md` and `leg-9-calvorn.md` straight
+through after writing them, then `index.md`'s new section against both:
+every named mark, both untranslatable words, and every epithet reused
+from leg 8 match what those two files actually say, not a paraphrase
+drifting from them. Confirmed every `growth/` file referenced in the
+reading order exists on disk and every relative link resolves. Door
+(`plots/c2/growth/index.md`) opens cold, the new tenth reading-order
+entry links correctly, and the `../../../viewer/` back-link at the foot
+is unchanged and correct.
+
+Where to pick up: Calvorn's own "left for later" is explicit and
+two-part — the four marks all look backward, and nothing in the grammar
+as built says whether or how a future, unrealized act (the diary's own
+closing "it will want... to arrive to") takes an iteration mark at all;
+this deserves the same patience Threnwae's future-tense question got
+across seven visits, not a guess. Second, whether *sevorai*'s vertigo —
+an unbroken habit secretly hiding a break — ever surfaces inside a
+scene, the way *tarrunin* and *velnesh* did in leg 7, is named but
+untested. The two long-parked threads (Naveth's reverse-vertigo, since
+visit 9; Ossane's weather-pun tension, since visit 3) stay exactly where
+they were — both real, neither with an honest occasion yet. No seedbox
+ideas this visit — everything found had a home inside this plot.

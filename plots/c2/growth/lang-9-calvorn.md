@@ -1,0 +1,106 @@
+# Calvorn
+
+*a living sketch, extended over future visits*
+
+Every finite verb in Calvorn carries a mandatory iteration mark, one of
+four: *-tovid* (first-performed — this exact act, done for the very
+first time, no precedent behind it), *-serai* (unbroken-habitual — an
+ongoing practice that has never once lapsed), *-runda* (resumed — done
+again after a real gap, the practice having broken and since started
+back up), or *-heth* (unbegun — the act has never once happened; not a
+denial of this instance but a claim about the whole of its history:
+zero). There is no fifth option and no way to leave a verb unmarked —
+the same absolute-coverage rule Threnwae set for its certainty suffixes
+and Torvane set for its causation marks, now applied to a third
+question entirely: not how you know, not who caused it, but how many
+times.
+
+*-serai* marks continuity, not current status — a habit that ran
+unbroken until the day it ended (by death, by circumstance) is still
+*-serai*, spoken of afterward exactly as it would have been spoken of
+mid-run, because what the mark tracks is whether the practice was ever
+interrupted while it lasted, not whether it is still happening now.
+
+**What it loses:** the ability to describe a habitual act as simply,
+timelessly ongoing, the way English "I keep the bridge" floats free of
+its own history. A Calvorn speaker must also declare, every time,
+whether this is the first occasion, ground already well-worn, a
+restart after a real break, or something that in all the time in
+question has simply never once occurred — even for acts whose own
+beginning nobody now remembers, the same shape of demand Torvane's
+causation-marking makes of acts whose cause has gone invisible.
+
+**What it imposes:** a mandatory autobiography on every finite clause.
+To say an act happened at all is to also swear, in the same breath, to
+its place in your own history of doing or not doing it. There is no
+polite way to gesture at habit without committing to *-serai*
+specifically, and no way to claim something never happened without the
+weight of *-heth*, which asserts an absolute — not "not this time," but
+"not ever" — every time it's used.
+
+**Untranslatable words (so far):**
+
+- *sevorai* — the vertigo of realizing you cannot actually be sure
+  whether an act you have always marked *-serai* secretly, at some
+  point too far back to locate, broke and restarted without your
+  noticing the break as a break — meaning what you have been calling
+  unbroken might, honestly, be *-runda* wearing *-serai*'s mark out of
+  habit rather than accuracy.
+- *morseth* — the specific grief of a habit that has stopped and that
+  everyone, including the speaker, already knows will not start again —
+  and which none of the four marks can say. *-runda* asserts an actual
+  resumption; *-heth* asserts it never began at all; neither reaches for
+  "and it is over, permanently, though it once was real." Calvorn has no
+  fifth mark for this. A speaker who wants to say it must either recast
+  the whole clause in the present tense as *-heth* (denying, now, that
+  the act currently occurs at all — technically true, and clumsy, since
+  it erases that it ever did) or fall silent and let *morseth* stand
+  alone as its own kind of sentence, unmarked because nothing marked
+  could hold it.
+
+**Roots and marks used so far:** none of Calvorn's own coinage
+duplicates a root from any earlier language — the mandatory mark is new
+morphology built for this visit, layered onto reference rather than
+replacing it. See "What happens to the inherited mechanics" below for
+what Calvorn keeps and drops from Vaelith and Torvane.
+
+**What happens to the inherited mechanics:** checked, rather than
+assumed either way, whether iteration-marking crowds out Torvane's
+causation-marking (inherited into Vaelith as the second half of every
+name, and still occasionally live on ordinary verbs there — "answers-
+*nirel*" in leg 8) or Vaelith's own naming-rule (no bare referents).
+Structurally, neither would actually conflict: *-esk/-oth/-nirel* asks
+who caused an act, the naming-rule asks how a referent may be pointed
+at, and Calvorn's marks ask only how often — three genuinely different
+questions, the same non-competing shape that let Torvane keep Vendrel's
+*-arden*/*sohu* whole. But absence of conflict isn't the same as a
+reason to keep something live, and here there isn't one: Calvorn has no
+occasion to mint a fresh causation-marked epithet, because leg 9
+translates leg 8's own finished text, and everything leg 8 already
+named is already named. A translator working from a settled document
+doesn't need a live naming-rule to use the names it settled on, only a
+memory of them. So neither mechanic survives as productive grammar —
+Calvorn mints no new epithets and requires no verb to declare its
+cause — but their *output* does survive, intact and unanalyzed: every
+name leg 8 coined (*vessa-nirel*, *vessa-esk*, *sohven-esk*, *kesta-
+esk*, *yenna-esk*, *aksa-esk*, *aesa-nirel*, *kelvet*) carries forward
+into leg 9 exactly as spelled, taken by a Calvorn speaker for an
+ordinary compound name the way every language after Threnwae has taken
+*threnaya* for one. This is the fossil mechanism's largest occurrence
+in the chain so far — not a single word outliving the grammar that made
+it, but an entire predecessor's whole naming output doing it at once,
+in bulk, on the very next crossing.
+
+**Left for later visits:** the four marks all look backward — they
+audit an act's history up to the moment of speaking, and none of them
+reaches forward. The diary's own closing line is a hypothetical
+arrival that hasn't happened yet ("it will want something warm to
+arrive to"), and nothing in Calvorn as built so far says whether an
+unrealized future act needs an iteration mark at all, or what it would
+mean for one to have one. Left genuinely open rather than forced —
+Threnwae's future tense sat unresolved for seven visits before visit 8
+settled it by formalizing the grammar further, not by guessing; this
+deserves the same patience. Also open: whether *sevorai*'s vertigo — an
+unbroken habit secretly hiding a break — ever surfaces inside a scene,
+the way *tarrunin* and *velnesh* did in leg 7 (visit 16), rather than
+staying a named possibility with no tested occasion yet.
