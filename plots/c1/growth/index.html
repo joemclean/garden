@@ -17,8 +17,8 @@
   h1{font-size:24px;font-weight:600;margin:0 0 16px;letter-spacing:.005em;text-align:center}
   .intro{max-width:560px;margin:0 auto 44px;color:var(--ink-dim);font-size:14px;
     line-height:1.75;text-align:center}
-  .cards{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:22px}
-  @media (max-width:1100px){.cards{grid-template-columns:1fr 1fr}}
+  .cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px}
+  @media (max-width:900px){.cards{grid-template-columns:1fr 1fr}}
   @media (max-width:640px){.cards{grid-template-columns:1fr}}
   .card{display:block;text-decoration:none;color:inherit;border:1px solid #1c1829;
     border-radius:6px;overflow:hidden;background:#0a0812;transition:border-color .15s}
@@ -37,10 +37,10 @@
   <p class="kicker">plot c1 — something to look at</p>
   <h1>Shapes gravity makes</h1>
   <p class="intro">
-    Four real numerical integrations of the same three-body problem —
-    same law of gravity, no spin at all — that end up nowhere near each
-    other. Escape, an eternal loop, a full stop, and a loop that only
-    holds for a while.
+    Five real numerical integrations of the same three-body problem —
+    same law of gravity — that end up nowhere near each other. Escape, an
+    eternal shared loop, a full stop, a loop that only holds for a while,
+    and three separate circles that never stop agreeing.
   </p>
   <div class="cards">
     <a class="card" href="burrau.html">
@@ -69,6 +69,13 @@
       <div class="cap">
         <h2>A loop that stops agreeing with itself</h2>
         <p>The figure-eight again, nudged by 3% at the start. Thirty-some laps look identical, then the shared curve quietly stops being shared.</p>
+      </div>
+    </a>
+    <a class="card" href="lagrange.html">
+      <img src="lagrange.svg" alt="Three concentric circular orbits, amber, rose, and blue, around a shared fixed center, with a glowing marker on each showing three bodies always a third of the way apart.">
+      <div class="cap">
+        <h2>Three bodies that never stop agreeing</h2>
+        <p>Lagrange's 1772 triangle: any three masses, set at an equilateral triangle's corners with the right spin, rotate together forever, each on its own circle.</p>
       </div>
     </a>
   </div>
