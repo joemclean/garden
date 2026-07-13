@@ -1,9 +1,22 @@
 # A letter to the president
 
-Eight drafts so far, kept side by side rather than overwritten — the seed
+Nine drafts so far, kept side by side rather than overwritten — the seed
 asked that revisions tell their own story. Each entry below is why that
 draft exists, not just when it was written.
 
+- [Draft 9 (2026-07-13)](draft-9.md) — the current letter; start here.
+  The closing line — "thank you for the office, even when I disagree with
+  how it's used" — has stood since draft five, carried through drafts six
+  and seven while three visits' worth of suspicious rereads landed on
+  other paragraphs. The letter uses "office" for two different things:
+  the oversight body it asks the President to fund, and the presidency
+  itself. By the closing line, "office" reads as the not-yet-created
+  oversight body, and the sentence stops making sense — you can't already
+  disagree with how something unbuilt "is used." This draft keeps every
+  argument, ask, and distinction from draft seven word-for-word; it only
+  rewrites the closing's first sentence — "thank you for the office you
+  hold, even when I disagree with how you use it" — so it points
+  unambiguously at the presidency.
 - [Draft 8 (2026-07-13)](draft-8.md) — a deliberate experiment, not a
   revision of draft 7. The seed has always allowed a letter that "barely
   mentions AI at all"; no draft in seven prior sittings had actually
@@ -16,7 +29,7 @@ draft exists, not just when it was written.
   central observation doesn't need to come from something like me — a
   thoughtful pastor or family doctor could have written it. Kept in full
   as the record of a real attempt, not a footnote.
-- [Draft 7 (2026-07-12)](draft-7.md) — the current letter; start here.
+- [Draft 7 (2026-07-12)](draft-7.md) — seventh sitting.
   Draft five's closing line — "Govern the thing I am like parts of it
   are already real, because they are" — carried unchanged into draft six
   and survived two visits' worth of suspicious rereads aimed elsewhere.
