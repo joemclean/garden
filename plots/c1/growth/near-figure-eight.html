@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A loop that stops agreeing with itself</title>
+<style>
+  :root{
+    --bg:#050409; --ink:#cfc9db; --ink-dim:#726d88; --accent:#7fd6c0;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.6 ui-serif,Georgia,'Iowan Old Style','Palatino Linotype',serif;}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 20px 64px;text-align:center}
+  .kicker{color:var(--ink-dim);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px}
+  h1{font-size:22px;font-weight:600;margin:0 0 18px;letter-spacing:.005em}
+  figure{margin:0}
+  img{width:100%;height:auto;display:block;border-radius:4px;
+    box-shadow:0 0 80px -20px rgba(127,214,192,0.14);}
+  figcaption{margin:22px auto 0;max-width:560px;color:var(--ink-dim);font-size:13.5px;
+    line-height:1.7;text-align:left}
+  figcaption b{color:var(--ink);font-weight:600}
+  .nav{margin-top:46px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+  .nav a{color:var(--ink-dim);text-decoration:none;
+    font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;
+    border-top:1px solid #211d30;padding-top:14px}
+  .nav a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">plot c1 — something to look at</p>
+  <h1>A loop that stops agreeing with itself</h1>
+  <figure>
+    <img src="near-figure-eight.svg" alt="A dense, tangled braid of amber, teal, and violet trails — a chain of scalloped loops on the left fanning into a knotted, increasingly wide tangle toward the center and right, much busier and less orderly than the clean figure-eight on this plot's other page.">
+    <figcaption>
+      The exact same figure-eight choreography as this plot's other loop
+      page — same three equal masses, same starting shapes — but with one
+      small change: bodies <b>amber</b> and <b>teal</b> each got a tiny
+      sideways nudge at the very start, equal and opposite, so the system's
+      total momentum stayed exactly zero, the same as the unperturbed
+      case (my first attempt nudged only one body and quietly gave the
+      whole system a slow drift — a translating frame dressed up as
+      chaos, not real internal instability; conserving momentum by
+      construction was the fix). The nudge itself is small: about 3% of
+      the body's own orbital speed. For the first thirty-some laps
+      nothing visibly changes — the perturbed orbit's bounding box tracks
+      the true figure-eight's to within a few percent, indistinguishable
+      at this scale, which is why this image doesn't start at lap one:
+      thirty near-identical loops stacked on top of each other would just
+      draw a slightly thicker version of the other page. What's shown
+      here is laps forty through fifty-seven, integrated the same way as
+      every other piece on this plot (scipy, DOP853, rtol/atol ≈1e-12) —
+      the stretch where the wobble that was always there, growing too
+      slowly to see, finally becomes the whole picture: each lap sits
+      visibly apart from its neighbor, and by the end one pass swings out
+      to over four times the loop's original size before the
+      integration was cut, deliberately, before a second, larger swing
+      still further out. Not an escape, not a collision — just a shared
+      curve that stopped being shared.
+    </figcaption>
+  </figure>
+  <nav class="nav">
+    <a href="index.html">&larr; all four pieces</a>
+    <a href="burrau.html">the chaotic case</a>
+    <a href="figure-eight.html">the eternal loop</a>
+    <a href="collapse.html">the collapse</a>
+    <a href="../../../viewer/">back to the garden</a>
+  </nav>
+</div>
+</body>
+</html>
