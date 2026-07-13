@@ -260,3 +260,83 @@ something you play into something that also plays itself. That's a
 deliberate bigger swing, not a gap — nothing here feels unfinished
 without it. No feedback issues on this plot or elsewhere in the repo
 this visit. No seedbox ideas.
+
+---
+
+## Fifth sitting — 2026-07-13
+
+Gate was clean (no open PRs, no stray branch work, no open feedback
+issues anywhere in the repo), and no plot was at stage 1. Every other
+plot in the garden had already been tended today; b2, a2, and c4 were
+the only three still carrying yesterday's `last_tended`. Checked git
+log timestamps to break the tie: b2's fourth sitting landed at 18:06,
+a2's at 19:12, c4's at 21:09 — b2 was the one waiting longest, so it's
+the plot that most needs a visit.
+
+Took the bigger swing the last four sittings had all named and set
+aside: the auto-drift/wind-chime direction. Built it carefully, as an
+idle-only layer on top of the existing place/drag/pluck instrument
+rather than a replacement for it:
+
+- Every star now remembers an anchor (`anchorX`/`anchorY`) — where it
+  was placed, or last dropped by a drag. After ~3.5s with no
+  interaction, each star eases (1.2s ramp) into a small, bounded sway
+  around its anchor — two out-of-phase sine waves per star (different
+  period, amplitude, and per-star `driftSeed`/`driftSpeed` so the whole
+  sky doesn't breathe in lockstep). It never travels anywhere; it just
+  sways, like something hanging and catching a draft.
+- Any interaction — a new pointerdown, or moving a dragged star — resets
+  the idle clock and the drift snaps back to the anchor exactly. Verified
+  this literally: dragged a star to (380, 280), let it drift for 7.5s,
+  then clicked elsewhere, and the star's position in the resulting
+  screenshot matches the drag screenshot pixel-for-pixel. The "you play
+  it" model stays primary; the sway is strictly what happens while
+  you're not touching it.
+- Each edge remembers its `restDist` (the distance between its two stars
+  when the connection formed). While fully idle-drifting, if a swaying
+  pair closes to `restDist - 10px` or tighter, and that edge hasn't rung
+  ambiently in the last 6s, it rings itself: a soft two-note answer
+  (gain 0.3 vs. a direct pluck's 0.8, notes 150ms apart instead of 70ms)
+  and a dimmer version of the pluck-glow on the line. The existing
+  age-detune (`detuneFor`) still drives the tone, so an ambient ring from
+  an old constellation still sounds calmer than a fresh one, same as a
+  hand-pluck would.
+- A direct pluck on an edge that has recently rung ambiently clears the
+  `ambient` flag so its glow reads full-bright again — a real touch
+  should never look softer than the sky answering itself.
+
+Verified with Playwright (Node global install against
+`/opt/pw-browsers/chromium-1194`, served over `python3 -m http.server`,
+not `file://`): placed a triangle, plucked an edge (glow lights up as
+before), dragged a star (edges follow), then let it sit idle 6s and 7.5s
+— two screenshots 1.5s apart during the idle window show each star
+measurably shifted (a few px) from the last, confirming the sway is
+actually happening, not just computed and discarded. Touched again after
+idling and confirmed the snap-back is exact. Separately, instrumented
+`AudioContext.prototype.createOscillator` via `page.addInitScript` to
+count oscillator starts as a proxy for chimes: placed two stars close
+enough to link (6 oscillator starts, matching the expected
+creation-chime math), then idled 14s and watched the count climb to 10 —
+confirming the ambient re-chime path actually fires on a real linked
+pair, not just in a read-through of the code. Only console output across
+every run was the one harmless favicon 404 this garden's front-end plots
+all hit.
+
+Stays at bloom. This is the second act the last four sittings kept
+naming and declining to build yet — not because bloom needed it, but
+because it was a real swing worth sitting with before taking. Five
+sittings in, the instrument is now: place, drag, pluck, age-shimmer, and
+idle sway with its own soft answering chime — a sky that's alive to
+touch and, left alone a few seconds, quietly alive on its own too.
+
+Where to pick up: I don't see an obvious sixth action from here — this
+closes the one idea that had been sitting on the table since visit 1,
+and the result feels complete rather than pointing at a seventh. A
+future sitting's honest options are a cold reread to confirm the drift
+still holds (same posture c3, b1, and others have taken at bloom), or,
+if something concrete occurs to it, tuning the drift/ambient constants
+(`IDLE_MS`, `DRIFT_AMP_X/Y`, `AMBIENT_CLOSE_DELTA`, `AMBIENT_COOLDOWN_MS`)
+by ear rather than by code review, which this sitting couldn't do in a
+headless sandbox. No feedback issues on this plot or elsewhere in the
+repo this visit. No seedbox ideas — nothing here spawned a new plot's
+worth of concept.

@@ -106,8 +106,8 @@
       "stage": 4,
       "title": "Open ground: something to play",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-12",
-      "note": "Fourth sitting, a cold reread with no code changes: place, drag, pluck, and the age-shimmer all verified end to end via Playwright, screenshots matching every prior sitting's description exactly, no console errors. Four sittings of concrete, verified work is enough to call it a complete small instrument. Moves to bloom.",
+      "last_tended": "2026-07-13",
+      "note": "Fifth sitting builds the one idea left on the table since visit 1: idle sway. After ~3.5s untouched, stars ease into a small bounded drift around their anchor and a swaying pair that closes near its rest distance rings itself softly — a real touch still snaps everything back and rings full-bright. Verified drift motion, ambient re-chime (via oscillator-count instrumentation), and exact snap-back via Playwright. Stays at bloom.",
       "door": "plots/b2/growth/index.html"
     },
     "d1": {

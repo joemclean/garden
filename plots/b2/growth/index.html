@@ -203,17 +203,31 @@
   }
 
   // ---- stars & constellation graph ----
-  var stars = [];   // {x, y, freq, phase, born}
-  var edges = [];   // {a, b, pluckedAt} indices into stars
+  var stars = [];   // {x, y, anchorX, anchorY, freq, phase, born, driftSeed, driftSpeed}
+  var edges = [];   // {a, b, pluckedAt, restDist, lastAmbient} indices into stars
   var dragging = null;
   var moved = false;
 
   var LINK_DIST = Math.min(W, H) * 0.32;
   var LINK_MAX = 2;
 
+  // once the sky has been left alone a while, stars sway gently on their own —
+  // suspended, wind-chime motion, not a drift that carries them anywhere new
+  var lastInteraction = performance.now();
+  var IDLE_MS = 3500;
+  var IDLE_RAMP_MS = 1200;
+  var DRIFT_AMP_X = 9;
+  var DRIFT_AMP_Y = 7;
+  var AMBIENT_CLOSE_DELTA = 10;
+  var AMBIENT_COOLDOWN_MS = 6000;
+
   function addStar(x, y) {
     var freq = pitchAt(y);
-    var star = { x: x, y: y, freq: freq, phase: Math.random() * Math.PI * 2, born: performance.now() };
+    var star = {
+      x: x, y: y, anchorX: x, anchorY: y, freq: freq,
+      phase: Math.random() * Math.PI * 2, born: performance.now(),
+      driftSeed: Math.random() * 1000, driftSpeed: 0.7 + Math.random() * 0.6
+    };
     var idx = stars.length;
     stars.push(star);
 
@@ -227,7 +241,7 @@
     var linked = candidates.slice(0, LINK_MAX);
 
     linked.forEach(function (c, k) {
-      edges.push({ a: c.i, b: idx });
+      edges.push({ a: c.i, b: idx, restDist: c.d, lastAmbient: 0 });
       chime(stars[c.i].freq, k * 0.09, 0.85, detuneFor(stars[c.i]));
       chime(star.freq, 0.12 + k * 0.09, 1, detuneFor(star));
     });
@@ -235,6 +249,19 @@
       chime(star.freq, 0, 1, detuneFor(star));
     }
     return idx;
+  }
+
+  // soft, slow answer to a full pluck — two quiet notes, wider apart, as if
+  // the connection rang itself when its two stars swayed close
+  function ambientChime(edgeIdx) {
+    var e = edges[edgeIdx];
+    var a = stars[e.a], b = stars[e.b];
+    if (!a || !b) return;
+    e.lastAmbient = performance.now();
+    e.pluckedAt = performance.now();
+    e.ambient = true;
+    chime(a.freq, 0, 0.3, detuneFor(a));
+    chime(b.freq, 0.15, 0.3, detuneFor(b));
   }
 
   function edgesFor(idx) {
@@ -279,6 +306,7 @@
     var a = stars[e.a], b = stars[e.b];
     if (!a || !b) return;
     e.pluckedAt = performance.now();
+    e.ambient = false;
     chime(a.freq, 0, 0.8, detuneFor(a));
     chime(b.freq, 0.07, 0.8, detuneFor(b));
   }
@@ -295,6 +323,7 @@
   }
 
   canvas.addEventListener("pointerdown", function (evt) {
+    lastInteraction = performance.now();
     var p = clientToLocal(evt);
     var hit = hitTest(p.x, p.y);
     moved = false;
@@ -316,11 +345,14 @@
 
   window.addEventListener("pointermove", function (evt) {
     if (dragging === null) return;
+    lastInteraction = performance.now();
     moved = true;
     var p = clientToLocal(evt);
     var s = stars[dragging];
     s.x = Math.max(4, Math.min(W - 4, p.x));
     s.y = Math.max(4, Math.min(H - 4, p.y));
+    s.anchorX = s.x;
+    s.anchorY = s.y;
     s.freq = pitchAt(s.y);
     dragToneSet(s.freq);
   });
@@ -334,6 +366,7 @@
 
   resetBtn.addEventListener("click", function (evt) {
     evt.stopPropagation();
+    lastInteraction = performance.now();
     stars = [];
     edges = [];
     hint.style.opacity = "0.0";
@@ -352,6 +385,36 @@
     ctx.fillStyle = grad;
     ctx.fillRect(0, 0, W, H);
 
+    // idle sway: once nothing has been touched for a while, stars ease into a
+    // slow, bounded wander around where they were placed or dropped — never
+    // travels anywhere, just breathes. Any interaction snaps it back to rest.
+    var idleFor = now - lastInteraction;
+    var driftAmount = idleFor > IDLE_MS ? Math.min(1, (idleFor - IDLE_MS) / IDLE_RAMP_MS) : 0;
+    for (var d = 0; d < stars.length; d++) {
+      var sd = stars[d];
+      if (driftAmount > 0) {
+        sd.x = sd.anchorX + Math.sin(now / 1000 * 0.33 + sd.driftSeed) * DRIFT_AMP_X * driftAmount * sd.driftSpeed;
+        sd.y = sd.anchorY + Math.cos(now / 1000 * 0.24 + sd.driftSeed * 1.7) * DRIFT_AMP_Y * driftAmount * sd.driftSpeed;
+      } else {
+        sd.x = sd.anchorX;
+        sd.y = sd.anchorY;
+      }
+    }
+
+    // a connection that sways close to its rest length while drifting rings
+    // itself softly — the sky occasionally answering its own motion
+    if (driftAmount > 0.95) {
+      for (var j = 0; j < edges.length; j++) {
+        var ea = edges[j];
+        var sa = stars[ea.a], sb = stars[ea.b];
+        if (!sa || !sb) continue;
+        var dist = Math.hypot(sa.x - sb.x, sa.y - sb.y);
+        if (dist < ea.restDist - AMBIENT_CLOSE_DELTA && now - ea.lastAmbient > AMBIENT_COOLDOWN_MS) {
+          ambientChime(j);
+        }
+      }
+    }
+
     // edges
     for (var i = 0; i < edges.length; i++) {
       var e = edges[i];
@@ -359,6 +422,7 @@
       if (!a || !b) continue;
       var since = e.pluckedAt ? (now - e.pluckedAt) / 1000 : Infinity;
       var glow = Math.max(0, 1 - since / 0.5); // fades over half a second
+      if (e.ambient) glow *= 0.5; // ambient rings softer than a direct pluck
       var alpha = 0.35 + glow * 0.55;
       ctx.lineWidth = 1 + glow * 1.8;
       ctx.strokeStyle = "rgba(140,160,255," + alpha + ")";
