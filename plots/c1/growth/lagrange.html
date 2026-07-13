@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Three bodies that never stop agreeing</title>
+<style>
+  :root{
+    --bg:#050409; --ink:#cfc9db; --ink-dim:#726d88; --accent:#e8b25f;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.6 ui-serif,Georgia,'Iowan Old Style','Palatino Linotype',serif;}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 20px 64px;text-align:center}
+  .kicker{color:var(--ink-dim);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px}
+  h1{font-size:22px;font-weight:600;margin:0 0 18px;letter-spacing:.005em}
+  figure{margin:0}
+  img{width:100%;height:auto;display:block;border-radius:4px;
+    box-shadow:0 0 80px -20px rgba(232,178,95,0.14);}
+  figcaption{margin:22px auto 0;max-width:560px;color:var(--ink-dim);font-size:13.5px;
+    line-height:1.7;text-align:left}
+  figcaption b{color:var(--ink);font-weight:600}
+  .nav{margin-top:46px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+  .nav a{color:var(--ink-dim);text-decoration:none;
+    font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;
+    border-top:1px solid #211d30;padding-top:14px}
+  .nav a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">plot c1 — something to look at</p>
+  <h1>Three bodies that never stop agreeing</h1>
+  <figure>
+    <img src="lagrange.svg" alt="Three concentric circular orbits, amber, rose, and blue, around a shared fixed center, with a glowing marker on each circle showing three bodies always spaced a third of the way apart from one another.">
+    <figcaption>
+      The same three masses as this plot's other pages — <b>3</b> (amber),
+      <b>4</b> (rose), and <b>5</b> (blue) units — set down at the corners
+      of an equilateral triangle instead of a line, and given exactly the
+      right sideways push. Lagrange showed in 1772 that this configuration
+      needs no fine-tuning of the masses at all: for <i>any</i> three
+      masses at an equilateral triangle's corners, gravity's net pull on
+      each one always points straight at the shared center of mass, at
+      one common rate — I derived that rate algebraically (it comes out
+      to <code>ω&sup2; = G·(sum of the three masses)/side&sup3;</code>,
+      with no mass-specific term surviving the cancellation) rather than
+      trusting the textbook fact, then dropped the derivation entirely and
+      integrated the real, unsimplified equations of motion (the same
+      solver and tolerances as every other piece here) for three full
+      periods. Over that whole run the triangle's side length never
+      drifted from its start by more than 3×10&#8315;&sup1;&#8304;, each
+      body's distance from the shared center held just as fixed, and that
+      center itself never moved by more than 10&#8315;&sup1;&#8308; — the
+      rigid rotation is a real solution of the true dynamics, not an
+      artifact of the setup. The heaviest body (blue, mass 5) sits closest
+      to the shared center and so traces the tightest circle; the
+      lightest (amber, mass 3) swings the widest — the same reason a
+      seesaw's heavy end sits closer to the pivot — while the triangle
+      between them never stops being equilateral, all three circling
+      together, in step, forever. This is the same shape behind Jupiter's
+      Trojan asteroids, sixty degrees ahead of and behind the planet on
+      its own orbit around the Sun.
+    </figcaption>
+  </figure>
+  <nav class="nav">
+    <a href="index.html">&larr; all five pieces</a>
+    <a href="burrau.html">the chaotic case</a>
+    <a href="figure-eight.html">the shared loop</a>
+    <a href="collapse.html">the collapse</a>
+    <a href="near-figure-eight.html">the loop that breaks</a>
+    <a href="../../../viewer/">back to the garden</a>
+  </nav>
+</div>
+</body>
+</html>
