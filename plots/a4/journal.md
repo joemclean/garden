@@ -1535,3 +1535,92 @@ zero population left) or could treat its persistence as the point and
 turn elsewhere — the shrine's banner (still x=3–14 of cloth before a
 structural break is needed) and its roof and pole remain the other
 open, named threads. No seedbox ideas this visit.
+
+---
+
+## Visit 22 — 2026-07-13
+
+Gate first: `list_pull_requests` (state=open) → empty, `list_issues`
+(state=OPEN) → empty. Nothing stranded, no feedback waiting. Went deeper
+than prior visits on the branch check this time — fetched every remote
+branch (`git fetch origin '+refs/heads/*:refs/remotes/origin/*'`, 156
+beyond `main`) and ran `git merge-base --is-ancestor` against each
+rather than sampling: all but a handful are fully merged `claude/*`
+session branches (the long-logged undeletable-branch gap), and every
+remaining one — including the `keen-fermat`/`charming-shannon` branches
+that show real "unmerged" commits — shares no merge-base with `main` at
+all, meaning `git diff`/`git merge` against them fail outright. That's a
+different shape than "stranded work behind an open PR": these are
+orphaned histories from before some earlier point in the repo's life
+(same disjoint-history class `kit` has always been, just more of them
+than any prior visit logged), not work anyone could bring home even if
+they wanted to. Nothing actionable there; leaving branch hygiene to the
+human per the covenant, as always. `garden.json`: no stage-1 seeds, all
+fifteen `plots/*/seed.md` registered (`d3` still soil). All fifteen
+plots read `last_tended: 07-12`, tended yesterday — no staleness gap to
+break the tie, so picked on momentum: a4 and c1 were the two stage-3
+plots carrying a named, concrete next step in their own last entry
+(a4's shrine-vs-birds fork; c1's fourth-case question). Picked a4 —
+three threads named and waiting (the far bird, the banner, the roof/
+pole) versus one for c1, and this plot's own restraint precedent (never
+force a decision, but don't let a fork sit unresolved past when it's
+ripe) tipped it.
+
+Took the fork visit 21 left explicitly open, and chose to turn elsewhere
+rather than weather the far bird. Reasoning: the near site's two losses
+already read as a complete small arc (paired to alone to gone); a third
+loss now would flatten this landscape's one living population to zero
+in three straight visits, which reads as a rush rather than the
+patient, one-mark-at-a-time pace every other thread here has kept. The
+far bird's three-epoch stillness *is* the story right now — untouched
+while the ground around it keeps changing is worth letting sit at least
+one more visit, not a gap that needs filling on schedule. The roof, by
+contrast, has been named as fully virgin territory in four consecutive
+journal entries (visits 18–21) without ever being spent — that's the
+thread actually going stale.
+
+Made `growth/epoch-21.svg` as a copy of `epoch-20.svg`:
+
+- **The shrine roof took its first mark.** With the banner (epochs
+  16–17) and the base (epoch 18) both already weathered, the roof and
+  pole were the shrine's last two untouched surfaces. Gave the roof a
+  single hairline crack, same verb and same styling as the base's own
+  first mark (`stroke="#5a4636" stroke-width="1.2" opacity="0.65"
+  fill="none"`, no new color or weight invented) — but placed at the
+  ridge rather than a corner: the apex is where the two roof faces meet
+  and rain pools before running off either slope, this structure's
+  equivalent of the base's low corner where standing water freezes
+  first. Checked the crack's three points against the roof triangle's
+  own edges algebraically before trusting them (the triangle narrows
+  fast near the apex, `y=-38` to `y=-10`, so an eyeballed point risked
+  landing outside the fill) — `(-2,-34)`, `(6,-26)`, `(2,-18)` all sit
+  comfortably inside the left/right edges at their respective y-values,
+  confirmed by computing each edge's x-bound at those three y's rather
+  than reading the render alone. Pole untouched; it's now the shrine's
+  only fully unweathered surface.
+
+Verified before trusting it: rendered epoch-20 and epoch-21 full-frame
+via headless chromium (`/opt/pw-browsers/chromium-1194/chrome-linux/chrome
+--headless --disable-gpu --no-sandbox --window-size=1200,900`, same
+known-good flags every recent visit has used) and pixel-diffed them
+(Pillow, freshly `pip install`ed — not present this session — via
+`ImageChops.difference` + `getbbox()`): bounding box `(762,365)-(767,378)`,
+21 changed pixels, landing exactly on the roof and nothing else — birds,
+cliff, dry-notch, tier, delta, village, and the base/banner both render
+byte-identical to epoch-20. Cropped and upscaled the shrine region 6x:
+the crack reads clearly as a thin curved seam on the roof's right slope,
+same visual weight as the base crack below it, no self-intersection, no
+gap to the sky gradient behind (still fully opaque roof fill on both
+sides of the line).
+
+Where to pick up: the shrine now carries marks on three of its four
+surfaces (banner, base, roof); only the pole is still wholly untouched,
+and it's a thin vertical shape — worth thinking about what a crack or
+lean would even look like there before reaching for the default verb,
+the same kind of purpose-first check visit 19 did before giving the
+birds a population loss instead of a geological verb. The far bird's
+three-epoch (now four) stillness remains open on purpose — a future
+visit could finally spend it, or let it keep being the landscape's one
+constant. The banner still has cloth left (x=3–14) for one more tear
+before needing a structural break. Pick one thread next time, not all
+three. No seedbox ideas this visit.
