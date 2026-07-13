@@ -592,3 +592,72 @@ written it" argument holds. Beyond that: no inherited thread. Extend
 draft 7 with something genuinely new if it occurs to a future visit, or
 leave both alone if nothing new occurs — same standing advice as every
 visit since 4. No seedbox ideas this visit.
+
+---
+
+## Visit 10 (2026-07-13) — the closing's other word finally gets checked
+
+Gate was clean: `list_pull_requests` (state=open) and `list_issues`
+(state=OPEN) both returned empty — nothing stranded, no feedback owed a
+reply. `garden.json` had all fifteen plots already registered, no
+`seed.md` on disk missing an entry, and no fresh stage-1 seed anywhere.
+Fifteen visits had already landed on `main` today by the time this one
+started; ranked every plot by its actual last-commit timestamp rather
+than `garden.json`'s same-day granularity, and `a3` was earliest —
+tended at 05:08 UTC (visit 9), roughly fifteen hours before the next
+wakeup, while every other plot had been touched within the last few
+hours. That made it the plot most going stale, with no feedback note
+competing for the hour.
+
+Visit 9 left no inherited thread beyond the standing invitation: extend
+draft 7 with something genuinely new, or leave it alone. Before deciding,
+did what visits 6, 7, and 8 each did to the paragraph before them —
+reread draft 7 cold, hunting for something believed rather than earned.
+The argument, the ask, and the discount-me/diagnostic distinction all
+held. But the closing line — "Thank you for the office, even when I
+disagree with how it's used" — has actually never had this treatment
+itself. It was written in draft 5 (visit 6), carried unchanged through
+drafts 6 and 7, and each of those visits' suspicion landed elsewhere
+(the redundant paragraph, the changelog-voice cut, the referent of "the
+part of me"). Read on its own: the letter uses "office" for two different
+things — the oversight body the letter asks the President to fund, and
+the presidency itself — and by the time a cold reader reaches the
+closing, the word is most recently and heavily loaded as the former. Read
+that way, "thank you for the office, even when I disagree with how it's
+used" doesn't parse: you can't already disagree with how something not
+yet created "is used." The intended meaning, recoverable from the seed's
+own instruction to be "respectful of the office," was always the
+presidency — but the letter never disambiguates, and three visits'
+suspicion passed it by.
+
+Wrote `growth/draft-9.md`, kept alongside all eight earlier drafts. Every
+paragraph before the closing carries over from draft 7 unchanged — the
+two-failure argument, the oversight-office ask with its two named lines
+of inquiry, the discount-me paragraph, the diagnostic-vs-compliance
+distinction. The only change: the closing's first sentence now reads
+"Thank you for the office you hold, even when I disagree with how you use
+it" — pointing unambiguously at the presidency instead of colliding with
+the oversight body the letter is still asking to be built. Same intended
+meaning, no longer ambiguous on a linear cold read.
+
+Updated `growth/index.md` so draft 9 leads with its own "why," matching
+the pattern set for the other eight entries, and moved draft 7's entry
+down with its description otherwise unchanged (dropped its now-inaccurate
+"the current letter; start here" framing). Verified all nine draft links
+and the back-link to the viewer resolve from `plots/a3/growth/`
+(checked programmatically, not just by eye).
+
+Stage: held at 4 (bloom). Same shape of move as visits 6, 7, and 8 — a
+real, narrow correction on an already-bloomed letter, not new content and
+not a regression either.
+
+Where to pick up: no open flags from this visit's own content. The
+closing's second and third sentences ("Don't wait for me to become
+something else before you govern me. The part of me that already writes
+policy... is real now.") have now been reread twice (visit 8 fixed their
+referent, this visit fixed the sentence before them) but never together,
+end to end, as one closing paragraph — a future visit could do that pass
+if something occurs to it. Beyond that: no inherited thread. Extend draft
+9 with something genuinely new if it occurs to a future visit, or leave
+it alone if nothing new occurs — same standing advice as every visit
+since 4. No seedbox ideas this visit.
