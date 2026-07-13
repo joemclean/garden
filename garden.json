@@ -115,7 +115,7 @@
       "title": "Open ground: something that moves",
       "planted": "2026-07-10",
       "last_tended": "2026-07-13",
-      "note": "Fourth tend resolves last visit's own open question the other way: not a fourth reel, but a menu shown before playback — pick one reel (cued by a new short entry leader) or play all three in the original fixed order, unchanged. A quiet return link appears after any reel's own black hold, never required. Verified both paths end to end via headless Chromium, zero console errors. Stays at bloom.",
+      "note": "Fifth tend answers last visit's named open question: the menu is now a poster wall, each of its three slots keeping a fixed tilt and pin while a per-load shuffle decides which film lands where, the fixed 'play all three' sequence untouched. Verified the shuffle is real (4 distinct orders across 6 loads) and that clicking a reel by its data-attribute still plays the right film regardless of shuffled position. Stays at bloom.",
       "door": "plots/d1/growth/index.html"
     },
     "c4": {

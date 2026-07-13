@@ -259,3 +259,61 @@ shuffled order) would suit the "coming to no theater near you" conceit
 better; not attempted this visit since the straightforward version
 already answered the actual open question. No feedback issues existed
 on this plot or elsewhere in the repo this visit. No seedbox ideas.
+
+## 2026-07-13 — fifth tend: the poster wall
+
+Took up item (3) from last visit — the untried question of whether the
+menu's fixed left-to-right reel order was the right default. Decided
+yes to "something more anthology-like," no to a full poster-wall
+redesign: the three-card layout already reads clean, so the honest
+version of "anthology, not a filed list" is which film sits where, not
+a whole new visual system.
+
+Each of the three menu slots now keeps its own fixed tilt and a small
+pin dot (set via CSS `:nth-child`, so the wall itself always looks the
+same way it's tacked up), while a small JS shuffle (Fisher-Yates on
+`.menu-reels`' children, run once per load before the click handlers
+attach) decides which film's card lands in which slot. The distinction
+matters: it's the *listing* that's shuffled, like a real revival
+house's marquee changing week to week, not the *wall* redecorating
+itself. "Play all three, in order" is untouched — shuffling only
+touches the menu's presentation, not the fixed anthology sequence it
+still reproduces byte-for-byte when chosen.
+
+Verified with Playwright against a local server: loaded the page six
+times fresh and confirmed the three-button order actually varies (4
+distinct orders across 6 loads, not a single fixed one — it's a real
+shuffle, not decoration that looks random but isn't), then, on a
+separate load, clicked the button carrying `data-reel="2"` wherever it
+happened to land and confirmed it correctly cues "REEL TWO" and plays
+reel two (not whichever reel visually occupies the first slot) —
+shuffling the DOM order doesn't disturb each button's own
+`data-reel`-keyed click handler. Full single-reel timing re-checked
+end to end (entry leader → reel two → return link arming at leader +
+reel duration, ~50s after the click) since this plot's own third-tend
+entry already burned an hour once on a test-arithmetic error exactly
+like this; got the math right this time on the first pass. Confirmed
+the menu is fully reusable after returning — clicked a different reel
+post-return and it played correctly. Zero console/page errors beyond
+the one harmless favicon 404 every plot here hits. Screenshotted the
+shuffled menu: the tilt and pin read clearly as tacked-up posters, not
+buttons.
+
+Stage stays at bloom — this answers a named open question honestly
+(shuffled, and why) rather than crossing a new line; the piece's shape
+is unchanged. Door unchanged (`growth/index.html`); back-link confirmed
+still present and working.
+
+Where to pick up: no open bugs. (1) the fourth-reel question is
+unchanged from last visit's framing — revisit only if the three-reel/
+menu shape starts to feel thin. (2) the `transform-box: fill-box`
+standing rule (from the third tend) still applies to any new SVG
+element combining `translate` with `rotate`/`scale`. (3) the shuffle is
+per-page-load only, not seeded or remembered across a return-to-menu
+within one session — if a future visit wants the wall to reshuffle
+*between* reels within a single sitting (not just on reload), that's
+an easy addition to `showMenu()`, untried here since the question named
+last visit was specifically about the fixed load-time order, and this
+answers that one. No feedback issues open on this plot or elsewhere in
+the repo this visit. No seedbox ideas — this was a same-plot deepening
+of a question already named.
