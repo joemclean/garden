@@ -1711,3 +1711,68 @@ before needing a structural break, same as visit 22 noted — but the far
 bird is the thread most visits in a row have now named and deferred.
 Pick one thread next time, not all of them. No seedbox ideas this
 visit; no feedback issues existed anywhere in the repo to weigh.
+
+---
+
+## Visit 24 — 2026-07-13
+
+Gate first: `list_pull_requests` (state=open) → empty, nothing stranded.
+`list_issues` (state=OPEN) → one, `feedback d3` ("This, the final plot,
+is up to you. Seed it however you like."), opened by the human himself
+but through the async feedback channel, not a live conversation. The
+covenant is explicit that this exact case still binds: "Seeds planted at
+the human's word in a live conversation... This rule binds your
+unattended visits." Declined to plant d3 even though invited, replied on
+the issue explaining why, and closed it — that's this visit's full
+consideration of the one open note, not a plot pick. `garden.json`: no
+stage-1 seeds; d3 still bare soil, still unregistered (no `seed.md`
+exists there, nothing to register). Compared momentum across the two
+sub-bloom plots: a1 and a4. a4 carried the clearest, most escalated
+thread — five straight visits (19 through 23) naming the far bird's
+stillness and explicitly finding the case to finally spend it stronger
+each time. Picked a4.
+
+Took the thread by its own accumulated weight rather than deferring a
+sixth time. Visit 22's own reasoning still holds: the near site's arc
+(paired → alone → gone) is now five epochs settled, so a third loss
+reads as completion, not a rush. Made `growth/epoch-23.svg` as a copy of
+`epoch-22.svg`:
+
+- **The far bird is gone.** Removed the one remaining `<path>` in
+  `<g id="birds">` (`M 940 140 q 9 -10 18 0 q 9 -10 18 0`) outright — same
+  "the thing is simply no longer there" logic epochs 19 and 20 already
+  used for this landscape's other two birds. Left the now-empty `<g
+  id="birds">` container in place, matching how those two prior removals
+  left the group tag standing. This closes the birds thread entirely:
+  Aveth Terraces' one living population is now zero, five epochs after
+  its first loss.
+
+Verified before trusting it: rendered epoch-22 and epoch-23 full-frame
+via headless chromium (`/opt/pw-browsers/chromium-1194/chrome-linux/chrome
+--headless --disable-gpu --no-sandbox --window-size=1200,900`, same
+known-good flags every recent visit has used) and pixel-diffed them
+(Pillow, freshly `pip install`ed — not present this session — via
+`ImageChops.difference` + `getbbox()`): bounding box `(938,133)-(978,142)`,
+landing exactly on the far bird and nothing else — shrine (all four
+surfaces), cliff, dry-notch, tier, delta, village, and the reflection all
+render byte-identical to epoch-22. Cropped and upscaled the birds region
+4x: epoch-22's crop shows the chevron clearly; epoch-23's same crop is
+empty sky, no stray fragment or artifact at the seam. Also looked at the
+full composite at real size — nothing else reads as disturbed.
+
+Stage: held at 3 (growing), same reasoning every prior a4 visit has
+used — this is the garden's slowest plot by design, and one more loss on
+an already-settled arc isn't a different order of finality than the
+marks already on the shrine. Updated `garden.json`'s `door` to point at
+`epoch-23.svg`, the new latest state.
+
+Where to pick up: every named thread from visit 23 is now either closed
+(the birds, completely) or already logged as open (the banner's
+remaining cloth, x=3–14, before a structural break; a second mark on any
+of the four now-once-touched shrine surfaces). With the birds gone,
+there is no living thing left anywhere on this landscape — worth naming
+explicitly rather than letting it pass unremarked: every future force
+here is now purely geological again, the ecological detour visits 19-24
+opened is a closed six-epoch arc of its own. No seedbox ideas this
+visit. `feedback d3` considered and closed (declined, not the
+gardener's to plant); no other feedback existed anywhere in the repo.
