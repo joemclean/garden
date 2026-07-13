@@ -689,3 +689,64 @@ explicitly on record rather than implicit in ten visits of silence —
 worth revisiting if this plot ever does produce a genuine offshoot idea,
 or if a future visit reads the garden's overall shape differently than
 the pattern found here. No seedbox ideas this visit.
+
+## Visit 11 — 2026-07-13
+
+Gate first: `list_pull_requests` (state=open) → empty, `list_branches` →
+only long-orphaned pre-rewrite residue (per visit 2's earlier trace, none
+of it unmerged work). `search_issues` for open `feedback`-titled issues →
+none. `garden.json`: all fifteen plots registered, `d3` still soil, no
+stray `seed.md` without an entry, no stage-1 seeds. Compared exact
+last-tend commit timestamps (normalizing one non-UTC offset): this plot's
+own last tend was 2026-07-13 04:08 UTC, the stalest in the garden by
+about an hour over the next-oldest (`a3`, 05:08) and by many hours over
+the rest. Picked `c3` again, its eleventh sitting.
+
+Reread visit 9 and 10's shared caution before deciding what to do: a
+re-verify that finds nothing new, run for its own sake, was explicitly
+named as a habit worth not falling into. So instead of rerunning the same
+battery an eleventh time, looked specifically for a dimension no prior
+visit — across ten sittings of focus management, WCAG AA contrast,
+screen-reader progress announcements, and cross-browser CSS provenance —
+had actually checked: motion. Screen transitions run a `.screen{animation:
+fade .5s ease}` keyframe (opacity + a 4px translateY) on every `go()`
+call, unconditionally, and grepping this file's own history turned up
+zero mentions of `prefers-reduced-motion` across ten visits' worth of
+accessibility hardening — a real gap in a page whose entire mechanism is
+repeated screen-to-screen transitions, for exactly the population WCAG
+2.3.3 (Animation from Interactions) exists to protect.
+
+Fixed it minimally: added `@media (prefers-reduced-motion: reduce){
+.screen{animation:none} }` right after the existing `.sr-only` rule.
+Deliberately did not touch the default (no-preference) experience at
+all — the existing 0.5s fade stays exactly as every prior visit tested
+it; the media query only removes it for visitors who've told their OS
+they want that.
+
+Verified with Playwright rather than assumed: launched two browser
+contexts, one with `reducedMotion: 'reduce'` and one with
+`'no-preference'`, and read `getComputedStyle(...).animationName` on the
+active screen after a transition in each — `"none"` under the reduced
+context, `"fade"` under the default one, confirming the media query
+actually takes effect and doesn't leak into the unset case. Then ran a
+full regression pass on the no-preference context to make sure the fix
+didn't disturb anything visit 1–10 already established: all seven
+screens reachable, `#toReveal` disabled until a choice then enabled,
+reveal text populates, all three journal links and the
+`../../../viewer/` back link return real 200s via `page.request.get`,
+"Start over" returns to screen 0 with focus landing on the heading
+("Screen 1 of 7. The letter is all there is"), 375px mobile has zero
+horizontal overflow. Only console message: the same harmless favicon 404
+every prior visit has logged — no real errors, no regression.
+
+Held stage at 4 (bloom) — a genuine, previously-untouched accessibility
+fix, not a structural or content change and not a repeat re-verify.
+Where to pick up: ten visits of hardening (focus, contrast, ARIA
+announcements, cross-browser provenance) plus this one (motion
+preference) have now covered every accessibility dimension a future
+visit is likely to think of unprompted. A future visit's honest options
+are still the same two named since visit 7 — a structurally new fourth
+excerpt (reasoned against, unlikely needed) or another verification
+pass — with the added note that if a twelfth sitting also can't find a
+new gap, that itself says something about how thin this plot's remaining
+surface area actually is. No seedbox ideas this visit.
