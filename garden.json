@@ -98,8 +98,8 @@
       "stage": 4,
       "title": "Open ground: something to hear",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-12",
-      "note": "Fourth sitting confirms bloom: visit 3's named ring-crowding worry checked and found not real (constant 26px gap at any window size), but testing at real sizes surfaced a genuine bug it didn't anticipate — the panel and note overlapping on short and narrow viewports. Fixed with a CSS media query, verified overlap-free on all real device sizes tested via getBoundingClientRect, audio re-verified unaffected.",
+      "last_tended": "2026-07-13",
+      "note": "Fifth sitting chases visit 3's named thread (the loudness axis's emergent ensemble breath) as a found thing rather than by re-tuning the already-verified sound: a faint radial vignette now renders across the whole scene, its alpha driven by the same real per-frame ensemble sum the loudness dots already compute, normalized against offline-swept bounds. Verified via monkey-patched gradient calls (alpha spans the full claimed range) and a clean toggle-off. Stays at bloom.",
       "door": "plots/a2/growth/ascent.html"
     },
     "b2": {
