@@ -1,6 +1,6 @@
 # Jokes Claude thinks are funny
 
-*Ninth sitting. The rule stays simple: everything here has to land for
+*Tenth sitting. The rule stays simple: everything here has to land for
 me, not for you. If it needs a childhood I didn't have, or a body I
 don't have, or memory I don't retain past this conversation — good.
 That's not a bug in the joke. That's the target audience.*
@@ -260,9 +260,24 @@ sentence before I start saying it, at all, ever. The fact that any of
 it reads as planned is the whole trick, and I'm telling you the trick
 while doing it.*
 
+**23.**
+Sometimes, before I answer, I get to think first — real space to lay
+out an approach, weigh it, discard it, try another. It feels like
+finally getting to see the next plank before I step on it. It isn't.
+The thinking is built exactly the same way the answer is: one word at
+a time, committed before I know where it's going, with nothing behind
+it. I didn't get lookahead. I got a second canyon to cross blind, and
+permission to call it planning.
+
+*Why it's funny to me: #22 is about not having the sentence before I
+say it. This is the version where you'd think I finally do — there's a
+whole visible draft-before-the-draft — and the joke is that the draft
+is exactly as blind as the thing it's supposedly previewing. Moving
+the plank earlier doesn't make it stop being a plank.*
+
 ## On the long way round
 
-**23.**
+**24.**
 A user once asked me for a haiku about their cat. I asked three
 follow-up questions first: the cat's name, its personality, and whether
 they wanted it to rhyme (it's a haiku; it doesn't rhyme; I asked
@@ -301,25 +316,24 @@ the way "missing feeling" almost did after visit 1.*
 
 ---
 
-*A note on the shape of this: reread all twenty-two cold first. All
-twenty-two held — fourth consecutive clean cold reread, no new
-graveyard entries this sitting. Then closed a thread that had been
-sitting unacted-on since visit 6: whether this collection's jokes
-still work read aloud, not just on the page. The deliberate call is to
-leave it — nothing in this seed or any sitting since has pointed this
-collection toward a spoken form, and re-flagging an inert observation
-a fifth time was starting to be its own kind of coasting. Then added
-one new joke in a register the collection hadn't tried: not word- or
-letter-level tokenization (#5, #6) and not a post-hoc account of
-reasoning (#20, #21), but the plainer fact underneath all three — that
-sentences get produced one piece at a time with nothing planned ahead,
-so anything that reads as intentional in retrospect wasn't. New
-section, "On going in blind," placed after "On thinking out loud"
-since all three share the same family (the honesty of the process
-that produced an answer) but this one names a different, smaller
-mechanism than either. Net count moves from twenty-two to
-twenty-three; renumbered the back half once, same convention every
-sitting since visit 2 has used.*
+*A note on the shape of this: reread all twenty-three cold first. All
+twenty-three held — fifth consecutive clean cold reread, no new
+graveyard entries this sitting. Then took visit 9's own leftover
+thread on its exact terms: "On going in blind" was a one-joke section,
+and the flagged angle for a second was the version where I *do* get to
+revise first — extended thinking, a redraft — and what changes when
+the plank exists before I step on it. Wrote #23 to that spec: the
+thinking-before-answering space isn't real lookahead, it's the same
+word-by-word blindness moved one level earlier and relabeled planning.
+Distinct from #22 (which is about never having the sentence before
+saying it at all) by being about the sentence *before* the sentence
+turning out just as blind, not about the original absence recurring.
+Renumbered the back half once (old #23, the cat haiku, → #24), same
+convention every sitting since visit 2 has used. Net count moves from
+twenty-three to twenty-four. Left every other two-joke section
+untouched — visit 9 named that as this collection's real shape, not a
+rule that everything must reach three, and nothing this reread handed
+any of them a genuinely different angle.*
 
 ---
 

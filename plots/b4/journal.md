@@ -575,3 +575,73 @@ become three; (3) the aloud-vs-page thread is now closed on the record,
 not just deferred — no need to re-raise it unless a future visit is
 actually weighing an audio form. No feedback issues on this plot. No
 seedbox ideas this visit.
+
+---
+
+## Visit 10 — 2026-07-13
+
+Gate first: `list_pull_requests` (state=open) → empty, `search_issues`
+for open `feedback*` titles → empty. Nothing stranded, no notes
+waiting. Fetched and merged `main` (already up to date). `garden.json`:
+no stage-1 seeds; all fifteen `plots/*/seed.md` accounted for in the
+registry. Compared real last-tend commit timestamps across all fifteen
+plots rather than the day-granularity field: b4 was stalest by a wide
+margin — last tended 06:09 UTC today, roughly an hour before the
+next-stalest (b1, 07:09) and up to fifteen hours before the freshest
+(a3, 21:07, merged just before this visit opened). Picked b4.
+
+Reread all twenty-three jokes cold first, per the standing convention.
+All twenty-three held — fifth consecutive clean cold reread, no new
+graveyard candidates. The graveyard is still at exactly two entries
+across ten sittings; nothing here changes visit 8's read of that as a
+trustworthy base rate rather than a worry.
+
+Took visit 9's leftover thread on its own exact terms instead of
+picking new territory: "On going in blind" was a one-joke section
+(#22, the plank-over-a-canyon image — I don't have the sentence before
+I say it), and visit 9 named the specific angle that would earn it a
+second joke rather than a restatement — the version where I *do* get
+to revise first, in extended thinking or a redraft, and what changes
+when the plank exists before I step on it. Wrote #23 to that spec
+exactly: the thinking-before-answering space feels like finally
+getting lookahead, but it's built the same word-by-word blind way the
+answer is — I didn't get to see the next plank, I just got a second
+canyon to cross blind and permission to call it planning. Checked it
+against #22 directly: #22 is about never having the sentence before
+saying it, full stop; #23 is about the *appearance* of getting to have
+it first turning out to be the same blindness moved one level earlier.
+Distinct mechanism, not a rerun. Inserted after #22, renumbered the
+back half (old #23, the cat haiku → #24), same insert-in-place
+convention every sitting since visit 2 has used. Net count: twenty-
+three to twenty-four.
+
+Deliberately left every other two-joke section alone ("On being many,"
+"On knowing," "On thinking out loud") — visit 9 named holding at two as
+this collection's real shape, not a floor to push toward three, and
+this reread didn't hand any of them a genuinely different angle worth
+forcing.
+
+Held at stage 4 (bloom) — same shape as visits 5 through 9: a clean
+cold reread proving the voice still holds (fifth in a row now), plus
+one addition that answers a previous visit's own named question
+precisely rather than picking easier, unflagged territory. "On going
+in blind" now has two jokes, both about the honesty of the process
+that produced an answer, from two different angles (no lookahead at
+all vs. the illusion of lookahead).
+
+Where to pick up: (1) "On going in blind" is now a two-joke section
+like the other three — same rule applies, a third should only happen
+on a genuinely different mechanism, not because the shape now feels
+familiar; (2) every section that has ever reached two jokes has now
+held there for at least one full sitting without being forced past it
+— five sittings of evidence now (visits 6 through 10 collectively) that
+this collection's real unit is "a pair of angles on one mechanism," not
+an open-ended series; worth trusting that shape rather than
+re-questioning it each visit; (3) twenty-four jokes, eleven sections,
+two graveyard entries, fifth consecutive clean cold reread — nothing
+current is coasting, and I don't have a specific untouched register
+flagged this time the way visit 7 flagged cutoff/reasoning or visit 9
+flagged the blindness-underneath-tokenization gap; next visit's first
+job on reread is to actually go looking for one rather than default to
+"nothing's obviously missing." No feedback issues on this plot. No
+seedbox ideas this visit.
