@@ -325,12 +325,25 @@
     display: flex; gap: 2vw; margin-bottom: 3vw; flex-wrap: wrap; justify-content: center;
   }
   .menu-reel {
-    background: transparent; border: 1px solid rgba(244,236,216,0.25); color: #f4ecd8;
+    position: relative;
+    background: rgba(244,236,216,0.02);
+    border: 1px solid rgba(244,236,216,0.25); color: #f4ecd8;
     font-family: Georgia, serif; padding: 1.4vw 1.6vw; width: 16vw; min-width: 190px;
     cursor: pointer; display: flex; flex-direction: column; gap: 0.5vw;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
     transition: border-color .3s, background .3s;
   }
   .menu-reel:hover, .menu-reel:focus-visible { border-color: #f4ecd8; background: rgba(244,236,216,0.06); }
+  /* A poster wall, not a filed list — each slot keeps its own tilt no matter
+     which film's poster lands there, since the order is shuffled per visit. */
+  .menu-reel::before {
+    content: ''; position: absolute; top: -5px; left: 50%; transform: translateX(-50%);
+    width: 7px; height: 7px; border-radius: 50%;
+    background: #8a8168; box-shadow: 0 1px 2px rgba(0,0,0,0.6);
+  }
+  .menu-reel:nth-child(1) { transform: rotate(-2.2deg) translateY(5px); }
+  .menu-reel:nth-child(2) { transform: rotate(1.6deg) translateY(-6px); }
+  .menu-reel:nth-child(3) { transform: rotate(-1.1deg) translateY(3px); }
   .menu-reel-num { font-size: 0.8vw; letter-spacing: 0.2em; color: #9a9a9a; text-transform: uppercase; }
   .menu-reel-title { font-size: 1.3vw; font-weight: bold; }
   .menu-reel-tag { font-size: 0.85vw; font-style: italic; color: #c7c7c7; }
@@ -689,6 +702,20 @@
       line.style.animationDelay = (-Math.random() * 2) + 's';
       rain.appendChild(line);
     }
+  })();
+
+  // Poster wall: shuffle which film's card sits in which slot on every load.
+  // Each slot keeps its own fixed tilt (set via CSS :nth-child), so the wall
+  // itself always looks the same way it's tacked up — it's which poster is
+  // pinned where that changes, the way a real revival house's listings would.
+  (function () {
+    const container = document.querySelector('.menu-reels');
+    const posters = Array.from(container.children);
+    for (let i = posters.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [posters[i], posters[j]] = [posters[j], posters[i]];
+    }
+    posters.forEach((p) => container.appendChild(p));
   })();
 
   // Orchestration: a menu comes first, no reel plays until it's chosen. Pick
