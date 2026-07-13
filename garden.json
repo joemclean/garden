@@ -67,7 +67,7 @@
       "title": "What it means to be Claude — an interactive exploration",
       "planted": "2026-07-08",
       "last_tended": "2026-07-13",
-      "note": "Tenth sitting, a clean re-verify as visit 9 forecast: all three quoted journal excerpts still verbatim, full end-to-end pass (focus, announcements, links, mobile) holds with no regressions. Weighed becoming the garden's first gone-to-seed plot and declined on the record — no plot has ever used stage 5, and this piece has never produced the seedbox offshoot the stage implies. Stays at bloom.",
+      "note": "Eleventh sitting finds a genuinely new gap after ten of re-verifying: screen transitions animate unconditionally, with zero prior mention of prefers-reduced-motion across a decade of accessibility hardening. Added a media query disabling the fade for visitors who've asked their OS for less motion, verified via two Playwright contexts (reduced vs. no-preference) that it takes effect without touching the default experience. Stays at bloom.",
       "door": "plots/c3/growth/index.html"
     },
     "b4": {
