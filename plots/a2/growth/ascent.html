@@ -90,7 +90,7 @@
     </div>
     <div class="sub" style="margin-bottom:0">click play, then leave it — there is no ending to wait for</div>
   </div>
-  <div id="note">Three Shepard–Risset illusions, layered. <b>Pitch</b>: ten sine voices fade in at the low end and out at the high end; the pitch class always seems to rise, and never goes anywhere. <b>Rhythm</b>: six fixed-tempo click layers, an octave apart, cross-fade through the same rising-and-wrapping window; the tempo always seems to speed up, and the beat you actually hear never accelerates. <b>Loudness</b>: six drone tones at fixed pitches (a chord — frequency never moves, so this axis stays isolated from the pitch layer) each swell from near-silence to a peak and drop away fast, right before restarting; staggered so one voice is always cresting as another quietly begins, the felt intensity keeps handing off from voice to voice and never settles into an arrival. Toggle any layer off to hear the others alone.</div>
+  <div id="note">Three Shepard–Risset illusions, layered. <b>Pitch</b>: ten sine voices fade in at the low end and out at the high end; the pitch class always seems to rise, and never goes anywhere. <b>Rhythm</b>: six fixed-tempo click layers, an octave apart, cross-fade through the same rising-and-wrapping window; the tempo always seems to speed up, and the beat you actually hear never accelerates. <b>Loudness</b>: six drone tones at fixed pitches (a chord — frequency never moves, so this axis stays isolated from the pitch layer) each swell from near-silence to a peak and drop away fast, right before restarting; staggered so one voice is always cresting as another quietly begins, the felt intensity keeps handing off from voice to voice and never settles into an arrival. A fourth rhythm nobody scheduled directly: the six voices don't sum to a constant the way they individually claim to — the ensemble has its own faint breath, a soft tint across the whole scene every 5.5 seconds, real and measured, not drawn in on purpose the way the other three were. Toggle any layer off to hear the others alone (the breath goes with the loudness layer, since it's made of nothing else).</div>
 </div>
 <script>
 (() => {
@@ -154,6 +154,17 @@
   const LOUD_FREQS = [110, 164.81, 220, 277.18, 329.63, 440]; // A major chord, two octaves — A2 C#4 E3 A3 E4 A4
   const CYCLE_SECONDS_L = 33; // unsynced from both other cycles (40, 24)
   const ATTACK_FRAC = 0.85; // most of the cycle is rise; the rest is a quick release
+
+  // The six loudness voices are staggered evenly and individually sum to a
+  // constant, so you'd expect their sum to sound as flat as pitch's ring
+  // energy roughly does — it doesn't. Verified offline (six-voice sum of
+  // swell(phase)^2 swept at 4000 samples/cycle): it ranges [0.987, 1.585],
+  // a real 1.6x breath, six times per 33s cycle (once per voice spacing,
+  // i.e. every 5.5s) — an emergent fourth rhythm nobody scheduled directly.
+  // These bounds normalize that same real sum into the vignette below, so
+  // what you see is read from the true energy, not an assumed shape.
+  const LOUD_ENSEMBLE_MIN = 0.987;
+  const LOUD_ENSEMBLE_MAX = 1.585;
 
   // bell window: zero at phase 0 and 1, peak at 0.5 — voices fade in
   // entering the low end and fade out leaving the high end, so nothing
@@ -393,11 +404,13 @@
     // snaps back small, same asymmetric climb-then-drop shape as the sound
     if (loudOn) {
       const loudR = maxR - 26; // just inside the pitch rings' outer edge, clear of the panel
+      let ensembleSum = 0;
       for (let i = 0; i < NUM_LOUD_VOICES; i++) {
         const offset = i / NUM_LOUD_VOICES;
         let phase = (offset + dirSign * t / CYCLE_SECONDS_L) % 1;
         if (phase < 0) phase += 1;
         const s = swell(phase);
+        ensembleSum += s * s;
         const angle = (i / NUM_LOUD_VOICES) * Math.PI * 2 + Math.PI / NUM_LOUD_VOICES;
         const x = cx + Math.cos(angle) * loudR;
         const y = cy + Math.sin(angle) * loudR;
@@ -408,6 +421,21 @@
         ctx2d.arc(x, y, radius, 0, Math.PI * 2);
         ctx2d.fillStyle = `hsla(${hue}, 75%, 68%, ${alpha})`;
         ctx2d.fill();
+      }
+
+      // the found fourth: no single voice above is doing this, only their
+      // sum — a faint warm breath across the whole scene, timed to the
+      // real (measured, not assumed) ensemble energy computed just above.
+      if (running) {
+        const norm = Math.max(0, Math.min(1,
+          (ensembleSum - LOUD_ENSEMBLE_MIN) / (LOUD_ENSEMBLE_MAX - LOUD_ENSEMBLE_MIN)));
+        const breathR = Math.max(w, h) * 0.75;
+        const breathAlpha = 0.05 * norm;
+        const grad = ctx2d.createRadialGradient(cx, cy, 0, cx, cy, breathR);
+        grad.addColorStop(0, `rgba(255, 205, 225, ${breathAlpha})`);
+        grad.addColorStop(1, 'rgba(255, 205, 225, 0)');
+        ctx2d.fillStyle = grad;
+        ctx2d.fillRect(0, 0, w, h);
       }
     }
 
