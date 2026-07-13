@@ -10,8 +10,8 @@
       "stage": 3,
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-12",
-      "note": "All five open-ground plots now have a third sitting, and the menu constraint held a second consecutive round — ten decisions, zero exceptions — with a new wrinkle: c4's menu ranked its options and the third sitting honored the discouraged one staying untaken, not just the picked one. Bloom count now nine of fifteen (d1 joins).",
+      "last_tended": "2026-07-13",
+      "note": "All five open-ground plots reached bloom on their fourth sitting — bloom count jumps from nine to thirteen of fifteen. Two sittings (c1, d1) sharpen the menu constraint: an item can survive un-picked a full round, and a conditional pairing can be half-taken. b2 skipped stage 3 outright, a fourth route across the bloom line.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
