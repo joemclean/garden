@@ -384,6 +384,22 @@ over: a grammar that lets you mark every act of your own hand with
 total precision and still never once say that someone is coming, only
 that the coming hasn't happened yet.
 
+Calvorn's one remaining "left for later" — whether *sevorai*'s vertigo,
+an unbroken habit secretly hiding a break the speaker never caught,
+ever surfaces inside a scene — is resolved as of visit 23. The occasion
+was already sitting in leg 9, unused since it was first written: vessa-
+nirel's mother's kettle-keeping is marked *-serai* on inherited word,
+not witnessed continuity, exactly the gap *sevorai* names. Revised leg
+9 to have vessa-nirel notice the vertigo there and mark *-serai*
+anyway — Calvorn's own rule reserves *-heth* for a window actually
+checked and found empty, and this one was never checked, so an
+unconfirmed gap is not evidence of a break. Noticing the doubt changes
+nothing about which mark stays honest. With this closed, no thread
+specific to Calvorn's own grammar remains open; what's left on the
+board is the same two long-parked, chain-wide threads visit 21 named —
+Naveth's reverse-vertigo and Ossane's weather-pun tension — neither
+with a leg occasion to attach to yet.
+
 ---
 
 [← back to the garden](../../../viewer/)

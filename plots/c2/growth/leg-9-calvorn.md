@@ -18,7 +18,17 @@ mark exactly, because nothing in what's known of her keeping records a
 lapse either — an unbroken habit doesn't stop being *-serai* the day it
 ends; it stays *-serai* afterward, the way it would have been spoken of
 mid-run, since what the mark holds is whether it ever broke while it
-lasted, not whether it's still going now. Whether aesa-nirel ever
+lasted, not whether it's still going now. This is where *sevorai* finds
+her, if she lets it: she was not there for six of those years, only
+told about them, and no telling can rule out the one night, too far
+back now to locate, when the fire actually did go out and someone
+simply relit it before the gap had a chance to be seen as a gap. She
+marks it *-serai* anyway — not because the vertigo isn't real, but
+because Calvorn gives *-heth* only to a window that's been checked and
+come up empty, and no one ever checked this one; absence of a known
+lapse is the only evidence *-serai* has ever needed, hers or her
+mother's, and *sevorai* is the cost of noticing that, not a reason to
+mark otherwise. Whether aesa-nirel ever
 actually arrives-*heth* for tea, most years, or whether the arriving
 has simply never once happened in any year this telling can vouch for —
 Calvorn cannot leave that verb unmarked if it's spoken at all, but leg 9
@@ -134,3 +144,22 @@ own device (no new suffix, borrowing, or compound *for sourcelessness*)
 nor stays silent about the material the way Mereth and Naveth did — it
 answers a different question about the very same sentence, without
 knowing the progression's question was ever asked.
+
+**Revision note (visit 23):** the mother's-keeping line originally
+asserted her *-serai* mark flatly ("nothing in what's known of her
+keeping records a lapse either — an unbroken habit doesn't stop being
+*-serai* the day it ends") with no acknowledgment of the gap between
+that and a witnessed continuity. Revised because `lang-9-calvorn.md`'s
+own "left for later" had named an honest occasion still untested:
+whether *sevorai*'s vertigo — an unbroken habit secretly hiding a
+break the speaker never caught — ever surfaces inside a scene, the way
+*tarrunin* and *velnesh* did in leg 7. This line was the clearest fit
+already sitting in the leg: vessa-nirel's own claim about her kettle
+rests on her own hand and needs no revision, but her mother's rests on
+inherited word, exactly where the vertigo bites, and the leg had been
+silently defaulting past it. Added one passage naming the vertigo and
+showing why *-serai* still holds regardless — Calvorn's own evidentiary
+rule (*-heth* requires a checked-and-empty window, and this one was
+never checked) makes noticing the doubt and marking *-serai* anyway the
+grammatically honest move, not a rescue from it. Nothing else in the
+leg changed.

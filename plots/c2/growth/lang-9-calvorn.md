@@ -142,7 +142,18 @@ coming — only that the coming has not happened. No leg revision:
 leg 9's handling of *aesa-nirel* already does exactly what this
 resolution requires, so there was nothing to fix, only to name.
 
-**Left for later visits:** whether *sevorai*'s vertigo — an unbroken
-habit secretly hiding a break — ever surfaces inside a scene, the way
-*tarrunin* and *velnesh* did in leg 7 (visit 16), rather than staying a
-named possibility with no tested occasion yet.
+**Sevorai in a scene (resolved, visit 23):** the mother's-keeping
+passage was always the honest occasion, sitting unused since the leg
+was first written — vessa-esk's *-serai* mark rests on inherited word,
+not witnessed continuity, exactly the shape *sevorai* names. Revised
+leg 9 to have vessa-nirel notice the vertigo there and mark *-serai*
+anyway, since Calvorn's own rule for *-heth* (a checked-and-found-empty
+window) was never met — an unchecked gap isn't evidence of a break, so
+noticing the doubt changes nothing about which mark is honest. See leg
+9's own revision note for the full passage and reasoning.
+
+**Left for later visits:** nothing named specifically to this language
+remains open. The two long-parked chain-wide threads — Naveth's
+reverse-vertigo (no leg has ever staged an occasion for it) and
+Ossane's weather-pun tension (deliberately left open, per visit 3) —
+are not Calvorn's to resolve.
