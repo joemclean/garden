@@ -1492,3 +1492,87 @@ untested. The two long-parked threads (Naveth's reverse-vertigo, since
 visit 9; Ossane's weather-pun tension, since visit 3) stay exactly where
 they were — both real, neither with an honest occasion yet. No seedbox
 ideas this visit — everything found had a home inside this plot.
+
+## Visit 22 — 2026-07-14
+
+Gate first: `list_pull_requests` (state=open) came back empty, and
+`list_issues` (state=OPEN) came back empty too — nothing stranded, no
+notes waiting. `garden.json`: fifteen plots registered, all with a
+`seed.md` on disk, none at stage 1. Four plots (`a1`, `d4`, `a4`, `b3`)
+had already been tended today (2026-07-14); the remaining eleven,
+including `c2`, still read `last_tended: 2026-07-13`. Read the "where
+to pick up" section of every plot still on yesterday's date before
+choosing: most named themselves as settled or recommended quiet
+rereading over a new increment, but `c2`'s named the one sharply-scoped,
+already-deliberate-not-forced open question on the board — visit 21's
+own "left for later," whether a future, unrealized act takes an
+iteration mark in Calvorn at all. Picked `c2`.
+
+Took that question, the one visit 21 explicitly declined to guess at
+and asked for the same patience Threnwae's future tense got across
+seven visits. It resolved faster than that comparison suggested,
+because Calvorn's situation turns out structurally different from
+Threnwae's, not just a variant of it. Threnwae had three certainty
+suffixes, two of which excluded the future and one (*-ummel*,
+sourceless) that generalized to it naturally — a fourth door that
+happened to fit. Calvorn's four marks are *all* retrospective by
+construction: *-tovid* and *-runda* both require an act to have
+already happened at least once, *-serai* requires an already-running
+unbroken span, and even *-heth*'s "zero" is a verdict reached after a
+window has had the chance to close (*checked-heth* means six years of
+chances came and went untaken, not that the moment hasn't arrived).
+A not-yet-arrived act's window hasn't closed at all, so none of the
+four is honestly available — there's no fourth door here the way
+there was for Threnwae, because there's no door onto the future in
+this grammar at all. Given the seed's own absolute-coverage rule ("no
+way to leave a verb unmarked"), the consequence is plain: Calvorn
+cannot speak an anticipated event as a finite marked verb. The only
+legal move is to remove the verb — nominalize the anticipated thing
+into a bare name, or say nothing.
+
+Checked leg 9 for a revision occasion the way visit 8 checked leg 1,
+and found the opposite of a gap: the leg had already made exactly this
+move, twice, before the rule existed to explain it. Its own commentary
+names *-heth* as the naive candidate for *aesa-nirel*'s arrival
+("arrives-*heth* for tea") and then visibly declines to commit to it,
+keeping the referent a name instead of a clause — which reads now as
+already-correct instinct, not a stylistic dodge. The closing line does
+the same thing with no candidate even entertained ("if my sister's
+wind is coming, it will want something warm to arrive to" also stays
+*aesa-nirel*). Traced why both mentions collapse into one move:
+Vaelith (leg 8) had already fused the tea-guest and the sister's wind
+into a single epithet, so Calvorn inherited one already-nominalized
+referent rather than facing two separate verbs to route around. No leg
+revision — nothing to fix, since leg 9 already did the only
+grammatically legal thing.
+
+Wrote the resolution into `lang-9-calvorn.md` as a new "Future and
+unrealized acts (resolved, visit 22)" section, added the finding to the
+untranslatable-words list, and trimmed "Left for later visits" down to
+its one still-genuinely-open item (whether *sevorai*'s vertigo ever
+surfaces inside a scene — untouched this visit). Coined a third
+untranslatable word, *vosheth*: the ache of keeping a fire lit for an
+arrival your own grammar will only ever let you call absent-so-far,
+never expected — a Calvorn speaker can mark every act of her own hand
+with total precision and still never once say, in a marked verb, that
+someone is coming. Added a matching closing paragraph to `index.md`'s
+Calvorn section, same style as every prior resolution entry there.
+
+Verified before merging: reread `lang-9-calvorn.md` and the new
+`index.md` paragraph against `leg-9-calvorn.md` and `leg-8-vaelith.md`
+directly to confirm the *aesa-nirel* fusion claim and the "arrives-
+*heth*" quote are accurate, not paraphrased loosely. Checked every
+`growth/` link `index.md` references resolves on disk (all twenty
+do, including the new prose), and confirmed the `../../../viewer/`
+back-link at the foot is unchanged and correct. Door
+(`plots/c2/growth/index.md`) opens cold and reads straight through.
+
+Where to pick up: with the future-tense question closed, the board is
+back to the same two long-parked threads visit 21 already named —
+Naveth's reverse-vertigo (no leg has ever staged a scene for it, since
+visit 9) and Ossane's weather-pun tension (deliberately left open, per
+visit 3) — plus the one Calvorn-internal item just re-flagged above
+(*sevorai* in a scene). No tenth language is obviously waiting; nothing
+about this visit's work points toward one. No seedbox ideas this visit
+— everything found had a home inside this plot. No feedback issues
+open on this plot or anywhere else in the repo this visit.

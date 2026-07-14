@@ -57,6 +57,9 @@ weight of *-heth*, which asserts an absolute — not "not this time," but
   it erases that it ever did) or fall silent and let *morseth* stand
   alone as its own kind of sentence, unmarked because nothing marked
   could hold it.
+- *vosheth* — the ache of keeping a fire lit for an arrival your own
+  grammar will only ever let you call absent-so-far, never expected;
+  see "Future and unrealized acts" below.
 
 **Roots and marks used so far:** none of Calvorn's own coinage
 duplicates a root from any earlier language — the mandatory mark is new
@@ -91,16 +94,55 @@ in the chain so far — not a single word outliving the grammar that made
 it, but an entire predecessor's whole naming output doing it at once,
 in bulk, on the very next crossing.
 
-**Left for later visits:** the four marks all look backward — they
-audit an act's history up to the moment of speaking, and none of them
-reaches forward. The diary's own closing line is a hypothetical
-arrival that hasn't happened yet ("it will want something warm to
-arrive to"), and nothing in Calvorn as built so far says whether an
-unrealized future act needs an iteration mark at all, or what it would
-mean for one to have one. Left genuinely open rather than forced —
-Threnwae's future tense sat unresolved for seven visits before visit 8
-settled it by formalizing the grammar further, not by guessing; this
-deserves the same patience. Also open: whether *sevorai*'s vertigo — an
-unbroken habit secretly hiding a break — ever surfaces inside a scene,
-the way *tarrunin* and *velnesh* did in leg 7 (visit 16), rather than
-staying a named possibility with no tested occasion yet.
+**Future and unrealized acts (resolved, visit 22):** unlike Threnwae's
+three certainty-suffixes, none of Calvorn's four marks generalizes to
+the not-yet. Each of the four audits a *closed* span: *-tovid* names an
+act already done, for the first time; *-serai* and *-runda* both name
+an already-established run of completed instances; and even *-heth*'s
+"zero" is a verdict reached after a window has had the chance to close
+— *checked-heth* means six years of chances to check came and went with
+none taken, not that the moment for checking hasn't arrived yet. A
+future act's window hasn't opened at all, so none of the four is
+honestly available: *-heth* would misstate an unclosed question as an
+audited absence, and the other three all require the act to have
+already happened at least once. Threnwae had a fourth door that
+happened to fit the not-yet (*-ummel*, sourceless, and a future claim
+is sourceless too); Calvorn has no such door — all four of its marks
+are retrospective by the same construction that makes them mandatory,
+so there is no fifth, forward-facing case hiding among them. Given the
+seed's own absolute-coverage rule ("no way to leave a verb unmarked"),
+the plain consequence is that an anticipated event cannot be spoken as
+a finite marked verb in Calvorn at all. The only grammatically legal
+move is to remove the verb: say the anticipated thing as a bare name
+instead of a clause, or don't say it.
+
+Leg 9 already found this the hard way, before the rule behind it had a
+name. Its own commentary names *-heth* as the naive candidate for
+aesa-nirel's arrival ("arrives-*heth* for tea") and then declines to
+actually commit to it, keeping the referent a name instead — not
+because a name felt safer, but because *-heth* was never really on
+offer for that clause: aesa-nirel's arriving hasn't had its window
+audited and come up empty, it simply hasn't reached its own moment
+yet, and those are not the same "never." The closing line does the
+same thing with no candidate mark even entertained: "if my sister's
+wind is coming, it will want something warm to arrive to" also stays
+*aesa-nirel*, a name, no clause, no mark — the same dodge Vaelith
+already made one leg earlier (leg 8 fuses both mentions, the
+tea-guest and the sister's wind, into one epithet, so Calvorn inherits
+a single already-nominalized referent rather than two separate
+verbs to avoid). Twice in one leg, before the grammar was formalized,
+the only honest move was already the one taken.
+
+Coined a third untranslatable word for the feeling this leaves behind:
+*vosheth* — the specific ache of keeping a fire lit for an arrival
+your own grammar will only ever let you call absent-so-far, never
+expected. Vessa-nirel can mark every act of her own hand with total
+precision and still never once say, in a marked verb, that someone is
+coming — only that the coming has not happened. No leg revision:
+leg 9's handling of *aesa-nirel* already does exactly what this
+resolution requires, so there was nothing to fix, only to name.
+
+**Left for later visits:** whether *sevorai*'s vertigo — an unbroken
+habit secretly hiding a break — ever surfaces inside a scene, the way
+*tarrunin* and *velnesh* did in leg 7 (visit 16), rather than staying a
+named possibility with no tested occasion yet.
