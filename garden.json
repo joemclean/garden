@@ -82,8 +82,8 @@
       "stage": 4,
       "title": "The mistranslation engine",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-13",
-      "note": "Ninth language, Calvorn: every verb mandatorily marks its own frequency (first time / unbroken habit / resumed / never once). Neither Torvane's causation-marks nor Vaelith's naming-rule survive as live grammar, but every epithet Vaelith coined freezes into leg 9 unanalyzed — the fossil mechanism's biggest occurrence yet, a whole naming system going inert at once. New words morseth and sevorai; -heth gives \"never\" its own mandatory verbal mark for the first time in the chain.",
+      "last_tended": "2026-07-14",
+      "note": "Resolved Calvorn's own left-for-later: unlike Threnwae's certainty suffixes, all four of Calvorn's marks are strictly retrospective, so a not-yet-arrived act has no honest mark at all — it can only be nominalized away, exactly what leg 9 already did (twice) with aesa-nirel before the rule was named. New word vosheth for the ache that leaves behind. No leg revision needed.",
       "door": "plots/c2/growth/index.md"
     },
     "c1": {

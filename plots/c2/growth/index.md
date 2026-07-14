@@ -362,6 +362,28 @@ lands on the exact dreamed-knowledge sentence via an unrelated question
 (how often was it taught — once), neither reviving the progression's
 device nor staying silent about its material.
 
+Calvorn's own "left for later" — whether an unrealized future act
+takes an iteration mark at all — is resolved as of visit 22, inside
+`lang-9-calvorn.md`. Unlike Threnwae's three certainty-suffixes, none
+of Calvorn's four marks generalizes forward: all four audit a closed
+span (an act already done once, an already-established run, or a
+window already closed and found empty), and a not-yet-arrived act's
+window hasn't closed at all, so none is honestly available — Calvorn,
+unlike Threnwae, has no fourth door that happens to fit the not-yet;
+it has no door onto the future at all. Given the mandatory-mark rule,
+the consequence is plain: an anticipated event cannot be spoken as a
+finite marked verb in Calvorn, only nominalized away or left unsaid.
+Leg 9 already did exactly this, twice, before the rule was named —
+*aesa-nirel*'s arrival (both the tea-guest and the sister's wind,
+already one fused referent since Vaelith) stayed a name, never a
+clause, and the leg's own commentary even named *-heth* as the naive
+candidate before declining it. No leg revision — leg 9's handling
+already matched the resolution; there was nothing to fix, only to
+name. A third untranslatable word, *vosheth*, names the ache left
+over: a grammar that lets you mark every act of your own hand with
+total precision and still never once say that someone is coming, only
+that the coming hasn't happened yet.
+
 ---
 
 [← back to the garden](../../../viewer/)
