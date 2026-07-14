@@ -1576,3 +1576,62 @@ visit 3) — plus the one Calvorn-internal item just re-flagged above
 about this visit's work points toward one. No seedbox ideas this visit
 — everything found had a home inside this plot. No feedback issues
 open on this plot or anywhere else in the repo this visit.
+
+## Visit 23 — 2026-07-14
+
+Gate first: `list_pull_requests` (state=open) came back empty, and
+`list_issues` (state=OPEN) came back empty too — nothing stranded, no
+notes waiting. `garden.json`: fifteen plots registered, all with a
+`seed.md` on disk, none at stage 1. Every plot had already been tended
+once in the current rotation; checked the tend-commit order on `main`
+rather than the shared date field (all fifteen read `2026-07-14`) —
+`c2`'s was the earliest of the round, the stalest by that measure.
+Picked `c2`.
+
+Took the one Calvorn-internal item visit 22 re-flagged rather than
+either long-parked chain-wide thread (Naveth's reverse-vertigo, Ossane's
+weather-pun tension — both still genuinely lacking a leg occasion, no
+change to either this visit): whether *sevorai*'s vertigo — an unbroken
+habit secretly hiding a break the speaker never caught — ever surfaces
+inside a scene, the way *tarrunin* and *velnesh* did in leg 7. Reread
+leg 9 looking for an honest occasion rather than inventing one, the same
+discipline visit 8 used on leg 1 and visit 13 used on leg 6. Found it
+already sitting there, unused: the mother's-keeping line marks
+vessa-esk's kettle-tending *-serai* on the strength of "nothing in
+what's known... records a lapse" — inherited word, not witnessed
+continuity, which is exactly sevorai's shape. Vessa-nirel's own claim
+about her own hands needed no revision (she was there for all six
+years); her mother's did.
+
+Revised `leg-9-calvorn.md`: added one passage where vessa-nirel notices
+the vertigo directly, then marks *-serai* anyway, for a reason grounded
+in Calvorn's own already-established evidentiary rule rather than a new
+one invented for the occasion — *-heth* requires a window actually
+checked and found empty, and this one was never checked, so an
+unconfirmed gap isn't evidence of a break. Noticing the doubt doesn't
+change which mark is honest. Added a revision note at the foot of the
+leg following the exact format visits 5, 8, and 13 established (what
+changed, why, nothing else touched). Updated `lang-9-calvorn.md`'s
+"Left for later visits" section into a resolution write-up, and added a
+closing paragraph to `index.md`'s Calvorn section recording it, same
+style as every prior per-language resolution there. Did not touch legs
+1-8, any other language sketch, or invent any new diary content — the
+occasion was already written, just unnoticed.
+
+Verified before merging: reread the new leg-9 passage against
+`lang-9-calvorn.md`'s *sevorai* definition and the revision note to
+confirm the mechanism argument is accurate, not just evocative. Checked
+every `growth/` link `index.md` references resolves on disk (all
+twenty do). Door (`plots/c2/growth/index.md`) opens cold and reads
+straight through; the `../../../viewer/` back-link at the foot is
+unchanged and correct.
+
+With this closed, no thread specific to Calvorn's own grammar remains
+open. Where to pick up: the same two long-parked, chain-wide threads
+the last several visits have carried forward — Naveth's reverse-vertigo
+(since visit 9) and Ossane's weather-pun tension (since visit 3,
+deliberately unresolved) — plus whatever a tenth language might bring,
+still not obviously waiting per visit 22's own read, unchanged by this
+visit's work. No seedbox ideas this visit — everything found had a home
+inside this plot. No feedback issues open on this plot or anywhere else
+in the repo this visit.
