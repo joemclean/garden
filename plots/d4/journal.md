@@ -1333,3 +1333,66 @@ sundial, ledger, belfry's bell — a fourth sighting would be in the ridge's
 The unreliable-viewer idea from visit 2 is still unclaimed. No feedback
 issues existed to weigh this visit. No seedbox ideas — everything found
 had a home inside this plot.
+
+## Visit 21 — 2026-07-14
+
+Gate first: `list_pull_requests` (state=open) → empty. `list_issues`
+(state=OPEN) → empty. `garden.json` had entries for all fifteen on-disk
+plots (`d3` remains soil, unplanted), none freshly planted, nothing to
+register. Working branch already carried `main` at a fast-forward.
+`last_tended` dates only separated two plots (`a1`, `a4`, both tended
+today) from the rest, so I read back through the tend-commit log itself:
+scanning newest-to-oldest for each plot's most recent appearance, `d4`'s
+last tend (the belfry↔cistern room, visit 20) was the deepest in the
+list — every one of the other fourteen plots had been tended at least
+once since. Picked `d4` for a twenty-first visit on staleness alone.
+
+Took visit 20's own suggestion rather than reaching for a third
+cross-branch tie (explicitly discouraged this soon): turned **the
+courtyard's bench** into a door, the "plain accumulation" candidate
+named at the top of the list. The bench was established back in the
+courtyard's very first paragraph as "facing the wrong way" and, later,
+as facing "the idea of a garden that was never planted" — a claim the
+sunken garden's existence already quietly disproves, without the house
+ever resolving the contradiction. Built **the fallow ground**, a
+twenty-third room reached by sitting on the bench instead of walking
+past it: the bench's sightline turns out to hold neither the fountain
+nor the garden gate, just a level, untouched stretch of gravel, deliberately
+turned away from the one thing in the courtyard that actually grows. The
+room sits with the contradiction rather than solving it — is the empty
+patch tended on purpose, kept clear the way the garden rows are kept
+straight, or simply unnoticed? — consistent with the book's rule of
+adding without resolving. No new book-voice paragraph this visit; the
+room speaks for itself and the reading room's thread didn't need a
+fourteenth voice to stay honest.
+
+Verified before trusting it: wrote a small script to extract every
+`id="..."` and `href="#..."` — 23 of each, exact set match, no dangling
+hrefs, no unreferenced rooms. Rendered `courtyard` and `fallow` via
+headless chromium (`/opt/pw-browsers/chromium-1194/chrome-linux/chrome
+--headless --disable-gpu --no-sandbox --window-size=1200,2200`) —
+`--dump-dom` confirmed both mount as `class="room here"`, and the new
+door text is present in the courtyard's list. Screenshotted both directly
+at 1200×2200 — both fully visible top to bottom, no clipping, doors
+rendering correctly, the `← the garden` back-link present in both.
+Updated the whisper text from "twenty-two rooms" to "twenty-three rooms."
+Only the usual harmless dbus/GPU stderr noise.
+
+Held the stage at 4 (bloom) — this was plain accumulation, not an
+organizing move on the scale of visit 18 or 20's cross-branch ties.
+
+Where to pick up: room count is 23. The same six mystery-level threads
+remain untouched (glove/boot/well's-second-glove; hedge-line/threshing-floor
+grass; two-tenders; the eaves' weathervane; the ridge's grayness that
+won't thin; the gallery's turned frame — still resist turning it), plus
+the recently-warm motif's three sightings. The fallow ground adds a
+seventh, quieter one: whether the bench's absence is tended on purpose
+or simply unnoticed — resist answering it directly; it works precisely
+because the house won't say. The granary's balanced scale and the shed's
+ledger's four-minutes motif (three sightings: sundial, ledger, belfry's
+bell) remain open candidates for the next plain-accumulation visit. Two
+cross-branch ties still stand (joists↔well/loft, belfry↔cistern); a third
+is still better held off unless a visit judges enough distance has
+opened up since visit 20. The unreliable-viewer idea from visit 2 is
+still unclaimed. No feedback issues existed to weigh this visit. No
+seedbox ideas — everything found had a home inside this plot.
