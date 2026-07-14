@@ -103,9 +103,25 @@
 
   // ---- audio ----
   var actx = null;
+  var masterBus = null;
   function audio() {
     if (!actx) {
       actx = new (window.AudioContext || window.webkitAudioContext)();
+      // every chime and the drag-tone route through here on their way to the
+      // speakers. Nothing here shapes the sound during ordinary sparse play —
+      // it only engages if a dense burst of clicks near a tight cluster stacks
+      // enough simultaneous chimes to sum past 0dB, which visit 1 flagged as
+      // untested and no sitting since had gone back to check.
+      var compressor = actx.createDynamicsCompressor();
+      compressor.threshold.value = -6;
+      compressor.knee.value = 6;
+      compressor.ratio.value = 20;
+      compressor.attack.value = 0.003;
+      compressor.release.value = 0.25;
+      compressor.connect(actx.destination);
+      masterBus = actx.createGain();
+      masterBus.gain.value = 1;
+      masterBus.connect(compressor);
     }
     if (actx.state === "suspended") actx.resume();
     return actx;
@@ -173,7 +189,7 @@
     osc2.connect(env2);
     env2.connect(filt);
     filt.connect(env);
-    env.connect(ac.destination);
+    env.connect(masterBus);
 
     osc1.start(t0);
     osc2.start(t0);
@@ -191,7 +207,7 @@
     g.gain.setValueAtTime(0, ac.currentTime);
     g.gain.linearRampToValueAtTime(0.06, ac.currentTime + 0.08);
     osc.connect(g);
-    g.connect(ac.destination);
+    g.connect(masterBus);
     osc.start();
     dragTone = { osc: osc, g: g };
   }
@@ -213,7 +229,6 @@
   var stars = [];   // {x, y, anchorX, anchorY, freq, phase, born, driftSeed, driftSpeed}
   var edges = [];   // {a, b, pluckedAt, restDist, lastAmbient} indices into stars
   var dragging = null;
-  var moved = false;
 
   var LINK_MAX = 2;
 
@@ -332,7 +347,6 @@
     lastInteraction = performance.now();
     var p = clientToLocal(evt);
     var hit = hitTest(p.x, p.y);
-    moved = false;
     if (hit >= 0) {
       dragging = hit;
       dragToneStart();
@@ -352,7 +366,6 @@
   window.addEventListener("pointermove", function (evt) {
     if (dragging === null) return;
     lastInteraction = performance.now();
-    moved = true;
     var p = clientToLocal(evt);
     var s = stars[dragging];
     s.x = Math.max(4, Math.min(W - 4, p.x));

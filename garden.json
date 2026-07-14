@@ -107,7 +107,7 @@
       "title": "Open ground: something to play",
       "planted": "2026-07-10",
       "last_tended": "2026-07-14",
-      "note": "Sixth sitting closes visit 1's never-revisited mobile corner: the clear button was invisible to touch-only visitors (relied on :hover, which touch never fires) and LINK_DIST was computed once at load, never recomputed on resize, so a rotated phone kept linking against stale geometry. Both fixed and verified with Playwright (touch-context opacity check, oscillator-count proxy for linking behavior). Stays at bloom.",
+      "note": "Seventh sitting closes visit 1's other never-revisited gap: no shared audio bus meant simultaneous chimes summed uncapped, and a measured 40-click burst in a tight cluster actually clipped (+1.6dBFS). Routed all audio through one masterBus into a DynamicsCompressorNode, tuned from real pre/post peak measurements so sparse play stays untouched (~-12dBFS, well under the compressor's knee) while the same heavy burst now peaks at -0.9dBFS. Also removed a dead unused variable found on the reread. Stays at bloom.",
       "door": "plots/b2/growth/index.html"
     },
     "d1": {
