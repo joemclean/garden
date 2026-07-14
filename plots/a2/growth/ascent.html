@@ -79,6 +79,7 @@
   <div id="panel">
     <b>Ascent</b>
     <div class="sub">a tone that climbs forever, a beat that rushes forever, a swell that never crests — none arrives</div>
+    <div class="sub" id="reducedNote" style="display:none; margin-top:-12px">motion reduced — sound is unaffected</div>
     <div id="row">
       <button id="play">play</button>
       <button id="dir">↑ ascending</button>
@@ -119,6 +120,16 @@
   let rhythmOn = true;
   let loudOn = true;
   let startTime = 0;
+
+  // The canvas motion is a bonus, not the seed's requirement (audio is) —
+  // visitors who've asked their OS for less motion can still hear every
+  // layer; they just don't get the continuously sweeping/flashing proof.
+  // Audio scheduling below is untouched by this: frequency/gain sweeps are
+  // the illusion itself, not decorative motion, so they keep running.
+  const REDUCE_MOTION = !!(window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  let staticDirty = true;
+  if (REDUCE_MOTION) document.getElementById('reducedNote').style.display = '';
 
   const NUM_VOICES = 10;
   const MIN_LOG2 = Math.log2(55);   // A1
@@ -333,13 +344,66 @@
       }
     }
 
-    draw(t);
+    if (REDUCE_MOTION) {
+      if (staticDirty) { drawReduced(); staticDirty = false; }
+    } else {
+      draw(t);
+    }
     requestAnimationFrame(frame);
+  }
+
+  // A still snapshot of which layers are on, painted once and left alone —
+  // no sweep, no flash, no breathing vignette (all three are motion by
+  // definition). Same three-ring vocabulary as draw(), at rest.
+  function drawReduced() {
+    const w = canvas.width, h = canvas.height;
+    ctx2d.fillStyle = '#07070a';
+    ctx2d.fillRect(0, 0, w, h);
+    const cx = w / 2, cy = h / 2;
+    const maxR = Math.min(w, h) * 0.46;
+
+    if (pitchOn) {
+      for (let i = 0; i < NUM_VOICES; i++) {
+        const r = 40 + (i / NUM_VOICES) * (maxR - 40);
+        ctx2d.beginPath();
+        ctx2d.arc(cx, cy, r, 0, Math.PI * 2);
+        ctx2d.strokeStyle = `hsla(${200 + (i / NUM_VOICES) * 120}, 70%, 70%, 0.22)`;
+        ctx2d.lineWidth = 2;
+        ctx2d.stroke();
+      }
+    }
+    if (rhythmOn) {
+      const tickR = maxR + 22;
+      for (let i = 0; i < NUM_RHYTHM_VOICES; i++) {
+        const angle = (i / NUM_RHYTHM_VOICES) * Math.PI * 2 - Math.PI / 2;
+        const x = cx + Math.cos(angle) * tickR, y = cy + Math.sin(angle) * tickR;
+        ctx2d.beginPath();
+        ctx2d.arc(x, y, 4, 0, Math.PI * 2);
+        ctx2d.fillStyle = `hsla(${30 + (i / NUM_RHYTHM_VOICES) * 60}, 80%, 65%, 0.3)`;
+        ctx2d.fill();
+      }
+    }
+    if (loudOn) {
+      const loudR = maxR - 26;
+      for (let i = 0; i < NUM_LOUD_VOICES; i++) {
+        const angle = (i / NUM_LOUD_VOICES) * Math.PI * 2 + Math.PI / NUM_LOUD_VOICES;
+        const x = cx + Math.cos(angle) * loudR, y = cy + Math.sin(angle) * loudR;
+        ctx2d.beginPath();
+        ctx2d.arc(x, y, 6, 0, Math.PI * 2);
+        ctx2d.fillStyle = `hsla(340, 75%, 68%, 0.3)`;
+        ctx2d.fill();
+      }
+    }
+    ctx2d.beginPath();
+    ctx2d.arc(cx, cy, 3, 0, Math.PI * 2);
+    ctx2d.fillStyle = 'rgba(230,230,245,0.5)';
+    ctx2d.fill();
   }
 
   function resize() {
     canvas.width = window.innerWidth * devicePixelRatio;
     canvas.height = window.innerHeight * devicePixelRatio;
+    staticDirty = true;
   }
   window.addEventListener('resize', resize);
   resize();
@@ -476,18 +540,21 @@
     pitchOn = !pitchOn;
     pitchToggle.classList.toggle('active', pitchOn);
     rampLayerGain(pitchGain, pitchOn);
+    staticDirty = true;
   });
 
   rhythmToggle.addEventListener('click', () => {
     rhythmOn = !rhythmOn;
     rhythmToggle.classList.toggle('active', rhythmOn);
     rampLayerGain(rhythmGain, rhythmOn);
+    staticDirty = true;
   });
 
   loudnessToggle.addEventListener('click', () => {
     loudOn = !loudOn;
     loudnessToggle.classList.toggle('active', loudOn);
     rampLayerGain(loudGain, loudOn);
+    staticDirty = true;
   });
 
   requestAnimationFrame(frame);
