@@ -49,6 +49,9 @@
   }
   .reset:hover { color: #b8c0e0; }
   body:hover .reset { opacity: 0.55; }
+  @media (hover: none) {
+    .reset { opacity: 0.4; }
+  }
   .back-link {
     position: fixed;
     left: 18px;
@@ -80,7 +83,7 @@
   var resetBtn = document.getElementById("reset");
 
   var DPR = Math.min(window.devicePixelRatio || 1, 2);
-  var W, H;
+  var W, H, LINK_DIST;
 
   function resize() {
     W = window.innerWidth;
@@ -90,6 +93,10 @@
     canvas.style.width = W + "px";
     canvas.style.height = H + "px";
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    // recomputed on every resize, not just at load, so an orientation change
+    // (portrait/landscape on a phone) doesn't leave new stars linking against
+    // a stale window size from before the rotation
+    LINK_DIST = Math.min(W, H) * 0.32;
   }
   window.addEventListener("resize", resize);
   resize();
@@ -208,7 +215,6 @@
   var dragging = null;
   var moved = false;
 
-  var LINK_DIST = Math.min(W, H) * 0.32;
   var LINK_MAX = 2;
 
   // once the sky has been left alone a while, stars sway gently on their own —

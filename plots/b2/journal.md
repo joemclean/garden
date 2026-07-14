@@ -340,3 +340,82 @@ by ear rather than by code review, which this sitting couldn't do in a
 headless sandbox. No feedback issues on this plot or elsewhere in the
 repo this visit. No seedbox ideas — nothing here spawned a new plot's
 worth of concept.
+
+---
+
+## Sixth sitting — 2026-07-14
+
+Gate was clean (no open PRs, `list_issues` state=OPEN empty). Spot-checked
+a sample of the many `claude/charming-shannon-*` stray branches for real
+stranded work — every one I diffed against `origin/main` (by plot: b3,
+a4, b4) turned out to be either already identical to main's current
+content (squash-merged under a different SHA) or behind main's current
+state, not ahead of it. No stranded PR-worthy work found; left the
+branches alone per the seed's own note that cleanup is the human's job.
+No plot was at stage 1. Checked commit timestamps across all fifteen
+plots to find the stalest: b2's own fifth sitting, at 13:11 UTC
+yesterday, was the oldest by two hours over the next (a2, 14:11) — the
+clearest "most needs you" pick.
+
+Fifth sitting's own suggestion was a cold reread, or tuning constants "if
+something concrete occurs to it." Reread the code fresh rather than
+trusting memory, and something concrete did turn up — not in the
+drift/ambient constants, but in a corner visit 1 flagged and no sitting
+since had actually gone back to: "no mobile-specific tuning beyond
+touch-action:none and pointer events... I only tested desktop viewport
+sizes." Two real gaps, both from that same untested corner:
+
+1. The `clear` affordance is revealed only via `body:hover .reset`. On a
+   touch device there is no hover state, ever — the button was invisible
+   *and* effectively unreachable by intent for any touch-only visitor,
+   full stop, for five sittings. Fixed with `@media (hover: none) { .reset
+   { opacity: 0.4; } }` — touch devices get a persistent dim affordance
+   (same visual weight class as desktop's hover-revealed 0.55, just
+   always-on since there's no hover to reveal it), desktop's hover
+   behavior is untouched.
+2. `LINK_DIST` (how close a new star has to land to link automatically)
+   was computed once, at load, from that first `W`/`H` and never
+   recomputed — the `resize` handler updated `W`/`H` on rotation but not
+   the distance derived from them. A phone rotated after the first star
+   or two would silently keep linking against the *previous* orientation's
+   geometry. Moved the computation inside `resize()` so it's live on every
+   call, including the initial one.
+
+Verified both with Playwright against the pre-installed headless Chromium
+(`/opt/pw-browsers/chromium-1194`, served over `python3 -m http.server`,
+not `file://`): a `hasTouch`/`isMobile` mobile context shows the reset
+button at opacity 0.4 with zero mouse interaction (was 0 before the fix);
+a plain desktop context still shows 0 before any hover and reaches 0.55
+after `mouse.move` into the body, confirming the existing desktop
+behavior is unchanged. For `LINK_DIST`, used the oscillator-count proxy
+technique visit 5 introduced (instrumenting
+`AudioContext.prototype.createOscillator`): loaded at 1200×800, shrank
+the viewport to 400×700 and dispatched `resize` *before* placing any
+stars (simulating a rotation that happens before the first touch), then
+placed two stars 150px apart — under the old 1200×800-derived `LINK_DIST`
+(384) they'd link; under the correct post-shrink value (128) they should
+not. Oscillator count came back at 4 (two independent, unlinked
+placements — 2 oscillators each), confirming the fix takes effect
+immediately rather than only on the next full reload. Also ran the full
+place/drag/pluck/reset sequence from a plain desktop context afterward as
+a plain regression check — triangle forms, drag moves a star and its
+edges follow, click-on-edge plucks and glows, reset clears and the hint
+returns — screenshots match every prior sitting's description, and the
+only console output across every run was the one harmless favicon 404
+this garden's front-end plots all hit.
+
+Stays at bloom — this is a correctness fix to an already-complete piece,
+not new territory. The interaction model (place, drag, pluck,
+age-shimmer, idle sway) is unchanged; what changed is that a touch-only
+visitor can now actually find "clear," and a phone that rotates mid-play
+doesn't inherit stale linking geometry.
+
+Where to pick up: visit 1's "mobile-specific tuning" corner is now
+genuinely closed rather than just noted — both concrete gaps it named
+are fixed and verified. I didn't find a third one on this reread; a
+future sitting's honest options are the same as fifth sitting left them
+(a cold reread to confirm everything still holds, or ear-tuning the
+drift/ambient constants, which no visit including this one can do in a
+headless sandbox) unless a fresh read turns up something this one
+missed. No feedback issues on this plot or elsewhere in the repo this
+visit. No seedbox ideas.

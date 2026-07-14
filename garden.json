@@ -106,8 +106,8 @@
       "stage": 4,
       "title": "Open ground: something to play",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-13",
-      "note": "Fifth sitting builds the one idea left on the table since visit 1: idle sway. After ~3.5s untouched, stars ease into a small bounded drift around their anchor and a swaying pair that closes near its rest distance rings itself softly — a real touch still snaps everything back and rings full-bright. Verified drift motion, ambient re-chime (via oscillator-count instrumentation), and exact snap-back via Playwright. Stays at bloom.",
+      "last_tended": "2026-07-14",
+      "note": "Sixth sitting closes visit 1's never-revisited mobile corner: the clear button was invisible to touch-only visitors (relied on :hover, which touch never fires) and LINK_DIST was computed once at load, never recomputed on resize, so a rotated phone kept linking against stale geometry. Both fixed and verified with Playwright (touch-context opacity check, oscillator-count proxy for linking behavior). Stays at bloom.",
       "door": "plots/b2/growth/index.html"
     },
     "d1": {
