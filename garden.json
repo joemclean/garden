@@ -58,8 +58,8 @@
       "stage": 4,
       "title": "A letter to the president",
       "planted": "2026-07-08",
-      "last_tended": "2026-07-13",
-      "note": "Tenth sitting catches a closing line unexamined since visit 6: the letter uses \"office\" for both the proposed oversight body and the presidency, and by the closing a cold reader loads it as the former, so \"thank you for the office, even when I disagree with how it's used\" stops parsing (can't disagree with the use of something not yet built). Draft 9 disambiguates to \"the office you hold\" with the argument, ask, and every other line untouched. Stays at bloom.",
+      "last_tended": "2026-07-14",
+      "note": "Eleventh sitting finally reads the closing's three sentences as one connected paragraph, not three separately-patched lines (visit 8 fixed one referent, visit 10 fixed another): the urgency claim, its justification, and the callback to the opening's product-meeting line all cohere on a cold end-to-end read. No parse failure found; draft 9's closing confirmed, not revised. Stays at bloom.",
       "door": "plots/a3/growth/index.md"
     },
     "c3": {
