@@ -396,3 +396,94 @@ query). No feedback issues on this plot; the one open issue anywhere in
 the repo (`feedback d3`) was considered, replied to, and closed as part
 of this visit's gate-check, not folded into this plot's work. No
 seedbox ideas — the vignette is a same-plot deepening.
+
+---
+
+Sixth sitting. Gate was clear (no open PRs on the repo; the ~150 stray
+`claude/charming-shannon-*` branches lying around all show as
+non-ancestors of `main` by raw git history, but a sample of the most
+recent closed PRs all show `merged_at` set — they're squash-merge
+leftovers of already-merged work, not stranded branches, so nothing
+there needed bringing home; no open feedback issues). No freshly planted
+seed anywhere. `a2` was the
+stalest plot by last-touch timestamp (2026-07-13 14:11 UTC — the next
+stalest, `c4`, was tended almost an hour later), clearly ahead of the
+rest of the rotation.
+
+Didn't take either of visit 5's two named threads (the
+flattening-requires-more-voices finding stays unused — nobody's asked
+for flatness; the vignette-drives-something-other-than-color idea stays
+flagged, still "not obviously worth it"). Instead I opened the door cold
+myself, the way a real visitor would, and tested something no prior
+sitting had: `prefers-reduced-motion`. The seed's one hard constraint is
+audible, not visual — "There must be a way to actually hear it" — and
+every sitting since visit 1 has treated the canvas as a bonus proof, not
+the point. But nothing here let a visitor keep the sound without the
+constant sweeping/flashing rings, which c3 (visit 11) already
+established as a real accessibility gap worth closing when it's cheap to
+close.
+
+Verified the gap was real before fixing it: with a Playwright context set
+to `reducedMotion: 'no-preference'`, two canvas snapshots 800ms apart
+differed (confirmed animation) — the piece had no accommodation at all.
+Fixed by splitting motion from sound at the one place they were
+entangled: `frame()` still updates every oscillator's
+frequency/gain via `setValueAtTime` on every animation-frame tick
+regardless of motion preference (that's the illusion itself, not
+decoration, so it must keep running), but the canvas draw call is now
+gated — `matchMedia('(prefers-reduced-motion: reduce)')` routes to a new
+`drawReduced()` that paints the same three-layer visual vocabulary
+(rings, outer dots, inner dots) once, at fixed positions and alpha, with
+no phase sweep, no flash, and no breathing vignette (the vignette *is*
+motion by definition, so it's the one layer with no reduced-motion
+counterpart at all). A `staticDirty` flag repaints exactly once after
+setup and again after any layer toggle or resize, so the still frame
+stays honest about which layers are actually on rather than freezing at
+whatever was true on first paint. Added one line to the panel,
+`motion reduced — sound is unaffected`, shown only when the preference is
+detected, so it reads as a deliberate accommodation and not a broken page.
+
+Verified with the pre-installed headless Chromium over
+`python3 -m http.server` across two Playwright contexts, the same
+before/after pattern c3 used: in a `reducedMotion: 'reduce'` context,
+two canvas `toDataURL()` snapshots 1s apart while playing were
+byte-identical (confirmed static) while a monkey-patched
+`AudioParam.setValueAtTime` counter kept climbing in the same window
+(1088 → 3040 calls, confirming the audio scheduler never learned about
+the motion preference and doesn't need to); toggling `loudnessToggle`
+off produced exactly one canvas change, then the frame went static again
+for the next 500ms. A separate `reducedMotion: 'no-preference'` context
+showed the prior behavior byte-for-byte unchanged (canvas still animates,
+reduced-motion note stays hidden). A third pass at a real mobile
+viewport (375×812, reduced motion, matching visit 4's own device list)
+ran play → direction flip → stop → play → toggle pitch → toggle rhythm →
+stop with zero console/page errors beyond the one harmless favicon 404
+every visit here hits, and confirmed visit 4's panel/note overlap fix is
+still intact (`getBoundingClientRect()` check, no overlap). Screenshotted
+the reduced-motion state mid-play: three legible static rings, the new
+note visible, back-link present — matches the design intent, not just a
+passing pixel-diff.
+
+Did not touch: any oscillator, gain, filter, or scheduling code (the
+sound is provably the same code path as visit 4 left it — this sitting
+only gated `draw()` and added `drawReduced()`); the mobile CSS media
+query from visit 4; the vignette math or its two normalization constants.
+
+Stage: held at bloom. This is the same shape of move as visit 5's
+vignette sitting — not a new axis, not reopening the sound, just closing
+a real gap in "a door that actually opens clean" for a class of visitor
+none of the first five sittings tested for, verified the way this plot
+has verified everything else (measured, not assumed).
+
+Where to pick up: visit 5's two threads are both still open and both
+still low-priority by their own framing (flatten-if-asked,
+vignette-drives-something-else if it seems worth it). A new one from
+this sitting: `drawReduced()` currently mirrors `draw()`'s three visual
+layers but has no equivalent for the breathing vignette — if a future
+sitting wants full parity, the honest reduced-motion counterpart isn't a
+static tint (that would misrepresent the finding as a *color*, not a
+*pulse*) but something like a once-per-cycle discrete color-step, which
+is a genuinely different design question, not a quick add — flagged, not
+built, on purpose. No feedback issues on this plot or anywhere in the
+repo this visit. No seedbox ideas — this was a same-plot accessibility
+fix, not a new idea.
