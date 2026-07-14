@@ -704,20 +704,6 @@
     }
   })();
 
-  // Poster wall: shuffle which film's card sits in which slot on every load.
-  // Each slot keeps its own fixed tilt (set via CSS :nth-child), so the wall
-  // itself always looks the same way it's tacked up — it's which poster is
-  // pinned where that changes, the way a real revival house's listings would.
-  (function () {
-    const container = document.querySelector('.menu-reels');
-    const posters = Array.from(container.children);
-    for (let i = posters.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [posters[i], posters[j]] = [posters[j], posters[i]];
-    }
-    posters.forEach((p) => container.appendChild(p));
-  })();
-
   // Orchestration: a menu comes first, no reel plays until it's chosen. Pick
   // one reel and it plays alone, cued by a short entry leader naming it. Pick
   // "play all three" and the original fixed anthology sequence runs exactly
@@ -752,9 +738,26 @@
       returnLink.classList.remove('visible');
     }
 
+    // Reshuffles which film's card sits in which slot. Each slot keeps its
+    // own fixed tilt (set via CSS :nth-child), so the wall itself always
+    // looks the same way it's tacked up — it's which poster is pinned where
+    // that changes, the way a real revival house's listings turn over. Runs
+    // every time the menu is shown, not just on page load, so returning from
+    // a reel finds the wall re-tacked rather than frozen at the first roll.
+    function shufflePosters() {
+      const container = menu.querySelector('.menu-reels');
+      const posters = Array.from(container.children);
+      for (let i = posters.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [posters[i], posters[j]] = [posters[j], posters[i]];
+      }
+      posters.forEach((p) => container.appendChild(p));
+    }
+
     function showMenu() {
       clearPending();
       hideAll();
+      shufflePosters();
       menu.style.display = 'flex';
     }
 

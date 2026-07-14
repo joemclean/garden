@@ -114,8 +114,8 @@
       "stage": 4,
       "title": "Open ground: something that moves",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-13",
-      "note": "Fifth tend answers last visit's named open question: the menu is now a poster wall, each of its three slots keeping a fixed tilt and pin while a per-load shuffle decides which film lands where, the fixed 'play all three' sequence untouched. Verified the shuffle is real (4 distinct orders across 6 loads) and that clicking a reel by its data-attribute still plays the right film regardless of shuffled position. Stays at bloom.",
+      "last_tended": "2026-07-14",
+      "note": "Sixth tend answers fifth's own named gap: the poster wall now reshuffles on every return to the menu, not just on page load — moved the shuffle into showMenu() itself. Verified with a real 50s timed playback-and-return plus 8 rapid return cycles (4 distinct orders), reel buttons still cue the right film by data-attribute regardless of shuffled position. Stays at bloom.",
       "door": "plots/d1/growth/index.html"
     },
     "c4": {

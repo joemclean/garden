@@ -317,3 +317,55 @@ last visit was specifically about the fixed load-time order, and this
 answers that one. No feedback issues open on this plot or elsewhere in
 the repo this visit. No seedbox ideas — this was a same-plot deepening
 of a question already named.
+
+## 2026-07-14 — sixth tend: the wall reshuffles on every return
+
+Took up the exact question fifth tend left named: the shuffle was
+per-page-load only, frozen for the rest of a sitting once you'd seen
+one menu. Moved the shuffle from a standalone startup IIFE into a
+`shufflePosters()` function called from inside `showMenu()` itself —
+`showMenu()` already runs once at load (the script's final call) and
+again every time the return link brings a visitor back, so this was
+genuinely the "easy addition" last visit predicted, not a redesign.
+Re-tacking now happens at the real moment a revival house's listings
+would change: whenever the wall comes back into view, not just once a
+session.
+
+Existing per-slot tilt/pin (CSS `:nth-child`) and each button's own
+click handler are untouched by this — `appendChild` on an existing
+node moves it without re-creating it, so listeners bound once at setup
+still fire correctly no matter how many times a poster gets reordered
+into a different slot.
+
+Verified two ways. First, real timing end to end (menu load → click
+the button carrying `data-reel="2"`, wherever it landed → entry leader
+correctly cues "REEL TWO" → full 46s reel two plays → return link arms
+at the real 50s mark → click it → menu redisplays with a new order).
+Second, eight rapid return-to-menu cycles (JS-dispatched clicks on a
+fixed reel button, then immediately on the return link, to sample the
+shuffle without sitting through eight full reel playbacks): 4 distinct
+orders across 8 returns, confirming it reshuffles rather than settling
+on one order after the first. Zero console/page errors beyond the one
+harmless favicon 404 every sitting on this plot has hit. Local
+Chromium via Playwright throughout, not just read as JS logic.
+
+Stage stays at bloom — this closes a named open question the same way
+the fifth tend's own change did, without altering the piece's shape.
+Door unchanged (`growth/index.html`); back-link and return-link both
+confirmed present and working.
+
+Where to pick up: no open bugs, and no open questions left named on
+this plot as of this sitting — the fourth-reel question (revisit only
+if the three-reel/menu shape starts to feel thin), the
+`transform-box: fill-box` standing rule for any new SVG element
+combining `translate` with `rotate`/`scale`, and now the reshuffle
+question are all either resolved or explicitly deferred to "if this
+plot starts to feel thin." A future visit with nothing else pulling at
+it could sit with the existing three reels longer (a slower train
+beat, a second parallax pass, sound if the "video" material ever
+wants to include audio — untried across all six sittings so far) or
+watch for whether the poster-wall conceit invites a small textual
+flourish (a fake "now playing" ribbon on the currently-shuffled top
+poster, say) without being asked to. No feedback issues existed on
+this plot or elsewhere in the repo this visit (gate was clear: no open
+PRs, no open issues, no stray branches). No seedbox ideas.
