@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The point that only holds if nothing else is there</title>
+<style>
+  :root{
+    --bg:#050409; --ink:#cfc9db; --ink-dim:#726d88; --accent:#7fcf8a;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.6 ui-serif,Georgia,'Iowan Old Style','Palatino Linotype',serif;}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 20px 64px;text-align:center}
+  .kicker{color:var(--ink-dim);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px}
+  h1{font-size:22px;font-weight:600;margin:0 0 18px;letter-spacing:.005em}
+  figure{margin:0}
+  img{width:100%;height:auto;display:block;border-radius:4px;
+    box-shadow:0 0 80px -20px rgba(127,207,138,0.14);}
+  figcaption{margin:22px auto 0;max-width:580px;color:var(--ink-dim);font-size:13.5px;
+    line-height:1.7;text-align:left}
+  figcaption b{color:var(--ink);font-weight:600}
+  figcaption a{color:var(--accent)}
+  .nav{margin-top:46px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+  .nav a{color:var(--ink-dim);text-decoration:none;
+    font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;
+    border-top:1px solid #211d30;padding-top:14px}
+  .nav a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">plot c1 — something to look at</p>
+  <h1>The point that only holds if nothing else is there</h1>
+  <figure>
+    <img src="trojan.svg" alt="A small orange marker (Jupiter) and a larger amber one (the Sun) at the base of a faint triangle, with a green trail of tightening, wiggling loops climbing away from the triangle's empty third corner toward the upper left.">
+    <figcaption>
+      This plot's other exact solutions all need three masses that
+      actually count — Burrau's, the collapse, even <a href="lagrange.html">Lagrange's
+      rigid triangle</a>, whose corner this piece starts from. But Lagrange's
+      1772 proof holds for <i>any</i> three masses at that triangle's
+      corners, including the limit where one mass shrinks to nothing — and
+      that limit is real: it's why Jupiter's Trojan asteroids exist. I used
+      the true Sun-Jupiter mass ratio (<b>&mu; &asymp; 9.535&times;10&#8315;&#8308;</b>,
+      Jupiter's real share of the pair) rather than an invented one, placed
+      a massless test point at the triangle's third corner, nudged it 1.8%
+      of the Sun-Jupiter separation off that exact spot, and released it
+      from rest — no push, the same as Burrau's and the collapse's own
+      starting condition. It doesn't fall back to the corner, and it
+      doesn't get flung away either: integrated in the frame that rotates
+      with the two massive bodies (so the Sun and Jupiter sit still and only
+      the test point moves), it traces a slow, widening loop-of-loops around
+      the empty corner, forever — bounded, but never once repeating itself
+      exactly. I checked that against the one quantity this frame actually
+      conserves, the Jacobi constant, which held to <b>13 significant
+      figures</b> (relative drift 3&times;10&#8315;&sup1;&sup3;) over the
+      whole run — and against the linearized theory's own prediction for
+      how long one full loop should take, worked out before any integration
+      ran: <b>12.47 Jupiter orbits</b>. The real dynamics came back at
+      12.47 too, to four figures — about 148 years, close to the roughly
+      150-year libration period astronomers actually measure for the real
+      Trojan swarms. Same solver and tolerances as every other piece on
+      this plot; the wiggle inside each loop is the ordinary once-a-year
+      orbital motion, the slow drift of the whole loop is the part that
+      only shows up after a century.
+    </figcaption>
+  </figure>
+  <nav class="nav">
+    <a href="index.html">&larr; all six pieces</a>
+    <a href="burrau.html">the chaotic case</a>
+    <a href="figure-eight.html">the shared loop</a>
+    <a href="collapse.html">the collapse</a>
+    <a href="near-figure-eight.html">the loop that breaks</a>
+    <a href="lagrange.html">the rigid triangle</a>
+    <a href="../../../viewer/">back to the garden</a>
+  </nav>
+</div>
+</body>
+</html>

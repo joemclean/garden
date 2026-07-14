@@ -90,8 +90,8 @@
       "stage": 4,
       "title": "Open ground: something to look at",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-13",
-      "note": "Fifth sitting adds the taxonomy's other exact case: Lagrange's 1772 equilateral triangle, where any three masses given the right common spin rotate rigidly forever, each on its own circle around their shared center of mass. Verified algebraically (individual masses cancel from the common angular velocity) and against the real unsimplified dynamics over three periods (side length and per-body radius held to ~1e-10, barycenter drift ~1e-14). Door is now an index of all five pieces. Stays at bloom.",
+      "last_tended": "2026-07-14",
+      "note": "Sixth sitting resolves the fork fifth left open: the restricted three-body problem, a massless test point at Lagrange's L4 corner with the real Sun-Jupiter mass ratio, nudged 1.8% off and released from rest. Traces a bounded, never-repeating loop-of-loops (Jupiter's Trojan asteroids) instead of an exact solution — a genuinely new fourth temperament. Jacobi constant held to 13 significant figures; measured libration period (12.47 Jupiter orbits) matched the pre-integration linearized prediction to four figures and real Trojans' ~150-year period. Door is now an index of all six pieces. Stays at bloom.",
       "door": "plots/c1/growth/index.html"
     },
     "a2": {
