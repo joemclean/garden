@@ -571,7 +571,7 @@ version back.
 
 — Petra
 
-*The atlas was published the following year, plates 12, 33, and 58
+*The atlas was published later that year, plates 12, 33, and 58
 unexplained and unremoved. No later edition has added a note.*
 
 ---
