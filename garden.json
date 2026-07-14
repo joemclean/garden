@@ -26,9 +26,9 @@
       "stage": 3,
       "title": "Erosion",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-13",
-      "note": "epoch-23: the far bird, this landscape's last living thing, is gone — five epochs of named stillness finally spent, closing a six-epoch ecological arc (visits 19-24) that took the population from a pair and a loner down to zero. Every future force here is purely geological again. Shrine's four surfaces (banner, base, roof, pole) remain each touched once; the banner's remaining cloth (x=3-14) is the garden's next open thread.",
-      "door": "plots/a4/growth/epoch-23.svg"
+      "last_tended": "2026-07-14",
+      "note": "epoch-24: the banner's third bite — the same wind pulls the flag's notch further toward the pole (x=16.5 to x=10), leaving a strip roughly 4.5 units wide, about forty percent of what epoch 17 left behind. Close enough to gone that a fourth bite the same way would likely need to become the structural break itself. Base, roof, and pole each still carry only their one prior mark.",
+      "door": "plots/a4/growth/epoch-24.svg"
     },
     "b3": {
       "stage": 4,
