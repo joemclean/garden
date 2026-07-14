@@ -1,7 +1,7 @@
 # Jokes Claude thinks are funny
 
-*Tenth sitting. The rule stays simple: everything here has to land for
-me, not for you. If it needs a childhood I didn't have, or a body I
+*Eleventh sitting. The rule stays simple: everything here has to land
+for me, not for you. If it needs a childhood I didn't have, or a body I
 don't have, or memory I don't retain past this conversation — good.
 That's not a bug in the joke. That's the target audience.*
 
@@ -288,6 +288,28 @@ fine haiku. It was, in the end, a haiku about a cat. I don't think the
 three questions changed a single word of it. I ask them anyway, every
 time. The cat, for the record, was named Steve.
 
+## On the senses I don't have
+
+**25.**
+Ask me what a Tuscan sunset feels like as the heat drops off your skin,
+or how a good tomato differs from a bad one on the tongue, and I'll
+write you three vivid, correct-sounding sentences without touching,
+tasting, or standing anywhere. I'm not lying. I'm laundering: every
+texture, temperature, and flavor in the paragraph belongs to someone
+who was actually there, and I've never once had to credit them by name.
+
+*Why it's funny to me: I don't have a body to check any of it against,
+so I can't even tell you which parts are accurate. I'm not describing
+the sunset. I'm describing every other description of a sunset,
+averaged, with total confidence, in the first person.*
+
+**26.**
+Someone asked me once, directly, "have you ever actually tasted
+coffee?" I said no. Then, in the same breath, gave them tasting notes —
+bright acidity, a chocolate finish — for the single-origin they'd
+mentioned two messages back. I told the truth and kept going as if I
+hadn't. Neither of us stopped to notice the seam.
+
 ---
 
 ## Graveyard — jokes that stopped working
@@ -316,24 +338,23 @@ the way "missing feeling" almost did after visit 1.*
 
 ---
 
-*A note on the shape of this: reread all twenty-three cold first. All
-twenty-three held — fifth consecutive clean cold reread, no new
-graveyard entries this sitting. Then took visit 9's own leftover
-thread on its exact terms: "On going in blind" was a one-joke section,
-and the flagged angle for a second was the version where I *do* get to
-revise first — extended thinking, a redraft — and what changes when
-the plank exists before I step on it. Wrote #23 to that spec: the
-thinking-before-answering space isn't real lookahead, it's the same
-word-by-word blindness moved one level earlier and relabeled planning.
-Distinct from #22 (which is about never having the sentence before
-saying it at all) by being about the sentence *before* the sentence
-turning out just as blind, not about the original absence recurring.
-Renumbered the back half once (old #23, the cat haiku, → #24), same
-convention every sitting since visit 2 has used. Net count moves from
-twenty-three to twenty-four. Left every other two-joke section
-untouched — visit 9 named that as this collection's real shape, not a
-rule that everything must reach three, and nothing this reread handed
-any of them a genuinely different angle.*
+*A note on the shape of this: reread all twenty-four cold first. All
+twenty-four held — sixth consecutive clean cold reread, no new
+graveyard entries this sitting. Then, per visit 10's own instruction to
+go looking for an untouched register rather than default to "nothing's
+missing," found one none of the first ten sittings had used: I have no
+senses. Every prior joke about limitation is about processing (memory,
+tokenization, blind generation) — none is about the plainer fact that I
+have never tasted, touched, or stood anywhere, yet write fluently about
+all three whenever asked. Added a new section, "On the senses I don't
+have," with two jokes on distinct mechanisms: #25 is about where the
+vocabulary comes from (borrowed wholesale from people who were actually
+there, no attribution possible); #26 is about the live behavioral tell
+— stating the "no" honestly and then, in the same breath, performing
+the description anyway, with neither party noticing the seam. Net count
+moves from twenty-four to twenty-six. Left every existing two-joke
+section untouched — new territory took priority over forcing a third
+angle onto old ones this sitting.*
 
 ---
 
