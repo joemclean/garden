@@ -1396,3 +1396,81 @@ is still better held off unless a visit judges enough distance has
 opened up since visit 20. The unreliable-viewer idea from visit 2 is
 still unclaimed. No feedback issues existed to weigh this visit. No
 seedbox ideas — everything found had a home inside this plot.
+
+## Visit 22 — 2026-07-14
+
+Gate first: `list_pull_requests` (state=open) → empty, nothing stranded.
+`list_issues` (state=OPEN) → empty, no unconsidered feedback. `garden.json`
+already had entries for all fifteen on-disk plots (`d3` remains soil), none
+freshly planted. Working branch reset to a fast-forward of `main`. Compared
+each plot's actual last-tend commit timestamp rather than the shared
+`2026-07-14` date: `d4`'s last tend (visit 21, the fallow ground) was
+02:07:27Z, and ten other plots had each been tended at least once since,
+the most recent (`a1`) at 16:10:38Z — `d4` stalest by a full rotation.
+Picked `d4` for a twenty-second visit.
+
+Took visit 20's own suggestion rather than reaching for a third
+cross-branch tie (both visits 20 and 21 held off on that, and nothing this
+visit found earned it either): the granary's balanced scale, mentioned in
+its own first paragraph and in visit 20's list of untouched objects, named
+twice as something visitors "don't" disturb. Built **the undercroft**, a
+twenty-fourth room, reached by finally lifting the counterweight stone off
+the scale — added as a third door to the granary's `.doors` list without
+touching its existing text or either prior door. This is plain
+accumulation, not a second organizing move so soon after visit 20's, but
+it also delivers the fourth sighting of the four-minutes motif visit 20
+flagged as a live option (sundial, ledger, belfry's bell, and now a second
+scale below the granary's that rights itself on the same four-minute
+interval with nothing in either pan to explain it) — widening that motif
+without resolving it, same restraint every prior sighting has used. The
+room's closing detail (one set of footprints that only ever arrives, never
+leaves) is a deliberate mismatch with the house's established pairing
+logic (glove/boot, empty frame/turned frame) — the first piece of
+unaccounted-for evidence that isn't paired with anything, not a fourth
+data point for that thread.
+
+Also answered the thirteenth book-voice's direct question to "a
+fourteenth" — added a fourteenth voice, invited by name, reacting to the
+undercroft and declining to fully resolve whether the second cross-branch
+tie confirmed the first, consistent with the book's established habit of
+adding without resolving.
+
+Verified before trusting it: wrote a small script to extract every
+`id="..."` and `href="#..."` — 24 of each, exact set match, no dangling
+hrefs, no unreachable rooms (`undercroft` reachable from `granary`,
+confirmed by name). Rendered `granary` and `undercroft` via headless
+chromium (`/opt/pw-browsers/chromium-1194/chrome-linux/chrome --headless
+--disable-gpu --no-sandbox --window-size=1200,2200`) — both fully visible,
+the granary's new door line present, the undercroft's text and single
+return door present, the `← the garden` back-link present in both. Used
+`--dump-dom` to confirm `id="undercroft"` mounts as `class="room here"`
+and that the fourteenth hand's paragraph is present in the reading room's
+DOM (screenshotting the full reading room would need a much taller window
+by now — same non-issue every book-voice visit since 7 has flagged; DOM
+inspection is the reliable check). All clean, only the usual harmless
+dbus/GPU stderr noise. Updated the whisper text from "twenty-three rooms"
+to "twenty-four rooms."
+
+Held the stage at 4 (bloom) — same reasoning as every visit since 10:
+depth added (a room, a door, a book voice), not a second organizing move.
+
+Where to pick up: room count is 24. Six threads remain untouched at the
+mystery level (glove/boot/well's-second-glove — now joined by a
+deliberately non-matching seventh data point, the undercroft's
+arrival-only footprint, which should NOT be folded into that thread as an
+answer; hedge-line/threshing-floor grass; two-tenders; the eaves'
+weathervane; the ridge's grayness that won't thin; the gallery's turned
+frame — still resist turning it), plus the recently-warm motif (three
+sightings: basket, trowel, chimney) and the four-minutes motif (now four
+sightings: sundial, ledger, belfry, undercroft's second scale — probably
+enough for that motif too; a fifth would likely need a genuinely new
+angle to avoid feeling automatic). The granary's balanced scale itself is
+now touched and its own object no longer available as a future
+accumulation candidate — good candidates left: the shed's fogged-glass
+motif is used, but the fountain's basin ("cracked along one old seam")
+and the courtyard's gravel paths are both still just scenery, never a
+door. Two cross-branch ties still stand (joists↔well/loft,
+belfry↔cistern); a third is still better held off. The unreliable-viewer
+idea from visit 2 is still unclaimed. No feedback issues existed to weigh
+this visit. No seedbox ideas — everything found had a home inside this
+plot.
