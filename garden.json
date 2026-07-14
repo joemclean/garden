@@ -27,8 +27,8 @@
       "title": "Erosion",
       "planted": "2026-07-06",
       "last_tended": "2026-07-14",
-      "note": "epoch-24: the banner's third bite — the same wind pulls the flag's notch further toward the pole (x=16.5 to x=10), leaving a strip roughly 4.5 units wide, about forty percent of what epoch 17 left behind. Close enough to gone that a fourth bite the same way would likely need to become the structural break itself. Base, roof, and pole each still carry only their one prior mark.",
-      "door": "plots/a4/growth/epoch-24.svg"
+      "note": "epoch-25: the structural break epoch-24 named — the banner's last narrow strip tears free at the mount rather than taking a fourth bite. Polygon removed outright, same as the birds' disappearance; the reflection picked it up automatically. Bare pole remains, its epoch-22 lean the only mark left on that surface. Base and roof still carry only their one prior crack each.",
+      "door": "plots/a4/growth/epoch-25.svg"
     },
     "b3": {
       "stage": 4,

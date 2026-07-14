@@ -1,0 +1,518 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <title>Aveth Terraces — epoch 23</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#241a3d"/>
+      <stop offset="35%" stop-color="#4a2f52"/>
+      <stop offset="62%" stop-color="#a85a4e"/>
+      <stop offset="80%" stop-color="#e2934f"/>
+      <stop offset="100%" stop-color="#f6c56b"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff2cc" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#ffdd99" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ffdd99" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#bfe6f0"/>
+      <stop offset="100%" stop-color="#2f7089"/>
+    </linearGradient>
+    <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9fd0dc"/>
+      <stop offset="100%" stop-color="#255870"/>
+    </linearGradient>
+    <linearGradient id="falls" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#cdeaf2"/>
+    </linearGradient>
+    <linearGradient id="farmountain" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5c5a7a"/>
+      <stop offset="100%" stop-color="#8b7a8a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- sky -->
+  <rect id="sky-bg" x="0" y="0" width="1200" height="560" fill="url(#sky)"/>
+  <circle id="sun-disc" cx="620" cy="330" r="140" fill="url(#sun)"/>
+  <circle cx="620" cy="330" r="34" fill="#fff6e0"/>
+
+  <!-- distant birds. epoch 19: population loss, this landscape's first ecological (not
+       geological) weathering — the second bird of the near pair is gone, leaving the
+       first flying alone; the far, already-solitary bird near the cliff is untouched.
+       epoch 20: the near pair's survivor is gone too — a bird that just lost its mate
+       reads as the more vulnerable one to lose next, not the bird that was always
+       alone. The near site is now empty; only the far, already-solitary bird remains.
+       epoch 23: the far bird is gone too, after five epochs of stillness while
+       everything around it changed. This landscape's one living population is now
+       zero — the empty sky is the mark, no path left to draw. -->
+  <g id="birds" stroke="#2e2436" stroke-width="2.5" fill="none" stroke-linecap="round">
+  </g>
+
+  <!-- far mountains -->
+  <g id="far-mountains" fill="url(#farmountain)" opacity="0.75">
+    <path d="M0,380 L120,270 L230,360 L340,240 L470,370 L600,260 L740,380 L860,280 L980,370 L1120,250 L1200,360 L1200,420 L0,420 Z"/>
+  </g>
+
+  <!-- valley floor base, so no gap between terrace edges and the river ever shows sky -->
+  <rect id="valley-floor" x="0" y="400" width="920" height="400" fill="#4f5c33"/>
+
+  <!-- ================= CLIFF (right side, exposed strata core sample) ================= -->
+  <g id="cliff-strata">
+    <path d="M 940 420 L 1200 380 L 1200 760 L 900 760 Z" fill="#6e5642"/>
+    <path d="M 940 420 L 1200 380 L 1200 430 L 935 465 Z" fill="#8f6a4e"/>
+    <path d="M 935 465 L 1200 430 L 1200 480 L 928 512 Z" fill="#a8785a"/>
+    <!-- epoch 4: a chunk calved out of the band's own body, where last epoch's cracks finally gave way.
+         epoch 5: the crack left in reserve widened and took a second bite, just above and right of the first.
+         epoch 6: the reserved crack past the second bite gave way too — a third bite, sharing a wall
+         with the second exactly as the second shares one with the first.
+         epoch 7: the last reserved crack gave way for a fourth bite, the widest yet, reaching to within
+         30px of the cliff's outer edge at x=1200 — too thin a sliver left after this for another bite at
+         this scale, so band three's rightward retreat ends here; no crack is left in reserve for it -->
+    <path d="M 928 512 L 1200 480 L 1200 545 L 1170 549 L 1100 568 L 1090 588 L 1075 558 L 1065 578 L 1050 548 L 1020 552 L 1012 570 L 998 555 L 989 522 L 950 526 L 941 561 L 922 568 Z" fill="#c9a878"/>
+    <!-- epoch 10: band four used to swallow the deep half of every bite (flagged at epoch 7) because
+         its old top edge was one straight line from (922,568) to (1200,545), cutting well above
+         band three's true zigzag floor at each bite's deepest point — so band four's own flat color
+         painted over the void before it ever reached the notch's bottom. This thin shadow strip
+         traces band three's own zigzag exactly as its top edge, then the same zigzag shifted +14
+         vertically as its bottom edge (a uniform 14px band, since the two polylines share vertices
+         and only differ by that constant y-offset — parallel by construction, so the strip can't
+         self-intersect). Reuses #4a382a, the deep-rock tone already established for the dry-notch's
+         own backing (epoch 5) and the cliff's darkest base band, rather than inventing a new color. -->
+    <path id="band-three-shadow" d="M 922 568 L 941 561 L 950 526 L 989 522 L 998 555 L 1012 570 L 1020 552 L 1050 548 L 1065 578 L 1075 558 L 1090 588 L 1100 568 L 1170 549 L 1200 545 L 1200 559 L 1170 563 L 1100 582 L 1090 602 L 1075 572 L 1065 592 L 1050 562 L 1020 566 L 1012 584 L 998 569 L 989 536 L 950 540 L 941 575 L 922 582 Z" fill="#4a382a"/>
+    <!-- epoch 10: band four's own top edge now recedes to match — the same zigzag as band three's,
+         shifted +14 (the shadow strip's own bottom edge above), so band four never reaches back up
+         into a bite's true void. Every bite now reads as: band three's tan face, a sliver of dark
+         shadow at its true depth, then band four's brown resuming below — visible top-to-bottom
+         in the full composite, not just in isolation. -->
+    <path d="M 922 582 L 941 575 L 950 540 L 989 536 L 998 569 L 1012 584 L 1020 566 L 1050 562 L 1065 592 L 1075 572 L 1090 602 L 1100 582 L 1170 563 L 1200 559 L 1200 610 L 916 622 Z" fill="#8f6a4e"/>
+    <path d="M 916 622 L 1200 610 L 1200 680 L 910 686 Z" fill="#6e5642"/>
+    <path d="M 910 686 L 1200 680 L 1200 800 L 900 800 Z" fill="#4a382a"/>
+    <!-- vegetation skin, eroded back to a last tuft in epoch 2: band one is bare, band two now exposed too -->
+    <path id="cliff-vegetation" d="M 1150 420 Q 1175 424 1195 421 Q 1198 419 1200 421 L 1200 434 Q 1178 431 1157 433 Q 1149 432 1150 425 Z" fill="#5b7a3a" opacity="0.9"/>
+    <!-- scree: loose rubble fallen from the strip the vegetation just gave up, now cascading down to band three's top edge -->
+    <g id="cliff-scree" fill="#5a4636" opacity="0.85">
+      <path d="M 942 458 L 952 450 L 962 460 L 950 466 Z"/>
+      <path d="M 965 468 L 974 461 L 984 470 L 972 476 Z"/>
+      <path d="M 990 462 L 998 456 L 1006 464 L 996 470 Z"/>
+      <path d="M 955 480 L 963 474 L 971 482 L 961 487 Z"/>
+      <!-- epoch 2: the fall keeps going, new rubble lower down the same slide path -->
+
+      <path d="M 948 500 L 957 493 L 966 502 L 955 508 Z"/>
+      <path d="M 972 508 L 980 501 L 989 510 L 978 516 Z"/>
+      <path d="M 935 515 L 944 509 L 952 517 L 942 522 Z"/>
+      <!-- epoch 3: band three's exposed top edge starts shedding on its own -->
+      <path d="M 950 530 L 959 524 L 968 532 L 957 538 Z"/>
+      <path d="M 928 538 L 936 532 L 944 540 L 934 546 Z"/>
+      <path d="M 965 545 L 973 539 L 982 547 L 971 553 Z"/>
+      <!-- epoch 4: the calved chunk itself, broken into pieces settled at the notch's own foot -->
+      <path d="M 942 566 L 958 559 L 972 568 L 956 578 Z"/>
+      <path d="M 968 573 L 984 565 L 998 575 L 981 585 Z"/>
+      <path d="M 926 574 L 940 568 L 950 578 L 936 586 Z"/>
+      <!-- epoch 5: the second bite's own debris, settled just below its fresher, higher notch -->
+      <path d="M 1010 578 L 1026 570 L 1040 579 L 1024 590 Z"/>
+      <path d="M 1030 588 L 1044 580 L 1056 589 L 1042 598 Z"/>
+      <path d="M 998 585 L 1010 578 L 1020 587 L 1008 594 Z"/>
+      <!-- epoch 6: the third bite's debris, settled at its own foot, further right and lower than the second's -->
+      <path d="M 1050 596 L 1064 588 L 1076 597 L 1062 606 Z"/>
+      <path d="M 1070 604 L 1082 596 L 1092 605 L 1080 613 Z"/>
+      <path d="M 1038 602 L 1050 595 L 1060 603 L 1048 610 Z"/>
+      <!-- epoch 7: the fourth bite's own debris, settled further right and lower than the third's -->
+      <path d="M 1108 600 L 1122 592 L 1134 601 L 1120 610 Z"/>
+      <path d="M 1130 610 L 1144 602 L 1154 611 L 1140 619 Z"/>
+      <path d="M 1096 608 L 1108 601 L 1118 609 L 1106 617 Z"/>
+    </g>
+    <!-- epoch 3's cracks became epoch 4's notch, epoch 4's reserved crack became epoch 5's second
+         bite, epoch 5's reserved crack became epoch 6's third bite, epoch 6's reserved crack became
+         epoch 7's fourth bite (above). Nothing left in reserve: only a bare 30px sliver of intact
+         rock survives between the fourth bite and the cliff's outer edge at x=1200, too narrow to
+         weather further at this scale — band three's rightward retreat is finished. -->
+    <!-- epoch 9: first use of "overgrow" on this landscape. Moss only reclaims the very oldest
+         scree — the epoch-1 cohort, fallen when the vegetation skin first gave way and now eight
+         epochs weathered — never the epoch-2/3 falls beneath it, which haven't stood nearly as
+         long. Small patches, same green as the vegetation skin still clinging above, reusing the
+         one color this cliff already uses for living growth rather than inventing a new one. -->
+    <g id="moss-scree" fill="#5b7a3a" opacity="0.6">
+      <ellipse cx="951" cy="459" rx="3.4" ry="2.4"/>
+      <ellipse cx="974" cy="469" rx="3.2" ry="2.3"/>
+      <ellipse cx="998" cy="463" rx="3.3" ry="2.3"/>
+      <ellipse cx="963" cy="481" rx="3" ry="2.2"/>
+    </g>
+    <!-- epoch 13: overgrow reaches its second cohort. epoch 9 drew the line at the epoch-1 scree
+         (then 8 epochs weathered) and explicitly left the epoch-2 cascade below it untouched as
+         "haven't stood nearly as long" — four epochs later, that cascade is now itself 11 epochs
+         old, past the age the epoch-1 cohort had when it first caught moss. Same tone, same
+         mechanic, lower opacity and smaller patches: this growth is younger than the first cohort's
+         by four epochs and should read that way, not as a repeat of it. Centroids computed from
+         each path's own four vertices, not eyeballed — visit 10's rubble-moss mistake (guessed
+         centers landing off three of four stones) is the standing lesson for placing this kind of
+         mark. -->
+    <!-- epoch 15: the epoch-3 cascade (three pieces, "band three's exposed top edge starts shedding
+         on its own") was 10 epochs old at epoch 13, already past the 8-epoch line the epoch-2
+         cascade crossed that same visit at 11 — but epoch 13's journal named only the epoch-2 scree
+         and the epoch-4 wall-rubble stone, and never mentioned epoch-3 either way. Checked the two
+         explanations visit 15's own journal left open rather than guessing: no other single-visit
+         mark in this plot's history has ever skipped an eligible piece from the same field on
+         purpose without saying so in the journal or the SVG (every deliberate hold — band three's
+         reserve, the lake-size question — was written down at the time), so silence here reads as
+         oversight, not a one-cohort-per-visit rule that was never stated anywhere else. Fixed it two
+         epochs late rather than leaving it open a third time: added to the same gen2 cohort, same
+         tone and size as the epoch-2/epoch-4 marks, since it crossed the identical threshold in the
+         identical wave, just unrecorded until now. Centroids computed from each path's own four
+         vertices, same discipline as every prior mark here. -->
+    <g id="moss-scree-gen2" fill="#5b7a3a" opacity="0.4">
+      <ellipse cx="956.5" cy="500.75" rx="2.6" ry="1.8"/>
+      <ellipse cx="979.75" cy="508.75" rx="2.5" ry="1.8"/>
+      <ellipse cx="943.25" cy="515.75" rx="2.7" ry="1.9"/>
+      <ellipse cx="958.5" cy="531" rx="2.6" ry="1.8"/>
+      <ellipse cx="935.5" cy="539" rx="2.6" ry="1.8"/>
+      <ellipse cx="972.75" cy="546" rx="2.6" ry="1.8"/>
+    </g>
+  </g>
+
+  <!-- ================= VALLEY TERRACES ================= -->
+  <g id="terraces">
+    <!-- left flank, descending toward the river -->
+    <path d="M0,430 L260,410 L300,460 L20,480 Z" fill="#7c8f45"/>
+    <path d="M20,480 L300,460 L340,510 L40,530 Z" fill="#93a24e"/>
+    <path d="M40,530 L340,510 L375,560 L60,582 Z" fill="#b4923b"/>
+    <path d="M60,582 L375,560 L405,610 L80,634 Z" fill="#7c8f45"/>
+    <path d="M80,634 L405,610 L430,660 L100,686 Z" fill="#a68a3f"/>
+    <path d="M100,686 L430,660 L455,710 L120,740 Z" fill="#8a9b4e"/>
+    <!-- epoch 1: top edge unchanged (still shared with the tier above); the tier bulges
+         and subsides on its river-facing side, past where the wall used to hold it.
+         epoch 4: the bulge sinks further and pulls inward on itself — down and left,
+         never further out toward the river, per the settled delta rule.
+         epoch 6: settling the question epoch 5 left open — the top edge is a standing
+         invariant of this landscape, never touched, however far the bulge below it sinks;
+         opening it would tear a gap to the tier above with nothing to fill it, which is a
+         rendering artifact, not weathering. so the same three free vertices sink further,
+         same direction as epoch 4, and the shared edge holds.
+         epoch 8: the bulge bottoms out against the valley floor. the same three vertices
+         pushed to their last possible position — the canvas's own bottom edge at y=800 — so
+         this is the tier's final subsidence, not one more increment in an open-ended sink;
+         there's nowhere left for it to go. -->
+    <path d="M120,740 L455,710 L475,800 L445,799 L165,795 Z" fill="#5c6f34"/>
+
+    <!-- right flank, descending toward the river -->
+    <path d="M900,415 L640,400 L600,450 L900,462 Z" fill="#93a24e"/>
+    <path d="M900,462 L600,450 L565,498 L900,512 Z" fill="#7c8f45"/>
+    <path d="M900,512 L565,498 L535,548 L900,562 Z" fill="#b4923b"/>
+    <path d="M900,562 L535,548 L505,598 L900,616 Z" fill="#8a9b4e"/>
+    <path d="M900,616 L505,598 L480,648 L900,672 Z" fill="#7c8f45"/>
+    <path d="M900,672 L480,648 L460,700 L900,726 Z" fill="#a68a3f"/>
+    <path d="M900,726 L460,700 L450,760 L900,760 Z" fill="#6f8c3e"/>
+
+    <!-- retaining walls: thin stone lines along each tier edge -->
+    <g id="retaining-walls" stroke="#7d746a" stroke-width="4" fill="none" opacity="0.85">
+      <path d="M20,480 L300,460"/>
+      <path d="M40,530 L340,510"/>
+      <path d="M60,582 L375,560"/>
+      <path d="M80,634 L405,610"/>
+      <path d="M100,686 L430,660"/>
+      <!-- epoch 1: this wall crumbled in the middle; two stubs survive at either end -->
+      <path d="M120,740 L260,727"/>
+      <path d="M420,713 L455,710"/>
+      <path d="M900,462 L600,450"/>
+      <path d="M900,512 L565,498"/>
+      <path d="M900,562 L535,548"/>
+      <path d="M900,616 L505,598"/>
+      <path d="M900,672 L480,648"/>
+      <path d="M900,726 L460,700"/>
+    </g>
+
+    <!-- epoch 1: fallen stone from the collapsed wall, tumbled toward the bulge below -->
+    <g id="wall-rubble" fill="#7d746a" opacity="0.9">
+      <rect x="290" y="726" width="10" height="7" transform="rotate(15 295 729)"/>
+      <rect x="325" y="740" width="9" height="6" transform="rotate(-8 329 743)"/>
+      <rect x="355" y="754" width="11" height="7" transform="rotate(20 360 757)"/>
+      <rect x="310" y="750" width="8" height="6" transform="rotate(-25 314 753)"/>
+      <!-- epoch 4: the bulge sank further and dragged this stone down and inward with it -->
+      <rect x="270" y="775" width="9" height="6" transform="rotate(10 274 778)"/>
+      <!-- epoch 6: the bulge sank again; a second stone rides down with it, lower and further right -->
+      <rect x="300" y="798" width="9" height="6" transform="rotate(-12 304 801)"/>
+      <!-- epoch 8: the bulge's final settling; a third stone rides down with it, resting at the
+           valley floor now that the tier has nowhere further to sink -->
+      <rect x="330" y="792" width="9" height="6" transform="rotate(8 334 795)"/>
+    </g>
+    <!-- epoch 9: the same overgrow force as the cliff scree, applied to this landscape's other old
+         rubble field. Only the original four epoch-1 stones get moss — they've stood eight epochs;
+         the three stones added in epochs 4, 6, and 8 as the bulge kept sinking are each too recent
+         in turn to have caught any yet. -->
+    <g id="moss-rubble" fill="#5b7a3a" opacity="0.55">
+      <ellipse cx="295" cy="729" rx="3.4" ry="2.4"/>
+      <ellipse cx="329" cy="743" rx="3.2" ry="2.2"/>
+      <ellipse cx="360" cy="757" rx="3.6" ry="2.4"/>
+      <ellipse cx="314" cy="753" rx="3" ry="2.2"/>
+    </g>
+    <!-- epoch 13: the rubble field's own second cohort, same reasoning as the scree above. The
+         epoch-4 stone (rotated about (274,778), used verbatim as the mark's center rather than
+         eyeballed, per visit 10's lesson) is now 9 epochs old — past the epoch-1 cohort's own
+         8-epoch threshold at epoch 9. The epoch-6 and epoch-8 stones are 7 and 5 epochs old
+         respectively, still short of that threshold, so they stay bare this visit. -->
+    <!-- epoch 14: the epoch-6 stone (rotated about (304,801), again the transform's own center, not
+         eyeballed) turns 8 epochs old this epoch — the threshold visit 13 named in reserve. Same
+         gen2 tone and size as the epoch-4 stone got at epoch 9→13's four-epoch remove, so it reads
+         as the same cohort catching up, not a new one. The epoch-8 stone is still only 6 epochs old
+         and stays bare; it crosses this same line at epoch 16. This stone rides lowest of the three
+         (the bulge's final settling carried it deepest), low enough that its own rect already dips
+         past the landscape's y=800 floor — so the mark sits mostly below the visible edge, only its
+         topmost sliver showing, moss on a stone that's mostly swallowed by the ground it sank into.
+         epoch 16: the epoch-8 stone (rotated about (334,795), its own transform center, used
+         verbatim) turns 8 epochs old exactly this epoch — the threshold named in reserve since
+         visit 13. Same gen2 tone and size as its two older siblings. With this mark, every stone
+         in the wall-rubble field has now crossed into gen2; no field on this landscape carries an
+         unmossed piece that has earned it. -->
+    <g id="moss-rubble-gen2" fill="#5b7a3a" opacity="0.38">
+      <ellipse cx="274" cy="778" rx="2.6" ry="1.8"/>
+      <ellipse cx="304" cy="801" rx="2.6" ry="1.8"/>
+      <ellipse cx="334" cy="795" rx="2.6" ry="1.8"/>
+    </g>
+    <!-- epoch 12: overgrow's third site. these two wall stubs are this landscape's single oldest
+         standing surface — unlike every rubble/scree piece, which fell and then began aging, the
+         stubs themselves have stood unmoved since the wall between them crumbled in epoch 1, twelve
+         epochs of exposure with nothing added or taken since. slightly larger, slightly denser than
+         the epoch-1 scree/rubble moss to read as the oldest growth on the piece, not a repeat of it. -->
+    <g id="moss-wall" fill="#5b7a3a" opacity="0.6">
+      <ellipse cx="141" cy="738" rx="3.6" ry="2.6"/>
+      <ellipse cx="176" cy="735" rx="3.8" ry="2.6"/>
+      <ellipse cx="211" cy="732" rx="3.5" ry="2.5"/>
+      <ellipse cx="239" cy="729" rx="3.4" ry="2.4"/>
+      <ellipse cx="430" cy="712" rx="3.2" ry="2.3"/>
+      <ellipse cx="445" cy="711" rx="3" ry="2.2"/>
+    </g>
+  </g>
+
+  <!-- ================= WATERFALL + RIVER ================= -->
+  <!-- epoch 2: the knickpoint has migrated upstream, higher and narrower; the old lower
+       reach it used to carve is now a dry-notch scar (below), fed only by a thin seep -->
+  <g id="waterfall">
+    <path d="M 472 250 L 498 250 L 508 340 L 462 340 Z" fill="url(#falls)"/>
+    <g stroke="#eaf7fb" stroke-width="2" opacity="0.7">
+      <path d="M 477 258 L 471 335"/>
+      <path d="M 486 258 L 484 337"/>
+      <path d="M 495 258 L 499 335"/>
+    </g>
+    <ellipse cx="484" cy="348" rx="32" ry="9" fill="#eaf7fb" opacity="0.8"/>
+  </g>
+
+  <g id="dry-notch">
+    <!-- epoch 5: the left crack finally gave way — a slab of the old channel wall calved off along
+         it. this sits behind the fill's new cut, reusing the cliff's own deep-rock tone so the gap
+         reads as older exposed stone, not a hole through to the sky.
+         epoch 7: widened rightward to back the right-hand wall's own calving below.
+         epoch 8: widened again to x508 — the new right-wall cut below reaches x505 at its deepest,
+         needed a few px of margin behind it so no sky shows through at the seam. -->
+    <path id="notch-collapse" d="M 455 335 L 508 335 L 508 425 L 450 425 Z" fill="#4a382a"/>
+    <!-- epoch 3: the seep has dried out completely — no more water reaches the river from here;
+         the river's own head at y=420 needs no edit, it was never fed by this geometry.
+         epoch 5: the lower-left corner is cut away along the old crack line, calved off whole.
+         epoch 7: the right-hand wall gave way too, following its own reserved crack — the slab
+         between the old zigzag and that crack is gone, the boundary now runs along where the
+         crack used to be.
+         epoch 8: the crack left in reserve at epoch 7 gave way too — the small rock spur at
+         (488,404) is gone, the boundary now runs along that crack's own line instead. What's left
+         standing is a narrow sliver between here and the outer edge at x510-515; there's no real
+         room left for another cut at this scale, so the dry-notch's right wall is finished
+         retreating, the same way band three's cliff face ran out of room in epoch 7. -->
+    <path d="M 460 340 L 510 340 L 515 420 L 502 420 L 503 415 L 505 400 L 495 382 L 484 358 Z" fill="#7d6a52"/>
+    <g stroke="#cbb896" stroke-width="2" opacity="0.5">
+      <!-- epoch 7: shortened — its lower reach sat on the slab that just calved away.
+           epoch 8: shortened again — the same slab kept eroding, these two streaks' lower reaches
+           now sit past the fresh edge -->
+      <path d="M 486 346 L 490 371"/>
+      <path d="M 500 346 L 501 391"/>
+    </g>
+    <!-- true abandoned channel: dry cracks fanning out where the old streambed baked and split.
+         epoch 5: the left crack became the calved edge above, so only the right one remains,
+         now reaching all the way down to the fresh bottom edge as the next weak seam.
+         epoch 7: that crack became this epoch's right-hand-wall edge (above); a new weak seam is
+         left in reserve, further right and deeper in what's now the notch's last remaining rock.
+         epoch 8: that reserved crack became this epoch's edge too (above) — nothing left in
+         reserve, the sliver of rock remaining is too narrow to crack further. -->
+    <g id="notch-cracks" stroke="#5f4e3a" stroke-width="1.2" opacity="0.65" fill="none">
+    </g>
+    <!-- epoch 5: the calved slab, broken up and settled at the notch's foot -->
+    <g id="notch-rubble" fill="#5a4636" opacity="0.85">
+      <path d="M 460 406 L 472 400 L 482 408 L 470 415 Z"/>
+      <!-- epoch 7: the right-hand wall's own slab, settled just below its fresher, lower calving -->
+      <path d="M 494 414 L 505 408 L 514 417 L 503 423 Z"/>
+      <path d="M 508 419 L 517 413 L 525 420 L 516 425 Z"/>
+      <path d="M 476 413 L 488 407 L 497 416 L 486 423 Z"/>
+      <path d="M 452 414 L 462 409 L 471 417 L 461 424 Z"/>
+      <!-- epoch 8: the last spur's own debris, settled at the base of the now-finished right wall -->
+      <path d="M 490 410 L 500 405 L 507 412 L 498 418 Z"/>
+      <path d="M 464 415 L 474 411 L 481 418 L 472 423 Z"/>
+    </g>
+  </g>
+
+  <path id="river" d="M 470 420
+    C 440 470, 500 500, 470 550
+    C 445 590, 505 620, 478 660
+    C 460 690, 500 715, 480 760
+    L 550 760
+    C 560 715, 525 690, 545 660
+    C 565 620, 515 590, 535 550
+    C 555 500, 505 470, 530 420 Z"
+    fill="url(#water)"/>
+
+  <!-- delta silt fan where river meets the lake.
+       epoch 11: first use of "flood" on this landscape. The old fan (460,745)-(590,780) sat entirely
+       inside the lake ellipse's bounds (cy=778, ry=42 means the ellipse only spans y=736-820) and the
+       lake is drawn after it, so every prior epoch's delta was completely painted over — invisible
+       since epoch 0, the same swallowing failure epoch 7 found between band three and band four.
+       A flood finally carried enough silt to breach that: the fan now reaches up to y=710, well above
+       the lake's own top edge, so its upper reach paints on top of the valley floor and both terrace
+       flanks' lowest tiers (drawn earlier) instead of vanishing under the water. The lower half stays
+       within the old bounds, still hidden — only the flood's high-water excess is new and visible. -->
+  <g id="delta" opacity="0.9">
+    <path d="M 440 710 L 620 710 L 660 758 L 600 786 L 400 786 L 358 758 Z" fill="#c9b27a"/>
+  </g>
+
+  <!-- epoch 13: settling the question left open since epoch 11 — whether flood's second reserved
+       candidate (permanently enlarging the lake, a receded flood raising the water table) should
+       ever be taken. Decided no, and not by default: the lake is a standing feature of the
+       landscape's geometry, like the shared terrace edge epoch 6 declared invariant, not a record
+       of any one event. The delta's breached fan and the village's tide-stain already carry this
+       flood's memory precisely — they are debris and residue, exactly what a flood leaves. Resizing
+       the lake itself would blur that: a future flood would have nowhere new to leave its own mark
+       once the lake had already absorbed the last one's evidence into its permanent shape. Silt and
+       stain stay the flood's only record; this candidate is retired, not deferred again. -->
+  <!-- lake at the valley floor -->
+  <ellipse id="lake" cx="600" cy="778" rx="260" ry="42" fill="url(#lake)"/>
+  <ellipse cx="600" cy="778" rx="260" ry="42" fill="none" stroke="#1f4a5c" stroke-width="1" opacity="0.4"/>
+
+  <!-- reflection of village + shrine, broken by rippling stroke -->
+  <g id="reflection" opacity="0.35">
+    <g transform="translate(0,1472) scale(1,-1)">
+      <use href="#village-group"/>
+      <use href="#shrine-group"/>
+    </g>
+  </g>
+
+  <!-- ================= TREES ================= -->
+  <g id="trees" fill="#3f5a2a">
+    <g id="tree" transform="translate(150,455)"><rect x="-3" y="0" width="6" height="14" fill="#4a3520"/><circle cy="-6" r="13"/></g>
+    <use href="#tree" x="90" y="20"/>
+    <use href="#tree" x="200" y="45"/>
+    <use href="#tree" x="30" y="70"/>
+    <use href="#tree" x="260" y="90"/>
+    <use href="#tree" x="120" y="115"/>
+    <use href="#tree" x="10" y="150"/>
+    <use href="#tree" x="290" y="150"/>
+    <use href="#tree" x="180" y="180"/>
+    <use href="#tree" x="60" y="205"/>
+    <use href="#tree" x="330" y="215"/>
+    <use href="#tree" x="230" y="245"/>
+    <use href="#tree" x="100" y="270"/>
+    <use href="#tree" x="700" y="10"/>
+    <use href="#tree" x="770" y="35"/>
+    <use href="#tree" x="640" y="55"/>
+    <use href="#tree" x="810" y="80"/>
+    <use href="#tree" x="690" y="105"/>
+    <use href="#tree" x="610" y="135"/>
+    <use href="#tree" x="750" y="155"/>
+    <use href="#tree" x="670" y="185"/>
+    <use href="#tree" x="800" y="210"/>
+    <use href="#tree" x="620" y="235"/>
+    <use href="#tree" x="740" y="260"/>
+  </g>
+
+  <!-- ================= VILLAGE ================= -->
+  <g id="village-group">
+    <g id="village" fill="#c98a4b">
+      <g id="house"><rect x="-14" y="-16" width="28" height="16"/><polygon points="-17,-16 0,-32 17,-16" fill="#4a3728"/><rect x="-4" y="-9" width="6" height="9" fill="#2e2018"/></g>
+      <use href="#house" x="330" y="560"/>
+      <use href="#house" x="365" y="565"/>
+      <use href="#house" x="300" y="590"/>
+      <use href="#house" x="345" y="610"/>
+      <use href="#house" x="390" y="600"/>
+      <use href="#house" x="315" y="640"/>
+      <use href="#house" x="370" y="655"/>
+      <use href="#house" x="410" y="640"/>
+      <use href="#house" x="290" y="670"/>
+      <use href="#house" x="345" y="695"/>
+      <use href="#house" x="400" y="690"/>
+      <use href="#house" x="320" y="720"/>
+      <use href="#house" x="380" y="725"/>
+    </g>
+    <!-- a wisp of hearth smoke, the only soft thing in the whole scene -->
+    <path id="smoke" d="M 330 540 Q 340 520 330 505 Q 320 490 332 472" stroke="#e7e2d8" stroke-width="3" fill="none" opacity="0.55" stroke-linecap="round"/>
+  </g>
+
+  <!-- epoch 11: the same flood that finally surfaced the delta reached this far up the bank too — a
+       muddy tide line lapping the base of the two lowest houses (320,720) and (380,725), the only two
+       close enough to the old shoreline to catch it. Drawn after village-group so it sits on top of
+       their foundations, not hidden beneath them. Reuses the delta's own silt tone rather than a new
+       color, tying both marks to one event. -->
+  <g id="flood-stain" opacity="0.55">
+    <path d="M 302 717 Q 320 723 338 717" stroke="#c9b27a" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M 362 722 Q 380 728 398 722" stroke="#c9b27a" stroke-width="5" fill="none" stroke-linecap="round"/>
+  </g>
+  <g id="flood-debris" fill="#5a4636" opacity="0.85">
+    <rect x="296" y="719" width="8" height="4" transform="rotate(12 300 721)"/>
+    <rect x="391" y="724" width="7" height="4" transform="rotate(-10 394 726)"/>
+  </g>
+
+  <!-- ================= SHRINE, alone on the ridge ================= -->
+  <!-- epoch 16: the shrine's first touch by any force, sixteen epochs after every other site on
+       this landscape began weathering. Started with its most exposed, least durable material —
+       the banner, not the stone base or the roof — since cloth gives first. A wedge torn from the
+       flag's own free edge (the corner farthest from the pole, where wind load is greatest),
+       cut as one inward vertex on the existing boundary rather than a separate shape, so the sky
+       gradient behind shows through the gap exactly the way exposed rock shows through the cliff's
+       own bites.
+       epoch 17: the same wind kept working the same edge — the crack becomes the edge again, the
+       one move every calving on this landscape has used. The inward vertex pulled from x=24 to
+       x=14, roughly doubling how much sky shows through and leaving a narrower, more ragged
+       remnant of cloth nearest the pole. No second site opened; one thread, one epoch. -->
+  <g id="shrine-group">
+    <g id="shrine" transform="translate(760,395)">
+      <rect x="-22" y="-10" width="44" height="30" fill="#2e2018"/>
+      <!-- epoch 18: the shrine's stone base gets its first mark of any kind — every other force on
+           this landscape has reached the banner, the wall, the cliff, but the stone the shrine
+           actually stands on had gone seventeen epochs untouched. Same crack verb already used on
+           the cliff bands and the dry-notch's walls, applied here for the first time: a hairline
+           seam up from the base's lower corner, where standing water would pool and freeze first. -->
+      <path d="M -16 20 L -12 9 L -15 3" stroke="#5a4636" stroke-width="1.2" opacity="0.65" fill="none"/>
+      <polygon points="-28,-10 0,-38 28,-10" fill="#1c130d"/>
+      <!-- epoch 21: the roof's first mark — the last untouched surface on the shrine now that the
+           banner (epochs 16-17) and the base (epoch 18) have each been reached. Same crack verb,
+           applied at the ridge instead of a corner: the apex is where the two slopes meet and rain
+           pools before running off either side, the roof's own version of the base's low corner
+           where standing water freezes first. One hairline seam, no fill, same tone and weight as
+           every prior crack on this landscape — the pole above it is still fully untouched. -->
+      <path d="M -2 -34 L 6 -26 L 2 -18" stroke="#5a4636" stroke-width="1.2" opacity="0.65" fill="none"/>
+      <!-- epoch 22: the pole's first mark — the last untouched surface on the shrine now that the
+           banner (epochs 16-17), the base (epoch 18), and the roof (epoch 21) have each been
+           reached. Not the crack verb again: a pole is a different shape than a wall or a roof
+           slope, thin and unsupported along its height rather than broad and load-bearing, so the
+           way it fails is a lean, not a seam. Base fixed where it sets into the roof (y=-18,
+           unmoved); top displaced +2.5 in x, the same downwind direction the flag has been fraying
+           toward since epoch 16 (its torn wedge bites the free edge farthest from the pole, i.e.
+           the edge the wind pushes it away from) — 21 epochs of the one prevailing wind this
+           landscape has ever shown bends the pole the same way it's been tearing the cloth. The
+           flag is rigidly reattached at the new tip: no new fray, no added cloth loss, just its
+           mount moving out from under it, the same kind of consequence-of-decay the seed allows a
+           collapse exposing a stratum. tan(lean) = 2.5/20 ≈ 7°, comparable in scale to every hairline
+           crack already on this landscape. -->
+      <path d="M -3 -18 L -0.5 -38 L 5.5 -38 L 3 -18 Z" fill="#3a281a"/>
+      <!-- epoch 24: the banner's third bite, the remaining-cloth thread named and deferred by
+           visits 23 and 24's own journals (x=3-14 in the pre-lean coordinates those notes used,
+           x=5.5-16.5 after epoch 22's pole shift). Same single move as epoch 17 — the inward
+           vertex pulled further toward the pole, x=16.5 to x=10 — applied a second time to the
+           same edge rather than opening a new site. What's left is now a narrow strip roughly
+           4.5 units wide nearest the mount (old-coordinate x=3 to x=7.5), about forty percent of
+           what epoch 17 left behind: cloth enough to still read as a flag, not yet enough to
+           survive a fourth bite the same way. No second site opened; one thread, one epoch.
+           epoch 25: the structural break epoch 24's own journal named — the remaining strip
+           (4.5 units, already too narrow to take a fourth bite the same way) tears free at the
+           mount rather than eroding further. The polygon is gone outright, same "the thing is
+           simply no longer there" move epochs 19/20/24 used for the birds — wind carries torn
+           cloth off, it doesn't settle as debris the way stone or scree does, so nothing new is
+           drawn to replace it. The bare pole (epoch 22's lean, untouched here) is what's left. -->
+    </g>
+  </g>
+
+  <!-- foreground vignette -->
+  <rect x="0" y="0" width="1200" height="800" fill="url(#sky)" opacity="0"/>
+</svg>
