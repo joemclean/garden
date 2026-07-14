@@ -1384,3 +1384,81 @@ standing advice as visits 12/15/16/17 — a fresh, organic, un-scripted
 swim of the whole space, done only twice in nineteen visits, is still
 the best single test of whether the bloom read holds. No seedbox ideas
 this visit. No feedback issues existed to weigh.
+
+## Visit 20 — 2026-07-14
+
+Gate: `list_pull_requests` (open) → empty, `list_issues` (open) → empty —
+nothing stranded, no reply owed. Fetched `origin/main`; this branch already
+carried its head (`main` was already an ancestor of the working branch).
+`garden.json`: all fifteen on-disk plots registered, no unregistered seed,
+no stage-1 plots, no open feedback. Picked up visit 19's own named thread
+rather than raw staleness (`b3` tied with eleven other plots at
+`last_tended: 2026-07-13`, but only `b3` named a concrete, un-repeated
+next question): does the main school and shelter school read as genuinely
+different fish-schooling behaviors side by side, or just the same boids
+scaled differently?
+
+**First finding: "side by side in one frame" is not actually reachable.**
+Added a temporary `window.__debug` (`aimAt`/`lookAt` helpers on the swim
+rig, per visit 17's pattern) to check this directly rather than assume it.
+`schoolHome` (-15, ~-6.3, -48) and `shelterHome` (45.5, ~-13.9, -32) are
+62.6 units apart. `scene.fog` is `FogExp2` at density 0.045; at 62.6 units
+the fog transmittance works out to ~3.6e-4 — for scale, visit 18 found the
+wanderer (a much larger silhouette) already "barely-perceptible" at 50
+units and "gone entirely by 65." Screenshotted from the midpoint between
+the two homes, elevated 6 units, looking at each in turn, and again parked
+right at the main school's home looking straight toward the shelter
+school: no fish, no hint of either school, in any of the three frames —
+just fog, particulates, and whatever unrelated landmark happened to be
+nearby (the wanderer once, kelp blades once). This isn't a bug; it's the
+plot's own three-zone layout (kelp/main-school, reef, wreck/shelter-school)
+doing exactly what visit 1's fog design and visits 3-8's zone-separation
+choices were for — keeping each zone a self-contained "cubic meter" per
+the seed, not a single legible tableau. So the honest form of "side by
+side" here is two separate frames held up against each other, not one.
+
+**Second finding: held up against each other, they read as genuinely
+different, not just rescaled.** Parked the swimmer at a natural
+viewing distance from each (not teleported into the middle) and let
+each run long enough to clear its initial spawn artifact (25s for the
+main school, matching visit 19's own settling finding; 8s for the
+already-tight shelter school) before screenshotting cold, no debug
+teleport for the shot itself. Numeric spread matched visit 19's
+(`avgDist` ~3.2 for the main school, ~0.7 for the shelter school — same
+order as visit 19's 2.5-4 / 0.4-0.8, sampled at different instants of
+the same steady oscillation). The images make the difference legible in
+a way the numbers alone didn't: the main school reads as a loose,
+diffuse cloud of individually-distinct fish drifting through open water
+between kelp stalks, gaps clearly visible between bodies; the shelter
+school reads as a tight, huddled clump nested directly against the
+wreck's dark hull, bodies nearly touching, unmistakably "sheltering"
+rather than "milling." That's a difference in *character*, not just
+in how spread out the same behavior looks — the shelter school's tight
+constants plus its placement right against the hull combine into a
+visibly distinct read the main school's open-water placement can't
+produce even at the same tightness. Answers visit 19's question: not
+"the same boids at different volume."
+
+No code changes — like visits 18 and 19, this was investigation, and it
+came back confirming the bloom read rather than finding a gap. The
+temporary `__debug` hook (and a math error in my own first draft of
+`lookAt` — it initially aimed 180° away from the target, caught by the
+first round of screenshots showing empty fog/background where a school
+should have been, fixed before any of the numbers above were taken) was
+removed before this commit; `git diff` on `undersea.html` is empty.
+Stage stays at 4 (bloom); door unchanged (`plots/b3/growth/undersea.html`),
+confirmed opening cold after this visit's testing (click away from the
+hint, hold W with mouse-turns, ~3s) with no console/page errors beyond
+the standing harmless favicon 404, and the `../../../viewer/` back-link
+still resolving.
+
+Where to pick up: the "different schools, compared" question is now
+closed — genuinely different, evidenced both numerically (visit 19) and
+visually (this visit). Nothing is flagged anywhere in this journal as
+open. A future visit's honest options are the same two named at the end
+of visit 19: a fresh, organic, un-scripted swim of the whole space (done
+only twice in twenty visits, still the strongest single test of whether
+bloom holds), or watching whether a new angle occurs on rereading fresh
+rather than forcing one. No seedbox ideas this visit — nothing here
+spawned a new plot's worth of concept, just closed a comparison visit 19
+opened. No feedback issues existed to weigh.

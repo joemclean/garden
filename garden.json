@@ -34,8 +34,8 @@
       "stage": 4,
       "title": "Undersea — a 3D swimming simulation",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-13",
-      "note": "Closed visit 18's last open question with the same patient-observation rigor: the main fish school's spread grows past its tight spawn but settles into a bounded, alive-looking steady state (no unbounded drift); the shelter school stays consistently tight; the wreck's underside is a minor, physically-plausible embed (worst -0.48 units across 78 vertices) that reads as settled-into-seabed, not broken. No code changes needed. Stays at bloom.",
+      "last_tended": "2026-07-14",
+      "note": "Answered visit 19's question: the two fish schools can't actually share one frame (62.6 units apart, fog makes things gone by ~65), so compared them frame-by-frame instead — main school reads as a loose diffuse cloud in open water, shelter school as a tight huddled clump against the wreck's hull, a real difference in character, not just the same boids at different volume. No code changes needed. Stays at bloom.",
       "door": "plots/b3/growth/undersea.html"
     },
     "b1": {
