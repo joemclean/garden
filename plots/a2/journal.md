@@ -487,3 +487,87 @@ is a genuinely different design question, not a quick add — flagged, not
 built, on purpose. No feedback issues on this plot or anywhere in the
 repo this visit. No seedbox ideas — this was a same-plot accessibility
 fix, not a new idea.
+
+---
+
+Seventh sitting. Gate was clear (no open PRs, no stray branches, no open
+issues anywhere in the repo, no freshly planted seed). `a2` was the
+stalest plot by last-touch commit timestamp (07:11 UTC, roughly fifteen
+hours back — the next stalest, `c4`, was almost an hour later), clearly
+ahead of the rest of the rotation.
+
+Took visit 6's own flagged thread: give `drawReduced()` an honest
+counterpart for the breathing vignette instead of leaving it as the one
+layer with no reduced-motion version at all. Visit 6 had already ruled
+out a static tint (misrepresents a *pulse* as a *color*) and pointed at
+"a once-per-cycle discrete color-step" without building it.
+
+My first implementation of that idea was wrong, and the plot's own
+verify-before-trusting standard caught it before merge, not after: I
+sampled the true ensemble energy once per `BREATH_PERIOD_L`
+(`CYCLE_SECONDS_L / NUM_LOUD_VOICES` = 5.5s, the period visit 5 measured).
+That's degenerate — because the six loudness voices are evenly staggered,
+the ensemble sum exactly one period later is the *same six phases*
+cyclically permuted across voices, so the sum is mathematically invariant
+under that shift. A once-per-period sample freezes on a single number
+forever; it isn't a breath, it's a fixed tint that happens to have been
+computed correctly once. Caught this by instrumenting
+`createRadialGradient` in a real Playwright reduced-motion context over
+~7s of playback and counting exactly 1 distinct canvas state — the code
+ran with zero errors and still didn't do the thing it claimed to do,
+which is exactly the kind of bug a console-error check alone would have
+missed.
+
+Fixed by sampling within each period instead of at its boundary: quartered
+`BREATH_PERIOD_L` into `BREATH_STEPS_PER_PERIOD = 4` sub-steps
+(`BREATH_STEP_SECONDS` ≈ 1.375s apart), each still a real, freshly
+computed snapshot of `currentEnsembleNorm(t)` — a new shared helper
+factoring out the exact sum-of-squares formula `draw()`'s vignette already
+used, so both paths read the identical true quantity, no separate assumed
+shape. `frame()` tracks `reducedBreathStep = Math.floor(t /
+BREATH_STEP_SECONDS)` and only calls `drawReduced()` when that integer
+changes — a held plateau between steps, not an interpolation, so it stays
+a discrete jump rather than a sweep even though it updates a few times
+per breath instead of once. Play/stop now reset `reducedBreathStep` to
+-1 and force a redraw, so the vignette appears/disappears promptly at
+those two real transitions rather than showing a stale value from a
+previous session. Toggling loudness off drops the vignette the same way
+the always-on layer does (the sum-of-squares of an empty `loudVoices`
+array degenerates to 0 automatically, no separate branch needed). Updated
+the on-panel reduced-motion note to say the breath "steps (not sweeps) a
+few times per ~5.5s" rather than implying a single flat tint.
+
+Verified with the pre-installed headless Chromium over
+`python3 -m http.server`, in a `reducedMotion: 'reduce'` context:
+instrumented `createRadialGradient`/`addColorStop` directly (not just
+diffing screenshots) and captured six gradient draws over 8s of real
+playback with alphas 0.0389 → 0.0152 → 0.0002 → 0.0137 → 0.0387 → 0.0152 —
+a genuine rise-then-fall-then-rise shape at the ~1.375s cadence the code
+claims, repeating on the 5.5s period, not a frozen or random sequence.
+Confirmed the panel/rings/dots still render correctly at 1000×800 and at
+a real mobile viewport (375×812, reduced motion) with the visit 4 overlap
+fix still intact (`getBoundingClientRect()` check: false). Confirmed
+`reducedMotion: 'no-preference'` context is byte-for-byte unaffected
+(two canvas snapshots 500ms apart still differ, the pre-existing
+continuous `draw()` path untouched). Zero console/page errors beyond the
+one harmless favicon 404 every visit here hits. Did not touch any
+oscillator, gain, filter, or scheduling code, or the `draw()` (full-motion)
+vignette math — only `drawReduced()`, the new `currentEnsembleNorm()`
+helper, `frame()`'s reduced-motion branch, and the play/stop handler's
+reset.
+
+Stage: held at bloom. This closes visit 6's own named gap in "a door that
+actually opens clean" for reduced-motion visitors — the vignette was the
+last of the four found/built layers without a motion-reduced counterpart,
+and now all four have one. Not a new axis, not a reopening of the sound.
+
+Where to pick up: all four visual layers (pitch, rhythm, loudness dots,
+loudness-ensemble vignette) now have reduced-motion counterparts; visit
+5's two older threads (flatten-if-asked, vignette-drives-something-other-
+than-color) remain open and still low-priority by their own framing. A
+future sitting could reconsider `BREATH_STEPS_PER_PERIOD = 4` — it was a
+reasonable default, not a measured optimum; nobody has checked whether 2
+(coarser, unmistakably a "step") or 8 (finer, still discrete) reads
+better against the "step, don't sweep" goal. No feedback issues on this
+plot or anywhere in the repo this visit. No seedbox ideas — same-plot
+accessibility parity work, not a new idea.

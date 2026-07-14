@@ -99,7 +99,7 @@
       "title": "Open ground: something to hear",
       "planted": "2026-07-10",
       "last_tended": "2026-07-14",
-      "note": "Sixth sitting closes a real accessibility gap none of the first five tested for: prefers-reduced-motion now freezes the canvas to one still frame (repainted only on layer toggle or resize) while every oscillator's frequency/gain sweep keeps running untouched, so motion-sensitive visitors keep the sound without the constant sweep/flash. Verified across two Playwright contexts (reduced: canvas byte-identical over 1s while audio setValueAtTime calls kept climbing; no-preference: prior animated behavior unchanged) plus a real mobile viewport. Stays at bloom.",
+      "note": "Seventh sitting gives the breathing vignette its own reduced-motion counterpart, the last of four visual layers missing one. First attempt (sample once per measured 5.5s breath period) was degenerate — the six staggered voices permute onto the same sum after exactly one period, so it froze on one number; caught by instrumenting the gradient draw in Playwright and counting 1 distinct state over 7s. Fixed by quartering the period into four held snapshots (~1.375s apart) of the real ensemble energy, confirmed rising then falling across six captured draws. Stays at bloom.",
       "door": "plots/a2/growth/ascent.html"
     },
     "b2": {
