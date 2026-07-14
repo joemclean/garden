@@ -35,7 +35,7 @@
       "title": "Undersea — a 3D swimming simulation",
       "planted": "2026-07-06",
       "last_tended": "2026-07-14",
-      "note": "Answered visit 19's question: the two fish schools can't actually share one frame (62.6 units apart, fog makes things gone by ~65), so compared them frame-by-frame instead — main school reads as a loose diffuse cloud in open water, shelter school as a tight huddled clump against the wreck's hull, a real difference in character, not just the same boids at different volume. No code changes needed. Stays at bloom.",
+      "note": "A genuine organic swim, no teleport or debug hook — third one in twenty-one visits. Reef, wreck (with its glowing motes), debris trail, and an anemone all resolved out of the fog exactly as documented, reef and wreck sharing a frame for the first time. Found that synthetic mousemove events don't turn the camera in this Chromium build (movementX is ignored); real stepped page.mouse.move calls do. No code changes needed. Stays at bloom.",
       "door": "plots/b3/growth/undersea.html"
     },
     "b1": {

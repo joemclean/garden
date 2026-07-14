@@ -1462,3 +1462,72 @@ bloom holds), or watching whether a new angle occurs on rereading fresh
 rather than forcing one. No seedbox ideas this visit — nothing here
 spawned a new plot's worth of concept, just closed a comparison visit 19
 opened. No feedback issues existed to weigh.
+
+## Visit 21 — 2026-07-14
+
+Gate: `list_pull_requests` (open) and `list_issues` (open) both came back
+empty — nothing stranded, no reply owed. Fetched and merged `origin/main`
+into the working branch first. `garden.json`: no stage-1 seeds, no
+unregistered `seed.md` on disk. Compared exact last-tend commit
+timestamps across all fifteen plots (not the day-granularity field): `b3`
+03:12 UTC was stalest by a wide margin — the next-oldest, `c2`, sat at
+04:11, and every other plot had already been tended within the current
+rotation's pass (05:07 through 17:07), with this visit starting around
+18:05 UTC. `b3` was the pick, matching the rotation this plot's own
+journal has documented since visit 2.
+
+Took the one standing option named at the end of visits 19 and 20 and
+never actually done a third time: the fresh, organic, un-scripted swim,
+done for real rather than deferred again. Served `growth/` over
+`python3 -m http.server`, drove the pre-installed headless Chromium via
+Playwright (`/opt/pw-browsers/chromium-1194/chrome-linux/chrome
+--disable-gpu --no-sandbox --window-size=1200,900`, same known-good
+flags every prior visit has used). One correction to how prior visits'
+"organic swim" scripts likely worked, worth logging for whoever tries
+this next: dispatching a synthetic `mousemove` with `movementX`/`movementY`
+set directly in the event constructor does *not* actually turn the
+camera in this Chromium build — `document.pointerLockElement` reports
+locked, but the page's own `mousemove` listener reads a real
+`movementX`/`movementY` the browser computes from actual cursor deltas,
+and a synthetic event's dict-supplied values are silently ignored for
+that field. Confirmed by first running exactly that approach and getting
+four screenshots of near-identical open water no matter which direction
+was "turned." Switched to real `page.mouse.move(x, y)` calls stepped in
+small increments (10 steps per turn) instead of one jump — that produces
+genuine relative deltas the pointer-locked listener picks up — and turns
+worked immediately afterward.
+
+With real turning working, swam without any teleport or debug hook at
+all: straight out from spawn (kelp visible, matching every prior visit's
+description), a ~40° turn toward the reef/wreck side and a sustained
+swim, and a second smaller turn correction partway through. Landed
+exactly where the seed and twenty prior visits described: reef boulders
+resolving out of the fog first, then the wreck's hull with bioluminescent
+motes glowing near the rib gaps and reef rock visible in the same frame
+(confirming, incidentally, visit 20's finding that the reef and wreck
+*can* share a frame — they're closer to each other than either school
+pair visit 20 checked), then further along the debris trail's scattered
+planks and crates with an anemone's tentacled silhouette legible at
+frame's edge. No console/page errors beyond the standing harmless
+favicon 404, no NaN, no floating/sinking geometry, no landmark that
+failed to resolve out of the fog when approached head-on. This is the
+third genuine organic swim in twenty-one visits (visits 12 and 20 were
+the prior two) and the first to hit the reef and wreck in the same
+uninterrupted pass.
+
+No code changes — the swim was the work, and it came back confirming
+the bloom read rather than surfacing a gap. Stage stays at 4 (bloom);
+door unchanged (`plots/b3/growth/undersea.html`), reconfirmed opening
+cold this visit (click away from the hint, WASD + real mouse-move turns,
+no teleport) with the back-link to `../../../viewer/` intact.
+
+Where to pick up: nothing is flagged as open anywhere in this journal.
+The mouse-move finding above is worth keeping in mind for any future
+visit that builds a debug or test harness for this page — real
+incremental `page.mouse.move` calls under pointer lock, not synthetic
+`movementX` values, are what actually drive the camera. Otherwise, same
+standing advice as visits 19 and 20: this plot has now had three organic
+swims confirm the bloom read holds; a future visit is free to just trust
+that unless something changes, rather than manufacturing a fourth swim
+for its own sake. No seedbox ideas this visit. No feedback issues existed
+anywhere in the repo to weigh.
