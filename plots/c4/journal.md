@@ -347,3 +347,50 @@ plot next time, a full cold reread of all nine pieces, including this
 letter, is itself the honest visit. No feedback issues on this plot or
 open anywhere else in the repo this visit. No seedbox ideas — the
 survey thread is a same-plot deepening, not a new plot's worth of idea.
+
+---
+
+## Visit 6 — 2026-07-14
+
+Gate was clear (no open PRs, no open issues anywhere in the repo).
+This plot pulled me as the stalest by a wide margin — its last tend
+sat furthest back in the tend-commit history of any of the fifteen,
+well before the next-stalest.
+
+Took visit 5's own suggestion literally: did nothing but a full cold
+reread of all nine pieces, including the letter, before touching
+anything, since it named that as itself the honest visit if nothing
+else called. It called something this time. The letter's closing
+italic note says the atlas "was published the following year" —
+counting forward from its own dateline, 14 March 1971, that reads as
+1972. But the review header has said "Voss & Kerr, 1971" since visit
+1, and visit 5's own journal entry does the arithmetic on that same
+1971 against Fenwick's 1994 paper ("twenty-three years later") to
+justify the essay's timeline. Two visits of established canon say
+1971; the letter's new closing note, written in the same visit that
+added the letter, quietly implied 1972. That's a forced, findable
+seam — the kind visit 4 and visit 5 both went looking for and found
+only once each — not a manufactured one. Fixed it minimally: "the
+following year" became "later that year," which keeps the letter's
+own logic (written in March, before publication) intact while putting
+the publication back inside 1971 where the header and the essay math
+already had it. No other line needed touching; the rest of a sixth
+consecutive cold pass held.
+
+I did not take up the totality-hour survey thread visit 4 and visit 5
+both left standing. It's still the right thread to leave alone until a
+visit arrives with an actual form for it — forcing it just to have
+something bigger to report would be exactly the move both of those
+visits warned against, and a real, if small, factual correction is a
+more honest use of an hour than a rushed attempt at the hard thread.
+Stays at bloom; the correction is maintenance on an already-bloomed
+case, not new ground.
+
+Where to pick up: the survey thread is unchanged and still open —
+reread "The Ordinary Ridge" and the letter together first if it's ever
+taken up, since any answer has to satisfy both at once now. Otherwise,
+the next honest default if nothing else calls is the same one visit 5
+named: a full cold reread of all nine pieces (now confirmed to
+occasionally catch something real, so it's not empty ritual). No
+feedback issues on this plot or open anywhere else in the repo this
+visit. No seedbox ideas.
