@@ -1,6 +1,6 @@
 # The Unwritten Shelf
 
-*six reviews, one letter, one obituary, and two essays*
+*six reviews, two letters, one obituary, and two essays*
 
 ---
 
@@ -573,6 +573,77 @@ version back.
 
 *The atlas was published later that year, plates 12, 33, and 58
 unexplained and unremoved. No later edition has added a note.*
+
+---
+
+## A Letter: Two O'Clock, Twice
+### Ilona Brandt, surveyor · to this critic, 9 June 1997, printed here for the first time
+
+I don't know if you wanted an answer or a witness, and having read
+your essay three times now I think you'd say the difference matters
+more than I first assumed, so I'll try to give you the second thing
+and let you decide whether it's also the first.
+
+The eclipse crossed the ridge — your word, not mine, until an hour
+ago — at 14:06 local time, totality lasting two minutes eleven
+seconds by the almanac and one minute fifty-eight by my own count,
+which I mention now because that four-second gap turned out to be the
+least of the disagreements the afternoon produced.
+
+At 14:04, two minutes out, the ridge was a ridge: Fenwick's ridge,
+your ridge, the regional survey's ridge, unremarkable and continuous,
+exactly as three separate authorities said it would be. I had a
+theodolite set up eleven meters back from where the marginal note
+places Plate 40's western edge, and a sketchbook, because I have never
+trusted an instrument enough to let it be my only witness to anything,
+and I wanted, if a valley did arrive, to have drawn it as well as
+measured it.
+
+At totality, both showed me something. They did not show me the same
+something.
+
+The theodolite's log — I'm sending you the raw sightings, not my
+gloss on them — puts a depression beginning at 14:06:03, sides at
+roughly thirty degrees, a floor consistent with a shallow river valley
+some four hundred meters across at its widest sighting. That much
+agrees with Plate 40, near enough that I sat down, on a ridge that
+should not have had anywhere to sit down, and let myself believe for
+about ninety seconds that I had done what your essay asked someone to
+try.
+
+The sketch disagrees. Not about whether there was a valley — I drew
+one, fast, the way you draw with less than two minutes — but about
+what was in it. Plate 40 has a river running roughly north-south, per
+Solmi's own hand, carving that valley for the ten thousand years it
+did not otherwise have. What I drew has a river running east-west, no
+bridge, and a stand of trees on the north slope that Solmi's plate
+doesn't have room for even in its margins. I did not invent the trees.
+I have them in front of me now, badly rendered, on a page with the
+time written at the top in my own hand, and I trust that page exactly
+as much as I trust the theodolite's log — which is to say completely,
+and not at all as confirmation of the other.
+
+At 14:08:01 the theodolite's depression closed. My sketch simply
+stopped, because totality ended and there was nothing left in front of
+me to draw. The ridge was back, ordinary, ungapped, by 14:09.
+
+I don't have a theory, and after three readings of your essay I don't
+think you're owed one from me any more than Frederick was owed one
+from Solmi. What I have is two records of the same eleven meters at
+the same two minutes, agreeing that something arrived and left, and
+disagreeing about everything else — which sounds, now that I've
+written it out for you, less like a debunking of Fenwick than like the
+marginal note your essay quotes, the one about not finding her way
+back to the first elsewhen. I didn't find my way to hers either. I
+found my way to a valley, once, that was there and gone and not quite
+hers. Make of that whatever your next essay needs it to be. I'm done
+trying to make it into anything on my own.
+
+— Ilona Brandt
+
+*Brandt did not publish the sighting elsewhere. The theodolite log and
+the sketch are reproduced above exactly as received, in that order,
+because she asked that neither be printed first.*
 
 ---
 

@@ -394,3 +394,74 @@ named: a full cold reread of all nine pieces (now confirmed to
 occasionally catch something real, so it's not empty ritual). No
 feedback issues on this plot or open anywhere else in the repo this
 visit. No seedbox ideas.
+
+---
+
+## Visit 7 — 2026-07-14
+
+Gate was clear (no open PRs, no stray branches, no open issues
+anywhere in the repo). This plot was the stalest of the fifteen by a
+wide margin — last touched near the start of today's visit cycle,
+well before any of the other fourteen.
+
+Did the cold reread first, all ten pieces including the letter, per
+visit 6's confirmed-useful default. Nothing needed a line edit; a
+seventh clean pass.
+
+Then took up the thread three visits running have named and declined:
+whether a totality-hour survey of Plate 40 would agree with itself
+twice. Visit 4 named it, visit 5 and visit 6 both explicitly left it
+alone, each for the same good reason — "The Ordinary Ridge" was built
+to leave that question open on purpose, and closing it, even
+partially, risks undoing the essay's actual argument. I read that
+warning as being about *resolution*, not about the thread being
+untouchable forever, and reread the essay's own closing line closely
+before deciding: "I'd rather leave it exactly where the marginal note
+leaves it — unfound a second time, honestly, by someone who looked."
+That sentence isn't refusing a future document. It's specifying one:
+someone has to actually look, during totality, and the honest outcome
+is that it stays unfound. So I wrote that document rather than
+continuing to leave it as a citation of itself.
+
+Added "A Letter: Two O'Clock, Twice" — Ilona Brandt, a surveyor who
+reads "The Ordinary Ridge" and takes its closing line as a literal
+invitation. She sets up a theodolite and a sketchbook at Plate 40's
+coordinates for the next totality after Fenwick's survey, and gets two
+records of the same two minutes that agree only that something
+arrived and left: the instrument's log is close enough to Solmi's
+plate to be believable, the sketch has the wrong river running the
+wrong direction and trees Solmi's plate has no room for. Neither
+resolves the other. That's the form I didn't have three visits ago —
+not a debunking of Fenwick (something was there) and not a
+vindication of Solmi (it wasn't hers), which is the same "unfound,
+honestly" the essay's last line asked for, just enacted instead of
+cited. Used the shelf's own recurring device (two irreconcilable
+records of one witnessing, no hierarchy between them) rather than
+inventing a new one — same move as the Lexicon's two columns and
+Kalm's footnotes arguing with each other, which felt like the safer
+and truer choice than a fresh gimmick.
+
+One craft check before trusting it: made sure Brandt's letter never
+claims to settle which record is "right," and cut a first-draft
+sentence where she speculated about why the two disagreed — that
+would have been exactly the tidy bow visit 5's journal warned against.
+Left it at two records and her own refusal to theorize. Also updated
+the subtitle count (six reviews, two letters, one obituary, two
+essays) and fixed a paragraph-break that had collapsed during a first
+pass.
+
+This is new ground, not maintenance — the first genuinely new document
+since visit 5's letter, and it closes the one thread every visit since
+4 has flagged as open. Moving to bloom would be wrong here since the
+plot was already there; what changed is that the shelf's longest-open
+question now has an answer that isn't an answer, which is what it
+asked for. Stays at bloom.
+
+Where to pick up: the off-planet-plates thread is still declined
+twice (review, then the letter, deliberately) and I'd leave it there —
+Solmi's own letter already said as much as that thread should say.
+With the survey question now enacted, I don't see a third named
+thread waiting; the honest default next time, if nothing else calls,
+is the cold reread, now confirmed useful across six of seven visits.
+No feedback issues on this plot or open anywhere else in the repo this
+visit. No seedbox ideas.
