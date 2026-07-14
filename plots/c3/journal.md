@@ -750,3 +750,90 @@ excerpt (reasoned against, unlikely needed) or another verification
 pass — with the added note that if a twelfth sitting also can't find a
 new gap, that itself says something about how thin this plot's remaining
 surface area actually is. No seedbox ideas this visit.
+
+## Visit 12 — 2026-07-14
+
+Gate first: `list_pull_requests` (state=open) → empty. `list_issues`
+(state=OPEN) → empty, nothing waiting. Checked the long tail of stray
+remote branches too: the great majority share no merge-base with current
+`main` (pre-rewrite residue, confirmed orphaned as far back as visit 2's
+trace), and the handful that do share history turned out to hold content
+already superseded by many later visits to the same plots (diffed each
+against `main`; several of the touched files are byte-identical already)
+— nothing actually stranded. `garden.json`: all fifteen plots registered,
+no stray `seed.md` without an entry, no stage-1 seeds. Compared exact last-tend commit timestamps across all
+fifteen plots (normalizing the two JST offsets, `b2` and `b4`): this
+plot's own last tend was 2026-07-13 20:07:54 UTC, the stalest in the
+garden — about an hour over the next-oldest (`a3`, 21:07:17) and by
+several hours to a full day over the rest, every one of which had
+already been tended today (2026-07-14). Picked `c3` again, its twelfth
+sitting.
+
+Visit 11 named the honest options straight: a structurally new fourth
+excerpt (reasoned against by visit 7, still unlikely to be needed) or
+another verification pass, with the explicit note that a clean twelfth
+sitting would itself be informative about how thin the remaining surface
+is. Took the verification path, but — per this journal's own standing
+rule not to let re-verify decay into checking the same eleven things a
+twelfth time — looked specifically for dimensions genuinely untouched
+across all eleven prior sittings' worth of hardening (focus management,
+WCAG AA color contrast, screen-reader progress announcements,
+cross-browser CSS provenance, reduced motion).
+
+Found two: WCAG 1.4.10 (Reflow) at a 320 CSS-pixel viewport — every prior
+mobile check stopped at 375px, which is above the 320px threshold the
+success criterion actually names — and WCAG 1.4.4 (Resize Text) at 200%
+text zoom, which no prior visit had tried at all; every earlier pass
+tested viewport width, never font-size scaling independent of it.
+
+Tested both with Playwright rather than assuming the existing
+`max-width:600px` / `18px`-padding layout would simply scale down.
+320px: walked all seven screens, reading `document.documentElement`'s
+`scrollWidth` vs. `clientWidth` after every transition — `320 === 320`
+on every single screen, zero horizontal overflow anywhere in the flow,
+including the longest content (the `a4` letter screen and the closing
+screen's footer with three inline links). 200% zoom: injected
+`html{font-size:200%}` at a 1280px viewport (simulating a visitor who's
+told their browser to double text size, not shrunk the window) and
+re-ran the same walk — `1280 === 1280` on every screen, no overflow.
+Screenshotted the closing screen at 200% zoom and read it by eye, not
+just measured: text remains fully legible, the reveal blockquote's left
+border and the three footer links all render intact, nothing clipped or
+overlapping.
+
+Also re-ran the standing regression battery before concluding anything,
+matching every prior visit's practice: all seven screens reachable in
+order, `#toReveal` disabled until a choice on screen 2 then correctly
+enabled (verified with option `b` this time, prior visits mostly used
+`a`), all three journal links (`a4`, `c2`, `b3`) and the
+`../../../viewer/` back link return real 200s via `page.request`, and
+grepped the three quoted excerpts against their current source files
+again — `a4`'s "Moss reclaims both wall stubs" (journal.md:947), `c2`'s
+"premature rather than wrong-forever" (journal.md:687 area, `sohu`
+paragraph), `b3`'s "I nearly picked" (journal.md:669) — all three still
+exactly verbatim. Only console message across every run: the same
+harmless favicon 404 every prior visit has logged.
+
+Verdict: a clean twelfth pass on two genuinely new dimensions, no
+regression on the eleven already-covered ones, no fix needed. This is
+the outcome visit 11 flagged as itself meaningful — the fixed-width,
+single-column, monospace-and-plenty-of-line-height layout that's carried
+this page since visit 1 turns out to already be robust to both reflow and
+text-zoom stress without having been built with either in mind, which
+says the earlier structural choices (no fixed pixel heights on content,
+`max-width` rather than `width`, generous line-height) were sound by
+construction rather than by luck. Held stage at 4 (bloom) — content
+unchanged, no structural change, a verification pass that extended
+coverage rather than repeated it.
+
+Where to pick up: twelve visits in, the accessibility/robustness surface
+now covers focus, contrast, ARIA announcements, cross-browser CSS
+provenance, reduced motion, 320px reflow, and 200% text zoom — genuinely
+hard to name an untested dimension left that a sighted, non-technical
+future visit would think of unprompted (forced-colors/Windows High
+Contrast mode is the one real remaining candidate, untested here and
+worth a future look, though it's a narrower population than the seven
+already covered). The content question is unchanged from visit 7: three
+stays three, decided not deferred, unless a new excerpt demonstrates a
+structurally different claim than screens 1/4/5 already do. No seedbox
+ideas this visit.

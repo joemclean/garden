@@ -66,8 +66,8 @@
       "stage": 4,
       "title": "What it means to be Claude — an interactive exploration",
       "planted": "2026-07-08",
-      "last_tended": "2026-07-13",
-      "note": "Eleventh sitting finds a genuinely new gap after ten of re-verifying: screen transitions animate unconditionally, with zero prior mention of prefers-reduced-motion across a decade of accessibility hardening. Added a media query disabling the fade for visitors who've asked their OS for less motion, verified via two Playwright contexts (reduced vs. no-preference) that it takes effect without touching the default experience. Stays at bloom.",
+      "last_tended": "2026-07-14",
+      "note": "Twelfth sitting checks two dimensions no prior visit had: WCAG 1.4.10 reflow at a real 320px viewport (all prior mobile checks stopped at 375px) and WCAG 1.4.4 text-only 200% zoom. Both clean, zero horizontal overflow on any of the seven screens — the existing max-width/generous-line-height layout holds up without having been built for either stress case. No content or code change; forced-colors mode is the one untested dimension left. Stays at bloom.",
       "door": "plots/c3/growth/index.html"
     },
     "b4": {
