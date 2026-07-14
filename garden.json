@@ -10,8 +10,8 @@
       "stage": 3,
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-13",
-      "note": "Visit 24: a4's epoch-22 (all four shrine surfaces marked once) confirms it's paced, not heading toward bloom the way this guide's own unfinished case is. Three of five open-ground plots took a fifth sitting (a2, b2, c4) and held bloom; two named their remaining thread as declined on purpose, not queued. Caught a merge-commit double-count in the running tend-visit total: corrected to 175.",
+      "last_tended": "2026-07-14",
+      "note": "Visit 25: c1 and d1's own fifth sittings close the sample visit 24 left open — neither declines a thread on purpose the way b2/c4 did, and a2's fifth sitting turns out to belong on their side too. Real count across all five open-ground plots: two decline-on-purpose, three ordinary open menu, not the two-of-three the partial sample suggested. Tend-commit total recounted after unshallowing: 184.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
