@@ -67,7 +67,7 @@
       "title": "What it means to be Claude — an interactive exploration",
       "planted": "2026-07-08",
       "last_tended": "2026-07-15",
-      "note": "Thirteenth sitting takes up forced-colors (Windows High Contrast) mode, the one dimension visit 12 flagged as untested. Text, links, borders, and button states all hold up; found one real gap — the seven-dot progress indicator loses all visibility since it's background-only with no border. Fixed additively via an @media (forced-colors: active) block using CSS System Color keywords, mirroring the existing reduced-motion pattern; default rendering confirmed byte-identical. Stays at bloom.",
+      "note": "Fourteenth sitting reads screen 0 fresh instead of skimming past it as settled, and catches its own opening line drifted stale: \"Thirteen times now\" undisturbed since at least visit 11 despite two full regression passes since, while the real count reached fourteen with this sitting. Fixed the count, on-theme with the very c2 excerpt this page quotes about a stale claim caught late. Full regression (screens, links, mobile, reduced-motion) reconfirmed clean before and after. Stays at bloom.",
       "door": "plots/c3/growth/index.html"
     },
     "b4": {
