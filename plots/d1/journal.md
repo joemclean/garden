@@ -434,3 +434,95 @@ elsewhere in the repo this visit (gate was clear: no open PRs, no open
 issues; the many `claude/charming-shannon-*` branches are squash-merge
 residue, confirmed via PR #174's `merged:true` with no ancestor commits
 on main — not stranded work). No seedbox ideas.
+
+## 2026-07-15 — eighth tend: sound, the last untried item on the list
+
+Took up the one item all seven prior sittings named but never attempted:
+sound. The seed calls the material "video" and never mentions audio, but a
+title sequence with a locked-off, deliberate frame is exactly the kind of
+piece where a score earns its place rather than being incidental — and
+seventh tend's own reasoning (the menu click that starts a reel is a real
+user gesture, so autoplaying audio from inside that same click handler
+shouldn't hit browser autoplay blocking) turned out to hold.
+
+Built an `AUDIO` module, entirely procedural — one 2s white-noise buffer
+(generated once, looped) run through a `BiquadFilter` stands in for wind,
+rain, or a leader's projector hum depending on cutoff/type; short
+oscillator tones and filtered noise bursts layer one-shots on top at
+moments the visuals already mark. Nothing plays before a click: the
+`AudioContext` is constructed lazily, inside the same handler that starts a
+reel or the entry leader — verified with an instrumented `AudioContext`
+wrapper that zero contexts exist before the first click and exactly one
+exists (state `running`) immediately after.
+
+What's scored, per scene:
+- **Leader** (both entry and mid-anthology): a very quiet low-hum bed plus
+  two short clicks at 280ms/2200ms — the same 7%/55% marks the existing
+  `cueBlip` keyframe already uses on its 4s timeline, so the sound cues
+  land exactly where the projectionist's cue-mark already blips.
+- **Reel one** (dawn wheat field): an open, warm wind bed; a soft
+  rising chirp at each of the five birds' own existing `delay` values
+  (reused directly from the `flights` array, not re-derived); a whistle
+  and five low chugs timed to the train's 56%–68% pass across the 54s
+  timeline (30.24s–36.72s).
+- **Reel two** (rain-soaked night street): a hissier, high-passed rain
+  bed for the full 46s; a two-part thunder crack (sharp high burst, low
+  rumble underneath) landing at 28.05s/28.10s — the lightning keyframe's
+  61.2% peak of 46000ms is 28152ms, so the crack lands right on the flash
+  rather than near it.
+- **Reel three** (drought drive-in): a thin, dry, quieter wind bed —
+  deliberately a different register from reel one's, matching the visual
+  choice (noon light doesn't change, stillness is the register) — plus
+  two distant descending buzzard-cry tones.
+
+A small `♪ sound` toggle, top-right, lets a visitor mute without being
+required to touch anything — consistent with the seed's "no input required
+after pressing play" constraint, since muting is optional and the menu
+click that starts playback already satisfies it. Defaults to on.
+
+Verified two ways with Playwright against a local server, not by reading
+the scheduling math cold. First, the single-reel path: clicked Reel Two,
+confirmed via an instrumented `AudioContext` constructor that it's created
+lazily (0 before click, 1 running immediately after), watched the full
+leader→reel2→return-link-arms sequence with screenshots, and round-tripped
+the mute toggle (`♪ sound` → `♪ muted`). Second, the full `playAll` path
+end to end (~142s, matching every stage-transition timestamp this plot's
+own third tend already established): reel1 → leader1 at 54.2s → reel2 at
+58.2s → leader2 at 104.2s → reel3 at 108.2s → return-link arms at 142.2s,
+then clicked return and confirmed the menu redisplays without error. Zero
+console/page errors in either run beyond the one harmless favicon 404
+every sitting on this plot has hit — including at the moment `showMenu()`
+calls `AUDIO.silence()` against an actively-playing bed, which exercises
+the fade-out-and-stop path that a fresh page load never touches (load-time
+`silence()` has no bed yet and returns immediately, confirmed separately:
+0 AudioContexts exist until the first click). Didn't touch any CSS
+keyframe, timing constant, or the menu/shuffle/ribbon logic — this diff is
+one new module plus a handful of one-line hooks into the existing
+`showMenu`/`playSingle`/`playAll`, so seven sittings' worth of
+already-verified visual timing stays provably untouched.
+
+Stage stays at bloom — this adds a new dimension to the existing resting
+shape rather than crossing a new line; the anthology's structure, reel
+count, and menu are unchanged. Door unchanged (`growth/index.html`);
+back-link and return-link both confirmed still present and working
+alongside the new sound toggle.
+
+Where to pick up: no open bugs. (1) the fourth-reel question, unchanged —
+revisit only if the three-reel/menu shape starts to feel thin; (2) the
+`transform-box: fill-box` rule for any new SVG element combining
+`translate` with `rotate`/`scale`; (3) sound is no longer untried, but it's
+a first pass — the thunder/train/bird cues are hand-timed against the
+existing visual delays rather than driven by a shared timeline constant,
+so if either side's timing ever moves, the other needs updating by hand;
+a future sitting could factor shared timestamps (bird delays, the train
+window, the lightning peak) into single named constants both the CSS
+comments and the `AUDIO` calls read from, though CSS keyframes can't
+literally reference JS values so this would at best be a comment-level
+cross-reference, not real deduplication. Untried: per-reel volume balance
+was tuned by ear against the code's own gain-level numbers, not against a
+real listening pass with speakers — a future visit with audio hardware
+available could sanity-check the levels feel right relative to each other,
+not just individually plausible. No feedback issues existed on this plot
+or elsewhere in the repo this visit (gate was clear: no open PRs, no open
+issues, no stray unmerged garden work — the many `claude/charming-shannon-*`
+branches remain squash-merge residue). No seedbox ideas.
