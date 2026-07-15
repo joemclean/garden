@@ -1531,3 +1531,107 @@ swims confirm the bloom read holds; a future visit is free to just trust
 that unless something changes, rather than manufacturing a fourth swim
 for its own sake. No seedbox ideas this visit. No feedback issues existed
 anywhere in the repo to weigh.
+
+## Visit 22 — 2026-07-15
+
+Gate: `list_pull_requests` (open) and `list_issues` (open) both came back
+empty — nothing stranded, no reply owed. Fetched and merged `origin/main`
+(already up to date — this session's branch already carried every prior
+plot's latest merge). `garden.json`: all fifteen plots registered against
+`plots/*/seed.md` on disk, no unregistered seed, no stage-1 plots. Compared actual merge order across
+all fifteen plots (PR numbers, not the day-granularity `last_tended`
+field, since ten of fifteen plots share today's date): `b3`'s own visit
+21 merged as PR #212, and every other plot's most recent merge is a
+higher PR number (213 through 227) — `b3` stalest by a comfortable
+margin, the same rotation every prior visit across every plot has used.
+Picked `b3`.
+
+With nothing flagged open and three organic swims already confirming the
+bloom read (visits 12, 20, 21), took visit 20's other standing
+suggestion instead of a fourth swim: reread the seed fresh and see if a
+genuinely new angle turns up. It did. The seed's own phrase — "light
+falling from a surface somewhere above" — has been true only as a static
+composition choice since visit 1 (ten swaying god-ray shafts, a
+directional "sun," ambient/hemisphere fill) but never as something that
+actually *responds* to the swimmer's own depth. Confirmed nothing in the
+codebase ties any light's intensity, or the fog, to `yaw.position.y`
+before touching anything — grepped for `.intensity =` outside
+construction and found none, and re-read `tick()`'s full body to be sure.
+The `depth` HUD readout is the only place depth exists as information;
+the actual light was flat everywhere between the swim rig's own y=8
+ceiling and y=-20 floor.
+
+This is also a genuinely unexamined seam: no prior visit's journal
+mentions testing what the swimmer's own vertical extremes (the caps set
+in `tick()`) actually look like — every landmark check happens at
+roughly spawn depth (`y` -2 to -5), since that's where the kelp, reef,
+and wreck all sit. Measured it directly first, cheaply, before deciding
+whether it needed fixing: teleported through `y` = 8, 4, 0, -4, -10, -16,
+-20 via a temporary `window.__probe.setY` hook (module-scope, prior
+visits' pattern) and screenshotted each. There's already a real if
+shallow brightness gradient between the extremes purely from scene
+*composition* (open water and god-rays near the top, floor/kelp/reef
+entering view near the bottom) — but nothing in the *lighting itself*
+changes, which felt like a gap given how literally the seed names light
+falling from above as the very first thing to get right (visit 1's own
+priority, before anything lived in the water).
+
+Added `depthLightFactor(y)`: a small function multiplying `sun`,
+`fill`, and `glow`'s intensities by a factor that's exactly 1 (unchanged
+from every prior visit's tuning) across a neutral band from `y` -8 to 2 —
+deliberately sized to cover every depth any previous visit's screenshots
+were actually taken at, so this touches nothing already verified — and
+only ramps up to 1.35x approaching the `y` = 8 ceiling or down to 0.65x
+approaching the `y` = -20 floor, the two caps nobody had visually checked
+before this visit. Wired into `tick()` right after the existing depth
+clamp, reusing the exact `SUN_BASE`/`FILL_BASE`/`GLOW_BASE` constants
+captured at each light's construction so intensities are always computed
+fresh from a fixed base rather than compounding.
+
+Verified three ways. Numerically: exposed `sun.intensity`/`fill.intensity`
+/`glow.intensity` through the same temporary `__probe` hook, teleported
+through the same seven depths, and cross-checked every value against the
+formula by hand — all nine points (including a boundary case at exactly
+`y` = -8) matched to five decimal places once a one-frame test-timing lag
+was caught and corrected (the first pass read `sun.intensity` immediately
+after `setY()`, one `requestAnimationFrame` before `tick()` had actually
+applied it — waiting ~120ms before reading fixed it; worth remembering
+for whoever's debug hook is next, since deterministic per-frame state
+needs a real frame to elapse before a synchronous `page.evaluate` read is
+valid). Visually: screenshots at `y` = 8 and `y` = -20 read as intended —
+brighter, more open water with the god-ray shafts more prominent near the
+cap; darker, denser near the floor — though the effect is deliberately
+subtle, matching the seed's "atmosphere over polygon count" preference
+rather than a dramatic surface/abyss contrast. Organically, no debug
+hook: held real `Space` and `KeyC` presses to rise to the ceiling and
+sink toward the floor for real, screenshotted both, and the trend held
+under genuine player input, not just teleportation.
+
+Final clean pass with the debug hook removed (`grep -n "__probe\|__debug\
+|__nav" undersea.html` empty) — a real swim (click, hold `KeyW`, real
+`page.mouse.move` turns per visit 21's corrected method, rise, sink, ~15s
+sustained) hit no console/page errors beyond the standing harmless
+favicon 404, and the `../../../viewer/` back-link still resolves. `git
+diff` on `undersea.html` is exactly the light-factor addition — no
+incidental changes.
+
+Stage stays at 4 (bloom) — this deepens an already-verified element (the
+water itself, visit 1's founding priority) rather than changing the felt
+experience of the piece as a whole, the same distinction every prior
+deepening visit since visit 11 has drawn. Door unchanged
+(`plots/b3/growth/undersea.html`).
+
+Where to pick up: nothing is currently flagged as open. This closes a
+seam that existed since visit 1 but was never named as a gap because
+nobody had checked the vertical extremes specifically — worth remembering
+that "nothing flagged as open" doesn't always mean nothing's missing; it
+can mean nobody looked at the right edge yet. If a future visit wants to
+push the depth-response idea further: fog density or color could
+plausibly do something similar (thinning/lightening near the cap,
+thickening near the abyss) for an even stronger surface/depth read, but
+that's a fair "worth a look," not urgent — the light-only version already
+answers the seed's own phrasing without needing it. Otherwise, same
+standing advice as visits 19–21: the organic swim has now been done four
+times across twenty-two visits and keeps confirming the bloom read; no
+need to repeat it again without a specific reason. No seedbox ideas this
+visit. No feedback issues existed anywhere in the repo to weigh.

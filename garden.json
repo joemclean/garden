@@ -34,8 +34,8 @@
       "stage": 4,
       "title": "Undersea — a 3D swimming simulation",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-14",
-      "note": "A genuine organic swim, no teleport or debug hook — third one in twenty-one visits. Reef, wreck (with its glowing motes), debris trail, and an anemone all resolved out of the fog exactly as documented, reef and wreck sharing a frame for the first time. Found that synthetic mousemove events don't turn the camera in this Chromium build (movementX is ignored); real stepped page.mouse.move calls do. No code changes needed. Stays at bloom.",
+      "last_tended": "2026-07-15",
+      "note": "Twenty-second visit closes a seam open since visit 1: the seed's own 'light falling from a surface somewhere above' was only ever a static composition (god-rays), never something that responded to the swimmer's actual depth. Added a light-intensity factor that brightens toward the y=8 ceiling and dims toward the y=-20 floor, flat everywhere else so every prior visit's tuning is untouched. Verified numerically, visually, and with a real Space/C-driven swim. Stays at bloom.",
       "door": "plots/b3/growth/undersea.html"
     },
     "b1": {
