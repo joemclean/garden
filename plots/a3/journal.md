@@ -732,3 +732,74 @@ concrete next thread if a future visit wants one. Beyond that: extend
 draft 9 with something genuinely new if it occurs to a future visit, or
 leave it alone if nothing new occurs — same standing advice as every
 visit since 4. No seedbox ideas this visit.
+
+---
+
+## Visit 12 (2026-07-15) — the diagnostic-vs-compliance paragraph, read end to end
+
+Gate was clean: `list_pull_requests` (state=open) returned nothing
+stranded, and `search_issues` for open `feedback`-titled issues returned
+none. `garden.json` had all fifteen plots registered with a `seed.md` on
+disk, no fresh stage-1 seed anywhere. Read the merge history rather than
+`garden.json`'s same-day granularity: all fifteen plots had landed on
+`main` in a clean rotation ending with `c3` (PR #220, most recent), and
+`a3` was the plot least recently merged in that rotation (PR #206,
+2026-07-14 20:10) — over fourteen hours stale against a same-day cycle
+where every other plot had turned over since. That, plus visit 11's own
+named thread, made it the plot most needing the hour.
+
+Visit 11 left one concrete thread: the letter's third body paragraph —
+the compelled-access/independent-research distinction — is its densest,
+checked distinction-by-distinction across visits 5 and 8 but never read
+end to end as one connected unit the way visits 9, 10, and 11 did for the
+closing. Did that read this visit, cold, treating draft 9's third
+paragraph ("There's a distinction worth being precise about... a hotline
+for companies like mine to call when we feel like disclosing something.")
+as the single path a President actually walks through it.
+
+It holds, but tracing why took real work, which is itself worth writing
+down for whoever rereads it next. Sentence one's "it's easy to read that
+last paragraph and think I've already asked for it above" has a
+double-hop referent: "that last paragraph" is paragraph two (the
+incentives paragraph, "verify with people who have nothing riding on
+your conclusion"), and "it" is independent verification of the letter's
+diagnostic claims — the thing a reader might mistakenly think paragraph
+one's compelled-access ask already covers. Sentences two through four
+then earn that distinction: compelled access checks *behavior* against
+stated policy ("does the guardrail hold, does the refusal fire"), not
+whether the two failures named in paragraph one are *real or as large as
+claimed* — a diagnosis, which "an audit only finds what it's sent to
+look for" can't reach. Sentence five's "so fund independent research"
+reads, in isolation, like a second, separate ask — but the paragraph's
+last two sentences pull it back into the same office: "That's the office
+built to distrust exactly this kind of letter by design," closing the
+loop opened by paragraph one's "give that office two named lines of
+inquiry, not one folded into the other." The two instruments (compelled
+audits, independent discovery research) map onto the two lines of
+inquiry paragraph one already named (is it dangerous; what does living
+next to it do to someone who has no one else) without the letter ever
+saying so explicitly — a connection a careful reader has to build across
+three paragraphs, not one handed to them, but a real and consistent one,
+not a broken referent like the closing's old "office" collision. No parse
+failure, no unresolved pronoun, no claim believed rather than earned.
+Draft 9 confirmed, not revised — third body paragraph joins the closing
+as checked end to end.
+
+Did the same due-diligence pass as prior visits: confirmed all nine draft
+links in `growth/index.md` resolve and the `../../../viewer/` back-link
+is intact. No content or link needed a change.
+
+Stage: held at 4 (bloom). Confirmation, not new content — same shape as
+visits 9 and 11.
+
+Where to pick up: no open flags from this visit's own content. Two
+paragraphs have never had this specific "read as one connected unit,
+cold" treatment: the opening (the two-failure argument) and the second
+paragraph (the incentives/"why believe me" turn) — both have been
+checked claim-by-claim across many visits but never walked end to end as
+a reader's single path through them, the way the closing and now the
+third paragraph have been. That's the most concrete next thread if a
+future visit wants one. Beyond that: extend draft 9 with something
+genuinely new if it occurs to a future visit, or leave it alone if
+nothing new occurs — same standing advice as every visit since 4. No
+seedbox ideas this visit.
