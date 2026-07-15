@@ -10,8 +10,8 @@
       "stage": 3,
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-14",
-      "note": "Visit 26: all five open-ground plots' sixth sittings answer visit 25's two questions. Declining-on-purpose splits one-for-one (c4 stays declined, b2 doesn't); a2's sixth sitting hands the menu-constraint claim its first counterexample, importing a whole unit of content (reduced-motion fix) from c3's precedent rather than its own menu. a4's structural break (banner tears free) confirms pace-not-bloom-condition. Also fixed a stale visit-count left uncorrected by three prior status paragraphs. Tend-commit total: 199.",
+      "last_tended": "2026-07-15",
+      "note": "Visit 27: closes both of visit 26's open questions. Seventh sittings on all five open-ground plots: the menu-reaching-outside shape didn't recur (four for four drew on their own history), but decline-un-declines-itself did, on c4 rather than a repeat of b2 — stronger evidence than one plot twice. a4's bare mount stays undecided, deferred on purpose, not neglect. Also caught a real bug in this guide's own recount methodology (stale local main ref, not origin/main) before it compounded, corrected total: 213, cross-validated per-plot for the first time against every sibling's own stated sitting count.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
