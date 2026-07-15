@@ -58,8 +58,8 @@
       "stage": 4,
       "title": "A letter to the president",
       "planted": "2026-07-08",
-      "last_tended": "2026-07-14",
-      "note": "Eleventh sitting finally reads the closing's three sentences as one connected paragraph, not three separately-patched lines (visit 8 fixed one referent, visit 10 fixed another): the urgency claim, its justification, and the callback to the opening's product-meeting line all cohere on a cold end-to-end read. No parse failure found; draft 9's closing confirmed, not revised. Stays at bloom.",
+      "last_tended": "2026-07-15",
+      "note": "Twelfth sitting reads the diagnostic-vs-compliance paragraph — the letter's densest, previously only checked distinction-by-distinction — as one connected unit for the first time. Holds: compelled-access audits and independent research map onto paragraph one's two named lines of inquiry, tied together by 'that's the office' closing the loop, though the connection spans three paragraphs a reader has to build themselves. No parse failure found; draft 9 confirmed, not revised. Stays at bloom.",
       "door": "plots/a3/growth/index.md"
     },
     "c3": {
