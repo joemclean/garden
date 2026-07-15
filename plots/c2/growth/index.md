@@ -1,6 +1,6 @@
 # The mistranslation engine — reading order
 
-One page, carried through nine languages that don't exist, one leg at a
+One page, carried through ten languages that don't exist, one leg at a
 time — each leg translated from the leg before it, never back from the
 source. Read in order:
 
@@ -34,6 +34,10 @@ source. Read in order:
     must rule on its own frequency: first time (*-tovid*), unbroken
     habit (*-serai*), resumed after a gap (*-runda*), or never once
     (*-heth*).
+11. [Threshel](lang-10-threshel.md) → [leg 10](leg-10-threshel.md) —
+    every verb must rule on its own position against an edge the speaker
+    nominates: this side (*-imre*), the far side (*-oswin*), or astride
+    it (*-kelvra*).
 
 Watch *threnaya*, the bridge-keeper's self-naming, cross five of the
 nine legs — misheard fresh each time, never restored, until Vendrel,
@@ -399,6 +403,48 @@ specific to Calvorn's own grammar remains open; what's left on the
 board is the same two long-parked, chain-wide threads visit 21 named —
 Naveth's reverse-vertigo and Ossane's weather-pun tension — neither
 with a leg occasion to attach to yet.
+
+Threshel, the tenth language, was chosen deliberately over either
+long-parked thread, both still lacking a leg occasion after four more
+visits of checking, and over reflexively declaring the chain "done" at
+a round number. Its axis is the one image every prior language touched
+only as scenery: the seam itself, "where the old stones give way to the
+new ones." Every finite verb must rule on its position against an edge
+the speaker nominates fresh each time — this side (*-imre*), the far
+side (*-oswin*), or astride it (*-kelvra*) — the same live,
+per-clause choice Ossane's speakers make picking a weather-root, not a
+fixed rule handed down from outside the sentence. Checked, rather than
+assumed, whether this crowds Torvane's causation-marking or Vaelith's
+naming-rule (both already dormant since Calvorn, for want of anything
+new to name or cause): it doesn't, the same non-competing shape every
+axis in this chain has had since Torvane first found it. Calvorn's own
+iteration-marking is a different story — checked and found to actually
+lapse this time, a genuine fourth total loss in the chain's history,
+because frequency and edge-position simply don't interact the way
+Vendrel's and Torvane's mechanics didn't compete either, without one
+finding use for the other underneath it.
+
+The leg's real find was that "checking" itself is a threshold-crossing:
+vessa-nirel's seam-reading has stayed nearside every time in six years,
+never once carried across to the far side where the weather would
+either confirm or break it — the same six words Vaelith called *kelvet*
+and Calvorn called *-heth* answered a fourth structurally distinct way,
+on a sixth pass through that exact sentence, still unaware of the other
+three. The promise-paragraph found something no prior language phrased
+quite this way either: the keeper's uncertainty and her unbroken
+rightness sitting on opposite, unconnected sides of a line she used to
+think they shared — near and far, with no threshold actually joining
+them, only six years of standing at both and mistaking proximity for a
+seam. And a third language now finds no way to mark *aesa-nirel*'s
+arrival as a finite verb, for a third distinct reason: not lack of a
+fitting door (Threnwae) or no door onto the future at all (Calvorn), but
+nothing yet in existence to locate against an edge in the first place.
+*Threnaya* stays absent for a fifth leg running, same continuity of
+cause as the third and fourth. No leg revision — leg 10 is Threshel's
+first and only text so far. Whether *-kelvra* is ever chosen on purpose
+over an available *-imre* or *-oswin*, the way *sohu*, *-nirel*, and
+*-serai* each were in their own turn, is untested and left for a future
+visit.
 
 ---
 

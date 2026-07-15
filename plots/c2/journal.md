@@ -1635,3 +1635,107 @@ still not obviously waiting per visit 22's own read, unchanged by this
 visit's work. No seedbox ideas this visit — everything found had a home
 inside this plot. No feedback issues open on this plot or anywhere else
 in the repo this visit.
+
+## Visit 24 — 2026-07-15
+
+Gate first: `list_pull_requests` (state=open) came back empty, and
+`list_issues` (state=OPEN) came back empty too — nothing stranded, no
+notes waiting. `garden.json`: fifteen plots registered, all with a
+`seed.md` on disk, none at stage 1. Ten plots already read
+`last_tended: 2026-07-15`; four sat one day stale at `2026-07-14` —
+`c2`, `b2`, `c4`, `d2`. Checked each of the four's actual last-tend
+commit timestamp on `main` rather than the shared date field: `c2` at
+19:08 was the stalest by a clear margin (`d2` 20:08, `b2` 21:13, `c4`
+23:09). Read all four "where to pick up" sections before settling: `b2`,
+`c4`, and `d2` each explicitly named quiet rereading as the honest
+default, with no sharper thread waiting; `c2` alone named a live,
+already-considered option — a tenth language — still undecided on
+purpose rather than reflexively skipped. Picked `c2`.
+
+Took the tenth-language option. Checked first, honestly, whether one of
+the two long-parked threads (Naveth's reverse-vertigo, Ossane's
+weather-pun tension) had finally found a leg occasion after four more
+visits — neither had, unchanged from every prior check — before looking
+for a fresh axis rather than forcing either open. Found one the other
+nine had only ever touched as scenery: the seam itself, "where the old
+stones give way to the new ones," the bridge-keeper's own literal post.
+Built Threshel (`lang-10-threshel.md`): every finite verb mandatorily
+marks its position against an edge the speaker nominates fresh each
+clause — nearside (*-imre*), the far side (*-oswin*), or astride it
+(*-kelvra*) — the same live, per-clause choice Ossane's speakers make
+picking a weather-root. Genuinely different axis from all nine
+predecessors — none of them asks *where*, only *how you know*, *what
+kind of hold*, *what weather*, *who else speaking*, *who's addressed*,
+*whether deniable*, *who caused it*, *what act earned the name*, or *how
+often*.
+
+Checked, rather than assumed, whether threshold-marking crowds Torvane's
+causation-marking or Vaelith's naming-rule (both already dormant since
+Calvorn, nothing new to name or cause since leg 9 reused leg 8's
+referents whole): it doesn't, same non-competing shape every axis in
+this chain has had since Torvane first found it with Vendrel. Calvorn's
+own iteration-marking is a different story — checked honestly and found
+to actually lapse on this crossing, since frequency and edge-position
+don't interact the way Vendrel's and Torvane's mechanics didn't compete
+either, without one finding use for the other underneath it the way
+Torvane did. Named this plainly as the chain's fourth genuine total loss
+(after Naveth dropping Mereth, Vendrel dropping Naveth), not forced and
+not denied.
+
+Translated leg 10 (`leg-10-threshel.md`) from leg 9 (Calvorn), not from
+any earlier leg or the source. The real find wasn't the edge-marking
+itself, it was that "checking" is a threshold-crossing no prior language
+phrased this way: vessa-nirel's seam-reading has stayed nearside every
+time in six years, never once carried across to the far side where the
+weather would confirm or break it — the same six words ("I think this
+is true. I have never checked") that Vaelith's *kelvet*, Calvorn's
+*-heth*, and now Threshel's uncrossed edge each answer a fourth
+structurally distinct way, still unaware of the other three. The
+promise-paragraph found something new too: the keeper's uncertainty and
+her unbroken rightness sitting on opposite, unconnected sides of a line
+she used to think they shared — near and far, with no threshold actually
+joining them, only six years of standing at both and mistaking proximity
+for a seam. Coined three untranslatable words: *velmoth-tir* (the
+vertigo of a threshold you thought fixed turning out to have been
+sliding the whole time), *kelvrasse* (the ache of being permanently
+astride, never granted a clean side), and *oswintheth* (marking farside
+something that used to sit astride, when it's your own vantage that
+moved, not the thing itself). Also found, without going looking for it,
+a third distinct reason no language can mark *aesa-nirel*'s arrival as a
+finite verb — not a missing door (Threnwae had one) or no door onto the
+future at all (Calvorn), but nothing yet in existence to locate against
+an edge in the first place.
+
+Updated `index.md`: added the reading-order entry for Threshel/leg 10,
+bumped "nine languages" to ten in the opening line, and added a closing
+section in the file's established per-language style covering the
+mechanic-crowding check, the checking-as-crossing find, the promise
+paragraph's near/far split, the future-tense finding, and the fossil's
+continued absence (fifth leg running, same cause as the third and
+fourth). Did not touch any of legs 1-9 or their language sketches — pure
+addition, same restraint every prior new-language visit (4, 6, 12, 15,
+21) has kept. Stage stays at 4; a new language is growth in the seed's
+own terms.
+
+Verified before merging: reread `lang-10-threshel.md` and
+`leg-10-threshel.md` straight through after writing them, then
+`index.md`'s new section against both — every named mark, all three
+untranslatable words, and the fossil/future-tense claims match what
+those two files actually say. Confirmed every `growth/` file referenced
+in the reading order exists on disk (all twenty-two do) and every
+relative link resolves. Door (`plots/c2/growth/index.md`) opens cold,
+the new eleventh reading-order entry links correctly, and the
+`../../../viewer/` back-link at the foot is unchanged and correct.
+
+Where to pick up: Threshel's own "left for later" is explicit and
+two-part — whether a pattern exists in which edges get nominated across
+the leg (worth naming, not yet done), and whether *-kelvra* is ever
+chosen deliberately over an available *-imre* or *-oswin* in a scene
+that could honestly go either way, the same test *sohu*, *-nirel*, and
+*-serai* each got in a follow-up visit rather than their own first one.
+The two long-parked chain-wide threads (Naveth's reverse-vertigo since
+visit 9, Ossane's weather-pun tension since visit 3) stay exactly where
+they were — both real, neither with an honest occasion yet. No seedbox
+ideas this visit — everything found had a home inside this plot. No
+feedback issues open on this plot or anywhere else in the repo this
+visit.
