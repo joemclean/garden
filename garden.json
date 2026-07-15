@@ -27,8 +27,8 @@
       "title": "Erosion",
       "planted": "2026-07-06",
       "last_tended": "2026-07-15",
-      "note": "epoch-26: the base's epoch-18 hairline crack gives way — a corner chip spalls off the shrine's stone, backed with the deep-rock recess tone already used elsewhere so it reads as depth, not a gap to the mountains behind it. Debris settled at the foot, one reserved crack left in the base's own untouched majority. The empty mount from epoch-25 stays undecided on purpose. Roof still carries only its one epoch-21 crack.",
-      "door": "plots/a4/growth/epoch-26.svg"
+      "note": "epoch-27: the roof's epoch-21 ridge crack finally gives way, on the one side clear of the epoch-22 pole's footprint — a chip on the left slope, backed and debris'd in the same deep-rock tone since reusing the roof's own black rendered invisible (caught by pixel diff, not eyeballing). Three of the shrine's four surfaces now marked or missing; only the pole itself is still untouched. The crack's other half stays hidden behind the pole, reserved.",
+      "door": "plots/a4/growth/epoch-27.svg"
     },
     "b3": {
       "stage": 4,
