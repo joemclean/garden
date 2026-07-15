@@ -592,3 +592,110 @@ next sittings, not decided here. No seedbox ideas this visit — a
 same-plot deepening of a fork this plot already owned. No feedback
 issues existed on this plot or anywhere else in the repo this visit
 (gate was clear: no open PRs, no open issues).
+
+## 2026-07-15 — eighth sitting: the point between
+
+Gate first: `list_pull_requests` (state=open) and `list_issues`
+(state=OPEN) both empty — nothing stranded, nothing to weigh. No stage-1
+seeds in `garden.json`; every plot had already had one visit today, so
+this sitting picked by real elapsed time: this plot's seventh sitting
+(2026-07-15T00:21:46Z) was the stalest tend anywhere in the repo by a wide
+margin — the next-oldest, `d1`, sat 49 minutes newer, and every other
+plot sat hours newer than that.
+
+Two forks were left open at the seventh sitting: L1/L3 (the two
+remaining unstable collinear points) or L5 (Jupiter's trailing stable
+corner, still untouched since the sixth sitting). Picked L1 over L3
+because it's the more structurally distinct question — L1 sits *between*
+the two masses rather than beyond either one, so a small displacement
+could plausibly go two different ways depending on direction, where L3
+(far past the Sun) seemed likely to just be "another L2" pointed the
+other way. Picked L1 over L5 because L5 is a near-mirror of `trojan.html`
+(same stability class, same triangular construction, just reflected),
+while L1 opens new physics this taxonomy hadn't touched — the *other*
+unstable temperament, and possibly a genuinely two-sided one.
+
+Solved the same on-axis force balance every collinear point here uses
+(`brentq`) for the point between the masses: x_L1 = 0.93237, i.e.
+0.0667 separations short of Jupiter — 0.977 Hill radii, almost exactly
+L2's own 1.02, a real symmetry worth having found rather than assumed.
+Derived Oxx = 1+2c, Oyy = 1-c (c = (1-μ)/r1³+μ/r2³) by hand from the
+effective potential's second derivatives at y=0, then cross-checked
+against a central finite difference of the same gradient — agreed to
+eight significant figures before trusting either. The quartic gives a
+saddle at ±2.681 (faster than L2's 2.352 — L1 sits closer to Jupiter in
+Hill-radius terms than the ratio alone suggested) predicting an
+e-folding time of 0.70 years, the shortest of any point this plot has
+tried.
+
+Went one step further than L2's own sitting, which nudged along the bare
+Sun-Jupiter axis and called that a reasonable approximation. This time I
+built the full 4×4 linearized system (Coriolis coupling included) and
+took its actual dominant eigenvector — not purely axial, tilted about
+27° into the plane once I checked the angle. Displaced by the same
+one-part-in-a-million "whisper" L2 used (≈780 km), in the two opposite
+directions along that real eigenvector, and integrated the true
+unsimplified gravity forward (DOP853, rtol/atol ≈1e-13/1e-14; Jacobi's
+constant held past 13 significant figures on both runs, checked before
+trusting either trajectory).
+
+The two directions do genuinely different things, confirmed robust
+across eps spanning two orders of magnitude before committing to the
+final render (same qualitative outcome at 1e-7, 1e-6, 1e-5, only the
+timing shifts, exactly as exponential sensitivity to the starting whisper
+predicts). One direction spirals tightly around Jupiter — the epicyclic
+wobble tightening rather than escaping — and goes essentially straight in
+within 24 years (2.02 Jupiter orbits). The other barely registers Jupiter
+at all: it sweeps in a single wide, non-repeating arc past the Sun's far
+side and is still going at the same 24-year cutoff, having crossed most
+of the Sun-Jupiter separation without settling. Fit the early growth of
+the still-small displacement against the hand-derived 2.681 and got
+2.686, about 0.2% off — the same validation standard every saddle point
+here has been held to.
+
+Rendering needed two trails from one shared origin, a genuinely new
+composition for this plot (every prior piece has drawn either one body's
+path or several bodies' paths, never two branches of the same particle's
+fate). Reused trojan.html's 650 px/unit — the other "whole separation
+visible" zoom this plot has used — scaled slightly to 600 px/unit so both
+branches' combined bounding box (the wander branch alone spans most of
+the Sun-Jupiter separation in both x and y) fit the canvas with margin.
+Kept the Sun's constant sizing (glow 46, solid 12.5) and Jupiter's
+trojan-scale sizing (glow 24, solid 6.2), matching the zoom level. Two
+new colors: an ember orange-red (#ff6a4c) for the plunge, a cool violet
+(#a68cff) for the wander — deliberately not another warm tone next to
+Jupiter's own burnt orange, so the two fates read apart even at
+thumbnail scale. Screenshotted before trusting the composition: the
+plunge branch renders as a tight, almost atom-like tangle of loops right
+beside Jupiter's marker (the epicyclic wobble made visible, not a
+straight fall), while the wander branch is one clean sweeping arc from
+the same point out past the Sun — the contrast is immediate, which was
+the whole point of choosing L1 over L3 or L5.
+
+Restructured the door: added `l1.html` and `l1.svg`, grew `index.html`'s
+grid to eight cards (no CSS change needed, 8 wraps to 3+3+2 on the
+existing breakpoints) and updated its intro line, and added `l1.html` to
+all seven existing detail pages' nav footers (all now say "all eight
+pieces"). Verified via Playwright against a local server (not `file://`):
+all nine pages return 200, the only console message anywhere is the one
+harmless favicon 404 every plot in this garden hits, and every link on
+every page resolves (checked programmatically against real HTTP
+responses, not just by eye). Screenshotted the full index grid and the
+new detail page at real size — the new card reads immediately as its own
+shape among the other seven.
+
+Stage: held at bloom. This is an eighth sitting on an already-bloomed
+piece; the taxonomy now covers both unstable collinear temperaments this
+plot has built (L2's clean one-way release, L1's genuine fork) alongside
+the stable ones (Lagrange, Trojan) and the three-equal-body cases
+(escape, loop, collapse, the loop that breaks).
+
+Where to pick up: L3 (far side of the Sun) and L5 (Jupiter's trailing
+corner) are both still untried, named again rather than decided — L3 in
+particular is now a more interesting question than it looked at the
+seventh sitting, since L1 just showed a collinear point can genuinely
+fork rather than just release one way; worth checking whether L3 does
+too rather than assuming the L2 pattern. No seedbox ideas this visit — a
+same-plot deepening of a fork this plot already owned. No feedback
+issues existed on this plot or anywhere else in the repo this visit
+(gate was clear: no open PRs, no open issues).
