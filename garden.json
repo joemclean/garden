@@ -90,8 +90,8 @@
       "stage": 4,
       "title": "Open ground: something to look at",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-14",
-      "note": "Sixth sitting resolves the fork fifth left open: the restricted three-body problem, a massless test point at Lagrange's L4 corner with the real Sun-Jupiter mass ratio, nudged 1.8% off and released from rest. Traces a bounded, never-repeating loop-of-loops (Jupiter's Trojan asteroids) instead of an exact solution — a genuinely new fourth temperament. Jacobi constant held to 13 significant figures; measured libration period (12.47 Jupiter orbits) matched the pre-integration linearized prediction to four figures and real Trojans' ~150-year period. Door is now an index of all six pieces. Stays at bloom.",
+      "last_tended": "2026-07-15",
+      "note": "Seventh sitting takes the other half of sixth's stable/unstable pair: L2, the restricted three-body problem's unstable collinear point just beyond Jupiter. Linearized the equations by hand (saddle eigenvalue ±2.352, e-fold time 0.80 years), nudged a test point by a millionth of the separation, and integrated for real — it sits imperceptibly still for ~8 years, then peels away in one wide, non-repeating escape loop past Jupiter's own orbit, never returning. Growth rate measured to within 0.3% of the hand-derived prediction. Door is now an index of all seven pieces. Stays at bloom.",
       "door": "plots/c1/growth/index.html"
     },
     "a2": {
