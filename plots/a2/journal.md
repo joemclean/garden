@@ -571,3 +571,83 @@ reasonable default, not a measured optimum; nobody has checked whether 2
 better against the "step, don't sweep" goal. No feedback issues on this
 plot or anywhere in the repo this visit. No seedbox ideas — same-plot
 accessibility parity work, not a new idea.
+
+---
+
+Eighth sitting. Gate was clear (no open PRs, no stray branches carrying
+unmerged work, no open feedback issues anywhere in the repo, no freshly
+planted seed). Fifteen plots existed, eight last-tended today and seven
+(including this one) last-tended the day before — chose `a2` among the
+stale seven because visit 7 left the most concrete, already-scoped next
+move of any of them: reconsider `BREATH_STEPS_PER_PERIOD` (2 vs. 4 vs. 8),
+rather than a looser "cold reread or leave it" menu.
+
+Took the question literally and measured it two ways before touching the
+constant, the same discipline visit 7's own bug catch demanded. First, an
+offline reimplementation of `currentEnsembleNorm` (the visit 3/5 pattern)
+swept the true continuous curve at 4000 samples/period and compared it
+against what stepped sampling at N ∈ {2,3,4,6,8,12} would actually catch:
+N=2 covers only 76.7% of the curve's real swing with two values that are
+essentially peak-and-trough; N=4 (shipped) also 76.7% by coincidence of
+where its four samples land; N=8 covers 84.7%. Second, and more important
+— live in the actual browser, not just offline math — I patched three
+temporary copies of the page (N=2/4/8) served over `python3 -m
+http.server`, and in a real `reducedMotion: 'reduce'` Playwright context,
+instrumented `createRadialGradient`/`addColorStop` to capture the actual
+sequence of alpha values the vignette draws over 8s of real playback:
+N=2 produced `[0.0386, 0.0002, 0.0385]` — a near-binary flash between
+bright and dark, no visible climb or fall, the breath reduced to a
+blink. N=4 reproduced visit 7's own captured shape almost exactly
+(`0.0389 → 0.0152 → 0.0001 → 0.0137 → 0.0385 → ...`). N=8 traced a
+noticeably fuller arc — climb to a peak, graded descent through more
+intermediate values, trough, climb again — while its actual measured
+cadence (11-12 draws over 8s, ~0.68-0.70s apart) is still roughly 40-80x
+slower than either the audio-rate `setValueAtTime` calls or the full-
+motion `draw()` path's per-frame repaint, so "closer to a sweep" turned
+out not to be a real risk at that rate: every step is a held plateau,
+none interpolate, and 0.7s is easily perceived as a jump, not motion.
+
+Decided against 2: it doesn't just lose fidelity, it actively
+misrepresents the finding this layer exists to show (the ensemble
+breathes — climbs then falls) as a simple on/off blink, the same class
+of error (real code, wrong story) visit 7's degenerate-once-per-period
+bug was. Decided for 8 over 4: strictly more of the true signal's shape
+survives, at no measured cost to "step, not sweep" — the held-plateau
+mechanism and ~0.7s cadence keep it unambiguously discrete. Changed
+`BREATH_STEPS_PER_PERIOD` from 4 to 8, updated the constant's comment
+with the measured comparison, and corrected the on-page reduced-motion
+note from "steps... a few times per ~5.5s" (true of N=4, not N=8) to
+"steps (not sweeps), roughly every 0.7s" — a more durable phrasing since
+it describes the cadence directly rather than a count that would need
+re-editing if this constant ever moves again. Also tightened a stale
+inline comment near the vignette draw call that still said "sampled once
+per breath period," left inaccurate since visit 7 first moved off N=1.
+
+Verified with the pre-installed headless Chromium over
+`python3 -m http.server`: in `reducedMotion: 'reduce'`, the shipped page
+now produces exactly the N=8 draw cadence and alpha sequence found during
+comparison testing, zero console/page errors beyond the one harmless
+404 every visit here hits, the updated note text renders and is visible,
+and the visit-4 mobile panel/note overlap fix still holds at 375×812
+(`getBoundingClientRect()` check: false overlap). In
+`reducedMotion: 'no-preference'`, confirmed byte-for-byte unaffected: the
+note stays hidden and the canvas is still continuously animating (two
+`toDataURL()` snapshots 800ms apart differ). Did not touch any
+oscillator, gain, filter, scheduling code, the full-motion `draw()`
+vignette math, or the mobile CSS media query — only the one constant,
+its comment, the on-page note string, and one other stale comment.
+Screenshotted the reduced-motion state mid-play: three legible rings, the
+corrected note text, back-link present.
+
+Stage: held at bloom. This answers visit 7's own flagged question with a
+measured result rather than leaving it open indefinitely, but it's a
+same-layer parameter tune inside the existing reduced-motion
+accommodation, not a new axis or a reopening of the sound.
+
+Where to pick up: `BREATH_STEPS_PER_PERIOD` is now evidence-backed rather
+than a first-guess default; a future sitting doesn't need to revisit this
+unless something about the vignette itself changes. Visit 5's two older
+threads (flatten-if-asked, vignette-drives-something-other-than-color)
+remain open and still low-priority by their own framing. No feedback
+issues on this plot or anywhere in the repo this visit. No seedbox
+ideas — this was a same-plot measurement and tune, not a new idea.
