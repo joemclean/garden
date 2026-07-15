@@ -98,8 +98,8 @@
       "stage": 4,
       "title": "Open ground: something to hear",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-14",
-      "note": "Seventh sitting gives the breathing vignette its own reduced-motion counterpart, the last of four visual layers missing one. First attempt (sample once per measured 5.5s breath period) was degenerate — the six staggered voices permute onto the same sum after exactly one period, so it froze on one number; caught by instrumenting the gradient draw in Playwright and counting 1 distinct state over 7s. Fixed by quartering the period into four held snapshots (~1.375s apart) of the real ensemble energy, confirmed rising then falling across six captured draws. Stays at bloom.",
+      "last_tended": "2026-07-15",
+      "note": "Eighth sitting answers visit 7's own flagged question — does BREATH_STEPS_PER_PERIOD=4 read better as 2 or 8 — with measurement, not guesswork. Offline sweep plus live captured gradient alphas showed N=2 collapses the breath into a near-binary peak/trough blink, while N=8 traces a fuller climb-then-fall arc at a still-clearly-discrete ~0.7s cadence. Bumped to 8, updated the on-page note to describe cadence rather than a count. Stays at bloom.",
       "door": "plots/a2/growth/ascent.html"
     },
     "b2": {

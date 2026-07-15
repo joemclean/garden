@@ -79,7 +79,7 @@
   <div id="panel">
     <b>Ascent</b>
     <div class="sub">a tone that climbs forever, a beat that rushes forever, a swell that never crests — none arrives</div>
-    <div class="sub" id="reducedNote" style="display:none; margin-top:-12px">motion reduced — sound is unaffected; the loudness breath still steps (not sweeps) a few times per ~5.5s</div>
+    <div class="sub" id="reducedNote" style="display:none; margin-top:-12px">motion reduced — sound is unaffected; the loudness breath still steps (not sweeps), roughly every 0.7s</div>
     <div id="row">
       <button id="play">play</button>
       <button id="dir">↑ ascending</button>
@@ -183,12 +183,18 @@
   // staggered, the ensemble sum one full period later is the *same* six
   // phases cyclically permuted among voices, so the sum is exactly
   // invariant — a once-per-5.5s sample would freeze on one number forever,
-  // not show a breath at all. Sampling a few times within each period
-  // (quartering it) instead catches the real rise-then-fall the period
-  // contains, while still holding each value rather than interpolating —
-  // a stepped read of real motion, not a continuous sweep of it.
+  // not show a breath at all. Sampling several times within each period
+  // instead catches the real rise-then-fall the period contains, while
+  // still holding each value rather than interpolating — a stepped read
+  // of real motion, not a continuous sweep of it. 8 (measured against 2
+  // and 4 offline and live: an offline sweep of the true curve plus a
+  // captured sequence of actual on-page gradient draws) covers ~85% of
+  // the true swing vs. 4's ~77%, still held at a ~0.7s cadence far slower
+  // than any real sweep; 2 was measured to collapse the shape into a
+  // near-binary peak/trough blink (captured alphas 0.039 / 0.0002), losing
+  // the climb-then-fall character this layer exists to show.
   const BREATH_PERIOD_L = CYCLE_SECONDS_L / NUM_LOUD_VOICES;
-  const BREATH_STEPS_PER_PERIOD = 4;
+  const BREATH_STEPS_PER_PERIOD = 8;
   const BREATH_STEP_SECONDS = BREATH_PERIOD_L / BREATH_STEPS_PER_PERIOD;
   let reducedBreathStep = -1;
 
@@ -436,9 +442,10 @@
       }
 
       // the found fourth, stepped rather than swept: a fixed wash whose
-      // strength is the real ensemble energy sampled once per breath
-      // period (5.5s), not a per-frame interpolation — a discrete jump
-      // rather than motion, so it still fits "reduced"
+      // strength is the real ensemble energy sampled several times per
+      // breath period (see BREATH_STEPS_PER_PERIOD above), not a
+      // per-frame interpolation — a discrete jump rather than motion, so
+      // it still fits "reduced"
       const t = audioCtx ? audioCtx.currentTime - startTime : 0;
       const norm = currentEnsembleNorm(t);
       if (norm > 0) {
