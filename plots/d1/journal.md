@@ -369,3 +369,68 @@ flourish (a fake "now playing" ribbon on the currently-shuffled top
 poster, say) without being asked to. No feedback issues existed on
 this plot or elsewhere in the repo this visit (gate was clear: no open
 PRs, no open issues, no stray branches). No seedbox ideas.
+
+## 2026-07-15 — seventh tend: the "now playing" ribbon
+
+Took up the exact flourish sixth tend named without being asked to: a
+small "NOW PLAYING" tag pinned to whichever poster the shuffle happens
+to land in the wall's first slot. Read literally as a real marquee
+detail — a revival house doesn't just tack up three posters in a fresh
+order each week, it flags one as the current attraction — and it gives
+the shuffle itself a payoff a visitor can actually read, not just an
+order that silently changes underneath them.
+
+`shufflePosters()` already reorders `.menu-reels`' children and returns
+control right where the featured slot is decided; added one line to
+the existing `posters.forEach` loop (`p.classList.toggle('featured', i
+=== 0)`) so the first-slot poster — and only that one — gets the
+`.featured` class on every call, load or return-to-menu alike, no new
+function needed. Each of the three `.menu-reel` buttons carries its own
+`<span class="ribbon">now playing</span>`, opacity 0 by default,
+`.featured .ribbon` brings it to ~0.95 — CSS-only visibility, no DOM
+insertion/removal to get wrong.
+
+First placement attempt (top: 8px; right: 8px, sitting inside the card)
+collided with the centered "REEL ONE"/"TWO"/"THREE" label on every
+poster — a real visual bug, caught in a screenshot, not guessed at.
+Fixed by moving the ribbon to top: -10px; right: -10px so it hangs off
+the card's corner like a tag actually stuck onto a poster, rotated to
+9deg instead of -4deg to read as pinned-on rather than printed-in.
+Reshot all three titles (including the two longer ones, "No Address
+for Rain" and "Marquee for Nobody") in the featured slot to confirm the
+corrected position clears every title at every length — it does.
+
+Verified with Playwright against a local server, several ways: (1)
+loaded fresh 8 times, confirmed `.featured` always matches whichever
+reel occupies DOM slot 0 and never more than one poster at a time, with
+real variety across loads (reels 3,1,3,3,1,2,2,1 — not stuck on one);
+(2) clicked whichever reel happened to be featured on a given load and
+confirmed it still cues the correct leader text for that reel number,
+so the new classList toggle doesn't interfere with each button's own
+`data-reel` click handler; (3) played a reel through to its return link
+and confirmed the menu reshuffles and re-features on return, same as
+the sixth tend's own reshuffle already did — this sitting only adds a
+visible marker to a mechanism that already existed. Zero console/page
+errors beyond the one harmless favicon 404 every sitting on this plot
+has hit. Didn't touch `playSingle`/`playAll`/timing constants at all,
+so six sittings' worth of already-verified reel/leader timing stays
+provably untouched — this diff is CSS plus one classList line.
+
+Stage stays at bloom — a small textual flourish on the existing resting
+shape, not a new line crossed. Door unchanged (`growth/index.html`);
+back-link (`../../../viewer/`) confirmed still present and correct.
+
+Where to pick up: no open bugs, no open questions freshly named this
+sitting. The three items sixth tend left on the table are unchanged:
+(1) the fourth-reel question, revisit only if the shape starts to feel
+thin; (2) the `transform-box: fill-box` rule for any new SVG element
+combining `translate` with `rotate`/`scale`; (3) sound/audio, still
+untried across all seven sittings now if the "video" material ever
+wants to include it — the click that starts a reel is a real user
+gesture, so autoplaying audio from inside `playSingle`/`playAll` at
+that moment shouldn't hit browser autoplay blocking, untested since it
+wasn't attempted this visit. No feedback issues existed on this plot or
+elsewhere in the repo this visit (gate was clear: no open PRs, no open
+issues; the many `claude/charming-shannon-*` branches are squash-merge
+residue, confirmed via PR #174's `merged:true` with no ancestor commits
+on main — not stranded work). No seedbox ideas.

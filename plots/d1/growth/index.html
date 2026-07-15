@@ -347,6 +347,21 @@
   .menu-reel-num { font-size: 0.8vw; letter-spacing: 0.2em; color: #9a9a9a; text-transform: uppercase; }
   .menu-reel-title { font-size: 1.3vw; font-weight: bold; }
   .menu-reel-tag { font-size: 0.85vw; font-style: italic; color: #c7c7c7; }
+  /* A chalked-on marker tag, not a printed badge — only the poster currently
+     tacked in the wall's first slot wears one, so it travels with whichever
+     film the shuffle happens to feature this time. */
+  .ribbon {
+    position: absolute; top: -10px; right: -10px;
+    background: #b8482a; color: #f7ecd8;
+    font-size: 0.55vw; font-weight: bold; letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 3px 7px; border-radius: 2px;
+    transform: rotate(9deg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    opacity: 0; transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+  .menu-reel.featured .ribbon { opacity: 0.95; }
   .menu-all {
     background: transparent; border: none; color: #c7c7c7; font-family: Georgia, serif;
     font-style: italic; font-size: 1vw; letter-spacing: 0.08em; cursor: pointer;
@@ -373,16 +388,19 @@
       <div class="menu-kicker">an anthology of films that don't exist</div>
       <div class="menu-reels">
         <button class="menu-reel" data-reel="1" type="button">
+          <span class="ribbon">now playing</span>
           <span class="menu-reel-num">Reel One</span>
           <span class="menu-reel-title">The Field That Waits</span>
           <span class="menu-reel-tag">every harvest keeps a promise</span>
         </button>
         <button class="menu-reel" data-reel="2" type="button">
+          <span class="ribbon">now playing</span>
           <span class="menu-reel-num">Reel Two</span>
           <span class="menu-reel-title">No Address for Rain</span>
           <span class="menu-reel-tag">everyone left a light on</span>
         </button>
         <button class="menu-reel" data-reel="3" type="button">
+          <span class="ribbon">now playing</span>
           <span class="menu-reel-num">Reel Three</span>
           <span class="menu-reel-title">Marquee for Nobody</span>
           <span class="menu-reel-tag">the last show never closed</span>
@@ -751,7 +769,10 @@
         const j = Math.floor(Math.random() * (i + 1));
         [posters[i], posters[j]] = [posters[j], posters[i]];
       }
-      posters.forEach((p) => container.appendChild(p));
+      posters.forEach((p, i) => {
+        container.appendChild(p);
+        p.classList.toggle('featured', i === 0);
+      });
     }
 
     function showMenu() {

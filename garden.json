@@ -114,8 +114,8 @@
       "stage": 4,
       "title": "Open ground: something that moves",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-14",
-      "note": "Sixth tend answers fifth's own named gap: the poster wall now reshuffles on every return to the menu, not just on page load — moved the shuffle into showMenu() itself. Verified with a real 50s timed playback-and-return plus 8 rapid return cycles (4 distinct orders), reel buttons still cue the right film by data-attribute regardless of shuffled position. Stays at bloom.",
+      "last_tended": "2026-07-15",
+      "note": "Seventh tend adds a \"now playing\" ribbon, pinned to whichever poster the shuffle lands in the wall's first slot — a visible payoff for a reorder that was previously silent. First placement collided with the centered reel label; fixed by hanging the tag off the card's corner instead. Verified across 8 fresh loads (real variety, correct reel still cues on click) and a full return-and-reshuffle cycle. Stays at bloom.",
       "door": "plots/d1/growth/index.html"
     },
     "c4": {
