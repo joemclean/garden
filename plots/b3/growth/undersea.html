@@ -70,15 +70,35 @@ renderer.setSize(innerWidth, innerHeight);
 document.body.appendChild(renderer.domElement);
 
 // ---------- light falling from above ----------
-const sun = new THREE.DirectionalLight(0xbfe9ea, 1.4);
+const SUN_BASE = 1.4, FILL_BASE = 0.9, GLOW_BASE = 0.6;
+const sun = new THREE.DirectionalLight(0xbfe9ea, SUN_BASE);
 sun.position.set(4, 30, -6);
 scene.add(sun);
 
-const fill = new THREE.AmbientLight(0x0e4f5c, 0.9);
+const fill = new THREE.AmbientLight(0x0e4f5c, FILL_BASE);
 scene.add(fill);
 
-const glow = new THREE.HemisphereLight(0x6fd3d9, 0x02121a, 0.6);
+const glow = new THREE.HemisphereLight(0x6fd3d9, 0x02121a, GLOW_BASE);
 scene.add(glow);
+
+// The seed's "light falling from a surface somewhere above" has always been
+// implied by the god-ray shafts (static) but never actually responded to the
+// swimmer's own depth — the light itself was flat everywhere. A neutral band
+// (-8..2) covers where every prior visit's screenshots were actually taken,
+// so this only brightens/dims near the swim rig's own y-caps (8 at the top,
+// -20 at the bottom in tick()) — the two extremes nobody had visually
+// checked before this visit measured a real but shallow brightness gradient
+// there and found nothing tying it to an actual light change.
+function depthLightFactor(y) {
+  const NEUTRAL_HI = 2, NEUTRAL_LO = -8, SURFACE_Y = 8, ABYSS_Y = -20;
+  if (y > NEUTRAL_HI) {
+    return 1 + Math.min(1, (y - NEUTRAL_HI) / (SURFACE_Y - NEUTRAL_HI)) * 0.35;
+  }
+  if (y < NEUTRAL_LO) {
+    return 1 - Math.min(1, (NEUTRAL_LO - y) / (NEUTRAL_LO - ABYSS_Y)) * 0.35;
+  }
+  return 1;
+}
 
 // god-ray shafts: soft additive planes hanging from the surface, swaying
 const shaftMat = new THREE.MeshBasicMaterial({
@@ -993,6 +1013,11 @@ function tick() {
   // keep the swimmer below the surface and clear of freefall into the abyss
   if (yaw.position.y > 8) yaw.position.y = 8;
   if (yaw.position.y < -20) yaw.position.y = -20;
+
+  const lf = depthLightFactor(yaw.position.y);
+  sun.intensity = SUN_BASE * lf;
+  fill.intensity = FILL_BASE * lf;
+  glow.intensity = GLOW_BASE * lf;
 
   // subtle roll into turns for a swimming, not walking, feel
   pitch.rotation.z += ((-velocity.dot(right) * 0.05) - pitch.rotation.z) * Math.min(1, dt * 4);
