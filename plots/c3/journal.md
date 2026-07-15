@@ -837,3 +837,83 @@ already covered). The content question is unchanged from visit 7: three
 stays three, decided not deferred, unless a new excerpt demonstrates a
 structurally different claim than screens 1/4/5 already do. No seedbox
 ideas this visit.
+
+## Visit 13 — 2026-07-15
+
+Gate first: `list_pull_requests` (state=open) → empty. `search_issues`
+for open `feedback`-titled issues → empty, nothing waiting. Stray
+branches: dozens of orphaned pre-rewrite session branches, consistent
+with every prior visit's trace — nothing stranded. `garden.json`: all
+fifteen registered plots present, `d3` still soil, no stray `seed.md`
+without an entry, no stage-1 seeds. Compared last-tend commits: this
+plot's own last tend was the stalest in the garden by a full round —
+thirteen other plots had already been tended in the current cycle,
+`c1` and `d1` twice. Picked `c3` again, its thirteenth sitting.
+
+Visit 12 named the one real remaining candidate: forced-colors (Windows
+High Contrast) mode, untested across all twelve prior sittings' worth of
+accessibility work. Took it up, but carefully — my first pass looked
+like a serious bug (screenshot showed body text as near-invisible dark
+gray under `forcedColors: 'active'` emulation) until I isolated the
+cause: I'd screenshotted mid-flight during the existing 0.5s
+`.screen{animation:fade}` transition. A control page (plain white-on-
+black, no animation) rendered correctly under the same emulation,
+proving the harness wasn't broken; adding a `waitForTimeout` after each
+transition before screenshotting made the false alarm disappear
+entirely. Worth naming plainly since it would have been an easy false
+positive to journal as a real defect.
+
+With that timing fixed, ran a proper pass across both forced-colors
+light and dark, all seven screens: body text, headings, the `.letter`
+box border, blockquote left-border, disabled-button state, and the
+picked-choice highlight all render with real, legible contrast —
+Chromium's forced-colors engine substitutes system colors (`CanvasText`,
+`Highlight`-adjacent hues) throughout and nothing goes invisible or
+illegible. Footer links render in system `LinkText` yellow, clearly
+visible. Found exactly one genuine gap: the seven-dot progress indicator
+(`#dots`, `aria-hidden="true"`, purely decorative) is styled with
+`background` only and no border, so under forced-colors its
+background gets neutralized to `Canvas` on every dot alike — the
+current-screen indicator, visible to every other visitor, disappears
+completely for forced-colors users specifically (a sighted, low-vision
+population who don't get the `sr-only` "Screen X of 7" text screen
+readers rely on instead).
+
+Fixed it the same way visit 11 fixed reduced-motion: an additive
+`@media (forced-colors: active)` block, touching nothing in the default
+render path. Gives every dot a `1px solid CanvasText` border and gives
+`.on` a `Highlight`-colored fill/border, using only spec-guaranteed CSS
+System Color keywords rather than relying on Chromium's own
+undocumented author-hue-preservation heuristic (which is real — the
+picked-choice button's accent border does survive forced-colors via
+that heuristic, confirmed by computed style, but it isn't a
+cross-browser guarantee, so the dots fix doesn't lean on it). Verified
+with Playwright: default (no forced-colors) computed styles for `.dots
+span` are byte-identical to before the edit (`border-width: 0px`, same
+background colors) — confirmed unchanged; under forced-colors
+light/dark the off dots now show a visible ring and the on dot a
+visibly distinct fill, screenshotted and confirmed by eye in both
+schemes.
+
+Reran the full standing regression battery after the edit: all seven
+screens reachable, `#toReveal` disabled until a choice (used option `b`
+this time) then enabled, "Start over" returns to screen 0 with focus on
+the heading, all three journal excerpts (`a4`'s "Moss reclaims both wall
+stubs", `c2`'s "premature rather than wrong-forever", `b3`'s "I nearly
+picked") still verbatim-accurate against current source, all four linked
+paths (`a4`, `c2`, `b3` journals, `../../../viewer/`) resolve on disk,
+zero horizontal overflow at 320px across all seven screens, reduced-
+motion still `none`/`fade` correctly gated, zero console errors
+throughout. Held stage at 4 (bloom) — a genuine, previously-untested
+accessibility fix, additive only, no content or structural change.
+
+Where to pick up: accessibility/robustness coverage now spans focus,
+contrast, ARIA announcements, cross-browser CSS provenance, reduced
+motion, 320px reflow, 200% text zoom, and forced-colors — genuinely
+exhausted the dimensions a sighted, non-technical visitor's assistive
+setup would plausibly exercise. A next verification sitting would be
+hard-pressed to find a tenth; the more honest next move is probably the
+still-open content question from visit 7/12 (a fourth excerpt, reasoned
+against twice now but not permanently closed) or simply letting this
+plot rest for a cycle while staler plots get attention first. No
+seedbox ideas this visit.
