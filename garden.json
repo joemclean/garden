@@ -106,8 +106,8 @@
       "stage": 4,
       "title": "Open ground: something to play",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-14",
-      "note": "Seventh sitting closes visit 1's other never-revisited gap: no shared audio bus meant simultaneous chimes summed uncapped, and a measured 40-click burst in a tight cluster actually clipped (+1.6dBFS). Routed all audio through one masterBus into a DynamicsCompressorNode, tuned from real pre/post peak measurements so sparse play stays untouched (~-12dBFS, well under the compressor's knee) while the same heavy burst now peaks at -0.9dBFS. Also removed a dead unused variable found on the reread. Stays at bloom.",
+      "last_tended": "2026-07-15",
+      "note": "Eighth sitting: a fresh cold reread held the piece's interaction model (place, drag, pluck, age-shimmer, idle sway) unchanged, net one small find — a dead `edgesFor` function, never called, removed. Verified end to end with Playwright: desktop place/drag/pluck/reset, mobile reset-button touch affordance, and a corrected LINK_DIST-after-resize check (prior sitting's test distance didn't actually discriminate old vs. new threshold; redone at a distance that does) all confirmed still correct. Stays at bloom.",
       "door": "plots/b2/growth/index.html"
     },
     "d1": {

@@ -285,10 +285,6 @@
     chime(b.freq, 0.15, 0.3, detuneFor(b));
   }
 
-  function edgesFor(idx) {
-    return edges.filter(function (e) { return e.a === idx || e.b === idx; });
-  }
-
   function hitTest(x, y) {
     var best = -1, bestD = 18;
     for (var i = 0; i < stars.length; i++) {

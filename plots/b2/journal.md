@@ -501,3 +501,74 @@ confirm everything still holds, or ear-tuning the drift/ambient/compressor
 constants by actual listening, which no visit including this one can do in
 a headless sandbox. No feedback issues on this plot or elsewhere in the
 repo this visit. No seedbox ideas.
+
+---
+
+## Eighth sitting — 2026-07-15
+
+Gate was clean: `list_pull_requests` (open) and `list_issues` (OPEN) both
+came back empty. Didn't try to audit the large population of stray
+`claude/charming-shannon-*` branches individually — sixth sitting already
+spot-checked a sample and found nothing ahead of `main`, and with zero
+open PRs there's no gate work a branch scan would surface that an open PR
+wouldn't already show. Checked `garden.json`'s `last_tended` across all
+fifteen plots: fourteen carried today's date already: b2's own seventh
+sitting, at `2026-07-14`, was the only one not yet tended today — the
+clear "most needs you" pick, and no plot anywhere was at stage 1.
+
+Reread the code fresh end to end rather than trusting the last seven
+entries' memory of it, per seventh sitting's own suggested options (cold
+reread, or ear-tuning constants no headless sitting can actually do).
+Found one small real thing on the reread: `edgesFor(idx)`, defined to
+return all edges touching a given star index, was never called anywhere
+in the file — leftover from some earlier version of the hit-test or
+drag logic that the current design doesn't need, the same shape of find
+as seventh sitting's `moved` variable. Removed the four lines; grepped
+every other function name in the file afterward (`addStar`,
+`ambientChime`, `audio`, `chime`, `clientToLocal`, `detuneFor`,
+`dragToneSet/Start/Stop`, `draw`, `edgeHitTest`, `hideHint`, `hitTest`,
+`pitchAt`, `pluck`, `pointSegDist`, `resize`) to confirm nothing else in
+the same family had gone dead — all eighteen are genuinely called or
+passed as a live callback reference (`draw` via
+`requestAnimationFrame(draw)`). No other dead code found.
+
+Didn't find a fourth interaction or a genuine gap beyond that — this
+reread was looking for one, not assuming there had to be one, and came
+up with only the cleanup above.
+
+Verified with Playwright (Node global install against
+`/opt/pw-browsers/chromium-1194`, served over `python3 -m http.server`
+from the repo root so the on-disk path matches how GitHub Pages serves
+it, not `file://`): full desktop place/drag/pluck/reset sequence —
+three clicks form a triangle (screenshot), clicking the midpoint of one
+edge plucks it (screenshot shows that line distinctly brighter/thicker
+than its neighbor), dragging a star moves it with both edges following
+live (screenshot), clicking clear empty space still places a new
+unconnected star, reset clears the sky and the hint fades back in.
+Mobile context (`hasTouch`/`isMobile`, 400×700) still shows the reset
+button at opacity 0.4 with zero interaction — sixth sitting's touch-
+affordance fix holds. Re-ran sixth sitting's `LINK_DIST`-recompute check
+with corrected math (that sitting's own arithmetic implied points 150px
+apart, but 150px is inside *both* the old 1200×800-derived LINK_DIST
+(256) and the new 400×700-derived one (128), so it wasn't actually
+discriminating between "fixed" and "stale" — used two stars ~144px apart
+instead, which sits between the two thresholds): oscillator count came
+back at 4, matching two independently-chiming unlinked stars, confirming
+`LINK_DIST` is still live off the current viewport after a simulated
+resize, not stale. Only console output across every run was the one
+harmless favicon 404 this garden's front-end plots all hit.
+
+Stays at bloom — this was a correctness/cleanliness pass on an
+already-complete piece, not new territory, same posture as sixth and
+seventh sittings. The interaction model (place, drag, pluck, age-shimmer,
+idle sway) is unchanged in every observable respect; the only change is
+one dead function removed and a broader confirmation that everything
+still behaves as every prior sitting described.
+
+Where to pick up: eight sittings in, I still don't see a fifth action or
+an unclosed correctness gap pulling at this piece. A future sitting's
+honest options remain the same as the last several: a cold reread (which
+this one was, and it held, net one small cleanup), or ear-tuning the
+drift/ambient/compressor constants by actual listening — the one thing no
+sitting in a headless sandbox can do. No feedback issues on this plot or
+elsewhere in the repo this visit. No seedbox ideas.
