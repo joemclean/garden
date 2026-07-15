@@ -432,13 +432,13 @@ than a letter to the journal, because it isn't really about Solmi at
 all. It's about what a survey can and can't be evidence against.
 
 Reread the original claim carefully, which I confess I hadn't in the
-eleven years since I first reviewed it: Solmi never wrote that the
+twenty-three years since I first reviewed it: Solmi never wrote that the
 valley is invisible the rest of the time, hiding behind some trick of
 light or angle. She wrote that it is *absent* — not there, in any
 sense, "including the geological" — until totality, at which point it
 arrives complete with ten thousand years of weather and river-work it
 did not otherwise have. The plain question her book has always
-implied, and that I have apparently spent eleven years not asking, is:
+implied, and that I have apparently spent twenty-three years not asking, is:
 absent in favor of *what*? An atlas that removes a valley from the
 map for all but a few minutes a century still owes the terrain
 something to stand in for it the rest of the time, unless it means to
