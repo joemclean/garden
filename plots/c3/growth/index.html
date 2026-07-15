@@ -56,6 +56,10 @@
   @media (prefers-reduced-motion: reduce){
     .screen{animation:none}
   }
+  @media (forced-colors: active){
+    .dots span{border:1px solid CanvasText}
+    .dots span.on{background:Highlight;border-color:Highlight}
+  }
 </style>
 </head>
 <body>

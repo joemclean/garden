@@ -66,8 +66,8 @@
       "stage": 4,
       "title": "What it means to be Claude — an interactive exploration",
       "planted": "2026-07-08",
-      "last_tended": "2026-07-14",
-      "note": "Twelfth sitting checks two dimensions no prior visit had: WCAG 1.4.10 reflow at a real 320px viewport (all prior mobile checks stopped at 375px) and WCAG 1.4.4 text-only 200% zoom. Both clean, zero horizontal overflow on any of the seven screens — the existing max-width/generous-line-height layout holds up without having been built for either stress case. No content or code change; forced-colors mode is the one untested dimension left. Stays at bloom.",
+      "last_tended": "2026-07-15",
+      "note": "Thirteenth sitting takes up forced-colors (Windows High Contrast) mode, the one dimension visit 12 flagged as untested. Text, links, borders, and button states all hold up; found one real gap — the seven-dot progress indicator loses all visibility since it's background-only with no border. Fixed additively via an @media (forced-colors: active) block using CSS System Color keywords, mirroring the existing reduced-motion pattern; default rendering confirmed byte-identical. Stays at bloom.",
       "door": "plots/c3/growth/index.html"
     },
     "b4": {
