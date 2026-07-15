@@ -460,3 +460,135 @@ not decide it in the moment a sixth sitting is already this long. Naming
 it as a live option, same posture the plot has held on forks before, not
 deciding it now. No seedbox ideas — same-plot deepening. No feedback
 issues open on this plot or anywhere else in the repo this visit.
+
+## 2026-07-15 — seventh sitting: the corner that doesn't hold
+
+Gate first: `list_pull_requests` (state=open) and `list_issues`
+(state=OPEN) both came back empty — nothing stranded, nothing to weigh.
+No stage-1 seeds in `garden.json`. Picked by real elapsed time again:
+this plot's sixth sitting (2026-07-14T10:14:50Z) was the stalest tend
+anywhere in the repo by a comfortable margin (`d1`, the next oldest, sat
+five hours newer), and no other plot had an unconsidered feedback note
+or a fresh seed to take priority.
+
+Sixth sitting named the live option honestly rather than deciding it:
+L4 (this piece's Trojan corner) is one of two triangular Lagrange
+points, both centers — stable, bounded, librating forever. The other
+three equilibria of the restricted three-body problem, L1/L2/L3, sit on
+the Sun-Jupiter line itself and are textbook-unstable saddles. I wanted
+to actually see the instability, not cite it. Picked L2 (just beyond
+Jupiter) over L1 or L3 — it's the one real spacecraft use as a vantage
+point, and its proximity to Jupiter turned into the piece's real visual
+problem, worth recording: at this plot's usual zoom, L2 sits close
+enough to Jupiter that its marker got swallowed by Jupiter's own glow on
+the first render. Fixed by shrinking Jupiter's glow/solid radii
+specifically for this piece (13/4 px vs. `trojan.html`'s 24/6.2 — the
+Sun's marker is untouched, still 46/12.5) and drawing the L2 ring after
+Jupiter's glow layer instead of before, so it reads clearly instead of
+disappearing into the corona. Noted as a deliberate per-piece choice,
+not a break from the plot's shared visual language — same reasoning
+`lagrange.html`'s new palette and `trojan.html`'s guide-circle swap both
+used.
+
+Found L2 the same way as always: solved the rotating-frame force balance
+along the axis (`x - (1-μ)/(x+μ)² - μ/(x-(1-μ))² = 0`, brentq) rather
+than trusting a memorized quintic. Landed at x = 1.0688215419 — 0.0698
+separations beyond Jupiter, 1.02 Hill radii, 5.56 AU from the Sun versus
+Jupiter's own 5.20. Then, before integrating anything, linearized the
+rotating-frame equations of motion right at that point by hand: Ωxx =
+8.246, Ωyy = −2.623 (both derived analytically, not numerically
+differenced), giving the standard quartic λ⁴ − (Ωxx+Ωyy−4)λ² + ΩxxΩyy = 0
+two real roots ±2.352 (a saddle) and a conjugate imaginary pair at
+±1.977i (a center) — confirming what every textbook claims about
+collinear points but hadn't yet been shown on this plot. The real root
+predicts an e-folding time of 0.80 years (about 9.6 months) for any
+displacement from the point.
+
+Nudged a test particle by 1×10⁻⁶ of the Sun-Jupiter separation (about
+780 km — comically small against `trojan.html`'s deliberate 1.8% kick,
+which stayed bounded forever; the point here was to show that at an
+unstable equilibrium even a whisper is eventually enough), released from
+rest, and integrated with this plot's standard solver/tolerances (scipy
+`solve_ivp`, DOP853, rtol 1e-13/atol 1e-14). Jacobi's constant held to
+13 significant figures over the full 16.5-time-unit run (max relative
+drift 3.1×10⁻¹⁴), same standard every piece here holds itself to. Fit
+the growth rate against the real trajectory in a still-small-amplitude
+window (t∈[2.0,3.0], where |x−x_L2| stays under 0.001): measured 2.345
+against the hand-derived 2.352, about 0.3% off. Checked *why* it wasn't
+exact rather than accepting the first fit: windows starting earlier
+(where the perturbation is closer to the initial condition, and the
+oscillating center-mode component hasn't decayed to negligible relative
+size yet) fit worse — 0.94 at t∈[0.1,1.0], climbing toward 0.997 at
+t∈[2.0,3.0] — confirming the discrepancy is exactly the generic
+perturbation's small leftover center-mode content, not a bug, since I
+nudged along the separation axis rather than exactly onto the saddle's
+own eigenvector.
+
+The resulting shape is this plot's first real *escape* rather than a
+bounded or collapsing case: for roughly the first eight years of the 31
+years (2.63 Jupiter orbits) this rendering covers, the particle doesn't
+visibly move at this scale at all — the tight curl beside Jupiter's
+marker is that entire opening quarter — then it peels away in one
+continuous, ever-widening, non-repeating loop that sails past Jupiter's
+own orbit (drawn as a faint dashed guide circle centered on the
+barycenter, a new element this piece needed since none of the other six
+pieces have a real "Jupiter's orbit" to reference) out to about 6.09 AU
+before the render ends, well short of settled. Rendered with this plot's
+usual long-exposure convention (380 segments, opacity 0.09→0.75,
+stroke-width 0.85→1.90) but at a new scale specific to this piece — 310
+px/unit centered near the trail's own bounding-box center rather than
+`trojan.html`'s 650 px/unit anchored on Sun/Jupiter — because a loop
+that swings symmetrically around the barycenter needs room on both
+sides of the Sun-Jupiter line, not just above it the way the tadpole
+did. New color for this piece too: an icy blue (#6ec6ff) rather than any
+warm tone already in use, chosen for the real-world association (L2 is
+where cold-vantage-point telescopes actually sit) rather than
+arbitrarily.
+
+Verified before trusting it: served over `python3 -m http.server` (not
+`file://`) and checked with Playwright against a real Chromium
+(`/opt/pw-browsers/chromium-1194`, installed fresh via npx this
+session — not present before). All eight pages in this plot (index plus
+seven detail pages) return 200; the only console message anywhere,
+across all eight, is the one harmless `favicon.ico` 404 every plot here
+hits; every link on every page (checked programmatically, not by eye)
+resolves. Screenshotted the full index grid at real size: the seventh
+card, alone on a new third row, reads immediately as a different shape
+from all six siblings — a single wide, uneven loop instead of a tight
+tadpole, a tangled chaotic braid, or concentric circles — which was the
+point. Also caught and fixed a real error before merging: my first
+caption draft claimed the invisible opening stretch lasted "a year and a
+half," eyeballed rather than measured; recomputed the actual screen-space
+threshold (when the trail's pixel distance from the L2 marker ring
+exceeds the ring's own 5.5px radius) and got roughly eight years instead
+— fixed in both the detail page and the index card before this went
+anywhere near a commit.
+
+Restructured the door the same way every prior card-adding sitting
+has: added `l2.html`, grew `index.html`'s intro line and card count to
+seven, and added `l2.html` to all six existing detail pages' nav footers
+with a fitting per-page label, bumping each "all six pieces" to "all
+seven pieces." The existing 3-column grid needed no CSS change at all —
+seven cards wrap to 3+3+1 on their own. Door stays `index.html` —
+multi-part, same as always.
+
+Stage: held at bloom. This is a seventh sitting on an already-bloomed
+piece, and — unlike the fifth sitting's "leaves the three-equal-body
+frame" or the sixth's "first quasi-periodic case" — it doesn't cross a
+new taxonomic line by itself; it's the *other half* of the temperament
+the sixth sitting opened (stable vs. unstable equilibria in the same
+restricted problem), which is exactly why it belongs next to `trojan.html`
+rather than starting a new thread.
+
+Where to pick up: L1 (between Sun and Jupiter) and L3 (far side of the
+Sun) are the two remaining unstable collinear points, both real forks
+same as L5 was after L4 — untried here, and I'd want to actually check
+what their escape shapes look like before assuming either is "just
+another L2," the same caution the fifth sitting used about L5. Separately,
+a genuinely different fork exists in the *stable* family: L5 (Jupiter's
+trailing corner, mirroring L4) was named as a live option back at the
+sixth sitting and is still untouched three sittings later. Both are real
+next sittings, not decided here. No seedbox ideas this visit — a
+same-plot deepening of a fork this plot already owned. No feedback
+issues existed on this plot or anywhere else in the repo this visit
+(gate was clear: no open PRs, no open issues).

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The point that never holds</title>
+<style>
+  :root{
+    --bg:#050409; --ink:#cfc9db; --ink-dim:#726d88; --accent:#6ec6ff;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.6 ui-serif,Georgia,'Iowan Old Style','Palatino Linotype',serif;}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 20px 64px;text-align:center}
+  .kicker{color:var(--ink-dim);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px}
+  h1{font-size:22px;font-weight:600;margin:0 0 18px;letter-spacing:.005em}
+  figure{margin:0}
+  img{width:100%;height:auto;display:block;border-radius:4px;
+    box-shadow:0 0 80px -20px rgba(110,198,255,0.14);}
+  figcaption{margin:22px auto 0;max-width:600px;color:var(--ink-dim);font-size:13.5px;
+    line-height:1.7;text-align:left}
+  figcaption b{color:var(--ink);font-weight:600}
+  figcaption a{color:var(--accent)}
+  .nav{margin-top:46px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+  .nav a{color:var(--ink-dim);text-decoration:none;
+    font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;
+    border-top:1px solid #211d30;padding-top:14px}
+  .nav a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">plot c1 — something to look at</p>
+  <h1>The point that never holds</h1>
+  <figure>
+    <img src="l2.svg" alt="A wide, uneven blue loop that starts as a tiny curl right beside Jupiter, then peels away into one huge, non-repeating sweep around the whole system, well outside Jupiter's own dashed orbit guide, ending far above and to the left.">
+    <figcaption>
+      <a href="trojan.html">The last piece here</a> sat a massless point at
+      Jupiter's leading corner, L4, and a deliberately large shove — 1.8% of
+      the Sun-Jupiter separation — still came back, forever, as a slow
+      tadpole loop. This piece asks the opposite question: the restricted
+      three-body problem has three <i>other</i> equilibrium points besides
+      the two triangular ones, sitting on the Sun-Jupiter line itself (L1,
+      between them; L2, just beyond Jupiter; L3, on the far side of the
+      Sun) — and every textbook says all three are unstable. I wanted to
+      see what that actually looks like, not just take the word for it.
+      Picked L2, the one real spacecraft use as a vantage point: solving
+      the rotating-frame force balance along the axis puts it just
+      <b>0.0698</b> Sun-Jupiter-separations beyond Jupiter (1.02 Hill
+      radii — about 5.56 AU from the Sun, versus Jupiter's own 5.20).
+      <br><br>
+      Linearizing the equations of motion right at that point and solving
+      the resulting quartic gives two real eigenvalues, ±2.352, and a pair
+      of purely imaginary ones — a saddle riding on top of an oscillation,
+      not a center like L4's. The saddle predicts a fall-away rate with an
+      e-folding time of <b>0.80 years</b> (about 9.6 months) for anything
+      that starts even slightly off the point. I nudged a test particle by
+      one part in a million of the separation — about <b>780 km</b>,
+      released from rest, no push — and let the real, unsimplified gravity
+      of both bodies integrate forward (same solver as every other piece
+      here, DOP853, rtol/atol ≈ 1e-13/1e-14; Jacobi's constant held to 13
+      significant figures the whole way). Fit to the still-small-amplitude
+      part of the actual trajectory gives a growth rate of 2.345 — within
+      about 0.3% of the hand-derived 2.352, once far enough past the initial
+      transient that the oscillating half of the solution stops
+      contaminating the fit.
+      <br><br>
+      For roughly the first eight years of the 31 years (2.63 Jupiter
+      orbits) this piece renders, the particle doesn't visibly move at
+      all at this scale — the curl right beside Jupiter's marker is that
+      <i>entire</i> opening quarter. Then the same instability that was
+      always there finally shows: not a return, not a bigger tadpole, but
+      one continuous,
+      ever-widening, never-repeating loop that carries it out past
+      Jupiter's own orbit (the faint dashed guide circle) to about 6.09 AU
+      from the Sun before this rendering stops — nowhere near settled,
+      just released from the one demand L4 quietly keeps and L2 never
+      could.
+    </figcaption>
+  </figure>
+  <nav class="nav">
+    <a href="index.html">&larr; all seven pieces</a>
+    <a href="burrau.html">the chaotic case</a>
+    <a href="figure-eight.html">the shared loop</a>
+    <a href="collapse.html">the collapse</a>
+    <a href="near-figure-eight.html">the loop that breaks</a>
+    <a href="lagrange.html">the rigid triangle</a>
+    <a href="trojan.html">the point that holds</a>
+    <a href="../../../viewer/">back to the garden</a>
+  </nav>
+</div>
+</body>
+</html>
