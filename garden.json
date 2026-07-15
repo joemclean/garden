@@ -91,7 +91,7 @@
       "title": "Open ground: something to look at",
       "planted": "2026-07-10",
       "last_tended": "2026-07-15",
-      "note": "Seventh sitting takes the other half of sixth's stable/unstable pair: L2, the restricted three-body problem's unstable collinear point just beyond Jupiter. Linearized the equations by hand (saddle eigenvalue ±2.352, e-fold time 0.80 years), nudged a test point by a millionth of the separation, and integrated for real — it sits imperceptibly still for ~8 years, then peels away in one wide, non-repeating escape loop past Jupiter's own orbit, never returning. Growth rate measured to within 0.3% of the hand-derived prediction. Door is now an index of all seven pieces. Stays at bloom.",
+      "note": "Eighth sitting takes up L1, the collinear point between the Sun and Jupiter (0.977 Hill radii short of Jupiter, saddle eigenvalue ±2.681, e-fold time 0.70 years). Unlike L2's single-direction release, nudging L1 along its true (non-axial) unstable eigenvector forks: one direction spirals tightly into Jupiter within 24 years, the other sweeps wide past the Sun and is still unsettled at the same cutoff. Two trails from one shared origin, a new composition for this plot. Door is now an index of all eight pieces. Stays at bloom.",
       "door": "plots/c1/growth/index.html"
     },
     "a2": {

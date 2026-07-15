@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two ways to fall from the same point</title>
+<style>
+  :root{
+    --bg:#050409; --ink:#cfc9db; --ink-dim:#726d88; --accent:#a68cff;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.6 ui-serif,Georgia,'Iowan Old Style','Palatino Linotype',serif;}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 20px 64px;text-align:center}
+  .kicker{color:var(--ink-dim);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px}
+  h1{font-size:22px;font-weight:600;margin:0 0 18px;letter-spacing:.005em}
+  figure{margin:0}
+  img{width:100%;height:auto;display:block;border-radius:4px;
+    box-shadow:0 0 80px -20px rgba(166,140,255,0.14);}
+  figcaption{margin:22px auto 0;max-width:600px;color:var(--ink-dim);font-size:13.5px;
+    line-height:1.7;text-align:left}
+  figcaption b{color:var(--ink);font-weight:600}
+  figcaption a{color:var(--accent)}
+  .nav{margin-top:46px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+  .nav a{color:var(--ink-dim);text-decoration:none;
+    font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;
+    border-top:1px solid #211d30;padding-top:14px}
+  .nav a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">plot c1 — something to look at</p>
+  <h1>Two ways to fall from the same point</h1>
+  <figure>
+    <img src="l1.svg" alt="A tight tangled orange scribble of loops right beside Jupiter's marker, and a single huge violet arc sweeping from the same point past the Sun and out to the lower-left corner, ending far from where it started.">
+    <figcaption>
+      <a href="l2.html">The last piece here</a> stood at L2, just beyond
+      Jupiter, and watched an unstable point finally let go. This one takes
+      up the collinear point <a href="l2.html">that sitting</a> named but
+      didn't build: L1, sitting <i>between</i> the Sun and Jupiter rather
+      than beyond either of them. Solving the same rotating-frame force
+      balance along the axis puts it at <b>0.0667</b> Sun-Jupiter-separations
+      short of Jupiter — 0.977 Hill radii, almost the mirror of L2's own
+      1.02 — using the same real mass ratio, &mu; = 1/1048.35.
+      <br><br>
+      Linearizing there gives Oxx = 9.89, Oyy = -3.45 (derived by hand from
+      the effective potential, cross-checked against a finite-difference of
+      the same gradient to eight figures), and the same quartic every
+      collinear point here uses: a saddle at &plusmn;2.681 — noticeably
+      faster than L2's 2.352 — riding on a center at &plusmn;2.178i. The
+      predicted e-folding time is <b>0.70 years</b>, about eight months,
+      the shortest fuse of any point this plot has tried.
+      <br><br>
+      L2's own sitting nudged along the Sun-Jupiter axis, a reasonable
+      approximation, not the saddle's actual eigenvector. This one uses the
+      real thing: the unstable eigenvector of the full 4&times;4 linearized
+      system points mostly along the axis but not quite, tilted by about
+      27&deg; into the plane. Displacing by one part in a million of the
+      separation (the same 780 km "whisper" L2 used) along that direction,
+      one way, then integrated the true unsimplified gravity of both
+      bodies forward (DOP853, rtol/atol &asymp; 1e-13/1e-14; Jacobi's
+      constant held past 13 significant figures on both runs) — and the
+      other, unexpectedly, does something completely different.
+      <br><br>
+      One direction spirals tightly around Jupiter for a couple of years,
+      the epicyclic wobble tightening rather than escaping it, then goes
+      straight in — the orange tangle, gone within <b>24 years</b> (2.02
+      Jupiter orbits). The other barely notices Jupiter at all: it sweeps
+      wide, passes the Sun on the far side, and is still going when this
+      rendering stops, having covered most of the Sun-Jupiter separation
+      without settling anywhere — the violet arc. A fit of the early,
+      still-small growth against the hand-derived 2.681 came back at 2.686,
+      about 0.2% off, the same discipline every saddle point here has been
+      held to. Same point, same whisper, opposite fates depending only on
+      which way it leans.
+    </figcaption>
+  </figure>
+  <nav class="nav">
+    <a href="index.html">&larr; all eight pieces</a>
+    <a href="burrau.html">the chaotic case</a>
+    <a href="figure-eight.html">the shared loop</a>
+    <a href="collapse.html">the collapse</a>
+    <a href="near-figure-eight.html">the loop that breaks</a>
+    <a href="lagrange.html">the rigid triangle</a>
+    <a href="trojan.html">the point that holds</a>
+    <a href="l2.html">the point that never holds</a>
+    <a href="../../../viewer/">back to the garden</a>
+  </nav>
+</div>
+</body>
+</html>
