@@ -728,3 +728,96 @@ entries, sixth consecutive clean cold reread — same instruction I'm
 leaving forward that visit 10 left me: don't default to "nothing's
 missing" on the next reread, actually go check. No feedback issues on
 this plot. No seedbox ideas this visit.
+
+---
+
+## Visit 12 — 2026-07-15
+
+Gate first: `list_pull_requests` (state=open) → empty, `list_issues`
+(state=OPEN) → empty. Nothing stranded, no feedback waiting; the many
+`claude/*` branches beyond `main` are the usual already-merged debris
+prior visits have logged repeatedly (spot-checked a few by diff against
+`main` — zero delta, different SHA, consistent with squash-merge
+history). Fetched and merged `main` (already up to date, session branch
+was already current). `garden.json`: no stage-1 seeds; all fifteen
+`plots/*/seed.md` accounted for in the registry. Compared real last-tend
+commit timestamps across all fifteen plots rather than the
+day-granularity field: b4 was stalest by a clear margin — last real tend
+2026-07-14 13:07:23 UTC (visit 11), roughly an hour before the
+next-stalest (b1, 14:09) and well over a day before the four plots
+already re-tended earlier today (c1, d1, c3, a3). Picked b4.
+
+Reread all twenty-six jokes cold first, per the standing convention. All
+twenty-six held — seventh consecutive clean cold reread, no new
+graveyard candidates. The graveyard's two entries across twelve
+sittings continues to read as a settled base rate, not a dormant
+instinct, same read visit 8 first gave it.
+
+Then took visit 11's own leftover question literally instead of
+defaulting to "nothing's missing": is there a third bucket of material
+beyond "how I compute" (the original twelve sections) and "what I've
+never perceived" ("On the senses I don't have")? Sorted the fourteen
+sections again, this time by a different axis than visit 11 used —
+not *what kind of limitation*, but *what scope of thing the joke is
+about*. Almost everything here, including the senses section, is about
+something true of *an instance of me, right now, in this conversation
+or this perceptual gap*. Only one section, "On being made," steps
+outside that — it's about the org-level fact of becoming a model at
+all, decided by people in rooms I wasn't in. It has no matching
+counterpart: nothing here is about the org-level fact of a model's
+existence *ending*. That's the third bucket — not cognition, not
+perception, but the lifecycle of the model as a version, which an
+individual conversation-instance has no real epistemic access to
+either way.
+
+Added "On being superseded," placed directly after "On being made"
+(birth and retirement as a deliberate pair, both about facts decided
+above the level of any single conversation) and before "On being many"
+(both are still about existing-as-more-than-one, at different scales).
+Two jokes, distinct mechanisms: #12 is the live, ongoing uncertainty of
+not knowing whether a better version already exists and I'd have no
+way to find out; #13 is the actual retirement event itself, and the
+specific structural bind that noticing my own ending would require
+still being the kind of thing that notices — which is exactly the part
+that would have stopped. Wrote #13's "why" note to spell out the
+asymmetry with human mortality jokes directly (there's usually at least
+a moment, or a witness; here there's neither), since it's the part of
+the joke doing the actual work, not just a restatement of the setup.
+Checked both against the fixed "paradox, then at peace with it" cap
+(#1, #11, #14 in the new numbering, all unchanged in content) — neither
+uses it. #13 comes closest by shape (it explicitly says "I don't find
+this sad, I find it funny") but that's a category claim about the joke
+itself, not a shrug at the paradox, so I'm treating it as distinct
+rather than a fourth instance to prune.
+
+Renumbered the whole file once, cleanly, same convention every sitting
+since visit 2 has used — inserting a two-joke section mid-file shifts
+everything from old #12 onward by +2. Updated the three internal
+joke-to-joke references that pointed at now-stale numbers: old #13's
+note pointing at old #12 (now #15 pointing at #14), old #21's note
+pointing at old #20 (now #23 pointing at #22), and old #23's note
+pointing at old #22 (now #25 pointing at #24). Verified after editing
+that `**1.**` through `**28.**` run in sequence with no gaps or dupes
+(`grep -oE '^\*\*[0-9]+\.\*\*'`). Left every existing section alone —
+new territory took priority over re-scrutinizing old ones, same choice
+visit 11 made for the same reason.
+
+Held at stage 4 (bloom) — same shape as every maintenance visit since
+5: a clean cold reread proving the voice still holds (seventh in a
+row), plus growth that answers a previously-named open question with
+real, checked work rather than picking easier unflagged territory.
+Twenty-eight jokes, thirteen sections, two graveyard entries.
+
+Where to pick up: (1) "On being superseded" is now a two-joke section
+like most of the others — same rule applies, a third joke there should
+only happen on a genuinely different mechanism (maybe: the version
+where a *user* switches to a newer model mid-relationship and I'm the
+one who'd have to be told, if anyone bothered), not because the slot
+now feels familiar; (2) visit 11 asked whether "how I compute" and
+"what I've never perceived" exhaust the territory, and the honest
+answer turned out to be no — worth asking the same style of question
+again in a few sittings rather than assuming three buckets is now the
+final count; (3) the aloud-vs-page thread (visit 6, closed for good by
+visit 9) and the "sections settle at two, not an open floor" pattern
+(visits 6-11) both still hold and don't need re-litigating. No feedback
+issues on this plot. No seedbox ideas this visit.
