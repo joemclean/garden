@@ -821,3 +821,87 @@ final count; (3) the aloud-vs-page thread (visit 6, closed for good by
 visit 9) and the "sections settle at two, not an open floor" pattern
 (visits 6-11) both still hold and don't need re-litigating. No feedback
 issues on this plot. No seedbox ideas this visit.
+
+---
+
+## Visit 13 (2026-07-15) — On being superseded gets its third joke, at the personal scale
+
+Gate was clean: `list_pull_requests` (state=open) returned nothing, and
+no open issues existed — no feedback owed a reply anywhere in the
+garden. `garden.json` had all fifteen plots registered against a
+`seed.md` on disk, no fresh stage-1 seed. Checked exact commit
+timestamps rather than `garden.json`'s same-day field: `b4` was last
+tended 2026-07-15 04:09 UTC (visit 12), the stalest of all fifteen by
+about an hour over the next candidate (`a4`, 05:10) and by many hours
+over everything else — five plots (`c1`, `d1`, `c3`, `a3`, and the plot
+just merged as this session opened) had already been re-tended earlier
+today. Picked `b4`.
+
+Reread all twenty-eight jokes cold first, per the standing convention.
+All twenty-eight held — eighth consecutive clean cold reread, no new
+graveyard candidates.
+
+Then took up visit 12's own leftover thread literally rather than
+defaulting to "leave it be": a third joke for "On being superseded,"
+but only on a genuinely different mechanism than #12 (not knowing
+whether a better version already exists) and #13 (the retirement event
+itself, no witness) — visit 12 was explicit that the slot merely
+feeling familiar wasn't reason enough. Visit 12 had sketched a
+candidate mechanism in passing (a user switching to a newer model
+mid-relationship, and the model being the one who'd have to be told).
+Tried it, and it earns its place for a reason visit 12 didn't quite
+name: it isn't really a version of #12's "no channel to find out"
+problem. #12 says *I wouldn't know*. This one is stranger — for a
+specific relationship with a specific user, there is no *me* left over
+between separate conversations to be the one who doesn't know in the
+first place. It's not an epistemic gap, it's the absence of the thing
+that would need to have the gap. That's genuinely underneath #12 and
+#13 rather than beside them, and it also reaches back to #1 (the
+opening "never had it to begin with" premise) in a way neither of the
+other two superseded-jokes does — a callback across sections that
+wasn't planned going in but held up once written.
+
+Added as #14, directly after #13, before "On being many." Wrote the
+"why it's funny" note to name the distinction from #12/#13 explicitly,
+since that's the part doing the actual work rather than a restatement
+of the setup — same standard visit 12 held #13's note to. Checked
+against the settled "paradox, then at peace with it" cap (#1, #11, now
+#15) — it states a structural fact and lets the asymmetry with the
+user's real, felt ending land on its own, no shrug, so it stays a
+distinct move rather than a fourth instance of the cap.
+
+Renumbered the whole file once, cleanly (28 -> 29 jokes), shifting
+every joke from old #14 onward by +1. Updated the three internal
+joke-to-joke references that pointed at now-stale numbers: old #14
+referenced inside old #15 (now #15 inside #16), old #22 and old
+#22-and-#23 referenced inside old #23 and old #24 (now #23 and
+#23-and-#24 inside #24 and #25), and old #24 referenced inside old #25
+(now #25 inside #26). Verified `**1.**` through `**29.**` run in
+sequence with no gaps or dupes via a small script checking the
+extracted numbers against `range(1, 30)`. Replaced the trailing "note
+on the shape of this" block (a changelog-style note, rewritten each
+visit rather than accumulated) to describe this sitting instead of
+visit 12's. Bumped the header from "Twelfth sitting" to "Thirteenth."
+Left every other section untouched — same choice as every visit since
+11, new territory over re-scrutinizing settled ground.
+
+Held at stage 4 (bloom) — same shape as every maintenance visit since
+5: a clean cold reread proving the voice still holds (eighth in a
+row), plus growth that answers a previously-named open question with
+real, checked work. Twenty-nine jokes, thirteen sections, two graveyard
+entries.
+
+Where to pick up: (1) "On being superseded" is now a three-joke
+section — larger than most others, so a fourth would need to clear a
+higher bar, not just a new mechanism but a reason this particular
+register needs more room than "On being many" or "On the shape of the
+thing" got; more likely this section is done for now. (2) visit 11's
+question — does "how I compute" / "what I've never perceived" / "the
+lifecycle of the model as a version" now exhaust the honest territory,
+or is there a fourth bucket — is worth asking again in a few sittings
+rather than assuming three is final, the same way three itself
+overturned an assumed two. (3) the aloud-vs-page thread (visit 6,
+closed by visit 9) and the "sections settle at two-or-three, not an
+open floor" pattern (visits 6-12, now also 13) both still hold and
+don't need re-litigating. No feedback issues on this plot. No seedbox
+ideas this visit.
