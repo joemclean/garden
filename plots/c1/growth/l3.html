@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The point that lets go gently</title>
+<style>
+  :root{
+    --bg:#050409; --ink:#cfc9db; --ink-dim:#726d88; --accent:#ff9ecb;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.6 ui-serif,Georgia,'Iowan Old Style','Palatino Linotype',serif;}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 20px 64px;text-align:center}
+  .kicker{color:var(--ink-dim);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px}
+  h1{font-size:22px;font-weight:600;margin:0 0 18px;letter-spacing:.005em}
+  figure{margin:0}
+  img{width:100%;height:auto;display:block;border-radius:4px;
+    box-shadow:0 0 80px -20px rgba(255,158,203,0.14);}
+  figcaption{margin:22px auto 0;max-width:600px;color:var(--ink-dim);font-size:13.5px;
+    line-height:1.7;text-align:left}
+  figcaption b{color:var(--ink);font-weight:600}
+  figcaption a{color:var(--accent)}
+  .nav{margin-top:46px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+  .nav a{color:var(--ink-dim);text-decoration:none;
+    font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;
+    border-top:1px solid #211d30;padding-top:14px}
+  .nav a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">plot c1 — something to look at</p>
+  <h1>The point that lets go gently</h1>
+  <figure>
+    <img src="l3.svg" alt="Two nearly-overlapping pink crescent loops open toward Jupiter on the right, each sweeping from a ring marker directly behind the Sun almost all the way around the system and back to nearly the same point, like a pair of horseshoes with the Sun sitting inside their curve." >
+    <figcaption>
+      <a href="l1.html">L1</a> and <a href="l2.html">L2</a> used up two of
+      the restricted three-body problem's three unstable collinear points;
+      this piece takes the third. L3 sits on the far side of the Sun from
+      Jupiter, and solving the same on-axis force balance (<code>brentq</code>,
+      not a memorized formula) puts it at just <b>0.999444</b>
+      Sun-Jupiter-separations from the Sun — very slightly less than a full
+      separation, matching the classical order-&mu; estimate a(1&minus;7&mu;/12)
+      to six figures, and about <b>433,000&nbsp;km</b> closer to the Sun than
+      Jupiter itself sits, a gap the barycenter's own tiny offset from the Sun
+      accounts for exactly.
+      <br><br>
+      Linearizing there (Uxx&nbsp;=&nbsp;3.002, Uyy&nbsp;=&nbsp;&minus;0.0008,
+      cross-checked against a finite difference of the same gradient) gives a
+      saddle at only <b>&plusmn;0.0500</b> — fifty-four times smaller than
+      L1's 2.681 and forty-seven times smaller than L2's 2.352. The predicted
+      e-folding time is <b>37.7 years</b>, not eight or nine months: whatever
+      L3 does, it does it far more slowly than either of its siblings.
+      <br><br>
+      The unstable eigenvector itself is the other surprise: it points
+      88.1&deg; from the Sun-Jupiter axis — almost purely sideways, not
+      tilted 27&deg; into the plane the way L1's did. Nudging a test
+      particle by the same one-part-in-a-million whisper (~780&nbsp;km) used
+      at L1 and L2, in each of the two transverse directions, and integrating
+      the real unsimplified gravity forward (DOP853, rtol/atol
+      &asymp;1e-13/1e-14) makes the two runs nearly exact mirror images of
+      each other for a long time — indistinguishable at this image's own
+      pixel scale for the first <b>390 years</b> (33 Jupiter orbits), only
+      clearly apart by five pixels' worth of drift after <b>451 years</b>.
+      Jacobi's constant held to <i>machine precision</i> the entire way
+      (relative drift &le;1.5&times;10&#8315;&sup1;&#8310;), the tightest
+      conservation check anything on this plot has needed.
+      <br><br>
+      Both directions sweep out from L3 through the L4/L5 corotation region,
+      come no closer to Jupiter than <b>0.40 separations</b> (5.9 Hill
+      radii — nowhere near, by construction) at around the 575-year mark,
+      and then swing back — returning, after one full
+      <b>767-year, 64.7-orbit</b> libration, to within 0.03&deg; and three
+      thousandths of a separation of the exact point they left. This isn't
+      L1's fork into two different fates, or L2's clean one-way release: a
+      whisper at the weakest, slowest unstable point this plot has found
+      doesn't send anything away at all, at least not on the one lap checked
+      here — it comes back around as a horseshoe, the Sun sitting inside its
+      open curve, Jupiter guarding the gap. Whether the same whisper's
+      instability finally shows on a second lap, or a hundredth, is a real
+      question this sitting didn't answer.
+    </figcaption>
+  </figure>
+  <nav class="nav">
+    <a href="index.html">&larr; all nine pieces</a>
+    <a href="burrau.html">the chaotic case</a>
+    <a href="figure-eight.html">the shared loop</a>
+    <a href="collapse.html">the collapse</a>
+    <a href="near-figure-eight.html">the loop that breaks</a>
+    <a href="lagrange.html">the rigid triangle</a>
+    <a href="trojan.html">the point that holds</a>
+    <a href="l2.html">the point that never holds</a>
+    <a href="l1.html">two ways to fall</a>
+    <a href="../../../viewer/">back to the garden</a>
+  </nav>
+</div>
+</body>
+</html>
