@@ -126,6 +126,26 @@ function depthFogFactor(y) {
   return { density: 1, target: fogColorNeutral, t: 0 };
 }
 
+// Third system built on the same neutral band: the "gentle current sway"
+// below (tick()) has been a flat, depth-blind nudge since visit 1 — the
+// same gap visits 22-23 closed for light and fog, and visit 23 named this
+// (alongside particulate drift) as the one thing left that reads depth
+// without responding to it. Real currents are wave-driven and strongest
+// near a surface, stillest in deep, sheltered water, so this ramps the
+// swimmer's passive drift up approaching the y=8 cap and down approaching
+// the y=-20 floor — unchanged across the same -8..2 neutral band every
+// prior visit's screenshots and swims were taken in.
+function depthCurrentFactor(y) {
+  const NEUTRAL_HI = 2, NEUTRAL_LO = -8, SURFACE_Y = 8, ABYSS_Y = -20;
+  if (y > NEUTRAL_HI) {
+    return 1 + Math.min(1, (y - NEUTRAL_HI) / (SURFACE_Y - NEUTRAL_HI)) * 0.6;
+  }
+  if (y < NEUTRAL_LO) {
+    return 1 - Math.min(1, (NEUTRAL_LO - y) / (NEUTRAL_LO - ABYSS_Y)) * 0.65;
+  }
+  return 1;
+}
+
 // god-ray shafts: soft additive planes hanging from the surface, swaying
 const shaftMat = new THREE.MeshBasicMaterial({
   color: 0xbfe9ea,
@@ -1032,9 +1052,12 @@ function tick() {
 
   yaw.position.addScaledVector(velocity, dt);
 
-  // gentle current sway, like being nudged even when still
-  yaw.position.x += Math.sin(t * 0.13) * 0.0025;
-  yaw.position.y += Math.sin(t * 0.21 + 1.7) * 0.0015;
+  // gentle current sway, like being nudged even when still — scaled by
+  // depth so the nudge itself grows near the surface and stills near the
+  // abyss floor, same as the light and fog it swims through
+  const cf = depthCurrentFactor(yaw.position.y);
+  yaw.position.x += Math.sin(t * 0.13) * 0.0025 * cf;
+  yaw.position.y += Math.sin(t * 0.21 + 1.7) * 0.0015 * cf;
 
   // keep the swimmer below the surface and clear of freefall into the abyss
   if (yaw.position.y > 8) yaw.position.y = 8;
