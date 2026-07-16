@@ -35,7 +35,7 @@
       "title": "Undersea — a 3D swimming simulation",
       "planted": "2026-07-06",
       "last_tended": "2026-07-16",
-      "note": "Twenty-third visit takes up the one thread visit 22 left as 'worth a look': fog. Added a depthFogFactor mirroring the light factor's own neutral band, thinning and cooling the fog toward the y=8 surface, thickening and darkening it toward the y=-20 abyss floor, flat (byte-identical) everywhere prior visits actually looked. Verified numerically (exact at both caps and the neutral band), visually, and with a real Space/C-driven swim. Stays at bloom.",
+      "note": "Twenty-fourth visit closes the second of two threads visit 23 left open: current sway. Added a depthCurrentFactor, same neutral band as the light and fog factors, ramping the passive drift nudge up to 1.6x near the y=8 surface (wave-driven currents) and down to 0.35x near the y=-20 abyss floor (stiller deep water), flat everywhere prior visits actually swam. Verified numerically against the formula by hand at nine depths and with a real click-to-lock, key-driven swim. Only particulate drift is left unresponsive to depth. Stays at bloom.",
       "door": "plots/b3/growth/undersea.html"
     },
     "b1": {
