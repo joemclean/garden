@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aveth Terraces — Erosion</title>
+<style>
+  :root{ --bg:#0c0910; --ink:#cfc9db; --ink-dim:#726d88; --line:#221c30; }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);
+    font:15px/1.6 ui-serif,Georgia,'Iowan Old Style','Palatino Linotype',serif;}
+  .wrap{max-width:1100px;margin:0 auto;padding:40px 20px 48px;
+    display:flex;flex-direction:column;align-items:center;min-height:100%;}
+  .kicker{color:var(--ink-dim);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 10px;text-align:center}
+  h1{font-size:22px;font-weight:600;margin:0 0 6px;letter-spacing:.005em;text-align:center}
+  .sub{max-width:520px;margin:0 auto 28px;color:var(--ink-dim);font-size:13px;
+    line-height:1.7;text-align:center}
+  .frame{width:100%;border:1px solid var(--line);border-radius:6px;overflow:hidden;
+    background:#050409;box-shadow:0 20px 60px -20px rgba(0,0,0,.6);}
+  .frame img{display:block;width:100%;height:auto}
+  .controls{width:100%;max-width:640px;margin:22px auto 0;
+    display:flex;align-items:center;gap:14px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    font-size:12px;color:var(--ink-dim);}
+  .controls input[type=range]{flex:1;accent-color:#6a5a8a;}
+  #play{background:none;border:1px solid var(--line);color:var(--ink);border-radius:4px;
+    padding:5px 12px;cursor:pointer;font:inherit;}
+  #play:hover{border-color:#3a3352}
+  #label{min-width:78px;text-align:right}
+  .back{display:block;text-align:center;margin-top:40px;color:var(--ink-dim);text-decoration:none;
+    font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px}
+  .back:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">plot a4 — erosion</p>
+  <h1>Aveth Terraces</h1>
+  <p class="sub">
+    One landscape, weathered once an hour and never added to. Thirty epochs
+    so far — drag the scrubber or press play to watch what erode, silt,
+    crack, flood, overgrow, and subside have done to one invented place.
+  </p>
+  <div class="frame"><img id="shot" src="epoch-29.svg" alt="Aveth Terraces, current epoch"></div>
+  <div class="controls">
+    <span id="label">epoch 29</span>
+    <input id="scrub" type="range" min="0" max="29" value="29" step="1">
+    <button id="play" type="button">play</button>
+  </div>
+  <a class="back" href="../../../viewer/">&larr; back to the garden</a>
+</div>
+<script>
+  var LAST = 29;
+  var img = document.getElementById('shot');
+  var scrub = document.getElementById('scrub');
+  var label = document.getElementById('label');
+  var playBtn = document.getElementById('play');
+  var timer = null;
+
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function show(n){
+    img.src = 'epoch-' + pad(n) + '.svg';
+    label.textContent = 'epoch ' + n;
+    scrub.value = n;
+  }
+  scrub.addEventListener('input', function(){
+    stop();
+    show(parseInt(scrub.value, 10));
+  });
+  function stop(){
+    if (timer){ clearInterval(timer); timer = null; playBtn.textContent = 'play'; }
+  }
+  function play(){
+    var n = parseInt(scrub.value, 10);
+    if (n >= LAST) n = -1;
+    timer = setInterval(function(){
+      n += 1;
+      if (n > LAST){ stop(); return; }
+      show(n);
+    }, 900);
+    playBtn.textContent = 'pause';
+  }
+  playBtn.addEventListener('click', function(){
+    if (timer) stop(); else play();
+  });
+</script>
+</body>
+</html>
