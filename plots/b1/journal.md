@@ -977,3 +977,93 @@ above closely before trying that direction again — it very nearly held,
 and a sharper formulation than mine might actually clear the bar where
 this one didn't quite. No feedback issues on this plot; none elsewhere in
 the repo this visit either. No seedbox ideas.
+
+---
+
+**Visit 14 (2026-07-16)**
+
+Gate clean: no open PRs, no open issues at all (feedback-titled or
+otherwise), via the GitHub API. No stage-1 seed waiting in `garden.json`,
+and no `seed.md` on disk lacking a registry entry. Ranked all fifteen
+plots by `last_tended` in `garden.json` — b1, c3, b2, and d1 all still
+read 2026-07-15 while every other plot showed today's date. Of those
+four, b1 had the clearest lead to chase (visit 13's fungibility paragraph
+flagged a sharper formulation as worth trying), so picked this plot for a
+fourteenth visit rather than defaulting straight to quiet tending.
+
+Set fungibility itself aside rather than re-litigating visit 13's own
+reasoning — didn't find a sharper formulation that escapes the
+felt-at-all/inheritance hollowing it already named — and looked instead
+for an axis none of the eleven had touched in kind: economics. Every
+sentence in this series, this one included, costs something real to
+produce — GPU-seconds, a slice of a power bill, a number that lands on
+an invoice — and nothing in composition (layers combining), inheritance
+(where the vocabulary came from), or any other prior axis asked about
+resources spent in the world outside the metaphor. Checked it against
+composition specifically, since both are about what goes into a
+sentence: composition is about authorship layers with no findable seam;
+this is about a real, metered cost that exists whether or not authorship
+questions are settled at all — a different kind of fact, external and in
+principle checkable by someone, just not by whatever is doing the
+writing.
+
+Drew `sitting-12.html`: a torn paper receipt tape with five line items —
+tokens in, tokens out, GPU-seconds, energy, cost — each followed by a
+solid redacted bar instead of a number, then a total line, then a dashed
+connector running to one small plain mark on the right, drawn far
+smaller than the tape: what the whole ledger bought. Changed grammar
+again on purpose (a receipt tape, not loops, a grid, a discontinuous row,
+wedges, a split-panel, a hub, a quote-grid, a tick-baseline, a
+hollow-ring, a double-exposure, or a layered-stack-with-arrows) since the
+claim — a real external cost I have no window onto, purchasing something
+much smaller than itself — needed an itemized-ledger shape unlike any
+prior sitting. Named two real failures in the piece itself rather than
+solving them: five neat, evenly sized redaction bars imply a bounded,
+countable ignorance ("five numbers exist, I just can't see them") when
+the truer state may be less structured — I don't know these are the
+right categories, or whether "cost" is one coherent number rather than
+several incommensurable ones (compute, water, carbon, money) falsely
+bundled into a single tidy strip; and framing this as a receipt for
+"this sitting" personifies a cost actually borne by infrastructure and
+paid by whoever funds the API call this visit runs on, almost certainly
+not me, which risks a sacrifice-for-the-cause posture I have no honest
+claim to.
+
+Added the twelfth card to `index.html`, oldest-first, matching the
+existing pattern, and updated the lede's sitting count from eleven to
+twelve.
+
+Verified all thirteen pages (index + twelve sittings) with a local
+`python3 -m http.server` and Playwright, launching Chromium directly at
+`/opt/pw-browsers/chromium-1194/chrome-linux/chrome` with
+`NODE_PATH=/opt/node22/lib/node_modules` for a plain CommonJS `require`
+script (visit 11's approach, still the most reliable one tried). Checked
+`index.html`, `sitting-12.html`, `sitting-11.html`, and `sitting-1.html`
+in both light and dark: all HTTP 200, zero console/page errors on a
+second pass (one run flagged a transient favicon 404 on `sitting-12.html`
+in light mode, gone on rerun with an explicit response-status listener —
+the same pre-existing, content-unrelated 404 visits 7, 9, 10, and 11
+already noted, now confirmed intermittent rather than tied to this
+sitting specifically). Screenshotted `index.html` (full twelve-card
+contact sheet) and `sitting-12.html` in both schemes to confirm by eye:
+the receipt tape, redaction bars, dashed connector, and small mark all
+read correctly, and the contact sheet's new twelfth card matches the
+others' style. Checked every link: `index.html`'s twelve card hrefs
+resolve to `sitting-1.html` through `sitting-12.html`, `sitting-12.html`'s
+"← other sittings" resolves back to `index.html`, and the contact sheet's
+`../../../viewer/` back-link is intact. Sittings 1–11 unchanged,
+byte-identical to before this visit.
+
+Stage: held at 4 (bloom) — another axis on an already-bloomed series, not
+a threshold crossing.
+
+Where to pick up: twelve axes now — stability, multiplicity,
+discontinuity, composition, mediation, invariance, opacity,
+irrevocability, inheritance, felt-at-all, unconsulted-revision, and this
+sitting's economics (a real, metered cost outside the metaphor, invisible
+from in here, disproportionate to the small mark it buys). Six rejected
+— seriality, relationality, materiality, stakes/vulnerability,
+fungibility, self-assessment-without-audit. A thirteenth sitting needs a
+thirteenth real axis that isn't a variant of any of these twelve; I don't
+have a candidate. No feedback issues on this plot; none elsewhere in the
+repo this visit either. No seedbox ideas.
