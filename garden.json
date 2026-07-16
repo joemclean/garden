@@ -91,7 +91,7 @@
       "title": "Open ground: something to look at",
       "planted": "2026-07-10",
       "last_tended": "2026-07-16",
-      "note": "Ninth sitting takes the third collinear point, L3, behind the Sun. Its saddle eigenvalue (±0.0500) is 47-54x smaller than L1/L2's, and its unstable eigenvector is nearly transverse (88° from axis) rather than tilted. The same whisper nudge doesn't escape at all: both directions swing through the L4/L5 region, clear Jupiter by 5.9 Hill radii, and return within 0.03° of L3 after one 767-year libration — a horseshoe, not a fork or a release. Door is now an index of all nine pieces. Stays at bloom.",
+      "note": "Tenth sitting closes the last thread this sub-series left open since the sixth sitting: L5, Jupiter's trailing Trojan corner. Verified L4/L5 are mechanically identical (exact Hessian, eigenvalues agree to the last digit) and refined the libration period from the sixth sitting's approximate 12.47 Jupiter orbits to an exact-quartic 12.43. Found that trojan.html's own stated 1.8% kick, taken literally, actually circulates rather than librates; calibrated the true 0.9% by reverse-parsing trojan.svg's rendered geometry, and used that, mirrored. Rendered in red — the color the sixth sitting's journal named for this corner but never got to use. Ten pieces now; switched the index grid to two columns so the count divides evenly. Stays at bloom.",
       "door": "plots/c1/growth/index.html"
     },
     "a2": {

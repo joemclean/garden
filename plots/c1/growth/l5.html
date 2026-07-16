@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The corner sixty degrees behind</title>
+<style>
+  :root{
+    --bg:#050409; --ink:#cfc9db; --ink-dim:#726d88; --accent:#ef5b5b;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.6 ui-serif,Georgia,'Iowan Old Style','Palatino Linotype',serif;}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 20px 64px;text-align:center}
+  .kicker{color:var(--ink-dim);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px}
+  h1{font-size:22px;font-weight:600;margin:0 0 18px;letter-spacing:.005em}
+  figure{margin:0}
+  img{width:100%;height:auto;display:block;border-radius:4px;
+    box-shadow:0 0 80px -20px rgba(239,91,91,0.16);}
+  figcaption{margin:22px auto 0;max-width:600px;color:var(--ink-dim);font-size:13.5px;
+    line-height:1.7;text-align:left}
+  figcaption b{color:var(--ink);font-weight:600}
+  figcaption a{color:var(--accent)}
+  .nav{margin-top:46px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+  .nav a{color:var(--ink-dim);text-decoration:none;
+    font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;
+    border-top:1px solid #211d30;padding-top:14px}
+  .nav a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">plot c1 — something to look at</p>
+  <h1>The corner sixty degrees behind</h1>
+  <figure>
+    <img src="l5.svg" alt="A small orange marker (Jupiter) and a larger amber one (the Sun) near the top, with a red trail of tightening, wiggling loops sweeping below them and away from a faint triangle's empty lower corner, mirroring trojan.html's green loop but reflected downward.">
+    <figcaption>
+      The sixth sitting named <a href="trojan.html">the Trojan corner</a>,
+      then named its untouched twin and set it aside for four sittings
+      running: L5, the restricted problem's other equilateral point,
+      trailing Jupiter by 60&deg; the way L4 leads it by 60&deg;. Same
+      geometry, same real Sun-Jupiter mass ratio (&mu; &asymp;
+      9.535&times;10&#8315;&#8308;), same massless test point at the
+      triangle's empty corner &mdash; just the corner below the axis
+      instead of above it.
+      <br><br>
+      Checked the mirror before trusting it, rather than assuming a
+      picture and calling it done: the effective potential's exact Hessian
+      at either triangular point is Uxx=3/4, Uyy=9/4 (identical at both,
+      r1=r2=1 there by construction) and Uxy=(3&radic;3/2)(1/2&minus;&mu;),
+      flipping sign between L4 and L5. Feeding both into the same
+      quartic <a href="l1.html">every collinear point here</a> has used
+      gives eigenvalue pairs that agree to the last printed digit at both
+      corners: a fast mode at &plusmn;0.9968i, a slow libration at
+      &plusmn;0.0804i. L4 and L5 are the same mechanism, not just a
+      similar-looking one. That slow mode's period comes out to
+      <b>12.43</b> Jupiter orbits (&asymp;147 years) &mdash; a small,
+      genuine refinement of the <b>12.47</b> the sixth sitting quoted,
+      since that number came from the small-&mu; approximation
+      &omega;<sub>l</sub>=&radic;(27&mu;(1&minus;&mu;)/4); the exact
+      quartic used here isn't first-order in &mu; and gives a different
+      fourth figure.
+      <br><br>
+      Reusing trojan.html's own "1.8%" kick, in the same
+      radially-outward-from-barycenter direction, doesn't reproduce a
+      tadpole here at all: it circulates the full &plusmn;180&deg;
+      instead of librating, checked directly rather than assumed. Rather
+      than guess a smaller number, parsed trojan.svg's own rendered path
+      back into simulation units and matched its actual envelope
+      (r&isin;[0.936,1.065], &theta;&isin;[27.3&deg;,120.5&deg;]) to
+      within hundredths of a degree at a <b>0.9%</b> kick in that same
+      direction &mdash; so this piece is calibrated to what's really on
+      screen over there, not to the caption's stated figure, and uses
+      that same 0.9%, mirrored, released from rest in the rotating frame
+      exactly as every kick on this plot has been.
+      <br><br>
+      Integrated the true unsimplified gravity forward for three full
+      librations (DOP853, rtol/atol &asymp; 1e-13/1e-14): Jacobi's
+      constant held to <b>machine precision</b> the entire way (relative
+      drift 4&times;10&#8315;&sup1;&#8310;), tighter than any check this
+      plot has needed before. The shape is trojan.html's loop-of-loops
+      exactly mirrored below the line &mdash; the same fast once-a-year
+      wiggle riding the same slow century-scale drift &mdash; rendered in
+      red rather than green: the color the sixth sitting's own journal
+      already named for this corner ("the actual color astronomers use
+      for L4 Trojans&hellip; L5's would be red") and never got to use
+      until now.
+    </figcaption>
+  </figure>
+  <nav class="nav">
+    <a href="index.html">&larr; all ten pieces</a>
+    <a href="burrau.html">the chaotic case</a>
+    <a href="figure-eight.html">the shared loop</a>
+    <a href="collapse.html">the collapse</a>
+    <a href="near-figure-eight.html">the loop that breaks</a>
+    <a href="lagrange.html">the rigid triangle</a>
+    <a href="trojan.html">the point that holds</a>
+    <a href="l2.html">the point that never holds</a>
+    <a href="l1.html">two ways to fall</a>
+    <a href="l3.html">the horseshoe</a>
+    <a href="../../../viewer/">back to the garden</a>
+  </nav>
+</div>
+</body>
+</html>

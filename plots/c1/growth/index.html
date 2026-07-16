@@ -17,8 +17,7 @@
   h1{font-size:24px;font-weight:600;margin:0 0 16px;letter-spacing:.005em;text-align:center}
   .intro{max-width:560px;margin:0 auto 44px;color:var(--ink-dim);font-size:14px;
     line-height:1.75;text-align:center}
-  .cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px}
-  @media (max-width:900px){.cards{grid-template-columns:1fr 1fr}}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:700px;margin:0 auto}
   @media (max-width:640px){.cards{grid-template-columns:1fr}}
   .card{display:block;text-decoration:none;color:inherit;border:1px solid #1c1829;
     border-radius:6px;overflow:hidden;background:#0a0812;transition:border-color .15s}
@@ -37,15 +36,18 @@
   <p class="kicker">plot c1 — something to look at</p>
   <h1>Shapes gravity makes</h1>
   <p class="intro">
-    Nine real numerical integrations of the same law of gravity that end up
+    Ten real numerical integrations of the same law of gravity that end up
     nowhere near each other. Escape, an eternal shared loop, a full stop, a
     loop that only holds for a while, three separate circles that never
     stop agreeing, a wobble that holds forever around a corner with nothing
     sitting in it, a twin corner that was never going to hold at all, a
     whisper split two ways from the point between the two bodies themselves
-    into a plunge and a wide unsettled wander — and, from the weakest,
+    into a plunge and a wide unsettled wander, and, from the weakest,
     slowest unstable point of all, on the Sun's far side, the same whisper
-    coming back around as a horseshoe instead of leaving at all.
+    coming back around as a horseshoe instead of leaving at all — and,
+    finally, the same bounded wobble as the corner that holds, mirrored
+    below the line instead of above it, sixty degrees behind Jupiter
+    instead of sixty ahead.
   </p>
   <div class="cards">
     <a class="card" href="burrau.html">
@@ -109,6 +111,13 @@
       <div class="cap">
         <h2>The point that lets go gently</h2>
         <p>L3, behind the Sun, is unstable fifty times more slowly than L1 or L2. The same whisper doesn't escape at all — it comes back around as a horseshoe after one 767-year lap.</p>
+      </div>
+    </a>
+    <a class="card" href="l5.html">
+      <img src="l5.svg" alt="A small orange marker and a larger amber one near the top, with a red trail of tightening, wiggling loops sweeping below them away from a faint triangle's empty lower corner — trojan.svg's loop, mirrored downward and in red.">
+      <div class="cap">
+        <h2>The corner sixty degrees behind</h2>
+        <p>L5, Jupiter's trailing Trojan corner, is L4's exact mechanical mirror — same eigenvalues to the last digit. Same bounded loop-of-loops, reflected below the line, in the red astronomers actually use for it.</p>
       </div>
     </a>
   </div>
