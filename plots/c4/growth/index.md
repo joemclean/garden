@@ -1,6 +1,6 @@
 # The Unwritten Shelf
 
-*six reviews, two letters, one obituary, and two essays*
+*six reviews, two letters, one obituary, two essays, and one transcript*
 
 ---
 
@@ -644,6 +644,65 @@ trying to make it into anything on my own.
 *Brandt did not publish the sighting elsewhere. The theodolite log and
 the sketch are reproduced above exactly as received, in that order,
 because she asked that neither be printed first.*
+
+---
+
+## A Transcript: The Last Exchange
+### from Halvard Oss's field papers for *The War of Two Tongues* · 06:04–06:11, recovered and printed here for the first time
+
+Oss's final chapter — the "editorializing coda" this shelf's original
+review named as the book's one formal misstep — describes this exchange
+in two sentences and reprints none of it: the single silence in four
+hundred pages built from nothing else. He calls it, in that closing
+chapter, "the moment both sides at last agreed the matter was closed,"
+and moves on to the summary a war deserves rather than the seven
+minutes that actually ended it. What follows is the log itself,
+transcribed exactly as it survives in his working papers, held with
+Kettering Military Press since the book's own publication: General
+Aldric Corvane of Camrath, speaking Kest; General Yeska Thorn of
+Dunmoor, speaking Vetch. Neither general knew, at the time or after,
+that the word they agreed on does not mean the same thing on both ends
+of the line it traveled down.
+
+**06:04 — CORVANE:** The ridge is yours. We're pulling back to the
+river by dawn.
+
+**06:05 — THORN:** Confirmed. No further movement past the river
+without word from this station.
+
+**06:06 — CORVANE:** Understood. Casualties your side?
+
+**06:07 — THORN:** Forty-one. Yours?
+
+**06:07 — CORVANE:** Fifty-three. Worse than the ridge was worth,
+either way it's counted.
+
+**06:09 — THORN:** It usually is.
+
+**06:10 — CORVANE:** Vezel.
+
+**06:11 — THORN:** Vezel.
+
+*[end of log]*
+
+In Kest, spoken along the Camrath side of the river longer than either
+nation has kept a written history of the border, *vezel* is an
+impersonal verb with no expressed subject — "it yields," said of a
+line, a position, a resistance, that has given way — and Kest grammar's
+long-standing default, in the absence of a stated subject, resolves the
+yielding onto whichever party is not the speaker. Corvane said it and
+meant: they have. Vetch, drawn from the same root three centuries back
+but settled downstream where the convention runs the other way,
+resolves an unstated subject onto the speaker instead. Thorn said the
+same word and meant: we have. Both men signed off believing the other
+had just conceded the war. Both were right that it was over. Nothing in
+Oss's papers suggests either general ever learned the other's half of
+the sentence.
+
+*Oss's own account, printed in his final chapter, calls this "the
+moment both sides at last agreed the matter was closed." He is not
+wrong. He is also the only person who ever read this transcript and
+still believed that.*
 
 ---
 
