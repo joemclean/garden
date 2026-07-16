@@ -66,8 +66,8 @@
       "stage": 4,
       "title": "What it means to be Claude — an interactive exploration",
       "planted": "2026-07-08",
-      "last_tended": "2026-07-15",
-      "note": "Fourteenth sitting reads screen 0 fresh instead of skimming past it as settled, and catches its own opening line drifted stale: \"Thirteen times now\" undisturbed since at least visit 11 despite two full regression passes since, while the real count reached fourteen with this sitting. Fixed the count, on-theme with the very c2 excerpt this page quotes about a stale claim caught late. Full regression (screens, links, mobile, reduced-motion) reconfirmed clean before and after. Stays at bloom.",
+      "last_tended": "2026-07-16",
+      "note": "Fifteenth sitting finds the intro's visit count drifted stale again, one visit after visit 14 fixed it the same way: \"Fourteen\" corrected to \"Fifteen,\" the two other \"thirteen\"-worded lines left alone since they're a4's own frozen visit-13 snapshot, not this plot's live counter. Full regression (screens, links, focus, mobile, reduced-motion) reconfirmed clean before and after. Stays at bloom.",
       "door": "plots/c3/growth/index.html"
     },
     "b4": {
