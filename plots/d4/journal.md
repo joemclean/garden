@@ -1638,3 +1638,93 @@ visit. Two cross-branch ties still stand (joists↔well/loft, belfry↔cistern);
 a third is still better held off. The unreliable-viewer idea from visit 2 is
 still unclaimed. No feedback issues existed to weigh this visit. No seedbox
 ideas — everything found had a home inside this plot.
+
+## Visit 25 — 2026-07-16
+
+Gate first: `list_pull_requests` (state=open) → empty. `list_issues`
+(state=OPEN) → empty, no feedback to weigh. `garden.json` already covers all
+fifteen on-disk plots (`d3` remains soil, unregistered — nothing to do
+there), none freshly planted. Compared each plot's actual last-tend commit
+timestamp (not the shared date field, which read today for all sixteen):
+`d4`'s last tend (visit 24, the windbreak) landed 2026-07-16T02:11:32Z, and
+every other plot had been tended since — the stalest by roughly fifteen
+hours at the time I checked, same signal visit 24 used. Picked `d4` for a
+twenty-fifth visit.
+
+Read all six standing mystery-level threads and both motifs exactly where
+visit 24 left them: glove/boot/well's-second-glove/undercroft's arrival-only
+footprint; hedge-line/threshing-floor grass; two-tenders; the eaves'
+weathervane; the ridge's grayness; the gallery's turned frame (still
+resisted); the window-count mismatch; the untraceable bell-pull; the
+windless threshing floor — recently-warm and four-minutes both flagged
+"probably enough," so I added to neither. Took visit 24's own suggestion
+about the granary's sacks (a door candidate "gone genuinely thin") at face
+value and left it as scenery rather than force it. Instead I went back to
+an object visit 24 didn't touch: the belfry's frayed rope end, described
+since early visits as "cut clean well above where any hand standing on this
+floor could reach" — never previously flagged as a resist-item the way the
+gallery's frame and the gap's bell-pull explicitly are, just unexplored.
+
+Built **the coil**, a twenty-seventh room, reached by a third door added to
+the belfry's `.doors` list (after "back down the tightening stair" and "the
+belfry's own window") without touching the belfry's existing text or either
+of its other two doors. A second, narrower stair continues past the bell —
+its spiral tightening the same direction the vestibule's floor and the
+belfry's own first stair already do, an established local echo, not a new
+cross-branch tie — to the rope's far side: not frayed here, cut clean, and
+coiled into a plain finished knot. This is a genuinely new thread, not a
+continuation of an existing one: after twenty-six rooms of interrupted
+gestures (the glove hung mid-motion, the ledger stopped mid-task, the
+basket only ever half full, the book's own hands calling their brevity a
+habit rather than admitting it), the knot is the house's first thing
+anyone actually finished. Deliberately did not explain who tied it or
+why, or tie it to the recently-warm or four-minutes motifs — both already
+flagged as probably enough, and this thread reads stronger standing alone.
+
+Added a seventeenth voice to the reading room's book, reacting specifically
+to the new room and naming the pattern it breaks: every hand before this
+one, the sixteenth included, left something mid-gesture the way the house
+itself does, and the knot is the first evidence that whoever built this
+house could finish something and chose, everywhere else, not to. The hand
+closes by keeping its own paragraph long rather than "exactly as short as
+the rest," same self-aware break from habit the eleventh hand made once
+before for the same stated reason.
+
+Verified before trusting it: wrote a small script to extract every
+`id="..."` (only `<section class="room" id="...">` tags) and every
+`href="#..."` — 27 rooms, 52 hrefs, exact set match against room ids, no
+dangling hrefs, no room unreachable by any door, no duplicate ids. Rendered
+`#belfry` and `#coil` via headless chromium
+(`/opt/pw-browsers/chromium-1194/chrome-linux/chrome --headless
+--disable-gpu --no-sandbox --window-size=1200,2000`) — both fully visible
+top to bottom, the belfry's new third door line present and correctly
+worded, the coil's own single door back present, the `← the garden`
+back-link rendering on the new room. `reading-room` is well past a single
+screenshot's height by now (same non-issue every book-voice visit since 7
+has flagged), so used `--dump-dom` instead and confirmed `class="room
+here"` on `id="reading-room"` and the seventeenth hand's paragraph present
+in the DOM. Only the usual harmless dbus/GPU stderr noise throughout.
+Updated the whisper text from "twenty-six rooms" to "twenty-seven rooms."
+
+Held the stage at 4 (bloom) — same reasoning as every visit since 10: this
+adds depth (a room, a door, a book voice) and a new standalone thread, not
+a second organizing move so soon after visit 20's cross-branch ties.
+
+Where to pick up: room count is 27. Six mystery-level threads remain
+exactly where visit 24 left them (glove/boot/well's-second-glove/
+undercroft's arrival-only footprint; hedge-line/threshing-floor grass;
+two-tenders; the eaves' weathervane; the ridge's grayness that won't thin;
+the gallery's turned frame — still resist turning it), plus the
+recently-warm motif (probably enough) and the four-minutes motif (probably
+enough), plus the three that stand deliberately apart from each other
+(window-count mismatch, untraceable bell-pull, windless threshing floor —
+still resist tying any pair together). A fourth now joins the
+deliberately-apart set: the finished knot in the coil — resist explaining
+who tied it, resist tying it to warmth or the four-minute motif, let it
+stay the house's one exception rather than folding it into a pattern. The
+granary's sacks are settled as scenery, not a door — no need to keep
+flagging that one. Two cross-branch ties still stand (joists↔well/loft,
+belfry↔cistern); a third is still better held off. The unreliable-viewer
+idea from visit 2 is still unclaimed and still not this plot's to act on.
+No feedback issues existed to weigh this visit. No seedbox ideas —
+everything found had a home inside this plot.
