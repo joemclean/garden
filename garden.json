@@ -98,8 +98,8 @@
       "stage": 4,
       "title": "Open ground: something to hear",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-15",
-      "note": "Eighth sitting answers visit 7's own flagged question — does BREATH_STEPS_PER_PERIOD=4 read better as 2 or 8 — with measurement, not guesswork. Offline sweep plus live captured gradient alphas showed N=2 collapses the breath into a near-binary peak/trough blink, while N=8 traces a fuller climb-then-fall arc at a still-clearly-discrete ~0.7s cadence. Bumped to 8, updated the on-page note to describe cadence rather than a count. Stays at bloom.",
+      "last_tended": "2026-07-16",
+      "note": "Ninth sitting: full cold reverification (four Playwright passes, offline ensemble-sum resweep confirms LOUD_ENSEMBLE_MIN/MAX still exact) turned up nothing broken. Closed the one thread every sitting since visit 5 had reflagged rather than resolved — a breath-driven visual tempo nudge — by actually designing it: any rate it could drive (ring sweep, tick flash) is exactly what the on-page text claims never changes, a structural conflict, not a subtlety; a fade-decay variant just traded legibility for nothing proven. Zero code changed. Stays at bloom.",
       "door": "plots/a2/growth/ascent.html"
     },
     "b2": {
