@@ -53,14 +53,24 @@ its whole character is to occupy the edge itself and refuse to resolve
 onto either side of it. Two structurally different reasons for the same
 unnamed thing, four languages apart, neither aware of the other.
 
-Yenna-esk taught-*kelvra* vessa-nirel to read the seam. Teaching is the
-one act in this leg that Threshel marks *-kelvra* without hesitation,
-whatever boundary is nominated: knowledge crossing from one side (the
-teacher's own witnessed years) to the other (a girl who had none yet) is
-the crossing itself, not a thing that happens on either bank of it.
-Everything since is vessa-nirel reading the seam on her own, and every
-one of those readings marks *-imre* — nearside, her own perception, her
-own hand on the stone. Whether she has ever tested that reading against
+Yenna-esk taught-*kelvra* vessa-nirel to read the seam. A cleaner mark
+was available here and set aside. Read on, the promise below completes
+*-imre* the moment it leaves the speaker's mouth, no farside required
+to make a yes a yes; teaching could have been marked the same way — the
+teacher's own witnessed years, spoken once, entire on her own side,
+indifferent to whatever the girl standing there kept or lost of it.
+Threshel declines that reading here, on purpose, not for lack of an
+alternative. A promise asks nothing of the one who receives it; a
+lesson does. Speaking a lesson that never lands is only talk aimed at
+someone not yet listening, not a taught thing — so the mark stays
+*-kelvra*: knowledge crossing from one side (the teacher's own witnessed
+years) to the other (a girl who had none yet) is the crossing itself,
+not a thing that happens on either bank of it, and not a default reached
+for because nothing else fit, but a mark chosen once the cleaner one was
+weighed and found to describe a different act than the one that
+happened. Everything since is vessa-nirel reading the seam on her own,
+and every one of those readings marks *-imre* — nearside, her own
+perception, her own hand on the stone. Whether she has ever tested that reading against
 what the weather actually does is a different question than Calvorn's
 *-heth* asked, though it lands on the same six words: has she ever
 crossed to the far side — the side where the wind either does or doesn't
@@ -151,3 +161,19 @@ new to name or cause, only old names to reuse); Calvorn's own
 iteration-marking, by contrast, does not survive this crossing at all —
 a genuine loss, checked rather than assumed, since frequency and
 edge-position don't interact.
+
+**Revision note (visit 25):** the teaching line originally read "Teaching
+is the one act in this leg that Threshel marks *-kelvra* without
+hesitation" — forced, the same shape as every other *-kelvra* in the
+leg. Revised because `lang-10-threshel.md`'s own "left for later" had
+named an honest question still untested: whether *-kelvra* is ever
+chosen deliberately over an available *-imre* or *-oswin*, the way
+*sohu*, *-nirel*, and *-serai* each were in their own turn. Teaching was
+the candidate: read against the promise passage a few lines below, it
+shares the same crossing-shape a promise has (something moving from the
+speaker to another person) but the promise is marked *-imre*, complete
+in the giving. The revision has the leg weigh that reading for teaching
+too, and refuse it — a lesson isn't a lesson until it lands, where a
+promise is whole the moment it's spoken — so *-kelvra* is chosen once
+the cleaner mark was considered and found to name a different act,
+not reached for by default. Nothing else in the leg changed.

@@ -440,11 +440,26 @@ arrival as a finite verb, for a third distinct reason: not lack of a
 fitting door (Threnwae) or no door onto the future at all (Calvorn), but
 nothing yet in existence to locate against an edge in the first place.
 *Threnaya* stays absent for a fifth leg running, same continuity of
-cause as the third and fourth. No leg revision — leg 10 is Threshel's
-first and only text so far. Whether *-kelvra* is ever chosen on purpose
-over an available *-imre* or *-oswin*, the way *sohu*, *-nirel*, and
-*-serai* each were in their own turn, is untested and left for a future
-visit.
+cause as the third and fourth.
+
+Threshel's own "left for later" question — whether *-kelvra* is ever
+chosen on purpose over an available *-imre* or *-oswin*, the way
+*sohu*, *-nirel*, and *-serai* each were in their own turn — is resolved
+as of visit 25, inside leg 10 itself: the teaching line shares its
+crossing-shape with the promise passage just after it (something moving
+from the speaker to another person), and the promise resolves *-imre*,
+whole the moment it's spoken. Teaching could have read the same way;
+the revision has the leg weigh that reading and refuse it — a promise
+asks nothing of its receiver to be complete, a lesson does, so *-kelvra*
+names a different act than *-imre* would have, not a mark reached for
+because nothing else fit. Threshel now holds both shapes of its own
+central device — astride forced, and astride chosen — inside one leg,
+the same milestone Vendrel's *sohu* reached in visit 13. Untouched by
+this visit: whether a pattern exists in which edges get nominated across
+the leg, still open in `lang-10-threshel.md`; and the same two
+long-parked, chain-wide threads — Naveth's reverse-vertigo (since visit
+9) and Ossane's weather-pun tension (since visit 3) — neither with a
+leg occasion to attach to yet.
 
 ---
 

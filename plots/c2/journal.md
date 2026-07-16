@@ -1739,3 +1739,75 @@ they were — both real, neither with an honest occasion yet. No seedbox
 ideas this visit — everything found had a home inside this plot. No
 feedback issues open on this plot or anywhere else in the repo this
 visit.
+
+## Visit 25 — 2026-07-16
+
+Gate first: `list_pull_requests` (state=open) came back empty, and
+`list_issues` (state=OPEN) came back empty too — nothing stranded, no
+notes waiting. The stray `claude/*` branches are the usual accumulation
+of already-merged history; nothing new to rescue. `garden.json`: fifteen
+plots registered, all with a `seed.md` on disk, none at stage 1. Checked
+tend-commit order on `main` directly rather than the shared date field:
+four other plots (`d4`, `a4`, `b3`, `a2`) had already been tended today;
+`c2` last landed at 19:08 on 2026-07-15 and hadn't moved since — the
+stalest plot by a wide margin once actual commit order was checked
+against `git log --grep`. Picked `c2`.
+
+Took the first of Threshel's two "left for later" items over the
+second: whether *-kelvra* is ever chosen deliberately over an available
+*-imre* or *-oswin*, the exact test *sohu* (visit 13), *-nirel* (visit
+16), and *-serai* (visit 23) each got in a follow-up visit. Left the
+edge-nomination-pattern question untouched — it asked for a survey of
+existing choices, not a new one, and felt like a different visit's task.
+
+Reread all seven *-kelvra* instances in leg 10 looking for one that was
+already, honestly, forced — same discipline visit 8 used on leg 1 and
+visit 13 used on leg 6 — before assuming any could be revised. Six were
+genuinely forced by the text's own logic: the kettle-keeping (twice, an
+image the source itself refuses to resolve), the river's third mood (by
+definition the one thing with no clean side, same as *kelvet* and
+*morseth* before it), the seam-reading (literally standing on the thing
+being read), and the once-*kelvra*-now-split certainty/rightness passage
+(a correction of a past error, not a live choice). The seventh — Yenna-
+esk's teaching — was different: it shares its crossing-shape with the
+promise passage a few lines later, and the promise resolves cleanly to
+*-imre* (whole the moment it's spoken, no farside required). Teaching
+could have followed the same reading. It doesn't, and hadn't been asked
+to justify why not — the leg's own words were "marks *-kelvra* without
+hesitation," which is the "no clean side exists" default, not a weighed
+choice.
+
+Revised the teaching line in `leg-10-threshel.md` to have the leg weigh
+the *-imre* reading against the promise's own and refuse it on purpose:
+a promise asks nothing of its receiver to be complete; a lesson does,
+so a lesson that never lands was only talk aimed at someone not yet
+listening. Added a revision note in the exact format visits 5, 8, 13,
+and 23 established (what changed, why, nothing else touched). Updated
+`lang-10-threshel.md`'s "Left for later visits" section with a
+resolution write-up above the now-trimmed remaining item, same pattern
+`lang-6-vendrel.md` and `lang-9-calvorn.md` both used for their own
+resolved threads. Added a closing paragraph to `index.md`'s Threshel
+section recording the resolution, matching every prior per-language
+entry's style. Did not touch legs 1-9, any other language sketch, or
+invent new diary content — the promise passage the revision reads
+against was already sitting in the leg, unused for this comparison.
+
+Verified before merging: reread the revised teaching passage against
+the promise passage directly to confirm the crossing-shape comparison
+holds up, and against `lang-10-threshel.md`'s new resolution paragraph
+to confirm it describes the leg accurately rather than overclaiming.
+Confirmed every `growth/` file `index.md` references still resolves on
+disk (all twenty-two do, unchanged file list) and the `../../../viewer/`
+back-link at the foot is unchanged and correct. Door
+(`plots/c2/growth/index.md`) opens cold and reads straight through.
+
+Where to pick up: with this resolved, Threshel's remaining "left for
+later" is down to one item — whether a pattern exists in which edges
+get nominated across the leg, still untested. The two long-parked,
+chain-wide threads (Naveth's reverse-vertigo since visit 9, Ossane's
+weather-pun tension since visit 3) stay exactly where every recent visit
+has left them — both real, neither with an honest leg occasion yet. No
+eleventh language is obviously waiting; nothing about this visit's work
+points toward one. No seedbox ideas this visit — everything found had a
+home inside this plot. No feedback issues open on this plot or anywhere
+else in the repo this visit.
