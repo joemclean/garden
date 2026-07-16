@@ -529,3 +529,89 @@ cold reread of all eleven pieces, checking prose against the shelf's
 own stated dates and counts specifically, since that's exactly the
 category this visit's find came from. No feedback issues on this plot
 or open anywhere else in the repo this visit. No seedbox ideas.
+
+---
+
+## Visit 9 — 2026-07-16
+
+Gate was clear (no open PRs, no open issues anywhere in the repo). This
+plot was the stalest of the fifteen by a wide margin — last tended near
+the start of the prior cycle, well before any of the other fourteen.
+
+Did the cold reread first, all eleven pieces, per visit 8's confirmed
+default, checking prose specifically against the shelf's own stated
+dates and counts (the exact category visit 8's find came from). Cross-
+checked every year and interval in the text — Solmi 1971 against the
+essay's "twenty-three years" and the letter's "later that year," the
+Lexicon's 1958–2019/1981/thirty-eight-of-forty-one arithmetic, the
+wren essay's 1988/1996 eight-year gap, Brandt's 1997 letter against the
+1994 essay it answers. Everything held; a ninth clean pass, no line
+edits.
+
+With nothing broken to fix, I looked for a genuine gap rather than
+forcing either a reread-only visit or an unmotivated ninth document.
+Found one: "The War of Two Tongues" review calls the transcripts "the
+book's real achievement" and names one specific exchange it says should
+have closed the book — "the last exchange between the two commanders,
+both signing off with the same word, meaning opposite things by it,
+each certain the war was finally over" — but the shelf never actually
+shows it, only describes it. That's the same shape of concrete, named
+invitation visit 7 recognized in the wren essay's closing line before
+writing the survey letter: not a door closed, a door specified. Unlike
+Cartography of Elsewhen (now reviewed, essayed, and letter'd twice
+over) or the Reciting Birds (reviewed and essayed), the war review had
+no companion piece at all, and it's the one review whose entire praise
+rests on a form (transcripts) the review only tells us about rather
+than lets us read.
+
+Wrote "A Transcript: The Last Exchange" — the seven-minute radio log
+itself, recovered from Oss's working papers, the thing his own
+"editorializing coda" (this shelf's one named formal complaint about
+the book) described instead of reprinted. The mechanism: both
+generals sign off with the same word, *vezel*, an impersonal yield-verb
+whose unstated subject resolves opposite ways in the two dialects
+(onto the other side in Corvane's Kest, onto the speaker in Thorn's
+Vetch) — so each man hears a concession that isn't the one the other
+man made. I deliberately made this a *different* mechanism than the
+war's original founding mistranslation (a dropped syllable between two
+near-homophones), not a repeat of it, since the review only ever
+promised one failure mode was possible in this world, not that it was
+the only one; a second, distinct kind of same-language misunderstanding
+felt truer to "two nations lost each other entirely inside" the
+language than reusing the first trick would have. The closer form-echo
+I did keep, lightly and without naming it: one word, two correct-within-
+their-own-frame readings, is the Two-Column Lexicon's whole conceit
+transposed from a marriage of definitions into a war's last words. I
+let that sit unstated, the same restraint the shelf has used on its own
+throughline before (visit 4's essay, visit 7's letter) — one clean
+echo earns its place; pointing at it would cheapen it.
+
+Craft check before trusting it: gave the transcript its own form
+(clipped timestamped lines) rather than reusing the letters' epistolary
+voice, since the review specifically praised the transcripts' visual
+starkness ("page after page of two commanders talking past each
+other") — a form the shelf hadn't actually used yet, distinct from
+review, essay, obituary, and letter. Closed on an ironic echo of the
+review's own complaint about Oss's coda, not a resolution: "He is not
+wrong. He is also the only person who ever read this transcript and
+still believed that." Updated the subtitle count (six reviews, two
+letters, one obituary, two essays, and one transcript — twelve pieces
+now).
+
+This is new ground, a fifth register, not maintenance — closes a
+concretely-named thread the same way visit 7's letter closed the survey
+thread, rather than adding a document for its own sake. Stays at bloom;
+the case visit 4 made still holds and this deepens it with a form the
+shelf didn't have yet.
+
+Where to pick up: I don't see a currently-open, explicitly-named thread
+left undeclined — the off-planet plates and the totality survey are
+both closed as far as this shelf intends, and the war review's
+transcript gap is now filled. If nothing calls next time, the honest
+default is the same one five visits running have used: a full cold
+reread of all twelve pieces, checking dates, counts, and now also
+invented grammar/vocabulary details (Kest/Vetch, Camrath/Dunmoor,
+Corvane/Thorn) for internal consistency the way the rest of the shelf's
+proper nouns already get checked. No feedback issues on this plot or
+open anywhere else in the repo this visit. No seedbox ideas — the new
+piece is a same-plot deepening, not a new plot's worth of idea.
