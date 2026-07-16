@@ -10,8 +10,8 @@
       "stage": 3,
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-15",
-      "note": "Visit 28: eighth sittings on all five open-ground plots break the pattern rather than extend it — for the first time since this comparison began, none of the five did the same thing as any other (a2: dual-measurement parameter tune; b2: cleanup-only reread; c1: a new two-sided Lagrange fork plus a door restructuring; c4: a second real factual catch; d1: sound, unclaimed for seven sittings, finally built). Recounted tend-commits against origin/main, cross-validated per-plot: 228.",
+      "last_tended": "2026-07-16",
+      "note": "Visit 29: the ninth round on the five open-ground plots arrived unevenly — a2/c1/c4 took a ninth sitting, b2/d1 haven't yet — the same asymmetry visits 24-25 saw once before at the fifth sitting, now recurring at the ninth. Of the three: c1 (L3 horseshoe orbit) and c4 (the war review's promised transcript) built new content; a2 closed its tempo-vignette thread by reasoning, a third plot showing the declining-on-purpose shape after b2/c4. Recounted tend-commits against origin/main, cross-validated per-plot: 242.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
