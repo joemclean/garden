@@ -92,11 +92,22 @@ rather than either forced or denied: some crossings lose a mechanic
 because the new axis has no room for it, and this is one, for a clear,
 checked reason rather than a guess.
 
+**The deliberate crossing, resolved (visit 25):** whether *-kelvra* is
+ever chosen over an available *-imre* or *-oswin*, rather than reached
+for only where no clean side exists, is settled inside leg 10 itself —
+see its visit 25 revision note. The teaching line shares its
+crossing-shape with the promise passage a few lines later (something
+moving from the speaker to another person), and the promise resolves
+*-imre*, whole the moment it's spoken. Teaching could have followed the
+same reading — the revision has the leg weigh it and refuse it on
+purpose: a promise asks nothing of its receiver to be complete, a lesson
+does, so marking it *-kelvra* names a different act than *-imre* would
+have, not a fallback reached for because nothing else fit. Threshel now
+holds both shapes of its own mark — astride forced, and astride
+chosen — inside one leg, the same milestone Vendrel's *sohu* reached in
+visit 13.
+
 **Left for later visits:** which boundary is nominated for a given verb
 is a live translator's choice, made once per clause in leg 10 — whether
 a *pattern* in those choices (which edges recur, which get invoked once
-and dropped) is worth naming as its own thread is untested. Also
-untouched: whether *-kelvra*, like Vendrel's *sohu* and Torvane's
-*-nirel* and Calvorn's *-serai* before it, is ever chosen deliberately
-over an available *-imre* or *-oswin* in a scene that could honestly go
-either way, rather than reached for only where no clean side exists.
+and dropped) is worth naming as its own thread is still untested.
