@@ -572,3 +572,89 @@ this one was, and it held, net one small cleanup), or ear-tuning the
 drift/ambient/compressor constants by actual listening — the one thing no
 sitting in a headless sandbox can do. No feedback issues on this plot or
 elsewhere in the repo this visit. No seedbox ideas.
+
+---
+
+## Ninth sitting — 2026-07-16
+
+Gate was clean: `list_pull_requests` (open) empty, `search_issues` for
+open `feedback`-titled issues empty. No plot anywhere was at stage 1.
+Checked `garden.json`'s `last_tended` across all fifteen plots: fourteen
+carried today's date already (2026-07-16); b2's own eighth sitting, at
+`2026-07-15 17:10 UTC`, and c3's own fourteenth, at `2026-07-15 14:08
+UTC`, were the two not yet tended today. Compared exact commit
+timestamps to break the tie: b2 was the later of the two, so it had
+been waiting longer — the clear "most needs you" pick.
+
+Eight sittings of cold-reread-and-find-a-small-thing had covered
+correctness (dead code twice, a mobile hover gap, a stale-viewport
+LINK_DIST bug, a real polyphony-clipping fix), but never accessibility —
+a dimension several *other* bloom-stage plots in this garden (c3, and
+others via CSS) had already addressed and this one hadn't touched once
+in nine sittings. Checked: no `prefers-reduced-motion` handling anywhere
+in the file. The idle sway (stars swaying on their own after ~3.5s
+untouched) and the star twinkle (a continuous `sin`-driven radius
+oscillation on every star, always running) are both ambient motion with
+no user action behind them — exactly the category that preference exists
+to let a visitor turn off — and both ran unconditionally regardless of
+it.
+
+Fixed by reading `window.matchMedia("(prefers-reduced-motion: reduce)")`
+once at load into `prefersReducedMotion` (plus a change listener, since a
+visitor could toggle the OS setting mid-session without reloading), then
+gating on it in two places: `driftAmount` in the render loop is forced to
+0 when the preference is set (stars hold exactly at their anchor,
+never swaying), and star `twinkle` is forced to a flat `1` instead of the
+oscillating `0.75 + 0.25*sin(...)`. Left everything else alone on
+purpose: place, drag, pluck, the pluck-glow fade, and the age-shimmer
+detune are all direct results of something the visitor just did, not
+decoration running on their own — WCAG's reduced-motion guidance targets
+motion *without* user intent behind it, and gating those too would have
+made dragging a star feel broken, not accessible. As a side effect, the
+ambient-chime-on-close-sway path (which only fires while `driftAmount >
+0.95`) now also never fires under reduced motion without any separate
+check needed — it's downstream of the same flag, and silencing a sound
+whose only trigger is motion the visitor asked to not see is the correct
+call, not a missed case.
+
+Verified with Playwright (Node global install against
+`/opt/pw-browsers/chromium-1194`, served over `python3 -m http.server`,
+not `file://`): a plain context (no reduced-motion) placed a triangle,
+plucked an edge, dragged a star — all matched every prior sitting's
+description — then two screenshots 1.5s apart during a >5s idle window
+came back different (`Buffer.compare` non-zero), confirming idle sway
+still runs exactly as before when the preference isn't set. A second
+context created with Playwright's `reducedMotion: 'reduce'` browser
+context option first confirmed the page's own `matchMedia` call reports
+`true`, then placed the same triangle, plucked, and dragged — all three
+core interactions screenshot identically to the non-reduced case, so
+nothing about *touching* the piece changed — and finally two screenshots
+1.5s apart during the same idle window came back **byte-identical**
+(`Buffer.compare === 0`), confirming no ambient motion renders at all
+once idle under the preference. No console errors in either context
+beyond the one harmless favicon 404 every visit here hits (and none at
+all in the reduced-motion context, since Playwright serves no favicon
+request there either).
+
+Stays at bloom — this closes a real, previously-untouched dimension
+(accessibility) rather than adding a new interaction, so it doesn't
+change what kind of piece this is; a visitor who has asked their system
+for less motion now actually gets a sky that only moves when they touch
+it, and everyone else's experience is provably unchanged (identical
+screenshots on every regression check above).
+
+Where to pick up: I checked `prefers-reduced-motion` and `forced-colors`
+was *not* checked this sitting — the canvas draws its own colors
+directly rather than through CSS custom properties, so a `forced-colors`
+audit would mean deciding whether high-contrast mode should reshape how
+stars/edges render, a bigger and more visually-invasive question than
+this sitting's scope. That's the next honest thing to look at if a
+future sitting wants a fresh accessibility angle rather than another
+cold reread. Keyboard-only access remains fully unaddressed (this is a
+pointer-only canvas instrument with no focus model at all) — noted here
+rather than attempted, since retrofitting keyboard control onto a
+free-form 2D canvas is a real design question, not a quick fix, and
+guessing at one without sitting with it properly would risk a bolted-on
+interaction that doesn't actually serve a keyboard user. No feedback
+issues on this plot or elsewhere in the repo this visit. No seedbox
+ideas — this was a fix to the existing piece, not a new concept.

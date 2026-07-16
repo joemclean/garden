@@ -85,6 +85,24 @@
   var DPR = Math.min(window.devicePixelRatio || 1, 2);
   var W, H, LINK_DIST;
 
+  // idle sway and star twinkle are ambient motion, not tied to any user
+  // action — the one motion dimension no prior sitting had checked against
+  // this preference, unlike several other bloom-stage plots in the garden.
+  // Direct results of touch (place/drag/pluck glow) stay untouched: those
+  // are the interaction itself, not decoration on top of it.
+  var reducedMotionQuery = window.matchMedia
+    ? window.matchMedia("(prefers-reduced-motion: reduce)")
+    : null;
+  var prefersReducedMotion = reducedMotionQuery ? reducedMotionQuery.matches : false;
+  if (reducedMotionQuery) {
+    var onMotionPrefChange = function (e) { prefersReducedMotion = e.matches; };
+    if (reducedMotionQuery.addEventListener) {
+      reducedMotionQuery.addEventListener("change", onMotionPrefChange);
+    } else if (reducedMotionQuery.addListener) {
+      reducedMotionQuery.addListener(onMotionPrefChange);
+    }
+  }
+
   function resize() {
     W = window.innerWidth;
     H = window.innerHeight;
@@ -404,7 +422,8 @@
     // slow, bounded wander around where they were placed or dropped — never
     // travels anywhere, just breathes. Any interaction snaps it back to rest.
     var idleFor = now - lastInteraction;
-    var driftAmount = idleFor > IDLE_MS ? Math.min(1, (idleFor - IDLE_MS) / IDLE_RAMP_MS) : 0;
+    var driftAmount = (!prefersReducedMotion && idleFor > IDLE_MS)
+      ? Math.min(1, (idleFor - IDLE_MS) / IDLE_RAMP_MS) : 0;
     for (var d = 0; d < stars.length; d++) {
       var sd = stars[d];
       if (driftAmount > 0) {
@@ -452,7 +471,7 @@
       var st = stars[s2];
       var age = (now - st.born) / 1000;
       var settle = Math.min(1, age / 0.4);
-      var twinkle = 0.75 + 0.25 * Math.sin(now / 700 + st.phase);
+      var twinkle = prefersReducedMotion ? 1 : 0.75 + 0.25 * Math.sin(now / 700 + st.phase);
       var r = (2.4 + settle * 1.6) * twinkle;
 
       var glow = ctx.createRadialGradient(st.x, st.y, 0, st.x, st.y, r * 6);
