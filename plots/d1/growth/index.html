@@ -89,6 +89,8 @@
   .train-group {
     animation: trainPass 54s linear 1 forwards;
   }
+  /* 56% is TRAIN_PASS_START_PCT in the script below — the whistle/chug
+     audio cues are timed from this same mark, not a separate guess. */
   @keyframes trainPass {
     0%, 56%   { transform: translateX(-420px); }
     68%       { transform: translateX(1700px); }
@@ -244,6 +246,8 @@
     fill: #eaf4ff; opacity: 0; mix-blend-mode: screen;
     animation: flash 46s ease-out 1 forwards;
   }
+  /* 61.2% is LIGHTNING_PEAK_PCT in the script below — the thunder crack
+     and rumble land just before this mark, not a separate guess. */
   @keyframes flash {
     0%, 60.8%   { opacity: 0; }
     61.2%       { opacity: 0.85; }
@@ -642,6 +646,45 @@
   <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="false">♪ sound</button>
 
 <script>
+  // Timing shared between the visuals and the audio scored to them (reel
+  // one's birds and train pass, reel two's lightning peak), plus the reel/
+  // leader durations the orchestration below runs on. Kept in one place so
+  // the audio derives its cues from the same numbers the visuals use rather
+  // than a second, independently hand-kept copy. CSS keyframes can't read
+  // these directly — their percentages are baked into the stylesheet — so
+  // each keyframe that shares a mark with a constant here carries a comment
+  // naming it, to keep the two in sync by hand.
+  const REEL_MS = { 1: 54000, 2: 46000, 3: 34000 };
+  const LEADER_MS = 4000;
+  const REEL_NAMES = { 1: 'REEL ONE', 2: 'REEL TWO', 3: 'REEL THREE' };
+
+  // Reel one's five bird flights — one record per bird, shared verbatim by
+  // the SVG-drawing pass below and by playReel1's chirp scheduling, instead
+  // of two independently hand-kept lists that could drift apart.
+  const BIRD_FLIGHTS = [
+    { y: 140, delay: 4,    dur: 9,  scale: 1.0,  freq: 1400 },
+    { y: 190, delay: 6.5,  dur: 10, scale: 0.8,  freq: 1550 },
+    { y: 110, delay: 20,   dur: 8,  scale: 0.9,  freq: 1300 },
+    { y: 230, delay: 34,   dur: 11, scale: 1.1,  freq: 1600 },
+    { y: 165, delay: 36.5, dur: 9,  scale: 0.75, freq: 1250 },
+  ];
+  const BIRD_CHIRP_OFFSET_MS = 300; // each chirp follows its own flight's appearance by 300ms
+
+  // Reel one's train pass — matches the trainPass keyframe's own 56% mark
+  // (see CSS) — kept as a fraction of REEL_MS[1] so the whistle/chugs stay
+  // locked to the visual pass if the reel's duration ever changes.
+  const TRAIN_PASS_START_PCT = 0.56;
+  const TRAIN_WHISTLE_LEAD_MS = 640;
+  const TRAIN_CHUG_OFFSET_MS = 160;
+  const TRAIN_CHUG_INTERVAL_MS = 550;
+  const TRAIN_CHUG_COUNT = 5;
+
+  // Reel two's lightning flash — matches the flash keyframe's own 61.2%
+  // peak (see CSS); the crack and rumble land just before it.
+  const LIGHTNING_PEAK_PCT = 0.612;
+  const LIGHTNING_CRACK_LEAD_MS = 102;
+  const LIGHTNING_RUMBLE_LEAD_MS = 52;
+
   // Procedural wheat: a field of blades, each with its own sway timing so
   // the whole row moves like one continuous surface rather than a repeat tile.
   (function () {
@@ -675,14 +718,7 @@
   // each a simple two-stroke wingmark rather than anything literal.
   (function () {
     const birds = document.getElementById('birds');
-    const flights = [
-      { y: 140, delay: 4,  dur: 9,  scale: 1.0 },
-      { y: 190, delay: 6.5, dur: 10, scale: 0.8 },
-      { y: 110, delay: 20, dur: 8,  scale: 0.9 },
-      { y: 230, delay: 34, dur: 11, scale: 1.1 },
-      { y: 165, delay: 36.5, dur: 9,  scale: 0.75 },
-    ];
-    flights.forEach((f) => {
+    BIRD_FLIGHTS.forEach((f) => {
       const g = document.createElementNS('http://www.w3.org/2000/svg', 'path');
       const s = f.scale;
       g.setAttribute('d', `M 0 ${f.y} q 10 ${-10*s} 20 0 q 10 ${-10*s} 20 0`);
@@ -867,34 +903,33 @@
     }
 
     // Reel one: an open-field wind bed, a soft rising chirp at each of the
-    // five bird flights' own delays, and a whistle plus a handful of chugs
-    // timed to the train's 56%–68% pass across the 54s timeline.
+    // five bird flights' own delays (read straight from BIRD_FLIGHTS, not
+    // re-derived), and a whistle plus a handful of chugs timed to the
+    // train's own pass window (TRAIN_PASS_START_PCT of REEL_MS[1]).
     function playReel1() {
       context();
       clearOneShots();
       startBed({ freq: 900, type: 'lowpass', q: 0.5, level: 0.10 });
-      [
-        { delay: 4300, freq: 1400 }, { delay: 6800, freq: 1550 },
-        { delay: 20300, freq: 1300 }, { delay: 34300, freq: 1600 },
-        { delay: 36800, freq: 1250 },
-      ].forEach((f) => {
-        tone({ delay: f.delay, dur: 0.5, freq: f.freq, freqEnd: f.freq * 1.3, type: 'sine', level: 0.05 });
+      BIRD_FLIGHTS.forEach((f) => {
+        tone({ delay: f.delay * 1000 + BIRD_CHIRP_OFFSET_MS, dur: 0.5, freq: f.freq, freqEnd: f.freq * 1.3, type: 'sine', level: 0.05 });
       });
-      tone({ delay: 29600, dur: 1.3, freq: 520, freqEnd: 640, type: 'sine', level: 0.09 });
-      [30400, 30950, 31500, 32050, 32600].forEach((d) => {
-        burst({ delay: d, dur: 0.14, freq: 120, type: 'lowpass', q: 0.8, level: 0.16 });
-      });
+      const trainPassStartMs = REEL_MS[1] * TRAIN_PASS_START_PCT;
+      tone({ delay: trainPassStartMs - TRAIN_WHISTLE_LEAD_MS, dur: 1.3, freq: 520, freqEnd: 640, type: 'sine', level: 0.09 });
+      for (let i = 0; i < TRAIN_CHUG_COUNT; i++) {
+        burst({ delay: trainPassStartMs + TRAIN_CHUG_OFFSET_MS + i * TRAIN_CHUG_INTERVAL_MS, dur: 0.14, freq: 120, type: 'lowpass', q: 0.8, level: 0.16 });
+      }
     }
 
     // Reel two: a rain-hiss bed for the full 46s, and a two-part thunder
     // crack (a sharp high crack, a low rumble underneath) landing right on
-    // the lightning keyframe's 61.2% peak (28.15s of 46s).
+    // the lightning keyframe's own peak (LIGHTNING_PEAK_PCT of REEL_MS[2]).
     function playReel2() {
       context();
       clearOneShots();
       startBed({ freq: 2600, type: 'highpass', q: 0.6, level: 0.09 });
-      burst({ delay: 28050, dur: 0.35, freq: 2400, type: 'highpass', level: 0.28 });
-      burst({ delay: 28100, dur: 2.6,  freq: 140,  type: 'lowpass',  level: 0.20 });
+      const lightningPeakMs = REEL_MS[2] * LIGHTNING_PEAK_PCT;
+      burst({ delay: lightningPeakMs - LIGHTNING_CRACK_LEAD_MS, dur: 0.35, freq: 2400, type: 'highpass', level: 0.28 });
+      burst({ delay: lightningPeakMs - LIGHTNING_RUMBLE_LEAD_MS, dur: 2.6,  freq: 140,  type: 'lowpass',  level: 0.20 });
     }
 
     // Reel three: a thin, dry wind bed (higher-passed and quieter than reel
@@ -925,10 +960,6 @@
   // the menu — never required, just there for anyone who wants another reel
   // without reloading the page.
   (function () {
-    const REEL_MS = { 1: 54000, 2: 46000, 3: 34000 };
-    const LEADER_MS = 4000;
-    const REEL_NAMES = { 1: 'REEL ONE', 2: 'REEL TWO', 3: 'REEL THREE' };
-
     const menu = document.getElementById('menu');
     const entryLeader = document.getElementById('entryLeader');
     const entryLeaderText = document.getElementById('entryLeaderText');

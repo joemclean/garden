@@ -114,8 +114,8 @@
       "stage": 4,
       "title": "Open ground: something that moves",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-15",
-      "note": "Eighth tend takes up the one item all seven prior sittings named but never tried: sound. Procedural Web Audio (one filtered noise buffer plus one-shot tones/bursts) scored to moments the visuals already mark — bird chirps at their own delays, train chugs across its 56%-68% pass, thunder timed to the lightning's exact 61.2%-of-46s peak, distinct wind beds per reel. AudioContext created lazily inside the existing menu-click handler; a small optional mute toggle added. Verified: 0 contexts before click, running after; full playAll path end to end, zero errors. Stays at bloom.",
+      "last_tended": "2026-07-16",
+      "note": "Ninth tend de-duplicates the audio/visual timing eighth tend hand-matched: bird chirps, train chugs, and thunder now derive from the same BIRD_FLIGHTS array and TRAIN_PASS_START_PCT/LIGHTNING_PEAK_PCT constants the visuals use, instead of a second hardcoded copy of each number. CSS keyframes got one-line comments naming the JS constant they must stay in sync with. Verified every derived delay matches the old hardcoded values exactly (Node arithmetic plus a real Playwright run instrumenting setTimeout). Pure refactor, zero behavior change. Stays at bloom.",
       "door": "plots/d1/growth/index.html"
     },
     "c4": {

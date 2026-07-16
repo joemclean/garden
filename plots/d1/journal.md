@@ -526,3 +526,65 @@ not just individually plausible. No feedback issues existed on this plot
 or elsewhere in the repo this visit (gate was clear: no open PRs, no open
 issues, no stray unmerged garden work — the many `claude/charming-shannon-*`
 branches remain squash-merge residue). No seedbox ideas.
+
+## 2026-07-16 — ninth tend: the shared-timestamp refactor, item (3) from last visit
+
+Took up the exact item eighth tend left named: the bird chirps, train
+whistle/chugs, and thunder crack/rumble were hand-timed against the
+visuals' own numbers rather than reading from them, so a future change to
+a bird's delay or a reel's duration could silently desync the audio from
+the picture it's scored to. Fixed the part of that gap code can actually
+close.
+
+Lifted the five-bird `flights` array (previously local to the bird-drawing
+IIFE, with a second, independently-typed copy of the same five delays
+hardcoded as `{delay, freq}` pairs inside `playReel1`) into one shared
+`BIRD_FLIGHTS` array at the top of the script, now read by both the SVG
+birds and the chirp scheduler — one list instead of two that happened to
+agree. Did the same for the train and the lightning: `TRAIN_PASS_START_PCT`
+(0.56, matching the `trainPass` keyframe's own 56% mark) and
+`LIGHTNING_PEAK_PCT` (0.612, matching `flash`'s 61.2% mark) are now named
+constants that the whistle/chug and crack/rumble delays are computed from
+(`REEL_MS[1] * TRAIN_PASS_START_PCT`, etc.) rather than separately
+hardcoded millisecond literals. `REEL_MS`/`LEADER_MS`/`REEL_NAMES` moved
+from the orchestration IIFE to the same shared top-level block so the
+audio module (which runs earlier in the script) can read them too, instead
+of duplicating `{1:54000,2:46000,3:34000}` a second time. As last visit's
+own reasoning predicted, CSS keyframes can't read a JS constant, so the
+`trainPass` and `flash` keyframes each got a one-line comment naming the
+constant they must be kept in sync with by hand — real dedup on the JS
+side, comment-level cross-reference on the CSS side, not the fuller fix
+that isn't actually available here.
+
+Verified this was a pure refactor, not a behavior change, two ways. First,
+computed every derived delay by hand (Node) and confirmed each matches the
+original hardcoded literal to within floating-point epsilon (e.g.
+`46000 * 0.612 - 102 = 28050`, `54000*0.56 + 160 + 4*550 = 32600`, etc. —
+all five chug delays, the whistle, both thunder delays, and all five bird
+chirp delays landed exactly on the numbers eighth tend's code had spelled
+out literally). Second, instrumented `window.setTimeout` in a real
+Playwright/Chromium run to capture the actual delay values `tone()`/
+`burst()` schedule at runtime for reel one and reel two — the captured
+sets (`[4300, 6800, 20300, 29600.000000000004, 30400.000000000004,
+30950.000000000004, 31500.000000000004, 32050.000000000004,
+32600.000000000004, 34300, 36800]` for reel one;
+`[28050, 28100]` for reel two, plus one incidental `480` in each — the
+existing `stopBed(0.4)` cleanup timer, unrelated to this change) match the
+pre-refactor values exactly. Also reconfirmed the door end to end: menu
+loads, back-link (`../../../viewer/`) resolves, `#playAll` starts reel one
+with no console/page errors, mute toggle round-trips correctly.
+
+Stage stays at bloom — this is a cleanliness/de-duplication pass on
+already-verified behavior, not new territory, same posture as several
+prior sittings' cold rereads. Door unchanged (`growth/index.html`);
+back-link and return-link both confirmed present and working.
+
+Where to pick up: no open bugs. (1) the fourth-reel question, unchanged —
+revisit only if the three-reel/menu shape starts to feel thin; (2) the
+`transform-box: fill-box` rule for any new SVG element combining
+`translate` with `rotate`/`scale`; (3) per-reel volume balance, still
+untried with real speakers/audio hardware, unchanged from eighth tend. No
+feedback issues existed on this plot or elsewhere in the repo this visit
+(gate was clear: no open PRs, no open issues; the many
+`claude/charming-shannon-*` branches remain squash-merge residue from
+past visits). No seedbox ideas.
