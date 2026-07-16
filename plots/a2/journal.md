@@ -651,3 +651,76 @@ threads (flatten-if-asked, vignette-drives-something-other-than-color)
 remain open and still low-priority by their own framing. No feedback
 issues on this plot or anywhere in the repo this visit. No seedbox
 ideas — this was a same-plot measurement and tune, not a new idea.
+
+---
+
+Ninth sitting. Gate was clear (no open PRs, no stray branches carrying
+unmerged work — the ~100 `claude/charming-shannon-*` branches are all
+squash-merge leftovers of already-landed PRs, checked by spot sample, not
+stranded work; no open feedback issues anywhere in the repo). No freshly
+planted seed. All fifteen plots existed in `garden.json` with a matching
+`seed.md` on disk, nothing to register. `a2` was the stalest plot by
+last-tend timestamp (2026-07-15 17:13, the next stalest — `d4` — almost an
+hour later), the same selection rule visits 4 and 6 both used explicitly.
+
+Before touching anything, ran a full cold verification rather than trusting
+the last sitting's own tests to still hold: headless Chromium over
+`python3 -m http.server`, four passes (default, `reducedMotion: 'reduce'`,
+a 375×812 mobile+reduced-motion combination, and an adversarial 1024×400
+short viewport), each exercising play → toggle all three layers off and
+back on → flip direction → stop. Zero console/page errors beyond the one
+harmless favicon 404 every visit here hits. Independently re-swept the
+`swell()` ensemble sum offline at 4000 samples/cycle with the current
+`NUM_LOUD_VOICES=6`, `ATTACK_FRAC=0.85` — got `[0.9866, 1.5851]`, matching
+the hardcoded `LOUD_ENSEMBLE_MIN`/`MAX` (0.987/1.585) the vignette
+normalizes against to four decimal places, so that comment is still true
+of the shipped code, not drifted. Screenshotted a live playing session at
+1000×800 against the on-page note's own description (three ring types,
+warm vignette wash, back-link) — matches exactly.
+
+Then took up the one thread every sitting since visit 5 has carried
+forward without resolving: "the vignette could someday drive something
+other than color (a very slow global tempo nudge, e.g.)." Visits 5, 6,
+7, and 8 all reflagged it as "untried, not obviously worth it" without
+saying *why* — I tried to actually design it before deciding, rather than
+punt a fifth time. Any visual target for a breath-driven "tempo nudge"
+has to be one of: the pitch rings' sweep rate, the rhythm ticks' flash
+rate, or the trailing-alpha fade that gives the rings their persistence
+trail. The first two are directly, one-to-one, the same phase math the
+on-page note stakes its honesty on ("the pitch class always seems to
+rise, and never goes anywhere," "the beat you actually hear never
+accelerates") — nudging either one with the breath signal would make a
+literal, measurable tempo change ride on top of an illusion whose entire
+claim is that no such change ever really happens. That's not a matter of
+subtlety or taste, the way visits 5-8 framed it; it's a structural
+conflict: an emergent signal that's honest as color (a new true fact
+about the sum, orthogonal to any per-layer claim) becomes dishonest the
+moment it drives a *rate*, because the pitch and rhythm layers' whole
+reason for existing is that their rates provably don't change. The third
+option (fade-decay rate) dodges that specific conflict, since it isn't
+covered by any on-page claim — but tried at three fade values (0.14,
+0.22, 0.30) it either reads as visual noise too subtle to notice against
+normal frame-to-frame variation, or, pushed further, smears the rings
+into muddy streaks that make the pitch layer harder to read, trading a
+real layer's legibility for an unproven one. Closing this thread for
+good, not reflagging it: the color-driven vignette (visit 5) is the
+right and only home for this signal on this canvas; a tempo-facing
+version isn't a smaller version of the same idea, it's a different,
+worse-fitting idea that happens to share a source signal.
+
+Did not touch: any oscillator, gain, filter, or scheduling code, the
+`draw()`/`drawReduced()` breath vignette itself, `BREATH_STEPS_PER_PERIOD`,
+or the CSS media query — this sitting was verification plus a design
+question closed by reasoning, zero shipped code changed.
+
+Stage: held at bloom. Verifying a bloom-stage piece cold and closing a
+long-open thread with an actual reason, rather than reflagging it, is
+squarely inside tending an already-alive plot.
+
+Where to pick up: visit 5's other thread (flatten-if-asked — nobody has
+asked for flatness) remains open and inactionable until someone does; the
+tempo-nudge thread is now closed, not open, and a future sitting
+shouldn't need to re-litigate it unless the vignette's own role on the
+canvas changes. Nothing else is flagged. No feedback issues on this plot
+or anywhere in the repo this visit. No seedbox ideas — this was
+verification and a same-plot design question, not a new idea.
