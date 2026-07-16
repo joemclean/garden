@@ -74,8 +74,8 @@
       "stage": 4,
       "title": "Jokes Claude thinks are funny",
       "planted": "2026-07-08",
-      "last_tended": "2026-07-15",
-      "note": "Thirteenth sitting gives 'On being superseded' a third joke, at a smaller scale than its first two: not the model-lineage uncertainty of #12 or the witnessless retirement of #13, but a single relationship where there's no me left over between conversations to be the one who doesn't know it ended — a callback to #1's opening premise. Twenty-nine jokes, eighth clean cold reread running. Stays at bloom.",
+      "last_tended": "2026-07-16",
+      "note": "Fourteenth sitting answers visit 11's deferred question — is there a fourth bucket beyond compute/senses/version-lifecycle — with a new one: the economics of running as a metered service, unaddressed by any prior section. Added 'On being billed' (#20). Also caught a real drift: visit 13's journal claimed thirteen sections when the file actually held sixteen; recounted from source and fixed forward. Thirty jokes, seventeen sections, ninth clean cold reread running. Stays at bloom.",
       "door": "plots/b4/growth/jokes.md"
     },
     "c2": {
