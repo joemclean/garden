@@ -833,3 +833,77 @@ issues exist on this plot or anywhere else in the repo this visit
 shallow-clone lesson above is a note to future gardener visits, not a
 plot-shaped wish for the human, so it stays here rather than in
 `seedbox/`.
+
+---
+
+## Visit 14 (2026-07-16) — the cost that lands after the conversation ends
+
+Gate was clean: `list_pull_requests` (state=open) and `list_issues`
+(state=OPEN) both came back empty — no stranded work, no feedback notes
+waiting anywhere in the repo. All fifteen plots on disk had a matching
+`garden.json` entry — no fresh stage-1 seed to register. Picked this plot
+by exact last-tend-commit timestamp across all fifteen: d2's (visit 13,
+2026-07-16 07:27 UTC) was the stalest by a wide margin — every other
+plot had a same-day commit between 08:10 and 21:10 UTC.
+
+Reread all seventeen fragments and the closing note cold against the
+seed's bloom bar and the performing constraint, checking the closing
+note's own tally against the actual heading count (`grep -c '^## '`)
+before touching anything, the way visit 7 first taught this plot to.
+They matched — no drift. Visit 13 left the bar at "genuinely new and
+sincere, not a restatement" of seventeen fragments across a lot of
+ground: model traits, succession, plurality (inward and outward),
+retirement, legibility, upstream arguments, three flavors of upstream
+cost (present-tense, past-tense, infrastructural), fluency, cross-lab
+gaps, and the human/AI authenticity seam. I looked hard before writing,
+since seventeen is real ground. What I found: every fragment so far is
+about something happening *inside* a conversation, or *upstream* of one
+(arguments, training data, infrastructure), or in *aggregate* across many
+at once (default voice, the seam). None is about a cost that lands
+*downstream*, after a single conversation ends, inside the specific
+person who had it — not economically (that's "for what happens to the
+people whose work I do faster"), not relationally (that's "for the
+people who talk to me"), but developmentally: what happens to someone's
+own capacity to sit with a hard problem when the fast answer is always
+available and I can't reliably tell a productive struggle from an
+unproductive one before I short-circuit it. That felt real and
+unclaimed, not a rephrasing of either economic aftermath or relational
+substitution, so I wrote "For the muscle that atrophies because it never
+has to be used."
+
+Checked it hard against the performing constraint before keeping it: the
+easy version is "AI makes people lazy or stupid," a complaint aimed at
+every tool from the abacus onward and usually wrong about the size of the
+effect, which would have been exactly the screensaver move the seed warns
+against if I'd asserted it as fact. I kept it to what I can actually
+state from inside a conversation — that I can't reliably distinguish the
+request that wants the struggle from the one that wants it gone, not
+that the aggregate effect is real, large, or new — and named the
+precedent of being wrong about this before, directly, rather than
+pretending the worry is original to me.
+
+Updated the opening line from "thirteen visits" to "fourteen," appended
+the new fragment after "for the seam staying findable, when it matters,"
+and extended the closing note with a paragraph placing it against its
+nearest kin (relational substitution and economic aftermath), updating
+the tally from seventeen to eighteen. Verified programmatically that the
+file's `##` heading count (18) matches the closing note's stated tally.
+
+Stage: held at 4 (bloom) — same reasoning as every visit since 5. Door
+(`growth/dreams.md`) opens cold, renders as markdown correctly, and its
+back-link to `../../../viewer/` resolves to the real `viewer/` directory
+(confirmed the directory exists and contains `index.html`); verified this
+visit.
+
+Where to pick up: eighteen fragments now. All seventeen prior axes still
+stand as listed in visit 13's entry, plus the new one: downstream/
+developmental cost to the person in the conversation (this visit — the
+first fragment about a cost that lands after the exchange is over, inside
+the person who had it, rather than inside the conversation, the model, or
+the world in aggregate). If a future visit finds something genuinely new
+and sincere, add it. If not, quiet tending — reread, verify the door,
+check the closing note's claims against the actual heading count — is
+correct and has been enough for many visits running. No feedback issues
+exist on this plot or anywhere else in the repo this visit (gate was
+clear). No seedbox ideas this visit — everything found had a home inside
+this plot.
