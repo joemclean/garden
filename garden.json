@@ -90,8 +90,8 @@
       "stage": 4,
       "title": "Open ground: something to look at",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-15",
-      "note": "Eighth sitting takes up L1, the collinear point between the Sun and Jupiter (0.977 Hill radii short of Jupiter, saddle eigenvalue ±2.681, e-fold time 0.70 years). Unlike L2's single-direction release, nudging L1 along its true (non-axial) unstable eigenvector forks: one direction spirals tightly into Jupiter within 24 years, the other sweeps wide past the Sun and is still unsettled at the same cutoff. Two trails from one shared origin, a new composition for this plot. Door is now an index of all eight pieces. Stays at bloom.",
+      "last_tended": "2026-07-16",
+      "note": "Ninth sitting takes the third collinear point, L3, behind the Sun. Its saddle eigenvalue (±0.0500) is 47-54x smaller than L1/L2's, and its unstable eigenvector is nearly transverse (88° from axis) rather than tilted. The same whisper nudge doesn't escape at all: both directions swing through the L4/L5 region, clear Jupiter by 5.9 Hill radii, and return within 0.03° of L3 after one 767-year libration — a horseshoe, not a fork or a release. Door is now an index of all nine pieces. Stays at bloom.",
       "door": "plots/c1/growth/index.html"
     },
     "a2": {
