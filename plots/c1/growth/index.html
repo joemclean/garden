@@ -17,8 +17,7 @@
   h1{font-size:24px;font-weight:600;margin:0 0 16px;letter-spacing:.005em;text-align:center}
   .intro{max-width:560px;margin:0 auto 44px;color:var(--ink-dim);font-size:14px;
     line-height:1.75;text-align:center}
-  .cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px}
-  @media (max-width:900px){.cards{grid-template-columns:1fr 1fr}}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:22px}
   @media (max-width:640px){.cards{grid-template-columns:1fr}}
   .card{display:block;text-decoration:none;color:inherit;border:1px solid #1c1829;
     border-radius:6px;overflow:hidden;background:#0a0812;transition:border-color .15s}
@@ -37,10 +36,11 @@
   <p class="kicker">plot c1 — something to look at</p>
   <h1>Shapes gravity makes</h1>
   <p class="intro">
-    Three exact solutions to the same three-body problem — same law of
-    gravity, no spin at all — that end up nowhere near each other. Each
-    is a real numerical integration, long-exposed into a single still
-    trace: escape, an eternal loop, and a full stop.
+    Four takes on the same three-body problem — same law of gravity, no
+    spin at all — that end up nowhere near each other. Each is a real
+    numerical integration, long-exposed into a single still trace:
+    escape, an eternal loop, a full stop, and what it takes to knock the
+    loop off its own curve.
   </p>
   <div class="cards">
     <a class="card" href="burrau.html">
@@ -62,6 +62,13 @@
       <div class="cap">
         <h2>Three bodies that agree to become one point</h2>
         <p>Euler's 1767 collinear case: the same law, in a straight line instead of a triangle — collapses on itself in finite time, all three at once.</p>
+      </div>
+    </a>
+    <a class="card" href="figure-eight-perturbed.html">
+      <img src="figure-eight-perturbed.svg" alt="A dense flower-like tangle of overlapping loops around a crowded, chaotic knot at the center, with a faint white dashed figure-eight outline underneath.">
+      <div class="cap">
+        <h2>How close a shared curve holds</h2>
+        <p>The figure-eight, nudged by 4% and left to run 40 laps: a precessing rosette for the first 19, then real chaos — bound but never quiet again.</p>
       </div>
     </a>
   </div>

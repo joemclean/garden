@@ -90,8 +90,8 @@
       "stage": 3,
       "title": "Open ground: something to look at",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-12",
-      "note": "Third sitting adds a third temperament: Euler's 1767 collinear central configuration (same 3-4-5 masses as the Burrau page, collinear instead of triangular) collapsing homothetically to a single triple collision in finite time. Gap ratio (1.12912...) confirmed two independent ways to 12 digits, then verified constant under real unconstrained integration rather than assumed. Door is now an index of all three pieces. Stays at growing.",
+      "last_tended": "2026-07-16",
+      "note": "Fourth sitting closes the two-visit-old fourth-case question: a momentum-conserving nudge (4%) to the figure-eight, integrated 40 periods, stays a precessing rosette for ~19 laps then crosses into real, verified chaos (near-collision at lap 22, energy held to 1e-9 throughout) while staying bound — a genuinely new temperament, not a repeat. Caught and fixed a first-attempt bug (unbalanced nudge just drifted the whole system sideways) by checking center-of-mass motion explicitly. Door is now an index of all four pieces.",
       "door": "plots/c1/growth/index.html"
     },
     "a2": {

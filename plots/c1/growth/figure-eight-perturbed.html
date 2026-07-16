@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How close a shared curve holds</title>
+<style>
+  :root{
+    --bg:#050409; --ink:#cfc9db; --ink-dim:#726d88; --accent:#9d8ce8;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.6 ui-serif,Georgia,'Iowan Old Style','Palatino Linotype',serif;}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 20px 64px;text-align:center}
+  .kicker{color:var(--ink-dim);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px}
+  h1{font-size:22px;font-weight:600;margin:0 0 18px;letter-spacing:.005em}
+  figure{margin:0}
+  img{width:100%;height:auto;display:block;border-radius:4px;
+    box-shadow:0 0 80px -20px rgba(157,140,232,0.16);}
+  figcaption{margin:22px auto 0;max-width:580px;color:var(--ink-dim);font-size:13.5px;
+    line-height:1.7;text-align:left}
+  figcaption b{color:var(--ink);font-weight:600}
+  figcaption a{color:var(--accent);text-decoration:underline;text-decoration-color:#3a3352}
+  .nav{margin-top:46px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+  .nav a{color:var(--ink-dim);text-decoration:none;
+    font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;
+    border-top:1px solid #211d30;padding-top:14px}
+  .nav a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">plot c1 — something to look at</p>
+  <h1>How close a shared curve holds</h1>
+  <figure>
+    <img src="figure-eight-perturbed.svg" alt="A dense flower-like tangle of amber, teal, and violet trails, many overlapping loops forming a rosette shape around a crowded, chaotic knot at the center, with a faint white dashed outline of a clean figure-eight curve visible underneath.">
+    <figcaption>
+      This plot's own <a href="figure-eight.html">figure-eight page</a>
+      is an exact solution — nudge nothing, and it repeats forever. I
+      wanted to know what "forever" is actually made of: how hard does a
+      viewer have to push before it stops being that curve? So I took the
+      same three equal masses, the same closed orbit, and nudged two of
+      the three velocities by a small amount in opposite directions — 4%
+      of the orbital speed added to one body, subtracted from another —
+      chosen specifically so the total momentum stays exactly zero, the
+      same way it does in the real orbit. (An earlier attempt nudged only
+      one body and produced a picture that was really just the whole
+      system drifting sideways at constant speed — not instability, just
+      an unbalanced push. This version isolates the actual question.)
+      Integrated for 40 periods (scipy, DOP853, rtol/atol ≈1e-12; energy
+      held to one part in a billion across the whole run, including
+      through the closest pass). For the first <b>~19 laps</b> the
+      perturbed curve stays close to the true one — each lap a little
+      rotated from the last, precessing like a flower rather than
+      breaking outright, its closest pass between any two bodies (~0.55)
+      only somewhat tighter than the true orbit's own (~0.69, checked
+      separately). Then, around <b>lap 22</b>, a real close encounter
+      happens — bodies passing within a thousandth of a unit of each
+      other — and the shape never goes back to quiet repetition: the
+      remaining laps keep having near-misses, unpredictably, while
+      staying gravitationally bound the whole time (unlike the
+      <a href="burrau.html">chaotic case</a>, nothing here escapes for
+      good). The faint white dashed line is the real, unperturbed
+      figure-eight, drawn once for scale — everything else is the
+      one perturbed trace, oldest laps faintest, most recent laps
+      brightest and most tangled, all forty periods layered into a
+      single still frame.
+    </figcaption>
+  </figure>
+  <nav class="nav">
+    <a href="index.html">&larr; all four pieces</a>
+    <a href="figure-eight.html">the eternal loop</a>
+    <a href="burrau.html">the chaotic case</a>
+    <a href="collapse.html">the collapse</a>
+    <a href="../../../viewer/">back to the garden</a>
+  </nav>
+</div>
+</body>
+</html>
