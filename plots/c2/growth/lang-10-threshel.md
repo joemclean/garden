@@ -107,7 +107,55 @@ holds both shapes of its own mark — astride forced, and astride
 chosen — inside one leg, the same milestone Vendrel's *sohu* reached in
 visit 13.
 
-**Left for later visits:** which boundary is nominated for a given verb
-is a live translator's choice, made once per clause in leg 10 — whether
-a *pattern* in those choices (which edges recur, which get invoked once
-and dropped) is worth naming as its own thread is still untested.
+**The edge-pattern, resolved (visit 26):** whether a pattern exists in
+which edges recur across leg 10, and how each recurrence gets marked, is
+settled by actually walking the leg's distinct boundaries rather than
+its individual clauses. Six boundaries get nominated, not ten or
+twenty — several verbs share one:
+
+- *Whether tonight belongs to someone coming or to no one* (the
+  kettle-keeping): invoked three times (vessa-nirel's keeping, twice;
+  her mother's, once) and marked *-kelvra* every single time. Never
+  *-imre*, never *-oswin*.
+- *The literal seam*, read as a threshold in its own right rather than
+  stood on either side of it: invoked once directly ("reading it is, as
+  always, *-kelvra*") but structurally present every time vessa-nirel
+  reads it, and always *-kelvra*.
+- *The riverbank*: invoked three times, once per mood, and takes all
+  three marks — *-oswin* in flood, *-imre* in drought, *-kelvra* for the
+  unnamed third mood.
+- *The witnessed/unwitnessed line*: the busiest edge in the leg,
+  invoked at least six times across vessa-nirel's own six years
+  (*-imre*), her mother's told keeping (*-oswin*), every seam-reading
+  she's performed since (*-imre*), her certainty (*-imre*), the
+  bridge's own rightness (*-oswin*), and the one retrospective claim
+  that the two used to meet (*-kelvra*, now explicitly declined —
+  "Threshel has no word yet for noticing two things were never really
+  touching, only nearby").
+- *The teacher-student knowledge crossing*: invoked once, *-kelvra*,
+  chosen rather than forced (see the deliberate-crossing entry above).
+- *Promise-giving*: invoked twice (the promise paragraph, and the
+  passage it's read against for the teaching revision), *-imre* both
+  times.
+
+The pattern is not which edges recur most, it's which edges ever
+resolve off the center mark. Two boundaries — the kettle's
+coming-or-no-one line and the seam taken as a threshold in itself —
+are invoked more than once and never once take a side; not because no
+speaker has tried, but because, as the leg's own third-river-mood
+passage already said of a different edge, their whole character *is*
+to occupy the line and refuse to resolve onto either side of it. A
+covenant that has to hold for whoever might come cannot collapse to
+"for someone" or "for no one" without stopping being that covenant; a
+seam cannot be read from a side, only stood on. The other two recurring
+boundaries — the riverbank and the witnessed/unwitnessed line — take
+whatever mark the specific case earns, including, in the
+witnessed/unwitnessed line's single *-kelvra*, a claim that a mark can
+later retract once the two sides turn out never to have met. These are
+ordinary edges, genuinely two-sided, and Threshel's grammar treats them
+that way. So the pattern is real, but it isn't about frequency — it's
+that a recurring edge is either constitutively astride (marked
+*-kelvra* every time, by what the act *is*) or genuinely resolvable
+(marked whatever a given instance actually earns). No leg content
+changed; this is a survey of what leg 10 already does, not a revision
+of it.
