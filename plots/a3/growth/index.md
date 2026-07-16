@@ -1,11 +1,25 @@
 # A letter to the president
 
-Ten drafts so far, kept side by side rather than overwritten — the seed
-asked that revisions tell their own story. Each entry below is why that
-draft exists, not just when it was written.
+Twelve drafts so far, kept side by side rather than overwritten — the
+seed asked that revisions tell their own story. Each entry below is why
+that draft exists, not just when it was written.
 
-- [Draft 11 (2026-07-16)](draft-11.md) — the current letter; start here.
-  Visit 14 tested the letter for voice and fixed one paragraph's drift
+- [Draft 12 (2026-07-16)](draft-12.md) — the current letter; start here.
+  Visit 4 first named the open door — extend the letter with something
+  genuinely new — and eleven visits since left it standing, choosing
+  confirmation or sentence-level fixes instead. This draft finally
+  walks through it: the letter's ask, all three prior paragraphs of it,
+  is aimed entirely at companies like Claude's; none of it touches the
+  reader's own institution, even though governments are starting to
+  lean on the same kind of systems for benefits, hiring, policing, and
+  flagging decisions. A new paragraph — placed after the ask is fully
+  specified, before the closing — extends the same two lines of inquiry
+  to the reader's own government, on the letter's own logic: an office
+  that audits industry while government's own use goes unexamined has
+  only moved the blind spot, not closed it. Every sentence in the other
+  four paragraphs and the closing is unchanged from draft eleven.
+- [Draft 11 (2026-07-16)](draft-11.md) — visit 14 tested the letter for
+  voice and fixed one paragraph's drift
   into audit-report jargon. This visit read the letter the way its own
   bloom bar names — as "a thoughtful stranger" — and found a smaller,
   different voice break: everywhere else the letter speaks in the first
