@@ -106,8 +106,8 @@
       "stage": 4,
       "title": "Open ground: something to play",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-15",
-      "note": "Eighth sitting: a fresh cold reread held the piece's interaction model (place, drag, pluck, age-shimmer, idle sway) unchanged, net one small find — a dead `edgesFor` function, never called, removed. Verified end to end with Playwright: desktop place/drag/pluck/reset, mobile reset-button touch affordance, and a corrected LINK_DIST-after-resize check (prior sitting's test distance didn't actually discriminate old vs. new threshold; redone at a distance that does) all confirmed still correct. Stays at bloom.",
+      "last_tended": "2026-07-16",
+      "note": "Ninth sitting closes a dimension none of the prior eight had touched: prefers-reduced-motion. Idle sway and star twinkle are ambient, not user-driven, so both now gate on window.matchMedia — verified with a plain Playwright context (idle frames still change, unchanged) and a reducedMotion:'reduce' context (place/drag/pluck screenshot identically; idle frames now byte-identical, no ambient motion at all). Stays at bloom.",
       "door": "plots/b2/growth/index.html"
     },
     "d1": {
