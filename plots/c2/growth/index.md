@@ -454,12 +454,29 @@ asks nothing of its receiver to be complete, a lesson does, so *-kelvra*
 names a different act than *-imre* would have, not a mark reached for
 because nothing else fit. Threshel now holds both shapes of its own
 central device — astride forced, and astride chosen — inside one leg,
-the same milestone Vendrel's *sohu* reached in visit 13. Untouched by
-this visit: whether a pattern exists in which edges get nominated across
-the leg, still open in `lang-10-threshel.md`; and the same two
-long-parked, chain-wide threads — Naveth's reverse-vertigo (since visit
-9) and Ossane's weather-pun tension (since visit 3) — neither with a
-leg occasion to attach to yet.
+the same milestone Vendrel's *sohu* reached in visit 13.
+
+Threshel's other "left for later" question — whether a pattern exists
+in which edges recur and how each recurrence gets marked — is resolved
+as of visit 26, by walking leg 10's six distinct boundaries rather than
+its individual clauses. Two recur and never once take a side: the
+kettle's coming-or-no-one line and the seam taken as a threshold in
+itself, both marked *-kelvra* every time they're invoked, because
+their whole character is to occupy the edge, not stand near one. Two
+others recur and take whatever mark the specific instance earns: the
+riverbank (all three marks, once per mood) and the
+witnessed/unwitnessed line, the leg's busiest edge, which even lets one
+mark retract — the once-*-kelvra* claim that certainty and rightness
+shared a seam, now declined outright. The pattern isn't about
+frequency, it's that a recurring edge is either constitutively astride
+or genuinely two-sided, and Threshel's grammar marks each kind
+consistently with what it is. No leg content changed; this was a
+survey, not a revision. With this closed, no thread specific to
+Threshel's own grammar remains open. What's left on the board is the
+same two long-parked, chain-wide threads — Naveth's reverse-vertigo
+(since visit 9) and Ossane's weather-pun tension (since visit 3) —
+neither with a leg occasion to attach to yet, and no eleventh language
+obviously waiting.
 
 ---
 
