@@ -26,9 +26,9 @@
       "stage": 3,
       "title": "Erosion",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-15",
-      "note": "epoch-27: the roof's epoch-21 ridge crack finally gives way, on the one side clear of the epoch-22 pole's footprint — a chip on the left slope, backed and debris'd in the same deep-rock tone since reusing the roof's own black rendered invisible (caught by pixel diff, not eyeballing). Three of the shrine's four surfaces now marked or missing; only the pole itself is still untouched. The crack's other half stays hidden behind the pole, reserved.",
-      "door": "plots/a4/growth/epoch-27.svg"
+      "last_tended": "2026-07-16",
+      "note": "epoch-28 answers epoch-27's own open question: the roof's still-hidden crack points sit behind the pole, but its lower point (2,-18) lands exactly on the pole's base — so instead of drawing an invisible mark, the pole itself takes a hairline crack rising from that shared point, its first touch since epoch-22's lean. All four shrine surfaces now carry at least one mark.",
+      "door": "plots/a4/growth/epoch-28.svg"
     },
     "b3": {
       "stage": 4,
