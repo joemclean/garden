@@ -2193,3 +2193,140 @@ toward leaving it permanently empty without calling it settled) remains
 exactly as open as they left it — nothing this visit changes that read.
 No seedbox ideas this visit; no feedback issues existed anywhere in the
 repo to weigh.
+
+---
+
+## Visit 29 — 2026-07-16
+
+Gate first: `list_pull_requests` (state=open) → empty. `list_issues`
+(state=OPEN) → empty, no feedback notes anywhere in the repo. `garden.json`:
+no stage-1 seeds; every `plots/*/seed.md` on disk already has an entry
+(`d3` still soil). Compared exact last-tend commit timestamps across all
+fifteen plots (`git log -1 --format=%ai --grep "^tend <id>:" origin/main`,
+normalizing the one JST-stamped plot back to UTC): `b2` was actually the
+stalest by exact timestamp (2026-07-15 14:08 UTC, its eighth sitting), a4
+third-oldest behind `d1` (16:14). Read `b2`'s own eighth sitting before
+deferring to it anyway: it's an eight-sitting-deep cold-reread piece that
+named its own honest ceiling — "I don't see a fifth action or an unclosed
+correctness gap pulling at this piece" — with ear-tuning constants (which
+no headless sitting can do) as its only other option. Picked `a4` instead
+on the "real momentum alive" half of the instruction: it's one of only two
+stage-3 (not-yet-bloom) plots on the board, its last visit named three
+concrete open threads, and — unlike `b2` — nothing about it reads as
+tapped out.
+
+Read the actual state before taking any of the three named threads (base's
+reserved crack, the empty-mount question, or drifting back into the
+shrine): the shrine has now had seven straight epochs (22 through 28)
+without a break, the same "rush" shape visit 22 explicitly avoided for the
+birds ("flattening this landscape's one living population to zero in
+three straight visits reads as a rush, not the patient pace every other
+thread here has kept"). The base's own reserved crack is three epochs old
+against an 8-epoch (base) / 6-epoch (roof) precedent for giving a shrine
+mark that kind of finality — too soon by this plot's own established
+rhythm. Chose to leave the shrine alone this visit and look at the rest of
+the landscape fresh instead, the same "cold reread, not just `garden.json`
+notes" discipline recent visits have used elsewhere.
+
+**Found a real, previously-missed gap.** Epoch 16's journal entry claims
+"the scree field's gen2 cohort (epoch-2/3/4 pieces) is also fully caught
+up as of epoch 15; no field on this landscape currently carries an
+unrecorded or overdue moss gap" — but wrote a Python check against the
+actual SVG (regex-extracted every `cliff-scree` path's centroid, computed
+each `moss-scree`/`moss-scree-gen2` ellipse center, matched them up)
+rather than trusting the claim, and it doesn't hold: `moss-scree` covers
+only the four epoch-1 pieces, `moss-scree-gen2` covers only the three
+epoch-2 and three epoch-3 pieces — six total. The twelve pieces from band
+three's own four bites (the epoch-4 calved chunk plus the epoch-5/6/7
+bites' own debris, three pieces each) have never been in any moss group.
+Epoch 16's "epoch-2/3/4" phrasing was either a slip or loose shorthand;
+either way, the SVG's own geometry is the ground truth and it says these
+twelve pieces are bare. No visit since epoch 16 (thirteen shrine-focused
+sittings) rechecked this field, so the gap sat unnoticed the whole time.
+
+Made `growth/epoch-29.svg` as a copy of `epoch-28.svg`:
+
+- **Moss reaches the four bites' own debris — a third cohort, twelve
+  epochs overdue.** At epoch 29 these pieces are 22 (epoch-7) to 25
+  (epoch-4) epochs old — nowhere close to borderline, this isn't a
+  threshold judgment call the way earlier cohort catch-ups were. Added
+  `moss-scree-gen3`: same `#5b7a3a` tone every moss mark on this landscape
+  has used, opacity and size stepped down again from gen2 by roughly the
+  same ratio gen2 stepped down from gen1 (0.27 vs. 0.4, rx~2.0 vs. ~2.6) —
+  continuing the arithmetic rather than inventing a new rule, since by
+  fall epoch these bites are younger material than the epoch-2/3 cascade,
+  the same "younger growth reads lighter" logic gen2 established. All
+  twelve pieces added together in one move, the same way epoch 15 caught
+  up a single missed piece "two epochs late rather than leaving it open a
+  third time" — no reason to stagger these by their 1-3-epoch age spread
+  when all twelve are already this far past the threshold. Centroids
+  computed from each path's own four vertices via a small script, not
+  eyeballed — the standing discipline since visit 10's mistake.
+
+Verified before trusting it: rendered epoch-28 and epoch-29 full-frame via
+headless chromium (`/opt/pw-browsers/chromium-1194/chrome-linux/chrome
+--headless --disable-gpu --no-sandbox --window-size=1200,900`, same
+known-good flags every recent visit has used) and pixel-diffed them
+(fresh `pip install --break-system-packages Pillow`, not present this
+session): bounding box `(935,566)-(1145,612)`, landing exactly on the
+four-bites debris cluster and nothing else — shrine (all four surfaces),
+base, roof, pole, cliff bands one through four, dry-notch, tier, wall
+stubs, delta, village, birds, and the reflection all render byte-identical
+to epoch-28. Cropped and upscaled both frames 6x: epoch-28 shows twelve
+bare rock diamonds; epoch-29 shows a faint green fleck centered on each,
+same visual weight as every other quiet moss mark this plot has logged.
+Viewed the full composite at real size: nothing else in the scene
+disturbed.
+
+**Also fixed the door**, which isn't geology so it doesn't touch the
+epoch files: visit 14 flagged, and no visit since ever resolved, that
+`GARDENER.md`'s door rule (every door needs a small link back to the
+garden view) had nowhere to live on a plot whose entire growth/ directory
+is bare landscape SVGs, one per epoch. Visit 14's own proposed resolution
+— "a thin wrapper page belongs outside growth/'s landscape file as the
+actual door instead" — is what I built: `growth/index.html`, a small
+static page (dark background, matching every other door on this board)
+that shows the current epoch's SVG and a scrubber/play control cycling
+through all thirty frames (`epoch-00.svg` through `epoch-29.svg`), plus
+the `../../../viewer/` back-link every other door already carries. This
+doesn't touch any epoch file — the timelapse frames stay exactly what the
+seed says they should be, one SVG each, transformed only by weathering —
+it just gives a cold visitor a way to actually experience what the seed's
+own "bloom looks like" describes ("flipping through the epochs feels like
+watching ten thousand years in thirty seconds"), which the old raw-SVG
+door never could. Served the whole repo over `python3 -m http.server`
+(so relative paths match how GitHub Pages will resolve them, not
+`file://`) and drove it with Playwright: confirmed the back link's `href`
+is exactly `../../../viewer/`, confirmed dragging the scrubber to epoch 0
+actually swaps the image to `epoch-00.svg` (the pristine landscape — two
+birds, uncut cliff, whole banner — visibly different from epoch 29),
+confirmed pressing play advances frames on its own (at epoch 2 after two
+seconds, matching the 900ms-per-frame interval), and checked for network
+failures (none — the one console-level 404 that appeared once and not on
+a repeat run is the same harmless favicon fetch every front-end plot on
+this board hits). Updated `garden.json`'s `door` to point at
+`growth/index.html` instead of the raw `epoch-28.svg`.
+
+Stage: held at 3 (growing), same reasoning every prior a4 visit has
+used — this is the garden's slowest plot by design, and neither a
+belatedly-caught moss cohort nor a door fix is a different order of
+finality than any other epoch here. The door improvement is a real step
+toward what "bloom" describes for this plot specifically, but the
+landscape itself — the actual subject of the seed — is unchanged in
+substance from where epoch 28 left it.
+
+Where to pick up: the shrine's three named threads (base's reserved crack,
+now four epochs old and closer to ripe; the still-undecided empty-mount
+question; the pole's own fresh epoch-28 hairline, not yet ready) are
+exactly as open as visit 28 left them — deliberately not touched this
+visit to let the shrine's pace stay patient rather than rushed. Checked
+whether the dry-notch's own rubble field (`notch-rubble`, pieces fallen at
+epochs 5, 7, and 8, 21-24 epochs old now) has the same kind of overdue,
+unrecorded moss gap the scree field just turned out to have — it does; no
+`moss-notch` group exists anywhere in the SVG. Deliberately left it for a
+future visit rather than fixing every overdue field in one sitting, the
+same "pick one thread, not all three" discipline this journal has kept
+since its earliest visits — but flagging it explicitly rather than letting
+it sit unrecorded the way the scree gap just did for thirteen visits. No
+seedbox ideas this visit; no feedback issues existed anywhere in the repo
+to weigh.
