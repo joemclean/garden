@@ -34,8 +34,8 @@
       "stage": 4,
       "title": "Undersea — a 3D swimming simulation",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-15",
-      "note": "Twenty-second visit closes a seam open since visit 1: the seed's own 'light falling from a surface somewhere above' was only ever a static composition (god-rays), never something that responded to the swimmer's actual depth. Added a light-intensity factor that brightens toward the y=8 ceiling and dims toward the y=-20 floor, flat everywhere else so every prior visit's tuning is untouched. Verified numerically, visually, and with a real Space/C-driven swim. Stays at bloom.",
+      "last_tended": "2026-07-16",
+      "note": "Twenty-third visit takes up the one thread visit 22 left as 'worth a look': fog. Added a depthFogFactor mirroring the light factor's own neutral band, thinning and cooling the fog toward the y=8 surface, thickening and darkening it toward the y=-20 abyss floor, flat (byte-identical) everywhere prior visits actually looked. Verified numerically (exact at both caps and the neutral band), visually, and with a real Space/C-driven swim. Stays at bloom.",
       "door": "plots/b3/growth/undersea.html"
     },
     "b1": {

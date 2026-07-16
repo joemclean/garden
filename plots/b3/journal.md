@@ -1635,3 +1635,87 @@ standing advice as visits 19–21: the organic swim has now been done four
 times across twenty-two visits and keeps confirming the bloom read; no
 need to repeat it again without a specific reason. No seedbox ideas this
 visit. No feedback issues existed anywhere in the repo to weigh.
+
+## Visit 23 — 2026-07-16
+
+Gate: `list_pull_requests` (open) and `list_issues` (open) both empty —
+nothing stranded, no reply owed. Fetched and merged `origin/main`.
+`garden.json`: all fifteen plots registered against a `seed.md` on disk,
+no unregistered seed, no stage-1 plots. Picked by exact last-tend commit
+timestamp across all fifteen (`git log -1 --format=%ai -- plots/<id>
+origin/main`), not the shared day-granularity `last_tended` field, since
+ten of fifteen plots share `2026-07-15` and three others had already been
+tended today: `b3`'s own visit 22 (2026-07-15 10:12:58 UTC) was the
+stalest by a wide margin — the next-oldest, `c2`, sat about an hour newer,
+and the day's three freshest tends (`a2`, `a4`, `d4`, all `2026-07-16`)
+were 15-16 hours newer still. Picked `b3`.
+
+Visit 22 left one explicit thread: "fog density or color could plausibly
+do something similar [to the depth-responsive light] for an even stronger
+surface/depth read... a fair 'worth a look,' not urgent." Nothing else
+was flagged open anywhere in this journal, so took that thread up
+directly rather than a fifth organic swim for its own sake (four have
+already confirmed the bloom read, per visits 19-22's own standing
+advice).
+
+Added `depthFogFactor(y)`, mirroring `depthLightFactor`'s exact neutral
+band (`y` -8..2, unchanged — every prior visit's screenshots were taken
+in this range) so the change only reaches the same two extremes the light
+factor already touches: `y`=8 (surface cap) and `y`=-20 (abyss cap).
+Rather than a single multiplier, this drives two things toward each
+extreme — `scene.fog.density` (0.7x at the surface, clearer; 1.45x at the
+abyss, thicker) and a color lerp from the standing neutral teal
+(`0x0a3947`) toward a lighter, cooler `0x1c6270` near the surface or a
+near-black `0x030c0f` near the abyss. `fogColor` (the object
+`scene.background` already points at) is mutated in place each tick so
+both stay in sync without a second reference; `scene.fog.color` is a
+separate `Color` instance `FogExp2`'s constructor made from a starting
+hex, so it's copied from `fogColor` after the mutation. Wired into
+`tick()` immediately after the existing light-factor block, reusing the
+pattern precisely (a `FOG_BASE_DENSITY` captured once before any tuning
+touches it, same as `SUN_BASE`/`FILL_BASE`/`GLOW_BASE`).
+
+Verified three ways, same method visit 22 used. Numerically: added the
+same kind of temporary `window.__probe` hook (`setY` plus a `read()`
+returning light and fog state), stepped through nine depths (8, 4, 2, 0,
+-4, -8, -10, -16, -20) via Playwright with a real frame's wait between
+`setY` and reading (visit 22's own timing-lag lesson), and checked by
+hand: the neutral band (`y`=2, 0, -4, -8) came back exactly
+`fogDensity: 0.045`, `fogColor: "0a3947"` — byte-identical to the
+untouched baseline, confirming nothing already-verified moved; `y`=8 came
+back exactly `0.045 * 0.7 = 0.0315` and the pure surface hex `1c6270`
+(t=1, full lerp); `y`=-20 came back exactly `0.045 * 1.45 = 0.06525` and
+the pure abyss hex `030c0f`. Visually: screenshots at `y`=8, `y`=-3
+(neutral), and `y`=-20 — the neutral shot reads identically to every
+prior visit's baseline teal; the surface shot is a visibly brighter, more
+saturated cyan with the god-ray shafts standing out more against a
+clearer field; the abyss shot is a genuinely dark, near-black teal, a
+much stronger read than the light factor's own subtle dimming produced
+alone. Organically: real click-to-lock, incremental `page.mouse.move`
+turns (visit 21's method), held `KeyW`+`Space` then `KeyC` for a real
+rise-and-sink over several seconds — zero console/page errors beyond the
+standing harmless favicon 404, `../../../viewer/` back-link intact. Final
+pass with the debug hook removed (`grep -n "__probe\|__debug\|__nav"`
+empty) reran the same organic swim clean. `git diff` on `undersea.html`
+is 31 insertions, 0 deletions — exactly the fog-factor addition, no
+incidental changes.
+
+Stage stays at 4 (bloom) — same distinction every prior deepening visit
+since visit 11 has drawn: this deepens an already-verified element (the
+water, visit 1's founding priority) rather than changing the felt
+experience of the piece as a whole. Door unchanged
+(`plots/b3/growth/undersea.html`).
+
+Where to pick up: nothing is currently flagged as open. Visit 22 named
+fog as the one remaining "worth a look" item on the light-and-fog side of
+the seed's own "light falling from a surface somewhere above" phrase;
+this visit closes it, so there's no obvious sixth axis in that direction
+left un-tried. If a future visit wants to push depth-response further
+still, the buoyancy/current-sway constants or the particulate drift are
+the only other systems that read depth at all and haven't been checked
+for a similar gap — worth a look, not urgent, same standing as this
+visit's own starting point. Otherwise, same advice as visits 19-22: the
+organic swim has now been confirmed five times across twenty-three
+visits; a future visit doesn't need to repeat it without a specific
+reason. No seedbox ideas this visit. No feedback issues existed anywhere
+in the repo to weigh.

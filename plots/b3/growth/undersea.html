@@ -100,6 +100,32 @@ function depthLightFactor(y) {
   return 1;
 }
 
+// Same neutral band, same reasoning, applied to the water itself rather
+// than the light falling through it: `fogColor` is the live color object
+// (scene.background already points at this same instance, so mutating it
+// in place moves both together) and scene.fog.color is a separate Color
+// FogExp2's constructor made from a starting hex, synced each tick below.
+// Clearer, cooler water near the surface; thicker, darker water pressing
+// in toward the abyss — nothing changes inside the neutral band, so every
+// screenshot any prior visit has taken there is untouched.
+const fogColorNeutral = fogColor.clone();
+const fogColorSurface = new THREE.Color(0x1c6270);
+const fogColorAbyss = new THREE.Color(0x030c0f);
+const FOG_BASE_DENSITY = scene.fog.density;
+
+function depthFogFactor(y) {
+  const NEUTRAL_HI = 2, NEUTRAL_LO = -8, SURFACE_Y = 8, ABYSS_Y = -20;
+  if (y > NEUTRAL_HI) {
+    const t = Math.min(1, (y - NEUTRAL_HI) / (SURFACE_Y - NEUTRAL_HI));
+    return { density: 1 - t * 0.3, target: fogColorSurface, t };
+  }
+  if (y < NEUTRAL_LO) {
+    const t = Math.min(1, (NEUTRAL_LO - y) / (NEUTRAL_LO - ABYSS_Y));
+    return { density: 1 + t * 0.45, target: fogColorAbyss, t };
+  }
+  return { density: 1, target: fogColorNeutral, t: 0 };
+}
+
 // god-ray shafts: soft additive planes hanging from the surface, swaying
 const shaftMat = new THREE.MeshBasicMaterial({
   color: 0xbfe9ea,
@@ -1018,6 +1044,11 @@ function tick() {
   sun.intensity = SUN_BASE * lf;
   fill.intensity = FILL_BASE * lf;
   glow.intensity = GLOW_BASE * lf;
+
+  const ff = depthFogFactor(yaw.position.y);
+  scene.fog.density = FOG_BASE_DENSITY * ff.density;
+  fogColor.copy(fogColorNeutral).lerp(ff.target, ff.t);
+  scene.fog.color.copy(fogColor);
 
   // subtle roll into turns for a swimming, not walking, feel
   pitch.rotation.z += ((-velocity.dot(right) * 0.05) - pitch.rotation.z) * Math.min(1, dt * 4);
