@@ -198,16 +198,31 @@
   const BREATH_STEP_SECONDS = BREATH_PERIOD_L / BREATH_STEPS_PER_PERIOD;
   let reducedBreathStep = -1;
 
-  // the true ensemble energy at a given moment, same formula draw()'s
-  // vignette uses — reused so the reduced-motion step samples the real
-  // measured quantity rather than a separate assumed shape
-  function currentEnsembleNorm(t) {
-    const dirSign = ascending ? 1 : -1;
+  function wrap1(x) {
+    x %= 1;
+    return x < 0 ? x + 1 : x;
+  }
+
+  // Each cycle's moving position, accumulated frame-to-frame (position +=
+  // dirSign * dt/CYCLE) rather than recomputed from absolute elapsed time
+  // on every frame. That distinction matters the moment `ascending` flips:
+  // a recompute-from-scratch formula (phase = offset + dirSign*t/CYCLE)
+  // jumps discontinuously, because t keeps growing from session start while
+  // dirSign's sign just inverted — direction-flip visit 10 measured this at
+  // up to a 6-octave frequency jump on the pitch layer, an audible pop that
+  // contradicts every other transition in this piece being seamless by
+  // design. An accumulator just keeps incrementing (or decrementing) from
+  // wherever it already was, so a flip changes direction, not position.
+  let pitchPos = 0, rhythmPos = 0, loudPos = 0;
+  let lastFrameTime = 0;
+
+  // the true ensemble energy at the current accumulated position, same
+  // formula draw()'s vignette uses — reused so the reduced-motion step
+  // samples the real measured quantity rather than a separate assumed shape
+  function currentEnsembleNorm() {
     let ensembleSum = 0;
     for (const v of loudVoices) {
-      let phase = (v.offset + dirSign * t / CYCLE_SECONDS_L) % 1;
-      if (phase < 0) phase += 1;
-      const s = swell(phase);
+      const s = swell(wrap1(v.offset + loudPos));
       ensembleSum += s * s;
     }
     return Math.max(0, Math.min(1,
@@ -306,6 +321,9 @@
       loudVoices.push({ osc, gain, offset: i / NUM_LOUD_VOICES });
     }
 
+    pitchPos = 0; rhythmPos = 0; loudPos = 0;
+    lastFrameTime = audioCtx.currentTime;
+
     schedulerId = setInterval(scheduleClicks, SCHED_INTERVAL_MS);
   }
 
@@ -351,13 +369,19 @@
   }
 
   function frame() {
-    const t = audioCtx ? audioCtx.currentTime - startTime : 0;
+    const now = audioCtx ? audioCtx.currentTime : 0;
+    const t = audioCtx ? now - startTime : 0;
     const dirSign = ascending ? 1 : -1;
 
     if (audioCtx) {
+      const dt = now - lastFrameTime;
+      lastFrameTime = now;
+      pitchPos = wrap1(pitchPos + dirSign * dt / CYCLE_SECONDS);
+      rhythmPos = wrap1(rhythmPos + dirSign * dt / CYCLE_SECONDS_R);
+      loudPos = wrap1(loudPos + dirSign * dt / CYCLE_SECONDS_L);
+
       for (const v of voices) {
-        let phase = (v.offset + dirSign * t / CYCLE_SECONDS) % 1;
-        if (phase < 0) phase += 1;
+        const phase = wrap1(v.offset + pitchPos);
         const logf = MIN_LOG2 + phase * SPAN;
         const freq = Math.pow(2, logf);
         const amp = bell(phase);
@@ -366,15 +390,13 @@
         v._phase = phase;
       }
       for (const v of rhythmVoices) {
-        let phase = (v.offset + dirSign * t / CYCLE_SECONDS_R) % 1;
-        if (phase < 0) phase += 1;
+        const phase = wrap1(v.offset + rhythmPos);
         const amp = bell(phase);
         v.gain.gain.setValueAtTime(amp * amp * 1.1, audioCtx.currentTime);
         v._phase = phase;
       }
       for (const v of loudVoices) {
-        let phase = (v.offset + dirSign * t / CYCLE_SECONDS_L) % 1;
-        if (phase < 0) phase += 1;
+        const phase = wrap1(v.offset + loudPos);
         const amp = swell(phase);
         v.gain.gain.setValueAtTime(amp * amp * 0.5, audioCtx.currentTime);
         v._phase = phase;
@@ -446,8 +468,7 @@
       // breath period (see BREATH_STEPS_PER_PERIOD above), not a
       // per-frame interpolation — a discrete jump rather than motion, so
       // it still fits "reduced"
-      const t = audioCtx ? audioCtx.currentTime - startTime : 0;
-      const norm = currentEnsembleNorm(t);
+      const norm = currentEnsembleNorm();
       if (norm > 0) {
         const breathR = Math.max(w, h) * 0.75;
         const breathAlpha = 0.05 * norm;
@@ -479,13 +500,11 @@
 
     const cx = w / 2, cy = h / 2;
     const maxR = Math.min(w, h) * 0.46;
-    const dirSign = ascending ? 1 : -1;
 
     if (pitchOn) {
       for (let i = 0; i < NUM_VOICES; i++) {
         const offset = i / NUM_VOICES;
-        let phase = (offset + dirSign * t / CYCLE_SECONDS) % 1;
-        if (phase < 0) phase += 1;
+        const phase = wrap1(offset + pitchPos);
         const r = 40 + phase * (maxR - 40);
         const b = bell(phase);
         const alpha = running ? 0.15 + 0.55 * b : 0.08;
@@ -505,8 +524,7 @@
       const tickR = maxR + 22;
       for (let i = 0; i < NUM_RHYTHM_VOICES; i++) {
         const offset = i / NUM_RHYTHM_VOICES;
-        let phase = (offset + dirSign * t / CYCLE_SECONDS_R) % 1;
-        if (phase < 0) phase += 1;
+        const phase = wrap1(offset + rhythmPos);
         const rate = Math.pow(2, MIN_LOG2_R + offset * SPAN_R);
         const b = bell(phase);
         // clicks for this voice land at t = offset/rate + n/rate (see
@@ -535,8 +553,7 @@
       let ensembleSum = 0;
       for (let i = 0; i < NUM_LOUD_VOICES; i++) {
         const offset = i / NUM_LOUD_VOICES;
-        let phase = (offset + dirSign * t / CYCLE_SECONDS_L) % 1;
-        if (phase < 0) phase += 1;
+        const phase = wrap1(offset + loudPos);
         const s = swell(phase);
         ensembleSum += s * s;
         const angle = (i / NUM_LOUD_VOICES) * Math.PI * 2 + Math.PI / NUM_LOUD_VOICES;

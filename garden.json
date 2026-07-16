@@ -99,7 +99,7 @@
       "title": "Open ground: something to hear",
       "planted": "2026-07-10",
       "last_tended": "2026-07-16",
-      "note": "Ninth sitting: full cold reverification (four Playwright passes, offline ensemble-sum resweep confirms LOUD_ENSEMBLE_MIN/MAX still exact) turned up nothing broken. Closed the one thread every sitting since visit 5 had reflagged rather than resolved — a breath-driven visual tempo nudge — by actually designing it: any rate it could drive (ring sweep, tick flash) is exactly what the on-page text claims never changes, a structural conflict, not a subtlety; a fade-decay variant just traded legibility for nothing proven. Zero code changed. Stays at bloom.",
+      "note": "Tenth sitting tested the one interaction nine prior smoke tests clicked through but never measured: flipping direction mid-playback. Every phase was recomputed from absolute elapsed time and sign, discontinuous at any flip but t=0 — measured a real 6-octave frequency jump. Fixed with a per-frame accumulator (position += dirSign*dt/CYCLE) so a flip changes direction, not position. Verified fix numerically (smooth sweep through the flip point) and with full regression (default/reduced-motion/mobile contexts, zero errors, unchanged 55–3520 Hz range with no flips). Stays at bloom.",
       "door": "plots/a2/growth/ascent.html"
     },
     "b2": {
