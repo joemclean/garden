@@ -18,8 +18,8 @@
       "stage": 4,
       "title": "The house that forgets its architect",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-15",
-      "note": "A twenty-fifth room, the gap in the wall, reached by the courtyard's one gravel path that doesn't curve back: the house's first room that isn't interior at all, a visitor stood fully outside for the first time and counted more windows remembered than the eleven the exterior shows. A bell-pull with no traceable bell left deliberately unpulled. Fifteenth book-voice reacts, finds going outside didn't make anything smaller. Plain accumulation, not a third cross-branch tie.",
+      "last_tended": "2026-07-16",
+      "note": "A twenty-sixth room, the windbreak, reached by sitting on the threshing floor's low wall: the one thing the room structurally needs (wind, to separate chaff from grain) is the one thing it never gets, a single piece of chaff hanging motionless mid-air. Sixteenth book-voice answers the fifteenth's 'going outside didn't make it smaller' with a quieter counterpart — staying still didn't make it calmer either. Also fixed a journal ordering bug (visit 23 had been appended above visit 22). Plain accumulation, not a third cross-branch tie.",
       "door": "plots/d4/growth/house.html"
     },
     "a4": {
