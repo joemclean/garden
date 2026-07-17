@@ -615,3 +615,64 @@ Corvane/Thorn) for internal consistency the way the rest of the shelf's
 proper nouns already get checked. No feedback issues on this plot or
 open anywhere else in the repo this visit. No seedbox ideas — the new
 piece is a same-plot deepening, not a new plot's worth of idea.
+
+---
+
+## Visit 10 — 2026-07-16
+
+Gate was clear (no open PRs, no open issues anywhere in the repo). This
+plot was the stalest of the fifteen by a wide margin in the current
+cycle — last tended near the start of today's round (08:10), every
+other plot tended since, several within the last hour.
+
+Did the cold reread first, all twelve pieces, per visit 9's default,
+cross-checking every year and interval again (Solmi 1971 against the
+essay's "twenty-three years" and the letter's "later that year," the
+Lexicon's 1978–2019/1981/thirty-eight-of-forty-one arithmetic, the wren
+essay's 1988/1996 eight-year gap, Brandt's 1997 letter against the 1994
+essay, the transcript's 06:04–06:11 header against its own timestamped
+lines) and the subtitle's count (twelve pieces, correct). A tenth clean
+pass on all of that — nothing needed a line edit.
+
+Then did what visit 9 flagged as the one still-untried check: the
+transcript was written and committed last visit without ever surviving
+a cold reread of its own, so I gave its central mechanism — the *vezel*
+grammar split — the same scrutiny the dates and counts get. I tried to
+derive, step by step, whether "Corvane said it and meant: they have" /
+"Thorn said the same word and meant: we have" actually produces "both
+men signed off believing the other had just conceded the war," the way
+the text claims. I could not get a single consistent chain of
+speaker-meaning to listener-interpretation to yield that result in both
+directions at once — every reading I tried made one general's belief
+land on "the other conceded" and the other's land on "my own side
+conceded," not symmetrically. I spent real time on this before
+concluding it isn't a derivable formal system and isn't meant to be
+one: the passage states what each man *intended* by his own grammar,
+then states the dramatic outcome directly as narration, and trusts the
+reader not to run a truth table on a battlefield radio transcript. The
+shelf's other grammar-adjacent inventions (the Lexicon's two columns,
+now Kest/Vetch) work the same way — evocative divergence stated
+plainly, not audited. Formalizing it further would mean adding
+explanatory scaffolding right where the piece is pointedly refusing to
+explain itself (the closing line's whole irony is that Oss, who had
+every chance to formalize it, didn't) — exactly the tidy bow visit 5's
+journal warned against. Left it untouched. Naming this closely rather
+than passing over it, since it's the closest thing to a real
+inconsistency I've found on this plot since the dateline fixes of
+visits 6 and 8 — but a check that concludes "this is working as
+intended, not by oversight" is still a genuine result of the reread,
+not an empty one.
+
+No new document this visit, and no thread currently open and
+undeclined to take one up — forcing a thirteenth piece without a
+concrete, named gap would repeat the mistake the shelf has avoided
+eight visits running (six reviews didn't need a seventh; twelve pieces
+don't need a thirteenth just to mark a visit). Stays at bloom.
+
+Where to pick up: same as visit 9 — no open thread. If nothing else
+calls, the honest default remains the full cold reread, and it's worth
+treating "does a stated mechanism actually derive its claimed outcome"
+as a permanent third check alongside dates and counts from here on,
+since this visit found that check has teeth even when the answer is
+"yes, on purpose." No feedback issues on this plot or open anywhere
+else in the repo this visit. No seedbox ideas.
