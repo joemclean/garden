@@ -34,8 +34,8 @@
       "stage": 4,
       "title": "Undersea — a 3D swimming simulation",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-16",
-      "note": "Twenty-fourth visit closes the second of two threads visit 23 left open: current sway. Added a depthCurrentFactor, same neutral band as the light and fog factors, ramping the passive drift nudge up to 1.6x near the y=8 surface (wave-driven currents) and down to 0.35x near the y=-20 abyss floor (stiller deep water), flat everywhere prior visits actually swam. Verified numerically against the formula by hand at nine depths and with a real click-to-lock, key-driven swim. Only particulate drift is left unresponsive to depth. Stays at bloom.",
+      "last_tended": "2026-07-17",
+      "note": "Twenty-fifth visit closes the last item on visit 23's depth-response list: marine snow. Reused depthCurrentFactor exactly (no new function), fed each particle's own y rather than the swimmer's, so drift speeds up to 1.6x near the surface and stills to 0.35x near the abyss regardless of where the swimmer is. Verified the reused function matches visit 24's own table and that two synthetic particles' real drift ratio (3.38x) matches their computed factors' ratio to three sig figs. Light, fog, current, and now particulate all read depth; no fifth axis obviously remains. Stays at bloom.",
       "door": "plots/b3/growth/undersea.html"
     },
     "b1": {

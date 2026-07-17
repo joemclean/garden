@@ -1098,11 +1098,20 @@ function tick() {
     a.mesh.rotation.x = a.baseRotX + Math.cos(t * a.speed * 0.8 + a.phase) * 0.15;
   }
 
+  // last item on visit 23's depth-response list: marine snow has drifted at a
+  // flat rate since visit 1, unresponsive to depth like light/fog/current all
+  // were before visits 22-24 closed those gaps. Reuses depthCurrentFactor
+  // as-is (no new function) — each particle's *own* y stands in for the
+  // swimmer's y in that formula, since it's the particle's own depth in the
+  // water that should decide whether it's caught in wave-driven surface
+  // turbulence or settled into stiller deep water, not wherever the swimmer
+  // happens to be.
   const pp = particleGeo.attributes.position;
   for (let i = 0; i < PARTICLES; i++) {
     const seed = particleSeed[i];
-    pp.array[i * 3 + 1] += Math.sin(t * 0.3 + seed) * 0.0015 + 0.0015;
-    pp.array[i * 3 + 0] += Math.sin(t * 0.2 + seed * 1.3) * 0.0008;
+    const pf = depthCurrentFactor(pp.array[i * 3 + 1]);
+    pp.array[i * 3 + 1] += (Math.sin(t * 0.3 + seed) * 0.0015 + 0.0015) * pf;
+    pp.array[i * 3 + 0] += Math.sin(t * 0.2 + seed * 1.3) * 0.0008 * pf;
     if (pp.array[i * 3 + 1] > 20) pp.array[i * 3 + 1] = -20;
   }
   pp.needsUpdate = true;
