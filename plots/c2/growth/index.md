@@ -478,6 +478,32 @@ same two long-parked, chain-wide threads — Naveth's reverse-vertigo
 neither with a leg occasion to attach to yet, and no eleventh language
 obviously waiting.
 
+Naveth's reverse-vertigo — whether a listener marked *-solwen* who
+turns out to still be answerable after all has a name for that specific
+vertigo — is resolved as of visit 27, inside `lang-5-naveth.md`, the
+same way *-solwen* itself was: a grammar-only extension, no leg touched.
+The correction doesn't revert cleanly to plain *-sol* — Naveth's whole
+character with *-solwen* was refusing to let a speaker elide a known
+loss, and that refusal cuts the other way too, so a corrected *-solwen*
+stacks a further suffix, *-solwenna*, rather than dissolving back to the
+unmarked case. A fourth untranslatable word, *avrasol*, names the felt
+vertigo: not *tessol*'s shape (the world outrunning a grammar that
+doesn't know yet) but its own — the grammar outrunning the world first,
+then refusing to fully catch back up even once corrected. Worth being
+precise about what this closes and what it doesn't: this was never
+blocked by a missing leg occasion the way it might have looked bundled
+with Ossane's thread across several visits' journals — *-solwen* itself
+resolved without one in visit 9, and this is the same shape of move,
+available the whole time once a visit took it up directly rather than
+waiting for a scene the chain's own rules (fixed source, leg-to-leg
+translation, no invented content) were never going to hand it. Ossane's
+weather-pun tension is a genuinely different kind of open thread, not a
+sibling case of the same wait: visit 3 flagged it as deliberately
+unresolved, "a good question" the seed shouldn't rush, not a resolution
+waiting on an occasion. It stays open on purpose, not by circumstance —
+the two threads only ever looked alike because both sat unclaimed a
+long time, not because both needed the same thing to close.
+
 ---
 
 [← back to the garden](../../../viewer/)

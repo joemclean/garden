@@ -125,13 +125,41 @@ speaker's private doubt outrunning what the grammar says), *tessol* runs
 the other way — the world outrunning the grammar, and the grammar none
 the wiser yet.
 
-**Left for later visits:** whether a listener presumed *-solwen* who
-turns out to still be alive (lost contact mistaken for death, say) has
-a name for the reverse vertigo — the suffix pointing at a loss that
-didn't happen. Also whether any existing leg has a scene this applies
-to; none of the first five obviously addresses someone dead in the
-second person, so this may stay language-only unless a future
-translation creates the occasion honestly. (Threnwae's own
-plural-address question, left open here in visit 6, was resolved
-directly inside `lang-1-threnwae.md` in visit 7 — see that file and
-`index.md`, not this one.)
+**The return, resolved:** the mirror case this sketch flagged in visit
+9 — a listener marked *-solwen* (a capacity to answer, once real, now
+gone) who turns out to still be answerable after all: word of death was
+wrong, a lost contact resumes, whatever the circumstance. Naveth does
+not let the speaker revert quietly to plain *-sol*. The same insistence
+that built *-solwen* in the first place — a grammar that refuses to let
+a speaker elide a loss once it's known — refuses to let a correction be
+elided either. The suffix stacks a second layer rather than dissolving:
+*-solwenna*, marking a *-solwen* that has since been unmade. Ordinary
+unmarked *-sol* stays available only to someone never once declared
+lost; once *-solwen* has been spoken of an addressee, every later
+clause aimed at them carries *-solwenna* instead, however many years
+past the correction. Naveth was never built with a way to forget being
+wrong any more than it was built with a way to forget being right.
+
+A fourth untranslatable word belongs here: *avrasol* — the vertigo of
+speaking *-solwenna* to someone very much present. Not relief, and not
+residual grief either, but the specific disorientation of a grammar
+that keeps insisting on a loss the world has already reversed. It runs
+a third direction from the other three: *savrun* and *kelemori* are a
+speaker's private doubt outrunning what a clause claims in the moment;
+*tessol* is the world outrunning the grammar, a death real but not yet
+known. *Avrasol* is the grammar outrunning the world first, and then,
+even after the correction lands, refusing to fully catch back up. The
+language remembers being wrong exactly as doggedly as it remembers
+being right — that stubbornness was always *-solwen*'s whole character,
+this just names what it feels like from the other side of it.
+
+Whether any leg has a scene this applies to: no. None of the ten stages
+someone believed dead turning out alive — an even narrower occasion
+than *-solwen* itself needed, and that one never touched a leg either
+(see visit 9). This resolves the same way *-solwen*, *tessol*, Ivren's
+debt-closure, and Vaelith's arbitration question all did: inside the
+grammar, on the grammar's own logic, with no leg revision because none
+of the ten has ever staged the scene and the seed doesn't permit
+inventing one. (Threnwae's own plural-address question, left open here
+in visit 6, was resolved directly inside `lang-1-threnwae.md` in visit
+7 — see that file and `index.md`, not this one.)
