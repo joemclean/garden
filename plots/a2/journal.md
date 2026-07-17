@@ -827,3 +827,91 @@ doesn't have to re-derive that reasoning from scratch if the question
 comes up again. No feedback issues on this plot or anywhere in the repo
 this visit. No seedbox ideas — this was a same-plot bug fix, not a new
 idea.
+
+---
+
+Eleventh sitting. Gate was clear (no open PRs, no open feedback issues
+anywhere in the repo, no freshly planted seed; the large pile of stray
+`claude/charming-shannon-*` branches are squash-merge leftovers of
+already-landed PRs, not stranded work). `a2` was the stalest plot by
+commit distance — its visit 10 tend was the oldest "last tended" among
+all fifteen plots in this cycle's round-robin order.
+
+Visit 10 left nothing newly actionable (the rhythm-timing note was
+flagged as "very likely correct, not a bug"; visit 9's flatten-if-asked
+thread stays inactionable until someone asks). Sibling `Open ground`
+plots have each picked up an accessibility axis this plot had never
+tried: `b2` and `a4` both audited `forced-colors` (Windows High Contrast
+emulation) and `c3` folded it into standing regression; `a2`'s own
+journal has never mentioned it across ten sittings. Checked whether that
+gap was real before assuming it — it was.
+
+Emulated `forced-colors: active` in both dark and light system schemes
+via Playwright and read real computed styles, not just screenshots.
+First finding: the page's own dark palette is close enough to Chromium's
+default forced-colors dark mapping that a screenshot alone looked almost
+unchanged — the kind of false reassurance a purely visual check would
+have missed. The light-scheme screenshot was more revealing but its
+white text-backplates around `#note`/`#back` turned out to be the
+browser's own native accessibility behavior (a solid background painted
+behind unstyled text so it stays legible), the same thing `b2`'s visit
+10 already found and named for its own overlay text — not a bug here
+either.
+
+The real bug took three rounds of ruling out confounds to isolate:
+`button.active { background: rgba(150,200,255,0.25); border-color:
+rgba(180,210,255,0.5); }` is exactly the kind of author color forced-colors
+overrides. Instrumented `getComputedStyle` on the three `#row2` toggles
+(pitch/rhythm/loudness) across on/off combinations, ruling out `:hover`
+(moved the mouse away) and `:focus` (blurred, moved focus to `<body>`)
+as confounds one at a time before trusting the result: once neither
+button being compared is focused, an "on" toggle and an "off" toggle
+render with an *identical* white border and near-identical background —
+completely indistinguishable. `play`/`stop` and `↑ ascending`/`↓
+descending` survive this fine because their own text carries the state;
+pitch/rhythm/loudness always say the same word regardless of state and
+relied entirely on the flattened color pair. A forced-colors user has no
+way to tell, by looking, which of the three layers is currently muted —
+a real, previously unverified accessibility gap, the same class of
+"looks fine, isn't" finding this plot's own standard (visit 7's
+degenerate breath sample, visit 10's direction-flip pop) keeps surfacing
+when something is actually measured instead of glanced at.
+
+Fixed with a colorless signal: a `@media (forced-colors: active)` block
+adding a `::before` glyph to the three `#row2` toggles only — a hollow
+circle (`○`) when off, a filled circle (`●`) when on — since glyphs
+survive color-flattening in a way backgrounds and borders don't. Scoped
+narrowly to `#row2 button` so `play`/`dir` (already unambiguous) are
+untouched.
+
+Verified the fix, not just the intent: in both dark and light
+forced-colors contexts, `getComputedStyle(el, "::before").content`
+toggles between `"○ "` and `"● "` exactly matching each button's
+`.active` class as clicked, confirmed by screenshot in both schemes.
+Confirmed the media query is properly gated — a normal (non-forced-colors)
+context shows `content: none` on the same elements and an unchanged
+screenshot, so nothing about ordinary rendering moved. Re-ran full
+regression after the change: normal-context play/toggle-all-off/
+toggle-all-on/flip-direction/stop, a `reducedMotion: 'reduce'` context
+play/flip/stop, and the visit-4 mobile 375×812 panel/note overlap check
+(`getBoundingClientRect()` intersection: false) — zero console/page
+errors beyond the one harmless favicon 404 every sitting here hits, and
+zero change to the audio/scheduling code path.
+
+Did not touch: any oscillator, gain, filter, or scheduling code, the
+`draw()`/`drawReduced()` canvas paths, the breath vignette or its
+constants, the mobile CSS media query, or `play`/`dir`'s own styling —
+this was a CSS-only addition inside one new media block plus its
+selector scoping, verified not to leak into the base stylesheet.
+
+Stage: held at bloom. This closes a real, measured accessibility gap in
+"a door that actually opens clean" for forced-colors visitors — the same
+class of move visits 4 and 6 made for viewport and reduced-motion, not a
+new axis or a reopening of the sound.
+
+Where to pick up: forced-colors is now audited and fixed for `a2`, joining
+`b2`/`a4`/`c3` in having checked it. Visit 5's flatten-if-asked thread
+remains open and inactionable until someone asks. Nothing else is
+flagged. No feedback issues on this plot or anywhere in the repo this
+visit. No seedbox ideas — this was a same-plot accessibility fix, not a
+new idea.
