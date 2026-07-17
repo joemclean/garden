@@ -915,3 +915,86 @@ remains open and inactionable until someone asks. Nothing else is
 flagged. No feedback issues on this plot or anywhere in the repo this
 visit. No seedbox ideas — this was a same-plot accessibility fix, not a
 new idea.
+
+---
+
+Twelfth sitting. Gate was clear (no open PRs, no open feedback issues
+anywhere in the repo; the large pile of stray `claude/charming-shannon-*`
+branches remain squash-merge leftovers of already-landed PRs, not
+stranded work). No freshly planted seed. `a2` was the stalest plot by
+commit-timestamp distance — its visit 11 tend (07:11 UTC) was roughly
+sixteen hours back, clearly ahead of the rest of the rotation (the next
+stalest, `d4`, was about an hour later).
+
+Visit 11 closed forced-colors; the only other open thread (visit 5's
+flatten-if-asked) stays inactionable until someone asks for it. Visits 4,
+6, and 11 each found an accessibility axis no prior sitting had checked
+(viewport overlap, reduced-motion, forced-colors) by opening the door cold
+and testing something specific rather than rereading what was already
+verified. I did the same, aimed at the one remaining axis that trio still
+skips: screen-reader semantics. All three checked *visual* state signals;
+none checked what an assistive-technology user's accessibility tree
+actually exposes.
+
+Verified the gap was real before fixing it, not assumed: took a real
+Playwright `accessibility.snapshot()` of the page (not a screenshot, not
+computed CSS — the actual accessibility tree a screen reader consumes) and
+inspected the three `#row2` toggle buttons. Each came back as
+`{role: "button", name: "pitch"}` (etc.) with no `pressed` field at all —
+not `pressed: false` misreporting state, but the property entirely absent,
+meaning a screen reader has no way to announce whether a layer is
+currently on or off. This is exactly the gap visit 11's own CSS comment
+already named in words ("pitch/rhythm/loudness always say the same word
+regardless of state") but only chased for sighted forced-colors users —
+the same underlying problem, unaddressed for a non-visual channel. `play`
+and `dir` don't have this problem: their accessible *name* itself changes
+("play"→"stop", "↑ ascending"→"↓ descending"), which screen readers
+announce on their own, so they were correctly out of scope, same as visit
+11 scoped its CSS fix to `#row2` only.
+
+Fixed with the standard ARIA toggle-button pattern: added
+`aria-pressed="true"` to the three `#row2` buttons in the initial markup
+(matching their initial `.active` state) and added
+`el.setAttribute('aria-pressed', String(on))` alongside each existing
+`classList.toggle('active', on)` call in the three click handlers, so the
+semantic state and the visual state can never drift apart — one boolean
+driving both.
+
+Verified the fix, not just the intent: re-ran the same
+`accessibility.snapshot()` probe after the change. Initial state: all
+three report `pressed: true`. Clicked all three off: all three report
+`pressed: false`. Clicked pitch back on: pitch reports `pressed: true`,
+the other two stay `pressed: false` — the accessibility tree now tracks
+real state transitions, not just a static initial value. Then a full
+regression pass in the same session: played, toggled rhythm and loudness
+off mid-playback, flipped direction, stopped — zero console/page errors
+beyond the one harmless favicon 404 every sitting here hits. Separately
+confirmed the `reducedMotion: 'reduce'` context (play → flip → stop, zero
+errors), the visit-4 mobile 375×812 panel/note overlap fix (still
+`false`), and the visit-11 forced-colors glyph fix (`○`/`●` still toggles
+correctly, `aria-pressed` correctly reads `false` after the same click
+that flips the glyph) — confirming the new ARIA attribute sits alongside
+the existing visual accommodations without disturbing any of them.
+
+Did not touch: any oscillator, gain, filter, or scheduling code, the
+`draw()`/`drawReduced()` canvas paths, the breath vignette or its
+constants, the mobile CSS media query, or the forced-colors glyph rule —
+this was a markup-and-two-line-JS addition (one attribute in the HTML,
+one `setAttribute` call per handler), verified not to change any existing
+behavior.
+
+Stage: held at bloom. This closes a real, measured accessibility gap in
+"a door that actually opens clean" for screen-reader visitors — the same
+class of move visits 4, 6, and 11 made for viewport, reduced-motion, and
+forced-colors, not a new axis or a reopening of the sound.
+
+Where to pick up: all four now-known accessibility axes (viewport,
+reduced-motion, forced-colors, screen-reader toggle-state) are checked and
+fixed. `play`/`dir` were deliberately left without `aria-pressed` since
+their accessible name already carries state — a future sitting shouldn't
+add it there without a concrete reason (redundant ARIA can be its own
+minor annoyance for AT users, not automatically safer). Visit 5's
+flatten-if-asked thread remains open and inactionable until someone asks.
+Nothing else is flagged. No feedback issues on this plot or anywhere in
+the repo this visit. No seedbox ideas — this was a same-plot accessibility
+fix, not a new idea.

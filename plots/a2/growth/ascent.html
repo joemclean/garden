@@ -98,9 +98,9 @@
       <button id="dir">↑ ascending</button>
     </div>
     <div id="row2">
-      <button id="pitchToggle" class="active">pitch</button>
-      <button id="rhythmToggle" class="active">rhythm</button>
-      <button id="loudnessToggle" class="active">loudness</button>
+      <button id="pitchToggle" class="active" aria-pressed="true">pitch</button>
+      <button id="rhythmToggle" class="active" aria-pressed="true">rhythm</button>
+      <button id="loudnessToggle" class="active" aria-pressed="true">loudness</button>
     </div>
     <div class="sub" style="margin-bottom:0">click play, then leave it — there is no ending to wait for</div>
   </div>
@@ -635,6 +635,7 @@
   pitchToggle.addEventListener('click', () => {
     pitchOn = !pitchOn;
     pitchToggle.classList.toggle('active', pitchOn);
+    pitchToggle.setAttribute('aria-pressed', String(pitchOn));
     rampLayerGain(pitchGain, pitchOn);
     staticDirty = true;
   });
@@ -642,6 +643,7 @@
   rhythmToggle.addEventListener('click', () => {
     rhythmOn = !rhythmOn;
     rhythmToggle.classList.toggle('active', rhythmOn);
+    rhythmToggle.setAttribute('aria-pressed', String(rhythmOn));
     rampLayerGain(rhythmGain, rhythmOn);
     staticDirty = true;
   });
@@ -649,6 +651,7 @@
   loudnessToggle.addEventListener('click', () => {
     loudOn = !loudOn;
     loudnessToggle.classList.toggle('active', loudOn);
+    loudnessToggle.setAttribute('aria-pressed', String(loudOn));
     rampLayerGain(loudGain, loudOn);
     staticDirty = true;
   });
