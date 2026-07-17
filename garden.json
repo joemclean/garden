@@ -114,8 +114,8 @@
       "stage": 4,
       "title": "Open ground: something that moves",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-16",
-      "note": "Ninth tend de-duplicates the audio/visual timing eighth tend hand-matched: bird chirps, train chugs, and thunder now derive from the same BIRD_FLIGHTS array and TRAIN_PASS_START_PCT/LIGHTNING_PEAK_PCT constants the visuals use, instead of a second hardcoded copy of each number. CSS keyframes got one-line comments naming the JS constant they must stay in sync with. Verified every derived delay matches the old hardcoded values exactly (Node arithmetic plus a real Playwright run instrumenting setTimeout). Pure refactor, zero behavior change. Stays at bloom.",
+      "last_tended": "2026-07-17",
+      "note": "Tenth tend closes the b2/d1 lag behind sibling plots a2/c1/c4 and catches up two conventions nine sittings never touched: a viewport meta tag (was the one HTML door in the repo missing it) and prefers-reduced-motion handling, freezing only the infinite ambient loops (wheat sway, smoke, flicker, rain, buzzard, shimmer) while every one-shot narrative beat (sun rise, birds, train, cards, lightning, tumbleweeds) keeps playing. Verified with Playwright: normal context animates, reduced-motion context freezes ambient/keeps narrative motion, mobile viewport renders at device width, full 142s playAll run clean. CSS-only diff, zero JS/timing changes. Stays at bloom.",
       "door": "plots/d1/growth/index.html"
     },
     "c4": {
