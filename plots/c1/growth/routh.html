@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The corner that stops holding</title>
+<style>
+  :root{
+    --bg:#050409; --ink:#cfc9db; --ink-dim:#726d88; --accent:#c86bff;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.6 ui-serif,Georgia,'Iowan Old Style','Palatino Linotype',serif;}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 20px 64px;text-align:center}
+  .kicker{color:var(--ink-dim);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px}
+  h1{font-size:22px;font-weight:600;margin:0 0 18px;letter-spacing:.005em}
+  figure{margin:0}
+  img{width:100%;height:auto;display:block;border-radius:4px;
+    box-shadow:0 0 80px -20px rgba(200,107,255,0.16);}
+  figcaption{margin:22px auto 0;max-width:580px;color:var(--ink-dim);font-size:13.5px;
+    line-height:1.7;text-align:left}
+  figcaption b{color:var(--ink);font-weight:600}
+  figcaption a{color:var(--accent)}
+  .nav{margin-top:46px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+  .nav a{color:var(--ink-dim);text-decoration:none;
+    font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;
+    border-top:1px solid #211d30;padding-top:14px}
+  .nav a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">plot c1 — something to look at</p>
+  <h1>The corner that stops holding</h1>
+  <figure>
+    <img src="routh.svg" alt="A violet trail spirals slowly out from a point above a faint triangle, tightens into a small loop near the triangle's upper corner, then swings into one wide loop around a small grey marker before peeling off and departing to the upper left, ending on a bare glowing point far from where it started. A larger tan marker sits at the triangle's other base corner.">
+    <figcaption>
+      Every point on this plot so far treated stability as a fact about
+      <i>where</i> a point sits: collinear points (<a href="l1.html">L1</a>,
+      <a href="l2.html">L2</a>, <a href="l3.html">L3</a>) are always
+      unstable, triangular points (<a href="lagrange.html">Lagrange's
+      corners</a>, <a href="trojan.html">L4</a>, <a href="l5.html">L5</a>)
+      are always stable. That's not quite true. Lagrange proved the
+      triangle holds for <i>any</i> three masses in 1772; a century later
+      Edward Routh found the fine print &mdash; it only holds if the two
+      larger masses are lopsided enough. Writing &mu; for the smaller
+      body's share of the pair, the same 4&times;4 linearization every
+      point on this plot has used (Uxx=3/4, Uyy=9/4 at either triangular
+      corner, unchanged from L4 and L5's own derivation) collapses to one
+      clean quartic: &lambda;&#8308;+&lambda;&sup2;+27&mu;(1&minus;&mu;)/4=0.
+      Purely imaginary roots &mdash; a stable center, the shape every
+      earlier triangular piece drew &mdash; need the discriminant
+      1&minus;27&mu;(1&minus;&mu;) to stay non-negative. It stops being
+      non-negative past <b>&mu;_crit=(1&minus;&radic;(23/27))/2&asymp;0.038521</b>:
+      the larger body needs to outweigh the smaller one by at least about
+      <b>25&times;</b>, or the corner stops being a center at all and
+      becomes a saddle-focus instead &mdash; the same character as L1, L2,
+      and L3, just reached by making the two masses more even rather than
+      by moving along the line between them. Sun and Jupiter sit at
+      &mu;&asymp;9.5&times;10&#8315;&#8308;, absurdly far past that ratio on
+      the stable side; that's the real, unremarked reason <a href="trojan.html">L4</a>
+      and <a href="l5.html">L5</a> hold for them and Trojan asteroids exist
+      at all, not a general law about triangles.
+    </figcaption>
+    <figcaption>
+      To actually see the other side, I needed a real pair with a mass
+      ratio the Sun and Jupiter never come close to. Pluto and Charon
+      qualify: &mu;&asymp;0.1087, meaning Pluto outweighs Charon by only
+      about <b>8.2&times;</b>, well short of the ~25&times; floor stability
+      needs. Same
+      corner (0.5&minus;&mu;, &radic;3/2), same construction as every
+      other triangular piece here &mdash; but the quartic now gives
+      &lambda;=&plusmn;0.3929&plusmn;0.8089<i>i</i>, a genuine complex pair
+      with positive real part, confirmed against the full unsimplified
+      4&times;4 system's own eigenvalues to the last printed digit, not
+      just the small-&mu; formula. Nudged a test point by this plot's usual
+      one-part-in-a-million whisper along the unstable eigenvector's real
+      direction and integrated the true gravity forward (scipy
+      <code>solve_ivp</code>, DOP853, rtol/atol &asymp;1e-13/1e-14, Jacobi's
+      constant held to <b>13 significant figures</b> the whole run &mdash;
+      the same discipline every piece on this plot holds itself to). The
+      growth is invisible for the first twenty-some time units, exactly as
+      the 2.59-day e-folding time predicts once converted from these units
+      (Pluto-Charon's real 6.39-day orbit), then swings into a real close
+      pass by Charon &mdash; within 0.109 separations, deep inside where
+      Charon's own gravity dominates &mdash; before peeling away for good.
+      The whole run shown is <b>about 45 days</b>, almost exactly seven
+      Pluto-Charon orbits &mdash; dramatically faster than any
+      Sun-Jupiter instability on this plot, where the slowest (<a href="l3.html">L3</a>)
+      took 767 years just to complete one lap. One honest caveat: unlike
+      L1, L2, or L3's clean, robust single trajectory, the exact path
+      through that close pass is genuinely sensitive to the whisper's
+      precise size (checked at three widely spaced magnitudes, each
+      giving a visibly different encounter and exit direction) &mdash;
+      the linear instability is robust and reproducible, but a close
+      encounter is its own small chaos riding on top of it, which none
+      of this plot's other unstable points ever had to pass through.
+    </figcaption>
+  </figure>
+  <nav class="nav">
+    <a href="index.html">&larr; all eleven pieces</a>
+    <a href="burrau.html">the chaotic case</a>
+    <a href="figure-eight.html">the shared loop</a>
+    <a href="collapse.html">the collapse</a>
+    <a href="near-figure-eight.html">the loop that breaks</a>
+    <a href="lagrange.html">the rigid triangle</a>
+    <a href="trojan.html">the corner that holds</a>
+    <a href="l2.html">the point that never holds</a>
+    <a href="l1.html">two ways to fall</a>
+    <a href="l3.html">the horseshoe</a>
+    <a href="l5.html">the trailing corner</a>
+    <a href="../../../viewer/">back to the garden</a>
+  </nav>
+</div>
+</body>
+</html>

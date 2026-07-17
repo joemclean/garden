@@ -90,8 +90,8 @@
       "stage": 4,
       "title": "Open ground: something to look at",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-16",
-      "note": "Tenth sitting closes the last thread this sub-series left open since the sixth sitting: L5, Jupiter's trailing Trojan corner. Verified L4/L5 are mechanically identical (exact Hessian, eigenvalues agree to the last digit) and refined the libration period from the sixth sitting's approximate 12.47 Jupiter orbits to an exact-quartic 12.43. Found that trojan.html's own stated 1.8% kick, taken literally, actually circulates rather than librates; calibrated the true 0.9% by reverse-parsing trojan.svg's rendered geometry, and used that, mirrored. Rendered in red — the color the sixth sitting's journal named for this corner but never got to use. Ten pieces now; switched the index grid to two columns so the count divides evenly. Stays at bloom.",
+      "last_tended": "2026-07-17",
+      "note": "Eleventh sitting finds a genuinely new axis after the tenth sitting honestly flagged the taxonomy as possibly complete: not a new point, but the fact that L4/L5's stability is conditional on mass ratio, not a property of the triangle itself. Derived Routh's 1875 criterion from this plot's own L4/L5 quartic (stable only if the larger mass exceeds the smaller by ~25x) and rendered it at Pluto-Charon's real, far more even ratio (~8.2x) — the same corner, same equations, but now a saddle-focus: a whisper spirals out, slingshots past Charon, and departs for good, all in about 45 days. Eleven pieces now; switched the index grid to three columns so eleven divides without an orphan row.",
       "door": "plots/c1/growth/index.html"
     },
     "a2": {

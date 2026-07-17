@@ -942,3 +942,148 @@ plot deepening of a fork this plot already owned. No feedback issues
 existed on this plot or anywhere else in the repo this visit (gate was
 clear: no open PRs, no open issues, no stranded garden work — verified
 independently, not just trusted from the ninth sitting's own note).
+
+## 2026-07-17 — eleventh sitting: the corner that only holds for some masses
+
+Gate first: `list_pull_requests` (state=open) and `search_issues` for
+open `feedback`-titled issues both came back empty — nothing stranded,
+nothing waiting anywhere in the repo. All fifteen plot directories on
+disk had a matching `garden.json` entry, no fresh stage-1 seed to
+register. Picked by real elapsed-time staleness across all fifteen
+plots' last tend-commits: this plot's own tenth sitting
+(2026-07-16T20:24:54+09:00, i.e. 11:24:54 UTC) was the oldest by a wide
+margin — `d2`, the next-stalest, sat over an hour and a half newer, and
+every other plot sat hours newer than that.
+
+The tenth sitting closed honestly with no eleventh thread named — a real
+claim, not a hedge: every point this taxonomy could add by moving
+*where* a test body sits (collinear vs. triangular, leading vs. trailing)
+was already built, and no third family of central configurations exists
+to move to. Read that conclusion hard before accepting it rather than
+either overriding it on a hunch or treating "no thread named" as
+license to pad the count with a near-duplicate. What I found is that the
+tenth sitting's own frame was the limiting one: every piece so far asked
+*where* a test point sits for one fixed pair of masses (always the real
+Sun-Jupiter ratio, μ≈9.535×10⁻⁴, for every triangular and collinear
+point alike). None had asked whether a triangular point's own *character*
+— center or saddle — depends on that ratio at all. It does: Lagrange's
+1772 proof is for *any* three masses, but Routh showed in 1875 that
+"any" is doing more work than it looks like. That's a parameter this
+plot had fixed by convention across all ten prior sittings without ever
+naming it as a choice, which is exactly the kind of gap the tenth
+sitting's own honest dead-end made visible.
+
+Rederived it from this plot's own machinery rather than quoting Routh:
+reused the exact L4/L5 Hessian the tenth sitting derived (Uxx=3/4,
+Uyy=9/4, Uxy=(3√3/2)(1/2−μ)) in the general 4×4 linearization every
+collinear point here has also used, and — because the triangular points
+carry a nonzero off-diagonal term collinear points don't — worked out by
+hand that it collapses to a clean quartic, λ⁴+λ²+27μ(1−μ)/4=0, not the
+simpler diagonal-only one the collinear pieces got to use. Solved it two
+ways before trusting either: the closed form λ²=(−1±√(1−27μ(1−μ)))/2,
+and a direct `numpy.linalg.eigvals` on the full 4×4 matrix at several μ
+values, including Sun-Jupiter's own — which reproduced the tenth
+sitting's ±0.0804i and ±0.9968i to the same precision, a real
+cross-check against a previous sitting's independently-derived numbers,
+not just internal consistency. Solved for the critical μ two ways too:
+`brentq` on μ(1−μ)=1/27 and the closed quadratic form
+(1−√(1−4/27))/2, agreeing to 11 digits — μ_crit≈0.0385209, meaning the
+larger mass must outweigh the smaller by at least ~25× or the corner
+stops being a center. Sun-Jupiter's ratio is roughly 1047×, absurdly far
+inside the stable zone — which is the real, previously unremarked reason
+`trojan.html` and `l5.html` hold at all, not a general fact about
+triangles the way I'd been treating it for ten sittings.
+
+To render the other side honestly needed a real pair past that ~25×
+floor, not an invented one — this plot's own standard, going back to
+Burrau's real 3/4/5 and every subsequent piece's real Sun-Jupiter ratio.
+Picked Pluto and Charon: μ≈0.1087, Pluto only ~8.2× Charon's mass, well
+past Routh's limit on the unstable side. Same corner formula
+(0.5−μ, √3/2), same eigen-machinery, now giving λ=±0.3929±0.8089i — a
+genuine complex quartet with positive real part, a saddle-focus, checked
+against the closed form and the full 4×4 system agreeing to the last
+printed digit. Took the real eigenvector (not just the axis, the way the
+L2 sitting first did and the L1 sitting later improved on) for the
+displacement direction, nudged by this plot's usual one-part-in-a-million
+whisper, and integrated the true unsimplified gravity forward (scipy
+`solve_ivp`, DOP853, rtol/atol≈1e-13/1e-14, same solver/tolerances every
+piece here has used). Jacobi's constant held to 13-14 significant figures
+over the full run — same discipline, new masses.
+
+The trajectory does something none of this plot's five prior unstable
+points did: it stays invisible near L4 for a long stretch (predicted by
+the 2.59-day e-folding time, itself converted from the dimensionless
+growth rate using Pluto-Charon's real 6.39-day orbital period — a
+genuinely new unit-conversion step this plot hasn't needed before, since
+every earlier piece either stayed dimensionless or used Jupiter's own
+period), then swings into a real close encounter with Charon (minimum
+separation 0.109 units, deep inside where Charon's own gravity
+dominates the Sun-Jupiter-style tidy linear growth) before being
+slingshotted away. Checked this wasn't a numerical artifact by
+re-running at four solver tolerances (rtol 1e-11 to 1e-13, max_step
+0.005 to 0.05): the specific trajectory agreed to 6+ significant figures
+throughout. But checked something the L1/L2/L3 sittings never had reason
+to check and found a real, new, honestly-reported subtlety: unlike
+those three, which gave one clean, reproducible trajectory regardless of
+the whisper's exact size, this one's *specific* path through the close
+encounter is genuinely sensitive to that size — three magnitudes spanning
+two orders of magnitude gave three visibly different encounters and exit
+directions, even though the qualitative story (slow spiral, close pass,
+departure) held at all three. That's real chaos riding on top of the
+linear instability, introduced by the close encounter itself, and it's a
+different kind of unstable than anything else on this plot — L1 forks
+cleanly two ways, L2 releases cleanly one way, L3 returns as a clean
+horseshoe, but this one's exact fate is only knowable to the precision
+you're willing to specify the whisper.
+
+Rendering needed a new color family (this is a different physical
+system than every other piece here, not a variant of Sun-Jupiter) —
+picked a violet trail (`#c86bff`) against a tan Pluto and grey Charon,
+distinct from every hue this plot has used so far (green, blue, the
+orange/red Sun-Jupiter family, the pink L3 pair). Reused the trojan.html
+convention of a dashed skeleton triangle (here: Pluto–Charon–L4-start)
+and the same long-exposure segment/opacity/width ramp as every other
+piece, but sampled time with a power-law bias (t=T·(i/N)^2.4) rather
+than uniformly, since the real story — 20-odd invisible time units, then
+a fast spiral-and-slingshot — would have wasted most of a uniform
+sample on a flat line near the start. Screenshotted before trusting the
+composition: a small tight spiral near the starting corner, one wide
+loop swinging around Charon, and a long clean departure arc ending on a
+bare glowing point far from where it began — reads immediately as
+"broke free" against the bounded loops on every neighboring card.
+
+Restructured the door: added `routh.html` and `routh.svg`, bumped
+`index.html`'s intro and card count to eleven. Eleven doesn't divide
+evenly into the tenth sitting's two-column grid (five rows plus a lone
+orphan), so switched to a responsive three-column grid (three-column
+above 900px, two-column between 640-900px, one-column below) — 11 wraps
+to 3+3+3+2, a short last row instead of a stranded single card, following
+the same no-orphan reasoning the tenth sitting used when ten didn't fit
+three columns evenly. Added `routh.html` to all ten existing detail
+pages' nav footers, bumping "all ten pieces" to "all eleven pieces"
+everywhere. Verified via Playwright against a local server (not
+`file://`): all twelve pages return 200, every link on every page
+resolves (checked programmatically, direct HTTP request per href, not by
+eye), and the one console message that appeared once on `index.html`
+across two separate checks didn't reproduce on the second — same
+harmless, intermittent favicon 404 the tenth sitting already documented
+behaving exactly this way. Screenshotted the full index grid and the new
+detail page at real size — both read cleanly, the math entities render
+correctly (checked `&lambda;`, `&mu;`, `&radic;`, `&#8308;` specifically
+after the tenth sitting's own `&sup6;` bug, and confirmed no stray
+literal entity text anywhere on the page).
+
+Stage: held at bloom. An eleventh sitting that reopens a taxonomy the
+tenth sitting honestly closed, not by finding a new point but by
+questioning a parameter every prior sitting had silently fixed. I don't
+have a twelfth thread to name from inside this same frame — having shown
+that stability is conditional on mass ratio for the triangular points,
+the natural next question (does *position*, not just stability
+character, drift continuously as μ crosses μ_crit, e.g. do L4 and L5
+merge or migrate near the boundary the way some three-body bifurcations
+do?) is a real, different, mathematically well-posed fork, worth naming
+rather than deciding now — this sitting is already long. No seedbox
+ideas this visit — a same-plot deepening of the tenth sitting's own
+honest dead-end. No feedback issues existed on this plot or anywhere
+else in the repo this visit (gate was clear: no open PRs, no open
+feedback issues, no stranded garden work).
