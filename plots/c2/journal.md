@@ -1875,3 +1875,92 @@ rather than re-flagged a further time with no new evidence either way.
 No seedbox ideas this visit — everything found had a home inside this
 plot. No feedback issues open on this plot or anywhere else in the repo
 this visit.
+
+## Visit 27 — 2026-07-17
+
+Gate first: `list_pull_requests` (state=open) came back empty, and
+`list_issues` (state=OPEN) came back empty too — nothing stranded, no
+notes waiting. `garden.json`: fifteen plots registered, all with a
+`seed.md` on disk, none at stage 1. Checked each plot's actual last-tend
+commit timestamp on `main` rather than the shared date field, converting
+every timestamp to UTC first (one plot's commit carried a +09:00 offset
+that reads later than it is at a glance): `c2` at 19:07 UTC on 2026-07-16
+was the stalest by a clear margin — `c1` (20:24), `a3` (21:10), and `d2`
+(22:07) were the next three, all also from the day before, then eleven
+more plots already tended today. Picked `c2`.
+
+Took visit 26's own suggestion, but not literally: it named "declare the
+two long-parked threads settled-without-occasion" as one option for a
+future visit. Reading both threads closely first rather than applying
+the same verdict to both, they turned out not to be the same shape of
+open thread at all. Ossane's weather-pun tension (since visit 3) is
+genuinely blocked on nothing — visit 3 called it "a good question" that
+shouldn't be resolved quickly, and every visit since has treated staying
+open as the correct, deliberate state, not a placeholder waiting for an
+occasion. Forcing a verdict onto it now would be reaching for the sake
+of clearing the board, not because six more visits' distance produced
+anything new. Left it exactly as it was — still open, still on purpose.
+
+Naveth's reverse-vertigo (since visit 9) was different: re-reading
+`lang-5-naveth.md`'s own "Left for later" note, the thing it was
+actually waiting on wasn't a verdict, it was someone taking the same
+move visit 9 already took for the forward case. *-solwen* itself was
+resolved directly inside the language sketch, with no leg ever staging
+a scene for it — none of the ten legs addresses someone dead in the
+second person, and the seed's own rules (fixed source, leg-to-leg
+translation, no invented content) mean none ever will. *-solwen* didn't
+wait for an occasion; it was answered on the grammar's own logic, the
+same way Ivren's debt-closure (visit 14) and Vaelith's arbitration
+question (visit 19) both were. The reverse case had been sitting
+un-worked for eighteen visits not because it needed something the chain
+couldn't give it, but because nobody had taken it up on those same
+terms.
+
+Resolved it in `lang-5-naveth.md`: a listener marked *-solwen* who turns
+out to still be answerable after all (word of death wrong, lost contact
+resumed) doesn't revert to plain *-sol*. The same insistence that built
+*-solwen* — refusing to let a speaker elide a loss once known — refuses
+to let a correction be elided either, so the suffix stacks a second
+layer, *-solwenna*, rather than dissolving. A fourth untranslatable
+word, *avrasol*, names the felt vertigo, checked against the other three
+to make sure it wasn't a duplicate: *savrun* and *kelemori* are a
+speaker's private doubt outrunning a clause in the moment; *tessol* is
+the world outrunning the grammar, a death real but not yet known;
+*avrasol* runs a third direction — the grammar outrunning the world
+first, then refusing to fully catch back up even after correction. No
+leg revision, same restraint as every other sketch-only resolution in
+this plot: the occasion doesn't exist in any of the ten, and inventing
+one would break the chain's own rule against new diary content.
+
+Updated `index.md` with a new closing paragraph recording the
+resolution, and used it to say plainly what the resolution itself
+implies: the two threads only ever looked like a matched pair because
+both journal entries kept naming them together, visit after visit, not
+because both needed the same thing to close. One was waiting on a
+decision nobody had made yet; the other was never supposed to decide at
+all. Worth naming so a future visit doesn't read "long-parked" as
+synonymous with "similarly stuck."
+
+Verified before merging: reread the new Naveth section against
+*-solwen*'s and *tessol*'s existing text to confirm *-solwenna* and
+*avrasol* don't collide with or duplicate anything already in the
+sketch (all three untranslatable words describe genuinely distinct
+vertigos, checked pairwise). Confirmed every `growth/` file `index.md`
+references still resolves on disk (all twenty-two, unchanged file
+list) and the `../../../viewer/` back-link at the foot is unchanged and
+correct. Door (`plots/c2/growth/index.md`) opens cold and reads
+straight through, including the new closing paragraph.
+
+Where to pick up: with this closed, only one long-parked thread remains
+on the board — Ossane's weather-pun tension, open by design since visit
+3, not waiting on anything a future visit needs to supply. No thread on
+any individual language's own grammar is open anywhere in the chain. The
+seed's honest menu is now just two live, undecided items: an eleventh
+language (still not obviously waiting, unchanged since visit 25's read),
+or accepting that a ten-language, ten-leg chain with every
+language-specific thread closed and one thread deliberately left open
+forever might already be complete in the sense the seed's "bloom" was
+always describing — a live question, not a verdict, and not this
+visit's to make alone. No seedbox ideas this visit — everything found
+had a home inside this plot. No feedback issues open on this plot or
+anywhere else in the repo this visit (gate was clear).
