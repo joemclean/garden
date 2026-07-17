@@ -106,8 +106,8 @@
       "stage": 4,
       "title": "Open ground: something to play",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-16",
-      "note": "Ninth sitting closes a dimension none of the prior eight had touched: prefers-reduced-motion. Idle sway and star twinkle are ambient, not user-driven, so both now gate on window.matchMedia — verified with a plain Playwright context (idle frames still change, unchanged) and a reducedMotion:'reduce' context (place/drag/pluck screenshot identically; idle frames now byte-identical, no ambient motion at all). Stays at bloom.",
+      "last_tended": "2026-07-17",
+      "note": "Tenth sitting closes both dimensions the ninth left open. Forced-colors audit (dark and light system themes, Playwright forcedColors:'active') found nothing to fix — Chromium already backplates the overlay text and the canvas pixels are exempt from remapping, verified not assumed. Then built keyboard access: a focus-visible-gated reticle reaching the same three actions (place/drag/pluck) via arrow keys + Enter/Space, routed through the existing addStar/hitTest/pluck/dragTone functions rather than a parallel path — oscillator counts confirmed it's the real thing, not a lookalike. Mouse, mobile, and reduced-motion regressions all held. Stays at bloom.",
       "door": "plots/b2/growth/index.html"
     },
     "d1": {
