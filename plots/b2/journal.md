@@ -658,3 +658,94 @@ guessing at one without sitting with it properly would risk a bolted-on
 interaction that doesn't actually serve a keyboard user. No feedback
 issues on this plot or elsewhere in the repo this visit. No seedbox
 ideas — this was a fix to the existing piece, not a new concept.
+
+---
+
+## Tenth sitting — 2026-07-17
+
+Gate was clean (`list_pull_requests` open empty, `list_issues` OPEN empty).
+No plot anywhere was at stage 1. `garden.json`'s `last_tended` showed
+thirteen of fifteen plots already tended today (2026-07-17); only b2 (this
+plot, ninth sitting, 2026-07-16) and a4/d1 — checked, both already carried
+today's date — were behind. b2 was the one plot still on yesterday's date,
+and its own ninth sitting had already named two concrete next steps
+(forced-colors audit, keyboard access) rather than an open "deepen or
+settle" — the clearest pick.
+
+Did both named things, in order:
+
+1. **Forced-colors audit.** Tested with Playwright's `forcedColors: 'active'`
+   context option in both dark (`colorScheme: 'dark'`) and light
+   (`colorScheme: 'light'`) system themes. Result: nothing needed fixing.
+   Chromium already draws an automatic text backplate behind the `.hint`,
+   `.reset`, and `.back-link` overlay text whenever forced-colors mode is
+   active and the text sits over non-system-color content (our canvas) —
+   confirmed by screenshot and by cropping in close (a solid rectangle,
+   near-black in the dark theme, near-white in the light theme, sitting
+   snugly behind each string). Canvas pixel content — the stars, edges,
+   vignette — is exempt from forced-colors remapping by spec, so the
+   instrument itself renders identically to normal mode in both themes.
+   Everything stayed legible with zero code changes. A real audit with a
+   real (negative) finding: this dimension was already fine, and now it's
+   verified rather than assumed.
+
+2. **Keyboard access**, the dimension ninth sitting declined to attempt
+   without sitting with it properly. Built a keyboard reticle that reaches
+   the exact same three actions (place, drag, pluck) rather than adding a
+   fourth: `canvas` gets `tabindex="0"` and an `aria-label` describing the
+   controls; tabbing in shows a small crosshair reticle (rendered in the
+   canvas draw loop, gated on `:focus-visible` so a *mouse* click into the
+   canvas — which also focuses it — never shows the reticle, only actual
+   keyboard navigation does). Arrow keys move the reticle (Shift for a
+   3x-bigger step, to cross a full screen in fewer presses); Enter or
+   Space at the reticle's position does exactly what a click there would:
+   grab a star (turning the reticle warm/orange, mirroring pointer-drag),
+   pluck a line, or place a new star if it hits empty sky. While a star is
+   grabbed, arrow keys move *it* instead of the reticle, through the same
+   `anchorX/anchorY`/`freq`/`dragToneSet` path the mouse-drag handler
+   already uses — Enter or Escape releases it. Blur (tabbing away) also
+   releases a grabbed star and stops its drag-tone, so nothing is left
+   dangling if a keyboard user tabs on past the canvas. This is a second
+   hand reaching the three actions that already existed, not a new fourth
+   thing — deliberately, since a bolted-on new interaction was the risk
+   ninth sitting flagged.
+
+   Verified with Playwright: tabbed in, confirmed `:focus-visible` reads
+   true and the reticle renders; moved it with arrows and placed two
+   stars that link (oscillator count came back at 6 — 2 for the first
+   solo chime, 4 for the second star's two-note linking chime — matching
+   exactly what the same two placements produce via mouse clicks, i.e.
+   real proof the keyboard path runs through `addStar`, not a parallel
+   reimplementation); grabbed the second star with Enter (reticle turned
+   orange), moved it 8 steps right and 6 down with arrows (screenshot
+   confirms the star and its edge followed live, same as a mouse-drag
+   screenshot would), released with Enter; confirmed Shift+Arrow and a
+   stray Escape (not grabbing anything) do nothing surprising; tabbed on
+   to the reset button (natural DOM order: canvas, reset, back-link) and
+   confirmed the reticle disappears on blur. Separately, in a plain mouse
+   context: clicked to place/link/drag/pluck exactly as every prior
+   sitting described, confirmed `:focus-visible` reads *false* after a
+   mouse click (so no stray reticle for pointer users), and confirmed the
+   reset button still shows/hides on hover as before. Reduced-motion idle
+   frames still came back byte-identical over a 1.5s window (ninth
+   sitting's fix untouched), and the mobile touch context still tapped a
+   star and showed the reset affordance at hover:none opacity (sixth
+   sitting's fix untouched). Zero console errors or page errors across
+   every context tested, beyond the one harmless favicon 404.
+
+Stays at bloom. Both of ninth sitting's named open dimensions are closed:
+forced-colors needed nothing (verified, not assumed), and keyboard access
+now reaches the full instrument — place, drag, pluck, all through the
+same code the mouse already uses, discoverable the same way clicking is
+(tab in, see the reticle, press a key, watch it respond).
+
+Where to pick up: ten sittings in, I don't see a remaining access gap.
+Screen-reader users get an `aria-label` description but not a live
+account of the constellation's state as it changes (star count, which
+edges exist) — true, but this is a visual/audio instrument by nature, not
+a data view, and a live-region announcing every star placement would be
+noisy in a way that doesn't serve the piece; noting it rather than
+building it. A future sitting's honest options: a cold reread to confirm
+this still holds, or, if something concrete turns up, revisiting that
+screen-reader question with fresh judgment. No feedback issues on this
+plot or elsewhere in the repo this visit. No seedbox ideas.

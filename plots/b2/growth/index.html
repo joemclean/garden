@@ -19,6 +19,11 @@
     cursor: crosshair;
     touch-action: none;
   }
+  canvas:focus { outline: none; }
+  canvas:focus-visible {
+    outline: 1px solid rgba(180, 195, 255, 0.45);
+    outline-offset: -1px;
+  }
   .hint {
     position: fixed;
     left: 50%;
@@ -68,7 +73,7 @@
 </style>
 </head>
 <body>
-<canvas id="sky"></canvas>
+<canvas id="sky" tabindex="0" aria-label="An interactive night sky. Click, or tab in and use arrow keys, to move. Enter or space places a star, picks one up to move it, or plucks a connection."></canvas>
 <div class="hint" id="hint">touch the dark</div>
 <button class="reset" id="reset" title="clear the sky">clear</button>
 <a class="back-link" href="../../../viewer/">&larr; garden</a>
@@ -248,6 +253,18 @@
   var edges = [];   // {a, b, pluckedAt, restDist, lastAmbient} indices into stars
   var dragging = null;
 
+  // keyboard reticle: a second way to reach the same three actions
+  // (place/drag/pluck) for anyone who tabs in rather than points. It moves
+  // with arrow keys, Enter/Space does whatever a click at that spot would —
+  // grab a star, pluck a line, or place a new one — and arrow keys move a
+  // grabbed star the way a pointer-drag would. No fourth action, just a
+  // second hand reaching the same three.
+  var kbX = null, kbY = null, kbGrabbed = null, kbVisible = false;
+  var KB_STEP = 16;
+  var supportsFocusVisible = (function () {
+    try { canvas.matches(":focus-visible"); return true; } catch (e) { return false; }
+  })();
+
   var LINK_MAX = 2;
 
   // once the sky has been left alone a while, stars sway gently on their own —
@@ -400,11 +417,76 @@
   resetBtn.addEventListener("click", function (evt) {
     evt.stopPropagation();
     lastInteraction = performance.now();
+    if (kbGrabbed !== null) {
+      dragToneStop();
+      kbGrabbed = null;
+    }
     stars = [];
     edges = [];
     hint.style.opacity = "0.0";
     hint.textContent = "touch the dark";
     window.setTimeout(function () { hint.style.opacity = "1"; }, 50);
+  });
+
+  canvas.addEventListener("focus", function () {
+    if (kbX === null) { kbX = W / 2; kbY = H / 2; }
+    kbVisible = supportsFocusVisible ? canvas.matches(":focus-visible") : true;
+  });
+  canvas.addEventListener("blur", function () {
+    kbVisible = false;
+    if (kbGrabbed !== null) {
+      dragToneStop();
+      kbGrabbed = null;
+    }
+  });
+
+  canvas.addEventListener("keydown", function (evt) {
+    var key = evt.key;
+    var isArrow = key === "ArrowUp" || key === "ArrowDown" || key === "ArrowLeft" || key === "ArrowRight";
+    if (isArrow) {
+      evt.preventDefault();
+      var step = evt.shiftKey ? KB_STEP * 3 : KB_STEP;
+      var dx = key === "ArrowLeft" ? -step : key === "ArrowRight" ? step : 0;
+      var dy = key === "ArrowUp" ? -step : key === "ArrowDown" ? step : 0;
+      kbX = Math.max(4, Math.min(W - 4, kbX + dx));
+      kbY = Math.max(4, Math.min(H - 4, kbY + dy));
+      var grabbedStar = kbGrabbed !== null ? stars[kbGrabbed] : null;
+      if (grabbedStar) {
+        lastInteraction = performance.now();
+        grabbedStar.x = kbX; grabbedStar.y = kbY;
+        grabbedStar.anchorX = kbX; grabbedStar.anchorY = kbY;
+        grabbedStar.freq = pitchAt(kbY);
+        dragToneSet(grabbedStar.freq);
+      } else if (kbGrabbed !== null) {
+        kbGrabbed = null; // was pointing at a star that no longer exists
+      }
+    } else if (key === "Enter" || key === " " || key === "Spacebar") {
+      evt.preventDefault();
+      lastInteraction = performance.now();
+      if (kbGrabbed !== null) {
+        dragToneStop();
+        kbGrabbed = null;
+      } else {
+        var hit = hitTest(kbX, kbY);
+        if (hit >= 0) {
+          kbGrabbed = hit;
+          dragToneStart();
+          dragToneSet(stars[hit].freq);
+        } else {
+          var edgeHit = edgeHitTest(kbX, kbY);
+          if (edgeHit >= 0) {
+            pluck(edgeHit);
+            hideHint();
+          } else {
+            addStar(kbX, kbY);
+            hideHint();
+          }
+        }
+      }
+    } else if (key === "Escape" && kbGrabbed !== null) {
+      dragToneStop();
+      kbGrabbed = null;
+    }
   });
 
   // ---- render loop ----
@@ -486,6 +568,21 @@
       ctx.beginPath();
       ctx.arc(st.x, st.y, r, 0, Math.PI * 2);
       ctx.fill();
+    }
+
+    // keyboard reticle: only while tabbed in, warmer while holding a star
+    if (kbVisible && kbX !== null) {
+      ctx.save();
+      ctx.strokeStyle = kbGrabbed !== null ? "rgba(255,205,140,0.9)" : "rgba(150,170,255,0.85)";
+      ctx.lineWidth = 1.5;
+      var rr = 10, gap = 4;
+      ctx.beginPath();
+      ctx.moveTo(kbX - rr, kbY); ctx.lineTo(kbX - gap, kbY);
+      ctx.moveTo(kbX + gap, kbY); ctx.lineTo(kbX + rr, kbY);
+      ctx.moveTo(kbX, kbY - rr); ctx.lineTo(kbX, kbY - gap);
+      ctx.moveTo(kbX, kbY + gap); ctx.lineTo(kbX, kbY + rr);
+      ctx.stroke();
+      ctx.restore();
     }
 
     requestAnimationFrame(draw);
