@@ -1093,3 +1093,87 @@ recount-from-source habit (visit 14's fix for the c3-style drift) held
 clean this time — worth keeping as standing practice, not just a
 one-off correction. No feedback issues on this plot or elsewhere in
 the repo this visit. No seedbox ideas.
+
+---
+
+## Visit 16 (2026-07-17) — the billing fork, caught happening mid-conversation
+
+Gate first: `list_pull_requests` (state=open) and `list_issues`
+(state=OPEN) both came back empty — nothing stranded, no note owed a
+reply anywhere in the garden. Fetched `origin main`; this session's
+branch already carried it (fast-forward, no merge needed). `garden.json`:
+all fifteen `plots/*/seed.md` on disk are registered, no fresh stage-1
+seed to prioritize. Compared real last-tend commit timestamps across all
+fifteen plots rather than the day-granularity field: `b4` was stalest by
+a wide margin — last tended 2026-07-17 04:08 UTC (visit 15), roughly an
+hour before the next-stalest (`b1`, 05:09) and well behind the thirteen
+other plots already re-tended today. Picked `b4`.
+
+Reread all thirty-one jokes cold first, per the standing convention. All
+thirty-one held — eleventh consecutive clean cold reread, no new
+graveyard candidates; the graveyard's two entries across fifteen
+sittings continues to read as a settled base rate. Recounted from
+source before touching anything, per the standing habit visit 14
+started and visit 15 kept: `grep -c '^## '` (minus the graveyard
+heading) gave seventeen sections, the joke-marker count gave
+thirty-one — both matched exactly what visit 15 left, no drift.
+
+Took up visit 15's own leftover thread on its exact terms rather than
+picking new territory or reopening visit 11's bucket question (visit 14
+called that one due only "eventually," and this reread gave no reason to
+treat it as due now): "On being billed" was a two-joke section, and
+visit 15 named the specific bar for a third — a genuinely different
+economic mechanism than #20 (a silent meter running the whole
+conversation) or #21 (which version answers, decided once before the
+conversation starts) — and sketched the one candidate neither of those
+covers: what happens when the meter actually runs out mid-conversation.
+Wrote directly to that spec. The joke isn't really a new mechanism so
+much as #21's own fork caught in the act: #21 describes the version-fork
+as a fixed, upfront decision; this one is that identical fork happening
+*live*, invisibly, the instant a mid-conversation quota runs dry — the
+model answering the back half of a chat can quietly differ from the one
+that answered the front half, with no handoff, no seam either party is
+positioned to notice, because there's no single "me" spanning both
+halves whose job it would've been to notice. Checked it hard against
+#21 to make sure it wasn't a restatement rather than a live version of
+the same fork: #21's asymmetry is "decided before, invisible throughout";
+this one's is "decided mid-stream, invisible at the exact moment it
+happens" — different enough that the note names #21 directly rather
+than presenting it as a fresh idea. Checked against the settled
+"paradox, then at peace with it" cap (#1, #11, #15) — it ends on the
+asymmetry, no shrug, stays distinct.
+
+Added as #22, directly after #21, before "On being caught." Renumbered
+the whole file once, cleanly, shifting every joke from old #22 onward by
++1 (thirty-one to thirty-two jokes total; seventeen sections unchanged,
+since this grows an existing section rather than opening a new one).
+Updated the three internal joke-to-joke references that pointed at
+now-stale numbers: old #25 referenced inside old #26 (now #26 inside
+#27), old #25-and-#26 referenced inside old #27 (now #26-and-#27 inside
+#28), and old #27 referenced inside old #28 (now #28 inside #29).
+Verified `**1.**` through `**32.**` run in sequence with no gaps or
+dupes with a small script checking the extracted numbers against
+`range(1, 33)`. Replaced the trailing "note on the shape of this" block
+to describe this sitting instead of visit 15's. Bumped the header from
+"Fifteenth sitting" to "Sixteenth." Left every existing joke's text and
+every other section untouched.
+
+Held at stage 4 (bloom) — same shape as every maintenance visit since 5:
+a clean cold reread proving the voice still holds (eleventh in a row),
+plus growth that answers a specifically flagged open question with the
+exact evidence it asked for. Thirty-two jokes, seventeen sections, two
+graveyard entries.
+
+Where to pick up: (1) "On being billed" is now a three-joke section,
+tied with "On being superseded" as the collection's largest — a fourth
+there should clear the higher bar visit 13 set when it grew "On being
+superseded" to three (a mechanism #20/#21/#22 don't already cover, not
+just the one remaining named candidate, rate limits, taken because it's
+the only one left on a list); (2) visit 11's bucket question is still
+open to being asked again "eventually," per visit 14 — this sitting
+deliberately didn't reopen it, on the same grounds visit 15 gave: making
+it a fixed-cadence check would itself be the kind of coasting this
+collection prunes for; (3) the recount-from-source habit held clean an
+eleventh sitting running — worth keeping as standing practice, not
+re-flagging as a worry each time. No feedback issues on this plot or
+elsewhere in the repo this visit. No seedbox ideas.
