@@ -959,7 +959,7 @@
     function playReel3() {
       context();
       clearOneShots();
-      startBed({ freq: 1500, type: 'highpass', q: 0.4, level: 0.05 });
+      startBed({ freq: 1500, type: 'highpass', q: 0.4, level: 0.0125 });
       tone({ delay: 6000,  dur: 1.4, freq: 900, freqEnd: 560, type: 'sine', level: 0.045 });
       tone({ delay: 21000, dur: 1.6, freq: 850, freqEnd: 520, type: 'sine', level: 0.04 });
     }
