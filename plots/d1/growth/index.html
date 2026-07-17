@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Coming Attractions — title sequences for three films that don't exist</title>
 <style>
   :root { color-scheme: dark; }
@@ -392,6 +393,26 @@
   }
   .sound-toggle:hover { color: #d8d8d8; opacity: 0.9; }
   .sound-toggle.is-muted { color: #5a5a5a; }
+
+  /* Ambient background loops (wheat sway, rain, buzzard, heat shimmer,
+     window/neon flicker, leader scratch-flicker) run continuously and carry
+     no plot beat of their own — freezing them serves a vestibular-motion-
+     sensitive visitor without touching the once-through narrative motion
+     (sun rise, train pass, bird flights, title cards, lightning flash,
+     tumbleweeds, the walking figure, the curtain hold) that this piece is
+     actually about. */
+  @media (prefers-reduced-motion: reduce) {
+    .blade,
+    .smoke,
+    .window-flicker,
+    .neon-sign,
+    .rain-drop,
+    .scratch,
+    .buzzard,
+    .shimmer-band {
+      animation-play-state: paused;
+    }
+  }
 </style>
 </head>
 <body>

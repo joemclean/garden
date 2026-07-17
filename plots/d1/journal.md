@@ -588,3 +588,78 @@ feedback issues existed on this plot or elsewhere in the repo this visit
 (gate was clear: no open PRs, no open issues; the many
 `claude/charming-shannon-*` branches remain squash-merge residue from
 past visits). No seedbox ideas.
+
+## 2026-07-17 — tenth tend: viewport and reduced-motion, two dimensions nine sittings never touched
+
+The five "open ground" sibling plots (a2, b2, c1, c4, d1) have been running
+roughly in step, one sitting apart; this visit's gate check found the last
+recurring asymmetry a1 flagged — a2/c1/c4 at a tenth sitting, b2/d1 stuck at
+ninth — and this tend closes it for d1's side. Rather than take up another
+item from this plot's own priority list (fourth-reel question, volume
+balance by ear — both explicitly "revisit only if," not due), I checked
+`growth/index.html` against conventions every other sibling plot already
+carries and found two gaps unique to this one: no `<meta name="viewport">`
+(confirmed by grep — every other HTML door in the repo has it, this was the
+one hold-out) and no `prefers-reduced-motion` handling at all (a2, b2, c3 all
+gate something on it; d1 never had a single `@media` block).
+
+Viewport: added the standard `width=device-width, initial-scale=1` tag.
+Without it, mobile Chrome renders through a synthetic 980px layout viewport
+and zooms the whole page down to fit — the piece "worked" but at a blur, not
+at the device's actual resolution. Confirmed via Playwright at a 390×844
+mobile context: `document.documentElement.clientWidth` reads 390 (not ~980)
+after the fix, menu cards lay out crisply, and reel one's 16:9 stage
+letterboxes top/bottom exactly as the `aspect-ratio: 16/9` + `max-height:
+100vh` rule always intended on a portrait screen — that letterboxing is the
+existing composition working as designed, not something this tend changed.
+
+Reduced motion: this piece's animation splits cleanly into two kinds that
+none of the nine prior sittings named as a distinction — one-shot narrative
+beats (`fill-mode: forwards`, plays once: sun rise, bird flights, train
+pass, title cards, lightning flash, the walking figure, tumbleweeds, the
+curtain hold) and `infinite`-looping ambient texture that carries no plot
+beat of its own (wheat sway, smoke puffs, window/neon flicker, rain, leader
+scratch-flicker, the circling buzzard, heat shimmer). Added one `@media
+(prefers-reduced-motion: reduce)` block that sets `animation-play-state:
+paused` on exactly the ambient/infinite classes, leaving every one-shot
+narrative animation untouched — a visitor with vestibular sensitivity still
+watches sun and title cards move once through to the piece's actual ending,
+just without the continuous background jostle.
+
+Verified with Playwright, not by reading the CSS cold. Normal context:
+`.blade`'s computed `transform` changes between two samples 1.5s apart
+(sway is running). `reducedMotion: 'reduce'` context, reel one: `.blade`'s
+transform is byte-identical across the same two samples (frozen), while
+`.sun`'s transform keeps changing (narrative motion untouched). Same
+context, reel three: `.buzzard` frozen, `.tumbleweed` (one-shot `roll`,
+`fill-mode: forwards`) still advances — confirms the one-shot/infinite split
+holds in both reels that have ambient loops, not just one. Full `#playAll`
+run (~142s wall clock, real headless Chromium, normal context) replayed end
+to end afterward to confirm the CSS-only change didn't disturb the
+JS-timed orchestration: return link arms at completion, clicking it
+returns to the menu correctly. Zero console/page errors across every run.
+Didn't touch `REEL_MS`/`BIRD_FLIGHTS`/any JS timing constant or the
+audio module at all, so nine sittings' worth of already-verified playback
+timing stays provably untouched — this diff is one meta tag plus one CSS
+media-query block.
+
+Stage stays at bloom — this closes an accessibility gap the piece always
+had, on the same footing as several prior sittings' cleanliness passes;
+the anthology's shape, reel count, and menu are unchanged. Door unchanged
+(`growth/index.html`); back-link and return-link both reconfirmed present
+and working, now also confirmed visible and tappable in a mobile context.
+
+Where to pick up: no open bugs. The three items from the ninth tend are
+otherwise unchanged: (1) the fourth-reel question, revisit only if the
+three-reel/menu shape starts to feel thin; (2) the `transform-box:
+fill-box` rule for any new SVG element combining `translate` with
+`rotate`/`scale`; (3) per-reel volume balance, still untried with real
+speakers/audio hardware. A fourth, newly named this sitting: if a future
+tend adds a new ambient/looping element (another infinite `@keyframes`
+animation with no narrative beat of its own), add its class to the
+`prefers-reduced-motion` block's selector list rather than leaving it
+unaudited — same "standing rule, extend it" posture the transform-box fix
+already established for SVG transforms. No feedback issues existed on this
+plot or elsewhere in the repo this visit (gate was clear: no open PRs, no
+open issues). No seedbox ideas — this was a same-plot catch-up on
+conventions sibling plots already carried, not a new direction.
