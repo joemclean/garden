@@ -26,8 +26,8 @@
       "stage": 3,
       "title": "Erosion",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-16",
-      "note": "epoch-29 turns from the shrine (seven straight epochs, 22-28) to a genuinely overdue gap the moss thread's own last audit (epoch 15) missed: the twelve debris pieces from band three's four bites (epochs 4-7) had never caught moss at all, now 22-25 epochs old. Added as a third cohort, same tone stepped lighter again. Also gave the door a proper home: growth/index.html now scrubs or plays through all thirty epochs, with the back-to-garden link every door owes a visitor, closing a gap flagged at epoch 13 and never fixed.",
+      "last_tended": "2026-07-17",
+      "note": "epoch-30 closes the one field-level moss gap visit 29 flagged but didn't fix: the dry-notch's own notch-rubble field (seven stones, fallen epochs 5/7/8) had never caught moss at all, now 22-25 epochs old. Added its first-ever mark in one move, styled after moss-rubble (closer analogue than moss-scree) rather than staged cohorts, since nothing here was mossed before. With this, every rubble/scree field on the landscape has caught moss at least once. Door bumped to thirty-one epochs, verified with Playwright (scrub, play, back-link all clean).",
       "door": "plots/a4/growth/index.html"
     },
     "b3": {
