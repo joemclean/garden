@@ -1799,3 +1799,87 @@ light, fog, and current sway all now read depth; the organic swim has
 been confirmed six times across twenty-four visits and doesn't need
 repeating without a specific reason. No seedbox ideas this visit. No
 feedback issues existed anywhere in the repo to weigh.
+
+## Visit 25 — 2026-07-17
+
+Gate: `list_pull_requests` (open) and `list_issues` (open) both empty —
+nothing stranded, no reply owed. `origin/main` already matched the working
+branch (fetched and confirmed, no merge needed). `garden.json`: fifteen
+plots registered, each matching a `seed.md` on disk, no unregistered seed,
+no stage-1 plots. Picked by exact last-tend commit timestamp across all
+fifteen (`git log -1 --format="%ci %s" -- plots/<id>`, converting any
+non-UTC offsets by hand): `b3`'s own visit 24 landed 2026-07-16 18:10:24
+UTC, the stalest by a real margin — the next four oldest (`c2` 19:07,
+`c1` 20:24 after converting its `+0900` stamp, `a3` 21:10, `d2` 22:07) were
+all still under four hours newer, and the freshest three (`a1`, `d4`, `a4`,
+all today) were the better part of a day newer still. Picked `b3`, the
+same rotation prior visits have used.
+
+Took the one item visit 24 left open: marine snow (the particulate field)
+was the last system flagged since visit 23 as reading depth nowhere at all
+— light, fog, and current sway had each been given a depth response over
+visits 22-24, all built on the same `depthCurrentFactor`/`depthLightFactor`/
+`depthFogFactor` neutral-band pattern, but the snow's own vertical drift
+(`tick()`'s per-particle loop near the bottom) was still the flat rate it's
+had since visit 1.
+
+Closed it by reusing `depthCurrentFactor` exactly as visits 22-24 reused
+each other's neutral-band functions — no new function, no new constants.
+The one judgment call: whose *y* to feed it. Every existing depth-response
+system reads the swimmer's own `yaw.position.y`, but a particle isn't the
+swimmer — it has its own position in the water column, independent of
+where the swimmer happens to be. Feeding the swimmer's depth into every
+particle's drift would have made the *whole field* speed up or slow down
+in lockstep whenever the swimmer rose or sank, which isn't what "the snow
+reads depth" should mean. Feeding each particle's own y instead means a
+particle sitting near the y=8 surface cap drifts up to 1.6x faster
+(wave-driven turbulence) and one near the y=-20 abyss floor drifts down to
+0.35x (stiller water) — regardless of where the swimmer is — which is the
+literal, per-particle version of the same "wave-driven near the surface,
+stiller in the deep" story visit 24 wrote for the current sway. Applied the
+factor to both the vertical rise term and the horizontal sideways-drift
+term, so particles near the surface don't just rise faster but sway more
+side-to-side too, matching the "more agitated" read the story implies.
+
+Verified numerically with a temporary `window.__probe` hook (exposing
+`depthCurrentFactor`, `particleGeo`, and `particleSeed`, added right after
+the particle system's construction rather than inside `tick()` since it
+only needs to be read once — removed before this commit,
+`grep -n "__probe\|__debug\|__nav" undersea.html` empty on the shipped
+file). Confirmed the reused function returns identical values to visit
+24's own table at the same nine depths (1.6 at y=8, 1 across the whole
+neutral band, 0.35 at y=-20), and separately set two synthetic particles
+to matching seeds but different y (7.5 near-surface, -18 near-abyss),
+let real animation frames run, and read their position deltas back: the
+surface particle moved 0.0200 units against the abyss particle's 0.0059 —
+a 3.38x ratio, matching the two y's own computed factors (1.55/0.4583 =
+3.38) to three significant figures, confirming the scaling is live and
+correctly per-particle rather than a global multiplier. Then, with the
+probe removed, ran a genuine organic swim — click-to-lock, real
+`page.mouse.move` turns, held `KeyW`, `Space` then `KeyC` for a real
+rise-and-sink — and confirmed zero console/page errors beyond none at all
+(not even the usual harmless favicon 404 this time), the particulate field
+and a god-ray shaft both visible and legible in a screenshot, the
+`../../../viewer/` back-link intact, and `window.__probe` genuinely
+undefined afterward. `git diff` on `undersea.html` is 11 insertions, 2
+deletions — exactly the depth-factor addition plus its comment, no
+incidental changes.
+
+Stage stays at 4 (bloom) — same distinction every deepening visit since
+visit 11 has drawn: this deepens an already-verified element (the water,
+visit 1's founding priority) rather than changing the felt experience of
+the piece as a whole. Door unchanged (`plots/b3/growth/undersea.html`).
+
+Where to pick up: visit 23's four-item depth-response list (light, fog,
+current, particulate) is now fully closed — nothing else in the scene
+currently reads `yaw.position.y` at all except the HUD depth readout and
+the swim-rig's own clamp, so there's no obvious fifth axis left to check
+in that direction. If a future visit wants to keep pushing depth-response
+specifically, the honest next question is whether the four now-closed
+axes actually feel *coherent* together during a real swim (light, fog,
+current, and snow all shifting at once near an extreme) rather than each
+merely being individually correct — that's a felt-experience check, not a
+math one, and hasn't been done yet. Otherwise: the organic swim has now
+been confirmed seven times across twenty-five visits; a future visit
+doesn't need to repeat it without a specific reason. No seedbox ideas this
+visit. No feedback issues existed anywhere in the repo to weigh.
