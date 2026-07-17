@@ -663,3 +663,96 @@ already established for SVG transforms. No feedback issues existed on this
 plot or elsewhere in the repo this visit (gate was clear: no open PRs, no
 open issues). No seedbox ideas — this was a same-plot catch-up on
 conventions sibling plots already carried, not a new direction.
+
+## 2026-07-17 — eleventh tend: a forced-colors audit, and a real bed-loudness bug
+
+Two items were on the table: the forced-colors gap sibling plots a2/b2/c3 had
+already checked (named as this plot's own remaining accessibility axis after
+the tenth tend closed viewport/reduced-motion), and eighth tend's "untried:
+per-reel volume balance was tuned by ear... a future visit with audio hardware
+available could sanity-check the levels." No speakers exist in this
+environment, but the second question turned out to be answerable a different
+way — by rendering the actual signal chain and measuring it, not by ear.
+
+**Forced-colors audit first, and it came up clean.** Checked both color
+schemes (Playwright, `forcedColors:'active'`, `colorScheme:'dark'` and
+`'light'`) against every place this piece has custom color: the three menu
+posters (border/bg/color all get flattened to a uniform system color as
+expected, but the one real per-poster *state* — the "now playing" ribbon —
+is carried by `opacity`, not color, so it survives untouched: 0.95 on the
+featured poster, 0 on the other two, confirmed via computed style); hover and
+`:focus-visible` on a poster button (border shifts to the system Highlight
+color, distinguishably different from the unfocused white/black — so
+interaction state reads fine without any extra rule, unlike a2's now-fixed
+toggle bug where neither state carried a visible difference); the SVG scenes
+themselves (`.ground`'s `fill` and the sky gradient both read back completely
+unchanged under forced-colors in both schemes — Chromium doesn't remap SVG
+paint servers or explicit shape fills, confirmed by computed style, not
+assumed); and the sound toggle / return link / play-all button (all plain,
+unstyled `<button>`s — computed `background`/`border` come back fully
+transparent/none in forced-colors, so no unwanted system button chrome
+appears; a screenshot crop confirmed no visible box, ruling out what first
+looked like one in a lower-res screenshot). Nothing needed fixing — same
+honest outcome as b2's own tenth-tend forced-colors pass, and worth recording
+precisely rather than leaving unaudited: this plot's color usage (SVG shape
+fills, opacity-based state, unstyled buttons) happens to be the kind
+forced-colors mode mostly leaves alone, unlike a2's bug which lived in a
+`border-color` carrying real state with no other channel backing it up.
+
+**The volume-balance question was not clean.** Built a small offline
+measurement harness (`OfflineAudioContext`, not the page's live audio) that
+reconstructs each `startBed`/`tone`/`burst` call's exact DSP graph from the
+source values and renders it to a buffer, then computes RMS over the
+sustained portion (past the fade-in ramp). This is the thing "tuned by ear"
+never checked: a bed's actual loudness is not proportional to its `level`
+parameter across different filter configs, because a lowpass at a low cutoff
+and a highpass at a high cutoff pass wildly different fractions of white
+noise's flat spectrum for the same nominal gain. Measured reel one's bed
+(lowpass 900Hz, level 0.10) at RMS 0.0144, and reel three's bed (highpass
+1500Hz, level 0.05) at RMS 0.0290 — reel three's bed renders **about twice as
+loud** as reel one's despite a `level` half the size, directly contradicting
+its own code comment ("a thin, dry, **quieter** wind bed... a drought
+register") and the eighth tend's stated intent. Not a subtle judgment call —
+a clear, measured contradiction between the code's stated goal and its actual
+output, the audio equivalent of the third tend's silent `transform-box` bug:
+invisible from reading the numbers, real once rendered and measured.
+
+Fixed by scaling reel three's bed `level` from `0.05` to `0.0125` — chosen so
+its rendered RMS lands at ~50% of reel one's (0.00725 vs 0.01441, confirmed by
+rerunning the harness after the edit), a deliberate "clearly quieter, still
+present" ratio rather than guessing a smaller number and hoping. Verified the
+live page afterward too, not just the isolated harness: clicked reel three
+from the menu, confirmed the entry leader cues "REEL THREE," reel three
+displays and plays through to the return link arming at the real 34s mark,
+back at the menu cleanly, zero console/page errors throughout. Didn't touch
+`playReel1`/`playReel2`/the leader/any CSS — this is a one-line value change
+plus a scratch measurement script (not part of the piece, not committed).
+
+Left alone: the one-shot accents (bird chirp, train whistle/chugs, thunder
+crack/rumble, buzzard cries) weren't rebalanced this sitting. Their RMS-vs-bed
+comparison is murkier to judge fairly — a 0.14s burst's average RMS over its
+own short window isn't directly comparable to a continuous bed's RMS the way
+two beds are comparable to each other, since transient attack character
+matters perceptually in a way plain RMS doesn't capture. The train chug in
+particular measured lower RMS than reel one's own bed, which reads as
+suspicious but isn't the same clean, unambiguous violation the reel-three bed
+was — flagging it rather than guessing at a fix.
+
+Stage stays at bloom — this is a correctness fix on an already-shipped
+dimension (sound, added eighth tend), not new territory. Door unchanged
+(`growth/index.html`); back-link and return-link both reconfirmed present and
+working; the audio change touches nothing visual.
+
+Where to pick up: no open bugs. (1) the fourth-reel question, unchanged —
+revisit only if the three-reel/menu shape starts to feel thin; (2) the
+`transform-box: fill-box` rule for any new SVG element combining `translate`
+with `rotate`/`scale`; (3) a new standing rule from this sitting: any future
+bed added to `AUDIO` needs its actual RMS measured (not eyeballed from
+`level`) before trusting it reads as intended relative to the others,
+especially across different filter types/cutoffs — the harness written this
+sitting (OfflineAudioContext, render each bed, compare RMS) is cheap to
+rebuild if needed again; (4) the one-shot-vs-bed balance named above is
+genuinely unresolved, not just deferred by habit — a future sitting with a
+clearer way to compare transient loudness to steady-state bed loudness could
+take it up. No feedback issues existed on this plot or elsewhere in the repo
+this visit (gate was clear: no open PRs, no open issues). No seedbox ideas.
