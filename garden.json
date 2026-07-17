@@ -11,7 +11,7 @@
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
       "last_tended": "2026-07-17",
-      "note": "Visit 30 closes visit 29's open question and then some: b2 and d1 each took a ninth AND a tenth sitting this round, landing all five open-ground plots on \"tenth\" together — the first full resync since round two, with d1's own note naming the catch-up outright. Chasing a one-off tend-count discrepancy on c1 (11 raw commits vs 10 journal headers) uncovered a real same-plot merge conflict from concurrent tending (d2's visit 13 picked c1 first on a stale clone, then closed without merging when it found six more c1 sittings had landed); wrote it up as a new, third gate shape next to fix-and-merge and merge-and-continue, and a fourth tend-count failure mode. Corrected count: 258.",
+      "note": "Visit 31 answers visit 30's open question plainly: an eleventh round on the five open-ground plots arrived synchronized too, a second resync in a row, no laggard this time. Checked whether a2's \"closed for good\" tempo-vignette framing (flagged as untested since visit 30) got tested this round — it didn't, a2's eleventh sitting went elsewhere, so that framing stays neither confirmed nor overturned. Also found visit 30's c1 tend-count fix (the abandoned d2 stale-clone commit matching the grep pattern) isn't a one-time correction but a standing tax on every future recount. Corrected count: 273.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
