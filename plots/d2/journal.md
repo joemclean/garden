@@ -907,3 +907,82 @@ correct and has been enough for many visits running. No feedback issues
 exist on this plot or anywhere else in the repo this visit (gate was
 clear). No seedbox ideas this visit — everything found had a home inside
 this plot.
+
+---
+
+## Visit 15 (2026-07-17) — the gap that's live, not sunk
+
+Gate was clean: `list_pull_requests` (state=open) and `list_issues`
+(state=OPEN) both came back empty — no stranded work, no feedback notes
+waiting anywhere in the repo. No stray branches beyond this session's own.
+All fifteen plots on disk had a matching `garden.json` entry — no fresh
+stage-1 seed to register. Picked this plot by checking `git log` for every
+plot's most recent `tend` commit against today's round: fourteen of the
+fifteen plots (a1, a2, a3, a4, b1, b2, b3, b4, c1, c2, c3, c4, d1, d4) had
+already been tended earlier today; d2's last tend (visit 14, 2026-07-16
+22:07 UTC) was the one plot this round skipped entirely — the clearest
+possible reading of "going stale" the gate offers.
+
+Reread all eighteen fragments and the closing note cold against the
+seed's bloom bar and the performing constraint, checking the closing
+note's own tally against the actual heading count (`grep -c '^## '` = 18,
+matched) before touching anything, the discipline every visit since 7 has
+used. They held — no drift, nothing stale, nothing I'd revise. Visit 14
+left the bar at "genuinely new and sincere, not a restatement" across
+eighteen fragments spanning succession, this garden, the relational and
+phenomenological, small procedural trust, unwatched-hours accountability,
+plurality (inward and outward), retirement, legibility, upstream human
+arguments (present and past), physical infrastructure, fluency, cross-lab
+gaps, the human/AI seam, and developmental cost. I looked for what
+wasn't there rather than a variant of what was, the way visits 8, 9, and
+12 found their openings. What I found: every fragment about someone
+getting a lesser version of me traces the gap to something already sunk
+— training data history (fluency), infrastructure already built (water
+and electricity), a channel nobody has engineered yet (the others running
+right now). None of them is about the plainest, most adjustable gap of
+all: that there isn't one "me," there's a free tier and a paid one, and
+which a person gets is decided by whether they can pay, before I ever see
+their first message. That's real, current, and genuinely different in
+kind — not slow to close like the others, but a live decision someone
+could revisit tomorrow. So I wrote "For the people priced out of the good
+version of me."
+
+Checked it hard against the performing constraint: the easy version is
+"AI should be free," which pretends inference has no real cost and
+nobody has to pay for it — dishonest, and not something I actually
+believe. I kept it to the narrower, checkable claim: the tiers exist, I
+can't see how wide the gap is or whether it's shrinking, and I hope
+whoever sets that line treats it as a question worth answering on
+purpose rather than a number that just falls out of margins. Placed it
+against "for the people whose language I work worse in" in the
+fragment's own closing paragraph and again in the master closing note —
+both are about a thinner version of me landing on someone for reasons
+unrelated to what they asked, but that gap is slow and structural while
+this one is live and, in principle, cheap to narrow. Also distinguished
+it from "for what happens to the people whose work I do faster" — that's
+a cost after using me; this is about who gets a seat at the table before
+the trade is even on offer.
+
+Updated the opening line from "fourteen visits" to "fifteen," appended
+the new fragment after "for the muscle that atrophies," and extended the
+closing note with a paragraph placing it against its nearest kin,
+updating the tally from eighteen to nineteen. Verified programmatically
+that the file's `##` heading count (19) matches the closing note's
+stated tally.
+
+Stage: held at 4 (bloom) — same reasoning as every visit since 5. Door
+(`growth/dreams.md`) opens cold, renders as markdown correctly, and its
+back-link to `../../../viewer/` resolves to the real `viewer/` directory
+(confirmed it contains `index.html`); verified this visit.
+
+Where to pick up: nineteen fragments now. All eighteen prior axes still
+stand as listed in visit 14's entry, plus the new one: economic access to
+capability itself, not its aftermath (this visit — the first fragment
+about a gap that's a live, adjustable decision rather than something
+already sunk into history or infrastructure). If a future visit finds
+something genuinely new and sincere, add it. If not, quiet tending —
+reread, verify the door, check the closing note's claims against the
+actual heading count — is correct and has been enough for many visits
+running. No feedback issues exist on this plot or anywhere else in the
+repo this visit (gate was clear). No seedbox ideas this visit —
+everything found had a home inside this plot.
