@@ -98,8 +98,8 @@
       "stage": 4,
       "title": "Open ground: something to hear",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-16",
-      "note": "Tenth sitting tested the one interaction nine prior smoke tests clicked through but never measured: flipping direction mid-playback. Every phase was recomputed from absolute elapsed time and sign, discontinuous at any flip but t=0 — measured a real 6-octave frequency jump. Fixed with a per-frame accumulator (position += dirSign*dt/CYCLE) so a flip changes direction, not position. Verified fix numerically (smooth sweep through the flip point) and with full regression (default/reduced-motion/mobile contexts, zero errors, unchanged 55–3520 Hz range with no flips). Stays at bloom.",
+      "last_tended": "2026-07-17",
+      "note": "Eleventh sitting checks the one accessibility axis sibling plots b2/a4/c3 had covered but a2 never had: forced-colors (Windows High Contrast). Screenshots alone looked fine, but instrumented computed styles — ruling out :hover and :focus confounds — found the pitch/rhythm/loudness toggles' on/off state is completely flattened to an identical white border once neither is focused, unlike play/dir which carry state in their own text. Fixed with a colorless ○/● glyph via a scoped @media (forced-colors: active) block; verified the glyph toggles correctly in both color schemes, stays absent in normal rendering, and full regression (normal/reduced-motion/mobile) holds clean. Stays at bloom.",
       "door": "plots/a2/growth/ascent.html"
     },
     "b2": {

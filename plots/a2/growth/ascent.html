@@ -43,6 +43,19 @@
   button.active { background: rgba(150, 200, 255, 0.25); border-color: rgba(180, 210, 255, 0.5); }
   #row { margin-bottom: 8px; }
   #row2 { margin-bottom: 10px; }
+
+  /* forced-colors (Windows High Contrast etc.) replaces background-color and
+     border-color with system colors on every button alike, for any control
+     that isn't the one currently keyboard-focused — verified by inspecting
+     computed styles under emulation, not assumed. That erases the only
+     signal #row2's three toggles use to show on/off: play/dir already carry
+     their state in their own text ("play"/"stop", "ascending"/"descending"),
+     but pitch/rhythm/loudness always say the same word regardless of state.
+     A glyph survives color-flattening because it isn't a color. */
+  @media (forced-colors: active) {
+    #row2 button::before { content: "\25CB\a0"; }
+    #row2 button.active::before { content: "\25CF\a0"; }
+  }
   #note {
     position: absolute; left: 16px; bottom: 14px; right: 16px;
     opacity: 0.55; font-size: 12px; max-width: 520px;
