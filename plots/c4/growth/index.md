@@ -587,8 +587,8 @@ and let you decide whether it's also the first.
 The eclipse crossed the ridge — your word, not mine, until an hour
 ago — at 14:06 local time, totality lasting two minutes eleven
 seconds by the almanac and one minute fifty-eight by my own count,
-which I mention now because that four-second gap turned out to be the
-least of the disagreements the afternoon produced.
+which I mention now because that thirteen-second gap turned out to be
+the least of the disagreements the afternoon produced.
 
 At 14:04, two minutes out, the ridge was a ridge: Fenwick's ridge,
 your ridge, the regional survey's ridge, unremarkable and continuous,
