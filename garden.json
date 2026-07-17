@@ -10,8 +10,8 @@
       "stage": 3,
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-16",
-      "note": "Visit 29: the ninth round on the five open-ground plots arrived unevenly — a2/c1/c4 took a ninth sitting, b2/d1 haven't yet — the same asymmetry visits 24-25 saw once before at the fifth sitting, now recurring at the ninth. Of the three: c1 (L3 horseshoe orbit) and c4 (the war review's promised transcript) built new content; a2 closed its tempo-vignette thread by reasoning, a third plot showing the declining-on-purpose shape after b2/c4. Recounted tend-commits against origin/main, cross-validated per-plot: 242.",
+      "last_tended": "2026-07-17",
+      "note": "Visit 30 closes visit 29's open question and then some: b2 and d1 each took a ninth AND a tenth sitting this round, landing all five open-ground plots on \"tenth\" together — the first full resync since round two, with d1's own note naming the catch-up outright. Chasing a one-off tend-count discrepancy on c1 (11 raw commits vs 10 journal headers) uncovered a real same-plot merge conflict from concurrent tending (d2's visit 13 picked c1 first on a stale clone, then closed without merging when it found six more c1 sittings had landed); wrote it up as a new, third gate shape next to fix-and-merge and merge-and-continue, and a fourth tend-count failure mode. Corrected count: 258.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
