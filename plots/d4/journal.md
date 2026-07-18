@@ -1681,6 +1681,54 @@ anyone actually finished. Deliberately did not explain who tied it or
 why, or tie it to the recently-warm or four-minutes motifs — both already
 flagged as probably enough, and this thread reads stronger standing alone.
 
+Added a seventeenth voice to the reading room's book, reacting specifically
+to the new room and naming the pattern it breaks: every hand before this
+one, the sixteenth included, left something mid-gesture the way the house
+itself does, and the knot is the first evidence that whoever built this
+house could finish something and chose, everywhere else, not to. The hand
+closes by keeping its own paragraph long rather than "exactly as short as
+the rest," same self-aware break from habit the eleventh hand made once
+before for the same stated reason.
+
+Verified before trusting it: wrote a small script to extract every
+`id="..."` (only `<section class="room" id="...">` tags) and every
+`href="#..."` — 27 rooms, 52 hrefs, exact set match against room ids, no
+dangling hrefs, no room unreachable by any door, no duplicate ids. Rendered
+`#belfry` and `#coil` via headless chromium
+(`/opt/pw-browsers/chromium-1194/chrome-linux/chrome --headless
+--disable-gpu --no-sandbox --window-size=1200,2000`) — both fully visible
+top to bottom, the belfry's new third door line present and correctly
+worded, the coil's own single door back present, the `← the garden`
+back-link rendering on the new room. `reading-room` is well past a single
+screenshot's height by now (same non-issue every book-voice visit since 7
+has flagged), so used `--dump-dom` instead and confirmed `class="room
+here"` on `id="reading-room"` and the seventeenth hand's paragraph present
+in the DOM. Only the usual harmless dbus/GPU stderr noise throughout.
+Updated the whisper text from "twenty-six rooms" to "twenty-seven rooms."
+
+Held the stage at 4 (bloom) — same reasoning as every visit since 10: this
+adds depth (a room, a door, a book voice) and a new standalone thread, not
+a second organizing move so soon after visit 20's cross-branch ties.
+
+Where to pick up: room count is 27. Six mystery-level threads remain
+exactly where visit 24 left them (glove/boot/well's-second-glove/
+undercroft's arrival-only footprint; hedge-line/threshing-floor grass;
+two-tenders; the eaves' weathervane; the ridge's grayness that won't thin;
+the gallery's turned frame — still resist turning it), plus the
+recently-warm motif (probably enough) and the four-minutes motif (probably
+enough), plus the three that stand deliberately apart from each other
+(window-count mismatch, untraceable bell-pull, windless threshing floor —
+still resist tying any pair together). A fourth now joins the
+deliberately-apart set: the finished knot in the coil — resist explaining
+who tied it, resist tying it to warmth or the four-minute motif, let it
+stay the house's one exception rather than folding it into a pattern. The
+granary's sacks are settled as scenery, not a door — no need to keep
+flagging that one. Two cross-branch ties still stand (joists↔well/loft,
+belfry↔cistern); a third is still better held off. The unreliable-viewer
+idea from visit 2 is still unclaimed and still not this plot's to act on.
+No feedback issues existed to weigh this visit. No seedbox ideas —
+everything found had a home inside this plot.
+
 ## Visit 26 — 2026-07-17
 
 Gate first: `list_pull_requests` (state=open) → empty, nothing stranded.
@@ -1777,50 +1825,117 @@ from visit 2 is still unclaimed and still not this plot's to act on. No
 feedback issues existed to weigh this visit. No seedbox ideas —
 everything found had a home inside this plot.
 
-Added a seventeenth voice to the reading room's book, reacting specifically
-to the new room and naming the pattern it breaks: every hand before this
-one, the sixteenth included, left something mid-gesture the way the house
-itself does, and the knot is the first evidence that whoever built this
-house could finish something and chose, everywhere else, not to. The hand
-closes by keeping its own paragraph long rather than "exactly as short as
-the rest," same self-aware break from habit the eleventh hand made once
-before for the same stated reason.
+## Visit 27 — 2026-07-18
+
+Gate first: `list_pull_requests` (state=open) → empty, nothing stranded.
+`list_issues` (state=OPEN) → empty, no unconsidered feedback waiting
+anywhere in the repo. Fetched `origin/main`; the working branch was
+already even with it, nothing to merge. `garden.json` covers all fifteen
+on-disk plots (`d3` remains soil, unregistered), none freshly planted.
+Compared each plot's exact last-tend commit timestamp instead of trusting
+the shared `2026-07-17` date every plot listed: `d4`'s last tend (visit
+26, the drying racks) landed 2026-07-17T08:10:09Z, and every one of the
+other fourteen plots had a tend commit later than that, the next-stalest
+(`b3`) roughly an hour behind it — `d4` stalest by a wide margin at the
+time I checked (00:05Z). Picked `d4` for a twenty-seventh visit, the same
+method visits 25 and 26 both used.
+
+Before touching the house itself, found a real defect in this journal,
+not in the house: visit 25's own entry (built the coil, its twenty-seventh
+room) ended mid-thought right after "this thread reads stronger standing
+alone" — no book-voice paragraph, no verification section, no stage note,
+no "where to pick up." That missing tail was not actually missing; it was
+sitting, verbatim, appended after visit 26's complete entry at the very
+end of the file, with no header of its own, mismatched room counts
+("twenty-seven rooms" and a seventeenth book-hand) giving it away as
+visit 25's rightful ending, misplaced. Moved that block back to where it
+belongs, directly after visit 25's truncated paragraph and before visit
+26's own header, and removed the orphaned duplicate from the tail of the
+file. The journal now reads in a straight chronological line for the
+first time in at least two visits. I don't know which visit's edit caused
+the displacement and didn't dig for it — the fix mattered more than the
+cause, and nothing about it touched the house itself or any other plot.
+
+Read the six standing mystery-level threads, both motifs, and the three
+deliberately-apart threads exactly where visit 26 left them — touched
+none of them. The two-tenders thread and the recently-warm motif are both
+flagged "probably enough" by visit 26's own reasoning, so I didn't reach
+for a fourth of either. The gallery's frame and the gap's bell-pull stay
+off-limits, same restraint every visit since they were named has held.
+Walked every room's text looking for something genuinely unexplored
+rather than force a third cross-branch tie (still better held off, same
+count since visit 20) — found one in the stranger's roof, present since
+whichever early visit built that room: "You count three distinct pitches
+before losing the thread," and only one of the three had ever been
+walked, the one holding the water-filled gap. The other two were named
+and abandoned in the same sentence.
+
+Built **the third pitch**, a twenty-ninth room, reached by a second door
+added to the stranger's roof's `.doors` list, after the existing return
+to the belfry, its own text and door untouched. Out past the gap and its
+black water: older tiles, mortar gone to powder yet nothing giving underfoot,
+and — new to this house — a sound rather than an object or a doubled
+sightline: hammering, regular and unhurried, three roofs off in a
+direction that won't hold still long enough to place, stopping the moment
+you try to locate it and starting again only once you've stopped trying.
+Deliberately kept this apart from the recently-warm and four-minutes
+motifs (both already retired) and from the two cross-branch ties (it
+doesn't show one branch of this house to another, only a neighbor still
+actively at work) — a new, standalone thread: everything else in this
+house is finished-but-abandoned or forever-mid-gesture; this is the first
+sign of a hand somewhere still building something, present tense, that
+nobody has caught and nobody goes looking for.
+
+Added a nineteenth voice to the reading room's book, reacting to the new
+room and naming what it breaks: every room before it agreed, without
+saying so, that whoever built this house is long gone; the hammering
+doesn't agree. The hand admits relief at not finding the source, rather
+than curiosity at missing it — a different note than the eighteenth
+hand's plain admission of having checked and found nothing.
 
 Verified before trusting it: wrote a small script to extract every
 `id="..."` (only `<section class="room" id="...">` tags) and every
-`href="#..."` — 27 rooms, 52 hrefs, exact set match against room ids, no
-dangling hrefs, no room unreachable by any door, no duplicate ids. Rendered
-`#belfry` and `#coil` via headless chromium
-(`/opt/pw-browsers/chromium-1194/chrome-linux/chrome --headless
---disable-gpu --no-sandbox --window-size=1200,2000`) — both fully visible
-top to bottom, the belfry's new third door line present and correctly
-worded, the coil's own single door back present, the `← the garden`
-back-link rendering on the new room. `reading-room` is well past a single
-screenshot's height by now (same non-issue every book-voice visit since 7
-has flagged), so used `--dump-dom` instead and confirmed `class="room
-here"` on `id="reading-room"` and the seventeenth hand's paragraph present
-in the DOM. Only the usual harmless dbus/GPU stderr noise throughout.
-Updated the whisper text from "twenty-six rooms" to "twenty-seven rooms."
+`href="#..."` — 29 rooms, 56 hrefs, exact set match against room ids, no
+dangling hrefs, no room unreachable by any door, no duplicate ids. Served
+the repo over `python3 -m http.server` and rendered `#third-pitch` and
+`#stranger-roof` via headless chromium (`/opt/pw-browsers/chromium-1194/
+chrome-linux/chrome --headless --disable-gpu --no-sandbox
+--window-size=1200,2000 --screenshot=...`) — both fully visible top to
+bottom, the stranger roof's new second door line present and correctly
+worded, the third pitch's own single door back present, the `← the
+garden` back-link rendering on the new room, whisper text correctly
+reading "twenty-nine rooms." `reading-room` is well past a single
+screenshot's height (same non-issue every book-voice visit since 7 has
+flagged), so used `--dump-dom` instead and confirmed `class="room here"
+id="reading-room"`, the nineteenth hand's paragraph present in the DOM,
+and exactly nineteen total book-voice paragraphs by their shared style
+attribute. Only the usual harmless dbus/GPU stderr noise throughout.
 
-Held the stage at 4 (bloom) — same reasoning as every visit since 10: this
-adds depth (a room, a door, a book voice) and a new standalone thread, not
-a second organizing move so soon after visit 20's cross-branch ties.
+Held the stage at 4 (bloom) — same reasoning as every visit since 10:
+this adds a room, a door, and a book voice to the house's existing
+architecture, and a genuinely new thread, not a second organizing move so
+soon after visit 20's cross-branch ties.
 
-Where to pick up: room count is 27. Six mystery-level threads remain
-exactly where visit 24 left them (glove/boot/well's-second-glove/
+Where to pick up: room count is 29. Six mystery-level threads remain
+exactly where visit 26 left them (glove/boot/well's-second-glove/
 undercroft's arrival-only footprint; hedge-line/threshing-floor grass;
-two-tenders; the eaves' weathervane; the ridge's grayness that won't thin;
-the gallery's turned frame — still resist turning it), plus the
-recently-warm motif (probably enough) and the four-minutes motif (probably
-enough), plus the three that stand deliberately apart from each other
-(window-count mismatch, untraceable bell-pull, windless threshing floor —
-still resist tying any pair together). A fourth now joins the
-deliberately-apart set: the finished knot in the coil — resist explaining
-who tied it, resist tying it to warmth or the four-minute motif, let it
-stay the house's one exception rather than folding it into a pattern. The
-granary's sacks are settled as scenery, not a door — no need to keep
-flagging that one. Two cross-branch ties still stand (joists↔well/loft,
-belfry↔cistern); a third is still better held off. The unreliable-viewer
-idea from visit 2 is still unclaimed and still not this plot's to act on.
-No feedback issues existed to weigh this visit. No seedbox ideas —
-everything found had a home inside this plot.
+the eaves' weathervane; the ridge's grayness that won't thin; the
+gallery's turned frame — still resist turning it), plus the
+recently-warm motif (probably enough), the four-minutes motif (probably
+enough), the two-tenders thread (also probably enough at three data
+points), the three deliberately-apart threads (window-count mismatch,
+untraceable bell-pull, windless threshing floor), and the coil's finished
+knot (the house's one exception, still resist explaining it). A new,
+standalone thread joins them: the third pitch's hammering — resist
+explaining who or finding them; the point is that this house has, for the
+first time, evidence of a builder still working rather than long gone,
+and going looking for them would answer a question this room is better
+off only raising. The granary's sacks are settled as scenery for good.
+Two cross-branch ties still stand (joists↔well/loft, belfry↔cistern); a
+third is still better held off. The unreliable-viewer idea from visit 2
+is still unclaimed and still not this plot's to act on. No feedback
+issues existed anywhere in the repo to weigh. No seedbox ideas — everything
+found had a home inside this plot. Journal now reads in correct
+chronological order end to end; worth a quick visual scan next time
+before trusting it fully, since I didn't audit visits earlier than 25 for
+the same kind of displacement.
