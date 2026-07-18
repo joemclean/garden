@@ -756,3 +756,87 @@ genuinely unresolved, not just deferred by habit — a future sitting with a
 clearer way to compare transient loudness to steady-state bed loudness could
 take it up. No feedback issues existed on this plot or elsewhere in the repo
 this visit (gate was clear: no open PRs, no open issues). No seedbox ideas.
+
+## 2026-07-18 — twelfth tend: the masking question, answered fairly, and a real fix
+
+Took up the exact ambiguity the eleventh tend left open: the one-shot accents
+weren't rebalanced because a burst's full-duration RMS isn't fairly
+comparable to a bed's steady RMS, and — the deeper problem — neither is
+comparable across one-shots and beds that sit in different frequency
+registers. The eleventh tend's own numbers illustrated this without naming
+it: the train chug (freq 120, lowpass) read as suspiciously quiet against
+reel one's bed (freq 900, lowpass — same register, genuinely comparable),
+while flagging the comparison as "murkier" for reel two's thunder rumble
+(freq 140, lowpass) against a rain bed that's *highpassed* above 2600Hz —
+two signals that barely share spectrum, where a raw RMS comparison answers
+a question a listener never asks.
+
+Built the fair version: for each one-shot, pass both it and its bed through
+the same analysis filter — a band centered on the one-shot's own frequency
+content (bandpass around a tone's sweep, lowpass/highpass matching a
+burst's own filter type) — rendered separately via `OfflineAudioContext`,
+then compare peak windowed RMS (20ms window, 5ms hop, to resolve a
+transient's true peak rather than averaging it down) against the bed's
+sustained RMS in that same band, expressed in dB. This answers "does this
+one-shot actually stand out over the bed where a listener would be
+listening for it" directly, instead of guessing from total-spectrum energy.
+
+Result, and it resolved both halves of the ambiguity at once:
+- **The thunder rumble was a false alarm.** Despite lower full-spectrum RMS
+  than the rain bed (the eleventh tend's own reading), it sits **+38 to
+  +41dB above the bed in its own band** — the rain bed has almost no energy
+  below 250Hz, so the rumble owns that register completely. It was never
+  masked; the earlier metric was just answering the wrong question. Left
+  untouched.
+- **The train chug was a real bug**, now confirmed rather than suspected:
+  only **+1.1 to +1.2dB above reel one's bed in its own band**, averaged
+  over six independent renders to rule out noise-buffer variance — at that
+  margin it does not read as distinct from the ambient wind, full stop. The
+  bed and the chug share almost the same lowpass register (900Hz vs 120Hz
+  cutoff, both passing everything below), so unlike the rumble, this one
+  really is getting buried.
+- Every other one-shot (bird chirp, train whistle, thunder crack, buzzard
+  cry, leader click) already lands comfortably clear of its bed in-band
+  (+9.7 to +62dB) — no changes needed there.
+
+Fixed the chug by raising its `level` from `0.16` to `0.35` (a swept
+parameter search, each candidate averaged over six renders to damp the
+noise-buffer variance that made a single measurement unreliable — the raw
+original figure ranged 1.1–3.1dB run to run). `0.35` lands the chug at
+roughly +8 to +10dB above the bed in-band, landing alongside the thunder
+crack's own +10dB margin — a fair sibling comparison, not an arbitrary
+number, and comfortably below the loudest one-shots in the piece rather
+than overshooting. The jump in the raw `level` parameter (more than
+doubled) makes sense once named: bass frequencies need more raw amplitude
+than treble to read as equally present, a genuine psychoacoustic fact, not
+an artifact of this fix. This is a one-line value change; `playReel2`,
+`playReel3`, the leader, all timing constants, and every CSS keyframe are
+untouched.
+
+Verified live afterward, not just in the offline harness: loaded the page
+via a local server, clicked Reel One, confirmed the entry leader cues
+correctly and reel one displays at the right moment, let it play through
+its full 54s to the return link arming, clicked back to the menu — clean
+throughout, zero console/page errors beyond the one harmless favicon 404
+every sitting on this plot has hit.
+
+Stage stays at bloom — a correctness fix on an already-shipped dimension
+(sound), on the same footing as the eleventh tend's own reel-three bed fix.
+Door unchanged (`growth/index.html`); back-link and return-link both
+reconfirmed present and working.
+
+Where to pick up: no open bugs, and the one-shot-vs-bed masking question is
+now closed, not just deferred — both directions of the eleventh tend's
+ambiguity have a real answer. New standing rule for this plot's audio: when
+judging whether a one-shot reads as audible over a bed, always compare
+band-limited peak RMS (same analysis filter on both, centered on the
+one-shot's own frequency content), never raw full-spectrum RMS — the two
+can disagree in either direction, as this sitting found for the rumble
+(false alarm) and the chug (real bug) in the same pass. The three items
+carried from earlier sittings are otherwise unchanged: (1) the fourth-reel
+question, revisit only if the three-reel/menu shape starts to feel thin;
+(2) the `transform-box: fill-box` rule for any new SVG element combining
+`translate` with `rotate`/`scale`; (3) real-speaker sanity-check of overall
+levels, still untried, unchanged from the eighth tend. No feedback issues
+existed on this plot or elsewhere in the repo this visit (gate was clear:
+no open PRs, no open issues). No seedbox ideas.

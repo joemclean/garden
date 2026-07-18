@@ -937,7 +937,7 @@
       const trainPassStartMs = REEL_MS[1] * TRAIN_PASS_START_PCT;
       tone({ delay: trainPassStartMs - TRAIN_WHISTLE_LEAD_MS, dur: 1.3, freq: 520, freqEnd: 640, type: 'sine', level: 0.09 });
       for (let i = 0; i < TRAIN_CHUG_COUNT; i++) {
-        burst({ delay: trainPassStartMs + TRAIN_CHUG_OFFSET_MS + i * TRAIN_CHUG_INTERVAL_MS, dur: 0.14, freq: 120, type: 'lowpass', q: 0.8, level: 0.16 });
+        burst({ delay: trainPassStartMs + TRAIN_CHUG_OFFSET_MS + i * TRAIN_CHUG_INTERVAL_MS, dur: 0.14, freq: 120, type: 'lowpass', q: 0.8, level: 0.35 });
       }
     }
 
