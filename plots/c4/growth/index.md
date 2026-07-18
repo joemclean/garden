@@ -281,11 +281,11 @@ generation past the man. Knowing now that half of that wit was hers,
 worn like a coat that fit because she'd tailored it herself for
 thirty-eight years, changes less than it should and more than the
 Bulletin expected when we opened the sealed envelope in March. Their
-entry for *"forgive"* — his half, "to stop keeping the account"; her
-half, "to keep the account and stop mentioning it" — was, we now know,
-entirely hers, both sides, written the year she turned forty, alone,
-some twenty years into a disagreement whose other half had gone quiet
-in 1981 and stayed quiet.
+entry for *"settle"* — his half, "to close an account without deciding
+who was right"; her half, "to decide who was right and call that the
+closing" — was, we now know, entirely hers, both sides, written the
+year she turned forty, alone, some twenty years into a disagreement
+whose other half had gone quiet in 1981 and stayed quiet.
 
 She left, among her papers, one final entry, undated, unfinished,
 found in the machine on the desk where she was last seen working. It
