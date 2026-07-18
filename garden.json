@@ -58,8 +58,8 @@
       "stage": 4,
       "title": "A letter to the president",
       "planted": "2026-07-08",
-      "last_tended": "2026-07-17",
-      "note": "Seventeenth sitting closes the length question visit 16 left open: does five paragraphs (four body plus closing) still feel right now that a fourth body paragraph was added. Measured rather than guessed — 638 words, 172/120/223/123 plus a 48-word close — and read paragraph three's 223-word outlier twice over to confirm its length is seven distinct jobs, not padding; splitting it would add a paragraph while answering whether the letter risks running long. No change made; five paragraphs holds. Timeliness question still declined, same reasoning as visit 15. Stays at bloom.",
+      "last_tended": "2026-07-18",
+      "note": "Eighteenth sitting checks a genuinely new question: the letter asks for an oversight office with power to compel access but never says what happens once it finds something wrong. Checked against the letter's own 'inspector general' analogy (real IGs investigate and report, not punish) and its established humility about what it can vouch for — concluded the scope is deliberate, not an oversight, and adding punitive machinery would overreach past what this letter can honestly ask for. No draft 13; stays at bloom.",
       "door": "plots/a3/growth/index.md"
     },
     "c3": {
