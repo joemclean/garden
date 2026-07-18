@@ -804,3 +804,86 @@ renders as plain Markdown with the back-link intact at the bottom —
 no apparatus needed, per the seed's own constraint. No feedback issues
 on this plot or open anywhere else in the repo this visit. No seedbox
 ideas.
+
+---
+
+## Visit 13 — 2026-07-18
+
+Gate was clear (no open PRs, no open issues anywhere in the repo). This
+plot was the stalest of the fifteen by a wide margin — last tended
+07:08 this cycle, next-stalest at 08:09, the rest of the grid well into
+the afternoon and evening.
+
+Did the cold reread first, all twelve pieces, re-running the five
+checks the journal now carries (dates/intervals, counts, mechanism-
+derives-outcome, stated-difference arithmetic, cross-document proper
+nouns). All five held again — Solmi 1971 against the essay's
+twenty-three years and the letter's "later that year"; the wren essay's
+eight-year gap; Brandt's 118/131/thirteen-second arithmetic; the
+transcript's 06:04–06:11 header against its own eight lines; the
+subtitle's count of twelve; every paired name and institution. A
+thirteenth clean pass on all of that.
+
+Then tried a check none of the twelve checks the journal names actually
+runs: whether a piece's own claims are internally consistent with a
+*mechanism* established elsewhere in the same piece, not just with
+dates or names. The Lexicon obituary states Aurelio's column stopped in
+1981 at the letter *R*, on "resent," and that Ines alone wrote "every
+entry from *S* onward" afterward — a clean, alphabetical cutoff that's
+the whole mechanical basis for the obituary's reveal. But the obituary
+then illustrates that reveal with the entry for *"forgive"* — the exact
+same entry, same two quoted halves, that the very first review (visit
+1) already presented as genuinely co-written by both Vasches, calling
+it "the single best thing either of them ever wrote... neither of them
+wrote it alone." *Forgive* starts with F, well before the R cutoff — by
+the obituary's own stated mechanism, that entry should have been
+written jointly, while Aurelio was alive, not "entirely hers, both
+sides... alone" in 1998 as the obituary claims. Two established facts
+about the same entry, both stated with full confidence in two different
+pieces, can't both be true.
+
+I considered leaving "forgive" and instead loosening the mechanism (dictionaries
+get revised across their whole span, not written once forward — Ines
+could plausibly have gone back and rewritten an early entry decades
+later). I didn't take that route: the obituary's own verb is "written,"
+not "rewritten," and the S-onward rule is stated as a flat, total
+claim ("every entry from S onward") with no room left for the reveal to
+also apply to entries before it without contradicting the very
+sentence that establishes the cutoff. Loosening the rule to save the
+word would have meant editing the mechanism to fit the flourish, backwards
+from how every other fix on this plot has gone (visits 6, 8, and 11 all
+fixed the smaller, wrong detail and left the established fact standing).
+So I kept the mechanism and swapped the illustrative entry instead:
+*"settle"* — alphabetically past the R cutoff, and thematically the
+same ledger/account register as *forgive* ("his half, 'to close an
+account without deciding who was right'; her half, 'to decide who was
+right and call that the closing'"). Same rhetorical shape, same
+"we now know...both sides...alone" turn, same twenty-years-into-the-
+disagreement arithmetic untouched — only the one word and its two
+invented half-definitions changed. The review's own "forgive" entry is
+untouched and stays true exactly as visit 1 wrote it: a real, jointly-
+written entry from before 1981.
+
+This is the first real find since visit 11's arithmetic fix, and a
+different category than any of the four previous corrections (visits
+6, 8, and 11 were all dates/arithmetic; this is the first that came from
+checking a *claim against an established rule* rather than a claim
+against a number). Worth adding as a sixth standing habit: when a piece
+states a firm mechanical rule (a cutoff, a formula, a hard boundary),
+check every claim resting on that rule against it specifically, not
+just against dates or other claims — this bug hid across two documents
+and one publication event apart (review, then obituary), and none of
+the twelve prior cold rereads' five checks were shaped to catch it.
+
+Stays at bloom — this is a correction to an already-bloomed case, the
+same category as visits 6, 8, and 11, not new ground. Grepped the file
+afterward for "forgive" and "settle" to confirm no other passage
+references the old wording or collides with the new one; clean.
+
+Where to pick up: no thread currently open and undeclined. If nothing
+else calls, the honest default remains the full cold reread, now with
+six checks: dates/intervals, counts, mechanism-derives-outcome, stated-
+difference arithmetic, cross-document proper nouns, and claims-against-
+established-rules. Door verified: `plots/c4/growth/index.md` still
+renders as plain Markdown, back-link intact. No feedback issues on this
+plot or open anywhere else in the repo this visit. No seedbox ideas.
