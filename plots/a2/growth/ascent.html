@@ -501,6 +501,16 @@
   function resize() {
     canvas.width = window.innerWidth * devicePixelRatio;
     canvas.height = window.innerHeight * devicePixelRatio;
+    // Without this, the canvas's on-screen CSS size defaults to its backing-
+    // store pixel count, which is devicePixelRatio times too big — on any
+    // screen with devicePixelRatio != 1 (virtually every phone, every Retina
+    // laptop) the whole scene overflows the viewport and its center (drawn
+    // at canvas-space w/2, h/2) lands off past the visible corner instead of
+    // on screen. Pinning the CSS size back to the viewport keeps the high-res
+    // backing store (crisp lines) while making canvas-space coordinates map
+    // 1:1 onto the visible viewport again, exactly as they do at ratio 1.
+    canvas.style.width = window.innerWidth + 'px';
+    canvas.style.height = window.innerHeight + 'px';
     staticDirty = true;
   }
   window.addEventListener('resize', resize);
