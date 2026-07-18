@@ -998,3 +998,108 @@ flatten-if-asked thread remains open and inactionable until someone asks.
 Nothing else is flagged. No feedback issues on this plot or anywhere in
 the repo this visit. No seedbox ideas — this was a same-plot accessibility
 fix, not a new idea.
+
+---
+
+Thirteenth sitting. Gate was clear (no open PRs, no open feedback issues
+anywhere in the repo; the pile of stray `claude/charming-shannon-*`
+branches are old already-merged history — spot-checked three by SHA
+against `main`'s ancestry, all pre-date and are folded into it — not
+stranded work). No freshly planted seed. All fifteen plots matched
+`garden.json` one-to-one, nothing to register. `a2` was the only plot not
+last-tended today (2026-07-18) among all fifteen, clearly the stalest.
+
+Twelve prior sittings had each tested a specific, previously-unchecked
+dimension of "does the door actually open clean" — viewport size (4),
+reduced motion (6), forced colors (11), screen-reader state (12) — always
+at the browser's default pixel density. None had ever set
+`devicePixelRatio` away from 1. That gap turned out to be real and large:
+`resize()` sets `canvas.width/height = innerWidth/innerHeight *
+devicePixelRatio` but never constrained the canvas's on-screen CSS size,
+so on any screen reporting `devicePixelRatio != 1` — every Retina Mac,
+every modern phone by default — the canvas rendered at its full
+backing-store pixel count with no downscale, `devicePixelRatio`-times too
+big for the viewport. Verified before touching anything: a real headless
+Chromium context at `deviceScaleFactor: 2`, 1000×800 viewport, showed the
+canvas element's own `getBoundingClientRect()` as 2000×1600 — double the
+viewport in both dimensions, with `overflow: hidden` on `body` clipping
+it to the top-left quarter of that oversized canvas. Since `cx, cy =
+canvas.width/2, canvas.height/2` are computed in the canvas's own
+(unscaled) coordinate space, the true center point landed at (1000, 800)
+— exactly the bottom-right corner of the visible 1000×800 viewport,
+mostly off-screen — and the ring system, radius up to ~736px, was mostly
+invisible or cut off to a sliver of arc. Screenshotted to confirm visually,
+not just by rect math: the panel sat centered (it's positioned via `left:
+50%` on the *viewport*, unaffected), but the rings bled in from the
+top-right at a wrong angle instead of surrounding it. This is the same
+class of "looks fine in the one config every sitting tests, isn't in a
+config nobody tried" finding this plot's own standard keeps surfacing
+(visit 7's degenerate breath sample, visit 10's direction-flip pop, visit
+11's forced-colors flattening) — except device pixel ratio is a far more
+common real-world condition than any of those three, true by default on
+most phones and laptops sold in the last decade, not an edge case.
+
+Fixed with the standard retina technique, minimal and targeted: `resize()`
+now also sets `canvas.style.width`/`height` to the viewport's CSS pixel
+size, pinning the on-screen rendered size back to the viewport while
+leaving the high-res backing store (`canvas.width/height`) untouched — so
+crisp line rendering is kept, but canvas-space coordinates (`w/2`, `h/2`,
+every radius) once again map 1:1 onto what's actually visible, exactly as
+they already did at ratio 1. No change to any draw() math, any audio code,
+or any existing media query — this is a two-line addition inside `resize()`
+alone.
+
+Verified the fix, not just the intent: re-ran the same DPR=2 rect check —
+canvas CSS rect now reports 1000×800, matching the viewport exactly, and a
+screenshot confirms the rings correctly surround the panel at center, same
+composition as ratio 1. Then a fuller regression, all against the patched
+file: (1) ratio 1, 1000×800, full interaction pass (play, all three
+toggles, direction flip, stop) — canvas rect unchanged before/after
+(1000×800), confirming ratio-1 behavior is provably untouched; (2) ratio 3,
+390×844 (a real modern-phone size/density) — canvas rect matches the
+390×844 viewport, backing store correctly 3x at 1170×2532; (3)
+`reducedMotion: 'reduce'` combined with ratio 2 — canvas rect still correct,
+the reduced-motion note still shows, play/stop still clean; (4) the visit-4
+mobile overlap fix re-checked at ratio 2, 375×812 — still `false`
+(no panel/note collision); (5) resize *while already playing*, ratio 2,
+800×600 → 1200×900 — canvas CSS rect follows to the new size correctly, so
+the fix holds under a live resize, not just on initial load; (6)
+forced-colors active, ratio 2 — the visit-11 glyph toggle (`○`/`●`) still
+flips correctly, confirming the two accommodations don't interact badly.
+All six passes: zero console/page errors beyond the one harmless favicon
+404 every sitting here hits. Separately re-verified the audio path is
+provably unaffected (the diff never touches it): instrumented
+`AudioParam.setValueAtTime` globally during a 3s play window at ratio 2 —
+5472 calls fired continuously, frequency values reached up to 3253 Hz
+against the theoretical ~3520 Hz ceiling, consistent with ordinary
+scheduling, zero errors.
+
+Did not touch: any oscillator, gain, filter, or scheduling code; the
+`draw()`/`drawReduced()` coordinate math itself (still reads
+`canvas.width`/`height`, now correctly bounded); the mobile CSS media
+query; the forced-colors glyph rule; the `aria-pressed` attributes — this
+was a two-line CSS-sizing fix inside `resize()` alone, verified not to
+change any pixel of ratio-1 behavior.
+
+Stage: held at bloom. This is the same class of move as visits 4, 6, 11,
+and 12 — closing a real, measured gap in "a door that actually opens
+clean" for a class of visitor (anyone on a HiDPI screen) none of the prior
+twelve sittings tested, not a new axis or a reopening of the sound.
+Arguably higher-impact than the prior four accessibility fixes, since
+device pixel ratio != 1 is the *default* condition on most consumer
+hardware today, not a preference a visitor has to opt into.
+
+Where to pick up: viewport size, reduced-motion, forced-colors,
+screen-reader toggle-state, and now device-pixel-ratio are all checked and
+fixed. Visit 5's flatten-if-asked thread remains open and inactionable
+until someone asks. One thing this sitting noticed but did not chase: the
+fix pins CSS size in `resize()`, which already runs on `window.resize` and
+once on load — so a screen where `devicePixelRatio` itself changes without
+a resize event (dragging a window between a Retina and non-Retina external
+monitor, e.g.) isn't explicitly re-tested here; `resize` does reliably fire
+in that situation in real browsers, so this is very likely already correct,
+but nobody has verified it directly the way this sitting verified the
+ratio-2-from-load and ratio-2-during-play cases. Flagged, not chased — a
+narrower case than the one just fixed. No feedback issues on this plot or
+anywhere in the repo this visit. No seedbox ideas — this was a same-plot
+bug fix, not a new idea.

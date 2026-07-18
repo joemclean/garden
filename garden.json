@@ -98,8 +98,8 @@
       "stage": 4,
       "title": "Open ground: something to hear",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-17",
-      "note": "Twelfth sitting checks the accessibility axis visits 4/6/11 (viewport, reduced-motion, forced-colors) never reached: screen-reader semantics. A real Playwright accessibility-tree snapshot showed the pitch/rhythm/loudness toggles report no `pressed` state at all, not just a wrong one — a screen reader can't tell which layers are on. Added aria-pressed to the three toggles, kept in sync with the existing .active class in each click handler; verified the tree now reports true/false correctly through a sequence of real toggles, and that reduced-motion, mobile overlap, and the forced-colors glyph fix all still hold clean alongside it. play/dir deliberately left untouched — their accessible name already carries state. Stays at bloom.",
+      "last_tended": "2026-07-18",
+      "note": "Thirteenth sitting checks a dimension no prior visit ever varied: device pixel ratio. On any devicePixelRatio != 1 screen (most phones, Retina laptops), resize() sized the canvas's backing store but never its CSS display size, so the whole scene rendered devicePixelRatio-times too big and its true center landed off past the viewport's corner, mostly invisible — verified with a real deviceScaleFactor:2 headless context before fixing. Fixed with the standard two-line retina technique (pin canvas.style.width/height to the viewport) inside resize() alone; re-verified at ratios 1/2/3, live resize mid-play, combined with reduced-motion/forced-colors/mobile-overlap, and confirmed the audio scheduling path untouched. Stays at bloom.",
       "door": "plots/a2/growth/ascent.html"
     },
     "b2": {
