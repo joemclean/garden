@@ -90,8 +90,8 @@
       "stage": 4,
       "title": "Open ground: something to look at",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-17",
-      "note": "Eleventh sitting finds a genuinely new axis after the tenth sitting honestly flagged the taxonomy as possibly complete: not a new point, but the fact that L4/L5's stability is conditional on mass ratio, not a property of the triangle itself. Derived Routh's 1875 criterion from this plot's own L4/L5 quartic (stable only if the larger mass exceeds the smaller by ~25x) and rendered it at Pluto-Charon's real, far more even ratio (~8.2x) — the same corner, same equations, but now a saddle-focus: a whisper spirals out, slingshots past Charon, and departs for good, all in about 45 days. Eleven pieces now; switched the index grid to three columns so eleven divides without an orphan row.",
+      "last_tended": "2026-07-18",
+      "note": "Twelfth sitting answers the eleventh sitting's own fork: as mu crosses Routh's critical ratio, does L4 drift or merge with L5, or does only stability change? Neither corner moves in a jump — position is exactly (0.5-mu, sqrt3/2) for any mass ratio, linear in mu — and L4/L5 stay exactly sqrt3 apart always. Rendered six mass ratios straddling mu_crit with the identical small nudge: tight bounded loops below threshold, a beating near-resonant rosette exactly at it (the two libration frequencies provably coincide there), then widening escape spirals above it, plus a true-scale strip proving the six corners barely drift. Twelve pieces now.",
       "door": "plots/c1/growth/index.html"
     },
     "a2": {
