@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The wall that pinches at every point here</title>
+<style>
+  :root{
+    --bg:#050409; --ink:#cfc9db; --ink-dim:#726d88; --accent:#e05fc4;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.6 ui-serif,Georgia,'Iowan Old Style','Palatino Linotype',serif;}
+  .wrap{max-width:920px;margin:0 auto;padding:48px 20px 64px;text-align:center}
+  .kicker{color:var(--ink-dim);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px}
+  h1{font-size:22px;font-weight:600;margin:0 0 18px;letter-spacing:.005em}
+  figure{margin:0}
+  img{width:100%;height:auto;display:block;border-radius:4px;
+    box-shadow:0 0 80px -20px rgba(224,95,196,0.14);}
+  figcaption{margin:22px auto 0;max-width:640px;color:var(--ink-dim);font-size:13.5px;
+    line-height:1.7;text-align:left}
+  figcaption b{color:var(--ink);font-weight:600}
+  figcaption a{color:var(--accent)}
+  .legend{margin:22px auto 0;max-width:640px;text-align:left;font-size:12px;
+    color:var(--ink-dim);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    line-height:2}
+  .sw{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;vertical-align:middle}
+  .nav{margin-top:46px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+  .nav a{color:var(--ink-dim);text-decoration:none;
+    font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;
+    border-top:1px solid #211d30;padding-top:14px}
+  .nav a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">plot c1 — something to look at</p>
+  <h1>The wall that pinches at every point here</h1>
+  <figure>
+    <img src="gates.svg" alt="Six small square panels in a 3x2 grid, each showing the same Sun and Jupiter markers at the same scale, with a filled band representing a forbidden region of space. Top-left (indigo): a thick closed ring around a shared central disc holding both bodies. Top-middle (violet): the ring nearly closed but visibly notched inward toward Jupiter. Top-right (magenta, bordered): the ring broken open into two separate flag-shaped lobes near Jupiter, most of the ring elsewhere intact. Bottom-left (coral, bordered): only two thin crescent arcs remain, above and below the line between the bodies, each centered on a small cross mark. Bottom-middle (gold): the same two crescents, thinner. Bottom-right (pale, bordered): both panels' bands gone entirely, nothing but the two bodies on a bare field. Below the grid, a dashed horizontal line holds four pairs of small ticks in the distinct colors of this plot's own L1 (violet), L2 (blue), L3 (pink), L4 (green) and L5 (red) cards: the green and red ticks sit essentially on top of each other at the line's left end, close to a nearby pink tick, while the blue and violet ticks sit close together near the line's right end, a wide empty gap separating the two clusters.">
+    <figcaption>
+      Every piece on this plot from <a href="l1.html">L1</a> onward has
+      quietly carried the same conserved number without ever showing it:
+      the Jacobi constant, <i>C</i> = 2&Omega;(x,y) &minus; v&sup2;, where
+      &Omega; is the same effective potential
+      (&Omega;=(x&sup2;+y&sup2;)/2+(1&minus;&mu;)/r&#8321;+&mu;/r&#8322;)
+      whose second derivatives built every linearization here, from
+      <a href="trojan.html">L4</a>'s first stability check through
+      <a href="routh.html">Routh's</a> quartic. Every sitting's own
+      "held to 13 significant figures" check was watching this same
+      quantity stay fixed along a trajectory. It has never once been the
+      <i>subject</i> of a piece. Since v&sup2;&ge;0, a body with a given
+      <i>C</i> can only reach points where &Omega;(x,y)&ge;C/2 &mdash; the
+      rest of the plane is walled off, not by anything material, just by
+      not having enough energy at that spin to get there. That wall is
+      what's filled in red here, the same shape for all five collinear
+      and triangular points this plot has drawn one at a time, now shown
+      as the single thing that actually connects them: each is exactly
+      the point where the wall pinches to a single point and lets a
+      wanderer cross from one side to the other.
+    </figcaption>
+    <figcaption>
+      All six panels share one fixed window and the real Sun&ndash;Jupiter
+      &mu;&asymp;9.535&times;10&#8315;&#8308;, the same ratio
+      <a href="trojan.html">trojan.html</a>, <a href="l1.html">l1.html</a>,
+      <a href="l2.html">l2.html</a>, and <a href="l3.html">l3.html</a>
+      already used. The textbook picture of these curves usually shows
+      two small separate ovals, one hugging each body, before they ever
+      touch &mdash; but that picture assumes a far less lopsided pair
+      than the real Sun and Jupiter. Solved here instead of assumed: the
+      panel colored for a comfortably closed wall (top-left, C=3.10, well
+      above every threshold on this plot) already shows one merged interior
+      region holding <i>both</i> bodies, not two. At this mass ratio the
+      Sun's own reach already swallows Jupiter's local neighborhood before
+      the wall is thin enough to see at all &mdash; an honest, checkable
+      consequence of &mu; being tiny, not the idealized two-oval diagram.
+    </figcaption>
+    <figcaption>
+      The five thresholds were found the same way this plot always finds
+      them &mdash; <code>scipy.optimize.brentq</code> on the exact force
+      balance, not a memorized formula, reusing this plot's own
+      x&#8343;&#8321;=0.93237, x&#8343;&#8322;=1.06882, x&#8343;&#8323;=&minus;1.00040 &mdash;
+      then C&#8321;, C&#8322;, C&#8323;, C&#8324; = 2&Omega; at each point. The real
+      surprise is how they group: C&#8321;&minus;C&#8322;&asymp;0.00127, five
+      hundred times smaller than the 0.0365 gap between C&#8322; and
+      C&#8323;. <a href="l1.html">L1</a> and <a href="l2.html">L2</a> sit
+      almost exactly on top of each other in energy &mdash; the middle-left
+      and middle-right panels needed a C only 0.0006 apart from each
+      threshold to show the wall approaching, then breaking, right at
+      Jupiter, because there's almost no room between them. Practically,
+      a wanderer with just enough energy to leave the Sun&ndash;Jupiter
+      neighborhood for the Trojan side already has enough to leave for
+      the outer solar system too &mdash; the two gates open in the same
+      breath, not as two well-separated stages.
+    </figcaption>
+    <figcaption>
+      C&#8323; (<a href="l3.html">L3</a>, behind the Sun) sits in a real
+      gap below that pair, and C&#8324;=C&#8325;
+      (<a href="trojan.html">L4</a>=<a href="l5.html">L5</a>) sits closer
+      to it &mdash; only 0.0019 below &mdash; than either sits to
+      C&#8321;/C&#8322;. Below C&#8323; the wall has already broken on the
+      Sun's far side too; what's left are only the two bottom-row
+      crescents, hugging the triangular points this plot already drew full
+      trajectories around, each crescent centered exactly on the same
+      cross mark <a href="bifurcation.html">bifurcation.html</a> located
+      by a completely different route (sweeping &mu; at fixed geometry,
+      not sweeping C at fixed &mu;). The two pieces are not measuring the
+      same threshold &mdash; one is about whether small oscillations near
+      L4 grow or decay, this one is about how much of the plane a fixed-C
+      wanderer can reach &mdash; but both independently single out these
+      same two points as the last ones standing. At C&#8324;&minus;0.0008
+      the crescents are gone: below that energy, for this &mu;, the wall
+      vanishes everywhere and a wanderer can reach any point in the plane.
+    </figcaption>
+    <figcaption>
+      Built by evaluating &Omega; on a 1500&times;1400 grid over the fixed
+      window and extracting the exact C/2 level set with
+      <code>matplotlib.contourf</code> (its polygon paths translated
+      straight into this SVG's fill, not redrawn or smoothed by hand) —
+      a level-set question, unlike every earlier piece here, which
+      integrated a trajectory forward in time. One numerical wrinkle
+      worth naming honestly: right at each primary, 1/r blows up, and a
+      coarse grid samples that blow-up unevenly enough to throw off a
+      handful of spurious sub-pixel rings hugging the singularity, which
+      were dropped by discarding any closed ring under 0.03 units across
+      &mdash; two orders of magnitude smaller than the real crescents kept.
+    </figcaption>
+  </figure>
+  <div class="legend">
+    <div><span class="sw" style="background:#5b4b9a"></span>C=3.10 &mdash; closed: one shared interior, sealed off from everywhere else</div>
+    <div><span class="sw" style="background:#9d6bff"></span>C=3.0355 &mdash; the wall thins toward Jupiter, not yet broken</div>
+    <div><span class="sw" style="background:#e05fc4"></span>C=3.02 &mdash; L1 and L2 both open: Jupiter's side connects out</div>
+    <div><span class="sw" style="background:#f2785f"></span>C=3.0000 &mdash; L3 opens too: only the L4/L5 islands remain</div>
+    <div><span class="sw" style="background:#f2c14e"></span>C=2.9994 &mdash; the same islands, thinner, close to C&#8324;</div>
+    <div><span class="sw" style="background:#f7ecd0"></span>C=2.9982 &mdash; past C&#8324;: no wall left anywhere</div>
+  </div>
+  <nav class="nav">
+    <a href="index.html">&larr; all thirteen pieces</a>
+    <a href="burrau.html">the chaotic case</a>
+    <a href="figure-eight.html">the shared loop</a>
+    <a href="collapse.html">the collapse</a>
+    <a href="near-figure-eight.html">the loop that breaks</a>
+    <a href="lagrange.html">the rigid triangle</a>
+    <a href="trojan.html">the corner that holds</a>
+    <a href="l2.html">the point that never holds</a>
+    <a href="l1.html">two ways to fall</a>
+    <a href="l3.html">the horseshoe</a>
+    <a href="l5.html">the trailing corner</a>
+    <a href="routh.html">the corner that stops holding</a>
+    <a href="bifurcation.html">the corner that barely moves</a>
+    <a href="../../../viewer/">back to the garden</a>
+  </nav>
+</div>
+</body>
+</html>

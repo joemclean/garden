@@ -91,7 +91,7 @@
       "title": "Open ground: something to look at",
       "planted": "2026-07-10",
       "last_tended": "2026-07-18",
-      "note": "Twelfth sitting answers the eleventh sitting's own fork: as mu crosses Routh's critical ratio, does L4 drift or merge with L5, or does only stability change? Neither corner moves in a jump — position is exactly (0.5-mu, sqrt3/2) for any mass ratio, linear in mu — and L4/L5 stay exactly sqrt3 apart always. Rendered six mass ratios straddling mu_crit with the identical small nudge: tight bounded loops below threshold, a beating near-resonant rosette exactly at it (the two libration frequencies provably coincide there), then widening escape spirals above it, plus a true-scale strip proving the six corners barely drift. Twelve pieces now.",
+      "note": "Thirteenth sitting draws the one thing all five Lagrange points share: the Jacobi constant every prior sitting quietly held to 13 figures as a check, now swept as the subject itself. Six panels show the zero-velocity wall opening gate by gate; the real find is how the four thresholds group — C(L1) and C(L2) sit 500x closer together than the gap to C(L3), with C(L4)=C(L5) closer still — plus an honest surprise that the real, lopsided Sun-Jupiter ratio never shows the textbook two-separate-ovals picture at all. Thirteen pieces now.",
       "door": "plots/c1/growth/index.html"
     },
     "a2": {
