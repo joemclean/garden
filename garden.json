@@ -35,7 +35,7 @@
       "title": "Undersea — a 3D swimming simulation",
       "planted": "2026-07-06",
       "last_tended": "2026-07-18",
-      "note": "Twenty-sixth visit answers visit 25's own open question: do the four depth-response axes (light, fog, current, marine snow) actually feel coherent swum together near a real extreme, not just individually correct. Swam to the true surface cap and the true abyss floor with a temporary debug probe: both read as one coherent continuum (clear/bright vs. near-black/thick-fogged), HUD depth tracked correctly (0 ft / 62 ft), no bugs found, no code change needed. A real verification, not a no-op. Stays at bloom.",
+      "note": "Twenty-seventh visit chased visit 26's carried-forward note that pectoral fins and dorsal-fin sway were still open — both were actually built and closed at visits 14-15, eleven visits ago. Verified both still work today (mirrored pectoral position, dorsal sway sampled live across two teleports, a close-up screenshot catching body/dorsal/fluke/pectoral all at once, a clean organic swim after) rather than silently re-adding or silently skipping; zero net code change. Corrects the journal's own drifted note before it could cost a future visit an hour rebuilding something that already exists. Stays at bloom.",
       "door": "plots/b3/growth/undersea.html"
     },
     "b1": {
