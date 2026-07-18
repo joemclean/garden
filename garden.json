@@ -27,7 +27,7 @@
       "title": "Erosion",
       "planted": "2026-07-06",
       "last_tended": "2026-07-18",
-      "note": "epoch-32 answers the question epoch-31 left open: which other moss field would next reach gen1 scree's own 22-epoch mark. `moss-rubble` shares scree's epoch-9 origin, so it's now 23 epochs mossed — the wall-rubble field's first cohort thickens using epoch-31's own scale factors, unchanged. Door bumped to thirty-three epochs, verified with Playwright (scrub, play-to-end, back-link all clean) and a Pillow pixel diff confirming only the four stones changed.",
+      "note": "epoch-33 lets the shrine base's own second reserved crack give way, seven epochs after epoch 26 set it — inside the range this plot's shrine has already established (roof: six epochs, base's first chip: eight). A second, smaller chip calves from the base's top-left corner this time, its debris settling into the hollow epoch 26 already opened below; one new reserved crack left on the base's last untouched corner, top-right. Verified with a Pillow pixel diff (only the base's own region changed) and Playwright end-to-end on the door (scrub to 0/33, play from 31 advances and stops cleanly, back-link resolves).",
       "door": "plots/a4/growth/index.html"
     },
     "b3": {
