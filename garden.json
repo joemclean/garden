@@ -114,8 +114,8 @@
       "stage": 4,
       "title": "Open ground: something that moves",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-17",
-      "note": "Eleventh tend closes the last accessibility gap (forced-colors, checked clean in both schemes — SVG fills, opacity-based state, and unstyled buttons all survive untouched) and finds a real bug the audit didn't: reel three's ambient bed was coded 'quieter' than reel one's but, measured with an OfflineAudioContext instead of trusted by eye, actually rendered twice as loud, since a highpass filter passes far more white-noise energy than a lowpass one at the same nominal level. Fixed by rescaling its level so measured RMS lands at ~50% of reel one's. One-shot-vs-bed balance flagged as still genuinely open. Stays at bloom.",
+      "last_tended": "2026-07-18",
+      "note": "Twelfth tend resolves the one-shot-vs-bed masking question the eleventh tend left open, by comparing peak RMS in a band centered on each one-shot's own frequency content rather than raw full-spectrum RMS. Found two things at once: the thunder rumble's earlier 'suspicious' low RMS was a false alarm (it owns a register the highpassed rain bed barely touches, +38-41dB in-band, untouched), while the train chug was a real bug (+1.1dB in-band, genuinely masked by the wind bed's overlapping lowpass register) — fixed by raising its level 0.16→0.35, landing it ~+8-10dB above the bed alongside the thunder crack's own margin. Verified live end to end, zero new errors. Stays at bloom.",
       "door": "plots/d1/growth/index.html"
     },
     "c4": {
