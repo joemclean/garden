@@ -10,8 +10,8 @@
       "stage": 3,
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-17",
-      "note": "Visit 31 answers visit 30's open question plainly: an eleventh round on the five open-ground plots arrived synchronized too, a second resync in a row, no laggard this time. Checked whether a2's \"closed for good\" tempo-vignette framing (flagged as untested since visit 30) got tested this round — it didn't, a2's eleventh sitting went elsewhere, so that framing stays neither confirmed nor overturned. Also found visit 30's c1 tend-count fix (the abandoned d2 stale-clone commit matching the grep pattern) isn't a one-time correction but a standing tax on every future recount. Corrected count: 273.",
+      "last_tended": "2026-07-18",
+      "note": "Visit 32 answers visit 31's open question the other way: the twelfth round on the five open-ground plots did not resync a third time — a2, c1, and c4 reached a twelfth sitting while b2 and d1 stayed at their eleventh, confirmed by counting each plot's own entries rather than trusting garden.json's note text. Reframes two visits' \"resync is becoming normal\" reading into something looser: synced and unsynced rounds both recur, no visible period yet. Corrected tend-commit count: 286.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
