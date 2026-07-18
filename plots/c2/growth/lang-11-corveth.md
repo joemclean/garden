@@ -92,10 +92,27 @@ with mending. So the correlation is real but local, not a hidden
 identity between the two axes — checked case by case rather than assumed
 from the one place they happen to coincide.
 
-**Left for later:** whether *-thendra* is ever chosen deliberately over
-an available *-varne* or *-skorel* — the same question every mandatory
-mark in this chain has eventually had to answer for itself (*sohu*,
-visit 13; *-nirel*, visit 16; *-kelvra*, visit 25) — is untested in leg
-11. Also open: whether *vosthendra* ever gets used for something other
-than the seam-reading and the certainty/rightness pair, the only two
-places this sketch has needed it so far.
+**The deliberate crossing, resolved (visit 29):** whether *-thendra* is
+ever chosen over an available *-varne* or *-skorel*, rather than reached
+for only where nothing else fits, is settled inside leg 11 itself — see
+its visit 29 revision note. All three existing *-thendra* instances (the
+river's third mood, the seam, twice) were reread first and confirmed
+genuinely forced before the promise line was found as the real candidate:
+it shares its crossing-shape with the teaching a few lines above, the
+same pair Threshel weighed a leg back and resolved as *-kelvra* for
+teaching, *-imre* for the promise. Corveth's own axis answers the pair
+the other way around — the promise, not the teaching, turns out to be the
+exceptional case, since honoring it is an extended commitment still being
+done rather than a single completed utterance. Corveth now holds both
+shapes of its own mark inside one leg, the same milestone Vendrel's
+*sohu*, Torvane's *-nirel*, and Threshel's *-kelvra* each reached in
+their own turn.
+
+**Left for later:** whether *vosthendra* is ever spoken about something
+other than the certainty/rightness pair and the seam-reading remains
+untested. Visit 29's promise revision came close but didn't reach for the
+word — the gap it names (checked-sound vs. merely-unfalsified) isn't
+quite the gap the promise turned out to have (a finished utterance vs. an
+ongoing commitment). Whether Corveth ever needs a second coinage for that
+second kind of gap, or whether *-thendra* chosen on purpose already says
+enough without one, is a live question for whichever visit takes it up.
