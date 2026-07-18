@@ -120,6 +120,22 @@
     // (portrait/landscape on a phone) doesn't leave new stars linking against
     // a stale window size from before the rotation
     LINK_DIST = Math.min(W, H) * 0.32;
+    // existing stars can otherwise sit anchored outside the new bounds after a
+    // resize shrinks the viewport (a phone rotating to portrait, a desktop
+    // window narrowing) — invisible and unreachable by click, drag, or the
+    // keyboard reticle until the viewport widens again. `stars` is undefined
+    // on this function's very first call (before its own declaration below
+    // has run); every real resize after that finds it populated.
+    if (stars) {
+      for (var ri = 0; ri < stars.length; ri++) {
+        var rs = stars[ri];
+        rs.anchorX = Math.max(4, Math.min(W - 4, rs.anchorX));
+        rs.anchorY = Math.max(4, Math.min(H - 4, rs.anchorY));
+        rs.x = rs.anchorX;
+        rs.y = rs.anchorY;
+        rs.freq = pitchAt(rs.anchorY);
+      }
+    }
   }
   window.addEventListener("resize", resize);
   resize();
