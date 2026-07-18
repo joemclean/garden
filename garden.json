@@ -34,8 +34,8 @@
       "stage": 4,
       "title": "Undersea — a 3D swimming simulation",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-17",
-      "note": "Twenty-fifth visit closes the last item on visit 23's depth-response list: marine snow. Reused depthCurrentFactor exactly (no new function), fed each particle's own y rather than the swimmer's, so drift speeds up to 1.6x near the surface and stills to 0.35x near the abyss regardless of where the swimmer is. Verified the reused function matches visit 24's own table and that two synthetic particles' real drift ratio (3.38x) matches their computed factors' ratio to three sig figs. Light, fog, current, and now particulate all read depth; no fifth axis obviously remains. Stays at bloom.",
+      "last_tended": "2026-07-18",
+      "note": "Twenty-sixth visit answers visit 25's own open question: do the four depth-response axes (light, fog, current, marine snow) actually feel coherent swum together near a real extreme, not just individually correct. Swam to the true surface cap and the true abyss floor with a temporary debug probe: both read as one coherent continuum (clear/bright vs. near-black/thick-fogged), HUD depth tracked correctly (0 ft / 62 ft), no bugs found, no code change needed. A real verification, not a no-op. Stays at bloom.",
       "door": "plots/b3/growth/undersea.html"
     },
     "b1": {
