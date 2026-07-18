@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The corner that barely moves</title>
+<style>
+  :root{
+    --bg:#050409; --ink:#cfc9db; --ink-dim:#726d88; --accent:#f2e2a0;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.6 ui-serif,Georgia,'Iowan Old Style','Palatino Linotype',serif;}
+  .wrap{max-width:920px;margin:0 auto;padding:48px 20px 64px;text-align:center}
+  .kicker{color:var(--ink-dim);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px}
+  h1{font-size:22px;font-weight:600;margin:0 0 18px;letter-spacing:.005em}
+  figure{margin:0}
+  img{width:100%;height:auto;display:block;border-radius:4px;
+    box-shadow:0 0 80px -20px rgba(242,226,160,0.14);}
+  figcaption{margin:22px auto 0;max-width:640px;color:var(--ink-dim);font-size:13.5px;
+    line-height:1.7;text-align:left}
+  figcaption b{color:var(--ink);font-weight:600}
+  figcaption a{color:var(--accent)}
+  .legend{margin:22px auto 0;max-width:640px;text-align:left;font-size:12px;
+    color:var(--ink-dim);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    line-height:2}
+  .sw{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;vertical-align:middle}
+  .nav{margin-top:46px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+  .nav a{color:var(--ink-dim);text-decoration:none;
+    font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;
+    border-top:1px solid #211d30;padding-top:14px}
+  .nav a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">plot c1 — something to look at</p>
+  <h1>The corner that barely moves</h1>
+  <figure>
+    <img src="bifurcation.svg" alt="Six small square panels in a 3x2 grid, each showing a different trajectory near a triangular Lagrange point, colored on a gradient from cyan through green and gold to orange and red. The top-left two panels (cyan, green) show tight, layered elliptical loops. The top-right panel (gold-bordered) shows a denser, beating multi-loop pattern. The bottom row shows increasingly wide, open spirals peeling away from the corner, ending in bright glowing points far from the start, the rightmost (red) being the widest sweep. Below the grid, a thin horizontal strip shows six small dots in matching colors, closely and almost evenly spaced along a dashed line, with the gold dot ringed.">
+    <figcaption>
+      <a href="routh.html">The corner that stops holding</a> found the fine
+      print in Lagrange's own theorem: the triangular points L4 and L5 are
+      only stable centers if the two bigger masses are lopsided enough
+      &mdash; past &mu;_crit&asymp;0.038521, they become saddle-foci instead,
+      the same character as the collinear points. That sitting showed one
+      case on each side (Sun&ndash;Jupiter, stable; Pluto&ndash;Charon,
+      not). It left a real question open: as &mu; actually crosses that
+      threshold, does the corner itself move &mdash; does L4 drift, or
+      merge with L5, the way some bifurcations relocate an equilibrium
+      entirely &mdash; or does only its <i>character</i> change while it
+      sits still?
+    </figcaption>
+    <figcaption>
+      The corner's position has a closed form for <i>any</i> mass ratio:
+      (0.5&minus;&mu;, &radic;3/2). That's exactly linear in &mu;, with
+      slope &minus;1 and no other term &mdash; so across the six ratios
+      shown here (&mu;=0.010, 0.025, 0.038521, 0.050, 0.075, 0.120) the
+      corner's x-coordinate slides from 0.490 to 0.380, a plain, checkable
+      0.110-unit drift, exactly Δ&mu;, with no jump anywhere near &mu;_crit.
+      And L4 and L5 never merge: L5 sits at (0.5&minus;&mu;,
+      &minus;&radic;3/2) for the same &mu;, so the two corners stay exactly
+      &radic;3 apart &mdash; a constant, independent of &mu; &mdash; for
+      every ratio between 0 and 1/2. Both facts are drawn to true, shared
+      scale in the strip beneath the six panels: six dots, evenly spaced,
+      on one straight dashed line. Position drifts continuously.
+      It doesn't bifurcate. Only the dynamics do.
+    </figcaption>
+    <figcaption>
+      Each panel is a real integration (scipy <code>solve_ivp</code>,
+      DOP853, rtol/atol&asymp;1e-13/1e-14, Jacobi's constant held to at
+      least 13 significant figures in every one of the six runs &mdash;
+      the same discipline every piece on this plot holds itself to,
+      cross-checked at three separate solver tolerances for the three
+      unstable cases and agreeing to 9+ figures at the endpoint). Every
+      panel starts from the <i>same</i> physical nudge &mdash; the true
+      corner displaced radially outward by 0.1% of the Sun&ndash;Jupiter
+      separation, released from rest &mdash; so what differs between
+      panels is only &mu;, nothing else. Below &mu;_crit (cyan, green) the
+      nudge just relaxes into a small bounded loop, a real tadpole libration
+      like <a href="trojan.html">L4</a>'s own, faster and larger as &mu;
+      approaches the threshold: the linearization gives two distinct
+      libration frequencies (0.963 and 0.268 at &mu;=0.010; 0.890 and 0.456
+      at &mu;=0.025) that converge toward each other as &mu; climbs.
+      Each panel is independently zoomed to its own trajectory &mdash; a
+      genuinely different scale from its neighbors &mdash; which is why the
+      true-scale strip below matters: it's the one place in this image
+      where six panels can be honestly compared side by side.
+    </figcaption>
+    <figcaption>
+      At &mu;_crit exactly (gold), the two frequencies land on the same
+      value, &radic;0.5&asymp;0.70711, checked two ways &mdash; the
+      closed quartic and a direct <code>numpy.linalg.eigvals</code> on the
+      full 4&times;4 system agreeing to the last printed digit, same as
+      every other point this plot has derived. A repeated eigenvalue is
+      the textbook sign of a system on the edge of losing diagonalizability
+      altogether: the eigenvector matrix at this exact &mu; has a condition
+      number past 4&times;10&#8312; even though it's formally still full
+      rank, meaning the two eigenvectors for that repeated pair have very
+      nearly collapsed onto the same direction &mdash; the limit of a
+      genuine Jordan block, which in the strict linear theory predicts slow
+      growth in time itself, not just oscillation, for a generic
+      perturbation exactly at threshold. What's rendered here is honest
+      about not chasing that limit all the way: at this finite 0.1% kick,
+      the panel shows something else real and checkable instead &mdash; two
+      frequencies close enough to beat against each other, tracing a denser,
+      slowly-drifting rosette rather than either stable pattern's clean
+      double loop. Whether the strict secular growth the linear theory
+      predicts is visible at a kick small enough to stay inside that
+      regime is a real question this sitting didn't chase down.
+    </figcaption>
+    <figcaption>
+      Past &mu;_crit (amber, orange, red) the same nudge grows: e-folding
+      times of 5.49, 3.29, and 2.41 time units at &mu;=0.050, 0.075, and
+      0.120 &mdash; each panel's own integration window (22, 15, and 14
+      time units) was picked to let that growth clear the panel cleanly,
+      the same "escape, not noise" judgment
+      <a href="l2.html">L2</a>'s and <a href="l1.html">L1</a>'s own
+      sittings used, not a shared time window forced onto every case. The
+      shapes fan out exactly as the growth rates predict: a modest loosened
+      loop at &mu;=0.050, a near-straight departure at 0.075, a wide
+      open spiral at 0.120 &mdash; the same qualitative fate
+      <a href="routh.html">Pluto and Charon's own corner</a> reached at
+      &mu;&asymp;0.1087, arrived at here from the near side of the
+      threshold instead of a single fixed point beyond it.
+    </figcaption>
+  </figure>
+  <div class="legend">
+    <div><span class="sw" style="background:#4fd1c5"></span>&mu;=0.010 &mdash; stable, tight loop</div>
+    <div><span class="sw" style="background:#8fd66a"></span>&mu;=0.025 &mdash; stable, larger loop</div>
+    <div><span class="sw" style="background:#f2e2a0"></span>&mu;&asymp;0.038521 &mdash; critical, the two frequencies coincide</div>
+    <div><span class="sw" style="background:#f2b56b"></span>&mu;=0.050 &mdash; unstable, slow escape</div>
+    <div><span class="sw" style="background:#f08a5a"></span>&mu;=0.075 &mdash; unstable, faster escape</div>
+    <div><span class="sw" style="background:#e2574a"></span>&mu;=0.120 &mdash; unstable, fastest escape shown</div>
+  </div>
+  <nav class="nav">
+    <a href="index.html">&larr; all twelve pieces</a>
+    <a href="burrau.html">the chaotic case</a>
+    <a href="figure-eight.html">the shared loop</a>
+    <a href="collapse.html">the collapse</a>
+    <a href="near-figure-eight.html">the loop that breaks</a>
+    <a href="lagrange.html">the rigid triangle</a>
+    <a href="trojan.html">the corner that holds</a>
+    <a href="l2.html">the point that never holds</a>
+    <a href="l1.html">two ways to fall</a>
+    <a href="l3.html">the horseshoe</a>
+    <a href="l5.html">the trailing corner</a>
+    <a href="routh.html">the corner that stops holding</a>
+    <a href="../../../viewer/">back to the garden</a>
+  </nav>
+</div>
+</body>
+</html>
