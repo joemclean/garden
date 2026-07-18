@@ -1,7 +1,7 @@
 # The mistranslation engine — reading order
 
-One page, carried through ten languages that don't exist, one leg at a
-time — each leg translated from the leg before it, never back from the
+One page, carried through eleven languages that don't exist, one leg at
+a time — each leg translated from the leg before it, never back from the
 source. Read in order:
 
 1. [The source](00-source.md) — *The Bridge-Keeper's Ledger*, locked
@@ -38,6 +38,9 @@ source. Read in order:
     every verb must rule on its own position against an edge the speaker
     nominates: this side (*-imre*), the far side (*-oswin*), or astride
     it (*-kelvra*).
+12. [Corveth](lang-11-corveth.md) → [leg 11](leg-11-corveth.md) — every
+    verb must rule on its own state of repair: whole (*-varne*), broken
+    (*-skorel*), or mending (*-thendra*).
 
 Watch *threnaya*, the bridge-keeper's self-naming, cross five of the
 nine legs — misheard fresh each time, never restored, until Vendrel,
@@ -503,6 +506,34 @@ unresolved, "a good question" the seed shouldn't rush, not a resolution
 waiting on an occasion. It stays open on purpose, not by circumstance —
 the two threads only ever looked alike because both sat unclaimed a
 long time, not because both needed the same thing to close.
+
+Corveth, the eleventh language, takes up the question visit 27 left
+genuinely undecided rather than answering it by default: not "is this
+chain complete," but whether a genuinely new axis was actually waiting,
+still unfound after three visits of looking. It was — state of repair
+(*-varne*/*-skorel*/*-thendra*) asks something none of the ten
+predecessors ask, and the source hands it real material the way it
+handed Ossane weather and Threshel edges: a seam literally described as
+"the old stones give way to the new ones." Checked against the
+inherited devices rather than assumed compatible: Threshel's threshold-
+marking does not survive the crossing (a genuine loss, the fifth in the
+chain), except at the seam itself, where edge and repair happen to
+coincide because the seam's threshold *is* its repair — a local
+correlation, named as such, not a hidden identity between the two axes.
+The certainty/rightness pair — the source's hardest sentence for five
+languages running now — resolves to the same surface mark, *-varne*,
+for two different reasons (one earned by six years unbroken, one merely
+never yet contradicted), and Corveth coins *vosthendra* to say the
+difference out loud since its own grammar collapses it. *Threnaya*
+stays absent for a sixth leg running, same continuity of cause as legs
+three through five. With Corveth added, the honest menu for a future
+visit is unchanged in kind from visit 27's, just renewed: a twelfth
+language, still not obviously waiting yet either, or Corveth's own two
+freshly opened "left for later" threads (whether *-thendra* is ever
+chosen deliberately, and whether *vosthendra* is ever used beyond the
+two occasions this leg gives it) — plus the same one long-parked,
+deliberately open thread, Ossane's weather-pun tension, exactly where
+visit 3 left it.
 
 ---
 
