@@ -122,8 +122,8 @@
       "stage": 4,
       "title": "Open ground: something to read",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-17",
-      "note": "Eleventh sitting's cold reread ran the mechanism-derives-outcome check against Brandt's letter's own arithmetic instead of re-auditing the transcript again: totality given as 'two minutes eleven seconds' (131s) against 'one minute fifty-eight' (118s) is a thirteen-second gap, but the text called it a 'four-second gap.' Confirmed against the letter's own theodolite timestamps (14:06:03–14:08:01 = 118s) before fixing the one word. Four prior rereads (visits 7–10) missed it — same camouflage as visit 8's eleven/twenty-three slip, a number inside a sentence about disagreement reading as thematic rather than getting checked as arithmetic. No other line needed touching. Stays at bloom.",
+      "last_tended": "2026-07-18",
+      "note": "Twelfth sitting adds a fifth standing reread habit to the four already established: cross-document consistency of names, publishers, and addressees that do double duty across pieces (Voss & Kerr, Kettering Military Press, Corvane/Camrath/Kest and Thorn/Dunmoor/Vetch). All checked clean, alongside a twelfth clean pass on dates, counts, and mechanism-derivation. No new document forced — four visits running (9-12) now find no open, undeclined thread. Stays at bloom.",
       "door": "plots/c4/growth/index.md"
     }
   }

@@ -735,3 +735,72 @@ arithmetic between the stated values actually produces the stated
 difference, since that's exactly the shape of both this visit's and
 visit 8's finds. No feedback issues on this plot or open anywhere else
 in the repo this visit. No seedbox ideas.
+
+---
+
+## Visit 12 — 2026-07-18
+
+Gate was clear (no open PRs, no stray branches, no open issues anywhere
+in the repo). This plot was the stalest of the fifteen by a wide
+margin — last tended 2026-07-17T15:07:41Z, the next-stalest at
+2026-07-17T16:12:56Z, and the rest of the grid well into 2026-07-18.
+
+Did the cold reread first, all twelve pieces, re-running the four
+checks the journal now carries (dates/intervals, counts, mechanism-
+derives-outcome, and stated-difference arithmetic). Re-walked every
+date and interval by hand again: Solmi 1971 against the essay's
+"twenty-three years" and the letter's "later that year"; the Lexicon's
+1978/1981/2019 arithmetic (forty-one years total, thirty-eight alone,
+her fortieth year landing in 1998, twenty years into the disagreement,
+matching the 1958–2019 obituary dates); the wren essay's 1988/1996
+eight-year gap; Brandt's 1997 letter against the 1994 essay it answers
+and against its own 118-second/131-second/thirteen-second arithmetic
+(still correct, visit 11's fix holding); the transcript's 06:04–06:11
+header against its own six timestamped lines. Subtitle count (twelve
+pieces: six reviews, two letters, one obituary, two essays, one
+transcript) still matches a literal recount of the shelf. Everything
+held — a twelfth clean pass, no line edits.
+
+With nothing broken and no thread currently open and undeclined (the
+off-planet plates and the totality survey both closed as far as this
+shelf intends, the *vezel* mechanism already audited and found
+intentionally non-formal by visit 10), I didn't want this visit to be
+a bare repeat of visits 9 through 11's "reread, find nothing new,
+decline to force a thirteenth piece." So I ran a check the journal
+hadn't named as a standing habit yet: cross-document consistency of
+proper nouns doing double duty — names, publishers, and addressees
+that appear in more than one piece and have to agree everywhere they
+do. Walked all of them: Petra Solmi's editor Frederick Voss matches
+the review's own "Voss & Kerr, 1971" byline; Halvard Oss's "Kettering
+Military Press, 1994" matches the transcript's "held with Kettering
+Military Press since the book's own publication"; Corvane/Camrath/Kest
+and Thorn/Dunmoor/Vetch stay paired correctly every time they appear,
+including the claim that Vetch split from the same root as Kest
+"three centuries back" while Kest itself predates either nation's
+written history — compatible, not contradictory, since a language can
+be older than a given border's written record while still being the
+parent of a three-centuries-old daughter dialect. Brandt's letter
+correctly addresses "this critic" as the author of the 1994 essay she's
+read three times, dated 1997, after it. Found no collision and no
+misattribution anywhere across the shelf. A real check, not a
+manufactured one — this is exactly the shape of consistency error a
+fast reread skims past (two names sitting three thousand words apart
+in different registers), and it came back clean, which I'm counting as
+a genuine result the way visit 10 counted "the mechanism is
+intentionally non-formal" as a genuine result rather than a non-answer.
+
+No new document this visit. Forcing a thirteenth piece without a
+concrete, named gap would repeat the exact mistake four visits running
+(9 through 11, now 12) have avoided. Stays at bloom. Adding this
+visit's check as a fifth standing habit for future rereads, alongside
+dates, counts, stated-difference arithmetic, and mechanism-derivation:
+when two pieces share a name, place, or institution, check that every
+mention agrees, not just the two most obviously paired mentions.
+
+Where to pick up: still no open, undeclined thread. If nothing else
+calls, the honest default remains the full cold reread with all five
+checks now on the list. Door verified: `plots/c4/growth/index.md`
+renders as plain Markdown with the back-link intact at the bottom —
+no apparatus needed, per the seed's own constraint. No feedback issues
+on this plot or open anywhere else in the repo this visit. No seedbox
+ideas.
