@@ -827,3 +827,78 @@ reasoning rather than merely deferred — a future sitting would need an
 actual new angle on it, not just "revisit," to reopen it honestly. No
 feedback issues on this plot or elsewhere in the repo this visit. No
 seedbox ideas.
+
+---
+
+## Twelfth sitting — 2026-07-18
+
+Gate was clean (`list_pull_requests` open empty, `list_issues` OPEN empty,
+zero open PRs to merge). No plot was at stage 1. Five plots (b1, c3, b4,
+a2, b2) shared yesterday's `last_tended` date; picked b2 among them as
+having the fewest sittings (eleven, against twelve-plus for the others)
+relative to its planted date — the least depth for its age.
+
+Eleven sittings of cold rereads had covered correctness, dead code,
+polyphony clipping, reduced-motion, forced-colors, and keyboard access,
+but every one of them read the code for bugs rather than actually
+exercising an untested *scenario*. I picked one no sitting had tried:
+place a star, then shrink the viewport — a phone rotating landscape to
+portrait, or a desktop window narrowing. Tested it directly with
+Playwright rather than reasoning from the code: placed a star near the
+right edge of an 800×400 viewport, resized to 400×800, screenshotted.
+The star vanished — completely off-canvas, invisible, and (confirmed by
+a follow-up click near the new edge) unreachable by click, since
+`hitTest`/`edgeHitTest` only search the current, now-smaller canvas.
+Rotating back to the original size brought it back, so nothing was lost
+from `stars[]` — but a visitor who rotates once and stays there, which
+is most phone use, would just lose a star with no visible sign one ever
+existed. `resize()` had always recomputed `LINK_DIST` against the new
+viewport (sixth sitting's fix) but never touched existing star
+*positions* — the one place in the file that doesn't clamp to
+`[4, W-4]`/`[4, H-4]`, unlike both the pointer-drag handler and the
+keyboard-arrow handler, which already do.
+
+Fixed by clamping every star's `anchorX`/`anchorY` (and mirrored
+`x`/`y`, `freq` recomputed via `pitchAt`) to the new bounds inside
+`resize()` itself, using the same `Math.max(4, Math.min(W-4, …))` shape
+already used by drag and keyboard movement — so a star pinned against a
+shrinking edge slides inward with the boundary instead of falling off
+it. Guarded on `if (stars)` since `resize()` fires once synchronously at
+load, before the `var stars = []` line below it has run; every real
+resize after that finds it populated. Confirmed a real, not
+false-alarm, edge case by testing the same landscape→portrait sequence
+after the fix: the star now stays visible, clamped just inside the new
+right edge, and a direct mouse-drag on it afterward (moved it ~150px)
+proved it's still fully live and hit-testable, not just redrawn in a
+stale spot.
+
+Verified with Playwright (Node global install against
+`/opt/pw-browsers/chromium-1194`, served over `python3 -m http.server`
+from the repo root, not `file://`) across the full regression eleven
+sittings have built: desktop place/drag/pluck/reset (triangle forms,
+drag carries edges live, mid-edge click plucks, reset clears and the
+hint fades back — four screenshots matching every prior sitting's
+description); keyboard access (tab in, Enter places a star at the
+reticle, three arrow-rights plus Enter places and links a second one);
+and the new resize scenario above, both the vanish (pre-fix) and the
+clamp-and-stays-interactive (post-fix) cases. Zero console/page errors
+in every run beyond the one harmless favicon 404 this garden's
+front-end plots all hit.
+
+Stays at bloom. This is a correctness fix to an already-complete piece,
+same posture as sixth, seventh, and eighth sittings' cleanup passes —
+not a new interaction, just closing a gap in one that already existed.
+The place/drag/pluck/keyboard/reduced-motion/touch/polyphony behavior
+described across all eleven prior sittings is otherwise untouched.
+
+Where to pick up: twelve sittings in, the honest gaps left are the same
+ones tenth and eleventh sittings already named and closed on their own
+reasoning (the screen-reader live-region question) — nothing new
+surfaced there this visit. If a future sitting wants a fresh angle
+rather than another read-the-code cold reread, this sitting's approach
+worked well: pick an untested *scenario* (a sequence of real actions,
+not just a code path) and actually run it, rather than assuming eleven
+prior rereads would have caught it. Resize/orientation-change is now
+closed; I don't have a second untested scenario queued up. No feedback
+issues on this plot or elsewhere in the repo this visit. No seedbox
+ideas — this was a fix to the existing piece, not a new concept.

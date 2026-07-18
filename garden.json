@@ -106,8 +106,8 @@
       "stage": 4,
       "title": "Open ground: something to play",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-17",
-      "note": "Eleventh sitting is a full fresh-eyes cold reread plus one-pass regression across every dimension prior sittings had each verified separately (mouse, keyboard incl. tab order and oscillator-count proxy, reduced-motion frame-identity, mobile touch affordance) — everything held, no code changes. Revisited ninth sitting's screen-reader live-region question with independent judgment (audio already serves as the feedback channel for tab-and-Enter play) and reached the same conclusion on its own reasoning, not by default. No dead code found this time, unlike the last two rereads. Stays at bloom.",
+      "last_tended": "2026-07-18",
+      "note": "Twelfth sitting finds a real, previously-untested bug by running a scenario instead of rereading code: place a star near an edge, then shrink the viewport (phone rotation, narrower window) — the star fell off-canvas, invisible and unreachable, since resize() recomputed LINK_DIST but never clamped existing star positions the way drag and keyboard movement already do. Fixed by clamping anchorX/anchorY (and x/y/freq) to the new bounds inside resize(); verified pre-fix vanish and post-fix clamp-and-still-draggable with Playwright, plus a full desktop/keyboard regression. Stays at bloom.",
       "door": "plots/b2/growth/index.html"
     },
     "d1": {
