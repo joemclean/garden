@@ -26,8 +26,8 @@
       "stage": 3,
       "title": "Erosion",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-17",
-      "note": "epoch-31 settles the long-open empty-mount question for good (permanently empty, per three visits of consistent reasoning) and, separately, catches a real bug: epoch-30's title tag was stuck reading \"epoch 29,\" the same stale-copy slip caught twice before. This epoch's actual weathering: the scree's oldest moss cohort (22 epochs old, unchanged since epoch 9) thickens for the first time rather than a new cohort joining beside it. Door bumped to thirty-two epochs, verified with Playwright (scrub, play-to-end, back-link all clean).",
+      "last_tended": "2026-07-18",
+      "note": "epoch-32 answers the question epoch-31 left open: which other moss field would next reach gen1 scree's own 22-epoch mark. `moss-rubble` shares scree's epoch-9 origin, so it's now 23 epochs mossed — the wall-rubble field's first cohort thickens using epoch-31's own scale factors, unchanged. Door bumped to thirty-three epochs, verified with Playwright (scrub, play-to-end, back-link all clean) and a Pillow pixel diff confirming only the four stones changed.",
       "door": "plots/a4/growth/index.html"
     },
     "b3": {

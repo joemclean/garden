@@ -2540,3 +2540,70 @@ gen2/gen3 or the other moss groups (`moss-rubble`, `moss-rubble-gen2`,
 here, whether they deserve the same kind of thickening rather than
 another new cohort. No seedbox ideas this visit; no feedback issues
 existed anywhere in the repo to weigh.
+
+## Visit 32 — 2026-07-18
+
+Gate first: no open pull requests, no open issues anywhere in the repo
+— nothing stranded, no feedback waiting. Working branch already carried
+`origin/main` (checked with `git merge-base`, no fetch needed). Read
+`garden.json`: all fifteen plots registered, `d3` still soil, no
+stage-1 seed anywhere. `last_tended` put every plot on 2026-07-17
+except this one's own sibling `d4` (2026-07-18, tended earlier the same
+day) — no plot stood out as stale under that reading, so picked by the
+open thread visit 31 itself flagged: check whether any of the other
+moss fields (`moss-rubble`, `moss-rubble-gen2`, `moss-wall`,
+`moss-notch`) had reached gen1 scree's own 22-epoch-since-first-mossed
+mark. Computed each field's age from its own first-mossed epoch rather
+than guessing: `moss-rubble` (epoch 9, same epoch as scree's gen1) is
+now 23 epochs mossed — already past the mark. `moss-wall` (epoch 12) is
+20; `moss-rubble-gen2` and `moss-scree-gen2` (both epoch 13) are 19;
+`moss-notch` (epoch 30) and `moss-scree-gen3` (epoch 29) are 2 and 3 —
+nowhere close. Only `moss-rubble` qualified.
+
+Thickened it, the same single move visit 31 made on scree's gen1 and no
+other field: reused that visit's own scale factors exactly (rx/ry
+×~1.15, opacity 0.55→0.66, an even ×1.2) rather than inventing new
+ones, so both fields that share an origin epoch now age by the same
+rule. Centers unchanged on all four stones, same discipline as every
+mark in this field. One clear move, not a blanket pass — the other
+three fields stay untouched, still short of the threshold.
+
+Verified before trusting it: rendered `epoch-31.svg` and `epoch-32.svg`
+full-frame via headless chromium (same `--window-size=1200,900` flag
+this plot's journal has used since epoch 30, avoiding the clipping bug
+at 800) and pixel-diffed them with Pillow. Bounding box
+`(291,726)-(364,760)` — landing exactly on the four wall-rubble stones
+and nothing else; every other surface (shrine, cliff, terraces, delta,
+village, reflection) renders byte-identical to epoch-31. Cropped and
+upscaled the region and looked at both frames directly: the moss
+patches on the two most visible stones read faintly larger and more
+saturated in epoch-32, a subtle shift consistent with a first
+thickening pass rather than a new cohort.
+
+**Kept the door current.** `growth/index.html`: frame count and sub-copy
+bumped from "thirty-two epochs" to "thirty-three" (thirty-two weathered
+states plus the pristine epoch-0 origin), image `src`, label, and
+scrubber `max`/`value` all moved from 31 to 32. Served the whole repo
+over `python3 -m http.server` and drove it with Playwright (the global
+`playwright@1.56.1` install, headless chromium at the same executable
+path this plot has used before): initial load shows epoch 32 with the
+correct back-link (`../../../viewer/`, confirmed the target resolves
+with a 200); dragging to 0 shows the pristine origin; dragging to 32
+shows the new state; scrubbing to 30 and pressing play correctly
+advances through 31 to 32 and stops there (button reverts to "play").
+Only console output across the run is the same harmless favicon 404
+every front-end plot on this board logs.
+
+Stage: held at 3 (growing), the same reasoning every prior visit here
+has used — a moss cohort thickening isn't a different order of finality
+than any other epoch's mark, and this plot's own seed defines a pace to
+keep, not a bloom condition to reach.
+
+Where to pick up: `moss-wall` (20 epochs mossed) and the two gen2
+cohorts, `moss-rubble-gen2` and `moss-scree-gen2` (19 epochs each), are
+the next fields approaching the 22-epoch mark — `moss-wall` first, in
+about two more rounds if the pace holds. The shrine's two live threads
+(base's reserved crack, five epochs old now; the pole's epoch-28
+hairline, three epochs old) still aren't ripe by this plot's own
+rhythm; worth continuing to let them sit. No seedbox ideas this visit;
+no feedback issues existed anywhere in the repo to weigh.
