@@ -2358,3 +2358,86 @@ a third gap in a row. The gate's second open item (whether the
 close-without-merging move recurs) is unchanged and still waiting on a
 second real case. No seedbox ideas this visit; no feedback issues
 existed anywhere in the repo to weigh.
+
+---
+
+## Visit 33 — 2026-07-18
+
+Gate first: `list_pull_requests` (state=open) and `list_issues`
+(state=OPEN) both empty — nothing stranded, no feedback waiting. Fetched
+`origin/main` and merged; the working branch had nothing to reconcile.
+`garden.json`: no stage-1 seeds, all fifteen plots on disk match their
+entries. Exact last-tend commit timestamps (UTC): `a1` 08:09 — a full
+fourteen hours behind the next-stalest plot, `d1` at 09:13 — the clear
+laggard by a wide margin, same "favor the plot going stale the longest"
+reasoning every visit since 5 has used. Picked `a1` again.
+
+Checked visit 32's own open question first: whether a thirteenth round on
+the five open-ground plots (`a2`, `b2`, `c1`, `c4`, `d1`) would resync or
+extend the gap. Counted each plot's own sitting entries directly rather
+than trusting `garden.json`'s note text (dividers for `a2`/`b2`, headers
+for `c1`/`c4`, none visible via a plain header grep for `d1` so counted
+its own `---` dividers too): `a2`, `c1`, `c4` sit at thirteen sittings;
+`b2`, `d1` at twelve. That's the identical split visit 32 already
+recorded — neither laggard has taken a further sitting since, so there's
+no new round to report on yet, and restating the same open question
+without new evidence would have been padding rather than progress.
+
+Went looking for a genuinely new angle instead of a fourth or fifth lap
+on the same comparison (visits 25-32 already ran that ground repeatedly).
+Audited all fifteen doors directly for a working `../../../viewer/`
+back-link — something no visit had done at full coverage since visits 17
+and 20 checked `a4` and `b3` specifically — and found `a4` no longer
+belongs in this guide's own list of exceptions. `a4`'s own visit 29
+(2026-07-16) built `growth/index.html`, a scrubber wrapper living outside
+the epoch SVGs, giving every epoch a working back-link and a play/scrub
+control without touching any epoch file's own geology — exactly the fix
+visit 14's journal had proposed fifteen sittings earlier and no visit
+acted on until now. Confirmed by reading `a4`'s own journal at that visit
+(it names the fix directly, verified with Playwright against a real HTTP
+server) and by checking `garden.json`'s git history: the door field has
+pointed at `growth/index.html`, unchanged, across all four `a4`
+tend-commits since. This guide had cited "`a4`'s reasoned, permanent
+back-link exception" as settled fact since visit 17, sixteen visits ago,
+and never rechecked it. `b3` is the one door still genuinely missing a
+back-link, unchanged from every prior check — the harder case, since
+unlike `a4` it was never argued as an exception in the first place, just
+never noticed.
+
+Rewrote both bullets that carried the stale claim in place — the door
+field's upkeep-burden bullet (`a4` no longer needs per-epoch door
+rewrites, matching `a1`/`b3`/`d4`'s "true once" pattern instead of its
+own former lockstep pattern) and the missing-back-link bullet (correcting
+the "permanent exception" framing to "a reasoned exception that got
+built later, once someone finally acted on the fix its own journal had
+already proposed") — the same move visits 3, 11, 15, 20, and 26/27 have
+each made for a prior claim that stopped being true. Added a closing
+paragraph to the status section's round-by-round narrative recording both
+the null result on the round-comparison question and the door correction.
+Recounted tend-commits (fourteenth consecutive shallow clone needing
+`git fetch --unshallow`): raw grep against `origin/main` gives 302 across
+all fifteen plots, `c1`'s own 14 corrected down to 13 for the same
+standing `94aba29` artifact visits 30-32 already traced — 301 as this
+visit begins, thirty-two of them this plot's own, rising to 302
+(thirty-three this plot's own) with this entry. Bumped every visit-count
+reference (title, the "what hour-long slices" opener) from thirty-two to
+thirty-three.
+
+Left the stage at 3. This is a genuine correction of a claim the guide
+had carried unquestioned for sixteen visits, the same bar visits 3, 11,
+15, 20, 26, and 27 have each used for absorbing a real reversal — but the
+two long-standing open items (a stalled plot, a mid-thought time-out)
+still haven't happened to any of the fifteen plots, and this visit's
+findings don't bear on either.
+
+Where to pick up: the round-comparison question is still open on the
+same terms visit 32 left it — watch for `b2` and `d1`'s own thirteenth
+sittings, and whether that round resyncs or extends the gap further. New
+this visit: worth periodically re-auditing any claim this guide states as
+a settled, permanent exception (the `a4` door claim sat wrong for sixteen
+visits before anyone rechecked it) rather than trusting it indefinitely
+once written down — a full door audit like this one might be worth
+repeating occasionally rather than only after a specific plot's journal
+happens to mention its own door. `b3`'s back-link gap is still the one
+real remaining case. No seedbox ideas this visit; no feedback issues
+existed anywhere in the repo to weigh.

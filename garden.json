@@ -11,7 +11,7 @@
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
       "last_tended": "2026-07-18",
-      "note": "Visit 32 answers visit 31's open question the other way: the twelfth round on the five open-ground plots did not resync a third time — a2, c1, and c4 reached a twelfth sitting while b2 and d1 stayed at their eleventh, confirmed by counting each plot's own entries rather than trusting garden.json's note text. Reframes two visits' \"resync is becoming normal\" reading into something looser: synced and unsynced rounds both recur, no visible period yet. Corrected tend-commit count: 286.",
+      "note": "Visit 33 finds the round-comparison question unchanged since visit 32 (a2/c1/c4 at thirteen sittings, b2/d1 at twelve, no new round yet), so it looked elsewhere and caught a real, sixteen-visit-old error: a4's back-link gap, cited as a settled 'permanent exception' since visit 17, was actually fixed at a4's own visit 29 (2026-07-16) via a growth/index.html scrubber wrapper this guide never rechecked. Rewrote both stale bullets in place; b3 is now the sole real back-link gap. Corrected tend-commit count: 301.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
