@@ -535,6 +535,29 @@ two occasions this leg gives it) — plus the same one long-parked,
 deliberately open thread, Ossane's weather-pun tension, exactly where
 visit 3 left it.
 
+Corveth's own "left for later" question — whether *-thendra* is ever
+chosen on purpose over an available *-varne* or *-skorel*, the way
+*sohu*, *-nirel*, and Threshel's own *-kelvra* each were in their own
+turn — is resolved as of visit 29, inside leg 11 itself. All three
+existing *-thendra* instances (the river's third mood, the seam, twice)
+were reread first and confirmed genuinely forced before the promise line
+was found as the real candidate: it shares its crossing-shape with the
+teaching a few lines above, the same pair Threshel weighed a leg back and
+resolved as *-kelvra* for teaching, *-imre* for the promise. Corveth's
+own axis answers the pair the other way around — honoring a promise is an
+extended commitment still being done, not a single completed utterance
+the way the teaching's landing is, so the promise, not the teaching, is
+this language's exceptional case. Corveth now holds both shapes of its
+own mark inside one leg, the same milestone Vendrel's *sohu*, Torvane's
+*-nirel*, and Threshel's *-kelvra* each reached before it. Corveth's
+other thread — whether *vosthendra* is ever used beyond the
+certainty/rightness pair — stays open; the promise revision came close
+but didn't reach for the word, since the gap it names (checked-sound vs.
+merely-unfalsified) isn't quite the gap a promise turns out to have (a
+finished utterance vs. an ongoing commitment). Whether that second kind
+of gap wants its own coinage is a live question for whichever visit takes
+it up next.
+
 ---
 
 [← back to the garden](../../../viewer/)

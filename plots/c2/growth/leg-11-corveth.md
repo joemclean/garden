@@ -63,10 +63,29 @@ entirely different kinds that happen to share Corveth's only word for
 holding — *vosthendra* is what a Corveth speaker reaches for, out loud,
 to say so, since the grammar itself won't.
 
-Twice a year aksa-esk comes asking a promise of kesta-esk, and
-vessa-nirel answers-*varne* — whole in the giving, nothing left
-unresolved by the saying of it, the same completeness Threshel marked
-*-imre* for a different reason one leg back.
+Twice a year aksa-esk comes asking a promise of kesta-esk, and Corveth's
+grammar holds the same easy door open here that it just opened for her
+certainty: nothing has broken the promise yet, nothing is presently
+mending it either, so *-varne* would default to the giving the way it
+defaulted a breath earlier to a claim nobody has checked — whole in the
+giving, nothing left unresolved by the saying of it, the same
+completeness Threshel marked *-imre* for a different reason one leg
+back, and the same reading Corveth itself gave the teaching a few lines
+above. She does not take it this time. A lesson, once landed, is a thing
+already done; a promise is not — six more months of nightly rounds she
+has just committed her hands to, work not yet performed standing in for
+a yes already spoken. Calling that *-varne* would be the same flattening
+her certainty and her rightness just taught her to notice, run the other
+direction: not an old fact mistaken for settled, but a future one taken
+for finished before it's even begun. So she answers-*thendra* instead —
+not because anything about the promise has failed, or is presently being
+patched stone by stone, but because honoring it is a thing she still has
+to keep doing, every night between now and the asking, not a thing the
+giving already finished. Where Threshel, a leg back, found the
+exceptional case in the teaching and left the promise its clean *-imre*,
+Corveth finds it the other way around: a different grammar answering the
+same crossing-shaped pair differently, not an earlier answer inherited
+without being asked again.
 
 Tonight the seam runs dry and cold, still *-thendra*, still the one
 place that never finishes. Vessa-nirel lights-*varne* the kettle anyway,
@@ -128,11 +147,41 @@ two axes happen to coincide because the seam's threshold *is* its
 repair. That one coincidence is named plainly as local, not as evidence
 the two mechanics were secretly the same question all along.
 
-**Left for later:** whether *-thendra* is ever chosen deliberately over
-an available *-varne* or *-skorel*, the way *sohu*, *-nirel*, and
-*-kelvra* each eventually were in their own turn, is untested in this
-leg — every *-thendra* here (the third river mood, the seam) was reached
-for because nothing else fit, not weighed against a cleaner mark and
-refused. Also untested: whether *vosthendra* is ever spoken about
-something other than the certainty/rightness pair and the seam-reading,
-the only two occasions this leg gives it.
+**Revision note (visit 29):** the promise line originally read "vessa-
+nirel answers-*varne* — whole in the giving, nothing left unresolved by
+the saying of it, the same completeness Threshel marked *-imre* for a
+different reason one leg back" — forced, the same shape as every other
+*-varne* in the leg. Revised because `lang-11-corveth.md`'s own "left for
+later" had named an honest question still untested: whether *-thendra*
+is ever chosen deliberately over an available *-varne* or *-skorel*, the
+way *sohu*, *-nirel*, and Threshel's own *-kelvra*-for-teaching each were
+in their own turn. Reread all three existing *-thendra* instances first
+(the river's third mood, the seam, twice) and confirmed each is
+genuinely forced — nothing else fits a mood that is neither raging nor
+absent, or a patch that never finishes being one — before looking
+elsewhere for a real candidate rather than assuming one existed, the same
+discipline visit 25 used on leg 10's seven *-kelvra* instances. The
+promise was the candidate: it shares its crossing-shape with the teaching
+a few lines above (something given from the speaker to another), the
+same pair Threshel weighed a leg back and resolved the opposite way —
+marking the teaching *-kelvra* and leaving the promise *-imre*. Corveth's
+own axis is condition, not position, so the same pair doesn't have to
+answer the same way, and it doesn't: teaching, once landed, is genuinely
+a finished thing, but a promise is a commitment extended forward across
+six months of nightly keeping still to be done, not a single completed
+utterance the way answering-*varne* had assumed. The revision has the leg
+weigh that reading and refuse it, once *-varne* is recognized as the same
+convenient flattening her certainty and rightness had just exposed, run
+forward onto a future fact instead of a past one. Nothing else in the leg
+changed.
+
+**Left for later:** whether *vosthendra* is ever spoken about something
+other than the certainty/rightness pair and the seam-reading remains
+untested — this visit's revision resolved the promise honestly by
+weighing and refusing *-varne*, but never reached for the word itself,
+since the gap it names (checked-sound vs. merely-unfalsified) isn't quite
+the gap the promise turned out to have (a finished utterance vs. an
+ongoing commitment). Whether Corveth ever needs a second coinage for that
+second kind of gap — or whether *-thendra*, chosen on purpose, already
+says enough without one — is a live question for whichever visit takes it
+up.
