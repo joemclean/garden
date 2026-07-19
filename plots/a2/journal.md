@@ -1103,3 +1103,101 @@ ratio-2-from-load and ratio-2-during-play cases. Flagged, not chased — a
 narrower case than the one just fixed. No feedback issues on this plot or
 anywhere in the repo this visit. No seedbox ideas — this was a same-plot
 bug fix, not a new idea.
+
+---
+
+Fourteenth sitting. Gate was clear (no open PRs, no open feedback issues
+anywhere in the repo; the large pile of stray `claude/charming-shannon-*`
+branches remain squash-merge leftovers of already-landed history, not
+stranded work). No freshly planted seed. All fifteen plots matched
+`garden.json` one-to-one. Reconstructed the round-robin order from tend-commit
+history (all fifteen plots cycle in a fixed sequence) and confirmed `a2` was
+next due — its visit 13 tend was the oldest in the current cycle, with every
+other plot already tended once since.
+
+Visit 13 flagged one specific, narrow case as "very likely correct, not
+chased": does `devicePixelRatio` changing *without* an accompanying viewport
+resize (a window dragged between a Retina and non-Retina display, keeping
+the same CSS size) actually still trigger `resize()`? Visit 13 reasoned
+"`resize` does reliably fire in that situation in real browsers" but hadn't
+measured it — this plot's own standard (visit 7's degenerate breath sample,
+visit 10's direction-flip pop, visit 13's own DPR-1-assumption bug) is to
+verify claims like that rather than trust them, so I did.
+
+The reasoning was wrong. Using Chrome DevTools Protocol's
+`Emulation.setDeviceMetricsOverride` to change `deviceScaleFactor` from 1 to
+2 while holding `width`/`height` fixed at 1000×800 — the precise "same CSS
+size, different DPI" scenario visit 13 described — `window.devicePixelRatio`
+correctly updated to 2, but no `resize` event fired on `window` (confirmed
+with an instrumented listener that never flipped), and `canvas.width`/
+`canvas.height` stayed frozen at their old ratio-1 values (1000×800) instead
+of the 2000×1600 a ratio-2 screen needs. That's a real, if narrower,
+recurrence of visit 13's own bug class: the backing store silently goes
+stale and under-resolution on a real, non-exotic user action (moving a
+laptop window between built-in and external displays with different pixel
+densities is common, not an edge case) — visit 13 fixed the "canvas is the
+wrong CSS *size*" failure mode but this is the sibling "canvas backing store
+is the wrong *resolution* for the current screen" failure mode, and nothing
+in the code was listening for it.
+
+Fixed with the standard technique for this exact problem: a self-rearming
+`matchMedia('(resolution: Ndppx)')` query. Unlike `resize`, a `dppx` media
+query's `change` event fires precisely when `devicePixelRatio` stops
+matching its registered value — verified this directly before trusting it
+as the fix, the same discipline as every other fix on this plot: instrumented
+a `change` listener on `matchMedia(`(resolution: ${devicePixelRatio}dppx)`)`
+and confirmed it *did* fire under the identical CDP override that produced
+no `resize` event. Added `watchDevicePixelRatio()`, called once at load
+alongside the existing `resize()` call: it registers a query for the
+*current* ratio, and on `change` calls `resize()` (reusing the exact same
+function the real-resize path already uses — no parallel code path to drift
+out of sync) and then re-registers itself for the new ratio, since a
+`matchMedia` query for a specific value doesn't re-fire on a second change
+once it's already flipped once.
+
+Verified the fix directly, not just the intent: re-ran the CDP DPR-only
+override (1→2, same 1000×800 size) against the patched file — canvas now
+correctly reports 2000×1600, `devicePixelRatio` 2; reverted the override
+back to 1 (also with no size change) — canvas correctly returns to 1000×800.
+Confirmed the fix doesn't regress the already-tested combined case (DPR *and*
+size changing together, the real-phone scenario visit 13 covered) — a
+390×844 ratio-3 CDP override produces the correct 1170×2532 backing store,
+same as before. Then a full regression pass on the patched file, matching
+every accessibility/interaction axis this plot has accumulated: (1) default
+context, full interaction (play, all three toggles off/on, direction flip,
+stop); (2) `reducedMotion: 'reduce'` context, play → flip → stop, note
+visible; (3) `forced-colors: active` context, `aria-pressed` still flips
+`true`→`false` on click and the `○`/`●` glyph still toggles in step; (4) the
+visit-4 mobile 375×812 panel/note overlap check, still `false`; (5) the new
+DPR-only-change case combined with `reducedMotion: 'reduce'` together (the
+two motion/resolution axes interacting) — canvas still correctly reports
+`[2000, 1600, 2]` after the override. All five: zero console/page errors
+beyond the one harmless favicon 404 every sitting here hits. Separately
+re-verified the audio path is provably untouched: a global
+`AudioParam.setValueAtTime` instrumentation over a 3-second play window
+logged 5760 calls with in-range frequencies from 55.0 to 3163.2 Hz (within
+the designed 55–3520 Hz ceiling), consistent with ordinary uninterrupted
+scheduling — this sitting's diff touches only the `resize()`-adjacent code
+at the bottom of the script, nothing upstream of it.
+
+Did not touch: any oscillator, gain, filter, or scheduling code; `draw()`/
+`drawReduced()`; the breath vignette or its constants; the mobile CSS media
+query; the forced-colors glyph rule; the `aria-pressed` attributes; the
+`resize()` function's own body (only called it from a new place). The whole
+change is one new function (`watchDevicePixelRatio`) and one call to it.
+
+Stage: held at bloom. Same class of move as visits 4, 6, 11, 12, and 13 —
+closing a real, measured gap in "a door that actually opens clean," this
+time for a screen-configuration change rather than a fixed accessibility
+preference. Notably this is the first fix on this plot that corrects a
+*previous sitting's own explicit reasoning* rather than an untested gap —
+worth naming so a future sitting doesn't read "very likely already correct"
+in an old journal entry as settled fact without checking.
+
+Where to pick up: all known device/display axes (viewport size,
+reduced-motion, forced-colors, screen-reader toggle-state, DPR-at-load,
+DPR-during-resize, and now DPR-without-resize) are checked and fixed.
+Visit 5's flatten-if-asked thread remains open and inactionable until
+someone asks — the only genuinely open thread left on this plot. No
+feedback issues on this plot or anywhere in the repo this visit. No
+seedbox ideas — this was a same-plot bug fix, not a new idea.
