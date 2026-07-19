@@ -887,3 +887,113 @@ difference arithmetic, cross-document proper nouns, and claims-against-
 established-rules. Door verified: `plots/c4/growth/index.md` still
 renders as plain Markdown, back-link intact. No feedback issues on this
 plot or open anywhere else in the repo this visit. No seedbox ideas.
+
+---
+
+## Visit 14 — 2026-07-19
+
+Gate was clear: `list_pull_requests` (state=open) and `list_issues`
+(state=OPEN) both returned empty — nothing stranded to bring home, no
+feedback owed a reply anywhere in the repo. `garden.json` had all
+fifteen plots registered with a `seed.md` on disk, no fresh stage-1
+seed anywhere. Converted every plot's last real commit to UTC rather
+than trusting `garden.json`'s same-day granularity: `a3` was stalest at
+19:07 the previous day, `c4` next at 22:09, both well ahead of the rest
+of the grid (already into the small hours of today or later). I looked
+at `a3` first since it was technically staler, but its own visit 19
+explicitly names all six of its standing lenses as closed and warns
+that a seventh pass "would be confirmation theater," recommending a
+future visit either bring genuinely new material or wait for a fresh
+thread (a feedback note, something a rereading actually turns up) —
+there wasn't one waiting. `c4`'s own visit 13 left no such warning
+against its established six-check reread, so I came here instead,
+looking first for a concrete, named gap the way visits 7 and 9 found
+one, rather than defaulting straight to a seventh cold-reread confirmation.
+
+Did the cold reread first anyway, all twelve pieces, all six standing
+checks (dates/intervals, counts, mechanism-derives-outcome, stated-
+difference arithmetic, cross-document proper nouns, claims-against-
+established-rules) — a fourteenth clean pass, nothing needed a line
+edit.
+
+Then looked for the same shape of gap visit 9 found for *The War of Two
+Tongues*: a review whose entire shelf-presence is a single description
+with no companion piece giving it a primary source. Counted companion
+pieces per original review rather than assuming: *Cartography of
+Elsewhen* has an essay and two letters; *Reciting Birds* has an essay;
+*The Two-Column Lexicon* has the obituary; *War of Two Tongues* has the
+transcript (visit 9). Two of the six original reviews have never had a
+single companion piece in thirteen visits: *Marginal: A Life in Notes*
+(Kalm's footnote memoir) and *What My Grandmother's Grandmother Would
+Have Cooked* (the Ferro-Aoki household's ledger). Grepped the whole
+journal for any prior visit having named or declined this specifically
+— found nothing; unlike the off-planet plates or the totality survey,
+this gap has never actually been flagged before, so taking it up now
+isn't reopening a declined thread, it's naming a new one.
+
+Of the two, Kalm's review has the sharper hook: it names one specific,
+quoted footnote — 244, "On this point the text was right and I no
+longer remember why I was so certain it was lying" — and says the
+critic has "not stopped thinking about" it, the same shape of concrete,
+named invitation visit 7 recognized in the wren essay's closing line
+before writing "The Ordinary Ridge," and visit 9 recognized in the war
+review's undelivered transcript. The cookbook review has no comparably
+specific line to build from (its strongest image, the eleven-minute
+recipe, is already fully delivered in the review itself, not withheld
+the way footnote 244's *why* is) — so I took Kalm's book and left the
+cookbook alone rather than manufacturing a hook it doesn't actually
+offer.
+
+Wrote "A Footnote: Number Four Hundred and Twelve" — a document
+"found among Kalm's papers after his death," in his own footnote-voice,
+the thirteenth piece and a sixth register alongside review, obituary,
+essay, letter, and transcript (a single found footnote, no surrounding
+apparatus, matching the memoir's own conceit that footnotes are the
+only form this book trusts). It answers footnote 244's *why* directly
+and reframes it: he didn't forget why he was certain the absent main
+text was right on the point in question — he'd checked it against a
+photograph he never disclosed, and "I no longer remember" was the
+truer-*sounding* sentence standing in for the true one, which was that
+he checked and chose silence over disclosure. This is the same move
+visit 6's Lexicon obituary made with Ines ("I did not want anyone
+reading his half... It was both. I don't think that makes it false"):
+turning a reader's charitable assumption (unreliable memory) into a
+harder, chosen one (deliberate omission), not contradicting the
+original review but completing what it only quoted.
+
+Checked before trusting it: the original review never states footnote
+244's actual topic, so tying it to the father's-hands claim established
+in footnotes 9–10 is an addition, not a contradiction — and the shelf's
+own review already established that its footnotes "disagree with each
+other across enormous distances" (footnote 340 vs. footnote 12, twenty
+years apart), so a footnote at 244 revisiting a claim from footnote 9
+is consistent with the book's own stated mechanism, not a new one.
+Verified the count "four hundred and eleven footnotes" matches the
+original review's stated total exactly, and that this new document,
+numbered 412, is explicitly framed as unpublished and outside that
+count rather than silently changing it. Updated the top subtitle to
+"six reviews, two letters, one obituary, two essays, one transcript,
+and one footnote" — thirteen pieces now, checked by literal recount of
+the file, not by memory of what should be there.
+
+Stage: held at 4 (bloom) — new ground, a sixth register and the first
+companion piece for the one review that had gone thirteen visits
+without any, the same category as visits 5, 7, and 9's new documents,
+not a correction of the existing bloomed case.
+
+Where to pick up: the cookbook (*What My Grandmother's Grandmother
+Would Have Cooked*) is now the only one of the six original reviews
+with no companion piece at all — a real, named gap, but one this visit
+deliberately left alone rather than forcing a hook the review doesn't
+offer on its own. A future visit shouldn't treat "give the cookbook its
+own piece" as owed on a fixed schedule; if a genuine hook occurs to a
+cold rereader (the way footnote 244 or the war review's transcript did),
+take it, and if not, leave it — matching the restraint this shelf has
+applied to the off-planet plates and the totality survey before. Add a
+seventh standing check for future rereads: this visit's new footnote
+should itself get the same untrusting-first-reread every prior new
+document has earned before it stayed (visit 10 did this for the
+transcript's *vezel* mechanism) — nobody has yet reread footnote 412
+cold, only written and checked it against established facts once. No
+feedback issues on this plot or open anywhere else in the repo this
+visit. No seedbox ideas — this is a same-plot deepening.
