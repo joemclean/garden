@@ -139,10 +139,32 @@
   // layer; they just don't get the continuously sweeping/flashing proof.
   // Audio scheduling below is untouched by this: frequency/gain sweeps are
   // the illusion itself, not decorative motion, so they keep running.
-  const REDUCE_MOTION = !!(window.matchMedia &&
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  //
+  // This preference is read live, not once at load: a boolean matchMedia
+  // query's 'change' event fires on every future flip, so a visitor who
+  // toggles their OS reduced-motion setting mid-session (e.g. this piece
+  // is already playing when they decide the sweep bothers them) gets the
+  // static view immediately, the same way the forced-colors CSS block
+  // already reacts live for free. Verified this wasn't already true before
+  // fixing: a load-time `const` snapshot of `.matches` (the piece's
+  // original form) left the canvas sweeping and the note hidden even after
+  // `matchMedia` itself reported the flip, the same class of "looks
+  // correct once, stays stale forever after" gap visit 14 found and fixed
+  // for device-pixel-ratio changes.
+  const reducedNote = document.getElementById('reducedNote');
+  const reduceMotionMQ = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+  let REDUCE_MOTION = !!(reduceMotionMQ && reduceMotionMQ.matches);
   let staticDirty = true;
-  if (REDUCE_MOTION) document.getElementById('reducedNote').style.display = '';
+  function applyReduceMotion(matches) {
+    REDUCE_MOTION = matches;
+    reducedNote.style.display = matches ? '' : 'none';
+    reducedBreathStep = -1;
+    staticDirty = true;
+  }
+  if (REDUCE_MOTION) reducedNote.style.display = '';
+  if (reduceMotionMQ) {
+    reduceMotionMQ.addEventListener('change', (e) => applyReduceMotion(e.matches));
+  }
 
   const NUM_VOICES = 10;
   const MIN_LOG2 = Math.log2(55);   // A1

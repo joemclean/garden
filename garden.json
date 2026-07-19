@@ -99,7 +99,7 @@
       "title": "Open ground: something to hear",
       "planted": "2026-07-10",
       "last_tended": "2026-07-19",
-      "note": "Fourteenth sitting checks visit 13's own untested assumption ('resize reliably fires' when devicePixelRatio changes alone) and finds it wrong: a CDP-driven DPR-only change (same viewport size, ratio 1→2) fires no resize event, leaving canvas.width/height stale at the old ratio — confirmed before fixing, not assumed. Fixed with a self-rearming matchMedia('(resolution: Ndppx)') query that calls the existing resize() on change. Verified DPR-only change, combined DPR+size change, and combined with reduced-motion all correct; full accessibility regression and audio scheduling (5760 calls, 55–3163 Hz) confirmed untouched. Stays at bloom.",
+      "note": "Fifteenth sitting finds prefers-reduced-motion had the same staleness bug visit 14 fixed for devicePixelRatio: REDUCE_MOTION was a load-time const, so a visitor toggling their OS motion preference mid-session kept sweeping and never saw the reduced-motion note, confirmed live before fixing. Fixed with a matchMedia change listener (forced-colors already reacts live via pure CSS, no change needed there). Verified both switch directions and full six-check regression (mobile, forced-colors, DPR, audio scheduling) clean. A tab-backgrounding/rAF-throttling hypothesis was tried but couldn't be reproduced in this sandbox's headless Chromium — left flagged, not fixed. Stays at bloom.",
       "door": "plots/a2/growth/ascent.html"
     },
     "b2": {
