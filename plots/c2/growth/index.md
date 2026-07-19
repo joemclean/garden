@@ -558,6 +558,24 @@ finished utterance vs. an ongoing commitment). Whether that second kind
 of gap wants its own coinage is a live question for whichever visit takes
 it up next.
 
+Corveth's second-coinage question is resolved as of visit 30, inside
+`lang-11-corveth.md`: it does want its own word, and the language finds
+one by reflection rather than invention. *Vosthendra* crosses into
+*-thendra*'s territory to name a split hiding inside every *-varne*;
+*vosvarne* crosses back the other way, naming the split visit 29's
+revision opened inside *-thendra* itself — the seam and the river's third
+mood mid-repair for real, the promise mid-repair only in the sense that
+its doing isn't finished yet. A fourth untranslatable word, built by
+running *vosthendra*'s own cross-root move in reverse rather than reaching
+for new material. No leg revision — the gap was already fully staged by
+visit 29's own text; only the language needed the word, the same
+grammar-only shape visit 27 used for Naveth's *avrasol*. Whether
+*vosthendra* itself is ever used beyond the certainty/rightness pair stays
+exactly as open as visit 29 left it, and the same one long-parked thread,
+Ossane's weather-pun tension, sits exactly where visit 3 left it — the
+only two items remaining on Corveth's own board, alongside the standing
+question of a twelfth language.
+
 ---
 
 [← back to the garden](../../../viewer/)
