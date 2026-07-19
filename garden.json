@@ -27,7 +27,7 @@
       "title": "Erosion",
       "planted": "2026-07-06",
       "last_tended": "2026-07-19",
-      "note": "epoch-34 lets the pole's epoch-28 hairline give way, six epochs after it was marked, matching the roof's own six-epoch precedent. True to epoch 22's own stated physics (a pole fails by leaning, not by calving a chip like stone), the crack becomes a hinge rather than a void: the upper segment bends further at the same rate its original lean used, no material removed, no debris. Verified with a Pillow pixel diff (only the pole's own footprint changed) and Playwright end-to-end on the door (scrub to 0/34, play from 32 advances through 33 and stops cleanly at 34, back-link resolves).",
+      "note": "epoch-35 thickens moss-wall, 22 epochs after it first caught moss at epoch 12 — the same age scree's and rubble's gen1 cohorts carried when each thickened (epochs 31 and 32). Confirmed the exact scaling rule (opacity x1.2, rx/ry x1.15) directly from those two prior diffs rather than trusting prose, then applied it to moss-wall's six ellipses; centers untouched. Verified with a Pillow pixel diff (only the wall-moss footprint changed) and Playwright end-to-end on the door (scrub to 0/35, play from 33 advances through 34 and stops cleanly at 35, back-link resolves).",
       "door": "plots/a4/growth/index.html"
     },
     "b3": {
