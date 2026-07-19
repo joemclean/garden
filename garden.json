@@ -114,8 +114,8 @@
       "stage": 4,
       "title": "Open ground: something that moves",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-18",
-      "note": "Twelfth tend resolves the one-shot-vs-bed masking question the eleventh tend left open, by comparing peak RMS in a band centered on each one-shot's own frequency content rather than raw full-spectrum RMS. Found two things at once: the thunder rumble's earlier 'suspicious' low RMS was a false alarm (it owns a register the highpassed rain bed barely touches, +38-41dB in-band, untouched), while the train chug was a real bug (+1.1dB in-band, genuinely masked by the wind bed's overlapping lowpass register) — fixed by raising its level 0.16→0.35, landing it ~+8-10dB above the bed alongside the thunder crack's own margin. Verified live end to end, zero new errors. Stays at bloom.",
+      "last_tended": "2026-07-19",
+      "note": "Thirteenth tend checks two dimensions no prior sitting had actually tested: real keyboard interaction (fine — native buttons, no outline suppression, keyboard Enter creates the lazy AudioContext same as a click) and what a screen reader hears from the 'now playing' ribbon (not fine — opacity:0 doesn't remove text from the accessibility tree, so a CDP AX snapshot showed all three posters announcing 'now playing' every load, not just the featured one). Fixed by toggling aria-hidden on each ribbon alongside the existing .featured class toggle. Verified across 5 fresh loads, 4 reshuffle cycles, the single-reel and full ~142s anthology playback paths, zero errors, screenshot pixel-identical. Stays at bloom.",
       "door": "plots/d1/growth/index.html"
     },
     "c4": {
