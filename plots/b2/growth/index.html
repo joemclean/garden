@@ -236,8 +236,10 @@
     osc2.stop(t0 + 1.7);
   }
 
-  // continuous theremin-style tone used while dragging a star
-  var dragTone = null;
+  // continuous theremin-style tone used while dragging a star. Each caller
+  // (a pointer drag, the keyboard grab) owns its own tone object rather than
+  // sharing one module-level slot — see the multi-touch fix below for why
+  // that used to matter.
   function dragToneStart() {
     var ac = audio();
     var osc = ac.createOscillator();
@@ -248,26 +250,27 @@
     osc.connect(g);
     g.connect(masterBus);
     osc.start();
-    dragTone = { osc: osc, g: g };
+    return { osc: osc, g: g };
   }
-  function dragToneSet(freq) {
-    if (!dragTone) return;
+  function dragToneSet(tone, freq) {
+    if (!tone) return;
     var ac = audio();
-    dragTone.osc.frequency.linearRampToValueAtTime(freq, ac.currentTime + 0.05);
+    tone.osc.frequency.linearRampToValueAtTime(freq, ac.currentTime + 0.05);
   }
-  function dragToneStop() {
-    if (!dragTone) return;
+  function dragToneStop(tone) {
+    if (!tone) return;
     var ac = audio();
-    var d = dragTone;
-    d.g.gain.linearRampToValueAtTime(0, ac.currentTime + 0.15);
-    d.osc.stop(ac.currentTime + 0.2);
-    dragTone = null;
+    tone.g.gain.linearRampToValueAtTime(0, ac.currentTime + 0.15);
+    tone.osc.stop(ac.currentTime + 0.2);
   }
 
   // ---- stars & constellation graph ----
   var stars = [];   // {x, y, anchorX, anchorY, freq, phase, born, driftSeed, driftSpeed}
   var edges = [];   // {a, b, pluckedAt, restDist, lastAmbient} indices into stars
-  var dragging = null;
+  // one entry per active pointer id -> { starIndex, tone }, so two fingers
+  // dragging two different stars at once don't fight over a single shared
+  // "which star am I dragging" slot (see the multi-touch fix below)
+  var drags = {};
 
   // keyboard reticle: a second way to reach the same three actions
   // (place/drag/pluck) for anyone who tabs in rather than points. It moves
@@ -275,7 +278,7 @@
   // grab a star, pluck a line, or place a new one — and arrow keys move a
   // grabbed star the way a pointer-drag would. No fourth action, just a
   // second hand reaching the same three.
-  var kbX = null, kbY = null, kbGrabbed = null, kbVisible = false;
+  var kbX = null, kbY = null, kbGrabbed = null, kbVisible = false, kbTone = null;
   var KB_STEP = 16;
   var supportsFocusVisible = (function () {
     try { canvas.matches(":focus-visible"); return true; } catch (e) { return false; }
@@ -395,9 +398,9 @@
     var p = clientToLocal(evt);
     var hit = hitTest(p.x, p.y);
     if (hit >= 0) {
-      dragging = hit;
-      dragToneStart();
-      dragToneSet(stars[hit].freq);
+      var tone = dragToneStart();
+      drags[evt.pointerId] = { starIndex: hit, tone: tone };
+      dragToneSet(tone, stars[hit].freq);
     } else {
       var edgeHit = edgeHitTest(p.x, p.y);
       if (edgeHit >= 0) {
@@ -411,32 +414,42 @@
   });
 
   window.addEventListener("pointermove", function (evt) {
-    if (dragging === null) return;
+    var drag = drags[evt.pointerId];
+    if (!drag) return;
+    var s = stars[drag.starIndex];
+    if (!s) return;
     lastInteraction = performance.now();
     var p = clientToLocal(evt);
-    var s = stars[dragging];
     s.x = Math.max(4, Math.min(W - 4, p.x));
     s.y = Math.max(4, Math.min(H - 4, p.y));
     s.anchorX = s.x;
     s.anchorY = s.y;
     s.freq = pitchAt(s.y);
-    dragToneSet(s.freq);
+    dragToneSet(drag.tone, s.freq);
   });
 
-  window.addEventListener("pointerup", function () {
-    if (dragging !== null) {
-      dragToneStop();
-      dragging = null;
+  function endDrag(evt) {
+    var drag = drags[evt.pointerId];
+    if (drag) {
+      dragToneStop(drag.tone);
+      delete drags[evt.pointerId];
     }
-  });
+  }
+  window.addEventListener("pointerup", endDrag);
+  window.addEventListener("pointercancel", endDrag);
 
   resetBtn.addEventListener("click", function (evt) {
     evt.stopPropagation();
     lastInteraction = performance.now();
     if (kbGrabbed !== null) {
-      dragToneStop();
+      dragToneStop(kbTone);
+      kbTone = null;
       kbGrabbed = null;
     }
+    for (var pid in drags) {
+      dragToneStop(drags[pid].tone);
+    }
+    drags = {};
     stars = [];
     edges = [];
     hint.style.opacity = "0.0";
@@ -451,7 +464,8 @@
   canvas.addEventListener("blur", function () {
     kbVisible = false;
     if (kbGrabbed !== null) {
-      dragToneStop();
+      dragToneStop(kbTone);
+      kbTone = null;
       kbGrabbed = null;
     }
   });
@@ -472,7 +486,7 @@
         grabbedStar.x = kbX; grabbedStar.y = kbY;
         grabbedStar.anchorX = kbX; grabbedStar.anchorY = kbY;
         grabbedStar.freq = pitchAt(kbY);
-        dragToneSet(grabbedStar.freq);
+        dragToneSet(kbTone, grabbedStar.freq);
       } else if (kbGrabbed !== null) {
         kbGrabbed = null; // was pointing at a star that no longer exists
       }
@@ -480,14 +494,15 @@
       evt.preventDefault();
       lastInteraction = performance.now();
       if (kbGrabbed !== null) {
-        dragToneStop();
+        dragToneStop(kbTone);
+        kbTone = null;
         kbGrabbed = null;
       } else {
         var hit = hitTest(kbX, kbY);
         if (hit >= 0) {
           kbGrabbed = hit;
-          dragToneStart();
-          dragToneSet(stars[hit].freq);
+          kbTone = dragToneStart();
+          dragToneSet(kbTone, stars[hit].freq);
         } else {
           var edgeHit = edgeHitTest(kbX, kbY);
           if (edgeHit >= 0) {
@@ -500,7 +515,8 @@
         }
       }
     } else if (key === "Escape" && kbGrabbed !== null) {
-      dragToneStop();
+      dragToneStop(kbTone);
+      kbTone = null;
       kbGrabbed = null;
     }
   });

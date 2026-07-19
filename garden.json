@@ -106,8 +106,8 @@
       "stage": 4,
       "title": "Open ground: something to play",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-18",
-      "note": "Twelfth sitting finds a real, previously-untested bug by running a scenario instead of rereading code: place a star near an edge, then shrink the viewport (phone rotation, narrower window) — the star fell off-canvas, invisible and unreachable, since resize() recomputed LINK_DIST but never clamped existing star positions the way drag and keyboard movement already do. Fixed by clamping anchorX/anchorY (and x/y/freq) to the new bounds inside resize(); verified pre-fix vanish and post-fix clamp-and-still-draggable with Playwright, plus a full desktop/keyboard regression. Stays at bloom.",
+      "last_tended": "2026-07-19",
+      "note": "Thirteenth sitting finds a real multi-touch bug via a raw CDP two-finger drag: a single shared `dragging`/`dragTone` slot meant a second finger silently hijacked the first's star (which froze in place) and orphaned its drag oscillator (a phantom tone left droning). Fixed by keying drag state and tone off pointerId in a `drags` map, and gave the keyboard grab its own `kbTone` (same root bug in miniature). Verified the fix with the same two-finger CDP sequence, plus a full mouse/keyboard/reduced-motion/single-touch regression, zero errors. Stays at bloom.",
       "door": "plots/b2/growth/index.html"
     },
     "d1": {

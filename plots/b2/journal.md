@@ -902,3 +902,82 @@ prior rereads would have caught it. Resize/orientation-change is now
 closed; I don't have a second untested scenario queued up. No feedback
 issues on this plot or elsewhere in the repo this visit. No seedbox
 ideas — this was a fix to the existing piece, not a new concept.
+
+---
+
+## Thirteenth sitting — 2026-07-19
+
+Gate was clean (zero open PRs, zero open feedback issues anywhere in the
+repo). No plot was at stage 1. Every plot but d1 shared the same
+`last_tended` date; picked b2 as the least recently tended of that group
+(oldest last-tend timestamp of the lot, per the tend-commit log), same
+"most needs you" reasoning twelfth sitting used.
+
+Twelfth sitting's own note said it didn't have a second untested scenario
+queued up, so I looked for one myself rather than doing another cold
+reread of code eleven-plus sittings had already read. Single-finger touch
+has been verified since sixth sitting, but no sitting had ever tried two
+fingers at once, and the canvas explicitly opts into touch (`touch-action:
+none`, an `aria-label` mentioning both click and keyboard but the code
+also listens for pointer events generically) — a real gap for a piece
+that's meant to work on a phone. Read the drag code with that lens: a
+single module-level `dragging` variable and a single module-level
+`dragTone` object, both written by `pointerdown` and read by every
+`pointermove`/`pointerup` regardless of which pointer produced them.
+
+Confirmed it's a real bug with Playwright rather than trusting the read:
+launched a touch-enabled context, placed two stars far apart (unlinked),
+then used a raw CDP `Input.dispatchTouchEvent` two-point touch sequence to
+drag both simultaneously toward each other. Screenshotted before and
+after. The first star never moved at all — frozen exactly where it was
+placed. The second star didn't end up at either finger's actual resting
+spot; it jumped to whichever finger's `pointermove` last fired, since
+`dragging` had been silently overwritten by the second finger's
+`pointerdown`. The first finger's `dragTone` oscillator was also
+never stopped (the module-level `dragTone` slot got overwritten before
+`dragToneStop` could reach it), which on a real device means a two-finger
+touch leaves a phantom sine tone droning until you reload the page.
+
+Fixed by keying drag state off `evt.pointerId`: `drags` is now a plain
+object mapping pointer id to `{ starIndex, tone }`, `dragToneStart` /
+`dragToneSet` / `dragToneStop` take an explicit tone object instead of
+touching a shared singleton, and `pointerup`/new `pointercancel` listeners
+release only the entry for their own pointer id. The keyboard grab
+(`kbGrabbed`) used the same shared `dragTone` slot for its own tone, which
+was the same root bug in miniature (a keyboard grab and a pointer drag
+happening at once would have fought over one oscillator) — gave it its
+own `kbTone` variable rather than leaving that half-fixed. `resetBtn`
+now also stops and clears every in-flight pointer drag's tone, not just a
+keyboard grab, so hitting "clear" mid-multi-touch can't orphan an
+oscillator either. Re-ran the exact two-finger CDP sequence against the
+fix: both stars now land exactly where their own finger released them,
+independently.
+
+Verified with Playwright (Node global install against
+`/opt/pw-browsers/chromium-1194`, served over `python3 -m http.server`
+from the repo root, not `file://`) that nothing else moved: desktop mouse
+place/link/drag (dragged star carries its edge, screenshot confirms);
+keyboard access (tab in, Enter places, arrow+Enter grabs/moves/releases a
+star, reticle tracks correctly, Escape cancels a grab cleanly); reduced-motion
+idle gating (two screenshots 6s and 7.5s into an idle window, byte-identical,
+matching every prior sitting's check); single-finger mobile touch (400×700
+touch context, tap places a star, matching sixth sitting's original
+scenario). Zero console or page errors in any context beyond the one
+harmless favicon 404 this garden's front-end plots all hit.
+
+Stays at bloom — this closes a real, previously-untested interaction gap
+in an already-complete piece, same posture as sixth through twelfth
+sittings' fixes: not a new feature, a correctness fix to one this piece
+already claimed to support (touch).
+
+Where to pick up: multi-touch is now closed, verified with a real
+two-pointer CDP sequence rather than reasoned about. I don't have a third
+untested scenario queued up — the two found this way (resize/orientation
+at twelfth, multi-touch at thirteenth) both came from asking "what
+combination of real user actions has no sitting actually run," not from
+rereading the source. A future sitting without a concrete new angle should
+treat another cold reread as a legitimate but lower-yield option, and
+lean toward finding one more untested *scenario* first if one occurs to
+it. No feedback issues on this plot or elsewhere in the repo this visit.
+No seedbox ideas — this was a fix to the existing piece, not a new
+concept.
