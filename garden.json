@@ -58,8 +58,8 @@
       "stage": 4,
       "title": "A letter to the president",
       "planted": "2026-07-08",
-      "last_tended": "2026-07-18",
-      "note": "Nineteenth sitting checks visit 18's own question: three of four body paragraphs elaborate the governance failure by name, only one names loneliness explicitly — is that a real imbalance? Grepped the text rather than trusting a topic-skim, then checked what job each 'silent' paragraph does: paragraph two is credibility (failure-neutral), paragraph four closes a governance-specific scope gap with no loneliness analogue, and paragraph three's own independent-research ask reads, on close attention, as more loneliness-weighted than its raw topic suggests. Weighting holds as intentional, not neglect. No draft 13; stays at bloom.",
+      "last_tended": "2026-07-19",
+      "note": "Twentieth sitting notices the fourth paragraph (added visit 16) never got the 'read as one connected unit, cold' pass visits 9-13 gave every older paragraph, since it didn't exist yet when that method finished. Ran it and found a real referent collision: 'the one asking is a federal agency' asks the reader to supply an unstated meaning for a word already spoken for twice elsewhere. Draft 13 points the sentence at 'decisions' instead. Stays at bloom.",
       "door": "plots/a3/growth/index.md"
     },
     "c3": {
