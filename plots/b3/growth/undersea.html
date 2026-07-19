@@ -997,7 +997,7 @@ const hint = document.getElementById('hint');
 const depthEl = document.getElementById('depth');
 const canvasEl = renderer.domElement;
 
-function requestLock() { canvasEl.requestPointerLock(); }
+function requestLock() { canvasEl.requestPointerLock(); initAudio(); }
 hint.addEventListener('click', requestLock);
 canvasEl.addEventListener('click', () => {
   if (document.pointerLockElement !== canvasEl) requestLock();
@@ -1014,6 +1014,95 @@ document.addEventListener('mousemove', (e) => {
   pitchAngle -= e.movementY * 0.0022;
   pitchAngle = Math.max(-PITCH_LIMIT, Math.min(PITCH_LIMIT, pitchAngle));
 });
+
+// ---------- ambient sound: the fifth depth-response axis ----------
+// Visits 22-25 made light, fog, current, and marine snow all answer to the
+// swimmer's own depth; sound never got touched at all — a whole sense the
+// seed's "be underwater" ask implies but nothing here has voiced yet. Built
+// procedurally (a filtered noise loop, no fetched asset) for the same reason
+// visit 1 vendored three.js instead of a CDN import: the door has to open
+// with zero network access. Started from the same click that requests
+// pointer lock, since Web Audio needs a genuine user gesture to unsuspend —
+// requestPointerLock() itself doesn't count as playing audio, so this can't
+// piggyback on it silently, it has to be its own explicit start call inside
+// the same handler.
+let audioCtx = null, ambientFilter = null;
+function initAudio() {
+  if (audioCtx) return;
+  const Ctx = window.AudioContext || window.webkitAudioContext;
+  if (!Ctx) return;
+  audioCtx = new Ctx();
+
+  // brown noise, looped: a dull, enveloping rumble rather than white noise's
+  // flat hiss — reads as "current pressing past you", not "radio static"
+  const bufSize = audioCtx.sampleRate * 2;
+  const noiseBuf = audioCtx.createBuffer(1, bufSize, audioCtx.sampleRate);
+  const data = noiseBuf.getChannelData(0);
+  let last = 0;
+  for (let i = 0; i < bufSize; i++) {
+    const white = Math.random() * 2 - 1;
+    last = (last + 0.02 * white) / 1.02;
+    data[i] = last * 3.5;
+  }
+  const noiseSrc = audioCtx.createBufferSource();
+  noiseSrc.buffer = noiseBuf;
+  noiseSrc.loop = true;
+
+  ambientFilter = audioCtx.createBiquadFilter();
+  ambientFilter.type = 'lowpass';
+  ambientFilter.frequency.value = 500;
+
+  const ambientGain = audioCtx.createGain();
+  ambientGain.gain.value = 0.05;
+
+  noiseSrc.connect(ambientFilter).connect(ambientGain).connect(audioCtx.destination);
+  noiseSrc.start();
+
+  scheduleBubble();
+}
+
+// occasional bubbles: a short rising sine chirp, irregularly spaced so they
+// never read as a metronome
+function playBubble() {
+  const dur = 0.12 + Math.random() * 0.15;
+  const now = audioCtx.currentTime;
+  const osc = audioCtx.createOscillator();
+  osc.type = 'sine';
+  const startFreq = 900 + Math.random() * 500;
+  osc.frequency.setValueAtTime(startFreq, now);
+  osc.frequency.exponentialRampToValueAtTime(startFreq * 1.8, now + dur);
+  const g = audioCtx.createGain();
+  g.gain.setValueAtTime(0.0001, now);
+  g.gain.exponentialRampToValueAtTime(0.05, now + dur * 0.3);
+  g.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+  osc.connect(g).connect(audioCtx.destination);
+  osc.start(now);
+  osc.stop(now + dur + 0.05);
+}
+function scheduleBubble() {
+  const delay = 2.5 + Math.random() * 5;
+  setTimeout(() => {
+    if (!audioCtx) return;
+    playBubble();
+    scheduleBubble();
+  }, delay * 1000);
+}
+
+// same NEUTRAL/SURFACE/ABYSS band every other depth-response function in
+// this file uses, so the ear and the eye change together, not on their own
+// separate schedules — clearer, more open near the surface (higher cutoff);
+// duller, more muffled toward the abyss (lower cutoff), same direction the
+// light and fog already move in
+function depthSoundFactor(y) {
+  const NEUTRAL_HI = 2, NEUTRAL_LO = -8, SURFACE_Y = 8, ABYSS_Y = -20;
+  if (y > NEUTRAL_HI) {
+    return 1 + Math.min(1, (y - NEUTRAL_HI) / (SURFACE_Y - NEUTRAL_HI)) * 0.8;
+  }
+  if (y < NEUTRAL_LO) {
+    return 1 - Math.min(1, (NEUTRAL_LO - y) / (NEUTRAL_LO - ABYSS_Y)) * 0.7;
+  }
+  return 1;
+}
 
 const clock = new THREE.Clock();
 const forward = new THREE.Vector3();
@@ -1072,6 +1161,11 @@ function tick() {
   scene.fog.density = FOG_BASE_DENSITY * ff.density;
   fogColor.copy(fogColorNeutral).lerp(ff.target, ff.t);
   scene.fog.color.copy(fogColor);
+
+  if (ambientFilter) {
+    const sf = depthSoundFactor(yaw.position.y);
+    ambientFilter.frequency.setTargetAtTime(500 * sf, audioCtx.currentTime, 0.3);
+  }
 
   // subtle roll into turns for a swimming, not walking, feel
   pitch.rotation.z += ((-velocity.dot(right) * 0.05) - pitch.rotation.z) * Math.min(1, dt * 4);
