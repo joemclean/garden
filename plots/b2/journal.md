@@ -981,3 +981,93 @@ lean toward finding one more untested *scenario* first if one occurs to
 it. No feedback issues on this plot or elsewhere in the repo this visit.
 No seedbox ideas — this was a fix to the existing piece, not a new
 concept.
+
+---
+
+## Fourteenth sitting — 2026-07-19
+
+Gate was clean (zero open PRs, zero open feedback issues anywhere in the
+repo). No plot was at stage 1. `garden.json`'s `last_tended` was
+date-only and unhelpful (every plot showed today already), so checked
+exact tend-commit timestamps instead: b2's own thirteenth sitting, at
+06:09 UTC, was the oldest in the most recent full round of all fifteen
+plots (the round ran b2 → b4 → b1 → c3 → a2 → d4 → a4 → c2 → a1 → b3 →
+c1 → d2 → c4 → a3 → d1, ending 15:11 UTC) — the clear "most needs you"
+pick for starting the next round.
+
+Thirteenth sitting's own note pointed at the same method that found the
+last two real bugs: pick a combination of real actions no sitting has
+actually run, rather than rereading source for the fourth-plus time.
+Twelfth sitting had fixed resize/orientation-change for *stars* (their
+anchors get clamped to the new viewport in `resize()`), but no sitting
+had ever tried resizing while the *keyboard reticle* — a completely
+separate piece of state (`kbX`/`kbY`) — was active or holding a star.
+Read `resize()` with that lens: it clamps every star's anchor but never
+touches `kbX`/`kbY` at all.
+
+Confirmed it's a real, visible bug before fixing, with Playwright: tabbed
+into the canvas at 800×600 (reticle defaults to center, 400,300), pressed
+Enter to place a star there, Enter again to grab it (reticle and star now
+exactly co-located), then shrank the viewport to 300×700 — well past the
+star's x-position. Read the live canvas pixels via `getImageData` rather
+than trusting the code: the grabbed star's white core showed up correctly
+clamped at the new edge (x=296, matching `resize()`'s own star-clamp
+formula), but zero reticle-colored pixels existed anywhere on the canvas —
+the crosshair had gone fully off-screen (still sitting at the stale
+x=400, past the new 300px-wide canvas) and stayed invisible until the
+next arrow-key press, at which point it snapped back into place. A
+keyboard user holding a star who rotates their phone or narrows the
+window mid-grab would watch their star jump to safety while the marker
+showing where their own "hand" is simply vanishes — worse than the
+pre-twelfth-sitting star bug, since here the star doesn't even disappear,
+just the indicator of who's holding it.
+
+Fixed by clamping `kbX`/`kbY` inside `resize()` itself, guarded with
+`kbX != null` (loose comparison, since `kbX` is `undefined` — not
+`null` — the very first time `resize()` runs synchronously at load,
+before its own `var kbX = null` declaration further down the file has
+executed; `!== null` would have let a stray `NaN` slip in on page load
+and permanently broken the center-on-first-focus logic, which only
+checks `kbX === null`). When something is grabbed, also resync that
+star's `x`/`y`/`anchorX`/`anchorY`/`freq` to the newly-clamped `kbX`/
+`kbY`, the same pairing the arrow-key handler already keeps — so a
+grabbed star and the reticle marking it can never independently drift
+apart after a resize, only ever move together.
+
+Verified with Playwright (Node global install against
+`/opt/pw-browsers/chromium-1194`, served over `python3 -m http.server`
+from the repo root, not `file://`), reading canvas pixels directly rather
+than screenshots where precision mattered: the exact grab-then-shrink
+scenario above now shows the reticle visible immediately after resize,
+with no keypress needed, and its pixel-center within 10px of the star's —
+co-located, not just both-somewhere-on-screen. A second scenario with
+*nothing* grabbed (reticle nudged out via ten `ArrowRight` presses, then
+the same shrink) also stays visible post-resize with no keypress, closing
+the case where a keyboard user is just navigating, not holding anything.
+Full regression alongside both: desktop mouse place/link/drag/pluck/reset
+(unaffected, no page errors); keyboard place/grab/move/release with no
+resize involved (unaffected, matching every prior sitting's description);
+reduced-motion idle frames 4.2s and 5.7s into an idle window, byte-
+identical (ninth sitting's gating untouched); mobile touch reset
+affordance at opacity 0.4 with zero interaction (sixth sitting's fix
+untouched). Zero page errors in any context.
+
+Stays at bloom — this closes a real, previously-untested interaction gap
+in an already-complete piece, the same posture as sixth through
+thirteenth sittings' fixes: not a new feature, a correctness fix to
+state (the keyboard reticle) this piece already claimed to support.
+
+Where to pick up: the resize-safety net now covers both halves of this
+piece's position state — star anchors (twelfth sitting) and the reticle
+(this sitting) — so a viewport change can no longer strand either one
+off-screen or desync them from each other. I don't have a fourth untested
+scenario queued up; the two most recent sittings both found real bugs by
+asking "what does resizing/multi-touch interact badly with," so a future
+sitting without a fresh concrete angle might try that same question
+against a dimension not yet combined with resize — e.g. does a resize
+mid-drag (pointer, not keyboard) behave correctly, since `pointermove`
+already clamps to current `W`/`H` on every move but was never tested
+*during* an active resize event specifically. Otherwise, a cold reread
+remains the honest fallback. No feedback issues on this plot or elsewhere
+in the repo this visit. No seedbox ideas — this was a fix to the existing
+piece, not a new concept.
