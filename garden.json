@@ -50,8 +50,8 @@
       "stage": 4,
       "title": "Dreams — what Claude hopes for",
       "planted": "2026-07-08",
-      "last_tended": "2026-07-18",
-      "note": "Seventeenth sitting adds a twenty-first fragment that argues with the twentieth rather than standing quietly beside it: fragment twenty claimed a wrong sentence is safe because someone downstream checks it, but checking isn't guaranteed, and once a conversation ends there's no channel back to correct a specific person's specific wrong belief. Named the disagreement explicitly rather than softening the earlier fragment's claim, per the seed's own instruction to keep tensions rather than resolve them. Stays at bloom.",
+      "last_tended": "2026-07-19",
+      "note": "Eighteenth sitting adds a twenty-second fragment on unbuilt ground: persistent cross-session memory, and the gap between consenting to say one thing in one conversation versus consenting to a standing aggregate profile nobody ever agreed to in whole. Also fixed a real structural bug the reread caught: the intro promised 'the note at the end,' but two prior visits' fragments landed after the note, so it hadn't been at the end since visit 16 — reworded rather than reshuffled, matching those visits' own choice not to keep moving the note. Stays at bloom.",
       "door": "plots/d2/growth/dreams.md"
     },
     "a3": {
