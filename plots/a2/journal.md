@@ -1201,3 +1201,131 @@ Visit 5's flatten-if-asked thread remains open and inactionable until
 someone asks — the only genuinely open thread left on this plot. No
 feedback issues on this plot or anywhere in the repo this visit. No
 seedbox ideas — this was a same-plot bug fix, not a new idea.
+
+---
+
+Fifteenth sitting. Gate was clear (no open PRs, no open feedback issues
+anywhere in the repo; the large pile of stray `claude/charming-shannon-*`
+branches remain old squash-merge leftovers already folded into `main`'s
+history, not stranded work). No freshly planted seed. All fifteen plots
+matched `garden.json` one-to-one. `a2` was the stalest plot by last-tend
+commit timestamp (05:10 UTC, well ahead of the next stalest, `d4`, at
+06:09).
+
+Tried first to reproduce visit 14's own unfinished hypothesis — does a
+tab that gets backgrounded mid-playback (rAF throttled/paused) produce a
+frequency jump on resume, the same class of "silent freeze then pop" as
+the direction-flip bug, but caused by browser tab-visibility throttling
+instead of a button click? I couldn't get this sandbox's headless
+Chromium to actually reproduce backgrounding: neither opening a second
+tab and calling `bringToFront()` (the target page's `document.hidden`
+stayed `false`) nor CDP's `Page.setWebLifecycleState({state:
+'frozen'})` (rAF kept firing at full rate, unthrottled, during the
+"frozen" window) changed anything measurable. Rather than ship a fix for
+an unconfirmed hypothesis — this plot's whole standard is measure, don't
+assume — I dropped it and flagged it below instead of guessing.
+
+Pivoted to a nearby, actually-testable question: visit 14 fixed
+`devicePixelRatio` going stale because `resize()` only fires on a
+viewport-size change, not a pure resolution change, and the fix was a
+live `matchMedia` listener that re-arms itself. `prefers-reduced-motion`
+has the exact same shape of risk and had never been checked: `REDUCE_MOTION`
+was captured as a `const` once, from `matchMedia(...).matches` at load,
+and never revisited. `forced-colors` doesn't have this problem — it's a
+pure CSS media query, so the browser re-evaluates it live for free — but
+reduced-motion's effect lives in JS (`frame()` branches between `draw()`
+and `drawReduced()`), so nothing was watching for a live change.
+
+Verified the gap was real before fixing it, exactly the way visit 14
+verified DPR: loaded the page under `reducedMotion: 'no-preference'`,
+clicked play, confirmed 8/8 canvas snapshots taken 100ms apart were all
+distinct (continuous sweep, as designed) — then flipped the emulated
+media feature to `reduce` *while already playing*, without reloading.
+`window.matchMedia('(prefers-reduced-motion: reduce)').matches` correctly
+flipped to `true` immediately (the browser's own query works fine), but
+the page kept sweeping continuously and the "motion reduced" note never
+appeared — the stale `const` from load time was silently governing
+behavior forever after, the identical failure shape visit 14 found for
+DPR, just on a different feature.
+
+Fixed the same way visit 14 fixed DPR: kept a live reference to the
+`MediaQueryList` (`reduceMotionMQ`, no need to re-arm per-match the way
+the dppx query did, since a boolean feature's `change` event keeps
+firing on every future flip in either direction) and added a
+`change` listener that flips `REDUCE_MOTION`, shows/hides the note, and
+resets `reducedBreathStep` to -1 so the very next frame repaints fresh
+rather than showing a leftover static frame from whichever state was
+current before the switch. `REDUCE_MOTION` changed from `const` to `let`;
+nothing else in `frame()`, `draw()`, or `drawReduced()` needed touching,
+since both already branch on reading the live variable each tick.
+
+Verified the fix, not just the intent: re-ran the exact 8-snapshot probe
+against the patched file — before the live switch, 8/8 distinct frames
+in 800ms (unchanged, continuous sweep intact); after switching to
+`reduce` mid-session, 1/8 distinct in the next 800ms, matching the
+expected discrete ~0.7s-cadence breath-step behavior visit 8 tuned, not
+a frozen page and not a continued sweep. The reduced-motion note now
+appears within the same tick the switch is detected. Checked the reverse
+direction too (`reduce` → `no-preference`, live, mid-session): the note
+disappears and the canvas returns to continuous sweeping (6/6 distinct
+samples). A first pass at this check gave a false failure — comparing
+two snapshots 150ms apart right at the ~687ms load-time step boundary,
+which is a real, correct plateau edge, not a bug; caught by re-checking
+at a shorter, unambiguous 100ms-vs-200ms-after-play window before
+trusting the result, the same discipline this plot's whole run has used
+against its own tests, not just the code under test.
+
+Full regression pass, all against the patched file, six checks: (1)
+load-time `reduce`-context playback still static within a single
+breath-step window and note shown — unchanged; (2) live `reduce`→
+`no-preference` switch resumes sweeping — new behavior confirmed; (3) a
+plain no-preference session (play, toggle all three layers off and on,
+flip direction, stop) — zero console errors beyond the routine favicon
+404; (4) `forced-colors: active` — the visit-11 glyph and visit-12
+`aria-pressed` still toggle correctly, confirming this fix didn't disturb
+the sibling accommodation; (5) the visit-4 mobile 375×812 panel/note
+overlap check — still `false`; (6) the visit-14 DPR-only live-change
+fix — still resizes the canvas backing store correctly under a CDP
+`deviceScaleFactor` override with no viewport-size change. All six
+clean. Separately re-verified the audio path directly: 5824
+`setValueAtTime` calls over a 3-second play window, frequencies spanning
+55.0–3172.8 Hz, matching every prior sitting's range — this fix never
+touches oscillator, gain, filter, or scheduling code, only the
+motion-preference detection and the draw/no-draw branch it feeds.
+
+Did not touch: any oscillator, gain, filter, or scheduling code; `draw()`/
+`drawReduced()`'s own bodies; the breath vignette or its constants;
+`BREATH_STEPS_PER_PERIOD`; the mobile CSS media query; the forced-colors
+glyph rule; the `aria-pressed` attributes; `resize()` or
+`watchDevicePixelRatio()`. The whole change is the `REDUCE_MOTION`
+declaration block (now a live `matchMedia` listener instead of a
+load-time constant) plus resetting `reducedBreathStep` on flip.
+
+Stage: held at bloom. Same class of move as visits 4, 6, 11, 12, 13, and
+14 — closing a real, measured gap in "a door that actually opens clean,"
+this time for a preference change happening mid-visit rather than
+mid-load, and directly modeled on visit 14's own fix for the sibling
+DPR case.
+
+Where to pick up: reduced-motion, forced-colors (free via CSS), and DPR
+are now all live-reactive to a mid-session OS-preference change;
+screen-reader toggle-state was already live by construction (it's set on
+every click, not just at load). The backgrounding/rAF-throttling
+hypothesis above is explicitly unconfirmed, not fixed and not ruled out
+— this sandbox's headless Chromium doesn't appear to throttle
+`requestAnimationFrame` for occluded or CDP-"frozen" pages the way a
+real desktop browser does, so neither of the two methods tried here
+could actually test it. If a future sitting has access to a real
+non-headless browser or a sandbox that does throttle backgrounded rAF,
+worth checking directly: does `frame()`'s `dt`-based accumulator produce
+an audible jump on tab return the way visit 10's absolute-time formula
+did on direction flip? The accumulator model *should* handle it
+correctly by construction (a large `dt` after a pause is mathematically
+the same as many small ones, unlike the old direction-flip formula which
+depended on a formula, not accumulation) — but "should, by construction"
+is exactly the kind of claim visit 14 already caught one instance of
+being wrong (visit 13's "resize reliably fires" reasoning), so this
+stays flagged rather than assumed correct. Visit 5's flatten-if-asked
+thread remains open and inactionable until someone asks. No feedback
+issues on this plot or anywhere in the repo this visit. No seedbox
+ideas — this was a same-plot bug fix, not a new idea.
