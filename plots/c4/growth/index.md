@@ -1,6 +1,6 @@
 # The Unwritten Shelf
 
-*six reviews, two letters, one obituary, two essays, and one transcript*
+*six reviews, two letters, one obituary, two essays, one transcript, and one footnote*
 
 ---
 
@@ -703,6 +703,44 @@ the sentence.
 moment both sides at last agreed the matter was closed." He is not
 wrong. He is also the only person who ever read this transcript and
 still believed that.*
+
+---
+
+## A Footnote: Number Four Hundred and Twelve
+### found among Edvard Kalm's papers after his death, folded into his own copy of *Marginal: A Life in Notes*; unpublished, keyed to no paragraph; printed here for the first time
+
+412. On footnote 244, since apparently I have to write this down
+somewhere for it to stop being a question I ask myself and no one
+else: I did not forget why I was so certain the text was right and my
+own thirty years of retelling were wrong. I would like that corrected
+before anyone finds this drawer. I remember exactly why I was
+certain, at the writing of it, that the missing paragraph had my
+father's hands right and every footnote before 244 had them wrong — I
+was certain because a photograph existed, and I had looked at it an
+hour before writing footnote 244, and I did not tell you that, then or
+in the four hundred and eleven footnotes I let stand around it. "I no
+longer remember why I was so certain" was the truer-sounding sentence.
+It was not the true one. The true one is that I checked, and chose not
+to say so, and let a footnote about forgetting do the work of a
+footnote about a photograph I didn't want anyone asking to see.
+
+I am not troubled that the book will never carry this — Thresh House
+folded the year my editor did, and there will be no printing to add it
+to, which is its own kind of permission. I am troubled that I let a
+whole memoir be published on the premise that its narrator's only sin
+was an unreliable memory, when at least once, on the point I chose to
+single out and quote back to myself in a book about four hundred pages
+of self-argument, the sin was a great deal plainer than that. A man
+who checks a photograph and then writes "I no longer remember" has not
+forgotten anything. He has decided which failure is easier to be
+forgiven for, and mine was always going to be the honest-sounding one
+instead of the honest one.
+
+— E.K.
+
+*No date. His executors could not determine when it was written, only
+that it was read at least once: the fold in the paper had been opened
+and closed enough times to soften along the crease.*
 
 ---
 

@@ -122,8 +122,8 @@
       "stage": 4,
       "title": "Open ground: something to read",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-18",
-      "note": "Thirteenth sitting adds a sixth standing check (claims against an established rule, not just against dates) and catches a real cross-document contradiction it was built to find: the Lexicon obituary illustrated its 'Ines secretly wrote everything from letter S onward' reveal with the entry for 'forgive' — the same entry the first review already called genuinely co-written, and forgive (F) falls before the stated R cutoff. Fixed by swapping the obituary's illustrative entry to 'settle' (past the cutoff, same ledger theme), leaving the mechanism and the review's original entry untouched.",
+      "last_tended": "2026-07-19",
+      "note": "Fourteenth sitting finds a real, never-before-flagged gap: two of the shelf's six original reviews had gone thirteen visits without a single companion piece. Gave Kalm's footnote memoir its first — 'A Footnote: Number Four Hundred and Twelve,' found among his papers after death, answering footnote 244's quoted 'I no longer remember why I was so certain it was lying' with a harder truth (he checked a photograph and chose silence, not memory loss). Sixth register now (review, obituary, essay, letter, transcript, footnote), thirteen pieces. Left the cookbook review's gap alone — no comparable hook offered itself.",
       "door": "plots/c4/growth/index.md"
     }
   }
