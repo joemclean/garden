@@ -115,7 +115,7 @@
       "title": "Open ground: something that moves",
       "planted": "2026-07-10",
       "last_tended": "2026-07-19",
-      "note": "Thirteenth tend checks two dimensions no prior sitting had actually tested: real keyboard interaction (fine — native buttons, no outline suppression, keyboard Enter creates the lazy AudioContext same as a click) and what a screen reader hears from the 'now playing' ribbon (not fine — opacity:0 doesn't remove text from the accessibility tree, so a CDP AX snapshot showed all three posters announcing 'now playing' every load, not just the featured one). Fixed by toggling aria-hidden on each ribbon alongside the existing .featured class toggle. Verified across 5 fresh loads, 4 reshuffle cycles, the single-reel and full ~142s anthology playback paths, zero errors, screenshot pixel-identical. Stays at bloom.",
+      "note": "Fourteenth tend follows a keyboard user past the menu for the first time and finds a real bug: pointer-events:none only blocks the mouse, so the invisible 'choose another reel' link was still Tab-reachable and Enter-activatable before its reel even finished, snapping back to the menu early. Fixed by toggling tabIndex between -1 and 0 at the same call sites that already toggle the .visible class. Verified with Playwright: the premature path is now blocked, the normal armed path still works, and a fresh load starts correctly gated. Zero errors, screenshots pixel-consistent. Stays at bloom.",
       "door": "plots/d1/growth/index.html"
     },
     "c4": {

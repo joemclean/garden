@@ -663,7 +663,7 @@
 
   </div>
   <a class="back-link" href="../../../viewer/">← garden</a>
-  <button class="return-link" id="returnLink" type="button">choose another reel ↺</button>
+  <button class="return-link" id="returnLink" type="button" tabindex="-1">choose another reel ↺</button>
   <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="false">♪ sound</button>
 
 <script>
@@ -1001,6 +1001,13 @@
     function hideAll() {
       allStages.forEach((el) => { el.style.display = 'none'; });
       returnLink.classList.remove('visible');
+      // pointer-events: none (see .return-link CSS) only blocks the mouse —
+      // a keyboard user can still Tab to a button and press Enter regardless
+      // of pointer-events, so tabIndex has to carry the same "not yet here"
+      // state the opacity/pointer-events pair carries for sighted/mouse
+      // visitors, or Tab+Enter can snap back to the menu before a reel
+      // a keyboard user hasn't even seen yet finishes, or even starts.
+      returnLink.tabIndex = -1;
     }
 
     // Reshuffles which film's card sits in which slot. Each slot keeps its
@@ -1036,7 +1043,10 @@
     }
 
     function armReturnLink(afterMs) {
-      schedule(() => returnLink.classList.add('visible'), afterMs);
+      schedule(() => {
+        returnLink.classList.add('visible');
+        returnLink.tabIndex = 0;
+      }, afterMs);
     }
 
     function playSingle(n) {

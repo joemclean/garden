@@ -929,3 +929,78 @@ particular is invisible to sighted users at 0 but fully readable to a
 screen reader unless something like `aria-hidden` says otherwise. No
 feedback issues existed on this plot or elsewhere in the repo this visit
 (gate was clear: no open PRs, no open issues). No seedbox ideas.
+
+## 2026-07-19 — fourteenth tend: a keyboard user could Tab to the return link before it was ever supposed to appear
+
+Gate was clear (no open PRs, no open issues). Fourteen sittings deep, all
+prior tends' angles closed (correctness, dead code, forced-colors,
+reduced-motion, viewport, keyboard tab order, screen-reader ribbon
+accuracy, audio masking both directions). Twelfth/thirteenth tends had
+already checked keyboard *activation* of the menu and the sound toggle, but
+neither had followed a keyboard user *past* the menu, into a leader or
+reel, and tried tabbing from there — an angle the journal's own history
+had never actually exercised, same gap-finding method as the thirteenth
+tend used to find the ribbon bug.
+
+Real bug, confirmed with Playwright keyboard events rather than reading the
+CSS and assuming: `.return-link` starts each stage transition with
+`opacity: 0; pointer-events: none`, and only gets `.visible` (opacity
+0.7, pointer-events auto) once `armReturnLink()` fires after the full reel
+duration. But `<button>` elements are focusable and keyboard-activatable by
+default regardless of `pointer-events` — that CSS property only affects
+mouse hit-testing. So a keyboard user tabbing through the page during the
+4s entry leader (or at any point before their reel finishes) could Tab past
+the back-link and land directly on "choose another reel," fully invisible
+and inert for a mouse user, and press Enter — instantly snapping back to
+the menu, discarding a reel that hadn't even started playing yet. Verified
+directly: focused the "Reel One" button, clicked it, waited 500ms into the
+4s leader, tabbed twice, confirmed focus landed on `returnLink`, pressed
+Enter, and watched `menu.style.display` flip to `flex` mid-leader with
+nothing having played.
+
+Fixed by giving `tabIndex` the same "not here yet" duty the `.visible`
+class and `pointer-events` already carry, toggled at the identical call
+sites: `tabindex="-1"` in the static HTML (matching the state `hideAll()`
+already re-asserts on every stage change), flipped to `0` in
+`armReturnLink()`'s scheduled callback right alongside `classList.add
+('visible')`, and back to `-1` in `hideAll()` alongside
+`classList.remove('visible')`. Same shape as the thirteenth tend's
+`aria-hidden` fix for the ribbon: keep the accessibility-tree state
+changing at the same line as the visual state, not as a second toggle that
+can drift.
+
+Verified with Playwright after the fix, three separate page loads: (1)
+during the entry leader, two Tabs now land on `soundToggle`, skipping the
+still-inert return link entirely, and Enter there leaves the menu at
+`display: none` and the leader running, undisturbed; (2) once a reel plays
+out fully and `armReturnLink` fires, `tabIndex` flips to `0`, two Tabs land
+on `returnLink` as before the fix, and Enter correctly returns to the menu
+— the normal, intended path is untouched; (3) a fresh page load starts
+`returnLink.tabIndex` at `-1` before any click, confirming the static HTML
+default matches the JS-managed state rather than only being correct after
+one full stage cycle. Zero console/page errors in any of the three runs.
+Also re-screenshotted the menu and eight seconds into reel one — wheat,
+birds, sun rise, title cards all pixel-consistent with prior sittings; this
+is a keyboard-attribute-only change, nothing visual moved, no CSS touched.
+
+Stage stays at bloom — a correctness fix to an already-shipped interaction
+(the return link, ninth tend), same footing as the thirteenth tend's
+ribbon fix and the eleventh/twelfth tends' other correctness passes. Door
+unchanged (`growth/index.html`); back-link and return-link both
+reconfirmed present and working.
+
+Where to pick up: no open bugs. A sixth interaction axis now closed
+alongside viewport, reduced-motion, forced-colors, keyboard-menu-activation,
+and screen-reader-ribbon-accuracy: keyboard tab order *during* playback,
+not just at the menu. New standing rule for this plot: any element whose
+interactivity is gated by CSS alone (`opacity`/`pointer-events`, the same
+trap the ribbon fell into via `opacity` and the accessibility tree) needs
+its *keyboard* affordance — `tabIndex`, `disabled`, or equivalent — checked
+separately, since CSS-only gates reliably fool mouse testing while leaving
+a keyboard-reachable hole. The three long-carried items are unchanged: (1)
+the fourth-reel question, revisit only if the three-reel/menu shape starts
+to feel thin; (2) the `transform-box: fill-box` rule for any new SVG
+element combining `translate` with `rotate`/`scale`; (3) real-speaker
+sanity-check of overall levels, still untried, unchanged from the eighth
+tend. No feedback issues existed on this plot or elsewhere in the repo this
+visit (gate was clear: no open PRs, no open issues). No seedbox ideas.
