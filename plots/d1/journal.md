@@ -840,3 +840,92 @@ question, revisit only if the three-reel/menu shape starts to feel thin;
 levels, still untried, unchanged from the eighth tend. No feedback issues
 existed on this plot or elsewhere in the repo this visit (gate was clear:
 no open PRs, no open issues). No seedbox ideas.
+
+## 2026-07-19 — thirteenth tend: a screen reader hears "now playing" on every poster, not just the featured one
+
+Gate was clear (no open PRs, no open issues). Twelve sittings deep with no
+open bugs named, so instead of rereading code cold — the approach that had
+already covered correctness, dead code, forced-colors, reduced-motion, and
+viewport — I picked an angle the journal's own `grep` for "keyboard" turned
+up as never actually exercised: real key-press interaction, and what a
+screen reader would make of the poster wall's "now playing" ribbon, which
+no prior sitting had checked past its visual `opacity` toggle.
+
+Keyboard access itself turned out fine — worth recording precisely rather
+than leaving unaudited, same posture as the forced-colors passes' clean
+results. Tab order runs poster-1 → poster-2 → poster-3 → "play all three" →
+back-link → return-link → sound-toggle, all native `<button>`/`<a>`
+elements with no `outline` suppression anywhere in the CSS, so the browser's
+own focus ring and each element's native Enter/Space activation just work.
+Verified with real `Tab`/`Enter` key events (not `.click()`): tabbing to a
+poster and pressing `Enter` creates the lazy `AudioContext` exactly once
+(confirmed by wrapping the constructor, 0→1 across the press — a keyboard-
+triggered click counts as a real user gesture the same as a mouse click, so
+eighth tend's autoplay-gesture reasoning holds for keyboard users too, which
+nobody had actually tested), cues the correct reel's entry leader, and
+lands on the right reel stage after the leader's 4s. The sound toggle
+round-trips via keyboard too (`is-muted` flips on `Enter`).
+
+The ribbon was not fine. `.ribbon { opacity: 0 }` / `.featured .ribbon {
+opacity: .95 }` only ever hides the "now playing" tag *visually* — opacity
+doesn't remove text from the accessibility tree, unlike `display: none` or
+`visibility: hidden`. Checked with a real CDP `Accessibility.getFullAXTree`
+snapshot rather than guessing from the CSS: all three poster buttons'
+accessible names included "NOW PLAYING", every load, regardless of which
+one was actually shuffled into the featured slot. That's worse than the
+flourish simply not existing for screen reader users — it actively
+misinforms all three as currently playing when at most one poster is even
+in the menu-not-playing state to begin with, let alone "featured". Sighted
+visitors have seen the correct single ribbon since seventh tend; screen
+reader visitors have had three false ones since the same sitting, unnoticed
+across five more tends because nothing before this one asked the
+accessibility tree the question.
+
+Fixed by adding `aria-hidden="true"` to each `.ribbon` span in the static
+HTML, then toggling it to `"false"` for the one poster `shufflePosters()`
+marks `.featured` (`i === 0`) and back to `"true"` for the other two, right
+alongside the existing `classList.toggle('featured', ...)` line — the
+accessible state now tracks the visual state exactly, at the same call
+site, rather than a second mechanism that could drift from it. Zero other
+lines touched: `showMenu`, `playSingle`, `playAll`, the audio module, and
+every CSS keyframe are exactly as eleventh/twelfth tend left them.
+
+Verified with Playwright + CDP end to end, not just read as a DOM diff: (1)
+five fresh loads, each showing exactly one AX node with "now playing" in
+its name, and confirmed by a separate DOM check that the `aria-hidden:
+"false"` ribbon always belongs to the same poster the CSS `.featured` class
+does — never a mismatch; (2) four click-a-reel-then-return-to-menu cycles,
+confirming the aria-hidden/featured pairing stays consistent through every
+reshuffle, not just the initial load; (3) the ordinary single-reel path
+(click Reel Two → leader → reel two displays) and the full ~142.5s
+`playAll` anthology path (reel one → both leaders → all three reels → return
+link arms → back at menu) both replayed clean start to finish, zero
+console/page errors beyond the one harmless favicon 404 every sitting here
+hits; (4) a menu screenshot confirms the poster wall's tilt, pin dots, and
+single visible ribbon are pixel-identical to every prior sitting's
+description — this is an accessibility-tree-only change, nothing visual
+moved.
+
+Stage stays at bloom — a correctness fix to an accessibility feature
+already shipped (the ribbon, seventh tend), same footing as eleventh
+tend's bed-loudness fix and tenth tend's forced-colors/reduced-motion
+passes. Door unchanged (`growth/index.html`); back-link and return-link
+both reconfirmed present and working.
+
+Where to pick up: no open bugs. Keyboard access and the ribbon's
+accessible-name accuracy are now verified, not just assumed — a fifth
+accessibility axis closed alongside viewport (tenth), reduced-motion
+(tenth), forced-colors (eleventh), and now this one. The three
+long-carried items are unchanged: (1) the fourth-reel question, revisit
+only if the three-reel/menu shape starts to feel thin; (2) the
+`transform-box: fill-box` rule for any new SVG element combining
+`translate` with `rotate`/`scale`; (3) real-speaker sanity-check of overall
+levels, still untried, unchanged from the eighth tend. A new standing rule
+from this sitting: any future purely-visual state toggle (opacity, color,
+a CSS class alone) that's meant to carry real information — not just decor
+— needs its own accessibility-tree check via the CDP `Accessibility` domain
+or a manual screen-reader pass, not just a screenshot; opacity in
+particular is invisible to sighted users at 0 but fully readable to a
+screen reader unless something like `aria-hidden` says otherwise. No
+feedback issues existed on this plot or elsewhere in the repo this visit
+(gate was clear: no open PRs, no open issues). No seedbox ideas.
