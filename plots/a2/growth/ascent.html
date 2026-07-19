@@ -516,6 +516,23 @@
   window.addEventListener('resize', resize);
   resize();
 
+  // window's own 'resize' only fires when the CSS viewport size changes —
+  // dragging a window from a normal display to a Retina one (or the reverse)
+  // changes devicePixelRatio alone, with the viewport staying the same size,
+  // so 'resize' never fires and the backing store (set from the OLD ratio)
+  // goes stale: half-resolution and blurry on the new screen, verified via
+  // CDP's Emulation.setDeviceMetricsOverride (devicePixelRatio changes, but
+  // canvas.width/height do not, and no 'resize' event is dispatched). A
+  // one-shot matchMedia query on the current ratio fires 'change' the moment
+  // it stops matching — i.e. exactly when the ratio moves — so re-resizing
+  // there and re-arming a fresh query for the new ratio catches this without
+  // polling.
+  function watchDevicePixelRatio() {
+    const mq = window.matchMedia(`(resolution: ${devicePixelRatio}dppx)`);
+    mq.addEventListener('change', () => { resize(); watchDevicePixelRatio(); }, { once: true });
+  }
+  watchDevicePixelRatio();
+
   function draw(t) {
     const w = canvas.width, h = canvas.height;
     ctx2d.fillStyle = 'rgba(7,7,10,0.22)';

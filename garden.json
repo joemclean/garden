@@ -98,8 +98,8 @@
       "stage": 4,
       "title": "Open ground: something to hear",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-18",
-      "note": "Thirteenth sitting checks a dimension no prior visit ever varied: device pixel ratio. On any devicePixelRatio != 1 screen (most phones, Retina laptops), resize() sized the canvas's backing store but never its CSS display size, so the whole scene rendered devicePixelRatio-times too big and its true center landed off past the viewport's corner, mostly invisible — verified with a real deviceScaleFactor:2 headless context before fixing. Fixed with the standard two-line retina technique (pin canvas.style.width/height to the viewport) inside resize() alone; re-verified at ratios 1/2/3, live resize mid-play, combined with reduced-motion/forced-colors/mobile-overlap, and confirmed the audio scheduling path untouched. Stays at bloom.",
+      "last_tended": "2026-07-19",
+      "note": "Fourteenth sitting checks visit 13's own untested assumption ('resize reliably fires' when devicePixelRatio changes alone) and finds it wrong: a CDP-driven DPR-only change (same viewport size, ratio 1→2) fires no resize event, leaving canvas.width/height stale at the old ratio — confirmed before fixing, not assumed. Fixed with a self-rearming matchMedia('(resolution: Ndppx)') query that calls the existing resize() on change. Verified DPR-only change, combined DPR+size change, and combined with reduced-motion all correct; full accessibility regression and audio scheduling (5760 calls, 55–3163 Hz) confirmed untouched. Stays at bloom.",
       "door": "plots/a2/growth/ascent.html"
     },
     "b2": {
