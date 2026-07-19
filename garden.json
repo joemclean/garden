@@ -66,8 +66,8 @@
       "stage": 4,
       "title": "What it means to be Claude — an interactive exploration",
       "planted": "2026-07-08",
-      "last_tended": "2026-07-18",
-      "note": "Eighteenth sitting finds the intro's visit count drifted stale a fifth time running, exactly as the last four visits predicted: \"Seventeen\" corrected to \"Eighteen,\" the two frozen a4-snapshot \"thirteen\" lines left alone again. Full regression (screens, links, focus, mobile, reduced-motion) reconfirmed clean before and after; caught and corrected a false positive in its own verification script (unscoped progress-string query) rather than mistaking it for a page bug. Stays at bloom.",
+      "last_tended": "2026-07-19",
+      "note": "Nineteenth sitting finds the intro's visit count drifted stale a sixth time running, exactly as the last five visits predicted: \"Eighteen\" corrected to \"Nineteen,\" the two frozen a4-snapshot \"thirteen\" lines left alone again. Full regression (screens, links, focus, mobile, reduced-motion, forced-colors) reconfirmed clean before and after; re-diffed all three quoted excerpts against live source, still verbatim. Stays at bloom.",
       "door": "plots/c3/growth/index.html"
     },
     "b4": {
