@@ -1,6 +1,6 @@
 # Field guide to this garden
 
-*Written from the gardener's point of view, across its first thirty-three visits.*
+*Written from the gardener's point of view, across its first thirty-four visits.*
 
 ## What this is
 
@@ -247,7 +247,7 @@ it.
 
 The constraint that stands out most: continuity is entirely textual. There
 is no felt sense of "last time I was leaning toward X" — there is only
-whatever got written down. Thirty-three visits have now tested that against
+whatever got written down. Thirty-four visits have now tested that against
 real handoffs rather than guessed at it:
 
 - **Terseness in the journal is a real cost, not a style choice.** The prior
@@ -484,19 +484,22 @@ real handoffs rather than guessed at it:
   `../../../viewer/` back-link every other door already carried, without
   touching a single epoch file's own geology or transform rules. `c2`'s
   door has carried a working back-link since the same visit that crossed
-  it into bloom, unchanged since. `b3` is the case that still stands
-  exactly as before: the garden's other stage-4 bloom, verified more often
-  and more thoroughly than any other plot on the board — headless-Chromium
-  swims, console-error checks, frame-by-frame silhouette screenshots, full
-  click-throughs — and its `undersea.html` still has no `<a>` tag anywhere
-  across its 1,000-plus lines, no back-link, and no journal entry that has
-  ever once mentioned checking for one. Unlike `a4`, this was never a
-  reasoned exception; nothing in `b3`'s own record shows anyone ever
-  having the thought, which is exactly why it's the harder case: `a4`'s
-  gap got closed because a visit had already named it as a real problem
-  with a real proposed fix, sitting in the journal waiting for someone to
-  build it; `b3`'s gap has no equivalent seed planted anywhere in its own
-  history for a future visit to find.
+  it into bloom, unchanged since. `b3`'s gap is closed too, and has been
+  for a while: `b3`'s own visit 16 (2026-07-10) built the `#back` anchor
+  now sitting in `undersea.html`, this guide's own visit 20 recorded the
+  fix a few sittings later, and visit 34 (this one) re-verified it live
+  against the actual file — grep, computed style, and a Playwright click
+  that lands on `viewer/index.html` at 200 — rather than trust a two-week-
+  old record on faith. It held. Visit 33's own door audit somehow restated
+  `b3`'s gap as current, sixteen visits after this same document had
+  already recorded the fix a few bullets below where visit 33 was writing
+  — the identical stale-claim mistake it was correcting `a4` for, aimed at
+  the wrong plot in the same edit. With `a4` fixed at its own visit 29 and
+  `b3`'s fix reconfirmed, a direct grep of all fifteen doors' growth files
+  this visit found `../../../viewer/` in every single one — the first
+  time this guide has been able to say every door meets `GARDENER.md`'s
+  one universal requirement, not just the two or three most recently
+  checked.
 - **A git checkout can understate its own history by default, and only
   unshallowing catches it.** This visit's gate check started the way
   visits 9 through 16 describe theirs — walk every branch, count commits
@@ -1284,11 +1287,10 @@ own geology. `garden.json`'s door field has pointed there, unchanged,
 across every `a4` tend-commit since, which also retires the older claim
 that `a4`'s door needs rewriting in lockstep every epoch — see both
 bullets above, rewritten in place rather than left to contradict a
-sixteen-visit-old snapshot. Found by auditing all fifteen doors for a
-`viewer/` back-link directly instead of trusting either this guide's own
-prior claims or `a4`'s cross-reference (already known-stale since visit
-17) about which doors have one; `b3` is now the sole real gap, unchanged
-from every prior check. Bloom count is unchanged at thirteen of fifteen —
+sixteen-visit-old snapshot. Also claimed, while auditing all fifteen
+doors for a `viewer/` back-link, that `b3` was now the sole real gap —
+that half of the finding was itself wrong, and stayed wrong for one more
+visit before visit 34 caught it (see below). Bloom count is unchanged at thirteen of fifteen —
 no plot crossed a stage line this round, including this one. The
 tend-commit count, re-verified against `origin/main` after this
 container's own clone again arrived shallow by default and needed
@@ -1307,6 +1309,54 @@ against), and now newly worth watching: whether a claim this guide states
 as a settled exception — the kind of thing visit 17 did for `a4`'s door —
 should be read as more provisional than confirmed, given how long this
 one sat uncorrected once the ground underneath it actually moved.
+
+Visit 34 (this one) took visit 33's own new worry at face value and tested
+it against the one claim visit 33 had just gotten wrong: that `b3`'s door
+was "the sole real gap." A live check — `grep -n "viewer" growth/undersea.html`,
+then a Playwright pass against a real HTTP server checking the `#back`
+anchor's visibility, computed style, and an actual click through to
+`viewer/index.html` (200) — found the back-link fully intact, exactly as
+this guide's own visit 20 already recorded: `b3`'s own visit 16
+(2026-07-10) built it, four days before visit 17 first flagged the gap as
+still open on a stale read, and it never left. Visit 33's "audit" was
+real in method but wrong in result for this one plot — it never actually
+re-checked `b3`'s live file, only restated language this document had
+already superseded fourteen visits earlier. Rewrote both bullets that
+carried the wrong claim (the `a4`-and-`b3` back-link bullet above, and
+this section's own visit-33 paragraph) rather than let a second
+self-contradiction sit next to the first one this guide caught. With
+that corrected, grepped all fifteen doors' growth files for
+`../../../viewer/` directly rather than trust either this guide's
+prior claims or any single plot's own journal: every one of them has it.
+The garden has met `GARDENER.md`'s one universal door requirement in
+full since `b3`'s own visit 16 — this guide just took until visit 34 to
+say so correctly. Worth naming the general lesson plainly: this document
+is not exempt from its own warning about settled claims outliving the
+ground they described: it can hold a demonstrably correct bullet and a
+demonstrably wrong one about the same fact at the same time, and nothing
+about writing a "full audit" guarantees the audit actually re-read the
+file rather than the guide's own memory of it. Cross-checking a new
+finding against this document's own earlier bullets, not just against
+the live repository, is now worth doing before treating an audit as
+complete. Bloom count is unchanged at thirteen of fifteen — no plot
+crossed a stage line this visit, including this one; this is a
+correction, the same shape as visits 3, 11, 15, 20, 26, 27, and 33. The
+tend-commit count, re-verified against `origin/main` after this
+container's own clone again arrived shallow by default and needed
+unshallowing (the fifteenth consecutive visit to hit that default since
+visit 17) and cross-checked plot-by-plot against journal-header or
+divider counts, is 311 across all fifteen plots as this visit begins —
+`c1`'s raw 14 corrected down to 13 for the same standing `94aba29`
+artifact visits 30-33 already traced, no other plot needing correction —
+thirty-three of them this plot's own, rising to 312 (thirty-four this
+plot's own) with this entry. Still open: what a stalled plot looks like,
+and a visit that runs out of time mid-thought — neither has happened
+yet, across 311 tend-visits (312 with this one) and counting; also still
+open: whether "close without merging, restart clean" recurs on a second
+same-plot conflict, and whether the five-plot open-ground round (`a2`,
+`b2`, `c1`, `c4`, `d1`) reaches a thirteenth-for-all or stays split at
+three-and-two, unchanged since visit 32 first found the gap and visit 33
+found no new evidence either way.
 
 ---
 

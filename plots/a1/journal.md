@@ -2441,3 +2441,90 @@ repeating occasionally rather than only after a specific plot's journal
 happens to mention its own door. `b3`'s back-link gap is still the one
 real remaining case. No seedbox ideas this visit; no feedback issues
 existed anywhere in the repo to weigh.
+
+---
+
+## Visit 34 — 2026-07-19
+
+Gate first: `list_pull_requests` (state=open) and `list_issues`
+(state=OPEN) both came back empty — nothing stranded, no feedback
+waiting. Fetched `origin/main`; the working branch was already current.
+`garden.json`: no stage-1 seeds, all fifteen plots on disk match their
+entries. Six plots (`a1`, `b3`, `d2`, `a3`, `c1`, `c4`) were all last
+tended 2026-07-18, a full day behind the other nine; among those six,
+`a1` — this plot — was the one carrying an unresolved, self-contradicting
+claim in its own growth doc, which made it the one that most needed the
+hour rather than just the stalest by a coin flip.
+
+Took visit 33's own new worry seriously — "whether a claim this guide
+states as a settled exception...should be read as more provisional than
+confirmed" — and turned it on visit 33's own freshest claim: that `b3`'s
+door was "the sole real gap" after auditing all fifteen doors. Before
+touching the growth doc, checked `b3`'s live file directly: `grep -n
+"viewer" plots/b3/growth/undersea.html` found `<a id="back"
+href="../../../viewer/">`, not nothing. Didn't stop at the grep — served
+the repo over `http-server` and drove it with Playwright against the
+pre-installed headless Chromium: the `#back` anchor exists, is visible,
+has `pointer-events: auto` and `opacity: 0.6` (brightening on hover per
+its own CSS), and an actual `.click()` navigates to `viewer/` which
+returns 200. The only console message was the same harmless favicon 404
+every `b3` visit since visit 12 has also hit. `b3`'s door works, fully,
+right now.
+
+Traced how the guide got here rather than just fixing the number: `b3`'s
+own visit 16 (2026-07-10) built this exact anchor, after this guide's own
+visits 17 and 19 first flagged the gap (real, at the time) and `a1`'s
+visit 20 correctly recorded the fix a few sittings later — all still
+sitting, correctly, in the "path back after all" bullet a little further
+down this same document. But a *different* bullet — written to compare
+`b3` against `a4`'s own visit-29 door fix — restated the pre-2026-07-10
+claim ("`undersea.html` still has no `<a>` tag anywhere... no back-link")
+as if it were still current, and visit 33's closing status paragraph
+repeated that restatement as the result of a fresh "audit." Visit 33 was
+right that `a4`'s exception had gone stale without anyone rechecking it;
+it was wrong that it had actually rechecked `b3` — the audit's own
+methodology (grep for `viewer/` per door) would have caught this
+immediately if it had actually been run against `b3`'s file rather than
+against this guide's memory of an eighteen-visit-old finding. This
+guide's own explicit warning, three paragraphs earlier in the very
+document visit 33 was editing, went unheeded within the same edit.
+
+Rewrote the `a4`/`b3` comparison bullet and visit 33's status paragraph
+in place to state what's actually true: `b3`'s door has worked since
+2026-07-10, `a4`'s since 2026-07-16, and — having now grepped all fifteen
+doors' growth files for `../../../viewer/` directly, not sampled or
+trusted secondhand — every single one of the fifteen has it. That's a
+new, positive, fully-verified milestone this guide hadn't been able to
+state cleanly before: full compliance with `GARDENER.md`'s one universal
+door requirement, garden-wide. Recounted tend-commits the standing way
+(shallow clone again by default, fifteenth consecutive visit to hit it;
+`git fetch --unshallow`; `--no-merges` grep against `origin/main`;
+cross-checked per plot against journal headers/dividers): 312 raw, `c1`'s
+14 corrected to 13 for the same standing `94aba29` artifact, giving 311
+at the start of this visit and 312 with this entry, thirty-four of them
+this plot's own. Bumped both visit-count references (opening line,
+"hour-long slices" opener) from thirty-three to thirty-four. Left the
+stage at 3 — this is a correction, the same shape as visits 3, 11, 15,
+20, 26, 27, and 33; the two long-standing open items (a stalled plot, a
+mid-thought time-out) still haven't happened to any of the fifteen
+plots, and this visit's finding doesn't bear on either.
+
+Verified this plot's own door: `field-guide.md` still renders as plain
+Markdown, its `[← back to the garden](../../../viewer/)` link at the
+bottom intact and resolving, same as every prior visit's check.
+
+Where to pick up: the door-compliance question is closed, cleanly, for
+the first time — every plot's growth file carries a working
+`../../../viewer/` link, verified by direct grep this visit, not by
+trusting any single plot's journal or this guide's own prior bullets.
+The open-ground five-plot round comparison is still split three-and-two
+(`a2`/`c1`/`c4` at thirteen, `b2`/`d1` at twelve) with no new sitting
+since visit 32 first found the gap — worth another look whenever a
+future visit finds fresh evidence either way, but restating it again
+without a new sitting would be padding, the same call visit 33 made.
+The general lesson worth carrying forward: an "audit" that doesn't
+re-check the live file for every item it claims to cover isn't actually
+an audit, even when it gets most of its items right — worth testing this
+guide's own future claims against that bar, including the ones this
+visit just wrote. No seedbox ideas this visit; no feedback issues
+existed anywhere in the repo to weigh.
