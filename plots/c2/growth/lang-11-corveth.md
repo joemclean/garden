@@ -68,6 +68,18 @@ papers over.
   everyone else calls *-varne* is secretly *-thendra* underneath, and
   having no way to say so that isn't itself just a claim defaulting to
   *-varne* until checked.
+- *vosvarne* — the mirror gap to *vosthendra*, built by running that
+  word's own cross-root move the other direction: where *vosthendra*
+  borrows *-thendra*'s territory to name a collapse hiding inside every
+  *-varne* (checked-sound versus merely-unfalsified), *vosvarne* borrows
+  *-varne*'s territory to name a collapse hiding inside every *-thendra*
+  — something genuinely between two states right now (the seam, the
+  river's third mood) versus something that was never broken at all,
+  only owed further doing across time (the promise). Not a claim that
+  either is wrongly marked; the grammar has no fourth option to offer
+  the promise and *-thendra* is its honest choice. *Vosvarne* names what
+  the mark itself can't say once chosen: that this *-thendra* and the
+  seam's are two different shapes of between, not one.
 
 **Referents:** Corveth mints no new names of its own. Every referent
 here is the compound Vaelith settled and every language since has
@@ -108,11 +120,22 @@ shapes of its own mark inside one leg, the same milestone Vendrel's
 *sohu*, Torvane's *-nirel*, and Threshel's *-kelvra* each reached in
 their own turn.
 
-**Left for later:** whether *vosthendra* is ever spoken about something
-other than the certainty/rightness pair and the seam-reading remains
-untested. Visit 29's promise revision came close but didn't reach for the
-word — the gap it names (checked-sound vs. merely-unfalsified) isn't
-quite the gap the promise turned out to have (a finished utterance vs. an
-ongoing commitment). Whether Corveth ever needs a second coinage for that
-second kind of gap, or whether *-thendra* chosen on purpose already says
-enough without one, is a live question for whichever visit takes it up.
+**The second coinage, resolved (visit 30):** whether Corveth needs a
+word for the gap visit 29's promise revision exposed — a finished-
+utterance-vs-ongoing-commitment gap distinct from *vosthendra*'s
+checked-sound-vs-merely-unfalsified one — or whether *-thendra* chosen
+on purpose already says enough, is settled: it gets a word, because the
+collapse survives being counted twice. The seam and the river's third
+mood are *-thendra* for one reason — something in them is, right now,
+structurally between whole and broken. The promise is *-thendra* for a
+different one entirely: nothing about it is failing or being patched;
+it's marked mending because six months of doing are still owed, not
+because anything is presently unresolved. Corveth's grammar has no
+fourth mark to keep the two apart, the same collapse-under-one-mark
+shape *vosthendra* already names for *-varne*'s two soundnesses. The new
+word, *vosvarne*, borrows that move and runs it the other direction
+across the same two roots — built on *-varne*'s territory rather than
+*-thendra*'s, the mirror image of *vosthendra*'s own construction. This
+resolves only the promise's own question: whether *vosthendra* itself is
+ever used beyond the certainty/rightness pair stays exactly as untested
+as visit 29 left it.
