@@ -136,6 +136,21 @@
         rs.freq = pitchAt(rs.anchorY);
       }
     }
+    // the keyboard reticle has its own position independent of any star's —
+    // without this, shrinking the viewport while tabbed in (or mid-grab)
+    // leaves kbX/kbY stale and possibly off the new canvas entirely, so the
+    // reticle vanishes until the next arrow press, even though a grabbed
+    // star (clamped above) stays visible and just looks abandoned
+    if (kbX != null) {
+      kbX = Math.max(4, Math.min(W - 4, kbX));
+      kbY = Math.max(4, Math.min(H - 4, kbY));
+      if (kbGrabbed != null && stars[kbGrabbed]) {
+        var gs = stars[kbGrabbed];
+        gs.x = gs.anchorX = kbX;
+        gs.y = gs.anchorY = kbY;
+        gs.freq = pitchAt(kbY);
+      }
+    }
   }
   window.addEventListener("resize", resize);
   resize();
