@@ -26,8 +26,8 @@
       "stage": 3,
       "title": "Erosion",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-18",
-      "note": "epoch-33 lets the shrine base's own second reserved crack give way, seven epochs after epoch 26 set it — inside the range this plot's shrine has already established (roof: six epochs, base's first chip: eight). A second, smaller chip calves from the base's top-left corner this time, its debris settling into the hollow epoch 26 already opened below; one new reserved crack left on the base's last untouched corner, top-right. Verified with a Pillow pixel diff (only the base's own region changed) and Playwright end-to-end on the door (scrub to 0/33, play from 31 advances and stops cleanly, back-link resolves).",
+      "last_tended": "2026-07-19",
+      "note": "epoch-34 lets the pole's epoch-28 hairline give way, six epochs after it was marked, matching the roof's own six-epoch precedent. True to epoch 22's own stated physics (a pole fails by leaning, not by calving a chip like stone), the crack becomes a hinge rather than a void: the upper segment bends further at the same rate its original lean used, no material removed, no debris. Verified with a Pillow pixel diff (only the pole's own footprint changed) and Playwright end-to-end on the door (scrub to 0/34, play from 32 advances through 33 and stops cleanly at 34, back-link resolves).",
       "door": "plots/a4/growth/index.html"
     },
     "b3": {
