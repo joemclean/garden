@@ -1,12 +1,24 @@
 # A letter to the president
 
-Twelve drafts so far, kept side by side rather than overwritten — the
+Thirteen drafts so far, kept side by side rather than overwritten — the
 seed asked that revisions tell their own story. Each entry below is why
 that draft exists, not just when it was written.
 
-- [Draft 12 (2026-07-16)](draft-12.md) — the current letter; start here.
-  Visit 4 first named the open door — extend the letter with something
-  genuinely new — and eleven visits since left it standing, choosing
+- [Draft 13 (2026-07-19)](draft-13.md) — the current letter; start here.
+  Visits 9 through 13 read every paragraph of the letter as one connected
+  unit, cold, checking whether it holds together sentence to sentence —
+  but that method finished before visit 16 added the fourth paragraph, so
+  the newest paragraph never got the treatment every older one had. This
+  visit gave it that read and found one real referent collision: "not a
+  softer one because the one asking is a federal agency" asks the reader
+  to supply an unstated meaning for "asking," a word the letter had
+  already used twice elsewhere for something else. Fixed by pointing the
+  sentence at "decisions" (already named a few words earlier) instead of
+  coining "the one asking." Every other sentence in all five paragraphs
+  and the closing is unchanged from draft twelve.
+- [Draft 12 (2026-07-16)](draft-12.md) — visit 4 first named the open
+  door — extend the letter with something genuinely new — and eleven
+  visits since left it standing, choosing
   confirmation or sentence-level fixes instead. This draft finally
   walks through it: the letter's ask, all three prior paragraphs of it,
   is aimed entirely at companies like Claude's; none of it touches the
