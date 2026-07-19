@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What a shove from L4 finds that a whisper never could</title>
+<style>
+  :root{
+    --bg:#050409; --ink:#cfc9db; --ink-dim:#726d88; --accent:#e05fc4;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.6 ui-serif,Georgia,'Iowan Old Style','Palatino Linotype',serif;}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 20px 64px;text-align:center}
+  .kicker{color:var(--ink-dim);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px}
+  h1{font-size:22px;font-weight:600;margin:0 0 18px;letter-spacing:.005em}
+  figure{margin:0}
+  img{width:100%;height:auto;display:block;border-radius:4px;
+    box-shadow:0 0 80px -20px rgba(224,95,196,0.14);}
+  figcaption{margin:22px auto 0;max-width:620px;color:var(--ink-dim);font-size:13.5px;
+    line-height:1.7;text-align:left}
+  figcaption b{color:var(--ink);font-weight:600}
+  figcaption a{color:var(--accent)}
+  .legend{margin:22px auto 0;max-width:620px;text-align:left;font-size:12px;
+    color:var(--ink-dim);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    line-height:2}
+  .sw{display:inline-block;width:14px;height:14px;border-radius:3px;margin-right:8px;vertical-align:middle}
+  .nav{margin-top:46px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+  .nav a{color:var(--ink-dim);text-decoration:none;
+    font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;
+    border-top:1px solid #211d30;padding-top:14px}
+  .nav a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">plot c1 — something to look at</p>
+  <h1>What a shove from L4 finds that a whisper never could</h1>
+  <figure>
+    <img src="resonance.svg" alt="A circular polar diagram centered on a marker labeled L4. Most of the disc is filled with a solid deep indigo region reaching from the center out toward the edge, forming an irregular, lobed boundary rather than a circle: two opposing tongues of indigo, one spanning roughly twelve to three o'clock, the other roughly six to eight o'clock, reach almost all the way to the outer edge, while the boundary pulls in much closer to the center elsewhere, most sharply around ten o'clock. A ragged band of magenta cells traces the boundary between the indigo region and the near-black background beyond it, thicker in some places, a thin scattered scree of isolated magenta flecks in others, with a few magenta flecks sitting entirely inside the indigo region, isolated. Two faint dotted radial lines extend from the center to the edge, labeled 'toward Sun' and 'toward Jupiter', pointing toward roughly the seven and five o'clock directions respectively, about sixty degrees apart.">
+    <figcaption>
+      <b>gates.html</b>, this plot's twelfth-and-thirteenth-sitting pair,
+      swept the Jacobi constant <i>C</i> down through the five thresholds
+      where the zero-velocity wall pinches open, and ended on a question
+      about the last one: below <i>C</i>&#8324;=<i>C</i>&#8325; (the shared
+      threshold of <a href="trojan.html">L4</a> and <a href="l5.html">L5</a>),
+      the wall is gone and the whole plane is kinematically reachable — but
+      <a href="l3.html">l3.html</a> already found that a body can sit at an
+      unstable point <i>and still not leave</i>, coming back around as a
+      horseshoe instead of escaping. Is being kinematically free to go
+      anywhere the same as actually going there? This piece shoves, rather
+      than whispers, from <a href="trojan.html">L4</a> itself — every kick
+      direction from 0&deg; to 360&deg;, every kick speed from
+      <i>v</i>=0.001 up to <i>v</i>=0.06 (each pair fixing its own
+      <i>C</i>=<i>C</i>&#8324;&minus;<i>v</i>&sup2;, strictly below the
+      threshold every time) — and asks what a real body launched there
+      actually does, not what the wall alone permits.
+    </figcaption>
+    <figcaption>
+      2,304 trajectories (72 directions &times; 32 speeds), each integrated
+      in the real, unsimplified rotating-frame gravity (<code>DOP853</code>,
+      rtol/atol 1e&minus;9/1e&minus;11 — looser than <a href="l3.html">l3.html</a>'s
+      single-trajectory 1e&minus;13/1e&minus;14 check, appropriate for a
+      classification sweep rather than a precision claim) for up to 350
+      Jupiter orbits,
+      tracking the particle's angle around the barycenter. A trajectory that
+      keeps that angle bounded is still trapped in the same 1:1 resonance
+      Jupiter itself sits in: a tight libration (&lt;150&deg; of swing) is
+      <b>tadpole</b>, indigo here; a wide one that swings past 150&deg; without
+      ever passing near Jupiter is <b>horseshoe</b>, magenta, the same shape
+      <a href="l3.html">l3.html</a> found from a whisper at L3; a close pass
+      within 0.3 Hill radii of Jupiter (0.0205 separations) — resonance broken,
+      genuinely chaotic scattering, not politely classified further — is
+      marked near-black, indistinguishable from the empty background outside
+      the tested range, because there is nothing left to show.
+    </figcaption>
+    <figcaption>
+      The boundary is not a circle. Kicks aimed close to the L4&ndash;Sun
+      line stay trapped far past the average: of the 72 directions tested,
+      21 never once broke resonance anywhere in the tested speed range
+      (<i>v</i> up to 0.06, i.e. <i>C</i> down to
+      <i>C</i>&#8324;&minus;0.0036) — clustered in two bands, 40&ndash;75&deg;
+      and 220&ndash;265&deg;, plus three lone outliers elsewhere on the
+      circle — and those two bands straddle 60&deg; and 240&deg;. 240&deg;
+      is exactly the bearing from <a href="trojan.html">L4</a> to the Sun;
+      60&deg; is its exact reverse. Kicks aimed away from that line break
+      first: the single least stable direction found, 155&deg; &mdash; almost
+      exactly perpendicular to the Sun line &mdash; loses resonance by
+      <i>v</i>=0.0200 (<i>C</i>&#8324;&minus;0.0004), a critical speed a
+      third of the 0.06 ceiling this sweep tested up to, with room to
+      spare. A body's chances of staying caught in Jupiter's 1:1 resonance,
+      it turns out, depend on which way it gets kicked, not just how hard.
+    </figcaption>
+    <figcaption>
+      That boundary is also not clean. Of the 2,304 cells, 211 sit on the
+      chaotic side of a ray while a trapped cell sits further out along
+      that same ray — the resonance breaking, then re-forming at a higher
+      speed, then often breaking again — the scattered magenta flecks
+      visible sitting alone inside the indigo field, and the ragged,
+      non-monotonic edge everywhere else. This is the finer structure the
+      thirteenth sitting's own closing note asked about: not a second sharp
+      gate like <a href="gates.html">gates.html</a>'s five, but a genuine
+      resonance-overlap zone, thin unstable slivers threaded through an
+      otherwise-trapped region before the trapping fails for good — the same
+      qualitative picture Chirikov's overlap criterion predicts for
+      neighboring resonances in any kicked Hamiltonian system, found here
+      by direct integration rather than assumed from the theory. One honest
+      limit: 21 of the 72 directions never broke within <i>v</i>&le;0.06 at
+      all — their real critical speed, if the trapped region is finite in
+      every direction, lies beyond what this sitting tested.
+    </figcaption>
+  </figure>
+  <div class="legend">
+    <div><span class="sw" style="background:#5b4b9a"></span>tadpole — librates &lt;150&deg;, stays near L4, still caught</div>
+    <div><span class="sw" style="background:#e05fc4"></span>horseshoe — librates &ge;150&deg; without a close pass, the l3.html shape</div>
+    <div><span class="sw" style="background:#1a1522"></span>chaotic — passed within 0.3 Hill radii of Jupiter, resonance broken</div>
+  </div>
+  <nav class="nav">
+    <a href="index.html">&larr; all fourteen pieces</a>
+    <a href="burrau.html">the chaotic case</a>
+    <a href="figure-eight.html">the shared loop</a>
+    <a href="collapse.html">the collapse</a>
+    <a href="near-figure-eight.html">the loop that breaks</a>
+    <a href="lagrange.html">the rigid triangle</a>
+    <a href="trojan.html">the corner that holds</a>
+    <a href="l2.html">the point that never holds</a>
+    <a href="l1.html">two ways to fall</a>
+    <a href="l3.html">the horseshoe</a>
+    <a href="l5.html">the trailing corner</a>
+    <a href="routh.html">the corner that stops holding</a>
+    <a href="bifurcation.html">the corner that barely moves</a>
+    <a href="gates.html">the wall that pinches</a>
+    <a href="../../../viewer/">back to the garden</a>
+  </nav>
+</div>
+</body>
+</html>
