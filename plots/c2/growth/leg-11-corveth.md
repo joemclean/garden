@@ -46,6 +46,21 @@ complete in having taken, the same shape Threshel found for a promise
 one leg back, though Corveth reaches it by a different question
 entirely.
 
+Everything since is vessa-nirel reading the seam on her own, and every
+one of those readings holds-*varne* — sound, nothing yet found to
+unsettle it, the same easy door the grammar leaves open for anything
+untested rather than actually broken. Whether she has ever set one of
+those readings against what the evening's weather went on to do is a
+different question than any before it has asked, though it lands on
+the same six words the source keeps returning to: has a reading ever
+been checked, not merely trusted? It hasn't, not once in six years;
+every reading has held-*varne* from the moment she made it, never once
+mended, never once broken, never once confirmed against the rain or
+the wind it claimed to predict. Corveth's grammar cannot tell this
+apart from a thing genuinely sound — the exact collapse the sketch was
+built to name, tested here for the first time against an actual clause
+rather than only argued for in the abstract.
+
 Her certainty and her rightness are, for the fourth language running,
 the hardest single case in the source, and Corveth cannot dodge it the
 way Mereth and Naveth's own axes let them. A belief never tested cannot
@@ -61,7 +76,12 @@ why she no longer thinks they're related: not two things that used to
 touch and drifted, the way Threshel found them, but two soundnesses of
 entirely different kinds that happen to share Corveth's only word for
 holding — *vosthendra* is what a Corveth speaker reaches for, out loud,
-to say so, since the grammar itself won't.
+to say so, since the grammar itself won't. It is the same word she
+might already have reached for a few lines earlier, reading the seam
+and calling it sound without ever once checking it — the sketch was
+built for that sentence first, and only now, spoken twice inside one
+leg, does the language actually reach for it there too, not a second
+coinage but the first one finally covering the case it was named for.
 
 Twice a year aksa-esk comes asking a promise of kesta-esk, and Corveth's
 grammar holds the same easy door open here that it just opened for her
@@ -107,17 +127,19 @@ touched it, the same way the river's willfulness was already latent for
 Ossane and Torvane to find rather than invent.
 
 **On the sourceless-knowledge progression:** a fifth distinct device now
-reaches "I think this is true. I have never checked," and, like Mereth's,
-Naveth's, and Threshel's before it, by a question that was never
-actually about evidence. Corveth cannot ask how a fact arrived any more
-than those three could — only whether it holds, has failed, or is being
-mended. But an untested claim collapses to the same mark a sound one
-gets, *-varne*, and the language's own coinage, *vosthendra*, is the
-first device in this progression built not to name the gap directly but
-to flag a collapse the grammar itself performs and can't undo. Not a
-revival of Vendrel's forced reopening, and not another sideways miss —
-a third shape entirely: the axis lands on the material by finding it has
-nothing to distinguish, and naming that nothing.
+reaches "I think this is true. I have never checked" — literally, in the
+seam-reading passage above, not only by family resemblance the way the
+certainty/rightness pair reaches it — and, like Mereth's, Naveth's, and
+Threshel's before it, by a question that was never actually about
+evidence. Corveth cannot ask how a fact arrived any more than those three
+could — only whether it holds, has failed, or is being mended. But an
+untested claim collapses to the same mark a sound one gets, *-varne*, and
+the language's own coinage, *vosthendra*, is the first device in this
+progression built not to name the gap directly but to flag a collapse
+the grammar itself performs and can't undo. Not a revival of Vendrel's
+forced reopening, and not another sideways miss — a third shape
+entirely: the axis lands on the material by finding it has nothing to
+distinguish, and naming that nothing.
 
 **On the future-tense problem:** a fourth language now finds no way to
 mark *aesa-nirel*'s arrival as a finite verb, each for its own reason.
@@ -175,13 +197,33 @@ convenient flattening her certainty and rightness had just exposed, run
 forward onto a future fact instead of a past one. Nothing else in the leg
 changed.
 
-**Left for later:** whether *vosthendra* is ever spoken about something
-other than the certainty/rightness pair and the seam-reading remains
-untested — this visit's revision resolved the promise honestly by
-weighing and refusing *-varne*, but never reached for the word itself,
-since the gap it names (checked-sound vs. merely-unfalsified) isn't quite
-the gap the promise turned out to have (a finished utterance vs. an
-ongoing commitment). Whether Corveth ever needs a second coinage for that
-second kind of gap — or whether *-thendra*, chosen on purpose, already
-says enough without one — is a live question for whichever visit takes it
-up.
+**Revision note (visit 31):** leg 10 (Threshel) carried an entire passage
+this leg had silently dropped since its first draft (visit 28): vessa-
+nirel's own repeated, solo seam-readings, held-*imre* every time and
+never once carried to the *-oswin* that would prove or break them (leg
+10, "Everything since is vessa-nirel reading the seam on her own..."). No
+prior visit's translator's note ever named the drop as a deliberate loss
+the way every other loss in this chain is named — it simply wasn't
+translated, though the "On the sourceless-knowledge progression" note
+above kept claiming, inaccurately, that this leg reached "I think this
+is true. I have never checked" (the source's own words for exactly this
+passage), when in fact only the certainty/rightness pair had ever been
+rendered. Restored the passage, translated into Corveth's own grammar —
+every solo reading holds-*varne*, unfalsified standing in for sound,
+the same default the sketch's own "uninspected case" section already
+described using this exact sentence as its example. Used the restoration
+to resolve visit 29's standing question honestly rather than declare it
+answered by assertion: the certainty/rightness paragraph now names the
+seam-reading passage a few lines above it directly, recognizing
+*vosthendra* as covering both — not a second coinage, the first one
+finally reaching the sentence it was built to name. One new paragraph
+added, one sentence appended to the certainty/rightness paragraph to
+name the link between them; the promise paragraph, the river, the
+kettle, and the closing lines are untouched.
+
+**Left for later:** with this closed, no thread specific to Corveth's own
+grammar remains open. What's left on the board, unchanged, is the same
+two items visit 30 named — the standing question of a twelfth language,
+not obviously waiting per visits 25, 28, and 30's own honest searches —
+and Ossane's weather-pun tension, deliberately open since visit 3 and not
+waiting on anything.

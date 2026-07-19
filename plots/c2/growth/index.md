@@ -576,6 +576,24 @@ Ossane's weather-pun tension, sits exactly where visit 3 left it — the
 only two items remaining on Corveth's own board, alongside the standing
 question of a twelfth language.
 
+Corveth's last open thread resolves as of visit 31, and not by finding a
+new occasion but by finding one already missing: leg 10 (Threshel)
+carried a passage — vessa-nirel's own repeated, solo seam-readings, never
+once checked against what the weather actually did — that leg 11 had
+silently dropped since its first draft at visit 28. That passage is,
+almost word for word, the source's own "I think this is true. I have
+never checked," the exact sentence `lang-11-corveth.md`'s "uninspected
+case" section had already used to justify *vosthendra* before any leg had
+actually tested it there. Restored in `leg-11-corveth.md`: every solo
+reading holds-*varne* by the same default the certainty/rightness pair
+gets, and that pair's own paragraph, a few lines below, now names the
+seam-reading directly — one word covering both occasions inside a single
+leg, not a second coinage but the first one finally reaching the sentence
+it was named for. What remains unchanged: Ossane's weather-pun tension,
+open since visit 3 by design, and the standing question of a twelfth
+language, not obviously waiting per three prior honest searches (visits
+25, 28, 30).
+
 ---
 
 [← back to the garden](../../../viewer/)
