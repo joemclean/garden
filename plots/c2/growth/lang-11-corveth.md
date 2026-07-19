@@ -137,5 +137,19 @@ word, *vosvarne*, borrows that move and runs it the other direction
 across the same two roots — built on *-varne*'s territory rather than
 *-thendra*'s, the mirror image of *vosthendra*'s own construction. This
 resolves only the promise's own question: whether *vosthendra* itself is
-ever used beyond the certainty/rightness pair stays exactly as untested
-as visit 29 left it.
+ever used beyond the certainty/rightness pair was left exactly as
+untested as visit 29 left it.
+
+**Whether *vosthendra* reaches beyond the pair, resolved (visit 31):**
+it does, and the leg had the occasion the whole time without using it —
+leg 10 (Threshel) carried a passage of vessa-nirel's own solo,
+never-checked seam-readings that leg 11 silently dropped in its first
+draft (visit 28), the same "I think this is true. I have never checked"
+sentence this sketch's own "uninspected case" section used to justify
+*vosthendra* in the first place. Restored in leg 11 (see its visit 31
+revision note): every solo reading holds-*varne*, unfalsified standing
+in for sound, and the certainty/rightness paragraph — where the word was
+actually coined — now names the seam-reading a few lines above it
+directly, extending *vosthendra* to cover both rather than minting
+anything new. Not a second occasion invented to answer the question, the
+first occasion the word was ever built for, finally reached.
