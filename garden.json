@@ -34,8 +34,8 @@
       "stage": 4,
       "title": "Undersea — a 3D swimming simulation",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-18",
-      "note": "Twenty-seventh visit chased visit 26's carried-forward note that pectoral fins and dorsal-fin sway were still open — both were actually built and closed at visits 14-15, eleven visits ago. Verified both still work today (mirrored pectoral position, dorsal sway sampled live across two teleports, a close-up screenshot catching body/dorsal/fluke/pectoral all at once, a clean organic swim after) rather than silently re-adding or silently skipping; zero net code change. Corrects the journal's own drifted note before it could cost a future visit an hour rebuilding something that already exists. Stays at bloom.",
+      "last_tended": "2026-07-19",
+      "note": "Twenty-eighth visit, finding two straight prior visits' worth of open threads all already closed, adds a fifth depth-response axis alongside visits 22-25's light/fog/current/marine-snow: a procedural Web Audio ambient soundscape (looped filtered brown noise plus irregular bubble chirps), its lowpass cutoff tracking the same depth band as the other four so the ear changes on the same schedule the eye does. Verified audio context reaches 'running' state on the click gesture and filter frequency tracks depth correctly across three teleports; couldn't verify actual audible output from the sandbox. Stays at bloom.",
       "door": "plots/b3/growth/undersea.html"
     },
     "b1": {
