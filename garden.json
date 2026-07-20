@@ -115,7 +115,7 @@
       "title": "Open ground: something that moves",
       "planted": "2026-07-10",
       "last_tended": "2026-07-20",
-      "note": "Fifteenth tend audits the third tend's own transform-box:fill-box rule against the file that existed when it was written and finds the one element added that same sitting was never checked: .shimmer-band's skewX/scaleY had no fill-box, so getComputedStyle read 'view-box' and getCTM showed a real ~2-2.6px per-band drift at the keyframe's 50% mark. Fixed with the one line the rule specified; getCTM confirms a band's own center now maps to itself. Full playAll run (zero errors), reduced-motion freeze, and mid-reel screenshot all verified clean. Stays at bloom.",
+      "note": "Sixteenth tend extends the transform-box audit one sitting further back and finds a bigger miss: .smoke (the train's puffs, present since sitting one, predates the rule itself) had no fill-box, so its scale() pivoted around the viewBox corner and swept a smoke circle from y~462 to y~868 in one puff cycle -- a screenshot mid train-pass showed two of three puffs drifted into the wheat field as one blob. Fixed with fill-box + transform-origin:center; verified circles now ride with the train's own translateX. Full playAll run (zero errors) and reduced-motion freeze (pure scale matrix, no stray offset) both clean.",
       "door": "plots/d1/growth/index.html"
     },
     "c4": {
