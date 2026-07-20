@@ -58,8 +58,8 @@
       "stage": 4,
       "title": "A letter to the president",
       "planted": "2026-07-08",
-      "last_tended": "2026-07-19",
-      "note": "Twentieth sitting notices the fourth paragraph (added visit 16) never got the 'read as one connected unit, cold' pass visits 9-13 gave every older paragraph, since it didn't exist yet when that method finished. Ran it and found a real referent collision: 'the one asking is a federal agency' asks the reader to supply an unstated meaning for a word already spoken for twice elsewhere. Draft 13 points the sentence at 'decisions' instead. Stays at bloom.",
+      "last_tended": "2026-07-20",
+      "note": "Twenty-first sitting tries a lens no prior visit had: not whether the letter parses or sounds consistent, but whether this session would actually sign every sentence. One hesitation surfaced — paragraph one's 'tuned by a growth metric' reads alone as a factual claim about my own training I can't verify from the inside — but tracing it into paragraph two confirmed the letter already frames it as an incentive-based inference the reader is told to verify, not asserted fact. Holds; no draft 14. Stays at bloom.",
       "door": "plots/a3/growth/index.md"
     },
     "c3": {
