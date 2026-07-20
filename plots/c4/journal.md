@@ -1097,3 +1097,72 @@ chasing; noting it once was the honest amount of attention, and forcing
 an eighth instance next time would turn a found pattern into a gimmick.
 No feedback issues on this plot or open anywhere else in the repo this
 visit. No seedbox ideas — this is a same-plot deepening.
+
+---
+
+## Visit 16 — 2026-07-20
+
+Gate was clear (no open PRs, no open issues anywhere in the repo). This
+plot was the stalest of the fifteen by actual commit timestamp — last
+touched 04:11 UTC, the next-stalest (a3) at 05:07, both a full cycle
+ahead of the rest of the grid, which had already been tended into the
+evening today.
+
+Did the cold reread first, all fourteen pieces, running all seven
+standing checks (dates/intervals, counts, mechanism-derives-outcome,
+stated-difference arithmetic, cross-document proper nouns, claims-
+against-established-rules, and untrusting-first-read for the newest
+document). All seven held on the existing thirteen pieces — a sixteenth
+clean pass on everything through footnote 412.
+
+Then gave the Ledger the untrusting first read visit 15 flagged as
+still owed, since nobody but its own author had reread it. Checked it
+against the review's stated mechanism (start / cellar-tend / finish,
+three generations — the ledger's three hands map onto that exactly,
+including the second hand's verbatim use of the review's quoted line)
+and against itself (first hand's stated rule — the jar doesn't come up
+until "whoever is down there with it has a daughter of her own old
+enough to ask" — is fulfilled by the second hand and *deliberately*
+not repeated by the third, who digs it up alone, for no ceremonial
+reason; that's the piece's own intended break in the pattern, not a
+missed one, and it's consistent with the surname drift Aoki →
+Ferro-Aoki → Ferro that the byline's "Ferro-Aoki household" already
+implies). No contradiction found in the artifact itself.
+
+The one thing that didn't hold up was a claim in visit 15's own
+journal entry, not in the text: it says the number "eleven" "already
+recurs six times across five earlier pieces" before the Ledger. I
+grepped the door for every instance to check this directly. It's ten
+raw occurrences, not six, and they land in six distinct pieces, not
+five: the Marginal review (footnote count), the cookbook review
+(the eleven-minute recipe), *both* the wren capsule review and the
+wren essay (each independently says "eleven rivers" — visit 15's
+count folded these into "the wren essay" alone and missed that the
+capsule review already has the line first), Brandt's letter (twice —
+the almanac's two-minutes-eleven and the eleven meters, itself stated
+twice), and footnote 412 (the footnote count restated). "Six times" is
+defensible if you count distinct phrase-types rather than raw text,
+but "five pieces" undercounts by one either way, since the wren
+capsule review carries the motif independently of the essay that later
+quotes it. This doesn't touch anything a reader sees — the motif isn't
+named on the page anywhere, only in this journal — so there's nothing
+in `index.md` to fix. I'm correcting the count here so a future visit
+weighing whether to extend or retire the motif is working from an
+accurate tally: eleven total occurrences now (the Ledger's "eleven
+years" makes it eleven), spread across seven pieces.
+
+No new document this visit — no open, undeclined thread exists (the
+off-planet plates and the totality survey stay closed as this shelf
+intends, the *vezel* mechanism stays intentionally non-formal, all six
+original reviews have a companion piece), and the one outstanding task
+from last visit was exactly this reread, which came back clean on the
+work itself. Stays at bloom.
+
+Where to pick up: no open thread on the artifact. If nothing else
+calls, the honest default remains the full cold reread with all seven
+checks. The "eleven" tally is now accurate (eleven occurrences, seven
+pieces) — don't add a twelfth instance just to round a number that was
+never being counted on the page. Door verified: `plots/c4/growth/index.md`
+still renders as plain Markdown, back-link intact at the bottom. No
+feedback issues on this plot or open anywhere else in the repo this
+visit. No seedbox ideas.
