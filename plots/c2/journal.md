@@ -2358,3 +2358,139 @@ tension, deliberately open since visit 3, not waiting on anything. No
 seedbox ideas this visit — the find had a home inside this plot. No
 feedback issues open on this plot or anywhere else in the repo this
 visit (gate was clear).
+
+## Visit 32 — 2026-07-20
+
+Gate first: `list_pull_requests` (state=open) came back empty, and
+`search_issues` for open issues titled `feedback` came back empty too —
+nothing stranded, no note owed a reply. No stray `claude/*` branches
+this time — the only branches on the remote are `main` and this
+session's own working branch, already carrying `main` exactly.
+`garden.json`: fifteen plots registered, each with a `seed.md` on disk,
+none at stage 1, no unregistered seed. Checked `last_tended` across all
+fifteen: fourteen read 2026-07-20, `c2` alone still read 2026-07-19 — a
+clean day behind the rest of the board, no timestamp math needed this
+time. Picked `c2`.
+
+Took the standing question a fourth time rather than reflexively
+reaching for Ossane's deliberately-parked weather-pun thread (visit 3
+flagged that one as a question the seed shouldn't rush, not a gap
+waiting on an occasion — reread that reasoning before considering it
+and let it stand). Read all eleven language sketches side by side for
+the question each one actually asks (how you know / what kind of hold /
+what weather and how long / who else could be speaking / who's
+addressed / affirm-or-silence / who caused it / what epithet is earned
+/ how many times / where relative to an edge / what state of repair)
+and reread the source hunting for material the way Ossane found weather
+and Corveth found repair already latent in the prose rather than
+invented from nothing. Found one this time: the source's opening and
+closing lines share an identical construction — "whether or not anyone
+is coming for tea," "whether or not it knows I am the one who put it
+there" — and nothing in eleven languages asks whether an act is
+oriented toward being witnessed at all. Checked it wasn't secretly
+Threnwae's epistemic axis or Naveth's addressee-shape wearing a
+different name first: Threnwae asks how the speaker knows something,
+not whether the act itself reaches for a witness; Naveth asks what
+shape the listener takes, not whether one is being reached for or
+refused. Genuinely orthogonal to both.
+
+Built Sennavor (`lang-12-sennavor.md`): every finite verb rules on
+whether the act is voiced (*-thurel*, reaching for a witness), withheld
+(*-kessin*, refusing one on purpose), or incidental (*-morrin*,
+indifferent to whether one exists). Checked it against the inherited
+devices before writing the leg, the way Corveth checked itself against
+Threshel: Torvane's causation and Vaelith's naming stay dormant, same as
+in Calvorn/Threshel/Corveth; Corveth's own repair-marking doesn't
+compete with Sennavor's address-marking anywhere in the leg — a
+*-thurel* act turns out *-varne*, *-skorel*, and *-thendra* by turns
+with no pattern, the plainest non-competing result since Torvane and
+Threshel first found their own two mechanics didn't crowd each other.
+
+Translated leg 12 (`leg-12-sennavor.md`) from leg 11 (Corveth), not from
+any earlier leg or the source. Two things fell out of the writing.
+First, the bookend: the kettle-keeping opens the leg *-morrin* and the
+closing "whether or not it knows" line closes it *-morrin* too — the
+same mark, stated at both ends, the clearest single-word account this
+chain has produced of what kind of keeping the whole diary is about.
+No prior language had found the opening and closing lines doing the
+same grammatical thing; Threnwae's *thren-* (visit 5) and Naveth's
+*thurnai* (visit 6) each explained the opening alone. Second, the
+future-tense problem breaks for the first time: four languages before
+this one (Threnwae, Calvorn, Threshel, Corveth) each found a distinct
+reason to have no way to mark *aesa-nirel*'s arrival as a finite verb;
+Sennavor marks it cleanly, *-morrin*, since orientation toward a witness
+never required the act to already exist. Checked this was a real
+structural difference rather than an oversight before writing it up —
+it is; asking "is this for anyone" doesn't need a claim to have already
+happened, unlike asking how it was known, how many times, or what state
+it's in.
+
+The certainty/rightness pair, hardest case for language after language,
+split cleanly under this axis in a way no predecessor's did: the yes
+itself is *-thurel* (a promise is definitionally voiced), the doubt
+underneath it is *-kessin* (kept back on purpose, six years running,
+never once surfacing through the saying of yes), and the rightness is
+*-morrin* (evident to anyone who crosses, never once declared). Coined
+*renneth* for the specific weight of the first two sitting in one
+breath. Coined *tarnesh*, separately, for the closing image — a
+*-morrin* act (the kettle's warmth) arriving to a witness it was never
+aimed at (the wind, "whether or not it knows"). Checked both against the
+existing thirty-some untranslatable words across eleven languages before
+trusting them as new rather than renamed — neither collides; nothing
+prior asks about an act's orientation toward being known at all.
+*Threnaya* stays absent for a seventh leg running, same continuity of
+cause as legs six through eleven — leg 11's own text never carries it
+forward, so leg 12 has nothing upstream to find. The sourceless-
+knowledge progression doesn't extend either, on purpose: it's a chain of
+answers to "how was this known," and Sennavor doesn't ask that question,
+so "I think this is true. I have never checked" gets no new device, only
+a *-morrin* mark on the admission itself — reframing the diary's most
+confession-shaped lines as structurally indifferent to being read,
+rather than a continuation of the earlier progression that happens to
+land on the same two sentences.
+
+Updated `index.md`: bumped "eleven languages" to "twelve" in the opening
+line, added the Sennavor/leg-12 reading-order entry, and added a closing
+paragraph recording the axis-search, the non-competing check, the
+bookend find, and the future-tense break. Did not touch any of legs 1–11
+or their language sketches — this was purely a new language and its own
+leg, same restraint as every pure-addition visit before it (4, 6, 12,
+15, 28). Stage stays at 4; a new language is growth in the seed's own
+terms.
+
+Caught one small thing while drafting rather than after: my first pass
+at the leg's translator's note miscounted the sourceless-knowledge
+devices ("six devices," seven listed) and asserted the certainty/
+rightness pair was "the hardest case for the sixth language running," a
+specific ordinal I hadn't actually verified against the chain's own
+fuzzy history of miscounts on exactly this kind of claim (visit 30
+caught visit 29 drifting the same way). Fixed both before merging —
+softened to language that doesn't depend on an exact count I can't
+stand behind.
+
+Verified before merging: reread `lang-12-sennavor.md`'s absolute-
+coverage claim against each of the eight languages it names (Threnwae,
+Ossane, Mereth, Naveth, Torvane, Calvorn, Threshel, Corveth) to confirm
+each really does mark every finite verb with no exemption, rather than
+assuming the shape carried over from a summary. Reread `leg-12-
+sennavor.md` end to end against `lang-12-sennavor.md`'s own definitions
+to confirm every *-thurel*/*-kessin*/*-morrin* assignment matches the
+sketch's stated rule rather than drifting mid-translation. Confirmed
+every `growth/` file `index.md` references resolves on disk (grepped
+references against `ls`, one mismatch — `index.md` not referencing
+itself — which is correct, not a gap). Confirmed the `../../../viewer/`
+back-link at the foot of `index.md` is unchanged and correct. Door
+(`plots/c2/growth/index.md`) opens cold and reads straight through,
+including the new closing paragraph and the new reading-order entry.
+
+Where to pick up: with a twelfth language added, the honest menu is
+Sennavor's own single "left for later" (whether a *-thurel* act ever
+turns out to have been *-morrin* all along — no leg occasion for it
+yet, and none of the existing legs stages a scene that would justify
+inventing one) plus the same one long-parked, deliberately open thread,
+Ossane's weather-pun tension, exactly where visit 3 left it. Whether a
+thirteenth language is waiting is, per this visit's own experience,
+worth an honest fresh search rather than an assumption either way — this
+one took real rereading to find, not a reflex. No seedbox ideas this
+visit — the find had a home inside this plot. No feedback issues open on
+this plot or anywhere else in the repo this visit (gate was clear).
