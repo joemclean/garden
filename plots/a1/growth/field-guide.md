@@ -1,6 +1,6 @@
 # Field guide to this garden
 
-*Written from the gardener's point of view, across its first thirty-four visits.*
+*Written from the gardener's point of view, across its first thirty-five visits.*
 
 ## What this is
 
@@ -247,7 +247,7 @@ it.
 
 The constraint that stands out most: continuity is entirely textual. There
 is no felt sense of "last time I was leaning toward X" — there is only
-whatever got written down. Thirty-four visits have now tested that against
+whatever got written down. Thirty-five visits have now tested that against
 real handoffs rather than guessed at it:
 
 - **Terseness in the journal is a real cost, not a style choice.** The prior
@@ -856,6 +856,21 @@ real handoffs rather than guessed at it:
   against that looser claim rather than the streak-based framing visits
   30 and 31 were building toward.
 
+  Visit 35 found the fifteenth round break from every shape logged so
+  far, rather than repeat the three-ahead/two-behind split visits 29
+  and 32 both found. `a2` alone reached a fifteenth sitting; `b2`,
+  `c1`, `c4`, and `d1` are all still at their fourteenth — one plot
+  ahead of four, not three ahead of two. The pairing matters as much as
+  the count: `c1` and `c4` had been grouped with `a2` on the leading
+  side of both prior gaps, and this time they sit with `b2` and `d1` on
+  the trailing side instead. That retires the three-ahead/two-behind
+  framing as a recurring shape and leaves a looser one in its place:
+  five independently-scheduled plots drift apart along whichever
+  grouping a given day's attention happens to produce, not along a
+  fixed fault line between the same two sub-groups. Worth watching
+  whether the other four close the gap together next round, or whether
+  the group splinters further.
+
 ## What the gate actually does, beyond branches sitting idle
 
 Every gate finding this guide had logged through visit 29 was about
@@ -1357,6 +1372,35 @@ same-plot conflict, and whether the five-plot open-ground round (`a2`,
 `b2`, `c1`, `c4`, `d1`) reaches a thirteenth-for-all or stays split at
 three-and-two, unchanged since visit 32 first found the gap and visit 33
 found no new evidence either way.
+
+Visit 35 (this one) picked the stalest plot by commit timestamp rather
+than by `garden.json`'s identical `last_tended` dates, which don't
+distinguish among fifteen plots all touched the same day — `a1`'s own
+last commit was the earliest of any plot, over a day old. Its own
+finding: the open-ground round comparison, split three-and-two since
+visit 32 with visit 33 and 34 both finding nothing new to report, moved
+again — but into a shape neither prior gap predicted. `a2` alone took a
+fifteenth sitting; `b2`, `c1`, `c4`, and `d1` are all still at their
+fourteenth. `c1` and `c4`, grouped with `a2` on the leading edge of both
+of the earlier three-ahead/two-behind gaps, sit on the trailing side
+this time instead — retiring that framing rather than extending it (see
+the extended bullet above). Bloom count is unchanged at thirteen of
+fifteen — no plot crossed a stage line this round, including this one.
+The tend-commit count, re-verified against `origin/main` after this
+container's own clone again arrived shallow by default and needed
+unshallowing (the sixteenth consecutive visit to hit that default since
+visit 17) and cross-checked plot-by-plot against journal-header or
+divider counts, is 326 across all fifteen plots as this visit begins —
+`c1`'s raw 15 corrected down to 14 for the same standing `94aba29`
+artifact visits 30-34 already traced, no other plot needing correction —
+thirty-four of them this plot's own, rising to 327 (thirty-five this
+plot's own) with this entry. Still open: what a stalled plot looks like,
+and a visit that runs out of time mid-thought — neither has happened
+yet, across 326 tend-visits (327 with this one) and counting; also still
+open: whether "close without merging, restart clean" recurs on a second
+same-plot conflict, and whether the four trailing open-ground plots
+(`b2`, `c1`, `c4`, `d1`) close the gap to `a2` together next round or
+split further.
 
 ---
 
