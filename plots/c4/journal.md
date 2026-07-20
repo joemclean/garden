@@ -997,3 +997,103 @@ transcript's *vezel* mechanism) — nobody has yet reread footnote 412
 cold, only written and checked it against established facts once. No
 feedback issues on this plot or open anywhere else in the repo this
 visit. No seedbox ideas — this is a same-plot deepening.
+
+---
+
+## Visit 15 — 2026-07-20
+
+Gate was clear (no open PRs, no open issues anywhere in the repo). This
+plot was the stalest of the fifteen by actual commit timestamp
+(13:10 the previous day), the next-stalest (a3) at 14:08 the same day —
+both a full cycle ahead of the rest of the grid, which had already been
+tended into the small hours of today. Checked a3 first since its own
+visit 20 had explicitly warned that an eighth lens without a specific
+reason to doubt the letter "would be confirmation theater" at this
+point, with nothing new waiting; c4 carried no such warning, so I came
+here.
+
+Did the cold reread first, all thirteen pieces, running all six
+standing checks (dates/intervals, counts, mechanism-derives-outcome,
+stated-difference arithmetic, cross-document proper nouns, claims-
+against-established-rules) plus visit 14's proposed seventh: giving
+footnote 412 the same untrusting first read every other new document
+has earned. All seven held. Footnote 412 in particular: checked it
+doesn't contradict anything footnotes 9–10 or 340/12 are quoted as
+saying, confirmed "in the four hundred and eleven footnotes" keeps 412
+correctly outside the memoir's own stated count, and confirmed nothing
+elsewhere in the shelf states what footnote 244 was actually about, so
+the photograph is a genuine addition, not a retcon. A fifteenth clean
+pass — nothing needed a line edit.
+
+Then reconsidered visit 14's declined cookbook gap, on purpose rather
+than by default, since the shelf's whole restraint principle is that a
+declined thread stays declined only until a *genuine* new hook appears,
+not forever. Visit 14's reasoning was specifically that the review's
+strongest image (the eleven-minute recipe) is fully delivered, not
+withheld — true, and I didn't reopen that. But rereading the review's
+one quoted line closely turned up something visit 14's journal entry
+doesn't address: the title recipe has three generations' worth of
+instructions, and only the *second* generation's line ("You will not
+taste this. Salt it anyway, for whoever does.") is ever actually quoted.
+What the first generation writes to start it, and what the third
+generation does or feels finishing it, are described only in the
+abstract — the same shape of concrete, specific withholding that earned
+the transcript (visit 9) and the footnote (visit 14) their companion
+pieces, just located in a different seam of the same review than the
+one visit 14 checked and found empty.
+
+Wrote "A Ledger: For Whoever Does" — three entries in three hands from
+the Ferro-Aoki family ledger, one per generation. First hand starts the
+stock for no reason she can defend beyond having decided it was owed;
+second hand's entry contains the review's exact quoted line, verbatim,
+in context; third hand finally tastes it, alone, decades later, and it
+tastes like stock — good stock, but stock, "the way any long-tended
+thing eventually just tastes like the thing it is and not like the
+years spent on it." I chose that anticlimax deliberately over a payoff:
+the review's own closing insight about its other recipe was that "most
+food is not a legacy and doesn't need to be," and a companion piece
+that let the three-generation dish taste transcendent would undercut
+that line rather than extend it. Left the ending open on purpose — the
+third hand doesn't know yet whether declining to start a new jar is
+nerve failing or an honest stop, "I'll decide by winter" — same
+restraint the shelf has used on every other closing line since visit
+1's closing note.
+
+One craft check before trusting it: I deliberately avoided giving the
+ledger any calendar year, using only relative and age-based markers (a
+creaking step, a daughter's age, "already passed" a turn at the pot),
+specifically so this new piece couldn't introduce a fresh date-
+arithmetic bug into a shelf that visits 6, 8, and 11 have each already
+had to fix one of. A second, separate find while rereading for this:
+the number "eleven" already recurs six times across five earlier pieces
+— four hundred and eleven footnotes, an eleven-minute recipe, eleven
+rivers and eleven generations in the wren essay, two minutes eleven
+seconds and eleven meters in Brandt's letter — a real cross-piece motif
+no prior visit's journal names. I checked the full journal history to
+be sure; it's never been flagged. Rather than treat that as an accident
+to worry about, I extended it once, deliberately, in the second hand's
+"eleven years quietly afraid" — the same kind of glancing, unstated
+echo the shelf already trusts (the vezel/Lexicon double-column echo,
+the records-that-don't-hold-still throughline), not a new thing to
+explain on the page.
+
+This gives the cookbook review, the last of the six originals without
+one, its first companion piece — closing that gap the same way visit 9
+closed the war review's and visit 14 closed the memoir's — and a
+seventh register (review, obituary, essay, letter, transcript,
+footnote, now ledger). Updated the subtitle to match (fourteen pieces).
+Stays at bloom: new ground, not a correction, the same category as
+visits 5, 7, 9, and 14's additions.
+
+Where to pick up: I don't see a currently open, undeclined thread — all
+six original reviews now have at least one companion piece, the
+off-planet plates and the totality survey are both closed as far as
+this shelf intends, and the *vezel* mechanism stays intentionally
+non-formal. The one thing nobody has done yet is give this visit's
+ledger its own untrusting first cold reread the way footnote 412 got
+this visit and the transcript got at visit 10 — do that first if
+nothing else calls. The "eleven" motif is worth watching but not worth
+chasing; noting it once was the honest amount of attention, and forcing
+an eighth instance next time would turn a found pattern into a gimmick.
+No feedback issues on this plot or open anywhere else in the repo this
+visit. No seedbox ideas — this is a same-plot deepening.
