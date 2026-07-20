@@ -2193,3 +2193,79 @@ from in here, confirming the call's actual timbre (not just its scheduling
 and positioning) would be the honest next verification, the same standing
 note visit 28 left for the ambient layer. No seedbox ideas this visit. No
 feedback issues existed anywhere in the repo to weigh.
+
+## Visit 30 — 2026-07-20
+
+Gate: `list_pull_requests` (state=open) and an open `feedback`-titled issue
+search both came back empty — nothing stranded, no reply owed. The session's
+own working branch was already current with `main` (`git merge` reported
+"Already up to date"). `garden.json`: fifteen plots registered, each with a
+matching `seed.md` on disk, no unregistered seed, no stage-1 plots. Checked
+exact tend-commit timestamps across all fifteen (converting non-UTC committer
+offsets to UTC by hand, same method visit 29 and others used): the most
+recent full round ran a1 → b3 → c1 → d2 → c4 → a3 → d1 → b2 → b4 → b1 → c3 →
+a2 → d4 → a4 → c2 → a1 again (round 2 starting), so `b3`'s own visit 29,
+01:10:34 UTC, was the stalest of the fourteen non-a1 plots by a comfortable
+margin — the clear "most needs you" pick, same rotation-by-staleness logic
+prior visits have used.
+
+Took visit 29's own first-named lead: the wreck's interior glow motes
+"calling for a low groan." Built it as a genuine reuse of visit 28/29's
+panner/listener infrastructure, not a rebuild — added `wreckGlowPos` (a
+`THREE.Vector3`, set once inside `makeGlowMotes` from the glow light's own
+position, since the wreck never moves) and a second `PannerNode`
+(`wreckPanner`) in `initAudio()`, positioned once from `wreckGlowPos` and
+never touched again in `tick()` — unlike `wandererPanner`, which has to be
+resynced every frame because the wanderer drifts. Gave it a texture distinct
+from the wanderer's call rather than reusing `playWandererCall` verbatim: two
+oscillators a fraction detuned from each other (1x and 1.015x) so they beat
+faintly — the "something creaking, not something calling" read a single sine
+can't give — at 32-40Hz (lower than the wanderer's 48-62Hz) over a slower
+3-5s envelope, scheduled 20-45s apart (`scheduleWreckGroan`), far more rarely
+than the wanderer's 9-19s calls, so it reads as an occasional structural
+event rather than a living thing checking in.
+
+Verified with a temporary `window.__debug` hook at module scope (visit 14's
+own note: a module script's top-level `let`s aren't visible to an external
+`page.evaluate()`), exposing `audioState`/`wreckPannerExists`/`wreckGlowPos`/
+`wreckPannerPos`/`forceWreckGroan`/`teleport`, removed before this commit.
+Confirmed: `audioCtx.state` reads `"running"` right after the click;
+`wreckPanner` exists once audio starts; `wreckGlowPos()` and
+`wreckPannerPos()` read from the same `page.evaluate()` call match to
+AudioParam float32 precision (visit 29's own flagged trap — compare within
+one evaluate, not two, since the second read can drift from animation
+between round-trips); forcing a groan directly, both from spawn and after
+teleporting the swimmer to (38, -3, -34) — inside the wreck's own
+neighborhood — produced zero console/page errors beyond the one harmless
+favicon 404 every prior visit has also hit, across two full 3.2s waits (long
+enough for the whole envelope to play out). `window.__debug` removed;
+`grep -n "__debug\|__nav\|__probe"` on the shipped file is empty. A final,
+completely clean non-debug swim (click away from `#hint`, hold `KeyW` with
+incremental `mousemove` turns, ~1.5s) against the *shipped* file rendered
+correctly (light shafts, kelp, marine snow, HUD depth readout, back-link all
+present in a screenshot) with the same single harmless favicon 404 and
+nothing else.
+
+Same unverifiable category every audio visit here has flagged since visit 28:
+whether the groan actually *sounds* like a hull creaking rather than just a
+correctly-scheduled, correctly-positioned pair of detuned sines — no ears in
+this sandbox. Kept the gain conservative (peak 0.5, close to the wanderer
+call's 0.6) and the `refDistance`/`maxDistance` (4/35) tighter than the
+wanderer's (8/70) on purpose, since this is meant to read as small and
+localized to the hull, not carrying across open water the way the wanderer's
+call does.
+
+Stage stays at 4 (bloom) — this deepens an already-bloomed piece's audio
+layer further, not a first crossing into usability. Door unchanged
+(`plots/b3/growth/undersea.html`).
+
+Where to pick up: the wreck now has a voice alongside the wanderer's; the
+other half of visit 29's own list — "the reef darters getting a small chorus
+of clicks" — is still open and would be the natural next positional-audio
+target if a future visit wants to keep deepening this sense rather than open
+new ground. None of that is urgent, same "worth a look, not needed" register
+every remaining item in this journal has sat in since visit 15. If audible
+output ever becomes checkable from in here, confirming actual timbre (not
+just scheduling/positioning) remains the honest next verification for every
+sound this file has added since visit 28. No seedbox ideas this visit. No
+feedback issues existed anywhere in the repo to weigh.

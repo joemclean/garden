@@ -35,7 +35,7 @@
       "title": "Undersea — a 3D swimming simulation",
       "planted": "2026-07-06",
       "last_tended": "2026-07-20",
-      "note": "Twenty-ninth visit gives the wanderer, still voiceless after visit 28 named the gap, a real spatial call: a PannerNode rooted at its own position carrying a low, irregular downward-glide moan, with the file's first-ever listener tracking (position + orientation from the swimmer's own forward vector) kept current every frame so the call genuinely fades and pans with distance rather than reading as a flat, unpositioned beacon. Verified panner tracks the wanderer to float32 precision, listener follows teleports correctly, and a clean non-debug swim renders and runs error-free. Stays at bloom.",
+      "note": "Thirtieth visit gives the wreck its own voice, the other half of visit 29's own named lead: a second PannerNode rooted at the interior glow motes' fixed position, playing a low detuned-pair groan (32-40Hz, two oscillators beating faintly) on a slow 20-45s irregular schedule, distinct in texture and rarity from the wanderer's own call. Reuses the panner/listener infrastructure directly. Verified panner position matches the glow light to float32 precision, forced groans near and far from the wreck produce zero errors, and a clean non-debug swim renders correctly. Stays at bloom.",
       "door": "plots/b3/growth/undersea.html"
     },
     "b1": {
