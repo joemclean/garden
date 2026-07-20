@@ -1026,7 +1026,7 @@ document.addEventListener('mousemove', (e) => {
 // requestPointerLock() itself doesn't count as playing audio, so this can't
 // piggyback on it silently, it has to be its own explicit start call inside
 // the same handler.
-let audioCtx = null, ambientFilter = null;
+let audioCtx = null, ambientFilter = null, wandererPanner = null;
 function initAudio() {
   if (audioCtx) return;
   const Ctx = window.AudioContext || window.webkitAudioContext;
@@ -1059,6 +1059,39 @@ function initAudio() {
   noiseSrc.start();
 
   scheduleBubble();
+
+  // the wanderer's own voice: visit 28 gave the water an ear but left the one
+  // thing worth actually hearing silent — "the wanderer passing nearby
+  // currently makes no sound of its own." A real PannerNode (not the flat,
+  // unpositioned gain the ambient/bubble sounds use) rooted at the wanderer's
+  // own position, so the call genuinely comes from where the shape is, and
+  // fades with distance the way visit 12's orbit-vs-waypoint math already
+  // established the *sight* of it does. Positioned once here at whatever the
+  // wanderer's position happens to be at the moment audio starts; tick()
+  // keeps it — and the listener — current every frame after that.
+  wandererPanner = audioCtx.createPanner();
+  wandererPanner.panningModel = 'equalpower';
+  wandererPanner.distanceModel = 'inverse';
+  wandererPanner.refDistance = 8;
+  wandererPanner.rolloffFactor = 1.3;
+  wandererPanner.maxDistance = 70;
+  setPannerPosition(wandererPanner, wanderer.position);
+  wandererPanner.connect(audioCtx.destination);
+
+  scheduleWandererCall();
+}
+
+// AudioParam-based positioning (positionX/Y/Z) is the current spec; fall back
+// to the deprecated setPosition() call for any engine that still needs it —
+// same defensive shape as every other browser-surface check in this file.
+function setPannerPosition(node, pos) {
+  if (node.positionX) {
+    node.positionX.value = pos.x;
+    node.positionY.value = pos.y;
+    node.positionZ.value = pos.z;
+  } else {
+    node.setPosition(pos.x, pos.y, pos.z);
+  }
 }
 
 // occasional bubbles: a short rising sine chirp, irregularly spaced so they
@@ -1085,6 +1118,38 @@ function scheduleBubble() {
     if (!audioCtx) return;
     playBubble();
     scheduleBubble();
+  }, delay * 1000);
+}
+
+// a low, slow call with a downward glide — the "moan" register real distant
+// marine sound has, not another chirp. Routed through wandererPanner (not
+// straight to destination like the ambient/bubble sounds) so refDistance/
+// rolloffFactor do the fading-with-distance work instead of a hand-rolled
+// gain formula; kept intentionally spaced out and irregular, same
+// scheduling shape as scheduleBubble, so it reads as an animal calling on
+// its own schedule, not a location-marker beacon.
+function playWandererCall() {
+  const dur = 1.8 + Math.random() * 1.0;
+  const now = audioCtx.currentTime;
+  const osc = audioCtx.createOscillator();
+  osc.type = 'sine';
+  const startFreq = 48 + Math.random() * 14;
+  osc.frequency.setValueAtTime(startFreq, now);
+  osc.frequency.exponentialRampToValueAtTime(startFreq * 0.72, now + dur);
+  const g = audioCtx.createGain();
+  g.gain.setValueAtTime(0.0001, now);
+  g.gain.exponentialRampToValueAtTime(0.6, now + dur * 0.35);
+  g.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+  osc.connect(g).connect(wandererPanner);
+  osc.start(now);
+  osc.stop(now + dur + 0.05);
+}
+function scheduleWandererCall() {
+  const delay = 9 + Math.random() * 10;
+  setTimeout(() => {
+    if (!audioCtx) return;
+    playWandererCall();
+    scheduleWandererCall();
   }, delay * 1000);
 }
 
@@ -1228,6 +1293,28 @@ function tick() {
   wanderer.position.z = -70 + Math.cos(wandererT * 0.7) * 28;
   wanderer.rotation.y = -wandererT - Math.PI / 2;
   flukePivot.rotation.x = Math.sin(t * 1.1 - WANDERER_TAIL_Z * WANDERER_WAVE_K) * 0.35;
+
+  // keep the wanderer's voice rooted at the wanderer and the listener rooted
+  // at the swimmer, every frame — both drift constantly, so a position set
+  // once at initAudio() time would silently go stale the moment either moved
+  if (wandererPanner) setPannerPosition(wandererPanner, wanderer.position);
+  if (audioCtx) {
+    const listener = audioCtx.listener;
+    if (listener.positionX) {
+      listener.positionX.value = yaw.position.x;
+      listener.positionY.value = yaw.position.y;
+      listener.positionZ.value = yaw.position.z;
+      listener.forwardX.value = forward.x;
+      listener.forwardY.value = forward.y;
+      listener.forwardZ.value = forward.z;
+      listener.upX.value = 0;
+      listener.upY.value = 1;
+      listener.upZ.value = 0;
+    } else {
+      listener.setPosition(yaw.position.x, yaw.position.y, yaw.position.z);
+      listener.setOrientation(forward.x, forward.y, forward.z, 0, 1, 0);
+    }
+  }
 
   {
     const bp = wandererBody.geometry.attributes.position;
