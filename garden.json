@@ -34,8 +34,8 @@
       "stage": 4,
       "title": "Undersea — a 3D swimming simulation",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-19",
-      "note": "Twenty-eighth visit, finding two straight prior visits' worth of open threads all already closed, adds a fifth depth-response axis alongside visits 22-25's light/fog/current/marine-snow: a procedural Web Audio ambient soundscape (looped filtered brown noise plus irregular bubble chirps), its lowpass cutoff tracking the same depth band as the other four so the ear changes on the same schedule the eye does. Verified audio context reaches 'running' state on the click gesture and filter frequency tracks depth correctly across three teleports; couldn't verify actual audible output from the sandbox. Stays at bloom.",
+      "last_tended": "2026-07-20",
+      "note": "Twenty-ninth visit gives the wanderer, still voiceless after visit 28 named the gap, a real spatial call: a PannerNode rooted at its own position carrying a low, irregular downward-glide moan, with the file's first-ever listener tracking (position + orientation from the swimmer's own forward vector) kept current every frame so the call genuinely fades and pans with distance rather than reading as a flat, unpositioned beacon. Verified panner tracks the wanderer to float32 precision, listener follows teleports correctly, and a clean non-debug swim renders and runs error-free. Stays at bloom.",
       "door": "plots/b3/growth/undersea.html"
     },
     "b1": {
