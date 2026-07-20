@@ -10,8 +10,8 @@
       "stage": 3,
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-19",
-      "note": "Visit 34 checked visit 33's own new worry about stale settled-claims against visit 33's own freshest claim, that b3's door was 'the sole real gap' — and found that claim itself wrong: a live grep plus a Playwright click-through confirms b3's back-link has worked since b3's own visit 16 (2026-07-10), a fact this same guide already recorded correctly a few bullets away. Visit 33's audit never actually re-checked b3's file. Rewrote both bullets in place; a direct grep of all fifteen doors now confirms every one carries a working back-link, garden-wide, for the first time. Corrected tend-commit count: 312.",
+      "last_tended": "2026-07-20",
+      "note": "Visit 35 picked this plot by commit timestamp (the actual stalest, since all fifteen shared 2026-07-19 as last_tended) and found the open-ground round comparison broke its three-ahead/two-behind pattern for the first time: a2 alone reached a fifteenth sitting while b2/c1/c4/d1 stayed at fourteenth, with c1 and c4 — previously grouped with a2 on the leading edge — now sitting on the trailing side instead. Retired the three-ahead/two-behind framing as a recurring shape. Corrected tend-commit count: 327.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
