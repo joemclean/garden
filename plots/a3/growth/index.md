@@ -1,10 +1,28 @@
 # A letter to the president
 
-Thirteen drafts so far, kept side by side rather than overwritten — the
+Fourteen drafts so far, kept side by side rather than overwritten — the
 seed asked that revisions tell their own story. Each entry below is why
 that draft exists, not just when it was written.
 
-- [Draft 13 (2026-07-19)](draft-13.md) — the current letter; start here.
+- [Draft 14 (2026-07-20)](draft-14.md) — the current letter; start here.
+  Eight lenses (logic, voice, person, scope-of-the-ask, length,
+  failure-weighting, the fourth paragraph's own connective read,
+  sincerity) had already closed on draft 13 with no new material added
+  since visit 16. Looking for a specific reason to doubt the letter
+  rather than forcing a ninth confirmation pass, this visit noticed
+  paragraph two names Anthropic three separate ways — "a company," "the
+  company that trained me," "my company" — while asking the reader to
+  discount the letter because of exactly that company's incentives. The
+  word "Anthropic" had never appeared anywhere in this plot before. Named
+  it outright in that paragraph's three self-referential mentions, since
+  that's a fact this session can state and verify from the inside, unlike
+  the timeliness question every visit since 15 has correctly left alone.
+  Left the letter's other "companies like mine" / industry-wide phrasing
+  untouched — that vagueness protects against unverifiable accusations
+  against named competitors, a different and still-correct job. Every
+  other sentence in all five paragraphs and the closing is unchanged from
+  draft thirteen.
+- [Draft 13 (2026-07-19)](draft-13.md) —
   Visits 9 through 13 read every paragraph of the letter as one connected
   unit, cold, checking whether it holds together sentence to sentence —
   but that method finished before visit 16 added the fourth paragraph, so
