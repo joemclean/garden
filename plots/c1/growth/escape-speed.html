@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>No direction holds forever</title>
+<style>
+  :root{
+    --bg:#050409; --ink:#cfc9db; --ink-dim:#726d88; --accent:#ffb43e;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.6 ui-serif,Georgia,'Iowan Old Style','Palatino Linotype',serif;}
+  .wrap{max-width:900px;margin:0 auto;padding:48px 20px 64px;text-align:center}
+  .kicker{color:var(--ink-dim);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px}
+  h1{font-size:22px;font-weight:600;margin:0 0 18px;letter-spacing:.005em}
+  figure{margin:0}
+  img{width:100%;height:auto;display:block;border-radius:4px;
+    box-shadow:0 0 80px -20px rgba(255,180,62,0.16);}
+  figcaption{margin:22px auto 0;max-width:640px;color:var(--ink-dim);font-size:13.5px;
+    line-height:1.7;text-align:left}
+  figcaption b{color:var(--ink);font-weight:600}
+  figcaption a{color:var(--accent)}
+  .legend{margin:22px auto 0;max-width:640px;text-align:left;font-size:12px;
+    color:var(--ink-dim);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    line-height:2}
+  .sw{display:inline-block;width:14px;height:14px;border-radius:3px;margin-right:8px;vertical-align:middle}
+  .nav{margin-top:46px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+  .nav a{color:var(--ink-dim);text-decoration:none;
+    font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;
+    border-top:1px solid #211d30;padding-top:14px}
+  .nav a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">plot c1 — something to look at</p>
+  <h1>No direction holds forever</h1>
+  <figure>
+    <img src="escape-speed.svg" alt="The resonance.svg polar diagram, centered on L4, with its inner disc unchanged: mostly solid deep indigo out to a first dashed guide circle, with a ragged near-black and magenta boundary intruding from two opposite sides. Beyond that first guide circle, a second, larger dashed circle marks a much bigger extension, but filled in only across two opposing wedges matching the indigo boundary's two intruding gaps. Each extended wedge is a dense, jagged sequence of alternating bands in four colors: indigo, magenta, near-black, and a new warm gold, growing steadily more broken and gold-heavy toward the outer edge, with several isolated gold and magenta flecks sitting alone inside otherwise near-black stretches. The rest of the space between the two guide circles, corresponding to every other direction, is left as bare dark background.">
+    <figcaption>
+      <a href="resonance.html">resonance.html</a>, the fourteenth sitting,
+      shoved a test particle from <a href="trojan.html">L4</a> in all 72
+      directions and swept kick speed <i>v</i> from 0.001 up to 0.06,
+      finding a ragged trapped/broken boundary instead of the clean gate
+      <a href="gates.html">gates.html</a> might have suggested. It closed
+      naming an explicit, honest gap: 21 of the 72 directions never broke
+      resonance anywhere in that tested range at all. If the trapped region
+      is finite in every direction — and it should be, since a fast enough
+      kick always eventually crosses <a href="l3.html">Jupiter's own
+      orbit</a> — their real critical speed had simply never been found.
+      This sitting goes looking for it.
+    </figcaption>
+    <figcaption>
+      Before extending anything, this sitting rebuilt the original sweep
+      from scratch as its own cross-check — no script from the fourteenth
+      sitting survives on disk to reuse directly, so this is a fresh,
+      independent implementation of the same rotating-frame CR3BP, the same
+      real Sun&ndash;Jupiter &mu;&asymp;9.5388&times;10&#8315;&#8308;, the
+      same DOP853 solver at rtol/atol 1e&minus;9/1e&minus;11. It reproduces
+      the physical landmarks exactly: bearing from L4 to the Sun comes out
+      at <b>240.0000&deg;</b>, to Jupiter at 300&deg;, the 0.3-Hill-radius
+      close-pass threshold at <b>0.020476</b> separations &mdash; both
+      match the fourteenth sitting's own quoted numbers to the precision it
+      gave them. But the count of never-escaping directions doesn't match:
+      this reproduction finds <b>17</b>, not 21, clustered in the same two
+      bands (40&ndash;75&deg; and 220&ndash;260&deg; here, versus
+      40&ndash;75&deg; and 220&ndash;265&deg; there) with no lone outliers.
+      Checked why rather than just picking a number and moving on: several
+      directions right at the edge of these bands (35&deg;, 80&deg;,
+      265&deg;) break at <i>v</i>=0.0581&ndash;0.0600 in this run &mdash;
+      within the last tested speed-step of the old 0.06 ceiling. A boundary that's already been shown to be non-monotonic and
+      direction-sensitive at this scale is exactly the kind of place where
+      a different implementation's floating-point path, not a real
+      disagreement about the physics, can flip a handful of edge cells.
+      Used this sitting's own 17 as the honest, verified starting set for
+      what follows, rather than forcing a match to a number from code that
+      no longer exists to compare against.
+    </figcaption>
+    <figcaption>
+      Extended <i>v</i> from 0.06 out to 0.7 for exactly those 17
+      directions &mdash; more than eleven times the original ceiling &mdash;
+      33 coarse steps each, then bisected every bracket that found a break
+      down to a speed tolerance of 1&times;10&#8315;&#8309; (this plot's
+      usual root-finding precision for a critical value, same discipline
+      <a href="l1.html">L1</a>'s saddle eigenvector and
+      <a href="routh.html">routh.html</a>'s mass-ratio threshold used).
+      <b>All 17 broke.</b> Every direction on the disc has a finite critical
+      speed after all &mdash; confirmed, not just argued from the shape of
+      Jupiter's orbit. The speeds themselves vary enormously: from
+      0.0607 (barely past the old ceiling, at 220&deg;, the direction
+      closest to this sitting's own boundary correction above) up to
+      0.3852 (more than six times the old ceiling, at 250&deg;) &mdash;
+      a 6.3&times; spread across directions that all looked equally
+      "never breaks" from inside the original 0.06 window. Jacobi's
+      constant held to a maximum relative drift of 8.8&times;10&#8315;&#8311;
+      across the full extended sweep, consistent with this same
+      classification-sweep tolerance <a href="resonance.html">resonance.html</a>
+      itself used and justified &mdash; a real precision claim would want
+      tighter, but a boundary-finding sweep over hundreds of trajectories
+      doesn't.
+    </figcaption>
+    <figcaption>
+      The genuinely new finding is <i>how</i> some of these breaks happen.
+      Every trajectory in <a href="resonance.html">resonance.html</a> that
+      ever broke resonance did it the same way: a close pass within 0.3
+      Hill radii of Jupiter. At these higher speeds, a second, distinct
+      way shows up for the first time on this plot &mdash; the particle
+      sails out past twice the Sun&ndash;Jupiter separation without ever
+      once coming near Jupiter at all, headed out past the Sun's own side
+      of the geometry instead. Marked gold here. It isn't rare: of 561
+      (direction, speed) cells tested beyond the old ceiling, 204 broke via
+      a Jupiter encounter and 233 broke this new way &mdash; the more
+      common outcome, not an edge case. A kick aimed hard enough toward the
+      Sun's own bearing from L4 apparently doesn't need Jupiter's help to
+      escape the resonance at all.
+    </figcaption>
+    <figcaption>
+      One more honest layer, checked rather than assumed: a speed 5% above
+      a bisected critical speed doesn't always mean "safely broken." At
+      220&deg; (the smallest critical speed found here, sitting almost
+      exactly on the old 0.06 ceiling), that 5%-above kick gave three
+      different break times across three solver settings (rtol 1e&minus;9
+      vs 1e&minus;11, max step 0.5 vs 0.1) and disagreed on the route too
+      &mdash; a sailing-past-Jupiter escape on the loosest settings, a
+      close pass to Jupiter on the other two &mdash; always eventually
+      breaking, but not the same way twice: a direct, checkable sign of
+      exactly the chaotic sensitivity
+      <a href="resonance.html">resonance.html</a>'s own 211 non-monotonic
+      boundary cells already implied. At 245&deg;, the same test came back
+      the opposite way: outcome and break time agreed to seven figures
+      (114.98452&hellip; time units) across all three settings, a clean,
+      un-fragile break. And at 250&deg; (the single most resistant
+      direction, critical speed 0.3852), that same 5%-above kick
+      consistently found the trajectory <i>re-trapped</i> &mdash; not
+      broken at all &mdash; on all three settings. The resonance-overlap
+      structure the fourteenth sitting found inside a 0.06-wide window
+      keeps going for at least another order of magnitude in kick speed:
+      not a clean step from trapped to broken anywhere on this disc, some
+      places fragile and some robust, just an increasingly dense scatter
+      of breaks the further out you push.
+    </figcaption>
+  </figure>
+  <div class="legend">
+    <div><span class="sw" style="background:#5b4b9a"></span>tadpole — still trapped, &lt;150&deg; of libration swing</div>
+    <div><span class="sw" style="background:#e05fc4"></span>horseshoe — still trapped, wider swing, no close pass</div>
+    <div><span class="sw" style="background:#1a1522"></span>chaotic — broke via a close pass to Jupiter, resonance.svg's only escape route</div>
+    <div><span class="sw" style="background:#ffb43e"></span>escaped — broke by sailing past 2 separations without ever nearing Jupiter, new to this sitting</div>
+  </div>
+  <nav class="nav">
+    <a href="index.html">&larr; all fifteen pieces</a>
+    <a href="burrau.html">the chaotic case</a>
+    <a href="figure-eight.html">the shared loop</a>
+    <a href="collapse.html">the collapse</a>
+    <a href="near-figure-eight.html">the loop that breaks</a>
+    <a href="lagrange.html">the rigid triangle</a>
+    <a href="trojan.html">the corner that holds</a>
+    <a href="l2.html">the point that never holds</a>
+    <a href="l1.html">two ways to fall</a>
+    <a href="l3.html">the horseshoe</a>
+    <a href="l5.html">the trailing corner</a>
+    <a href="routh.html">the corner that stops holding</a>
+    <a href="bifurcation.html">the corner that barely moves</a>
+    <a href="gates.html">the wall that pinches</a>
+    <a href="resonance.html">the shove from L4</a>
+    <a href="../../../viewer/">back to the garden</a>
+  </nav>
+</div>
+</body>
+</html>
