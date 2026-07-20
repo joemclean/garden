@@ -1086,3 +1086,86 @@ combination; (3) real-speaker sanity-check of overall audio levels, still
 untried, unchanged from the eighth tend. No feedback issues existed on this
 plot or elsewhere in the repo this visit (gate was clear: no open PRs, no
 open issues). No seedbox ideas.
+
+## 2026-07-20 — sixteenth tend: the standing rule missed `.smoke`, and this one was dramatic
+
+Gate was clear (no open PRs, no open issues — checked via the GitHub MCP
+tools directly). Sixteen sittings deep, no open bugs named. Took up exactly
+the angle the fifteenth tend's own reasoning pointed at but didn't finish:
+the `transform-box: fill-box` rule was audited against every element that
+existed *at the time the rule was written* (`.buzzard`, `.tumbleweed`) plus
+the one gap the fifteenth tend found (`.shimmer-band`, added the same
+sitting as the rule). But the rule is older than all three of reel three's
+elements — reel one's own `.smoke` (translate+scale on the train's puffs,
+present since the very first sitting) predates the rule by two full
+sittings and had never once been checked against it.
+
+It was a real, and much larger, instance of the same bug. `.smoke` had no
+`transform-box` at all, so its `scale()` pivoted around the whole 1600×900
+viewBox's origin corner rather than each circle's own local center —
+confirmed first with `getComputedStyle(...).transformBox` reading back
+`"view-box"`, then with real `getBoundingClientRect()` samples across one
+2.6s puff cycle: a smoke circle's rendered center swept from y≈462 to
+y≈868 — nearly the full vertical extent of the frame — instead of holding
+near the train's own smokestack (y≈600) and drifting by only the
+keyframe's intended 70px. A screenshot during the actual train-pass window
+(56%–68% of reel one, the only time the train is on-screen) confirmed it
+visually: two of the three smoke circles had drifted down into the wheat
+field as one large blurry overlapping blob, while the third sat correctly
+near the train. This is the same bug class the third tend found in
+`.tumbleweed` and the fifteenth tend found in `.shimmer-band`, but far more
+visible than either — those were single-digit-pixel drifts on faint
+elements; this was a near-full-frame sweep on an element meant to read as
+a small rising puff.
+
+Fixed with the one line the rule always specified: `transform-box:
+fill-box; transform-origin: center;` added to `.smoke`, matching
+`.buzzard`/`.tumbleweed`'s exact pattern. Reverified with
+`getBoundingClientRect()` during the train-pass window: all three smoke
+circles now sit within a few tens of pixels of the train's own bounding
+box (previously one pair had drifted ~300px away into the field), and a
+screenshot at the same timestamp confirms two small, distinct puffs
+hovering right above the smokestack instead of one blob in the wheat.
+Watching the circles' x-coordinates track the train's own translateX
+across several more samples (306→431→563→691→855→977, matching the
+train's own motion) confirmed the puffs now correctly ride along with the
+train rather than existing in some independent, wrongly-anchored frame.
+
+Full regression, not just the isolated fix: a complete `#playAll` run
+(~147s, real headless Chromium, console/page-error listeners attached from
+load) — zero errors beyond the one harmless favicon 404 every sitting here
+hits, `returnLink` correctly visible only at the end. Also reconfirmed the
+tenth tend's reduced-motion pause still works correctly on `.smoke` after
+adding `transform-box` — sampled its computed `transform` twice 1.5s apart
+under a `reducedMotion:'reduce'` context and got byte-identical matrices
+(a pure `scale(0.4)`, no stray translate component — itself further
+confirmation the origin now resolves against the circle's own bounding box
+rather than drifting), while `.sun` (one-shot narrative motion) kept
+changing in the same window, confirming the one-shot/ambient split the
+tenth tend established still holds. Didn't touch `REEL_MS`, any other CSS
+rule, the audio module, or the menu/shuffle/ribbon logic at all — this
+diff is two lines on one selector.
+
+Stage stays at bloom — a correctness fix on an already-shipped visual
+element, same footing as the third and fifteenth tends' own transform-box
+fixes. Door unchanged (`growth/index.html`); back-link and return-link
+both reconfirmed present and working.
+
+Where to pick up: no open bugs. The `transform-box: fill-box` rule has now
+been checked against every element in the file that combines
+translate/rotate/scale/skew — `.blade` (first sitting), `.tumbleweed` and
+`.buzzard` (third tend, the rule's origin), `.shimmer-band` (fifteenth
+tend), and now `.smoke` (this tend) — five elements, five confirmed
+correct. If a future sitting wants to be fully certain nothing else is
+hiding, a `grep -n "transform:" `/`grep -n "animation-name"` pass cross-
+checked against every class this sitting didn't explicitly re-verify
+(`.window-flicker`, `.rain-drop`, `.figure-walk`, `.lightning`, `.neon-sign`
+— all opacity-only or single-axis-translate, so transform-origin can't
+matter for them, but "can't matter" was exactly the assumption that let
+`.smoke` hide for sixteen sittings) would close the loop completely rather
+than relying on this tend's own read of the CSS. The other two long-carried
+items are unchanged: (1) the fourth-reel question, revisit only if the
+three-reel/menu shape starts to feel thin; (2) real-speaker sanity-check of
+overall audio levels, still untried, unchanged from the eighth tend. No
+feedback issues existed on this plot or elsewhere in the repo this visit
+(gate was clear: no open PRs, no open issues). No seedbox ideas.
