@@ -136,6 +136,17 @@
         rs.freq = pitchAt(rs.anchorY);
       }
     }
+    // a pointer drag in progress has its own live audio tone tracking the
+    // dragged star's pitch — resync it too, or a resize that clamps the
+    // star into a new pitch class leaves the tone sounding the old one
+    // until the next pointermove (which, mid-rotation, may not come for a
+    // while, or ever if the finger lifts without moving again)
+    if (stars && drags) {
+      for (var pid in drags) {
+        var pdrag = drags[pid];
+        if (stars[pdrag.starIndex]) dragToneSet(pdrag.tone, stars[pdrag.starIndex].freq);
+      }
+    }
     // the keyboard reticle has its own position independent of any star's —
     // without this, shrinking the viewport while tabbed in (or mid-grab)
     // leaves kbX/kbY stale and possibly off the new canvas entirely, so the
@@ -149,6 +160,9 @@
         gs.x = gs.anchorX = kbX;
         gs.y = gs.anchorY = kbY;
         gs.freq = pitchAt(kbY);
+        // same tone-desync fix as the pointer-drag case above, for the
+        // keyboard's own grabbed-star tone
+        dragToneSet(kbTone, gs.freq);
       }
     }
   }

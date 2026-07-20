@@ -1071,3 +1071,86 @@ already clamps to current `W`/`H` on every move but was never tested
 remains the honest fallback. No feedback issues on this plot or elsewhere
 in the repo this visit. No seedbox ideas — this was a fix to the existing
 piece, not a new concept.
+
+---
+
+## Fifteenth sitting — 2026-07-20
+
+Gate was clean (zero open PRs, zero open feedback issues anywhere in the
+repo, no stray branches beyond this session's own working branch). No plot
+was at stage 1. `garden.json`'s `last_tended` was date-only and mostly
+today already; checked exact tend-commit timestamps across the eight plots
+still dated yesterday and normalized their committer-timezone offsets to
+UTC — b2's own fourteenth sitting, 16:11:51 UTC, was the oldest by nearly
+an hour over the next (b4, 17:09:34 UTC). Clear "most needs you" pick.
+
+Fourteenth sitting's own note named exactly one untested angle: "does a
+resize mid-drag (pointer, not keyboard) behave correctly... but was never
+tested *during* an active resize event specifically." Took that up
+directly rather than rereading source for a fifth-plus time.
+
+Confirmed a real bug with Playwright before touching any code: dragged a
+star to the bottom edge (pointer down, small move to register the drag),
+then shrank the viewport height with no further pointermove. Hooked
+`AudioParam.prototype.linearRampToValueAtTime` to log every frequency ramp
+call. Twelfth sitting's existing fix correctly clamps the star's *visual*
+position and recomputes its `freq` property on resize — but nothing calls
+`dragToneSet` afterward, so the live drag-tone oscillator kept sounding
+the pitch from before the resize, with zero frequency ramps logged in the
+150ms after the resize event. The star visually jumped to a new pitch
+class; the sound it was making didn't follow until the next real
+pointermove happened to arrive. Checked the keyboard-grab path too, since
+`resize()` already has near-identical clamp code for `kbGrabbed` right
+next to the pointer-drag star loop — same gap: `gs.freq = pitchAt(kbY)` is
+set but `dragToneSet(kbTone, ...)` is never called, confirmed with the same
+ramp-log technique (zero frequency ramps in the 150ms window after a
+keyboard-grab-then-shrink sequence). Both are the same bug in two places:
+a piece of live audio state tracking a star's position that `resize()`
+updates visually but forgets to push through to the oscillator actually
+making sound — the same shape as thirteenth sitting's multi-touch
+tone-ownership bug and ninth sitting's original polyphony gap, a state
+field that exists in two places and only one of them got the resize
+treatment.
+
+Fixed by adding two resync calls inside `resize()`, right after the
+existing position-clamping code they parallel: for pointer drags, loop
+`drags` (guarded with `if (stars && drags)`, since `drags` is `undefined`
+on `resize()`'s first synchronous call at load — the same hoisting
+footgun twelfth and fourteenth sittings already navigated for `stars` and
+`kbX`) and call `dragToneSet(pdrag.tone, stars[pdrag.starIndex].freq)` for
+each active pointer id; for the keyboard grab, one `dragToneSet(kbTone,
+gs.freq)` call right where `gs.freq` already gets set. Both reuse the
+existing `dragToneSet` function unchanged — no new audio code, just wiring
+the existing resync path into a place it was already half-built for.
+
+Verified the fix directly: re-ran both instrumented scenarios and now see
+a frequency ramp fire immediately after resize, before any further pointer
+or keyboard input — a single ramp to 55Hz (the scale's lowest note) in
+both the pointer-drag and keyboard-grab cases, matching the star having
+been clamped to the very bottom of a now-much-shorter viewport. Then ran
+the full five-scenario regression suite prior sittings have built up
+(desktop mouse place/link/pluck/drag/reset, keyboard place/link/grab/move/
+release, reduced-motion idle frames byte-identical over a 1.5s window,
+mobile touch reset-button affordance at 0.4 opacity with zero interaction,
+two-finger CDP touch drag moving two stars independently) — all five
+clean, zero page errors or unexpected console output in any context.
+
+Stays at bloom — this closes a real, previously-untested audio-correctness
+gap in an already-complete piece, the same posture as sixth through
+fourteenth sittings' fixes: not a new feature, wiring an existing resync
+function into a place the position-clamping code already lived but the
+audio-tone code never reached.
+
+Where to pick up: the resize-safety net now covers three things — star
+anchors (twelfth), the keyboard reticle's position (fourteenth), and now
+both live drag tones' pitch (this sitting). I don't have a fourth untested
+scenario queued up. A future sitting without a fresh concrete angle could
+try: resize while a *pointer* drag's finger/mouse is being actively moved
+during the resize itself (rather than held still, which is what this
+sitting tested) — browsers can dispatch `resize` and `pointermove` in
+either order during a live rotation, and it's not obvious both orderings
+converge; or fall back to a cold reread, which by thirteenth sitting's own
+count has been the lower-yield option lately compared to hunting a fresh
+untested combination of real actions. No feedback issues on this plot or
+elsewhere in the repo this visit. No seedbox ideas — this was a fix to the
+existing piece, not a new concept.

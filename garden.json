@@ -106,8 +106,8 @@
       "stage": 4,
       "title": "Open ground: something to play",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-19",
-      "note": "Fourteenth sitting finds a real bug via a resize-while-holding-the-keyboard-reticle scenario: `resize()` clamps every star's anchor to the new viewport but never touched `kbX`/`kbY`, so a grabbed star would snap to safety while the reticle marking it went fully off-screen until the next arrow press. Confirmed with getImageData pixel reads, not screenshots. Fixed by clamping the reticle in `resize()` too and resyncing a grabbed star to it. Full regression (mouse, keyboard, reduced-motion, mobile) clean. Stays at bloom.",
+      "last_tended": "2026-07-20",
+      "note": "Fifteenth sitting finds the analogous audio gap to fourteenth's reticle fix: `resize()` clamps a dragged star's position and recomputes its `freq`, but never resynced the live drag-tone oscillator, so both a pointer drag and a keyboard grab kept sounding the pre-resize pitch until the next real move. Confirmed with an `AudioParam.linearRampToValueAtTime` hook (zero frequency ramps in the 150ms after resize, before the fix). Fixed by calling the existing `dragToneSet` for both cases inside `resize()`. Full five-scenario regression clean. Stays at bloom.",
       "door": "plots/b2/growth/index.html"
     },
     "d1": {
