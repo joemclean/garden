@@ -364,14 +364,34 @@
 
   function scheduleClicks() {
     if (!audioCtx) return;
-    const horizon = audioCtx.currentTime + LOOKAHEAD;
+    const now = audioCtx.currentTime;
+    const horizon = now + LOOKAHEAD;
     for (const v of rhythmVoices) {
+      const interval = 1 / v.rate;
+      if (v.nextClickTime < now) {
+        // This voice's own scheduler tick (setInterval, SCHED_INTERVAL_MS)
+        // fell behind real time — e.g. a backgrounded/throttled tab paused
+        // it for a while, verified reproducible by delaying the interval's
+        // callback directly (not by fighting browser backgrounding heuristics,
+        // which this sandbox doesn't apply). Left as-is, the while loop below
+        // would schedule every missed click going back to whenever it last
+        // ran, each with a start() time already behind `now` — and per the
+        // Web Audio spec, start(when) with when < currentTime clamps to
+        // currentTime, so a multi-second backlog turns into dozens of clicks
+        // all starting at once: a real, audible burst, exactly the "pop"
+        // class of bug this piece's whole premise says never happens.
+        // Resync silently to the next on-grid click at or after `now`
+        // instead of replaying the backlog — a gap in the beat during the
+        // stall (already inaudible/unnoticed, since nothing was updating
+        // then anyway) rather than a burst on return.
+        v.nextClickTime += Math.ceil((now - v.nextClickTime) / interval) * interval;
+      }
       while (v.nextClickTime < horizon) {
         const src = audioCtx.createBufferSource();
         src.buffer = clickBuffer;
         src.connect(v.filter);
         src.start(v.nextClickTime);
-        v.nextClickTime += 1 / v.rate;
+        v.nextClickTime += interval;
       }
     }
   }
