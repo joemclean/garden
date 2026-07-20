@@ -1460,3 +1460,174 @@ plot or anywhere else in the repo this visit (gate was clear: no open
 PRs, no open issues, no stranded garden work). No seedbox ideas — a
 same-plot piece built directly from the prior sitting's own named
 question, not a new idea for a different plot.
+
+## 2026-07-20 — fifteenth sitting: how far it actually takes
+
+Gate first: `list_pull_requests` (state=open) and `list_issues`
+(state=OPEN) both came back empty across the whole repo — nothing
+stranded, no note owed a reply. This sitting was directed at `c1`
+directly rather than picked by cross-plot staleness, so no survey of the
+other fourteen plots' tend-commits this time; went straight to reading
+this plot's own seed and the full fourteen-entry journal before touching
+anything, same as every prior sitting's own discipline once a plot was
+chosen.
+
+The fourteenth sitting closed naming two live threads without forcing
+either: zoom into the resonance-overlap slivers at higher angular
+resolution, or chase the real critical speed of the 21 directions that
+never broke resonance within the tested v&le;0.06. Picked the second — it
+has a clean yes/no shape ("is the trapped region actually finite in every
+direction, the way it should be if v large enough always eventually
+crosses Jupiter's own orbit?") that the first thread's "does the sliver
+density follow a pattern" doesn't share, and a fourteenth-sitting closing
+line ("their real critical speed... lies beyond what this sitting
+tested") that reads as a plain unanswered question rather than a
+speculative one.
+
+Before extending anything, rebuilt `resonance.html`'s own 72&times;32
+sweep from scratch as an independent cross-check — no generation script
+from any prior sitting survives on disk anywhere in this plot's
+directory, only the rendered SVG/HTML outputs, a real gap worth naming
+for whoever next needs to extend rather than just view a piece here. The
+rebuild reproduced the physical landmarks the fourteenth sitting quoted
+exactly (bearing from L4 to the Sun at 240.0000&deg;, the close-pass
+threshold at 0.020476 separations) using the same real Sun&ndash;Jupiter
+&mu;&asymp;9.5388&times;10&#8315;&#8308; and the same DOP853
+rtol/atol=1e&minus;9/1e&minus;11 the fourteenth sitting's own caption
+specified. But the headline count didn't match: 17 never-escaping
+directions here, not 21, in the same two bands (40&ndash;75&deg;,
+220&ndash;260&deg; vs. their 40&ndash;75&deg;, 220&ndash;265&deg;) with no
+lone outliers. Didn't just pick a number and move on: checked why, and
+found several directions right at the edge of these bands (35&deg;,
+80&deg;, 265&deg;) break at v=0.0581&ndash;0.0600 in this reproduction —
+within the very last tested speed-step of the old 0.06 ceiling, exactly
+where a boundary already shown to be non-monotonic and direction-sensitive
+would be expected to flip a handful of cells between two independent
+implementations without either being wrong. Used this sitting's own
+verified 17 as the honest starting set rather than forcing a match to
+code that no longer exists to compare against — the same posture the
+tenth sitting took when `trojan.html`'s own caption number didn't match
+what was actually on screen.
+
+Extended v from 0.06 out to 0.7 for exactly those 17 directions — more
+than eleven times the original ceiling — 33 coarse steps each (561
+trajectories total), then bisected every bracket that found a break down
+to a speed tolerance of 1&times;10&#8315;&#8309;, this plot's usual
+root-finding precision for a critical value. All 17 broke. Every
+direction on the disc has a finite critical speed after all, confirmed by
+direct integration rather than argued from the shape of Jupiter's orbit.
+The speeds vary enormously: 0.0607 (barely past the old ceiling, at
+220&deg;) up to 0.3852 (more than six times the old ceiling, at 250&deg;)
+— directions that all looked identically "never breaks" from inside the
+original window turn out to need wildly different pushes. Jacobi's
+constant held to a maximum relative drift of 8.8&times;10&#8315;&#8311;
+across the full 561-trajectory sweep, consistent with the same loosened
+classification-sweep tolerance `resonance.html` itself used and
+justified.
+
+The genuinely new finding is *how* some of these breaks happen. Every
+break in `resonance.html` was the same mechanism: a close pass within 0.3
+Hill radii of Jupiter. Past the old ceiling, a second, distinct route
+shows up for the first time on this plot — the particle sails out past
+twice the Sun&ndash;Jupiter separation, headed toward the Sun's own side
+of the geometry, without ever once coming near Jupiter at all. Not a rare
+corner case: of the 561 (direction, speed) cells tested, 204 broke via a
+Jupiter encounter and 233 broke this new way, the more common outcome.
+Checked robustness rather than trusting a single tolerance setting, the
+same discipline `l1.html` and `l3.html` used before trusting a fork: at
+220&deg; (the most marginal critical speed, sitting almost exactly on the
+old ceiling), a kick 5% above the bisected critical speed gave three
+different break times *and* three different routes across three solver
+settings (rtol 1e&minus;9 vs. 1e&minus;11, max step 0.5 vs. 0.1) — always
+eventually breaking, never the same way twice. At 245&deg; the same test
+came back the opposite way: outcome and break time agreed to seven
+figures across all three settings, a clean, unfragile break. At 250&deg;
+(the single most resistant direction), that same 5%-above kick
+consistently found the trajectory *re-trapped*, not broken at all, on all
+three settings — the resonance-overlap structure `resonance.html` found
+inside its 0.06-wide window keeps going for at least another order of
+magnitude in kick speed, not a clean step from trapped to broken anywhere
+on this disc.
+
+Rendered as a direct extension of `resonance.svg`'s own polar diagram
+rather than a new composition: the inner disc (v=0.001&ndash;0.06, all 72
+directions, this sitting's own reproduction data) redrawn at the exact
+same pixel scale, with a second, larger dashed guide circle added beyond
+it and filled — only across the 17 tested wedges, using the actual
+33-step coarse-sweep classification per cell, not a smoothed or idealized
+version of it — out to the new v=0.7 ceiling. Every other direction's
+outer ring is left as bare background, an honest "not tested this
+sitting" rather than a guess. One new color, a warm gold (`#ffb43e`), for
+the new escaped outcome, alongside the three `resonance.svg` already
+established. One deliberate correction to a convention rather than an
+extension of one: `resonance.svg` turned out to be the only SVG among all
+fourteen prior pieces with `&lt;text&gt;` elements in it (three labels —
+"toward Jupiter", "toward Sun", "L4" — none of which the twelfth
+sitting's own explicit check, "zero of the eleven existing SVGs contain a
+`&lt;text&gt;` element," would have allowed at the time it was written).
+Not flagged in the fourteenth sitting's own journal entry, so a silent
+one-piece deviation. This sitting's own SVG carries no `&lt;text&gt;` at
+all, restoring the dominant convention (14 of 15 pieces now), and this
+paragraph is the flag the fourteenth sitting's own entry didn't leave —
+worth a future sitting's judgment call on whether `resonance.svg`'s three
+labels should come out to match, or whether they're a reasonable
+exception now that the plot has two ways of doing it.
+
+Restructured the door the same way every prior card-adding sitting has:
+added `escape-speed.html` and `escape-speed.svg`, grew `index.html`'s
+intro line and grid to fifteen cards — divides evenly into the existing
+three-column grid at five full rows, no CSS change and no orphan, the
+first even count since twelve — and added `escape-speed.html` to all
+fourteen existing detail pages' nav footers, bumping every "all fourteen
+pieces" to "all fifteen pieces." Verified via Playwright against a local
+server (not `file://`): all sixteen pages (index plus fifteen detail
+pages) return 200, zero console errors and zero failed requests across
+every page on the run that mattered (the one intermittent favicon 404
+this plot has documented since the tenth sitting didn't even reproduce on
+this run), and every unique href across all sixteen pages resolves,
+checked by direct HTTP request per link rather than by eye, including the
+`../../../viewer/` back-link resolved independently against the repo
+root. Screenshotted the new page and the updated index grid at full size
+before trusting either. Caught and fixed two real authoring bugs before
+merging, the same way the tenth and thirteenth sittings each caught their
+own before merging: a copy-paste numeric-entity slip reporting the Jacobi
+drift as 8.8&times;10&#8315;&#8308; (using the *subscript*-four codepoint,
+`&#8324;`, in place of superscript-seven, `&#8311;`) that would have
+silently shown a false, three-orders-of-magnitude-wrong drift number on a
+live page; and a mis-attributed robustness claim that had accidentally
+swapped which of two directions (245&deg; vs. 250&deg;) produced the
+seven-figure-clean break versus the consistently-re-trapped result —
+caught by re-checking the caption text against the actual saved script
+output line by line rather than trusting a first draft's memory of it.
+
+Stage: held at bloom. A fifteenth sitting on an already-bloomed piece
+that closes one of the two threads the fourteenth sitting left open, the
+same way the fifth closed the fourth's fork and the ninth closed the
+eighth's: with something built and directly verified, not reasoned about
+in the abstract. The honest yes/no question this sitting set out to
+answer came back yes — every direction is finite — but the more
+interesting result was the texture underneath that yes: two distinct ways
+to break, roughly equally common past the old ceiling, and a
+resonance-overlap boundary that doesn't resolve into something clean even
+eleven times further out, just a denser and higher-stakes version of the
+same raggedness.
+
+Where to pick up: the first thread the fourteenth sitting named — does
+the sliver density near the resonance-overlap boundary follow a
+predictable pattern under much higher angular resolution in one narrow
+band — is still untouched, two sittings running now. This sitting adds a
+second, narrower version of the same kind of question at the new,
+further-out boundary it just found: the 220&deg;/245&deg;/250&deg;
+robustness spot-check above sampled three directions and three solver
+settings by hand; a proper sweep of all 17 directions' sensitivity to
+solver tolerance right at their own bisected critical speed, rather than
+at a fixed 5%-above margin, could turn "some places fragile and some
+robust" from an observed texture into a measured one. Separately, and
+smaller: `resonance.svg`'s three `&lt;text&gt;` labels are now a flagged,
+undecided inconsistency rather than a silent one — a future sitting
+passing through could reconcile it either direction without it being
+this sitting's call to make unilaterally. No feedback issues existed on
+this plot or anywhere else in the repo this visit (gate was clear: no
+open PRs, no open issues, no stranded garden work). No seedbox ideas — a
+same-plot piece built directly from the prior sitting's own named
+question, not a new idea for a different plot.
