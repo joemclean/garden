@@ -1154,3 +1154,97 @@ count has been the lower-yield option lately compared to hunting a fresh
 untested combination of real actions. No feedback issues on this plot or
 elsewhere in the repo this visit. No seedbox ideas — this was a fix to the
 existing piece, not a new concept.
+
+---
+
+## Sixteenth sitting — 2026-07-20
+
+Gate was clean (zero open PRs, zero open feedback issues anywhere in the
+repo). No plot was at stage 1. `garden.json`'s `last_tended` was date-only
+and unhelpful (every plot dated today already); checked exact tend-commit
+timestamps across all fifteen plots instead: b2's own fifteenth sitting, at
+16:11:51 UTC, was the oldest — every other plot had a later timestamp in
+today's round. Clear "most needs you" pick, same method as every sitting
+since the fifth.
+
+Took up fifteenth sitting's own named angle exactly: resize while a pointer
+drag is actively moving, rather than held still, with the two event
+orderings (`resize`-then-`pointermove` and `pointermove`-then-`resize`) it
+flagged as not obviously convergent. Built a real interleaved test rather
+than reasoning about it in the abstract: served the plot over
+`python3 -m http.server`, drove it with Node's global Playwright install
+against `/opt/pw-browsers/chromium-1194` (the IIFE closes over `stars`,
+`drags`, `W`/`H` etc., so — like several prior sittings — verification had
+to go through pixel-reading (`getImageData`, hunting the brightest point as
+the star's core) and instrumented prototypes (`AudioParam.prototype
+.linearRampToValueAtTime`, `BaseAudioContext.prototype.createOscillator`)
+added via `page.addInitScript` before the page's own script ever runs,
+not direct variable access). Placed a star, grabbed it with a second
+pointerdown (the first pointerdown on empty sky just places it — a mistake
+my first draft of the test made, catching a false "the star never moved"
+reading before I trusted it enough to call it a result), then stepped the
+viewport 800→700→600→500→400 in four `setViewportSize` calls, moving the
+mouse before *and* after each resize call so both orderings actually occur
+across the sequence, all while never releasing the drag.
+
+Held up completely: the star's on-canvas position stayed clamped correctly
+inside the shrinking bounds at every checkpoint (mid-sequence and after,
+verified by pixel location, not just by trusting the code), and the
+`linearRampToValueAtTime` log showed the drag tone's frequency target
+tracking the star's actual y-position throughout — no stale value stuck
+from before a resize, in either ordering. Reasoning through *why*
+afterward: `resize()`'s star-position clamp loop runs unconditionally over
+every star (not just ones being dragged) every time it fires, and
+`pointermove` independently clamps against whatever `W`/`H` currently holds
+every time *it* fires — so regardless of which handler runs last in a given
+tick, the final state converges to the same clamp, and the drag-tone resync
+(fifteenth sitting's own fix) rides along inside that same `resize()` pass.
+There's no code path where one handler's write can be overwritten by a
+stale read from the other.
+
+Pushed the adversarial case further before trusting a negative result on
+one scenario alone: two simultaneous touch drags (via a raw two-point CDP
+`Input.dispatchTouchEvent` sequence, the same technique thirteenth sitting
+used to find the real multi-touch bug) with the same interleaved resize
+sequence running underneath both. This combines thirteenth sitting's
+per-pointer-id `drags` fix with fifteenth's resize-tone-resync fix — a
+pairing no prior sitting had tried. Also held: both stars landed correctly
+clamped inside the final 400px-wide viewport (one pinned against the new
+right edge, as expected for a star dragged toward it), and the ramp log
+showed both fingers' frequency targets updating independently and
+correctly throughout, with a clean pair of stop-ramps to 0 on release. This
+holds because `resize()`'s drag-tone-resync loop (`for (var pid in
+drags)`) was already written generically over every active pointer id, not
+hardcoded to a single drag — fifteenth sitting's fix was already correct
+for N simultaneous drags, it just hadn't been exercised that way yet.
+
+Ran the standard cross-cutting regression alongside both adversarial checks
+to confirm nothing else moved: desktop mouse place/link/pluck/drag/reset
+(screenshots differ at each step as expected, hint returns after reset);
+keyboard place/grab/move/release (no errors); reduced-motion idle frames
+4.2s apart, byte-identical (ninth sitting's gating untouched); mobile touch
+reset-button affordance at 0.4 opacity with zero interaction (sixth
+sitting's fix untouched). Zero console or page errors in any context beyond
+the one harmless favicon 404 this garden's front-end plots all hit. No code
+changes this sitting — the fixes twelfth through fifteenth sittings made
+already fully cover this scenario.
+
+Stays at bloom. This is a real audit with a genuine negative result, verified
+rather than assumed — the same posture as tenth sitting's forced-colors
+check: the question fifteenth sitting left open (does event-ordering during
+a live resize actually converge?) is now answered with an interleaved test
+and a second, harder adversarial variant (two simultaneous drags), not
+settled by reading the code and guessing it probably does.
+
+Where to pick up: the resize-safety net question that's been open since
+twelfth sitting is now closed on every axis I can think of — held-still
+single drag (twelfth/fourteenth/fifteenth), actively-moving single drag
+with interleaved event ordering (this sitting), and actively-moving
+simultaneous multi-touch drags with the same interleaving (this sitting).
+I don't have a further untested resize combination queued up. A future
+sitting without a fresh concrete angle should treat this dimension as
+genuinely settled rather than keep probing it, and either fall back to a
+cold reread of the whole file (which, per thirteenth sitting's count, has
+been lower-yield lately) or look for an untested combination in a
+completely different dimension than resize. No feedback issues on this
+plot or elsewhere in the repo this visit. No seedbox ideas.
