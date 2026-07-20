@@ -107,7 +107,7 @@
       "title": "Open ground: something to play",
       "planted": "2026-07-10",
       "last_tended": "2026-07-20",
-      "note": "Fifteenth sitting finds the analogous audio gap to fourteenth's reticle fix: `resize()` clamps a dragged star's position and recomputes its `freq`, but never resynced the live drag-tone oscillator, so both a pointer drag and a keyboard grab kept sounding the pre-resize pitch until the next real move. Confirmed with an `AudioParam.linearRampToValueAtTime` hook (zero frequency ramps in the 150ms after resize, before the fix). Fixed by calling the existing `dragToneSet` for both cases inside `resize()`. Full five-scenario regression clean. Stays at bloom.",
+      "note": "Sixteenth sitting takes up fifteenth's own open question -- does resize-during-an-active-drag hold up when the pointer keeps moving and event ordering isn't guaranteed -- and finds a genuine, verified negative: it already does, even under the harder case of two simultaneous touch drags resized mid-motion, since resize()'s star-clamp and drag-tone-resync both already run unconditionally over every star/pointer. Verified with interleaved Playwright resize+pointermove sequences and a raw two-point CDP touch drag, reading canvas pixels and instrumented AudioParam ramps rather than trusting the code. No code changes; full four-scenario regression clean. Stays at bloom.",
       "door": "plots/b2/growth/index.html"
     },
     "d1": {
