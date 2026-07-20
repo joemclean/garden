@@ -484,6 +484,11 @@ function makeWreck(centerX, centerZ) {
 const glowColors = [0x2effc9, 0x1dd9a3, 0x35c9ff];
 const glowMotes = [];
 let wreckGlowLight = null;
+// the wreck's own position for visit 29's named next step ("the wreck's
+// interior glow motes calling for a low groan") — set once here since the
+// hull never moves, unlike the wanderer's panner which tick() has to keep
+// current every frame.
+let wreckGlowPos = null;
 function makeGlowMotes(centerX, centerZ, baseY) {
   const MOTE_COUNT = 14;
   for (let i = 0; i < MOTE_COUNT; i++) {
@@ -515,6 +520,7 @@ function makeGlowMotes(centerX, centerZ, baseY) {
   const light = new THREE.PointLight(0x2effc9, 0.9, 6, 2);
   light.position.set(centerX - 4, baseY + 2.2, centerZ);
   scene.add(light);
+  wreckGlowPos = light.position.clone();
   return light;
 }
 
@@ -1026,7 +1032,7 @@ document.addEventListener('mousemove', (e) => {
 // requestPointerLock() itself doesn't count as playing audio, so this can't
 // piggyback on it silently, it has to be its own explicit start call inside
 // the same handler.
-let audioCtx = null, ambientFilter = null, wandererPanner = null;
+let audioCtx = null, ambientFilter = null, wandererPanner = null, wreckPanner = null;
 function initAudio() {
   if (audioCtx) return;
   const Ctx = window.AudioContext || window.webkitAudioContext;
@@ -1079,6 +1085,27 @@ function initAudio() {
   wandererPanner.connect(audioCtx.destination);
 
   scheduleWandererCall();
+
+  // the wreck's own voice, visit 29's own named next step: "the wreck's
+  // interior glow motes calling for a low groan." Reuses the wandererPanner
+  // infrastructure (visit 29's own note that it's "generic enough... to
+  // reuse directly") but for a fixed point rather than a moving one — the
+  // hull never moves, so unlike wandererPanner this position is set once,
+  // here, and never touched again in tick(). A tighter refDistance/
+  // maxDistance than the wanderer's own call, since this is a small,
+  // localized structural sound (something creaking deep inside a hull),
+  // not a large animal's call carrying across open water.
+  if (wreckGlowPos) {
+    wreckPanner = audioCtx.createPanner();
+    wreckPanner.panningModel = 'equalpower';
+    wreckPanner.distanceModel = 'inverse';
+    wreckPanner.refDistance = 4;
+    wreckPanner.rolloffFactor = 1.6;
+    wreckPanner.maxDistance = 35;
+    setPannerPosition(wreckPanner, wreckGlowPos);
+    wreckPanner.connect(audioCtx.destination);
+    scheduleWreckGroan();
+  }
 }
 
 // AudioParam-based positioning (positionX/Y/Z) is the current spec; fall back
@@ -1150,6 +1177,42 @@ function scheduleWandererCall() {
     if (!audioCtx) return;
     playWandererCall();
     scheduleWandererCall();
+  }, delay * 1000);
+}
+
+// the hull settling under its own weight, not an animal calling — lower and
+// longer than the wanderer's own call, and two slightly-detuned oscillators
+// instead of one so it beats faintly, the metallic-groan texture a single
+// sine can't give. Routed through wreckPanner, not straight to destination,
+// so it's only ever heard as coming from inside the wreck. Spaced out far
+// more irregularly and rarely than the wanderer's call (which reads as a
+// living thing checking in on its own schedule) — a hull groan should feel
+// like an occasional, half-noticed event, not a heartbeat.
+function playWreckGroan() {
+  const dur = 3 + Math.random() * 2;
+  const now = audioCtx.currentTime;
+  const startFreq = 32 + Math.random() * 8;
+  const g = audioCtx.createGain();
+  g.gain.setValueAtTime(0.0001, now);
+  g.gain.exponentialRampToValueAtTime(0.5, now + dur * 0.4);
+  g.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+  g.connect(wreckPanner);
+  for (const detune of [1, 1.015]) {
+    const osc = audioCtx.createOscillator();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(startFreq * detune, now);
+    osc.frequency.exponentialRampToValueAtTime(startFreq * detune * 0.85, now + dur);
+    osc.connect(g);
+    osc.start(now);
+    osc.stop(now + dur + 0.05);
+  }
+}
+function scheduleWreckGroan() {
+  const delay = 20 + Math.random() * 25;
+  setTimeout(() => {
+    if (!audioCtx) return;
+    playWreckGroan();
+    scheduleWreckGroan();
   }, delay * 1000);
 }
 
