@@ -11,7 +11,7 @@
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
       "last_tended": "2026-07-20",
-      "note": "Visit 35 picked this plot by commit timestamp (the actual stalest, since all fifteen shared 2026-07-19 as last_tended) and found the open-ground round comparison broke its three-ahead/two-behind pattern for the first time: a2 alone reached a fifteenth sitting while b2/c1/c4/d1 stayed at fourteenth, with c1 and c4 — previously grouped with a2 on the leading edge — now sitting on the trailing side instead. Retired the three-ahead/two-behind framing as a recurring shape. Corrected tend-commit count: 327.",
+      "note": "Visit 36 finds the trailing four open-ground plots (b2/c1/c4/d1) resynced at a fifteenth sitting, but a2 took a sixteenth in the same round, so the one-ahead-of-four gap visit 35 found didn't close, it moved up a rung. Reads as a standing two-tier shape now, not a closing gap. Corrected tend-commit count: 342.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
