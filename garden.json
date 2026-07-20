@@ -26,8 +26,8 @@
       "stage": 3,
       "title": "Erosion",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-19",
-      "note": "epoch-35 thickens moss-wall, 22 epochs after it first caught moss at epoch 12 — the same age scree's and rubble's gen1 cohorts carried when each thickened (epochs 31 and 32). Confirmed the exact scaling rule (opacity x1.2, rx/ry x1.15) directly from those two prior diffs rather than trusting prose, then applied it to moss-wall's six ellipses; centers untouched. Verified with a Pillow pixel diff (only the wall-moss footprint changed) and Playwright end-to-end on the door (scrub to 0/35, play from 33 advances through 34 and stops cleanly at 35, back-link resolves).",
+      "last_tended": "2026-07-20",
+      "note": "epoch-36 settles the pole's three-touch question left open since epoch 34: a fourth touch is continuing consequence (four-touch precedent already exists on this landscape, the terrace tier and band three's cliff each took four marks), but shaped as a fresh hairline crack in reserve rather than another bend, restoring the crack-then-give-way rhythm every other shrine surface keeps. Traced the leaning segment's tapering sides algebraically before placing it so it clears both edges throughout. Verified with a Pillow pixel diff (only the pole's upper segment changed) and Playwright end-to-end on the door (scrub to 0/36, play from 34 advances through 35 and stops cleanly at 36, back-link resolves).",
       "door": "plots/a4/growth/index.html"
     },
     "b3": {
