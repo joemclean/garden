@@ -1,6 +1,6 @@
 # The Unwritten Shelf
 
-*six reviews, two letters, one obituary, two essays, one transcript, and one footnote*
+*six reviews, two letters, one obituary, two essays, one transcript, one footnote, and one ledger*
 
 ---
 
@@ -741,6 +741,58 @@ instead of the honest one.
 *No date. His executors could not determine when it was written, only
 that it was read at least once: the fold in the paper had been opened
 and closed enough times to soften along the crease.*
+
+---
+
+## A Ledger: For Whoever Does
+### three entries from the Ferro-Aoki family ledger, in three hands and, by the paper's own aging, three inks; printed here for the first time
+
+**First hand.** Begin the stock on a night when nothing else is asked
+of you, because after tonight something will be, for a long time, and
+you will not be the one paying it. Bones, browned hard, twelve hours
+minimum, water added only once the smell has stopped being pleasant and
+started being serious. Reduce it until it fits the small jar, the one
+with no lid that still fits, because it is not going back on a shelf.
+It is going into the wax and under the cellar stair, marked with the
+year and nothing else, and it is not coming up again until whoever is
+down there with it has a daughter of her own old enough to ask why that
+one step creaks. I am doing this because my own mother did not do it
+for me, and I have decided, on no evidence that it was owed to anyone,
+that it should have been done. That is the whole reason. I don't have
+a better one and I looked.
+— *M. Aoki*
+
+**Second hand.** Dug it up the day my daughter finally asked about the
+step, same as the entry said someone eventually would, and it hadn't
+spoiled, which she never promised and which I had spent eleven years
+quietly afraid of. Added what she told me to add and nothing she
+didn't, though I wanted to, twice — once with brandy, once with an
+apology I decided the jar didn't need. You will not taste this. Salt it
+anyway, for whoever does. Back into the wax, back under the stair, and
+I have started counting the years the way she must have: not toward my
+own turn at the pot, which has already passed, but past it, to a name I
+don't have yet for a person who doesn't exist yet, who I am nonetheless
+already a little afraid of disappointing.
+— *C. Ferro-Aoki*
+
+**Third hand.** Dug it up alone, on a Tuesday, for no better reason than
+that I finally lived in the house again and the step had always
+bothered me. It tasted like stock. Good stock — patient, a little
+smoky where the reduction had caught once, decades ago, and never
+fully lost it — but stock, the way any long-tended thing eventually
+just tastes like the thing it is and not like the years spent on it. I
+sat with that longer than I sat with the bowl. Neither of them wrote
+down what they expected it to taste like, which I choose to read as
+evidence they already knew, and wrote instructions anyway. I have not
+started a new jar. I don't know yet whether that's a failure of nerve
+or the first honest ending this ledger has had in three generations.
+I'll decide by winter.
+— *D. Ferro*
+
+*The ledger itself was not found with the jar. These three entries
+survive only as a typed copy, maker unknown, tucked into the review
+copy of* What My Grandmother's Grandmother Would Have Cooked *sent to
+this critic; the family did not respond to a request to confirm them.*
 
 ---
 
