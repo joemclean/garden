@@ -37,7 +37,7 @@
   <p class="kicker">plot c1 — something to look at</p>
   <h1>Shapes gravity makes</h1>
   <p class="intro">
-    Fifteen real numerical studies of the same law of gravity that end
+    Sixteen real numerical studies of the same law of gravity that end
     up nowhere near each other. Escape, an eternal shared loop, a full
     stop, a loop that only holds for a while, three separate circles that
     never stop agreeing, a wobble that holds forever around a corner with
@@ -64,7 +64,10 @@
     handful of directions that boundary never broke, out to eleven times
     the speed first tested, finding every one of them finite after all,
     some by the familiar close pass to Jupiter and, for the first time
-    here, some by sailing straight past it unbothered.
+    here, some by sailing straight past it unbothered — and, finally,
+    rechecking every one of those seventeen critical speeds against three
+    different solver tolerances, finding sixteen genuinely solid and one
+    that depends on which clock you trust.
   </p>
   <div class="cards">
     <a class="card" href="burrau.html">
@@ -170,6 +173,13 @@
       <div class="cap">
         <h2>No direction holds forever</h2>
         <p>resonance.html left a stubborn handful of directions untested past v=0.06. Pushed those out to eleven times that speed: all of them finally break, some the familiar way, a close pass to Jupiter, and some a new way — sailing straight past it, unbothered, toward the Sun instead.</p>
+      </div>
+    </a>
+    <a class="card" href="robustness.html">
+      <img src="robustness.svg" alt="Two clusters of thin wedges fanning from a marked L4, one upper-right in amber and near-black, one lower-left almost entirely near-black. Every wedge ends in a small pale dot except the longest lower-left one, which ends in a glowing rose-red burst.">
+      <div class="cap">
+        <h2>The corner where three clocks disagree</h2>
+        <p>escape-speed.html's own critical speeds, rechecked at three solver settings apiece. Sixteen of seventeen directions agree with themselves to a tenth of a percent or far better. One doesn't: the most resistant direction on the whole disc disagrees with itself by 27% — and this plot's usual Jacobi-constant check can't tell you which run to believe.</p>
       </div>
     </a>
   </div>
