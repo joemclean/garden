@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="330 260 760 1130" width="760" height="1130">
+<title>The corner where three clocks disagree</title>
+<defs><radialGradient id="bg" cx="46%" cy="30%" r="85%"><stop offset="0%" stop-color="#141225"/><stop offset="60%" stop-color="#0b0a16"/><stop offset="100%" stop-color="#050409"/></radialGradient>
+<radialGradient id="burst" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ff5b7a" stop-opacity="0.95"/><stop offset="45%" stop-color="#ff5b7a" stop-opacity="0.35"/><stop offset="100%" stop-color="#ff5b7a" stop-opacity="0"/></radialGradient></defs>
+<rect x="330" y="260" width="760" height="1130" fill="url(#bg)"/>
+<line x1="700" y1="700" x2="365.00" y2="1280.24" stroke="#4a4460" stroke-width="1" stroke-dasharray="1 6" opacity="0.55"/>
+<line x1="700" y1="700" x2="1035.00" y2="1280.24" stroke="#4a4460" stroke-width="1" stroke-dasharray="1 6" opacity="0.55"/>
+<circle cx="700" cy="700" r="173.33" fill="none" stroke="#3a3450" stroke-width="1.2" stroke-dasharray="2 5" opacity="0.7"/>
+<circle cx="700" cy="700" r="650" fill="none" stroke="#3a3450" stroke-width="1" stroke-dasharray="2 5" opacity="0.35"/>
+<path d="M 779.23 638.99 L 865.32 572.69 A 208.66 208.66 0 0 0 854.09 559.30 L 773.85 632.57 Z" fill="#ffb43e" stroke="#ffb43e" stroke-width="0.7" opacity="0.9"/>
+<path d="M 773.61 632.31 L 895.42 520.30 A 265.48 265.48 0 0 0 879.70 504.58 L 767.69 626.39 Z" fill="#1a1522" stroke="#1a1522" stroke-width="0.7" opacity="0.9"/>
+<path d="M 767.43 626.15 L 949.06 427.24 A 369.37 369.37 0 0 0 925.37 407.35 L 761.01 620.77 Z" fill="#1a1522" stroke="#1a1522" stroke-width="0.7" opacity="0.9"/>
+<path d="M 760.74 620.56 L 911.59 423.26 A 348.36 348.36 0 0 0 887.69 406.52 L 753.88 615.75 Z" fill="#1a1522" stroke="#1a1522" stroke-width="0.7" opacity="0.9"/>
+<path d="M 753.58 615.57 L 869.21 433.36 A 315.80 315.80 0 0 0 846.31 420.14 L 746.33 611.38 Z" fill="#ffb43e" stroke="#ffb43e" stroke-width="0.7" opacity="0.9"/>
+<path d="M 746.02 611.22 L 827.58 453.88 A 277.22 277.22 0 0 0 806.54 444.07 L 738.43 607.68 Z" fill="#1a1522" stroke="#1a1522" stroke-width="0.7" opacity="0.9"/>
+<path d="M 738.11 607.55 L 795.60 468.06 A 250.87 250.87 0 0 0 775.85 460.87 L 730.24 604.68 Z" fill="#1a1522" stroke="#1a1522" stroke-width="0.7" opacity="0.9"/>
+<path d="M 729.90 604.58 L 759.29 510.82 A 198.26 198.26 0 0 0 743.25 506.52 L 721.81 602.41 Z" fill="#1a1522" stroke="#1a1522" stroke-width="0.7" opacity="0.9"/>
+<path d="M 620.77 761.01 L 555.79 811.06 A 182.02 182.02 0 0 0 565.58 822.74 L 626.15 767.43 Z" fill="#1a1522" stroke="#1a1522" stroke-width="0.7" opacity="0.9"/>
+<path d="M 626.39 767.69 L 551.96 836.13 A 201.12 201.12 0 0 0 563.87 848.04 L 632.31 773.61 Z" fill="#1a1522" stroke="#1a1522" stroke-width="0.7" opacity="0.9"/>
+<path d="M 632.57 773.85 L 543.78 871.08 A 231.68 231.68 0 0 0 558.64 883.55 L 638.99 779.23 Z" fill="#1a1522" stroke="#1a1522" stroke-width="0.7" opacity="0.9"/>
+<path d="M 639.26 779.44 L 531.22 920.76 A 277.89 277.89 0 0 0 550.28 934.11 L 646.12 784.25 Z" fill="#1a1522" stroke="#1a1522" stroke-width="0.7" opacity="0.9"/>
+<path d="M 646.42 784.43 L 507.20 1003.80 A 359.82 359.82 0 0 0 533.30 1018.87 L 653.67 788.62 Z" fill="#1a1522" stroke="#1a1522" stroke-width="0.7" opacity="0.9"/>
+<path d="M 653.98 788.78 L 462.70 1157.80 A 515.65 515.65 0 0 0 501.84 1176.05 L 661.57 792.32 Z" fill="#1a1522" stroke="#1a1522" stroke-width="0.7" opacity="0.9"/>
+<path d="M 661.89 792.45 L 470.57 1256.64 A 602.07 602.07 0 0 0 517.95 1273.88 L 669.76 795.32 Z" fill="#1a1522" stroke="#1a1522" stroke-width="0.7" opacity="0.9"/>
+<path d="M 670.10 795.42 L 621.98 948.96 A 260.89 260.89 0 0 0 643.09 954.61 L 678.19 797.59 Z" fill="#1a1522" stroke="#1a1522" stroke-width="0.7" opacity="0.9"/>
+<path d="M 678.53 797.67 L 652.75 914.89 A 220.03 220.03 0 0 0 670.90 918.09 L 686.77 799.12 Z" fill="#1a1522" stroke="#1a1522" stroke-width="0.7" opacity="0.9"/>
+<circle cx="859.85" cy="565.87" r="5" fill="#cfc9db"/>
+<circle cx="887.72" cy="512.28" r="5" fill="#cfc9db"/>
+<circle cx="937.42" cy="417.05" r="5" fill="#cfc9db"/>
+<circle cx="899.81" cy="414.64" r="5" fill="#cfc9db"/>
+<circle cx="857.90" cy="426.51" r="5" fill="#cfc9db"/>
+<circle cx="817.16" cy="448.75" r="5" fill="#cfc9db"/>
+<circle cx="785.80" cy="464.26" r="5" fill="#cfc9db"/>
+<circle cx="751.31" cy="508.50" r="5" fill="#cfc9db"/>
+<circle cx="560.56" cy="817.00" r="5" fill="#cfc9db"/>
+<circle cx="557.79" cy="842.21" r="5" fill="#cfc9db"/>
+<circle cx="551.08" cy="877.47" r="5" fill="#cfc9db"/>
+<circle cx="540.61" cy="927.63" r="5" fill="#cfc9db"/>
+<circle cx="520.09" cy="1011.61" r="5" fill="#cfc9db"/>
+<circle cx="482.08" cy="1167.34" r="5" fill="#cfc9db"/>
+<circle cx="494.08" cy="1265.76" r="46" fill="url(#burst)"/>
+<circle cx="496.82" cy="1258.24" r="4.5" fill="#ff5b7a" stroke="#050409" stroke-width="0.8"/>
+<circle cx="494.08" cy="1265.76" r="4.5" fill="#cfc9db" stroke="#050409" stroke-width="0.8"/>
+<circle cx="492.03" cy="1271.40" r="4.5" fill="#cfc9db" stroke="#050409" stroke-width="0.8"/>
+<circle cx="632.48" cy="952.00" r="5" fill="#cfc9db"/>
+<circle cx="661.79" cy="916.68" r="5" fill="#cfc9db"/>
+<circle cx="700" cy="700" r="60" fill="none" stroke="#f7ecd0" stroke-width="1" opacity="0.35"/>
+<circle cx="700" cy="700" r="7" fill="#f7ecd0"/>
+</svg>

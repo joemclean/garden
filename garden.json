@@ -91,7 +91,7 @@
       "title": "Open ground: something to look at",
       "planted": "2026-07-10",
       "last_tended": "2026-07-20",
-      "note": "Fifteenth sitting chases the fourteenth's own open thread: 21 kick directions from L4 never broke resonance within v<=0.06. Independently re-derived the sweep first (found 17, not 21 — boundary sensitivity, explained honestly), then pushed those 17 out to v=0.7. All 17 finally break, some via the familiar close pass to Jupiter, many via a new outcome — sailing past Jupiter's neighborhood entirely toward the Sun. Fifteen pieces now.",
+      "note": "Sixteenth sitting rechecks all 17 of the fifteenth sitting's bisected critical speeds against three solver tolerances, exactly at v_crit rather than 5% above. Sixteen agree with themselves to a tenth of a percent or better; one (250°, the disc's most resistant direction) disagrees by 27% between this plot's own baseline solver setting and two independently-agreeing tighter ones — even though Jacobi's constant, this plot's usual trust check, looks fine on every individual run. Caught and fixed a real t_max-mismatch bug mid-sitting before trusting the result. First sitting to leave a surviving generation script (robustness_gen.py) in growth/. Sixteen pieces now.",
       "door": "plots/c1/growth/index.html"
     },
     "a2": {

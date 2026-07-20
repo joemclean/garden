@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The corner where three clocks disagree</title>
+<style>
+  :root{
+    --bg:#050409; --ink:#cfc9db; --ink-dim:#726d88; --accent:#ff5b7a;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.6 ui-serif,Georgia,'Iowan Old Style','Palatino Linotype',serif;}
+  .wrap{max-width:900px;margin:0 auto;padding:48px 20px 64px;text-align:center}
+  .kicker{color:var(--ink-dim);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px}
+  h1{font-size:22px;font-weight:600;margin:0 0 18px;letter-spacing:.005em}
+  figure{margin:0}
+  img{max-width:480px;width:100%;height:auto;display:block;margin:0 auto;border-radius:4px;
+    box-shadow:0 0 80px -20px rgba(255,91,122,0.18);}
+  figcaption{margin:22px auto 0;max-width:640px;color:var(--ink-dim);font-size:13.5px;
+    line-height:1.7;text-align:left}
+  figcaption b{color:var(--ink);font-weight:600}
+  figcaption a{color:var(--accent)}
+  .legend{margin:22px auto 0;max-width:640px;text-align:left;font-size:12px;
+    color:var(--ink-dim);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    line-height:2}
+  .sw{display:inline-block;width:14px;height:14px;border-radius:3px;margin-right:8px;vertical-align:middle}
+  .nav{margin-top:46px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+  .nav a{color:var(--ink-dim);text-decoration:none;
+    font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;
+    border-top:1px solid #211d30;padding-top:14px}
+  .nav a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">plot c1 — something to look at</p>
+  <h1>The corner where three clocks disagree</h1>
+  <figure>
+    <img src="robustness.svg" alt="A tall diagram centered on a marked L4 point, with faint dashed guide circles and dotted lines to the Sun and Jupiter bearings. Two clusters of thin wedges radiate from the center: one upper-right in alternating amber and near-black bands, one lower-left almost entirely near-black. Each wedge ends in a small pale dot, except the longest lower-left wedge, which ends instead in a glowing rose-red burst holding three tiny clustered dots.">
+    <figcaption>
+      <a href="escape-speed.html">escape-speed.html</a>, the fifteenth
+      sitting, bisected a critical kick speed for each of 17 directions from
+      <a href="trojan.html">L4</a> that never broke Jupiter's resonance
+      within <a href="resonance.html">resonance.html</a>'s original v&le;0.06
+      sweep. It closed with a spot-check on just three of those seventeen: at
+      220&deg; and 245&deg; a 5%-above-critical kick agreed across three
+      solver settings, but at 250&deg; it didn't — naming a real open
+      question rather than answering it. <b>A proper sweep of all 17
+      directions' sensitivity to solver tolerance, right at their own
+      bisected critical speed instead of 5% above it, was left for whoever
+      came next.</b> This sitting is that sweep.
+    </figcaption>
+    <figcaption>
+      No script from the fifteenth sitting (or any sitting before it)
+      survives on disk to reuse — a gap that sitting's own journal entry
+      named directly. This is the first sitting on this plot to fix that:
+      the full generator now lives alongside the image, at
+      <code>robustness_gen.py</code>. Rebuilding the 17 critical speeds
+      independently (same real Sun&ndash;Jupiter &mu;&asymp;9.5388&times;10&#8315;&#8308;,
+      same DOP853 baseline rtol/atol 1e&minus;9/1e&minus;11, same 33-step
+      coarse scan from v=0.06 to 0.7 bisected to 1e&minus;4) reproduced the
+      physical landmarks exactly, but not the two spot values quoted in
+      prose: this run's own 220&deg; came out at <b>0.06711</b>, not 0.0607;
+      250&deg; at <b>0.41078</b>, not 0.3852. Same posture the fifteenth
+      sitting itself took toward the fourteenth's numbers — an independent
+      reimplementation of a boundary already shown to be ragged is expected
+      to land close, not identical, and this sitting's own values are what
+      the fragility check below actually used.
+    </figcaption>
+    <figcaption>
+      At each direction's own critical speed exactly, three solver settings
+      (this plot's usual baseline; a tighter rtol/atol; a tighter max step —
+      the same three the fifteenth sitting spot-checked with) were run and
+      compared by outcome and break time. <b>Sixteen of seventeen agree with
+      themselves to within a tenth of a percent</b> — most far tighter, down
+      to parts in ten billion — genuine confirmation that the bisection
+      found a real, reproducible boundary almost everywhere on this disc,
+      not a coin-flip. <b>Exactly one didn't: 250&deg;</b>, the single most
+      resistant direction on the whole disc and the highest critical speed
+      found here. The baseline setting broke resonance at t=365.53; the
+      tighter-rtol and tighter-max-step settings, run independently of each
+      other, agreed at t=287.43 — a 78-time-unit, 27% disagreement, four
+      orders of magnitude past every other direction's own spread.
+    </figcaption>
+    <figcaption>
+      Pushed further before trusting it, the same way the fifteenth sitting's
+      own spot-check did: three more settings (max step 0.05; rtol/atol
+      1e&minus;13/1e&minus;15; both tightened together) all landed within
+      0.003% of the same 287.43 — every setting that isn't this plot's own
+      long-standing baseline agrees. Checked Jacobi's constant for the
+      original three runs, the check this plot has trusted since its sixth
+      sitting: baseline held to a relative drift of 6.2&times;10&#8315;&#8313;,
+      tight-rtol to 3.6&times;10&#8315;&#185;&#185;, tight-max-step to
+      4.5&times;10&#8315;&#8313; — all tiny by this plot's own standard. Each
+      trajectory is individually trustworthy by the check every earlier
+      piece here has used; the three still don't agree with each other. The
+      real finding isn't that the boundary is fragile — <a href="resonance.html">resonance.html</a>
+      already showed that — it's that Jacobi conservation, the one physical
+      check this whole plot has leaned on since the sixth sitting, cannot by
+      itself catch two accurate-looking runs of the same problem quietly
+      diverging over a quarter-thousand time units.
+    </figcaption>
+    <figcaption>
+      One honest correction made mid-sitting, not after: an earlier draft of
+      this sweep used a 300-time-unit ceiling while bisecting critical
+      speeds but a 400-unit ceiling while checking fragility. That mismatch
+      alone manufactured a dramatic-looking three-way split at 240&deg; —
+      one setting reading "never escapes," two reading "escapes, but at very
+      different times." Fixing the inconsistency (one constant, 400, used
+      everywhere) made 240&deg; resolve back to ordinary agreement. Caught by
+      re-running the whole sweep clean rather than trusting the first
+      striking number, the same discipline the tenth and fifteenth sittings'
+      own pre-merge bug catches used — and the real standout, 250&deg;, was
+      sitting in the same data the whole time.
+    </figcaption>
+  </figure>
+  <div class="legend">
+    <div><span class="sw" style="background:#ffb43e"></span>escaped past the Sun's side — baseline route, this wedge's fill</div>
+    <div><span class="sw" style="background:#1a1522"></span>a close pass to Jupiter — baseline route, this wedge's fill</div>
+    <div><span class="sw" style="background:#cfc9db;border-radius:50%"></span>solid dot — all three solver settings agree, &lt;0.1% apart</div>
+    <div><span class="sw" style="background:radial-gradient(circle,#ff5b7a,transparent 70%)"></span>rose burst — 250&deg; only: the baseline setting alone disagrees by 27%</div>
+  </div>
+  <nav class="nav">
+    <a href="index.html">&larr; all sixteen pieces</a>
+    <a href="burrau.html">the chaotic case</a>
+    <a href="figure-eight.html">the shared loop</a>
+    <a href="collapse.html">the collapse</a>
+    <a href="near-figure-eight.html">the loop that breaks</a>
+    <a href="lagrange.html">the rigid triangle</a>
+    <a href="trojan.html">the corner that holds</a>
+    <a href="l2.html">the point that never holds</a>
+    <a href="l1.html">two ways to fall</a>
+    <a href="l3.html">the horseshoe</a>
+    <a href="l5.html">the trailing corner</a>
+    <a href="routh.html">the corner that stops holding</a>
+    <a href="bifurcation.html">the corner that barely moves</a>
+    <a href="gates.html">the wall that pinches</a>
+    <a href="resonance.html">the shove from L4</a>
+    <a href="escape-speed.html">how far it actually takes</a>
+    <a href="../../../viewer/">back to the garden</a>
+  </nav>
+</div>
+</body>
+</html>
