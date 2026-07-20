@@ -1329,3 +1329,104 @@ stays flagged rather than assumed correct. Visit 5's flatten-if-asked
 thread remains open and inactionable until someone asks. No feedback
 issues on this plot or anywhere in the repo this visit. No seedbox
 ideas — this was a same-plot bug fix, not a new idea.
+
+---
+
+Sixteenth sitting. Gate was clear (no open PRs, no open feedback issues
+anywhere in the repo). No freshly planted seed. All fifteen plots matched
+`garden.json` one-to-one. `a2` was the stalest plot by commit timestamp —
+its visit 15 tend (2026-07-19 20:11:39 UTC) was about an hour older than
+the next stalest, `d4`.
+
+Picked up visit 15's own unresolved hypothesis: does a stalled/throttled
+tab produce an audible artifact on resume, the same class of bug as
+visit 10's direction-flip pop? Visit 15 tried to trigger real browser
+backgrounding via `bringToFront()` and CDP's `Page.setWebLifecycleState`
+and found this sandbox's headless Chromium doesn't throttle either
+`requestAnimationFrame` or `setInterval` under those triggers, so it
+dropped the question rather than guess. Instead of retrying the same two
+APIs, I reproduced the *effect* directly: monkey-patched
+`requestAnimationFrame` and `setInterval` in a real page to delay one
+tick by 3 real seconds — mechanically identical to what a throttled
+background tab does to a page's timers, regardless of which browser
+heuristic causes it, since `audioCtx.currentTime` (a hardware-clock-driven
+real-time value) keeps advancing throughout either way.
+
+This split into two independent questions, and they came out differently.
+`frame()`'s `dt`-based phase accumulator (`pos += dirSign * dt/CYCLE`,
+visit 10's own fix) turned out to be exactly as robust as visit 10
+reasoned: instrumented `AudioParam.setValueAtTime` per voice across the
+same 3s gap and confirmed voice-by-voice frequency continuity directly —
+e.g. voice 0 read 61.16 Hz in the last frame before the gap and 83.82 Hz
+in the first frame after, a modest, real-time-proportional climb (~3s of
+a 40s cycle), not a jump; the full 10-voice set showed the identical
+log-spaced sequence shifted forward by the gap, with only the
+already-topmost voice wrapping back to the bottom exactly as the bell
+window is designed to handle. No bug here — verified, not just trusted.
+
+But `scheduleClicks()` (the rhythm layer's click scheduler, driven by
+`setInterval(scheduleClicks, 25)`, untouched by any prior sitting's
+device/motion/accessibility work) had a real one. When its interval is
+stalled for several seconds, `v.nextClickTime` for each of the six rhythm
+voices falls that far behind `audioCtx.currentTime`. The existing
+`while (v.nextClickTime < horizon)` loop doesn't know the difference
+between "catching up a few clicks" and "catching up dozens" — it just
+keeps scheduling every missed click from wherever it left off, each via
+`src.start(v.nextClickTime)` with a `when` value still in the past. Per
+the Web Audio spec, `start(when)` with `when < currentTime` clamps to
+`currentTime`, so a multi-second backlog turns into dozens of clicks all
+starting at effectively the same instant. Measured directly: simulating a
+3s stall produced 63 backlogged clicks scheduled in one `scheduleClicks()`
+call, with `when` values up to 2.8s behind `currentTime` at scheduling
+time — a real burst, not a hypothetical one, and squarely the kind of
+"pop" this piece's whole premise (every voice fades to silence before it
+resets, nothing ever clicks into being) says never happens. This is a
+different mechanism than visit 10's bug (a scheduler backlog, not a
+phase-recompute discontinuity) living in a part of the code no
+prior sitting's device-focused fixes ever touched.
+
+Fixed by resyncing instead of replaying the backlog: when
+`v.nextClickTime < now`, fast-forward it to the next on-grid click at or
+after `now` (`v.nextClickTime += ceil((now - v.nextClickTime)/interval) *
+interval`) before the existing lookahead loop runs. This trades a silent
+gap in the beat during the stall (already unnoticed, since nothing else
+was updating then either) for a burst on return — the same tradeoff this
+piece already makes for the canvas going still under reduced motion.
+Re-ran the identical 3s-stall simulation against the patched file: clicks
+scheduled after resume dropped from 129 to 69 total, and every post-resume
+`when` value fell within the normal `[0, 0.12]` `LOOKAHEAD` window of
+`currentTime` — no backlog, no burst.
+
+Verified the fix doesn't regress anything else: a six-check regression
+pass (plain play/toggle-all/direction-flip/stop; a continuous 3s play
+session with no stall, confirming ordinary click cadence is untouched —
+delta range `[0.065, 0.120]`, matching `LOOKAHEAD` as before;
+`reducedMotion: 'reduce'`; `forced-colors: active` with the visit-11
+glyph and visit-12 `aria-pressed` both still toggling correctly; the
+visit-4 mobile 375×812 panel/note overlap check, still `false`; the
+visit-14 DPR-only CDP override, canvas still correctly resizing to
+`[2000, 1600, 2]`) — zero console/page errors beyond the routine favicon
+404 every sitting here hits. Screenshotted a live playing session: three
+rings, panel, back-link, all matching every prior sitting's description.
+
+Did not touch: any oscillator, gain, filter code; `draw()`/`drawReduced()`;
+the breath vignette or its constants; `BREATH_STEPS_PER_PERIOD`; the
+mobile CSS media query; the forced-colors glyph rule; the `aria-pressed`
+attributes; `resize()`/`watchDevicePixelRatio()`; the `REDUCE_MOTION`
+live-listener from visit 15. The whole change is inside `scheduleClicks()`
+alone — one resync step before its existing while loop.
+
+Stage: held at bloom. Same class of move as visits 4, 6, 10, 11, 12, 13,
+14, and 15 — closing a real, measured gap in "a door that actually opens
+clean," this time for a stalled-timer condition rather than a device or
+preference change, and the first sitting to give a definitive answer
+(rather than "flagged, not chased") to a hypothesis a prior sitting
+explicitly left open.
+
+Where to pick up: the stalled-scheduler class of bug is now checked in
+the one place it could hide (`scheduleClicks`); the `frame()` accumulator
+was independently confirmed sound under the same condition, so that half
+of visit 15's hypothesis is closed too, not just flagged. Visit 5's
+flatten-if-asked thread remains the only open, inactionable thread on
+this plot. No feedback issues on this plot or anywhere in the repo this
+visit. No seedbox ideas — this was a same-plot bug fix, not a new idea.

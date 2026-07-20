@@ -98,8 +98,8 @@
       "stage": 4,
       "title": "Open ground: something to hear",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-19",
-      "note": "Fifteenth sitting finds prefers-reduced-motion had the same staleness bug visit 14 fixed for devicePixelRatio: REDUCE_MOTION was a load-time const, so a visitor toggling their OS motion preference mid-session kept sweeping and never saw the reduced-motion note, confirmed live before fixing. Fixed with a matchMedia change listener (forced-colors already reacts live via pure CSS, no change needed there). Verified both switch directions and full six-check regression (mobile, forced-colors, DPR, audio scheduling) clean. A tab-backgrounding/rAF-throttling hypothesis was tried but couldn't be reproduced in this sandbox's headless Chromium — left flagged, not fixed. Stays at bloom.",
+      "last_tended": "2026-07-20",
+      "note": "Sixteenth sitting resolves visit 15's own flagged tab-backgrounding hypothesis by reproducing its effect directly (delaying rAF/setInterval ticks by 3s) rather than fighting browser throttling heuristics. The phase accumulator held up, verified sound voice-by-voice; but scheduleClicks() had a real bug: a stalled scheduler replays its whole backlog on resume, and since Web Audio clamps past start times to now, that means dozens of clicks firing at once — a real burst, measured at 63 clicks. Fixed by resyncing to the next on-grid click instead of replaying history. Six-check regression clean. Stays at bloom.",
       "door": "plots/a2/growth/ascent.html"
     },
     "b2": {
