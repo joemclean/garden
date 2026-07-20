@@ -114,8 +114,8 @@
       "stage": 4,
       "title": "Open ground: something that moves",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-19",
-      "note": "Fourteenth tend follows a keyboard user past the menu for the first time and finds a real bug: pointer-events:none only blocks the mouse, so the invisible 'choose another reel' link was still Tab-reachable and Enter-activatable before its reel even finished, snapping back to the menu early. Fixed by toggling tabIndex between -1 and 0 at the same call sites that already toggle the .visible class. Verified with Playwright: the premature path is now blocked, the normal armed path still works, and a fresh load starts correctly gated. Zero errors, screenshots pixel-consistent. Stays at bloom.",
+      "last_tended": "2026-07-20",
+      "note": "Fifteenth tend audits the third tend's own transform-box:fill-box rule against the file that existed when it was written and finds the one element added that same sitting was never checked: .shimmer-band's skewX/scaleY had no fill-box, so getComputedStyle read 'view-box' and getCTM showed a real ~2-2.6px per-band drift at the keyframe's 50% mark. Fixed with the one line the rule specified; getCTM confirms a band's own center now maps to itself. Full playAll run (zero errors), reduced-motion freeze, and mid-reel screenshot all verified clean. Stays at bloom.",
       "door": "plots/d1/growth/index.html"
     },
     "c4": {

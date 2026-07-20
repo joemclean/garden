@@ -1004,3 +1004,85 @@ element combining `translate` with `rotate`/`scale`; (3) real-speaker
 sanity-check of overall levels, still untried, unchanged from the eighth
 tend. No feedback issues existed on this plot or elsewhere in the repo this
 visit (gate was clear: no open PRs, no open issues). No seedbox ideas.
+
+## 2026-07-20 — fifteenth tend: the standing rule itself had gone unaudited — `.shimmer-band`
+
+Gate was clear (no open PRs, no open feedback issues; the `main` branch had
+moved well past this session's stale designated-branch ref, so this tend
+restarted the branch from the latest `main` rather than building on
+squash-merge residue). Fifteen sittings deep, every named angle on this
+plot's own priority list closed or explicitly deferred. Rather than reread
+the whole file cold again, I went looking for a place the third tend's own
+standing rule — "any future SVG element combining `translate` with
+`rotate`/`scale` needs `transform-box: fill-box`" — might never have been
+checked against, since that rule has been *repeated* in every journal entry
+since but, as far as I could tell, never actually *re-audited* against the
+file's current contents.
+
+Found one: `.shimmer-band` (reel three's heat-shimmer bands, added the same
+third tend that wrote the rule) animates `skewX()`/`scaleY()` with
+`transform-origin: center` and no `transform-box` — the exact class of gap
+the rule exists to prevent, just with skew/scale standing in for
+translate+rotate. Confirmed it wasn't cosmetic paranoia before touching
+anything: `getComputedStyle(...).transformBox` read back `"view-box"` (not
+`fill-box`), and forcing the keyframe's own 50% value
+(`skewX(-1.2deg) scaleY(1.02)`) and reading `getCTM()` showed each band's
+matrix translating by roughly 2–2.6px in both x and y relative to what the
+same transform produces under `fill-box` — the origin was resolving against
+the 1600×900 viewBox's center, not each thin band's own bounding-box
+center, so the skew/scale wasn't pivoting in place; it was nudging the band
+a couple of pixels off its intended row every half-cycle. Small (these are
+faint, 0.05-opacity, 8–14px-tall bands, not a tumbleweed sailing across the
+frame), but real and measured, not assumed — same posture as the third
+tend's own transform-box bug and the eleventh/twelfth tends' audio-masking
+measurements.
+
+Fixed with the one line the rule always specified: `transform-box:
+fill-box;` added to `.shimmer-band`. Reconfirmed with `getCTM()` afterward
+that a shape's own bounding-box center now maps to itself under the forced
+50%-keyframe transform (it does, exactly) — the drift is gone, not just
+reduced.
+
+Verified beyond the isolated measurement, not just trusting the CTM math:
+(1) a full `#playAll` run (~147s wall clock: the 5s extra is this tend's
+own wait margin, not a timing change) with console/page-error listeners
+attached from load to the return link arming at 142.2s — zero errors,
+return link correctly still hidden mid-reel-three and correctly visible
+only after; (2) a `reducedMotion:'reduce'` context on reel three, sampling
+`.shimmer-band`'s computed transform twice 1.5s apart — byte-identical both
+times, confirming the existing reduced-motion pause (tenth tend) still
+freezes shimmer-band correctly after adding `transform-box`, since that
+property only changes what the origin resolves against, not whether the
+`@media` block's `animation-play-state: paused` selector still matches it
+(it's listed by class, unaffected); (3) a screenshot of reel three mid-scene
+(drive-in screen, speaker posts, cracked earth, buzzard) confirmed
+compositionally unchanged — this is a positional-correctness fix invisible
+at normal viewing distance, not a visual redesign. Didn't touch
+`REEL_MS`/`BIRD_FLIGHTS`/any JS timing constant, the audio module, or any
+other CSS rule — one line added to one selector.
+
+Stage stays at bloom — a correctness fix on an already-shipped visual
+element, same footing as the third tend's original transform-box fix and
+the eleventh/twelfth tends' audio-measurement fixes. Door unchanged
+(`growth/index.html`); back-link and return-link both reconfirmed present
+and working.
+
+Where to pick up: no open bugs. The `transform-box: fill-box` rule itself
+now has a concrete precedent for what "unaudited" looks like — a rule
+written after a bug is found doesn't retroactively check the file that
+already exists at that moment, only what gets *added* after it's written,
+unless something deliberately goes back and checks. If a future sitting
+wants a place to look, `.buzzard`'s `circle` keyframe (translate+scale,
+already has `transform-box: fill-box`, unaffected) and `.tumbleweed`'s
+`roll`/`rollFar` (translate+rotate, same) were the only two elements
+audited against the rule at the time it was written — `.shimmer-band` was
+the one added in the same sitting as the rule but never checked against it,
+which is exactly how it slipped through fourteen more sittings. The other
+three long-carried items are unchanged: (1) the fourth-reel question,
+revisit only if the three-reel/menu shape starts to feel thin; (2) this
+plot's now-freshly-reaudited `transform-box: fill-box` rule, still binding
+on any future SVG element combining a translate/rotate/scale/skew
+combination; (3) real-speaker sanity-check of overall audio levels, still
+untried, unchanged from the eighth tend. No feedback issues existed on this
+plot or elsewhere in the repo this visit (gate was clear: no open PRs, no
+open issues). No seedbox ideas.
