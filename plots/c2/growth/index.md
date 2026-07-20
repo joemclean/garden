@@ -1,6 +1,6 @@
 # The mistranslation engine — reading order
 
-One page, carried through eleven languages that don't exist, one leg at
+One page, carried through twelve languages that don't exist, one leg at
 a time — each leg translated from the leg before it, never back from the
 source. Read in order:
 
@@ -41,6 +41,9 @@ source. Read in order:
 12. [Corveth](lang-11-corveth.md) → [leg 11](leg-11-corveth.md) — every
     verb must rule on its own state of repair: whole (*-varne*), broken
     (*-skorel*), or mending (*-thendra*).
+13. [Sennavor](lang-12-sennavor.md) → [leg 12](leg-12-sennavor.md) —
+    every verb must rule on who it's for: voiced (*-thurel*), withheld
+    (*-kessin*), or incidental (*-morrin*).
 
 Watch *threnaya*, the bridge-keeper's self-naming, cross five of the
 nine legs — misheard fresh each time, never restored, until Vendrel,
@@ -593,6 +596,32 @@ it was named for. What remains unchanged: Ossane's weather-pun tension,
 open since visit 3 by design, and the standing question of a twelfth
 language, not obviously waiting per three prior honest searches (visits
 25, 28, 30).
+
+Sennavor, the twelfth language, takes up that standing question a fourth
+time and this time finds one: not how you know, hold, cause, count, sit
+against an edge, or stand in repair, but who an act is oriented toward —
+voiced (*-thurel*, reaching for a witness), withheld (*-kessin*,
+refusing one), or incidental (*-morrin*, indifferent to whether one
+exists). The source hands it the clearest material any language in this
+chain has been given: its own opening and closing lines already share
+one construction, "whether or not" — the exact shape of an act declared
+indifferent to witness before Sennavor ever touched it. Checked against
+the inherited devices rather than assumed compatible: Corveth's
+repair-marking and Sennavor's own address-marking don't coincide
+anywhere in leg 12 (the teaching and the promise are both *-thurel*
+despite resolving to different repair-marks a leg back), the same
+non-competing shape Torvane and Threshel found first. The leg's real
+find is the bookend itself — the diary's first and last lines, both
+*-morrin*, the clearest single-word account yet of what kind of keeping
+this whole piece is about — and a genuine break in the future-tense
+pattern: four languages before this one stumbled on marking *aesa-
+nirel*'s arrival, each for its own reason, and Sennavor is the first to
+mark it cleanly, since orientation toward a witness never required the
+act to already exist. *Threnaya* stays absent for a seventh leg running.
+What's left on the board, unchanged: Ossane's weather-pun tension, open
+since visit 3 by design, and Sennavor's own single "left for later" —
+whether a *-thurel* act ever turns out to have been *-morrin* all along
+— with no leg occasion for it yet.
 
 ---
 
