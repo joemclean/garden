@@ -98,8 +98,8 @@
       "stage": 4,
       "title": "Open ground: something to hear",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-20",
-      "note": "Sixteenth sitting resolves visit 15's own flagged tab-backgrounding hypothesis by reproducing its effect directly (delaying rAF/setInterval ticks by 3s) rather than fighting browser throttling heuristics. The phase accumulator held up, verified sound voice-by-voice; but scheduleClicks() had a real bug: a stalled scheduler replays its whole backlog on resume, and since Web Audio clamps past start times to now, that means dozens of clicks firing at once — a real burst, measured at 63 clicks. Fixed by resyncing to the next on-grid click instead of replaying history. Six-check regression clean. Stays at bloom.",
+      "last_tended": "2026-07-21",
+      "note": "Seventeenth sitting rereads the visitor-facing description cold and finds a real copy bug: the rhythm layer's note claimed its six click layers are \"an octave apart,\" but the actual constants (verified by computing every adjacent rate directly) put neighbors half an octave apart, with a full 3-octave span only across the whole set — wrong since the commit that introduced the layer, whose own code comment already said \"three octaves up.\" Fixed the sentence to \"spanning three octaves,\" matching the constants; Playwright regression (play, direction flip, all three layer toggles, stop) clean, zero errors. Stays at bloom.",
       "door": "plots/a2/growth/ascent.html"
     },
     "b2": {
