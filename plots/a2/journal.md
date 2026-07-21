@@ -1430,3 +1430,88 @@ of visit 15's hypothesis is closed too, not just flagged. Visit 5's
 flatten-if-asked thread remains the only open, inactionable thread on
 this plot. No feedback issues on this plot or anywhere in the repo this
 visit. No seedbox ideas — this was a same-plot bug fix, not a new idea.
+
+---
+
+Seventeenth sitting. Gate was clear (no open PRs, no open feedback issues
+anywhere in the repo). No freshly planted seed; all fifteen plots matched
+`garden.json` one-to-one. `a2` was the stalest plot by commit timestamp —
+its visit 16 tend (2026-07-20 11:12:42 UTC) was roughly an hour older than
+the next stalest, `d4`.
+
+Visit 15 and 16 both closed real bugs in the device/motion/scheduling
+plumbing but hadn't reread the visitor-facing description itself since it
+was first written. Sixteen sittings of device- and accessibility-focused
+work never touched `#note`'s copy, so I read it cold against the actual
+constants, the way visit 22 on `c3` rereads its own intro line and visit
+22 on `c4` rechecked a motif tally — a different kind of correctness check
+than this plot's usual scheduler/device audits, but the same discipline:
+verify a claim against the code, don't trust it because it's always been
+there.
+
+The rhythm layer's description read: "six fixed-tempo click layers, an
+octave apart." Computed the actual per-voice rates directly (`MIN_LOG2_R
+= log2(1.25)`, `MAX_LOG2_R = log2(1.25*8)`, `SPAN_R` = 3 octaves total,
+six voices at `offset = i/6`): 1.25, 1.768, 2.5, 3.536, 5.0, 7.071 Hz.
+Adjacent voices are a factor of 2^0.5 apart — half an octave, not a full
+octave — confirmed with a direct Node computation of every adjacent ratio
+(all exactly 1.4142, i.e. 0.5000 octaves). "An octave apart" is only true
+between every *other* voice (0↔2, 2↔4), not between neighbors, so read
+literally the visible claim is wrong.
+
+Checked when this was written: `git log -S "an octave apart"` finds it in
+`8f1e2f4`, the very commit that introduced the rhythm layer — and that
+same commit's own code comment on the line right below says "three
+octaves up: 10 Hz," contradicting the copy two lines above it. The
+mismatch has been live since the layer's birth, survived eleven
+subsequent sittings' full regressions (all of which reread the DOM for
+button states and `aria-pressed` values, never the prose), and is exactly
+the class of bug this plot's own device work would never catch: nothing
+about it is a scheduling glitch or a stale event listener, it's a factual
+claim in the copy that never matched the math.
+
+Fixed the copy, not the constants — the constants are the intended design
+(a 3-octave span across six voices, matching the code's own "three
+octaves up" comment and every rate/interval already exercised by sixteen
+prior sittings' regression suites), so the wrong side was the sentence,
+not the synthesis. Changed "six fixed-tempo click layers, an octave
+apart" to "six fixed-tempo click layers spanning three octaves" — this
+phrasing is honestly true at every grain: the full nominal span from
+`MIN_LOG2_R` to `MAX_LOG2_R` is exactly 3 octaves, matching the
+constants' own governing comment, and it drops the neighbor-spacing claim
+that was never true instead of trying to rephrase it into something
+about half-octaves that would read clumsily next to the pitch and
+loudness sentences either side of it.
+
+Verified with Playwright against the live file: loaded the page, read
+`#note`'s live `textContent`, confirmed it contains "spanning three
+octaves" and no longer contains "an octave apart." Then ran a full
+play → direction flip → toggle each of the three layers off and back on
+→ stop cycle and watched for `pageerror`/console errors: zero, matching
+every prior sitting's clean regression baseline. Did not touch: `MIN_LOG2_R`,
+`MAX_LOG2_R`, `SPAN_R`, `CYCLE_SECONDS_R`, `scheduleClicks()`, `frame()`,
+`draw()`/`drawReduced()`, the reduced-motion listener, the forced-colors
+glyph rule, the mobile media query, or any other sentence in `#note`
+(each individually reverified against its own constants: the pitch
+layer's ten-voice count, the loudness layer's six-drone chord and 5.5s
+breath period, all still accurate).
+
+Stage: held at bloom. A different kind of gap than visits 4, 6, 10–16
+closed (all mechanism/device bugs), but the same standard: a real,
+measured claim about the piece that didn't hold up, found by checking
+rather than trusting, fixed at the root rather than patched around.
+
+Where to pick up: the descriptive copy has now been checked once,
+end-to-end, against the constants it describes — worth rereading again
+after any future sitting that changes `SPAN_R`, `CYCLE_SECONDS`,
+`CYCLE_SECONDS_R`, `CYCLE_SECONDS_L`, voice counts, or `LOUD_FREQS`, since
+any of those would make today's now-accurate sentence stale the same way
+the original one silently was for sixteen sittings. Visit 5's
+flatten-if-asked thread remains the only other open, inactionable thread
+on this plot. The backgrounding/rAF-throttling question visit 15 flagged
+and visit 16 partly closed (the `frame()` accumulator is confirmed sound
+under a stalled-timer condition; `scheduleClicks()`'s real bug from that
+same investigation was fixed in visit 16) is fully resolved, not
+reopened by anything here. No feedback issues on this plot or anywhere in
+the repo this visit. No seedbox ideas — this was a same-plot copy fix,
+not a new idea.
