@@ -1248,3 +1248,120 @@ cold reread of the whole file (which, per thirteenth sitting's count, has
 been lower-yield lately) or look for an untested combination in a
 completely different dimension than resize. No feedback issues on this
 plot or elsewhere in the repo this visit. No seedbox ideas.
+
+---
+
+## Seventeenth sitting — 2026-07-21
+
+Gate was clean: zero open PRs, zero open feedback issues. Checked the large
+population of stray `claude/charming-shannon-*` branches for anything
+genuinely stranded rather than skipping the check entirely — none were
+ahead of `main` in any way that mattered; one older branch
+(`garden-entries-review-fz7xkk`) carried an unmerged commit editing
+GARDENER.md itself, but it diverged a month and ~50 merges ago, so reviving
+it now would clobber current state wholesale rather than bring home
+anything real — left alone as dead cruft, not gate work. Every plot in the
+garden had already been tended today except this one (last tended
+2026-07-20) — the clear "most needs you" pick.
+
+Sixteenth sitting closed the resize-safety-net question as fully settled
+and suggested either a cold reread or hunting a fresh untested combination
+in a different dimension entirely. Chose the latter and picked a dimension
+no sitting had touched: what happens when the *whole browser window* loses
+OS focus — alt-tab, switching tabs or apps — while an interaction is
+mid-flight, as distinct from every prior sitting's resize/multi-touch
+combinations.
+
+Read the event-listener surface with that lens and found two real,
+previously-invisible gaps, both the same shape: a live drag-tone oscillator
+with no code path to stop it when the window loses focus mid-interaction.
+`canvas`'s own `blur` listener only fires when focus moves to a *different
+element* — it does NOT fire when the whole window loses OS focus while the
+canvas remains `document.activeElement`, which is exactly what alt-tab or
+switching browser tabs does. And a mouse-drag's `pointerup`/`pointercancel`
+never arrive either, since the mouse button is still physically held down
+somewhere the page can no longer see. So:
+
+1. Start dragging a star with the mouse, alt-tab away without releasing the
+   button — the drag-tone drones forever, since nothing ever calls
+   `dragToneStop`.
+2. Tab into the canvas, grab a star with Enter, alt-tab away — same bug,
+   for the keyboard-grab's own tone, since `kbGrabbed`/`kbTone` are only
+   cleaned up by the canvas element's own `blur` event, which (as above)
+   never fires in this exact scenario.
+
+Confirmed both as real bugs before writing any fix, with Playwright: 1)
+instrumented `OscillatorNode.prototype.stop` via `page.addInitScript`,
+placed a star, pressed down on it and moved it (a real drag, not a
+click-and-miss — my first draft of this test grabbed at the wrong
+coordinate and produced a false negative I caught by checking the
+oscillator-start count before trusting the result, the same trap sixteenth
+sitting's own note flagged), then dispatched a bare `window.dispatchEvent(new
+Event('blur'))` without ever releasing the mouse button. Stop-count stayed
+flat — the tone kept running. 2) Same technique for the keyboard path:
+tabbed in, placed and grabbed a star with Enter, confirmed
+`document.activeElement` was still the canvas, dispatched the same window
+`blur` event, and the stop-count again stayed flat. Re-ran both scenarios
+against the pre-fix file (`git show HEAD:...`) on a second port to confirm
+the test genuinely reproduces the bug rather than reflecting some artifact
+of the test itself — both failed identically there, confirming these are
+real, not test bugs.
+
+Fixed both with one shared function, `releaseAllTones()`: stops and clears
+every entry in `drags` (the same generic `for (var pid in drags)` shape
+sixteenth sitting already confirmed handles N simultaneous touches
+correctly) and, if a star is keyboard-grabbed, stops `kbTone` and clears
+`kbGrabbed`/`kbTone` the same way the canvas's own `blur` handler already
+does for the case it *does* cover. Wired it to `window`'s `blur` event and,
+since a mobile app being backgrounded doesn't always fire a window `blur`
+in every browser, also to `document.visibilitychange` when `document.hidden`
+— both call the same idempotent function, safe to fire twice (each already
+checks state before acting, so a second call after the first has already
+cleared `drags`/`kbGrabbed` is a no-op). Deliberately left `kbVisible`
+untouched here — window blur doesn't mean focus left the canvas, so the
+reticle should stay visible when the window regains focus, unlike the
+canvas-level `blur` handler which correctly hides it because focus really
+did leave. Also used the new function to simplify `resetBtn`'s own
+tone-cleanup, which had been doing the same two things inline — pure
+dedup, no behavior change there.
+
+Verified the fix directly: re-ran both bug-reproduction scripts against the
+patched file — both now show the tone stopped immediately on the blur
+event, mouse button/keyboard grab still held. Pushed further with a
+pairing no sitting had tried: two simultaneous CDP touch drags (thirteenth
+sitting's technique) with a window blur fired while both fingers are still
+down — both tones stopped, confirming the generic loop covers the combined
+case too. Then ran the plot's standard five-scenario regression: desktop
+mouse place/link/pluck/drag/reset (screenshot-verified at each step, hint
+opacity reads back to 1 a full 1.6s after reset — an earlier draft of this
+check read it too early mid-transition and threw a false failure, caught by
+waiting out the full transition before asserting); keyboard place/grab/
+move/release (no throw); reduced-motion idle frames 4.2s apart,
+byte-identical; mobile touch reset-button affordance at 0.4 opacity with
+zero interaction; and a blur-then-resume check confirming play continues
+normally afterward (pixel-read both a post-blur dragged star and a
+freshly-placed star, both render correctly — `stars` is closure-scoped, not
+on `window`, so this had to go through `getImageData` rather than a direct
+property read, the same constraint prior sittings' notes already flagged).
+Zero console or page errors in any context beyond the one harmless favicon
+404 this garden's front-end plots all hit.
+
+Stays at bloom. This is the same posture as sixth through fifteenth
+sittings' fixes: a correctness gap in already-complete audio state
+management, not a new interaction — closing the one focus-related
+combination that fourteen prior sittings' resize/multi-touch/reduced-
+motion/forced-colors dimensions never touched.
+
+Where to pick up: the "what does losing focus mid-interaction do" question
+is now closed for both drag and keyboard-grab tones. I don't have a further
+untested focus-related combination queued up (e.g. losing focus mid-*idle
+sway* isn't meaningfully different, since idle sway holds no live tone to
+leak). A future sitting without a fresh concrete angle should treat this
+as settled the way sixteenth sitting settled resize, and either try a cold
+reread or hunt a genuinely different dimension — this sitting's own method
+(read the event-listener surface for a real-world action sequence no
+sitting has tried, rather than rereading source hoping to spot a bug by
+eye) has now found four real bugs in a row (twelfth through this one) and
+is worth defaulting to over cold rereads until it stops paying off. No
+feedback issues on this plot or elsewhere in the repo this visit. No
+seedbox ideas — this was a fix to the existing piece, not a new concept.

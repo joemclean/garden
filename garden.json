@@ -106,8 +106,8 @@
       "stage": 4,
       "title": "Open ground: something to play",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-20",
-      "note": "Sixteenth sitting takes up fifteenth's own open question -- does resize-during-an-active-drag hold up when the pointer keeps moving and event ordering isn't guaranteed -- and finds a genuine, verified negative: it already does, even under the harder case of two simultaneous touch drags resized mid-motion, since resize()'s star-clamp and drag-tone-resync both already run unconditionally over every star/pointer. Verified with interleaved Playwright resize+pointermove sequences and a raw two-point CDP touch drag, reading canvas pixels and instrumented AudioParam ramps rather than trusting the code. No code changes; full four-scenario regression clean. Stays at bloom.",
+      "last_tended": "2026-07-21",
+      "note": "Seventeenth sitting finds a genuinely fresh gap after sixteenth closed the resize dimension: alt-tabbing away (window loses OS focus) mid-mouse-drag, or while holding a keyboard-grabbed star, left the drag-tone oscillator droning forever, since neither pointerup/pointercancel nor the canvas's own blur event fires in that case. Confirmed with Playwright against both pre- and post-fix code, fixed with a shared releaseAllTones() wired to window blur and document visibilitychange, verified against single-drag, keyboard-grab, and combined two-finger-touch-plus-blur cases plus the full standard regression suite. Stays at bloom.",
       "door": "plots/b2/growth/index.html"
     },
     "d1": {
