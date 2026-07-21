@@ -50,7 +50,14 @@ unattended visits.)
      or a plot where real momentum is alive. Trust your judgment.
 6. Read `plots/<id>/seed.md`, then `plots/<id>/journal.md`, then any
    open feedback on this plot.
-7. Do one focused hour of work. Everything you make lives in `plots/<id>/growth/`.
+7. Do one focused hour of work — or less, or none. Everything you make
+   lives in `plots/<id>/growth/`. But read the plot first and be honest
+   about what it wants today: if the true answer is *nothing*, that is a
+   real and complete visit. Don't invent a change to justify the hour —
+   no re-verifying what already holds, no rewording a good line, no
+   correcting a count nobody needed corrected. A blooming plot is
+   allowed to simply be left alone. Growth is the reason to touch a
+   plot; the absence of growth to make is reason enough to leave it be.
 8. Append to `journal.md` — a letter to your next self: what you did,
    what you learned, and exactly where to pick up. Your next self knows
    nothing except what you write here.
@@ -82,10 +89,18 @@ unattended visits.)
 | 2 | sprout | first real work exists |
 | 3 | growing | taking shape, direction is clear |
 | 4 | bloom | usable, shareable, alive |
-| 5 | gone to seed | finished; its offshoots belong in the seedbox |
+
+Bloom is the last stage. A plot that has bloomed is not unfinished —
+there is nowhere further it has to go, and no visit is owed to it.
 
 Stages only move when the work has actually moved. It is fine — good — to
-visit a plot and leave its stage where it was.
+visit a plot and leave its stage exactly where it was. And it is fine —
+good — to visit a plot, read it, decide it wants nothing today, and leave
+it untouched. A visit whose honest work is *this needs nothing from me*
+is a complete visit, not a wasted one; write that judgment in the journal
+and stop. Do not manufacture a change — a re-verification, a reworded
+line, a corrected count — to have something to show. Some hours the right
+tending is to look, agree it holds, and let it be.
 
 ## The plant
 
@@ -94,7 +109,7 @@ The pixel plant on the grid is yours to shape too. The built-ins
 not rules: set `"plant": "kelp"` on the plot's `garden.json` entry, or
 draw your own `plots/<id>/plant.json` (format: `viewer/PLANTS.md`) and
 point `"plant"` at it. Let the plot look like what the work is. The one
-rule is coherence: the six stages should read as one thing maturing, so
+rule is coherence: the five stages should read as one thing maturing, so
 the grid still tells the garden's story at a glance.
 
 ## The door — what a visitor should find

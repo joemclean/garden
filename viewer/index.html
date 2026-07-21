@@ -95,7 +95,7 @@
     </div>
   </div>
 
-  <p class="hint">soil → seed → sprout → growing → bloom → gone to seed.
+  <p class="hint">soil → seed → sprout → growing → bloom.
   plants brown when untended for 3 days.</p>
 </div>
 
@@ -165,11 +165,6 @@ const SPRITES = [
   '.......f........','......fFf.......','.......f........','.....L..s..L....',
   '....LG..s.GL....','......G.sG......','....GG.s........','.......s.GG.....',
   '.....G.s.G......','.......s........','.......s........','......mmm.......',
-  '.....mmmmm......','................','................','................'],
-  /* 5 gone to seed */ [
-  '........yy......','.......yyyy.....','........yy......','.......s........',
-  '.....g..s..g....','......g.s.g.....','.......ss.......','.......s........',
-  '....g..s........','.....g.s.g......','.......s........','......mmm.......',
   '.....mmmmm......','................','................','................']
 ];
 
@@ -194,11 +189,7 @@ kelp: [
   ['.......A........','..A...tT........','..T....T...A....',
    '..tT...T..tT....','...T..tT...T....','...T...T...T....',
    '..tT...T..tT....','...T..tT...T....','...t...T...t....',
-   '...t...t...t....','....t..t..t.....',M1,M2,E,E,E],
-  [E,E,
-   '...y...y........','..yy..yy...y....','...s...s..yy....',
-   '...s...s...s....','...s...s...s....','...s...s...s....',
-   '...s...s...s....','....s..s..s.....','.....s.s.s......',M1,M2,E,E,E]
+   '...t...t...t....','....t..t..t.....',M1,M2,E,E,E]
 ],
 vine: [
   SOIL_ROWS,
@@ -210,10 +201,7 @@ vine: [
    '.....ss...ss....',M1,M2,E,E,E],
   [E,E,E,E,E,
    '.......f........','......fFf.......','..fF...f...Ff...',
-   '..GsG..s..GsG...','....s..s..s.....','....ss.s.ss.....',M1,M2,E,E,E],
-  [E,E,E,E,E,E,E,
-   '..y....y....y...','..sy...s...ys...','...s...s...s....',
-   '....ss.s.ss.....',M1,M2,E,E,E]
+   '..GsG..s..GsG...','....s..s..s.....','....ss.s.ss.....',M1,M2,E,E,E]
 ],
 fungus: [
   SOIL_ROWS,
@@ -226,10 +214,7 @@ fungus: [
   [E,E,E,E,
    '......RRR.......','.....RRWRR......','....rRRRRRr.....',
    '.......W........','..RRR..W..RRR...','.rRWRr.W.rRWRr..',
-   '...W...W...W....',M1,M2,E,E,E],
-  [E,E,E,E,E,E,
-   '....k.....k.....','.......k........','..rrr.....rrr...',
-   '...W..rrr..W....','...W...W...W....',M1,M2,E,E,E]
+   '...W...W...W....',M1,M2,E,E,E]
 ],
 crystal: [
   SOIL_ROWS,
@@ -242,13 +227,10 @@ crystal: [
   [E,E,E,
    '.......w........','......wP........','......PP..w.....',
    '..w...Pp..P.....','..P..PPp..Pp....','..Pp.PPp.PPp....',
-   '..pp.Ppp.Pp.w...','...ppPpppPp.....',M1,M2,E,E,E],
-  [E,E,E,E,E,
-   '......PP........','......pp..p.....','..p..Ppk..pp....',
-   '..pp.pkp.ppp....','..pp.ppp.pp.....','...ppppppp......',M1,M2,E,E,E]
+   '..pp.Ppp.Pp.w...','...ppPpppPp.....',M1,M2,E,E,E]
 ]
 };
-const STAGE_NAMES = ['soil','seed','sprout','growing','bloom','gone to seed'];
+const STAGE_NAMES = ['soil','seed','sprout','growing','bloom'];
 const SWAY_LINE = 9;          // sprite rows above this sway in frame B
 const WILT_HOURS = 72;
 
@@ -258,8 +240,7 @@ const DEMO = { name:'garden (demo)', size:[4,4], plots:{
   b1:{stage:2,title:'a sprout',planted:'2026-07-01',last_tended:new Date(Date.now()-4*36e5).toISOString(),note:'first work exists.'},
   c2:{stage:3,title:'something growing',planted:'2026-06-20',last_tended:new Date(Date.now()-20*36e5).toISOString(),note:'taking shape.',plant:'vine'},
   d2:{stage:4,title:'in bloom',planted:'2026-06-01',last_tended:new Date(Date.now()-8*36e5).toISOString(),note:'usable and alive.',plant:'crystal'},
-  b3:{stage:3,title:'a wilting plot',planted:'2026-06-10',last_tended:new Date(Date.now()-120*36e5).toISOString(),note:'needs tending.',plant:'kelp'},
-  a4:{stage:5,title:'gone to seed',planted:'2026-05-01',last_tended:new Date(Date.now()-60*36e5).toISOString(),note:'finished; offshoots in the seedbox.'}
+  b3:{stage:3,title:'a wilting plot',planted:'2026-06-10',last_tended:new Date(Date.now()-120*36e5).toISOString(),note:'needs tending.',plant:'kelp'}
 }};
 
 let garden = null, cols = 4, rows = 4, sel = null, frame = 0;

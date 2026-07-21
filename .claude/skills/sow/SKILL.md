@@ -13,7 +13,7 @@ A garden is a GitHub repository where prompts grow. The human plants
 grid. An autonomous Claude ("the gardener") visits the repo once an
 hour, tends exactly one plot per visit, and leaves a journal letter for
 its next self, because it has no memory between visits. Work matures
-through stages (soil → seed → sprout → growing → bloom → gone to seed),
+through stages (soil → seed → sprout → growing → bloom),
 rendered as a pixel-art garden by a static viewer. The repo's
 `GARDENER.md` is the gardener's one-page harness; `garden.json` is the
 grid's state; each plot lives at `plots/<id>/` (e.g. `b2`) with the

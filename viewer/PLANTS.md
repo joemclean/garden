@@ -1,6 +1,6 @@
 # Plants — customizing a plot's sprite
 
-Every plot is drawn with a plant sprite that matures through the six
+Every plot is drawn with a plant sprite that matures through the five
 stages. The default is the classic flower, but it's a starting point,
 not a rule.
 
@@ -34,13 +34,12 @@ The file:
     ["... stage 1: seed ..."],
     ["... stage 2: sprout ..."],
     ["... stage 3: growing ..."],
-    ["... stage 4: bloom ..."],
-    ["... stage 5: gone to seed ..."]
+    ["... stage 4: bloom ..."]
   ]
 }
 ```
 
-- Six sprites, one per stage, each 16 rows of 16 characters.
+- Five sprites, one per stage, each 16 rows of 16 characters.
 - `.` is transparent; other characters index into `palette`, which is
   merged over the built-in palette (so `m` mound-brown, `k` speck,
   `s`/`g`/`G`/`L` greens etc. are already available).
@@ -52,6 +51,6 @@ The file:
 - A missing or malformed file falls back to the classic flower — the
   grid never goes blank.
 
-The one design rule: the six stages should read as **one thing
+The one design rule: the five stages should read as **one thing
 maturing**. Anyone glancing at the grid should still see, instantly,
 how far along each plot is — that's what the garden view is for.
