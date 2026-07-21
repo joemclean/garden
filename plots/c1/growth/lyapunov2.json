@@ -1,0 +1,15 @@
+{
+  "theta": 230,
+  "v_crit": 0.10773437499999998,
+  "t_break_baseline": 199.61246959567688,
+  "t_break_tight": 199.500444629461,
+  "t_deep_close_approach": 199.56351676314063,
+  "r2_at_deep_close_approach": 0.010243924890595137,
+  "r2_baseline_at_same_instant": 0.028487742521279353,
+  "close_thresh": 0.020476013984588797,
+  "t_split_past_close_thresh": null,
+  "div_max_in_shared_window": 0.019189142619364923,
+  "lyapunov_efold_time_units": 11.304105891279859,
+  "compare_250_efold_time_units": 18.6,
+  "note": "theta=230, this plot's second-most-disagreeing direction after 250 (relative spread 5.6e-4 vs 250's 0.27), shows the same qualitative mechanism at the front end: bit-identical starts (roundoff-level) separate smoothly, then grow ~exponentially (e-folding time 11.3 time units, fit t in [20.0,179.6]) -- real, but noticeably faster than 250's own 18.6, so the rate itself is trajectory-specific, not one shared regional constant. The bigger difference is in the outcome: at 230 the two integrations' break times are only 0.11 time units apart (vs 250's 78), and position separation never exceeds the close-pass threshold before the tight trajectory's own close approach (peaks at 0.0192 against a 0.0205 threshold, 94% of the way there) -- baseline is still describing essentially the same encounter, off by 1.4x in closest distance, not a wholly different future. 250's chaos had ~200 time units of runway to amplify an ordinary tolerance error into two distinct fates; 230's chaos, at a comparable rate, simply runs out of runway first -- the same instability, caught partway through its own escalation rather than after it."
+}

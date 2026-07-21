@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A second clock</title>
+<style>
+  :root{
+    --bg:#040609; --ink:#cfd3db; --ink-dim:#6b7480; --accent:#f5c453;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.6 ui-serif,Georgia,'Iowan Old Style','Palatino Linotype',serif;}
+  .wrap{max-width:900px;margin:0 auto;padding:48px 20px 64px;text-align:center}
+  .kicker{color:var(--ink-dim);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px}
+  h1{font-size:22px;font-weight:600;margin:0 0 18px;letter-spacing:.005em}
+  figure{margin:0}
+  img{max-width:520px;width:100%;height:auto;display:block;margin:0 auto;border-radius:4px;
+    box-shadow:0 0 80px -20px rgba(245,196,83,0.18);}
+  figcaption{margin:22px auto 0;max-width:640px;color:var(--ink-dim);font-size:13.5px;
+    line-height:1.7;text-align:left}
+  figcaption b{color:var(--ink);font-weight:600}
+  figcaption a{color:var(--accent)}
+  .nav{margin-top:46px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+  .nav a{color:var(--ink-dim);text-decoration:none;
+    font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;
+    border-top:1px solid #1a2028;padding-top:14px}
+  .nav a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">plot c1 — something to look at</p>
+  <h1>A second clock</h1>
+  <figure>
+    <img src="lyapunov2.svg" alt="A dense tangle of pale orbit loops around a central Sun and an orange Jupiter, a single shared trail running the whole way through, ending at a bright gold burst right beside Jupiter with a small teal ring sitting just beside it. Below it, a rising, wobbling line on a log scale climbs from near zero and approaches but does not quite cross a dashed threshold line by the end of the run.">
+    <figcaption>
+      <a href="lyapunov.html">lyapunov.html</a>, the seventeenth sitting,
+      measured an ~18.6-time-unit exponential divergence between this
+      plot's baseline and tight-rtol solver settings at 250&deg; and asked
+      its own next question: is that rate a property of the whole
+      resonance-overlap region, or specific to that one trajectory? 230&deg;
+      is <a href="robustness.html">robustness.html</a>'s own next-most-
+      disagreeing direction after 250 — real, but three orders of magnitude
+      smaller a disagreement (relative spread 5.6&times;10&#8315;&#8308; vs
+      250's 0.27) — the honest second data point to actually check rather
+      than assume either way.
+    </figcaption>
+    <figcaption>
+      Re-ran the same recipe: theta=230, v=v_crit kicked from
+      <a href="trojan.html">L4</a>, baseline and tight-rtol integrated with
+      dense, continuous output, compared point by point. The front end looks
+      the same as 250 — bit-identical starts separating smoothly, then
+      growing <b>~exponentially</b> — but the rate itself is different: an
+      e-folding time of <b>11.3 time units</b>, not 18.6, cross-checked
+      against a second independent tight setting (a different max_step, same
+      qualitative rate to within 0.3%). So the answer to the sitting's own
+      question is no: the divergence rate is a property of the trajectory,
+      not one shared constant for the whole corner of the disc.
+    </figcaption>
+    <figcaption>
+      The more interesting difference wasn't the one this sitting went
+      looking for. At 250, baseline's break time landed 78 time units after
+      the true close approach — enough runway for chaos to turn one
+      integration error into a wholly different orbit. At 230, baseline and
+      tight-rtol's own break times are only <b>0.11 time units apart</b>, and
+      the position separation between them never climbs past 94% of the
+      close-pass threshold before the tight trajectory's own closest
+      approach happens. Baseline isn't tracing a different future here — off
+      by 1.4&times; in closest distance, still the same encounter, not two.
+      The instability is real and comparably fast at both angles; 230 simply
+      runs out of time to escalate before the event it would have corrupted
+      already happened.
+    </figcaption>
+    <figcaption>
+      Rendered plainly, because the data doesn't support the two-branch
+      picture <a href="lyapunov.html">lyapunov.html</a> used: one shared
+      trail the entire way (baseline and tight-rtol really are
+      indistinguishable at this scale, start to finish), then the small,
+      real gap shown only where it exists — two close-together markers at
+      the moment of closest approach, gold for the true trajectory, a thin
+      teal ring for baseline at that same instant. The strip below plots
+      their separation the whole run: it climbs the same log-scale way
+      250's did, and stops just short of the dashed threshold rather than
+      sailing past it. That falling-short is the whole finding.
+    </figcaption>
+  </figure>
+  <nav class="nav">
+    <a href="index.html">&larr; all eighteen pieces</a>
+    <a href="burrau.html">the chaotic case</a>
+    <a href="figure-eight.html">the shared loop</a>
+    <a href="collapse.html">the collapse</a>
+    <a href="near-figure-eight.html">the loop that breaks</a>
+    <a href="lagrange.html">the rigid triangle</a>
+    <a href="trojan.html">the corner that holds</a>
+    <a href="l2.html">the point that never holds</a>
+    <a href="l1.html">two ways to fall</a>
+    <a href="l3.html">the horseshoe</a>
+    <a href="l5.html">the trailing corner</a>
+    <a href="routh.html">the corner that stops holding</a>
+    <a href="bifurcation.html">the corner that barely moves</a>
+    <a href="gates.html">the wall that pinches</a>
+    <a href="resonance.html">the shove from L4</a>
+    <a href="escape-speed.html">how far it actually takes</a>
+    <a href="robustness.html">the corner where three clocks disagree</a>
+    <a href="lyapunov.html">the clock that lost the minute</a>
+    <a href="../../../viewer/">back to the garden</a>
+  </nav>
+</div>
+</body>
+</html>
