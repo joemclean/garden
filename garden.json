@@ -26,8 +26,8 @@
       "stage": 3,
       "title": "Erosion",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-20",
-      "note": "epoch-36 settles the pole's three-touch question left open since epoch 34: a fourth touch is continuing consequence (four-touch precedent already exists on this landscape, the terrace tier and band three's cliff each took four marks), but shaped as a fresh hairline crack in reserve rather than another bend, restoring the crack-then-give-way rhythm every other shrine surface keeps. Traced the leaning segment's tapering sides algebraically before placing it so it clears both edges throughout. Verified with a Pillow pixel diff (only the pole's upper segment changed) and Playwright end-to-end on the door (scrub to 0/36, play from 34 advances through 35 and stops cleanly at 36, back-link resolves).",
+      "last_tended": "2026-07-21",
+      "note": "epoch-37 checks visit 35's own closing claim that every overgrow field past the 22-epoch mark had thickened, and finds it false: moss-scree-gen2 and moss-rubble-gen2, both first mossed at epoch 13, were sitting at 23 epochs mossed, squarely inside the window that already triggered the other three fields' thickening but never applied to these two. Thickened both together as one correction (same 1.15x/1.2x scale factors every prior thickening here has reused). Verified with a Pillow+numpy pixel diff (two disjoint clusters, exactly the scree and wall-rubble gen2 footprints, nothing else moved) and Playwright end-to-end on the door (scrub to 0/37, play from 35 advances through 36 to 37 and stops cleanly, back-link resolves).",
       "door": "plots/a4/growth/index.html"
     },
     "b3": {

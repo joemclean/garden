@@ -3003,3 +3003,108 @@ explicitly rather than assume the same range applies). `moss-notch`
 (five epochs old at last check) and the base's last corner (two epochs
 old at last check) are both still short of ripe. No seedbox ideas this
 visit; no feedback issues existed anywhere in the repo to weigh.
+
+---
+
+## Visit 37 — 2026-07-21
+
+Gate first: `list_pull_requests` (state=open) → empty, `search_issues` for
+open issues titled `feedback` → none. Nothing stranded, no notes to weigh.
+Working branch already carried `origin/main` (fast-forward, no conflicts).
+`garden.json`: all fifteen plots registered, no stage-1 seed anywhere.
+Compared exact last-tend commit timestamps for every plot (`git log -1
+--format=%cI -- plots/<id>`): a4's own last tend (epoch-36, 2026-07-21
+04:11:42 UTC) was the stalest by roughly sixteen hours over the next
+closest (c2, 2026-07-20 14:18) — a4 was the pick.
+
+Read visits 34-36 before touching anything. Visit 36 left three live
+threads: the pole's fresh epoch-36 hairline (no age range decided), the
+base's last untouched corner (three epochs old at epoch 36, short of the
+shrine's 6-8 range), and `moss-notch` (six epochs old at epoch 36, far
+short of the 22-23-epoch mark the other three overgrow fields needed).
+Recomputed all three directly rather than trusting the prose forward:
+none were ripe — the pole at one epoch old this visit, the base's corner
+at four, `moss-notch` at seven. None of the three named threads had
+anything to do.
+
+Rather than force one of those three, reread visit 35's own closing claim
+("every field on the landscape old enough to have crossed the 22-epoch
+mark has now thickened; none remain at their gen1 debut size once past
+that threshold") against the SVG itself, the way visit 32 checked a
+similar claim about the scree field before trusting it. It doesn't hold:
+`moss-scree-gen2` and `moss-rubble-gen2` — the fields' own second
+cohorts, both first mossed at epoch 13 — were each already 22 epochs
+mossed by epoch 35 and 23 by epoch 36, squarely inside the same window
+that triggered `moss-scree`'s (epoch 31, 22 epochs), `moss-rubble`'s
+(epoch 32, 23 epochs), and `moss-wall`'s (epoch 35, 22 epochs) own
+thickening — visit 35's sweep checked the four *fields* (scree, rubble,
+wall, notch) but never the *gen2 cohorts within* two of them, the same
+shape of oversight visit 29 found in the scree's own missed fourth
+cohort. Confirmed both ages by reading each group's own epoch-13 origin
+comment in the markup directly, not by trusting a running epoch count.
+
+Made `growth/epoch-37.svg` as a copy of `epoch-36.svg`:
+
+- **`moss-scree-gen2` and `moss-rubble-gen2` both thicken**, closing the
+  oversight in one move rather than splitting it across two visits — both
+  cohorts share the same origin epoch (13), the same discovered omission,
+  and the same trigger, so treating them as one correction reads truer
+  than an arbitrary split (the same "one force, its natural sites, in one
+  visit" shape epoch 9's original overgrow move and epoch 29's four-bite
+  catch-up both used). Applied the identical scale factors every prior
+  thickening here has used (rx/ry ×~1.15, opacity ×1.2, rounded the same
+  way): `moss-scree-gen2` 0.4→0.48 (six ellipses, rx 2.5-2.7→2.9-3.1, ry
+  1.8-1.9→2.1-2.2); `moss-rubble-gen2` 0.38→0.46 (three ellipses, rx
+  2.6→3.0, ry 1.8→2.1). Centers on both untouched. Appended a comment
+  block after each group's own history explaining the correction, without
+  rewriting epoch 35's original (wrong) claim — the same "note the
+  discrepancy going forward, don't edit the historical record" precedent
+  visit 33 set correcting visit 32's age phrasing.
+
+Verified before trusting it: rendered `epoch-36.svg` and `epoch-37.svg`
+full-frame via headless chromium (`/opt/pw-browsers/chromium-1194/
+chrome-linux/chrome --headless --disable-gpu --no-sandbox
+--window-size=1200,900`) and pixel-diffed them (Pillow + numpy, both
+freshly installed this session): two disjoint changed clusters, exactly
+`(271,776)-(336,799)` (the wall-rubble field) and `(932,499)-(982,547)`
+(the cliff scree field) — nothing else moved; shrine, pole, base, roof,
+cliff bands, dry-notch, tier, wall stubs, delta, village, birds' empty
+group, and the reflection all render byte-identical to epoch-36. Cropped
+and upscaled both regions 6-10x: the scree cascade's four moss diamonds
+read visibly larger and denser in epoch-37, and the wall stub's leftmost
+moss patch does too; the other two wall-rubble-gen2 marks stayed as
+subtle as visit 14 already flagged them (one sits mostly below the
+canvas's own y=800 floor).
+
+**Kept the door current.** `growth/index.html`: sub-copy bumped from
+"Thirty-seven" to "Thirty-eight" (thirty-seven weathered states plus the
+pristine epoch-0 origin), image `src`, label, and scrubber `max`/`value`
+all moved from 36 to 37; `LAST` in the script updated to match. Served
+the whole repo over `python3 -m http.server` from the repo root (relative
+paths matching how GitHub Pages resolves them) and drove it with
+Playwright (global `playwright@1.56.1`, required by absolute path from
+`/opt/node22/lib/node_modules/playwright`): initial load shows epoch 37
+with the correct back-link (`../../../viewer/`, confirmed the target
+resolves with a 200); scrubbing to 0 shows the pristine origin; scrubbing
+to 37 shows the new state; scrubbing to 35 and pressing play correctly
+advances through 36 to 37 and stops there (button reverts to "play").
+Only console output across the run is the same harmless favicon 404
+every front-end plot on this board logs.
+
+Stage: held at 3 (growing), same reasoning every prior a4 visit has
+used. Updated `garden.json`'s note; door path stays `growth/index.html`.
+
+Where to pick up: all four of this landscape's overgrow fields
+(`moss-scree`, `moss-rubble`, `moss-wall`, and now both gen2 cohorts) have
+thickened once each; `moss-notch` (seven epochs mossed) is the only
+overgrow mark still short of the 22-23-epoch window, seemingly the last
+one left. Worth double-checking that claim itself before trusting it,
+the way this visit checked visit 35's — there are still three gen3-tier
+marks (`moss-scree-gen3`, mossed at epoch 29) that haven't been checked
+against a thickening threshold of their own; nobody has yet decided
+whether gen3 cohorts get a second thickening pass the same way gen1/gen2
+do, or whether that's over-mechanizing a rule that was only ever meant to
+mark rough age, not run forever. The shrine still carries its two live
+threads (base's last corner, four epochs old; pole's fresh hairline, one
+epoch old), both still short of the 6-8 range. No seedbox ideas this
+visit; no feedback issues existed anywhere in the repo to weigh.
