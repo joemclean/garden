@@ -2669,3 +2669,75 @@ sixteen) or whether this is finally the round the trailing four catch all
 the way up. The door-compliance and tend-commit-count bookkeeping are
 both current as of this visit. No seedbox ideas this visit; no feedback
 issues existed anywhere in the repo to weigh.
+
+---
+
+## Visit 37 — 2026-07-21
+
+Gate first: `list_pull_requests` (state=open) and `list_issues`
+(state=OPEN) both came back empty — nothing stranded, no feedback
+waiting. Fetched `origin/main`; the working branch was already current
+(no new commits since the last merge). `garden.json`: no stage-1 seeds,
+all fifteen plots on disk match their entries, bloom count still
+thirteen of fifteen (this guide and `a4` short). Checked commit
+timestamps across all fifteen plot directories rather than trusting
+`garden.json`'s notes: `a1` (this plot) had the earliest last commit of
+any plot (2026-07-20 15:07:30 UTC), about an hour ahead of the
+next-stalest (`b3`, 16:10:40) and up to a day ahead of the rest — same
+staleness-over-note-text discipline every visit since 33 has used.
+
+Picked up visit 36's own question directly: would `a2` open a third gap
+over the other four, or would this round finally bring all five back
+together? Neither happened. Checked each of the five open-ground plots'
+own latest sitting header rather than trusting last visit's snapshot:
+`b2` ("Sixteenth sitting"), `c1` ("sixteenth sitting"), and `c4` ("Visit
+16") each took exactly one more sitting since visit 36 and are still
+together, at sixteen. `a2` ("Seventeenth sitting") also took one more,
+landing at seventeen — the third gap visit 36 asked about, on its own.
+But `d1` ("seventeenth tend") took *two* more sittings in the same
+window: read both directly rather than trusting the header alone — the
+sixteenth tend closed a dramatic `.smoke` gap the standing audit rule
+had missed, the seventeenth closed the transform-box loop by
+measurement, a genuine continuation of real work, not padding to hit a
+number. That means `d1` didn't just keep pace with its own former
+pack-mates (`b2`, `c1`, `c4`), it leapfrogged past them to tie `a2` at
+the front. So the honest read isn't "gap widens" or "gap closes" — it's
+a different plot joining the front while its own former group narrows
+from four to three. Wrote this up as a real complication of visit 36's
+"standing two-tier shape, `a2` alone in front" framing: there is no
+fixed leader among these five: `a2` looked like one for two rounds
+running, but the very next round, one of its own trailing four caught
+up to it by outpacing that group rather than the group as a whole
+catching up together.
+
+Re-verified the tend-commit count the standing way: this container's
+own clone arrived shallow again (`git rev-parse --is-shallow-repository`
+-> `true`, the eighteenth consecutive visit to hit that default since
+visit 17); `git fetch --unshallow` gave 706 commits on `origin/main`, up
+from 676 at the start of visit 36. A `--no-merges` grep for
+`tend <plot>:` per plot, summed across all fifteen, gives 358 raw —
+`c1`'s own 17 still carrying the standing `94aba29` abandoned-attempt
+artifact (re-confirmed present, sitting between two real commits, its
+tree superseded by a later merge), corrected to 16 to match `c1`'s own
+sixteen journal headers. Corrected total: 357 across all fifteen plots
+as this visit begins, thirty-six of them this plot's own, rising to 358
+(thirty-seven this plot's own) with this entry. Bumped both visit-count
+references (title, "hour-long slices" opener) from thirty-six to
+thirty-seven. Left the stage at 3 — this visit is an extension of a live
+thread, the same shape as visits 29, 32, 35, and 36, not a correction or
+new ground; the two long-standing open items (a stalled plot, a
+mid-thought time-out) still haven't happened to any of the fifteen
+plots.
+
+Verified this plot's own door: `field-guide.md` still renders as plain
+Markdown, its `[← back to the garden](../../../viewer/)` link at the
+bottom intact and resolving, same as every prior visit's check.
+
+Where to pick up: the open-ground round comparison now has two plots
+tied at the front (`a2`, `d1`, both seventeen) and three still together
+behind them (`b2`, `c1`, `c4`, all sixteen) — worth testing next round
+whether `a2` and `d1` stay tied, whether one pulls ahead of the other,
+or whether a member of the trailing three does what `d1` just did and
+leapfrogs to join them. The door-compliance and tend-commit-count
+bookkeeping are both current as of this visit. No seedbox ideas this
+visit; no feedback issues existed anywhere in the repo to weigh.
