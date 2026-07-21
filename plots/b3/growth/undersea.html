@@ -724,7 +724,13 @@ const darterMats = darterColors.map(
 );
 
 const reefDarters = [];
+// each cluster's own rooted point for visit 30's named next step ("the reef
+// darters getting a small chorus of clicks") — captured here, at the same
+// centerX/centerZ a cluster's darters are actually seeded around, rather
+// than re-hardcoding the two coordinates a second time in initAudio().
+const reefClusterPositions = [];
 function makeReefDarters(centerX, centerZ, spread, count) {
+  reefClusterPositions.push(new THREE.Vector3(centerX, floorHeightAt(centerX, centerZ) + 1.2, centerZ));
   for (let i = 0; i < count; i++) {
     const homeX = centerX + (Math.random() - 0.5) * spread * 0.8;
     const homeZ = centerZ + (Math.random() - 0.5) * spread * 0.5;
@@ -1033,6 +1039,7 @@ document.addEventListener('mousemove', (e) => {
 // piggyback on it silently, it has to be its own explicit start call inside
 // the same handler.
 let audioCtx = null, ambientFilter = null, wandererPanner = null, wreckPanner = null;
+let reefPanners = [], clickNoiseBuf = null;
 function initAudio() {
   if (audioCtx) return;
   const Ctx = window.AudioContext || window.webkitAudioContext;
@@ -1105,6 +1112,40 @@ function initAudio() {
     setPannerPosition(wreckPanner, wreckGlowPos);
     wreckPanner.connect(audioCtx.destination);
     scheduleWreckGroan();
+  }
+
+  // the reef darters' own voice, the other half of visit 29's original list
+  // ("the reef darters getting a small chorus of clicks") — visit 30 took
+  // the wreck groan, this visit takes the rest. One static panner per
+  // cluster (reefClusterPositions, captured at makeReefDarters() time)
+  // rather than one per individual darter: thirteen fish each with their own
+  // PannerNode would be needlessly heavy, and a darter never strays more
+  // than DARTER_TETHER (2.2 units) from its cluster's own center anyway, so
+  // a listener can't tell the click apart from any one fish's exact position
+  // — the same "root the sound at the structure, not the geometry" choice
+  // visit 30 made for the wreck's motes.
+  reefPanners = reefClusterPositions.map((pos) => {
+    const p = audioCtx.createPanner();
+    p.panningModel = 'equalpower';
+    p.distanceModel = 'inverse';
+    p.refDistance = 3;
+    p.rolloffFactor = 1.9;
+    p.maxDistance = 25;
+    setPannerPosition(p, pos);
+    p.connect(audioCtx.destination);
+    return p;
+  });
+  if (reefPanners.length) {
+    // one short noise buffer, built once and replayed through a bandpass
+    // filter each click (same "build the buffer once, filter it per-play"
+    // shape the ambient brown-noise loop already established) — a clean
+    // snap/pop texture, not another sine sweep like the wanderer's call or
+    // the wreck's groan, so all three voices in this water stay distinct.
+    const clickBufSize = Math.floor(audioCtx.sampleRate * 0.12);
+    clickNoiseBuf = audioCtx.createBuffer(1, clickBufSize, audioCtx.sampleRate);
+    const clickData = clickNoiseBuf.getChannelData(0);
+    for (let i = 0; i < clickBufSize; i++) clickData[i] = Math.random() * 2 - 1;
+    scheduleReefClicks();
   }
 }
 
@@ -1213,6 +1254,50 @@ function scheduleWreckGroan() {
     if (!audioCtx) return;
     playWreckGroan();
     scheduleWreckGroan();
+  }, delay * 1000);
+}
+
+// a single darter's snap — a filtered noise burst, not a tone, so it reads
+// as something small and skittish clicking rather than another animal
+// calling. Bandpass center is randomized per click so a run of them doesn't
+// sound like the exact same fish repeating itself.
+function playReefClick(panner) {
+  const now = audioCtx.currentTime;
+  const src = audioCtx.createBufferSource();
+  src.buffer = clickNoiseBuf;
+  const band = audioCtx.createBiquadFilter();
+  band.type = 'bandpass';
+  band.frequency.value = 2600 + Math.random() * 3200;
+  band.Q.value = 4 + Math.random() * 3;
+  const g = audioCtx.createGain();
+  const dur = 0.03 + Math.random() * 0.03;
+  g.gain.setValueAtTime(0.0001, now);
+  g.gain.exponentialRampToValueAtTime(0.22, now + dur * 0.2);
+  g.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+  src.connect(band).connect(g).connect(panner);
+  src.start(now);
+  src.stop(now + dur + 0.05);
+}
+// picks one cluster at random per round, and about a third of the time
+// follows it with one quick second click a beat later from the same
+// cluster — two darters startling each other, not a metronome — which is
+// what turns a lone click into something worth calling a "chorus." Spaced
+// far more densely than the wreck's own groan (a whole reef's worth of
+// small fish is a much livelier sound source than one hull), but each
+// individual click is quiet and brief enough that it stays a background
+// texture, not a new focal sound competing with the wanderer's call.
+function scheduleReefClicks() {
+  const delay = 3 + Math.random() * 6;
+  setTimeout(() => {
+    if (!audioCtx) return;
+    const panner = reefPanners[(Math.random() * reefPanners.length) | 0];
+    playReefClick(panner);
+    if (Math.random() < 0.35) {
+      setTimeout(() => {
+        if (audioCtx) playReefClick(panner);
+      }, 70 + Math.random() * 90);
+    }
+    scheduleReefClicks();
   }, delay * 1000);
 }
 
