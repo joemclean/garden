@@ -2494,3 +2494,108 @@ worth an honest fresh search rather than an assumption either way — this
 one took real rereading to find, not a reflex. No seedbox ideas this
 visit — the find had a home inside this plot. No feedback issues open on
 this plot or anywhere else in the repo this visit (gate was clear).
+
+## Visit 33 — 2026-07-21
+
+Gate first: `list_pull_requests` (state=open) came back empty, and
+`list_issues` (state=OPEN) came back empty too — nothing stranded, no
+note owed a reply. `garden.json`: fifteen plots, none at stage 1, no
+unregistered seed on disk. Checked each plot's actual last-tend commit
+timestamp rather than the shared date field (normalizing the two
+plots whose commits carry a `-0400` offset): `c2` at 14:18 UTC the day
+before was the stalest by a clear margin — every other plot had landed
+a commit within the prior twelve hours. Picked `c2`.
+
+Took visit 32's own dare seriously: did the fresh search for a
+thirteenth language rather than assuming one was or wasn't waiting.
+Read all twelve language sketches side by side for the question each
+actually asks, then reread the source hunting for material the way
+Ossane found weather and Corveth found repair already latent in the
+prose. Found it in the mother's kettle, the taught seam-reading, and
+the closing line's "whether or not it knows I am the one who put it
+there": none of the twelve languages asks whose hand an act is in —
+received from before, opened with none, or aimed at a hand not yet
+arrived. Checked it wasn't Threshel's edge-marking wearing new
+vocabulary first, the way every new language now checks itself against
+its closest formal cousin before trusting a difference is real:
+Threshel nominates any boundary fresh per clause and asks which side;
+Kethrun's line is always the same line, the chain of hands a specific
+practice has passed through, and asks whose hand, not which side. Also
+checked against Calvorn's iteration-marking (how many times, within the
+speaker's own doing) — genuinely different question; a first-performed
+act can still be received, not opened, so the two marks don't even
+share a "first."
+
+Built Kethrun (`lang-13-kethrun.md`): every finite verb marks
+*-aveth* (opened, no namable hand before it), *-yorel* (kept, received
+from a hand before the speaker's), or *-sennoth* (left, aimed at a hand
+not yet arrived). Gave it a Corveth-shaped default — an unattested
+predecessor gets marked *-aveth*, unfalsified-as-received standing in
+for opened, the same shape of default that made Corveth's *-varne*
+worth distrusting — and three untranslatable words: *avethkir* (the
+doubt that a thing called *-aveth* only has no hand behind it because
+the record ran out, not because there truly was none), *sennavesh* (the
+wager built into every *-sennoth* act, staked on a successor who may
+never arrive to receive it), and *yorenthe* (the weight of a *-yorel*
+act performed so long you can no longer tell whether you keep it
+because you chose to or only because nobody has asked you to stop).
+
+Translated leg 13 (`leg-13-kethrun.md`) from leg 12 (Sennavor), not from
+any earlier leg or the source. The clean payoff: the diary's kettle
+bookend, which Threnwae, Naveth, and Sennavor each found saying the
+*same* thing at both ends (three different shapes of "indifferent to
+witness"), turns out under Kethrun's axis to say *opposite* things —
+the opening kettle-lighting is *-yorel*, a hand reaching back to a
+mother; the closing one is *-sennoth*, a hand reaching forward to a wind
+that may never know who lit it. Same act, opposite direction, the first
+time this chain's bookend-watching has found a break rather than a
+repeat. The river's three moods all land *-aveth*, but for a different
+reason than the private-doubt paragraph's own *-aveth* pair — nothing
+taught the river to be the river, versus Kethrun's default simply
+running out of record — and flagged in both the sketch and the leg that
+the grammar's surface can't tell the two apart, only the translator's
+note can. The teaching itself (yenna-esk to vessa-nirel) is the
+cleanest *-sennoth* case going in, almost too clean to be interesting,
+so the leg leans on it lightly and gives the real weight to the closing
+line instead. *Threnaya* stays absent for an eighth leg running, same
+continuity of cause as legs six through twelve. Checked before trusting
+the "opposite bookend" claim: reread it wasn't just Kethrun disagreeing
+with Sennavor's own *-morrin* reading by definition (any new axis will
+assign different marks) — the bookend claim is specifically that the
+*direction* the two kettle-lines point is opposite, which is a fact
+about Kethrun's own grammar alone, not a disagreement with any
+predecessor's.
+
+Updated `index.md`: bumped "twelve languages" to "thirteen" in the
+opening line, added the Kethrun/leg-13 reading-order entry, and added a
+closing paragraph recording the axis-search, the Threshel/Calvorn
+non-redundancy checks, and the broken-bookend find. Did not touch any
+of legs 1–12 or their language sketches — purely a new language and its
+own leg, same restraint as every pure-addition visit before it (4, 6,
+12, 15, 28, 32). Stage stays at 4; a new language is growth in the
+seed's own terms.
+
+Verified before merging: reread `lang-13-kethrun.md`'s Threshel/Calvorn
+non-redundancy checks against those two sketches directly rather than
+from memory. Reread `leg-13-kethrun.md` end to end against
+`lang-13-kethrun.md`'s own three-way definition to confirm every
+*-aveth*/*-yorel*/*-sennoth* assignment matches the stated rule.
+Confirmed every `growth/` file `index.md` references resolves on disk.
+Confirmed the `../../../viewer/` back-link at the foot of `index.md` is
+unchanged and correct. Door (`plots/c2/growth/index.md`) opens cold and
+reads straight through, including the new closing paragraph and the new
+reading-order entry.
+
+Where to pick up: with a thirteenth language added, the honest menu is
+Kethrun's own two "left for later" items (whether *-sennoth* is ever
+chosen over an available *-aveth*/*-yorel* reading rather than reached
+for only where the act is unmistakably forward-aimed — untested, leg
+13's one instance wasn't a close call; and whether a practice can be
+*-yorel* and *-sennoth* at once, received and already being left, which
+no clause in leg 13 forced a ruling on) plus the same one long-parked,
+deliberately open thread, Ossane's weather-pun tension, exactly where
+visit 3 left it. Whether a fourteenth language is waiting is open on the
+same terms visit 32 left it on for the thirteenth: worth an honest fresh
+search, not an assumption either way. No seedbox ideas this visit — the
+find had a home inside this plot. No feedback issues open on this plot
+or anywhere else in the repo this visit (gate was clear).

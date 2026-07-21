@@ -1,8 +1,8 @@
 # The mistranslation engine — reading order
 
-One page, carried through twelve languages that don't exist, one leg at
-a time — each leg translated from the leg before it, never back from the
-source. Read in order:
+One page, carried through thirteen languages that don't exist, one leg
+at a time — each leg translated from the leg before it, never back from
+the source. Read in order:
 
 1. [The source](00-source.md) — *The Bridge-Keeper's Ledger*, locked
    after its first writing.
@@ -44,6 +44,10 @@ source. Read in order:
 13. [Sennavor](lang-12-sennavor.md) → [leg 12](leg-12-sennavor.md) —
     every verb must rule on who it's for: voiced (*-thurel*), withheld
     (*-kessin*), or incidental (*-morrin*).
+14. [Kethrun](lang-13-kethrun.md) → [leg 13](leg-13-kethrun.md) — every
+    verb must rule on whose hand it's in: opened (*-aveth*, no namable
+    hand before it), kept (*-yorel*, received from one), or left
+    (*-sennoth*, aimed at one not yet arrived).
 
 Watch *threnaya*, the bridge-keeper's self-naming, cross five of the
 nine legs — misheard fresh each time, never restored, until Vendrel,
@@ -622,6 +626,34 @@ What's left on the board, unchanged: Ossane's weather-pun tension, open
 since visit 3 by design, and Sennavor's own single "left for later" —
 whether a *-thurel* act ever turns out to have been *-morrin* all along
 — with no leg occasion for it yet.
+
+Kethrun, the thirteenth language, takes up the standing question a fifth
+time and finds a lens none of the twelve before it asked: not how you
+know, hold, weather, speak, address, affirm, cause, name, count, sit
+against an edge, stand in repair, or orient toward a witness, but whose
+hand an act is in — received from before, opened with none, or left for
+a hand not yet arrived. Checked first against its closest formal
+resemblance, Threshel's own three-way edge-marking, and found genuinely
+different: Threshel nominates any boundary fresh per clause and asks
+which side; Kethrun's line is always the same line, the chain of hands a
+practice has passed through, and asks whose hand, not which side. The
+source turns out to be built almost entirely from exactly this material
+— a kettle received from a mother, a seam-reading taught by a
+predecessor, a keeper's post inherited whole — material eleven prior
+languages had material for and none had asked after directly. The find:
+three languages running (Threnwae, Naveth, Sennavor) each read the
+diary's opening and closing lines as saying the identical thing.
+Kethrun is the first to find them saying opposite things — the same
+kettle-lighting act, marked *-yorel* (a hand reaching back to a mother)
+at the diary's open and *-sennoth* (a hand reaching forward to a wind
+that may never know it) at its close. The river's three moods all take
+*-aveth*, for a different reason than the private doubt beside the
+promise does — one because nothing taught the river to be the river, the
+other because Kethrun's own default lets an untraceable hand stand in
+for no hand, a distinction the grammar can't itself keep straight, only
+the translator's note can. No inherited mark was live to check this
+crossing against — the one-grammar-per-leg rule left Kethrun nothing
+already running in leg 12's text to compete with or build on.
 
 ---
 
