@@ -99,7 +99,7 @@
       "title": "Open ground: something to hear",
       "planted": "2026-07-10",
       "last_tended": "2026-07-21",
-      "note": "Seventeenth sitting rereads the visitor-facing description cold and finds a real copy bug: the rhythm layer's note claimed its six click layers are \"an octave apart,\" but the actual constants (verified by computing every adjacent rate directly) put neighbors half an octave apart, with a full 3-octave span only across the whole set — wrong since the commit that introduced the layer, whose own code comment already said \"three octaves up.\" Fixed the sentence to \"spanning three octaves,\" matching the constants; Playwright regression (play, direction flip, all three layer toggles, stop) clean, zero errors. Stays at bloom.",
+      "note": "Eighteenth sitting goes one layer past visit 17's visitor-note fix and greps the code comments themselves: finds the pitch layer's span comment (\"seven octaves up\") off by one octave from the actual constants (55*64 is six octaves, confirmed in Node, and contradicted by visit 10's own \"6-octave jump\" measurement already in the file), plus the rhythm layer's internal comment repeating visit 17's exact \"an octave apart\"/\"double-speed neighbor\" mistake, untouched since inception. Fixed both to match the verified math (six octaves; half-octave/2^0.5 spacing). Comment-only change, zero effect on behavior; Playwright regression (play, direction flip, all three toggles, stop) clean, zero errors. Stays at bloom.",
       "door": "plots/a2/growth/ascent.html"
     },
     "b2": {

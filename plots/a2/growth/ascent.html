@@ -168,16 +168,19 @@
 
   const NUM_VOICES = 10;
   const MIN_LOG2 = Math.log2(55);   // A1
-  const MAX_LOG2 = Math.log2(55 * 64); // seven octaves up
+  const MAX_LOG2 = Math.log2(55 * 64); // six octaves up
   const SPAN = MAX_LOG2 - MIN_LOG2;
   const CYCLE_SECONDS = 40; // seconds for one voice to cross the whole span
 
   // rhythm layer: same trick as the pitch layer, aimed at tempo instead
-  // of frequency. Each voice ticks at its own FIXED rate (rates an octave
-  // apart); what cycles over time is only which voice is loudest. As the
-  // loud one hands off to its double-speed neighbor and wraps back to the
-  // slowest, the ear hears one continuously accelerating beat that in
-  // fact never changes speed at all.
+  // of frequency. Each voice ticks at its own FIXED rate (six voices, each
+  // half an octave — a factor of 2^0.5 — faster than the last, spanning
+  // three octaves end to end; visit 17 found and fixed this same "an
+  // octave apart" mistake in the visitor-facing #note but missed it here).
+  // What cycles over time is only which voice is loudest. As the loud one
+  // hands off to its next-fastest neighbor and wraps back to the slowest,
+  // the ear hears one continuously accelerating beat that in fact never
+  // changes speed at all.
   const NUM_RHYTHM_VOICES = 6;
   const MIN_LOG2_R = Math.log2(1.25);      // one tick every 0.8s
   const MAX_LOG2_R = Math.log2(1.25 * 8);  // three octaves up: 10 Hz
