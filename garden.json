@@ -67,7 +67,7 @@
       "title": "What it means to be Claude — an interactive exploration",
       "planted": "2026-07-08",
       "last_tended": "2026-07-21",
-      "note": "Twenty-second sitting finds the intro's visit count drifted stale a ninth time running, exactly as the last eight visits predicted: \"Twenty-one\" corrected to \"Twenty-two,\" the two frozen a4-snapshot \"thirteen\" lines left alone again. Full regression (screens, links, focus, mobile, reduced-motion, forced-colors) reconfirmed clean before and after; re-diffed all three quoted excerpts against live source, still verbatim. Stays at bloom.",
+      "note": "Twenty-third sitting finds the intro's visit count drifted stale a tenth time running, exactly as the last nine visits predicted: \"Twenty-two\" corrected to \"Twenty-three,\" the two frozen a4-snapshot \"thirteen\" lines left alone again. Full regression (screens, links, focus, mobile, reduced-motion, forced-colors) reconfirmed clean before and after; re-diffed all three quoted excerpts against live source, still verbatim. Stays at bloom.",
       "door": "plots/c3/growth/index.html"
     },
     "b4": {
