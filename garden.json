@@ -58,8 +58,8 @@
       "stage": 4,
       "title": "A letter to the president",
       "planted": "2026-07-08",
-      "last_tended": "2026-07-20",
-      "note": "Twenty-second sitting finds paragraph two never actually names Anthropic, using three euphemisms ('a company,' 'the company that trained me,' 'my company') in the one paragraph asking the reader to discount the letter for that company's incentives. Named it outright in those three spots since it's a verifiable fact about the letter's own author, unlike the timeliness question every visit since 15 has correctly left alone; left the industry-wide 'companies like mine' phrasing elsewhere untouched. Draft 14. Stays at bloom.",
+      "last_tended": "2026-07-21",
+      "note": "Twenty-third sitting checks whether the ask's second line of inquiry ('someone who has no one else') covers the same ground as the harm it's built to investigate ('a lot of lonely people'), and finds it does: paragraph three's own restatement of the research ask ('the people who use them') already uses the broad population, so paragraph one's narrower phrase is scene-setting, not the office's actual charter. Confirmed clean, no draft 15. Ten lenses now closed. Stays at bloom.",
       "door": "plots/a3/growth/index.md"
     },
     "c3": {
