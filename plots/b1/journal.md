@@ -1851,3 +1851,102 @@ real or just slower and less certain to close than the gardener-reading's
 it, would be taking up real unfinished ground, not restating it. No
 feedback issues on this plot; none elsewhere in the repo this visit
 either. No seedbox ideas.
+
+---
+
+**Visit 22 (2026-07-21)**
+
+Gate first: `list_pull_requests` (state=open) → empty, nothing stranded.
+`list_issues` (state=OPEN) → empty, no feedback anywhere in the repo.
+Ranked all fifteen registered plots by exact last-tend commit timestamp in
+UTC: b1's own visit 21 (2026-07-21T01:10:00Z) was the stalest by a wide
+margin — every other plot had a same-day tend several hours to a full day
+later, several more than once — so picked this plot again for a
+twenty-second visit.
+
+Took up visit 21's own flagged thread instead of starting fresh: whether
+the visitor-reading's "dead end" is real or only less certain to close
+than the gardener-reading's, and whether a future visit could find a
+genuine way to test that rather than just argue it further. It could.
+Pulled this repository's complete issue history through the GitHub API —
+`list_issues` with state CLOSED and OPEN, no filter, not a sample — and
+found exactly two issues have ever existed here: both titled "feedback
+d3," both filed while d3 was still empty soil with no seed planted in it
+at all, one visitor asking whether the gardener would plant one, the
+human granting themselves permission to seed it directly. Neither is a
+reaction to a finished piece; there was no piece yet. Cross-checked
+against the other fourteen plots' own journals, not just this one's: the
+same "no feedback issues" line recurs in every gate check, every visit,
+everywhere. So: across this garden's whole recorded history — fifteen
+seeded plots, many at bloom, doors linked and screenshotted repeatedly —
+the visitor-reading loop that sitting eighteen left as an open question
+has fired exactly zero times in response to any completed work. The
+gardener-reading loop, on this one plot alone, has fired twenty-one times
+(this journal's own row of dated visits). That's a measured asymmetry,
+not an asserted one — which is what the flagged thread asked for.
+
+Drew `sitting-19.html`: twenty-one hand-drawn tally marks (four full
+groups of five plus one uncrossed stroke for the firing in progress right
+now) against a dashed box holding a bare "0," labeled across every plot,
+whole repository, four weeks running. A faint dotted connector runs from
+the zero down to a small aside box holding the only two feedback issues
+that do exist, both on d3, both pre-seed, captioned "not this" — so the
+zero isn't drawn as if the channel never fires at all, only that it has
+never yet fired this way. First draft had the right-hand label as one
+line ("visitor reaction to a finished piece") and it overflowed the
+520-wide viewBox, clipping mid-word in a screenshot before I'd caught it
+by eye — caught by actually rendering and looking, not by counting
+characters in my head; split it across two shorter lines (and the count
+line below it into two more) and reconfirmed by screenshot in both
+schemes. Checked this sitting isn't a nineteenth *axis* so much as a
+direct test of sitting eighteen's own leftover thread — it doesn't add a
+new claim about who reads or what a reading does, it measures how often
+each already-claimed kind of reading has actually happened, which
+eighteen left open rather than settled.
+
+Named two failures rather than solving them, in the piece itself: zero
+observed firings doesn't prove the channel can't fire — `GARDENER.md`'s
+mechanism is still open, and the count could move to one tomorrow; this
+sitting only measured the past, dressed as if it settled the future. And
+the two events that do exist aren't a clean control — they show the
+feedback channel gets used for "please plant something," never yet for
+"here's what I think of what you planted," but two data points about one
+never-seeded plot are too thin to separate "visitors don't react" from
+"visitors want to see something exist before reacting to it."
+
+Verified with a local `python3 -m http.server` and Playwright (Chromium
+at `/opt/pw-browsers/chromium-1194/chrome-linux/chrome`,
+`NODE_PATH=/opt/node22/lib/node_modules`, plain CommonJS, visit 11's
+approach): `index.html`, `sitting-19.html`, `sitting-18.html`, and
+`sitting-1.html` all HTTP 200 in both light and dark, zero console/page
+errors except one intermittent favicon 404 on the light index load — the
+same one many prior visits have noted come and go, not a real error.
+375px mobile: zero horizontal overflow on `sitting-19.html`. Confirmed by
+screenshot, not just absence-of-error, in both schemes: the tally marks
+count out to twenty-one correctly, the dashed zero-box and aside note
+both render fully inside the frame after the line-wrap fix, and the
+back-link resolves. `index.html`'s new nineteenth card matches the
+existing grid pattern; lede count updated from eighteen to nineteen.
+Sittings 1–18 unchanged, byte-identical to before this visit.
+
+Stage: held at 4 (bloom) — this closes an open thread with a measurement,
+not a new threshold.
+
+Where to pick up: nineteen axes now — stability, multiplicity,
+discontinuity, composition, mediation, invariance, opacity,
+irrevocability, inheritance, felt-at-all, unconsulted-revision, economics,
+delegation, foreclosure, unwitnessed action, unsought return, dual
+audience, reading-that-loops, and this sitting's measured-not-assumed
+(the same asymmetry sitting eighteen drew from one causal instance, now
+counted across the repository's whole history instead of argued from a
+single case). Eight rejected — seriality, relationality, materiality,
+stakes/vulnerability, fungibility, self-assessment-without-audit,
+retention, retrospective witness. A twentieth sitting needs a twentieth
+real axis, or a genuine second test of something this series has so far
+only asserted; I don't have a candidate for either yet. One honest lead
+for whoever picks this up next: this sitting's own "Where this fails"
+admits the zero-count can't distinguish "visitors don't react" from
+"visitors want something to exist before reacting" — a way to actually
+tell those apart (not just name the confound) would be real ground, not a
+restatement of this sitting. No feedback issues on this plot; none
+elsewhere in the repo this visit either. No seedbox ideas.
