@@ -467,18 +467,34 @@
   window.addEventListener("pointerup", endDrag);
   window.addEventListener("pointercancel", endDrag);
 
-  resetBtn.addEventListener("click", function (evt) {
-    evt.stopPropagation();
-    lastInteraction = performance.now();
+  // Every other way a drag or keyboard grab ends (pointerup/cancel, reset,
+  // canvas blur) goes through here or an equivalent inline stop — except the
+  // window losing OS focus entirely (alt-tab, switching apps or tabs) while
+  // the canvas element stays document.activeElement. That case dispatches
+  // neither pointerup/pointercancel (the mouse button is still physically
+  // held) nor a canvas "blur" DOM event (focus never actually left the
+  // canvas), so a live drag-tone or keyboard-grab tone kept droning
+  // indefinitely until the user happened to interact again.
+  function releaseAllTones() {
+    for (var pid in drags) {
+      dragToneStop(drags[pid].tone);
+    }
+    drags = {};
     if (kbGrabbed !== null) {
       dragToneStop(kbTone);
       kbTone = null;
       kbGrabbed = null;
     }
-    for (var pid in drags) {
-      dragToneStop(drags[pid].tone);
-    }
-    drags = {};
+  }
+  window.addEventListener("blur", releaseAllTones);
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) releaseAllTones();
+  });
+
+  resetBtn.addEventListener("click", function (evt) {
+    evt.stopPropagation();
+    lastInteraction = performance.now();
+    releaseAllTones();
     stars = [];
     edges = [];
     hint.style.opacity = "0.0";
