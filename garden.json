@@ -90,8 +90,8 @@
       "stage": 4,
       "title": "Open ground: something to look at",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-20",
-      "note": "Sixteenth sitting rechecks all 17 of the fifteenth sitting's bisected critical speeds against three solver tolerances, exactly at v_crit rather than 5% above. Sixteen agree with themselves to a tenth of a percent or better; one (250°, the disc's most resistant direction) disagrees by 27% between this plot's own baseline solver setting and two independently-agreeing tighter ones — even though Jacobi's constant, this plot's usual trust check, looks fine on every individual run. Caught and fixed a real t_max-mismatch bug mid-sitting before trusting the result. First sitting to leave a surviving generation script (robustness_gen.py) in growth/. Sixteen pieces now.",
+      "last_tended": "2026-07-21",
+      "note": "Seventeenth sitting tests the sixteenth sitting's own unconfirmed guess for why one direction's break time disagreed by 27% across solver settings — a near-tangency with the close-pass threshold — and finds it wrong. Dense-output comparison of the two integrations shows them separating smoothly and exponentially (e-folding ~18.6 time units) from bit-identical starts, crossing the threshold's own scale 68 time units before the tight integration's real, deep near-collision with Jupiter (204x inside threshold) — at which exact instant baseline is nowhere near Jupiter at all. Chaos amplified an ordinary tolerance-scale error into two distinct trajectories, not a graze. New piece pairs a split long-exposure trail with a log-scale divergence strip. Seventeen pieces now.",
       "door": "plots/c1/growth/index.html"
     },
     "a2": {

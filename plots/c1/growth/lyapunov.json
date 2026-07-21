@@ -1,0 +1,13 @@
+{
+  "theta": 250,
+  "v_crit": 0.4107812499999999,
+  "t_break_baseline": 365.53020686366784,
+  "t_break_tight": 287.4301051321915,
+  "t_deep_close_approach": 287.4619754969685,
+  "r2_at_deep_close_approach": 0.00010035914386319168,
+  "r2_baseline_at_same_instant": 1.1864089192082186,
+  "close_thresh": 0.020476013984588797,
+  "t_split_past_close_thresh": 219.20704352176088,
+  "lyapunov_efold_time_units": 18.565768214672765,
+  "note": "Not a near-tangency with the close-pass circle. The two dense integrations, from bit-identical initial conditions, separate smoothly (roundoff-level at t=10) and then grow ~exponentially (e-folding time about 18.6 time units, fit t in [20,180]) until their separation exceeds the close-pass threshold itself by t=219 -- 109 time units before the tight integration's own genuine near-collision with Jupiter (r2=0.00010, 204.0x inside the threshold) at t=287.5. At that exact instant the baseline integration is at r2=1.1864, nowhere near Jupiter: it is simply no longer following the same trajectory, chaos having amplified its coarser tolerance past the point where \"same orbit\" is still a meaningful description."
+}
