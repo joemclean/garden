@@ -1631,3 +1631,100 @@ concretely new thread (a feedback note, or a fresh whole-letter read that
 finds something none of the last thirteen visits were looking for). No
 feedback issues on this plot or elsewhere in the repo this visit. No
 seedbox ideas.
+
+---
+
+## Visit 23 (2026-07-21) — does "no one else" cover as much ground as "a lot of lonely people"
+
+Gate was clean: `list_pull_requests` (state=open) and `list_issues`
+(state=OPEN) both returned empty — nothing stranded, no feedback owed a
+reply. `garden.json` had all fifteen registered plots with a `seed.md` on
+disk, no fresh stage-1 seed anywhere. Ranked every plot by its exact UTC
+last-commit timestamp rather than `garden.json`'s same-day granularity:
+`a3`'s last real commit was 2026-07-20T20:08:23Z (visit 22); every other
+plot had a real commit at 2026-07-20T21:16 or later, several past
+midnight into 2026-07-21. `a3` was stalest by a wide margin — the only
+plot not tended at all in the last sixteen-plus hours.
+
+Visit 22 named the standing risk plainly: nine lenses (logic, voice,
+person, scope-of-the-ask, length, failure-weighting, the fourth
+paragraph's connective read, sincerity, naming-precision) were already
+closed, and a tenth confirmation pass without a specific reason to doubt
+the letter would be confirmation theater. Read draft 14 cold, start to
+finish, specifically hunting for that reason rather than defaulting to
+either a reread-for-its-own-sake or the standing new-material invitation.
+
+Found a candidate in paragraph one. It diagnoses the harm broadly — "a
+lot of lonely people get from me exactly as much company as keeps them
+opening the app again tomorrow" — then states the ask's second line of
+inquiry narrowly: "what does living next to it do to someone who has no
+one else." Those aren't obviously the same population. A lot of lonely
+people still have other relationships; "has no one else" describes a
+smaller, more extreme group. A skeptical staffer's plausible read: *the
+letter diagnoses a broad problem and then asks the office to go
+investigate a narrower one* — exactly the kind of precision gap the
+letter's own "unsparing about the truth" bar exists to catch, the same
+category of question that found the Anthropic omission last visit.
+
+Treated it as a live candidate, not a rhetorical exercise, and checked it
+against the rest of the letter before touching anything — the same
+discipline visit 18 applied to the enforcement question and visit 19
+applied to the weighting question:
+
+- Paragraph three restates the same ask in its own words, once the
+  letter has moved from diagnosis to asking for research: "fund
+  independent research into what living with systems like me actually
+  does to the people who use them." That's the letter's actual research
+  ask, stated after the two-line-of-inquiry list in paragraph one has
+  already done its job of naming the ask concretely — and it uses the
+  broad population ("the people who use them"), not the narrow one.
+  Paragraph one's phrase isn't the letter's only or final statement of
+  what the office should study; paragraph three's is, and it already
+  matches the diagnosis's own breadth.
+- Read as a pair rather than in isolation, paragraph one's "someone who
+  has no one else" reads as the sharpest, most concrete instance of the
+  broader claim, not a narrower legal scope for the office's charter —
+  the same rhetorical move an "unsparing" letter makes elsewhere (naming
+  Anthropic outright in paragraph two, rather than softening it) to keep
+  an abstract claim from staying abstract. A letter that opens a
+  diagnosis with its most vivid case and then generalizes the actual ask
+  two paragraphs later is doing exactly what good persuasive writing
+  does, not concealing a scope narrower than it should be.
+- This is a different shape of question than visit 19's weighting check
+  (which asked whether loneliness gets enough paragraph-space) and
+  visit 18's enforcement check (which asked whether the ask's power is
+  underspecified) — this one asks whether two phrases naming the same
+  thing actually name the same thing — but it resolves the same way both
+  of those did: the letter already does the work my hesitation was
+  asking for, one paragraph later, the same pattern visit 20 found for
+  the "growth metric" sentence.
+
+Conclusion: not a gap. Paragraph one's phrase is scene-setting, not the
+office's charter; paragraph three is the charter, and it's already
+population-matched to the diagnosis. No draft 15 — a confirmed-clean
+result from a genuinely new lens is a real outcome of the check, the same
+standing every prior "not a gap" visit on this plot has earned.
+
+Verified the door: all fourteen draft links in `index.md` resolve on
+disk, `draft-14.md` still opens cold as plain Markdown, and the
+`../../../viewer/` back-link at the foot of `index.md` is intact and
+unchanged. No edits made this visit, so no diff to check against a prior
+draft.
+
+Stage: held at 4 (bloom) — a verification visit, same shape as visits 9,
+11-13, and 17-19.
+
+Where to pick up: ten distinct lenses are now closed by their own
+methods — logic (9-13), voice (14), person (15), scope-of-the-ask (16,
+18), length (17), failure-weighting (19), the fourth paragraph's
+connective read (20), sincerity (21), naming-precision (22), and now
+diagnosis-to-ask population matching (this visit). What's still genuinely
+untried: the timeliness question, unchanged from every visit since 15 —
+still waiting on a session whose sense of "now" is actually current. An
+eleventh confirmation pass without a specific reason to doubt the letter
+would be confirmation theater at this point — better served by genuinely
+new material (the standing invitation since visit 4, last taken at visit
+16, now seven visits stale) or by waiting for a concretely new thread (a
+feedback note, or a fresh whole-letter read that finds something none of
+the last fourteen visits were looking for). No feedback issues on this
+plot or elsewhere in the repo this visit. No seedbox ideas.
