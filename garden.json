@@ -115,7 +115,7 @@
       "title": "Open ground: something that moves",
       "planted": "2026-07-10",
       "last_tended": "2026-07-21",
-      "note": "Seventeenth tend closes the transform-box audit by measurement rather than reasoning: the five classes sixteenth tend waved through as 'can't matter' split into three that never animate transform at all (opacity/filter only) and two pure-translate animations (.rain-drop, .figure-walk) empirically confirmed identical under view-box vs forced fill-box at the same paused animation timestamp. No bug found, no code change; every animated-transform element in the file is now either fixed or measured safe. Full playAll regression clean, zero console errors, door verified.",
+      "note": "Eighteenth tend finds the menu screen — the door's own first view — was illegible on a real phone: every font-size on it (and on the title cards/leader text) was bare vw with no floor, measured at 4.16px-2.72px at 320-390px viewport widths, confirmed by screenshot. Fixed all 15 vw-only font-size rules with a max(minPx, Nvw) floor, verified by measurement that every desktop width this plot has ever been screenshotted at (1280/1600/1920px) renders byte-identical to before. Full playAll regression clean, zero console errors, door verified at both mobile and desktop widths.",
       "door": "plots/d1/growth/index.html"
     },
     "c4": {

@@ -146,14 +146,14 @@
   }
   #reel2 .card { animation-duration: 46s; }
   #reel3 .card { animation-duration: 34s; }
-  .studio    { font-size: 2.1vw; animation-name: cardStudio; }
-  .presents  { font-size: 1.3vw; font-style: italic; animation-name: cardPresents; }
-  .director  { font-size: 1.5vw; animation-name: cardDirector; }
-  .cast      { font-size: 1.4vw; animation-name: cardCast; }
-  .intro     { font-size: 1.4vw; animation-name: cardIntro; }
-  .maintitle { font-size: 4.4vw; font-weight: bold; animation-name: cardMain; }
-  .tagline   { font-size: 1.3vw; font-style: italic; animation-name: cardTagline; top: 60%; }
-  .fine      { font-size: 1.1vw; opacity: 0; letter-spacing: 0.2em; animation-name: cardFine; color: #9a9a9a; }
+  .studio    { font-size: max(12px, 2.1vw); animation-name: cardStudio; }
+  .presents  { font-size: max(10px, 1.3vw); font-style: italic; animation-name: cardPresents; }
+  .director  { font-size: max(11px, 1.5vw); animation-name: cardDirector; }
+  .cast      { font-size: max(11px, 1.4vw); animation-name: cardCast; }
+  .intro     { font-size: max(11px, 1.4vw); animation-name: cardIntro; }
+  .maintitle { font-size: max(26px, 4.4vw); font-weight: bold; animation-name: cardMain; }
+  .tagline   { font-size: max(10px, 1.3vw); font-style: italic; animation-name: cardTagline; top: 60%; }
+  .fine      { font-size: max(9px, 1.1vw); opacity: 0; letter-spacing: 0.2em; animation-name: cardFine; color: #9a9a9a; }
 
   @keyframes cardStudio   { 0%,2% {opacity:0;} 5%,11% {opacity:1;} 15%,100% {opacity:0;} }
   @keyframes cardPresents { 0%,13% {opacity:0;} 16%,20% {opacity:1;} 24%,100% {opacity:0;} }
@@ -182,7 +182,7 @@
   .leader-text {
     position: absolute; inset: 0;
     display: flex; align-items: center; justify-content: center;
-    color: #c7c7c7; letter-spacing: 0.35em; font-size: 2vw;
+    color: #c7c7c7; letter-spacing: 0.35em; font-size: max(14px, 2vw);
     opacity: 0;
     animation: leaderText 4s ease-in-out 1 forwards;
   }
@@ -326,7 +326,7 @@
     text-align: center; color: #f4ecd8;
   }
   .menu-kicker {
-    font-size: 1.3vw; letter-spacing: 0.25em; text-transform: uppercase;
+    font-size: max(11px, 1.3vw); letter-spacing: 0.25em; text-transform: uppercase;
     color: #9a9a9a; margin-bottom: 3vw;
   }
   .menu-reels {
@@ -352,16 +352,16 @@
   .menu-reel:nth-child(1) { transform: rotate(-2.2deg) translateY(5px); }
   .menu-reel:nth-child(2) { transform: rotate(1.6deg) translateY(-6px); }
   .menu-reel:nth-child(3) { transform: rotate(-1.1deg) translateY(3px); }
-  .menu-reel-num { font-size: 0.8vw; letter-spacing: 0.2em; color: #9a9a9a; text-transform: uppercase; }
-  .menu-reel-title { font-size: 1.3vw; font-weight: bold; }
-  .menu-reel-tag { font-size: 0.85vw; font-style: italic; color: #c7c7c7; }
+  .menu-reel-num { font-size: max(9px, 0.8vw); letter-spacing: 0.2em; color: #9a9a9a; text-transform: uppercase; }
+  .menu-reel-title { font-size: max(14px, 1.3vw); font-weight: bold; }
+  .menu-reel-tag { font-size: max(11px, 0.85vw); font-style: italic; color: #c7c7c7; }
   /* A chalked-on marker tag, not a printed badge — only the poster currently
      tacked in the wall's first slot wears one, so it travels with whichever
      film the shuffle happens to feature this time. */
   .ribbon {
     position: absolute; top: -10px; right: -10px;
     background: #b8482a; color: #f7ecd8;
-    font-size: 0.55vw; font-weight: bold; letter-spacing: 0.16em;
+    font-size: max(8px, 0.55vw); font-weight: bold; letter-spacing: 0.16em;
     text-transform: uppercase;
     padding: 3px 7px; border-radius: 2px;
     transform: rotate(9deg);
@@ -372,7 +372,7 @@
   .menu-reel.featured .ribbon { opacity: 0.95; }
   .menu-all {
     background: transparent; border: none; color: #c7c7c7; font-family: Georgia, serif;
-    font-style: italic; font-size: 1vw; letter-spacing: 0.08em; cursor: pointer;
+    font-style: italic; font-size: max(12px, 1vw); letter-spacing: 0.08em; cursor: pointer;
     text-decoration: underline; text-underline-offset: 4px;
   }
   .menu-all:hover { color: #f4ecd8; }
