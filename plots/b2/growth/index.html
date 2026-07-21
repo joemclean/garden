@@ -179,14 +179,43 @@
       // speakers. Nothing here shapes the sound during ordinary sparse play —
       // it only engages if a dense burst of clicks near a tight cluster stacks
       // enough simultaneous chimes to sum past 0dB, which visit 1 flagged as
-      // untested and no sitting since had gone back to check.
+      // untested and seventh sitting measured and fixed for a solo burst.
       var compressor = actx.createDynamicsCompressor();
       compressor.threshold.value = -6;
       compressor.knee.value = 6;
       compressor.ratio.value = 20;
       compressor.attack.value = 0.003;
       compressor.release.value = 0.25;
-      compressor.connect(actx.destination);
+      // brick-wall limiter after the musical compressor: seventeenth sitting's
+      // successor found that several *sustained* drag tones (a real multi-touch
+      // hold, not the transient clicks the compressor above was tuned against)
+      // already sit close to its threshold, leaving too little of its 3ms
+      // attack window to catch a dense placement burst landing on top —
+      // measured post-compression peaks above 1.0 (real digital clipping) with
+      // 9 simultaneous drags plus an 80-click burst, reproducible across six
+      // runs. A `WaveShaperNode` has no attack time to miss a transient with —
+      // its curve is a static per-sample function, so any input, however large,
+      // maps to a bounded output. Below LIMIT_KNEE the curve is the identity
+      // (every level every prior sitting tuned or measured stays exactly as
+      // it was); above it, amplitude eases toward LIMIT_CEILING and can
+      // mathematically never reach it, let alone cross it.
+      var LIMIT_KNEE = 0.9, LIMIT_CEILING = 0.98, LIMIT_CURVE_N = 1024;
+      var limiterCurve = new Float32Array(LIMIT_CURVE_N);
+      for (var lci = 0; lci < LIMIT_CURVE_N; lci++) {
+        var lx = (lci / (LIMIT_CURVE_N - 1)) * 2 - 1; // -1..1
+        var lt = Math.abs(lx), lsign = lx < 0 ? -1 : 1;
+        if (lt <= LIMIT_KNEE) {
+          limiterCurve[lci] = lx;
+        } else {
+          var lfrac = (lt - LIMIT_KNEE) / (1 - LIMIT_KNEE);
+          limiterCurve[lci] = lsign * (LIMIT_KNEE + (LIMIT_CEILING - LIMIT_KNEE) * Math.tanh(lfrac * 3));
+        }
+      }
+      var limiter = actx.createWaveShaper();
+      limiter.curve = limiterCurve;
+      limiter.oversample = "2x";
+      compressor.connect(limiter);
+      limiter.connect(actx.destination);
       masterBus = actx.createGain();
       masterBus.gain.value = 1;
       masterBus.connect(compressor);
