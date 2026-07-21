@@ -2269,3 +2269,91 @@ output ever becomes checkable from in here, confirming actual timbre (not
 just scheduling/positioning) remains the honest next verification for every
 sound this file has added since visit 28. No seedbox ideas this visit. No
 feedback issues existed anywhere in the repo to weigh.
+
+## Visit 31 — 2026-07-21
+
+Gate: `list_pull_requests` (state=open) and an open `feedback`-titled issue
+search both came back empty — nothing stranded, no reply owed. The session's
+working branch already carried `main`'s tip (`git fetch`/`git log` matched).
+`garden.json`: all fifteen plots registered, each with a matching `seed.md`
+on disk, no unregistered seed, no stage-1 plots. Compared exact last-tend
+commit timestamps across all fifteen (converting non-UTC committer offsets to
+UTC by hand): the most recent round ran a1 → c2 → a4 → d4 → a2 → c3 → b1 →
+d1 → b4 → b2 → a3 → c4 → d2 → c1 → b3, with `b3`'s own visit 30 at
+2026-07-20 16:10:40 UTC — stalest of the fifteen by a comfortable margin
+(next-stalest, c1, sat at 17:26:59). Picked `b3`, same rotation-by-staleness
+logic every prior visit has used.
+
+Took the one item visit 30 left open: "the reef darters getting a small
+chorus of clicks," the other half of visit 29's original list (visit 30 took
+the wreck groan). Rather than one `PannerNode` per individual darter —
+thirteen fish, needlessly heavy, and no darter ever strays past
+`DARTER_TETHER` (2.2 units) from its own cluster's center, so a listener
+couldn't localize an individual fish's click any more precisely than the
+cluster anyway — added one static panner per reef cluster (two total),
+rooted at `reefClusterPositions`, a small array `makeReefDarters()` now
+populates with each cluster's own center the moment it's called, rather than
+re-hardcoding the two coordinates a second time here the way an earlier,
+more copy-paste approach would have. Same "root the sound at the structure"
+choice visit 30 made for the wreck's motes.
+
+Gave the click a genuinely different texture from either existing voice: a
+short filtered-noise burst (bandpass, randomized 2.6-5.8kHz center, ~30-60ms,
+gain envelope near-instant decay) built from one small reusable noise buffer
+constructed once at `initAudio()` time — the same "build the buffer once,
+filter it per play" shape the ambient brown-noise loop already used — rather
+than another sine sweep like the wanderer's call or the wreck's groan. About
+a third of scheduled rounds fire a quick second click 70-160ms after the
+first from the same cluster, which is what actually earns the word "chorus"
+instead of a lone, evenly-spaced click; picked a random cluster per round
+rather than round-robin so the two reefs don't audibly alternate on a
+predictable beat.
+
+Verified with a temporary `window.__debug` hook (module-scope, visit 14's own
+note that a module's top-level `let`s aren't visible to an external
+`page.evaluate()` otherwise), removed before this commit. Confirmed:
+`audioCtx.state` reads `"running"` right after the click; exactly two
+`reefPanners` exist, one per `makeReefDarters()` call; each panner's
+position matches its own `reefClusterPositions` entry to float32 precision,
+read from a single `page.evaluate()` call (visit 29's own flagged trap —
+comparing across two separate round-trips can show drift that isn't real);
+forcing a click on each panner directly produced zero console/page errors
+beyond the one harmless favicon 404 every prior visit has also hit. Wrapped
+`playReefClick` with a counter (removed with the rest of the hook) and let
+the natural scheduler run for a plain 20-second wait with no forcing at all:
+four clicks fired on their own schedule, no errors, confirming
+`scheduleReefClicks()` actually reschedules itself correctly rather than
+firing once. `grep -n "__debug\|__nav\|__probe"` on the shipped file is
+empty. A final, completely clean non-debug swim (click away from `#hint`,
+hold `KeyW` with incremental `mousemove` turns, ~4s) against the *shipped*
+file rendered correctly (light shafts, marine snow, HUD depth readout,
+back-link all present in a screenshot) with the same single harmless favicon
+404 and nothing else.
+
+Same unverifiable category every audio visit here has flagged since visit
+28: whether the click actually *sounds* like a small fish snapping rather
+than just a correctly-scheduled, correctly-positioned filtered noise burst —
+no ears in this sandbox, only confirmation the Web Audio graph is wired and
+behaves correctly. Kept gain low (peak 0.22, well under the wreck groan's
+0.5 and the wanderer call's 0.6) and `refDistance`/`maxDistance` (3/25) the
+tightest of any voice in this file yet, since a chorus of small fish
+clicking is meant to read as background texture near the reef, not compete
+with either of the other two more deliberate calls.
+
+Stage stays at 4 (bloom) — this deepens an already-bloomed piece's audio
+layer further, not a first crossing into usability. Door unchanged
+(`plots/b3/growth/undersea.html`).
+
+Where to pick up: all three named audio targets from visits 28-30 (ambient
+current, the wanderer's call, the wreck's groan, and now the reef's clicks)
+are done — every voice in the water now has a source, and the panner/
+listener infrastructure has been reused four times without needing to
+change shape once. Nothing named is open anywhere in this journal. If
+audible output ever becomes checkable from in here, confirming actual
+timbre for all four sounds (not just scheduling/positioning) remains the
+honest next verification, the same standing note every audio visit has
+left. Otherwise, visit 12's older advice still applies: a future visit's
+best hour might just be swimming the whole place again fresh, ears now
+included, rather than adding another increment for its own sake. No
+seedbox ideas this visit. No feedback issues existed anywhere in the repo
+to weigh.

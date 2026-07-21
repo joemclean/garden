@@ -34,8 +34,8 @@
       "stage": 4,
       "title": "Undersea — a 3D swimming simulation",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-20",
-      "note": "Thirtieth visit gives the wreck its own voice, the other half of visit 29's own named lead: a second PannerNode rooted at the interior glow motes' fixed position, playing a low detuned-pair groan (32-40Hz, two oscillators beating faintly) on a slow 20-45s irregular schedule, distinct in texture and rarity from the wanderer's own call. Reuses the panner/listener infrastructure directly. Verified panner position matches the glow light to float32 precision, forced groans near and far from the wreck produce zero errors, and a clean non-debug swim renders correctly. Stays at bloom.",
+      "last_tended": "2026-07-21",
+      "note": "Thirty-first visit closes visit 29's original list by giving the reef darters their own chorus of clicks: two static PannerNodes rooted at each reef cluster's own center (reused, not re-hardcoded, from makeReefDarters), playing short bandpass-filtered noise bursts (2.6-5.8kHz, ~30-60ms) on a dense 3-9s schedule, occasionally doubling into a quick second click for a genuine chorus feel. Distinct texture from both the wanderer's call and the wreck's groan. Verified panner positions match cluster centers to float32 precision, forced and natural (20s, 4 clicks) playback produce zero errors, and a clean non-debug swim renders correctly. Every voice named since visit 28 now exists. Stays at bloom.",
       "door": "plots/b3/growth/undersea.html"
     },
     "b1": {
