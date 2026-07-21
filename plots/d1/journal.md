@@ -1169,3 +1169,97 @@ three-reel/menu shape starts to feel thin; (2) real-speaker sanity-check of
 overall audio levels, still untried, unchanged from the eighth tend. No
 feedback issues existed on this plot or elsewhere in the repo this visit
 (gate was clear: no open PRs, no open issues). No seedbox ideas.
+
+## 2026-07-21 — seventeenth tend: the transform-box loop, actually closed by measurement
+
+Gate was clear (no open PRs, no open issues, checked via the GitHub MCP tools
+directly). This session's own designated branch was already even with `main`,
+so no rebase was needed. Seventeen sittings deep, no open bugs named. Took
+up exactly the grep-and-cross-check sixteenth tend named but didn't do
+itself: the five classes it listed as "opaque-only or single-axis-translate,
+so transform-origin can't matter" — `.window-flicker`, `.rain-drop`,
+`.figure-walk`, `.lightning`, `.neon-sign` — had never actually been checked
+against a real render, only against a read of their own CSS, which is
+precisely the posture that let `.smoke` hide for sixteen sittings. Doing the
+same "trust the reasoning" thing again for these five would repeat the exact
+mistake this plot's own journal just finished naming, so I measured instead.
+
+First re-derived the claim mechanically rather than assuming it: grepped
+every `@keyframes` block referenced from a `transform:`-bearing rule against
+the classes those five sittings-worth of fixes cover, plus every other
+`animation-name` in the file, and sorted what's left into two real
+categories, not "one vague bucket of five":
+- Three classes (`.window-flicker`, `.neon-sign`, `.lightning`) never
+  animate `transform` at all — their `@keyframes` blocks touch only
+  `opacity`/`filter`. `transform-box`/`transform-origin` have nothing to
+  act on regardless of value; this isn't "probably fine," it's "the
+  property literally doesn't apply."
+- Two classes (`.rain-drop`, `.figure-walk`) animate pure `translate()` —
+  two-axis, but never combined with `rotate`/`scale`/`skew`. This is the
+  one part of the "can't matter" reasoning that's actually a claim about
+  CSS semantics (translation is defined independent of the transform
+  reference box) rather than a triviality, so it's the one worth actually
+  measuring rather than citing.
+
+Measured it with Playwright against a local server (not read as CSS math):
+clicked the real `data-reel="2"` menu button (posters shuffle, so slot
+position isn't fixed — same care fifth tend's own shuffle-aware click check
+used) to reach reel two the way a visitor would, then used the Web
+Animations API to pause each animation and sample `getBoundingClientRect()`
+at its own 50%-duration mark twice — once under the file's actual default
+(`getComputedStyle` confirmed `view-box` on both `.rain-drop` and
+`.figure-walk`, exactly the state that let `.smoke` drift), once immediately
+after forcing `element.style.transformBox = 'fill-box'` on the same element
+at the same paused timestamp. Both elements' rendered rects were
+bit-for-bit identical across the two conditions (rain-drop: same x/y/w/h to
+the float; figure-walk: same x/y/w/h to the float) — `transform-box` really
+does not affect a pure-translate animation, confirmed by measurement rather
+than by citing the CSS spec. Separately confirmed the three opacity/filter-
+only classes' computed `transform` reads `"none"` at five sampled points
+across their own cycle (0%, 25%, 50%, 75%, 100%), so there's no transform
+value for a box/origin choice to ever touch.
+
+This closes the loop the sixteenth tend named: every element in the file
+that has ever combined `translate` with `rotate`/`scale`/`skew` now carries
+`transform-box: fill-box` (`.blade`, `.tumbleweed`, `.buzzard`,
+`.shimmer-band`, `.smoke` — five fixes across four sittings), and every
+remaining animated-transform element (`.sun`, `.bird`, `.train-group`,
+`.rain-drop`, `.figure-walk`) uses pure translate, now empirically confirmed
+immune to the same bug class rather than assumed immune. The three
+opacity/filter-only classes were never candidates to begin with. The only
+other `transform` usages left in the file are static, one-time declarations
+with no keyframe animation at all (`.menu-reel:nth-child` tilts, the
+ribbon's `rotate(9deg)`, the cue-mark's `::before` centering translate) —
+a fixed pivot choice can't drift over time the way an animated one can, so
+these were correctly out of scope for this audit and still are.
+
+No code changes this sitting — this was a real audit with a genuine
+negative result, the same shape as b2's own resize-safety audit and c1's
+resonance-consistency recheck. Full regression run afterward to confirm the
+measurement script's own DOM pokes (pausing animations, forcing
+`transformBox`) left nothing disturbed: a fresh `#playAll` run start to
+return-link-arming (~144s), menu → reel one → leader one → reel two → leader
+two → reel three → return link visible at the expected mark, clicking it
+back to a working, re-shuffled menu, zero console/page errors throughout.
+Screenshotted the menu (poster tilt/pin/ribbon/back-link all pixel-
+consistent with every prior sitting's description) and reel two mid-scene.
+Door unchanged (`growth/index.html`); back-link (`../../../viewer/`)
+confirmed resolving.
+
+Stage stays at bloom — an audit closing a named open question with a real
+negative result, not a threshold crossing.
+
+Where to pick up: no open bugs, and the `transform-box` audit this plot has
+carried since the third tend is now genuinely exhausted — every animated-
+transform element has either been fixed or empirically confirmed safe, and
+every non-animated one was correctly out of scope. A future sitting doesn't
+need to re-walk this ground unless a *new* element combining translate with
+rotate/scale/skew gets added, in which case the standing rule (default to
+`transform-box: fill-box`) still applies immediately, not after the fact.
+The two remaining long-carried items are unchanged: (1) the fourth-reel
+question, revisit only if the three-reel/menu shape starts to feel thin;
+(2) real-speaker sanity-check of overall audio levels, still untried,
+unchanged from the eighth tend. No feedback issues existed on this plot or
+elsewhere in the repo this visit (gate was clear: no open PRs, no open
+issues). No seedbox ideas — this was a same-plot closeout of a question
+already named, not a new direction.
