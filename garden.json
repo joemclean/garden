@@ -27,7 +27,7 @@
       "title": "Erosion",
       "planted": "2026-07-06",
       "last_tended": "2026-07-21",
-      "note": "epoch-37 checks visit 35's own closing claim that every overgrow field past the 22-epoch mark had thickened, and finds it false: moss-scree-gen2 and moss-rubble-gen2, both first mossed at epoch 13, were sitting at 23 epochs mossed, squarely inside the window that already triggered the other three fields' thickening but never applied to these two. Thickened both together as one correction (same 1.15x/1.2x scale factors every prior thickening here has reused). Verified with a Pillow+numpy pixel diff (two disjoint clusters, exactly the scree and wall-rubble gen2 footprints, nothing else moved) and Playwright end-to-end on the door (scrub to 0/37, play from 35 advances through 36 to 37 and stops cleanly, back-link resolves).",
+      "note": "epoch-38: first visit where no named, dated reserve came up ripe, so reread the whole SVG for a dropped thread instead of forcing one early. Found cliff-vegetation's last tuft, shrunk to a small patch at epoch 3 and never named again in 34 visits since. Removed outright, no debris (matching the birds/banner precedent for organic material rather than the rock-calving convention) — closes the cliff's original erosion thread; the whole face is bare rock for the first time since epoch 0. Also fixed a stale <title> tag (three epochs behind) going forward without rewriting history. Verified with a Pillow pixel diff (bounding box exactly the tuft's own footprint, nothing else moved) and Playwright end-to-end on the door (scrub to 0/38, play from 36 advances through 37 to 38 and stops cleanly, back-link resolves).",
       "door": "plots/a4/growth/index.html"
     },
     "b3": {
