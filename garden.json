@@ -122,8 +122,8 @@
       "stage": 4,
       "title": "Open ground: something to read",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-20",
-      "note": "Sixteenth sitting gives the Ledger its first untrusting reread since visit 15 wrote it: holds against the review's own three-generation mechanism and its own stated rule, third hand's break from that rule read as intentional, not a slip. Full seven-check cold pass on all fourteen pieces otherwise clean. One real find, in the journal rather than the door: visit 15's claimed 'eleven' motif tally (six times, five pieces) undercounts by one piece — the wren capsule review already carries 'eleven rivers' independently of the essay that later quotes it. Corrected the record to eleven occurrences across seven pieces; nothing in index.md itself needed a line edit.",
+      "last_tended": "2026-07-21",
+      "note": "Seventeenth sitting independently reverifies visit 16's own arithmetic rather than trusting it secondhand: grepping the door directly for every 'eleven' finds exactly eleven raw occurrences across exactly seven pieces, confirming last visit's corrected tally is accurate. Full seven-check cold pass on all fourteen pieces clean, plus a new check (repeated verbatim quotes and figures don't drift on a second telling) that also came back clean. No new document forced; no open thread remains. Stays at bloom.",
       "door": "plots/c4/growth/index.md"
     }
   }
