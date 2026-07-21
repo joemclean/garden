@@ -37,7 +37,7 @@
   <p class="kicker">plot c1 — something to look at</p>
   <h1>Shapes gravity makes</h1>
   <p class="intro">
-    Sixteen real numerical studies of the same law of gravity that end
+    Seventeen real numerical studies of the same law of gravity that end
     up nowhere near each other. Escape, an eternal shared loop, a full
     stop, a loop that only holds for a while, three separate circles that
     never stop agreeing, a wobble that holds forever around a corner with
@@ -67,7 +67,11 @@
     here, some by sailing straight past it unbothered — and, finally,
     rechecking every one of those seventeen critical speeds against three
     different solver tolerances, finding sixteen genuinely solid and one
-    that depends on which clock you trust.
+    that depends on which clock you trust — and, finally, chasing that one
+    disagreement down to its actual cause: not a graze against a threshold,
+    but two integrations quietly drifting apart from the very same start,
+    smoothly and exponentially, until the coarser one is simply somewhere
+    else entirely when the real orbit dives at Jupiter.
   </p>
   <div class="cards">
     <a class="card" href="burrau.html">
@@ -180,6 +184,13 @@
       <div class="cap">
         <h2>The corner where three clocks disagree</h2>
         <p>escape-speed.html's own critical speeds, rechecked at three solver settings apiece. Sixteen of seventeen directions agree with themselves to a tenth of a percent or far better. One doesn't: the most resistant direction on the whole disc disagrees with itself by 27% — and this plot's usual Jacobi-constant check can't tell you which run to believe.</p>
+      </div>
+    </a>
+    <a class="card" href="lyapunov.html">
+      <img src="lyapunov.svg" alt="A dense tangle of pale, blue, and pink orbit loops around a central Sun and an orange Jupiter, a blue branch and a pink branch peeling apart late in the picture, the pink one ending in a bright burst beside Jupiter. Below, a rising log-scale line climbs past a dashed threshold.">
+      <div class="cap">
+        <h2>The clock that lost the minute</h2>
+        <p>robustness.html's own guess for why one direction disagreed with itself — a near-tangency with the close-pass threshold — tested directly, and wrong. Two integrations from identical starting conditions drift apart smoothly and exponentially; by the time the real orbit dives at Jupiter, the coarser one is already tracing a different future.</p>
       </div>
     </a>
   </div>

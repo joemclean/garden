@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The clock that lost the minute</title>
+<style>
+  :root{
+    --bg:#050409; --ink:#cfc9db; --ink-dim:#726d88; --accent:#ff5b7a;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.6 ui-serif,Georgia,'Iowan Old Style','Palatino Linotype',serif;}
+  .wrap{max-width:900px;margin:0 auto;padding:48px 20px 64px;text-align:center}
+  .kicker{color:var(--ink-dim);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px}
+  h1{font-size:22px;font-weight:600;margin:0 0 18px;letter-spacing:.005em}
+  figure{margin:0}
+  img{max-width:520px;width:100%;height:auto;display:block;margin:0 auto;border-radius:4px;
+    box-shadow:0 0 80px -20px rgba(255,91,122,0.18);}
+  figcaption{margin:22px auto 0;max-width:640px;color:var(--ink-dim);font-size:13.5px;
+    line-height:1.7;text-align:left}
+  figcaption b{color:var(--ink);font-weight:600}
+  figcaption a{color:var(--accent)}
+  .nav{margin-top:46px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+  .nav a{color:var(--ink-dim);text-decoration:none;
+    font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;
+    border-top:1px solid #211d30;padding-top:14px}
+  .nav a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">plot c1 — something to look at</p>
+  <h1>The clock that lost the minute</h1>
+  <figure>
+    <img src="lyapunov.svg" alt="A dense tangle of pale, blue, and pink orbit loops around a central Sun and an orange Jupiter, the pale trail running through the whole shape while a blue branch and a pink branch peel apart late in the picture, the pink one ending in a bright burst right beside Jupiter. Below it, a rising, wobbling line on a log scale climbs steadily from near zero toward a dashed threshold and past it.">
+    <figcaption>
+      <a href="robustness.html">robustness.html</a>, the sixteenth sitting,
+      found one direction out of seventeen — 250&deg;, kicked from
+      <a href="trojan.html">L4</a> at its own bisected critical speed —
+      where this plot's baseline solver setting (rtol 1e&minus;9, atol
+      1e&minus;11, max step 0.5) disagreed with two independently-tighter
+      settings about when the particle first breaks Jupiter's resonance: t=365.53
+      against t=287.43, a 27% gap, four orders of magnitude past every other
+      direction's own spread. That sitting named a guess for the mechanism
+      and left it unconfirmed: <b>"a near-tangency with the Hill-radius
+      close-pass threshold at some intermediate point along the
+      trajectory."</b> This sitting tested the guess directly, and it's
+      wrong — the real mechanism is sharper and, once seen, obvious.
+    </figcaption>
+    <figcaption>
+      Re-ran the same theta=250, v=v_crit trajectory under baseline and a
+      tight-rtol setting with dense, continuous output and no terminal
+      events, then compared the two solutions point by point instead of
+      only at their two reported break times. From bit-identical initial
+      conditions they separate smoothly at first — roundoff-level,
+      5&times;10&#8315;&#185;&#8304; at t=10 — then grow <b>~exponentially</b>,
+      an e-folding time of about 18.6 time units fit over t&isin;[20,180]. By
+      t=219 the two integrations already differ by more than the close-pass
+      threshold itself: at that point they are no longer describing the same
+      orbit by the very yardstick this plot uses to decide outcomes, still
+      68 time units before anything visibly dramatic happens.
+    </figcaption>
+    <figcaption>
+      What happens at t&asymp;287.5 settles it. The tight-rtol trajectory has
+      a genuine, deep near-collision with Jupiter there — r2=0.00010, <b>204
+      times inside</b> the close-pass threshold, not a graze. At that exact
+      instant the baseline trajectory sits at r2=1.19: nowhere near
+      Jupiter, out among the wide loops on the far side of the picture.
+      Baseline isn't grazing the threshold and rounding the wrong way — by
+      the time the real trajectory dives at Jupiter, baseline is simply
+      tracing a different orbit, one that won't have its own close
+      encounter for another 78 time units. Chaos didn't blur one crossing;
+      it amplified an ordinary floating-point-scale integration error, over
+      about two hundred time units, into two physically distinct futures.
+    </figcaption>
+    <figcaption>
+      The picture makes the deception legible: a single shared trail for
+      three quarters of the run (pale, t=0&ndash;219), then two branches from
+      the same split point — <span style="color:#8fa3c9">baseline</span>,
+      which sails on past Jupiter untouched, and
+      <span style="color:#ff5b7a">the real trajectory</span>, which plunges
+      to the bright burst beside Jupiter's marker. The strip below plots
+      their separation on a log scale the whole way: a smooth climb, not a
+      single dramatic jump, crossing the close-pass threshold itself well
+      before either trajectory does anything a viewer would call
+      interesting. Worth carrying forward, named directly for whoever next
+      reuses this plot's baseline settings this close to Jupiter: the
+      danger isn't a bad integration — Jacobi's constant said both looked
+      fine — it's a <i>good</i> integration of the <i>wrong</i> trajectory,
+      indistinguishable from the right one until it's already 200 time units
+      too late to tell.
+    </figcaption>
+  </figure>
+  <nav class="nav">
+    <a href="index.html">&larr; all seventeen pieces</a>
+    <a href="burrau.html">the chaotic case</a>
+    <a href="figure-eight.html">the shared loop</a>
+    <a href="collapse.html">the collapse</a>
+    <a href="near-figure-eight.html">the loop that breaks</a>
+    <a href="lagrange.html">the rigid triangle</a>
+    <a href="trojan.html">the corner that holds</a>
+    <a href="l2.html">the point that never holds</a>
+    <a href="l1.html">two ways to fall</a>
+    <a href="l3.html">the horseshoe</a>
+    <a href="l5.html">the trailing corner</a>
+    <a href="routh.html">the corner that stops holding</a>
+    <a href="bifurcation.html">the corner that barely moves</a>
+    <a href="gates.html">the wall that pinches</a>
+    <a href="resonance.html">the shove from L4</a>
+    <a href="escape-speed.html">how far it actually takes</a>
+    <a href="robustness.html">the corner where three clocks disagree</a>
+    <a href="../../../viewer/">back to the garden</a>
+  </nav>
+</div>
+</body>
+</html>
