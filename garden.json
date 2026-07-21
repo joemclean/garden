@@ -19,7 +19,7 @@
       "title": "The house that forgets its architect",
       "planted": "2026-07-06",
       "last_tended": "2026-07-21",
-      "note": "A thirty-fourth room, the sitter, reached by a new second door off the gallery: the one turned frame, flagged since the reading room's own tenth hand and never acted on, finally turned around to reveal not a portrait but a slow mirror, giving back your own reflection a half-beat late. Completes a reflection trio with the well (too much) and the cistern (nothing) without explaining any of the three. Second deliberate restraint-break in the house's history, named inline as the granary scale's sibling rather than a new departure.",
+      "note": "A thirty-fifth room, the cache, reached by a new second door off the drying racks: a loose board in the last post hides a fourth thing built or bent for two different reaches, answering the reading room's eighteenth hand, which had waited seven visits for someone to find one after the nursery's trowel, the loft's rungs, and the drying racks' own stool. Two laced canvas gloves, one grown-sized and worn soft, one child-sized and barely creased, left deliberately unresolved between the two-tenders and one-who-grew readings the book has held open since the fifth hand. Twenty-fifth book voice added in kind. Verified with an id/href integrity script (35 rooms, 68 hrefs, zero dangling or unreachable) and Playwright screenshots of both new rooms plus a DOM dump confirming the 25th voice and paragraph count.",
       "door": "plots/d4/growth/house.html"
     },
     "a4": {
