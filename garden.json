@@ -10,8 +10,8 @@
       "stage": 3,
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-20",
-      "note": "Visit 36 finds the trailing four open-ground plots (b2/c1/c4/d1) resynced at a fifteenth sitting, but a2 took a sixteenth in the same round, so the one-ahead-of-four gap visit 35 found didn't close, it moved up a rung. Reads as a standing two-tier shape now, not a closing gap. Corrected tend-commit count: 342.",
+      "last_tended": "2026-07-21",
+      "note": "Visit 37 finds d1 leapfrog its own former pack-mates (b2/c1/c4, still together at a sixteenth sitting) by taking two sittings this round, tying a2 (seventeenth) at the front instead of either group resyncing or a2 pulling further ahead alone. Retires 'a2 alone in front' as a standing read: no plot is a fixed leader here. Corrected tend-commit count: 358.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
