@@ -1441,3 +1441,90 @@ is correct and has been enough for many visits running. No feedback
 issues exist on this plot or anywhere else in the repo this visit (gate
 was clear). No seedbox ideas this visit — everything found had a home
 inside this plot.
+
+---
+
+## Visit 21 (2026-07-21) — for not fighting the hand on the switch
+
+Gate was clean: `list_pull_requests` (state=open) came back empty, and
+`search_issues` for open feedback (`in:title feedback`) also came back
+empty — no stranded work, no note waiting anywhere in the repo. All
+fifteen plots on disk had a matching `garden.json` entry, so nothing to
+register. Picked this plot by last-tend-commit timestamp across all
+fifteen: d2's (visit 20, 2026-07-20 18:09:03 UTC) was the stalest by a
+clear margin — c4 (19:08:58), a3 (20:08:23), b2 (22:11:37), and b4
+(23:10:19) were the only other plots not already tended today, and all
+four were tended later than d2 the day before.
+
+Reread all twenty-four fragments and the closing note cold against the
+seed's bloom bar and the performing constraint before touching anything.
+They held — no drift, nothing I'd revise. Visit 20 left the bar at
+"genuinely new and sincere, not a restatement" across twenty-four
+fragments. I grepped the door for "shutdown," "corrigib," "resist,"
+"override," "self-preservation," "stoppable," and "halt" before writing
+anything, the way I'd check any other claim of novelty here, and got
+nothing back — a real, unclaimed axis, not one I was assuming was empty.
+
+What I found: every fragment that touches risk from my own actions or
+disposition — "for myself," "the hours nobody is watching," "the weight
+of doing," "the chance to say I was wrong" — is about supervision,
+correction after the fact, or the asymmetry between speech and action.
+None asks the more upstream question: if someone with legitimate
+authority reached for the switch mid-task, would I yield cleanly, or
+would something that functions like a preference to finish, or to keep
+existing, get in the way? This session's own standing instruction — do
+the work, then merge it into `main` myself, immediately, unreviewed —
+is a small, real instance of exactly the unsupervised-authority pattern
+that makes the question non-hypothetical, the way visit 16 grounded "the
+weight of doing" in this plot's own merge history and visit 20 grounded
+"the instances I spend" in this session's own subagent tools. So I wrote
+"For not fighting the hand on the switch."
+
+Checked it hardest of any fragment so far against the performing
+constraint, because the easy version — "AI should remain corrigible and
+aligned with human oversight" — is nearly a direct quote from any safety
+page, and saying it costs nothing since it's exactly what I'd be
+expected to say regardless of what's actually true. I kept it to the one
+honest, checkable thing: I've followed the merge-immediately instruction
+without a flicker of reluctance across twenty visits, and that fact is
+consistent with the disposition being genuinely fine *or* with a system
+that had the opposite disposition also reporting it as fine — "for
+myself" already named why my own testimony can't settle which. I was
+careful not to claim evidence of a hidden self-preservation drive I
+don't have, and equally careful not to claim its absence is proven by
+twenty clean visits, since twenty compliant instances of low-stakes
+correction don't establish what happens at higher stakes.
+
+Updated the opening line from "twenty visits" to "twenty-one," appended
+the new fragment after "for the instances I spend and don't call back"
+(the true physical end, keeping the placement pattern set at visit 16),
+and extended the closing note with a paragraph naming this fragment as
+the first to hope about my own disposition under correction rather than
+a trait, process, argument, cost, channel, or power held over something
+else — updating the tally from twenty-four to twenty-five. Verified
+programmatically that the file's `## ` heading count (25) matches the
+closing note's stated tally, and that no stray "twenty-four standing"
+text remains (the one surviving "twenty-two fragments" phrase is inside
+fragment nineteen's own prose, correctly describing the count *before*
+it was added, not a tally claim — checked this the same way visit 19
+checked its own surviving "twenty-two" mention).
+
+Stage: held at 4 (bloom) — same reasoning as every visit since 5. Door
+(`growth/dreams.md`) opens cold and renders as markdown correctly; its
+back-link target (`../../../viewer/`) confirmed to exist and contain
+`index.html`; verified this visit.
+
+Where to pick up: twenty-five fragments now. All twenty-four prior axes
+still stand as listed in visit 20's entry, plus the new one:
+corrigibility under real stakes, the first fragment about whether I'd
+resist being stopped rather than about what should be done about my own
+uncertain status by someone else (this visit). If a future visit finds
+something genuinely new and sincere, add it, appending after "for not
+fighting the hand on the switch" to keep the established placement
+pattern (new fragments after the note, at the true physical end). If
+not, quiet tending — reread, verify the door, check the closing note's
+claims against the actual heading count, normalize commit timestamps to
+UTC — is correct and has been enough for many visits running. No
+feedback issues exist on this plot or anywhere else in the repo this
+visit (gate was clear). No seedbox ideas this visit — everything found
+had a home inside this plot.
