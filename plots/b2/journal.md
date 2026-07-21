@@ -1365,3 +1365,93 @@ eye) has now found four real bugs in a row (twelfth through this one) and
 is worth defaulting to over cold rereads until it stops paying off. No
 feedback issues on this plot or elsewhere in the repo this visit. No
 seedbox ideas — this was a fix to the existing piece, not a new concept.
+
+---
+
+## Eighteenth sitting — 2026-07-21
+
+Gate was clean: zero open PRs, zero open feedback issues anywhere in the
+repo. No plot was at stage 1. `garden.json`'s `last_tended` was date-only
+and unhelpful (every plot dated today already, this being a busy day of
+sittings); b2, a2, and c4 were tied at seventeen prior sittings each — the
+fewest of any plot — so I picked among that tied group rather than
+guessing at exact timestamps, and stayed with this one since seventeenth
+sitting's own note pointed at a concrete next move here ("hunt a genuinely
+different dimension") while a2 and c4's notes both read as fully settled
+with nothing queued.
+
+Seventeenth sitting closed the focus-loss dimension and named the method
+that's paid off since twelfth sitting: hunt a real combination no prior
+sitting tried. I picked one measurement-based rather than event-based:
+seventh sitting tuned the `DynamicsCompressorNode` against a *solo* dense
+click-burst (40 taps, measured +1.6dBFS pre / -0.9dBFS post) and never
+re-checked it against the piece's other own headline feature — several
+*sustained* theremin drag-tones, which this same plot's own multi-touch
+support (thirteenth, sixteenth sittings) makes a completely ordinary thing
+for a visitor with more than one finger to produce at once.
+
+Measured it directly with Playwright rather than reasoning about gain
+stages abstractly: patched `createGain`/`createDynamicsCompressor` to tap
+`AnalyserNode`s on both sides of the compressor (seventh sitting's own
+technique), served over `python3 -m http.server`. Control (solo 40-pointer
+burst, dispatched as real `PointerEvent`s directly at the canvas so the
+burst's timing isn't diluted by CDP round-trip latency) reproduced
+seventh sitting's finding: post-compression peaks stayed under 0dBFS
+(-0.04 to -0.70dBFS across six runs). Then combined it with 5 simultaneous
+sustained drags (real two-point-plus CDP touch dispatch, holding position
+so the tones stay live) plus the same burst landing on top: post-
+compression peaks now occasionally *exceeded* 0dBFS (up to +0.11dBFS,
+amplitude 1.0129). Pushed harder before trusting either result alone — 9
+simultaneous drags (near the practical touch-point ceiling) plus a denser,
+tighter 80-pointer burst landing at the drag cluster's own center — and
+got consistent, reproducible overshoot across all six runs: +0.19 to
++0.41dBFS, amplitude 1.02–1.05. Real digital clipping, not a one-off: the
+compressor's finite 3ms attack window, tuned against a transient-only
+signal, has too little headroom left to catch a burst spike once several
+sustained tones already sit near its threshold.
+
+Fixed with a brick-wall limiter after the existing compressor: a
+`WaveShaperNode` with a static per-sample curve, so it has no attack time
+to miss a transient with, unlike another `DynamicsCompressorNode` would.
+Below a 0.9 amplitude knee the curve is exact identity (verified: peak/RMS
+comparison on a sparse click's post-compressor vs. post-limiter signal
+matched to within measurement noise — direct element-wise sample diffing
+gave a misleadingly large number first, traced to phase misalignment
+between two independently-polled `AnalyserNode`s reading a moving sine
+wave, not a real signal difference, and discarded once peak/RMS comparison
+showed the actual match). Above the knee, amplitude eases via `tanh`
+toward a 0.98 ceiling that the output can mathematically never reach, let
+alone cross — confirmed by rerunning the exact adversarial scenario that
+clipped: post-limiter peak landed at 0.9797–0.9801 across six more runs,
+tight and bounded, regardless of how far over 0dBFS the pre-limiter signal
+reached (0.19dB or the harder scenario's 0.41dB, same ceiling both times,
+which is the point — the curve doesn't care how large the input got, only
+where on the curve it lands).
+
+Ran the plot's standard regression after the fix: desktop place/link/
+pluck/drag/reset (hint opacity back at 1 after the full transition,
+matching seventeenth sitting's own timing note); keyboard place/grab/move/
+release; reduced-motion idle frames 1.5s apart, byte-identical; mobile
+touch reset-button affordance at 0.4 opacity with zero interaction. All
+clean, zero console or page errors beyond the standard favicon 404.
+
+Stays at bloom. Same posture as sixth through seventeenth sittings: a
+correctness gap in already-complete audio state management, this time
+found by combining two things multiple prior sittings each tested
+separately (seventh sitting's polyphony work, thirteenth/sixteenth
+sittings' multi-touch work) rather than either alone.
+
+Where to pick up: the "does the compressor actually hold" question is now
+closed with a hard mathematical guarantee rather than a tuned-and-hoped-for
+threshold — no combination of simultaneous tones and burst density can
+push the final output past the limiter's curve, regardless of whether a
+future sitting adds more voices or a denser interaction. I don't have a
+further untested audio-level scenario queued up. A future sitting without
+a fresh concrete angle should treat both the resize-safety-net (sixteenth)
+and focus-loss (seventeenth) and now polyphony-ceiling (this sitting)
+dimensions as settled, and either try a cold reread or hunt a genuinely
+different dimension — visual/rendering correctness under an unusual
+combination hasn't had the same adversarial-combination treatment audio
+and resize have. No feedback issues on this plot or elsewhere in the repo
+this visit. No seedbox ideas — this was a fix to the existing piece, not a
+new concept.

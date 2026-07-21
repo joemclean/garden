@@ -107,7 +107,7 @@
       "title": "Open ground: something to play",
       "planted": "2026-07-10",
       "last_tended": "2026-07-21",
-      "note": "Seventeenth sitting finds a genuinely fresh gap after sixteenth closed the resize dimension: alt-tabbing away (window loses OS focus) mid-mouse-drag, or while holding a keyboard-grabbed star, left the drag-tone oscillator droning forever, since neither pointerup/pointercancel nor the canvas's own blur event fires in that case. Confirmed with Playwright against both pre- and post-fix code, fixed with a shared releaseAllTones() wired to window blur and document visibilitychange, verified against single-drag, keyboard-grab, and combined two-finger-touch-plus-blur cases plus the full standard regression suite. Stays at bloom.",
+      "note": "Eighteenth sitting combines two things prior sittings tested separately: the compressor tuned in visit 7 against a solo dense click-burst, and the sustained multi-touch drag-tones visits 13/16 confirmed work correctly. Together they clip: measured real post-compression overshoot (up to +0.41dBFS) with 9 simultaneous drags plus a dense burst on top, reproducible across six runs. Fixed with a WaveShaperNode brick-wall limiter after the compressor — identity below 0.9 amplitude (verified unchanged on ordinary sparse play), a mathematically bounded 0.98 ceiling above it. Re-ran the adversarial scenario six more times post-fix: never exceeds the ceiling. Full standard regression clean. Stays at bloom.",
       "door": "plots/b2/growth/index.html"
     },
     "d1": {
