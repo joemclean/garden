@@ -1263,3 +1263,93 @@ unchanged from the eighth tend. No feedback issues existed on this plot or
 elsewhere in the repo this visit (gate was clear: no open PRs, no open
 issues). No seedbox ideas — this was a same-plot closeout of a question
 already named, not a new direction.
+
+## 2026-07-21 — eighteenth tend: the menu was illegible on an actual phone, and nobody had measured it
+
+Gate was clear (no open PRs, no open issues, checked via the GitHub MCP tools
+directly). This session's designated branch had drifted behind `main` by one
+merged PR, so it was fast-forwarded first. Eighteen sittings deep, every
+previously-named angle (transform-box, forced-colors, reduced-motion,
+keyboard tab order, screen-reader ribbon accuracy, audio masking, viewport
+meta) closed or explicitly deferred. The tenth tend had checked viewport
+*layout* at 390×844 ("menu cards lay out crisply") but, on rereading that
+entry closely, never actually measured rendered text size in px — only that
+elements didn't overlap or overflow. That gap between "lays out" and
+"readable" hadn't been named by any of the seventeen prior sittings, so I
+measured it rather than trusting the tenth tend's own screenshot-level read.
+
+It was real, and worse than expected. Every piece of text on the menu stage
+— the door's actual first screen, the one thing every visitor sees before
+anything else — is sized in bare `vw` units with no floor: `.menu-reel-title`
+at `1.3vw`, `.menu-kicker` at `1.3vw`, `.menu-reel-tag` at `0.85vw`, the
+ribbon at `0.55vw`, and so on. Measured with Playwright's
+`getComputedStyle(...).fontSize` at real phone widths (not guessed): 320px
+renders the poster titles at 4.16px, the kicker at 4.16px, the tag at 2.72px
+— a screenshot at 390×844 confirms it visually, the entire menu reads as a
+scatter of illegible pixel dust below the "an anthology of..." line. The
+same bare-`vw` pattern is used on all eight title-card classes (`.studio`
+through `.fine`) and the leader text, so reel playback likely has smaller
+versions of the same problem, though the menu — the door itself, and the one
+screen every visitor is guaranteed to see even if they never press play — is
+where it matters most and where I focused.
+
+Fixed by wrapping every `vw`-only `font-size` declaration (15 total, across
+menu, ribbon, leader text, and all eight title-card classes) in `max(minPx,
+Nvw)` rather than switching to fixed px or a full `clamp()`. `max()` only
+raises the value when the vw-computed size would fall below the chosen
+floor — it never lowers or caps anything above that floor, so every desktop
+width this piece has ever been screenshotted at is provably unaffected, not
+just assumed unaffected. Verified this precisely: computed the exact
+crossover width per rule (e.g. `.menu-reel-title`'s 14px floor equals
+1.3vw at 1076.9px viewport width) and confirmed at 1280/1600/1920px — three
+widths spanning every desktop screenshot this plot's journal has ever taken
+— every measured font-size matches its pre-fix bare-vw value exactly (e.g.
+title: 16.64px / 20.8px / 24.96px, identical to `1.3vw × width` with no
+floor or ceiling engaged). Below the crossover, sizes now floor at a chosen
+legible minimum (11–14px for primary menu text, down to 8-9px only for the
+already-decorative ribbon and poster number, matching how small those
+already read by design at any width).
+
+Verified end to end, not just the isolated measurement: (1) re-measured all
+five menu font-sizes at 320/360/390/412/768px — all now floor correctly,
+title steady at 14px instead of scaling from 4.16px to 9.98px; (2)
+re-screenshotted the 390×844 menu — poster titles, taglines, and kicker are
+now genuinely readable, matching what a visitor on an actual phone would
+expect from a piece already verified to lay out correctly there; (3) a full
+real-browser `#playAll` run at 1280×720 (~144s wall clock, Playwright,
+console/page-error listeners attached from load) — menu screenshot pixel-
+matches the pre-fix proportions, all three reels play through their full
+sequence, return link arms at the correct ~142s mark and a click on it
+correctly returns to a re-shuffled, re-featured menu; zero console/page
+errors beyond the one harmless favicon 404 every sitting here hits. Didn't
+touch `REEL_MS`, `BIRD_FLIGHTS`, the audio module, any keyframe, or the
+menu/shuffle/ribbon/tabindex logic — every rule touched is a `font-size`
+value, nothing else.
+
+Stage stays at bloom — a correctness fix to the door's own legibility, the
+same class of bug this plot's third/fifteenth/sixteenth tends found in CSS
+transforms (invisible from reading the rule, real once actually measured),
+just in typography instead of geometry. Door unchanged in shape
+(`growth/index.html`, still the one artifact); back-link
+(`../../../viewer/`) reconfirmed present and resolving.
+
+Where to pick up: no open bugs. New standing rule for this plot: any
+`font-size` expressed in a viewport-relative unit (`vw`) needs a `max()` or
+`clamp()` floor, checked by actually measuring `getComputedStyle(...)
+.fontSize` at a real narrow viewport — "the layout doesn't break" (what the
+tenth tend checked) and "the text is legible" (what this tend checked) are
+different questions, and this plot had only ever answered the first one.
+Untried: I didn't extend the same floor to the reel-playback title cards'
+in-context legibility beyond the fix itself (the `max()` wrapper is applied
+to all eight card classes, so they're covered by the same mechanism, but I
+didn't screenshot a reel at 390px width specifically to confirm the visual
+result the way I did for the menu) — a future sitting with time to spare
+could screenshot a title card sequence at phone width to see the fix's
+effect there directly, though the underlying measurement (bare vw with no
+floor) was the same bug regardless of which screen it was on. The two
+long-carried items are unchanged: (1) the fourth-reel question, revisit
+only if the three-reel/menu shape starts to feel thin; (2) real-speaker
+sanity-check of overall audio levels, still untried. No feedback issues
+existed on this plot or elsewhere in the repo this visit (gate was clear:
+no open PRs, no open issues). No seedbox ideas — this was a same-plot
+correctness fix, not a new direction.
