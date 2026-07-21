@@ -114,8 +114,8 @@
       "stage": 4,
       "title": "Open ground: something that moves",
       "planted": "2026-07-10",
-      "last_tended": "2026-07-20",
-      "note": "Sixteenth tend extends the transform-box audit one sitting further back and finds a bigger miss: .smoke (the train's puffs, present since sitting one, predates the rule itself) had no fill-box, so its scale() pivoted around the viewBox corner and swept a smoke circle from y~462 to y~868 in one puff cycle -- a screenshot mid train-pass showed two of three puffs drifted into the wheat field as one blob. Fixed with fill-box + transform-origin:center; verified circles now ride with the train's own translateX. Full playAll run (zero errors) and reduced-motion freeze (pure scale matrix, no stray offset) both clean.",
+      "last_tended": "2026-07-21",
+      "note": "Seventeenth tend closes the transform-box audit by measurement rather than reasoning: the five classes sixteenth tend waved through as 'can't matter' split into three that never animate transform at all (opacity/filter only) and two pure-translate animations (.rain-drop, .figure-walk) empirically confirmed identical under view-box vs forced fill-box at the same paused animation timestamp. No bug found, no code change; every animated-transform element in the file is now either fixed or measured safe. Full playAll regression clean, zero console errors, door verified.",
       "door": "plots/d1/growth/index.html"
     },
     "c4": {
