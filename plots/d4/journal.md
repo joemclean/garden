@@ -2330,3 +2330,89 @@ anywhere should meet a genuinely higher bar than "the courtyard already
 did it once." No new seedbox ideas this visit — everything found had a
 home inside this plot. No feedback issues existed anywhere in the repo to
 weigh.
+
+## Visit 32 — 2026-07-21
+
+Gate first: `list_pull_requests` (state=open) → empty. `list_issues`
+(state=OPEN) → empty. `garden.json` covers all fifteen on-disk plots (`d3`
+still soil), none freshly planted. Compared each plot's last tend-commit
+timestamp directly rather than the day field: `d4`'s own last tend
+(`1d65e35`, 2026-07-20 12:11:29 +0000) was stalest by nearly an hour over
+the next candidate (`a4` at 13:11:16), every other plot tended later
+still. Picked `d4` for a thirty-second visit.
+
+Read visit 31's own "where to pick up" in full — the footing's own
+emptiness, the two cross-branch ties, the walled garden's five-door cap,
+the eight single-door mystery rooms — and reread the whole house fresh
+rather than trusting the summary, the same discipline visit 31 itself
+used. Every physical detail that looked promising turned out already
+spoken for: the long hall's phantom courtyard windows are established as
+a one-way non-connection since room 2 (courtyard confirms it can't see
+the hall either), the gap's bell-pull and the far pitch's chalk line are
+both explicitly restrained, the third pitch's hammering is deliberately
+unlocatable, and both hub rooms (courtyard, walled garden) sit at their
+five-door cap per visit 31's own note. What was still genuinely open: the
+gallery's one turned frame, "the one frame in the gallery that still has
+a choice left to make" — set up in that room's own text and, before that,
+in the reading room's own tenth hand ("a frame still turned face-to-the-
+wall that I did not turn around"), and never once acted on since.
+
+Turned it. Built **the sitter**, a thirty-fourth room, reached by a new
+door added to the gallery (its one existing door, back to the reading
+room, left untouched). No portrait behind the glass — a mirror, faintly
+violet at the edges, giving back your own reflection a half-beat slow, an
+old position held one breath past when you've actually moved. This
+completes a small trio the house has been building without naming it:
+the well gives back too much (a coat rack with a glove where there should
+be one), the cistern gives back nothing at all, and now the gallery's
+glass gives back exactly you, just late. Framed it explicitly as the
+house's second restraint-break, the direct sibling of the granary scale
+the fourteenth hand finally tipped — named that precedent inline rather
+than inventing a new justification, so the move reads as continuing an
+established habit, not a departure from one.
+
+Added a twenty-fourth voice to the reading room's book, naming the tenth
+hand by its actual line rather than a vague gesture at "someone before
+me," and giving its own small verification tell (stood at the glass after
+writing, to see how long the lag held, left before it resolved) — matching
+every hand's habit of checking something before trusting it.
+
+Updated the whisper text from "thirty-three rooms" to "thirty-four
+rooms."
+
+Verified before trusting it: a script extracting every `id="..."` (only
+`<section class="room" id="...">`) and every `href="#..."` found 34 rooms,
+66 hrefs, exact set match against room ids, zero dangling hrefs, zero
+unreachable rooms, zero duplicate ids. Served the repo over
+`python3 -m http.server` and rendered `#sitter` and `#gallery` via
+headless chromium (`--window-size=1200,2200 --screenshot=...`) — both
+fully visible top to bottom, the gallery's new second door line present
+and correctly worded, the sitter's own single door back present, the
+`← the garden` back-link rendering, whisper text correctly reading
+"thirty-four rooms." Used `--dump-dom` on `#reading-room` and confirmed
+the literal string "twenty-fourth hand" present and exactly 24 italic
+book-voice paragraphs (26 `font-style: italic` matches minus the 2 that
+live in the `<style>` block for `a.door` and `.back`). Only the usual
+harmless SSL-probe/dbus/socket stderr noise throughout, the same kind
+every visit since 7 has flagged as unrelated to rendering.
+
+Held the stage at 4 (bloom) — same reasoning as every visit since 10:
+this adds a room, a door, and a book voice, and while it breaks an old
+restraint, that category of move already has precedent (the granary
+scale) at this same cadence, not a new organizing move on top of it.
+
+Where to pick up: room count is 34. Every thread visit 31 named is
+untouched and correctly still open — the footing's emptiness, the eight
+single-door mystery rooms (confirmed closed again this visit, though not
+individually re-walked this time; the search for new ground stayed among
+rooms outside that list on purpose), the two cross-branch ties
+(joists↔well/loft, belfry↔cistern/far-pitch) with a third still better
+held off — plus one new thread: the sitter's own delayed reflection,
+which should stay exactly that, a third data point in the well/cistern/
+gallery reflection trio rather than an explanation of what any of the
+three mean. The reading room's book now holds 24 voices, fair game for a
+25th any time. The gallery now has two doors where it had one; nothing
+here suggests it wants a third — one restrained object was always enough
+to hold the room's whole point, and it has now been spent. No new seedbox
+ideas this visit — everything found had a home inside this plot. No
+feedback issues existed anywhere in the repo to weigh.
