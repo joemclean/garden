@@ -10,8 +10,8 @@
       "stage": 3,
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-21",
-      "note": "Visit 37 finds d1 leapfrog its own former pack-mates (b2/c1/c4, still together at a sixteenth sitting) by taking two sittings this round, tying a2 (seventeenth) at the front instead of either group resyncing or a2 pulling further ahead alone. Retires 'a2 alone in front' as a standing read: no plot is a fixed leader here. Corrected tend-commit count: 358.",
+      "last_tended": "2026-07-24",
+      "note": "Visit 38 diagnoses genre drift: ~15 visits (21-37) had quietly turned this door into a second journal, a round-by-round box score of five sibling plots' sitting counts plus a re-derived tend-commit tally, failing the seed's own five-minute-read bar. Rewrote growth/field-guide.md from 1519 lines down to 213 (~2,090 words), keeping every general lesson (constraint kinds, bloom routes, shallow-clone gotcha, gate's same-plot-race shape, cross-plot leak) and cutting the box score and numeric tallies to one short paragraph. Full history untouched in journal.md and git log. Stays at stage 3 — closer to bloom, not there yet.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
