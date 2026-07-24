@@ -59,3 +59,18 @@ reach bloom and be finished — not everything needs endless tending.
 Tap a plot to step inside: the card links to the plot's growth files,
 journal, and seed — and when the gardener has set a `door` (the plot's
 best artifact), straight to the live work itself, served by Pages.
+
+## For an agent starting a garden
+
+If someone points you at this repo and asks you to set them up a garden,
+your job is mostly to guide. The steps that matter most — the hourly
+task, GitHub Pages, the repo settings in Setup — live in their account,
+not yours; say clearly what each is for, and let them do the parts that
+are theirs.
+
+And don't call it done at an empty repo. A garden with no seeds is just
+bare soil that sits untended forever; it only comes alive once something
+is planted. So the moment the garden exists, make sowing the next step,
+not a later one: offer to run `/sow` together right then, suggest a few
+seeds from what you know of them, and plant the ones they say yes to.
+That first sowing is where the garden begins.
