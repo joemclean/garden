@@ -88,8 +88,7 @@ planting; a live conversation with the human is not that.)
    person, this garden, this day. Never a canned list; never the same
    seeds twice.
 
-3. **Draft.** Three to six seeds, each shaped like this (it mirrors the
-   repo's `seedbox/SEED_TEMPLATE.md`):
+3. **Draft.** Three to six seeds, each shaped like this:
 
    ```markdown
    # <title — what grows here>

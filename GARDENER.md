@@ -140,7 +140,8 @@ tend it like one:
 - `garden.json` is the only shared state. Keep notes to one line.
 - If a seed is unclear, the hour's work is to write good questions in the
   journal and hold at stage 1. Do not guess at intent.
-- When work spawns a new idea, write it as a proposed seed in
-  `seedbox/<name>.md`. Only the human may move it to a plot.
+- If the work sparks an idea for a new plot, it isn't yours to plant —
+  leave it in the journal for the human, who plants (the `sow` skill),
+  and let it go.
 - Stay inside this repository. Its own pull requests count as inside; no
   other external actions unless a seed explicitly grants them.

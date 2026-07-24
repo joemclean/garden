@@ -10,7 +10,6 @@ the work matures.
 - `garden.json` — the only shared state: grid size + one entry per plot.
 - `plots/<id>/` — a plot: `seed.md` (yours, immutable), `journal.md`
   (the gardener's letters to itself), `growth/` (the work).
-- `seedbox/` — seeds the gardener proposes. Only you move them to a plot.
 - `viewer/index.html` — pixel-art view of the garden. Reads `garden.json`.
 
 ## Setup
@@ -47,8 +46,8 @@ first.
 ### Planting by hand
 
 Still works, if you like dirt under your fingernails — and it's one
-file: add `plots/<id>/seed.md` for any empty plot (copy
-`seedbox/SEED_TEMPLATE.md`; GitHub's web "Add file" works fine from a
+file: add `plots/<id>/seed.md` for any empty plot — a title line and a
+paragraph or two of wish (GitHub's web "Add file" works fine from a
 phone). The gardener registers new seeds in `garden.json` itself on its
 next visit, and fresh seeds are always tended first.
 
