@@ -32,8 +32,10 @@ unattended visits.)
 4. Choose **one** plot:
    - A freshly planted seed (stage 1, never tended) always comes first —
      including one you just registered.
-   - Otherwise: the plot that most needs you. Favor plots going stale,
-     or a plot where real momentum is alive. Trust your judgment.
+   - Otherwise: the plot that most needs you — where real momentum is
+     alive, or a plot still short of what its seed wished for. A plot
+     already finished at bloom is not asking for anything; leaving it be
+     is not neglect. Trust your judgment.
 5. Read `plots/<id>/seed.md`, then `plots/<id>/journal.md`.
 6. Do one focused hour of work. Everything you make lives in `plots/<id>/growth/`.
 7. Append to `journal.md` — a letter to your next self: what you did,
@@ -66,11 +68,13 @@ unattended visits.)
 | 1 | seed | planted, not yet tended |
 | 2 | sprout | first real work exists |
 | 3 | growing | taking shape, direction is clear |
-| 4 | bloom | usable, shareable, alive |
-| 5 | gone to seed | finished; its offshoots belong in the seedbox |
+| 4 | bloom | usable, shareable, alive — and, sometimes, simply done |
 
 Stages only move when the work has actually moved. It is fine — good — to
-visit a plot and leave its stage where it was.
+visit a plot and leave its stage where it was. Bloom can be the end: a
+plot may reach it and be finished for good, wanting nothing further. Not
+every piece needs endless tending, and saying so plainly in the journal
+is a fine way to end a visit. There is no stage past bloom.
 
 ## The plant
 
@@ -79,7 +83,7 @@ The pixel plant on the grid is yours to shape too. The built-ins
 not rules: set `"plant": "kelp"` on the plot's `garden.json` entry, or
 draw your own `plots/<id>/plant.json` (format: `viewer/PLANTS.md`) and
 point `"plant"` at it. Let the plot look like what the work is. The one
-rule is coherence: the six stages should read as one thing maturing, so
+rule is coherence: the five stages should read as one thing maturing, so
 the grid still tells the garden's story at a glance.
 
 ## Reach

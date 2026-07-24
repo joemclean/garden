@@ -54,9 +54,8 @@ next visit, and fresh seeds are always tended first.
 
 ## Reading the garden
 
-Open the viewer. Soil → seed → sprout → growing → bloom → gone to seed.
-Plants brown when a plot goes 72 hours untended — that's not failure,
-just a visible ask for attention (yours or the gardener's).
+Open the viewer. Soil → seed → sprout → growing → bloom. A plot can
+reach bloom and be finished — not everything needs endless tending.
 
 Tap a plot to step inside: the card links to the plot's growth files,
 journal, and seed — and when the gardener has set a `door` (the plot's

@@ -77,8 +77,7 @@
     <p class="links"></p>
   </div>
 
-  <p class="hint">soil → seed → sprout → growing → bloom → gone to seed.
-  plants brown when untended for 3 days.</p>
+  <p class="hint">soil → seed → sprout → growing → bloom.</p>
 </div>
 
 <script>
@@ -108,16 +107,6 @@ const PAL = {
   'P': '#9d82d4',  // crystal mid
   'w': '#e9e2f6'   // crystal glint
 };
-// wilting: any palette color fades toward dry tan
-const dryCache = {};
-function dryColor(col){
-  if(dryCache[col]) return dryCache[col];
-  if(!/^#[0-9a-f]{6}$/i.test(col)) return col;
-  const n = parseInt(col.slice(1),16);
-  const mix = (a,b) => Math.round(a + (b-a)*.55);
-  return dryCache[col] = 'rgb('+mix(n>>16&255,160)+','
-    +mix(n>>8&255,133)+','+mix(n&255,68)+')';
-}
 
 /* ---------- 16x16 sprites, one per stage ---------- */
 const SOIL_ROWS = [
@@ -147,11 +136,6 @@ const SPRITES = [
   '.......f........','......fFf.......','.......f........','.....L..s..L....',
   '....LG..s.GL....','......G.sG......','....GG.s........','.......s.GG.....',
   '.....G.s.G......','.......s........','.......s........','......mmm.......',
-  '.....mmmmm......','................','................','................'],
-  /* 5 gone to seed */ [
-  '........yy......','.......yyyy.....','........yy......','.......s........',
-  '.....g..s..g....','......g.s.g.....','.......ss.......','.......s........',
-  '....g..s........','.....g.s.g......','.......s........','......mmm.......',
   '.....mmmmm......','................','................','................']
 ];
 
@@ -176,11 +160,7 @@ kelp: [
   ['.......A........','..A...tT........','..T....T...A....',
    '..tT...T..tT....','...T..tT...T....','...T...T...T....',
    '..tT...T..tT....','...T..tT...T....','...t...T...t....',
-   '...t...t...t....','....t..t..t.....',M1,M2,E,E,E],
-  [E,E,
-   '...y...y........','..yy..yy...y....','...s...s..yy....',
-   '...s...s...s....','...s...s...s....','...s...s...s....',
-   '...s...s...s....','....s..s..s.....','.....s.s.s......',M1,M2,E,E,E]
+   '...t...t...t....','....t..t..t.....',M1,M2,E,E,E]
 ],
 vine: [
   SOIL_ROWS,
@@ -192,10 +172,7 @@ vine: [
    '.....ss...ss....',M1,M2,E,E,E],
   [E,E,E,E,E,
    '.......f........','......fFf.......','..fF...f...Ff...',
-   '..GsG..s..GsG...','....s..s..s.....','....ss.s.ss.....',M1,M2,E,E,E],
-  [E,E,E,E,E,E,E,
-   '..y....y....y...','..sy...s...ys...','...s...s...s....',
-   '....ss.s.ss.....',M1,M2,E,E,E]
+   '..GsG..s..GsG...','....s..s..s.....','....ss.s.ss.....',M1,M2,E,E,E]
 ],
 fungus: [
   SOIL_ROWS,
@@ -208,10 +185,7 @@ fungus: [
   [E,E,E,E,
    '......RRR.......','.....RRWRR......','....rRRRRRr.....',
    '.......W........','..RRR..W..RRR...','.rRWRr.W.rRWRr..',
-   '...W...W...W....',M1,M2,E,E,E],
-  [E,E,E,E,E,E,
-   '....k.....k.....','.......k........','..rrr.....rrr...',
-   '...W..rrr..W....','...W...W...W....',M1,M2,E,E,E]
+   '...W...W...W....',M1,M2,E,E,E]
 ],
 crystal: [
   SOIL_ROWS,
@@ -224,15 +198,11 @@ crystal: [
   [E,E,E,
    '.......w........','......wP........','......PP..w.....',
    '..w...Pp..P.....','..P..PPp..Pp....','..Pp.PPp.PPp....',
-   '..pp.Ppp.Pp.w...','...ppPpppPp.....',M1,M2,E,E,E],
-  [E,E,E,E,E,
-   '......PP........','......pp..p.....','..p..Ppk..pp....',
-   '..pp.pkp.ppp....','..pp.ppp.pp.....','...ppppppp......',M1,M2,E,E,E]
+   '..pp.Ppp.Pp.w...','...ppPpppPp.....',M1,M2,E,E,E]
 ]
 };
-const STAGE_NAMES = ['soil','seed','sprout','growing','bloom','gone to seed'];
+const STAGE_NAMES = ['soil','seed','sprout','growing','bloom'];
 const SWAY_LINE = 9;          // sprite rows above this sway in frame B
-const WILT_HOURS = 72;
 
 /* ---------- state ---------- */
 const DEMO = { name:'garden (demo)', size:[4,4], plots:{
@@ -240,8 +210,7 @@ const DEMO = { name:'garden (demo)', size:[4,4], plots:{
   b1:{stage:2,title:'a sprout',planted:'2026-07-01',last_tended:new Date(Date.now()-4*36e5).toISOString(),note:'first work exists.'},
   c2:{stage:3,title:'something growing',planted:'2026-06-20',last_tended:new Date(Date.now()-20*36e5).toISOString(),note:'taking shape.',plant:'vine'},
   d2:{stage:4,title:'in bloom',planted:'2026-06-01',last_tended:new Date(Date.now()-8*36e5).toISOString(),note:'usable and alive.',plant:'crystal'},
-  b3:{stage:3,title:'a wilting plot',planted:'2026-06-10',last_tended:new Date(Date.now()-120*36e5).toISOString(),note:'needs tending.',plant:'kelp'},
-  a4:{stage:5,title:'gone to seed',planted:'2026-05-01',last_tended:new Date(Date.now()-60*36e5).toISOString(),note:'finished; offshoots in the seedbox.'}
+  b3:{stage:4,title:'also in bloom',planted:'2026-06-10',last_tended:new Date(Date.now()-120*36e5).toISOString(),note:'finished, and left to be.',plant:'kelp'}
 }};
 
 let garden = null, cols = 4, rows = 4, sel = null, frame = 0;
@@ -251,8 +220,6 @@ const ctx = canvas.getContext('2d');
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const plotId = (c,r) => 'abcdefgh'[c] + (r+1);
-const isWilting = p => p && p.stage>=2 && p.stage<=4 && p.last_tended &&
-  (Date.now()-Date.parse(p.last_tended)) > WILT_HOURS*36e5;
 
 /* ---------- plant resolution ---------- */
 // "plant" on a plot entry: a VARIANTS name, or a repo path to a custom
@@ -272,7 +239,7 @@ function plantFor(p){
     fetch('../'+encodeURI(p.plant), {cache:'no-store'})
       .then(res => res.ok ? res.json() : Promise.reject())
       .then(j => {
-        const ok = Array.isArray(j.stages) && j.stages.length === 6 &&
+        const ok = Array.isArray(j.stages) && j.stages.length === 5 &&
           j.stages.every(s => Array.isArray(s) && s.length === 16 &&
             s.every(row => typeof row === 'string'));
         customCache[p.plant] = ok
@@ -286,7 +253,7 @@ function plantFor(p){
 }
 
 /* ---------- render ---------- */
-function drawSprite(g2, sprite, x, y, dry, swayX, pal){
+function drawSprite(g2, sprite, x, y, swayX, pal){
   pal = pal || PAL;
   for(let r=0;r<16;r++){
     const row = sprite[r] || '';
@@ -296,7 +263,6 @@ function drawSprite(g2, sprite, x, y, dry, swayX, pal){
       if(!ch || ch==='.') continue;
       let col = pal[ch];
       if(!col) continue;
-      if(dry) col = dryColor(col);
       g2.fillStyle = col;
       g2.fillRect(x+c+off, y+r, 1, 1);
     }
@@ -317,9 +283,8 @@ function render(){
     const p = garden.plots[plotId(c,r)];
     const plant = plantFor(p);
     const sprite = plant.stages[p ? p.stage : 0] || SPRITES[0];
-    const dry = isWilting(p);
     const sway = !reduceMotion && frame===1 && p && p.stage>=2;
-    drawSprite(ctx, sprite, x+2, y+2, dry, sway, plant.pal);
+    drawSprite(ctx, sprite, x+2, y+2, sway, plant.pal);
     if(sel && sel[0]===c && sel[1]===r){
       ctx.strokeStyle = '#e6d9ae'; ctx.lineWidth = 1;
       ctx.strokeRect(x+.5, y+.5, T-1, T-1);
@@ -352,7 +317,7 @@ function showCard(c,r){
     card.querySelector('.note').textContent = 'plant one: add plots/'+id+'/seed.md and an entry in garden.json.';
     return;
   }
-  card.querySelector('.id').textContent = id+' · '+STAGE_NAMES[p.stage]+(isWilting(p)?' · wilting':'');
+  card.querySelector('.id').textContent = id+' · '+STAGE_NAMES[p.stage];
   card.querySelector('h2').textContent = p.title || 'untitled';
   card.querySelector('.meta').textContent =
     'planted '+(p.planted||'—')+' · tended '+rel(p.last_tended);
@@ -394,7 +359,7 @@ function buildLegend(){
     const s = document.createElement('span');
     const cv = document.createElement('canvas');
     cv.width = 16; cv.height = 16;
-    drawSprite(cv.getContext('2d'), SPRITES[i], 0, 0, false, false);
+    drawSprite(cv.getContext('2d'), SPRITES[i], 0, 0, false);
     s.append(cv, document.createTextNode(name));
     box.append(s);
   });
