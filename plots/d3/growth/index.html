@@ -154,11 +154,30 @@
   .back:hover {
     color: #b9c9ba;
   }
+  .sound-toggle {
+    position: fixed;
+    top: 12px;
+    right: 16px;
+    z-index: 5;
+    background: transparent;
+    border: none;
+    color: #5f6f60;
+    font-family: sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    padding: 4px 6px;
+  }
+  .sound-toggle:hover,
+  .sound-toggle[aria-pressed="true"] {
+    color: #b9c9ba;
+  }
 </style>
 </head>
 <body>
 
 <a class="back" href="../../../viewer/">← back to the garden</a>
+<button id="sound-toggle" class="sound-toggle" type="button" aria-pressed="false">♪ sound off</button>
 
 <div id="field">
   <div id="intro">
@@ -310,9 +329,123 @@
       el.style.left = Math.max(16, x - overflow) + "px";
     }
 
+    // Only the echoes — real lines from other plots' journals — get a
+    // sound. The field's own ephemeral fragments stay silent, same as
+    // visit 1 left them; the twinkle marks the one voice that's borrowed,
+    // not invented, panned to where it appears on screen.
+    if (isEcho) {
+      chime((x / Math.max(1, w)) * 2 - 1);
+    }
+
     window.setTimeout(function () {
       if (el.parentNode) el.parentNode.removeChild(el);
     }, 9200);
+  }
+
+  // ---- Sound (off by default; a visitor has to choose it) ----
+  // A hushed low drone plus the echo twinkle above. Never autoplays —
+  // starting audio without asking would be a bad guest in a piece this
+  // quiet. The on/off choice itself doesn't persist across a reload,
+  // unlike kept lines: sound is part of a visit, not part of what a
+  // visit leaves behind.
+  var soundBtn = document.getElementById("sound-toggle");
+  var audioCtx = null;
+  var masterGain = null;
+  var soundOn = false;
+
+  function ensureAudio() {
+    if (audioCtx) return;
+    var Ctx = window.AudioContext || window.webkitAudioContext;
+    if (!Ctx) return;
+    audioCtx = new Ctx();
+
+    masterGain = audioCtx.createGain();
+    masterGain.gain.value = 0;
+    masterGain.connect(audioCtx.destination);
+
+    var filter = audioCtx.createBiquadFilter();
+    filter.type = "lowpass";
+    filter.frequency.value = 340;
+    filter.connect(masterGain);
+
+    var droneGain = audioCtx.createGain();
+    droneGain.gain.value = 0.05;
+    droneGain.connect(filter);
+
+    // Two tones a fifth apart plus their octave, each with a slow,
+    // slightly different drift so the drone never quite sits still.
+    [55, 82.5, 110].forEach(function (freq, i) {
+      var osc = audioCtx.createOscillator();
+      osc.type = "sine";
+      osc.frequency.value = freq;
+
+      var voiceGain = audioCtx.createGain();
+      voiceGain.gain.value = i === 0 ? 1 : 0.5;
+      osc.connect(voiceGain);
+      voiceGain.connect(droneGain);
+      osc.start();
+
+      var lfo = audioCtx.createOscillator();
+      lfo.type = "sine";
+      lfo.frequency.value = 0.03 + i * 0.011;
+      var lfoGain = audioCtx.createGain();
+      lfoGain.gain.value = freq * 0.006;
+      lfo.connect(lfoGain);
+      lfoGain.connect(osc.frequency);
+      lfo.start();
+    });
+  }
+
+  function setSound(on) {
+    soundOn = on;
+    soundBtn.setAttribute("aria-pressed", on ? "true" : "false");
+    soundBtn.textContent = on ? "♪ sound on" : "♪ sound off";
+
+    if (on) {
+      ensureAudio();
+      if (!audioCtx) return; // Web Audio unsupported — stays visual-only
+      if (audioCtx.state === "suspended") audioCtx.resume();
+      masterGain.gain.cancelScheduledValues(audioCtx.currentTime);
+      masterGain.gain.linearRampToValueAtTime(1, audioCtx.currentTime + 1.2);
+    } else if (audioCtx) {
+      masterGain.gain.cancelScheduledValues(audioCtx.currentTime);
+      masterGain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.6);
+    }
+  }
+
+  soundBtn.addEventListener("click", function () {
+    setSound(!soundOn);
+  });
+
+  var HUSH_SCALE = [392, 440, 523.25, 587.33, 659.25]; // G4 A4 C5 D5 E5
+
+  function chime(pan) {
+    if (!soundOn || !audioCtx) return;
+    var now = audioCtx.currentTime;
+    var freq = HUSH_SCALE[Math.floor(Math.random() * HUSH_SCALE.length)];
+
+    var osc = audioCtx.createOscillator();
+    osc.type = "sine";
+    osc.frequency.value = freq;
+
+    var g = audioCtx.createGain();
+    g.gain.setValueAtTime(0, now);
+    g.gain.linearRampToValueAtTime(0.045, now + 0.25);
+    g.gain.exponentialRampToValueAtTime(0.0001, now + 3.2);
+
+    osc.connect(g);
+
+    if (audioCtx.createStereoPanner) {
+      var panner = audioCtx.createStereoPanner();
+      panner.pan.value = Math.max(-1, Math.min(1, pan));
+      g.connect(panner);
+      panner.connect(masterGain);
+    } else {
+      g.connect(masterGain);
+    }
+
+    osc.start(now);
+    osc.stop(now + 3.3);
   }
 
   spawnFragment();
