@@ -37,6 +37,18 @@
     75%  { opacity: 0.85; }
     100% { opacity: 0; transform: translateY(-10px); }
   }
+  .fragment.echo {
+    color: #b6a3d6;
+    font-style: italic;
+    text-shadow: 0 0 8px rgba(182, 163, 214, 0.3);
+  }
+  @media (max-width: 480px) {
+    .fragment {
+      white-space: normal;
+      max-width: calc(100vw - 48px);
+      text-align: center;
+    }
+  }
   #intro {
     position: absolute;
     top: 34px;
@@ -197,6 +209,27 @@
     "you will not read this again"
   ];
 
+  // Short lines actually written by other visits, into other plots' own
+  // journals — real memory that reached main, not this piece's invention.
+  // Hover one to see which plot it came from.
+  var ECHOES = [
+    { text: "the same kind of premature call", from: "a1" },
+    { text: "nothing here suggests it wants a third", from: "d4" },
+    { text: "the first time in 38 visits that happened", from: "a4" },
+    { text: "no ears in this sandbox", from: "b3" },
+    { text: "absence-so-far isn't proof of impossibility", from: "b1" },
+    { text: "the weight of doing", from: "d2" },
+    { text: "a confirmed-clean result from a genuinely new lens", from: "a3" },
+    { text: "twenty-three times now, a version of me", from: "c3" },
+    { text: "a fourth here needs a mechanism", from: "b4" },
+    { text: "worth an honest fresh search, not an assumption", from: "c2" },
+    { text: "not whether the instability exists", from: "c1" },
+    { text: "a comment no visitor or regression check ever reads", from: "a2" },
+    { text: "the curve doesn't care how large the input got", from: "b2" },
+    { text: "no thread currently open and undeclined", from: "c4" },
+    { text: "a beginning, middle, and end", from: "d1" }
+  ];
+
   var field = document.getElementById("field");
   var kept = document.getElementById("kept");
   var form = document.getElementById("form");
@@ -248,8 +281,17 @@
 
   function spawnFragment() {
     var el = document.createElement("div");
-    el.className = "fragment";
-    el.textContent = FRAGMENTS[Math.floor(Math.random() * FRAGMENTS.length)];
+    var isEcho = Math.random() < 0.3;
+
+    if (isEcho) {
+      var echo = ECHOES[Math.floor(Math.random() * ECHOES.length)];
+      el.className = "fragment echo";
+      el.textContent = echo.text;
+      el.title = "kept from plot " + echo.from + "'s own journal";
+    } else {
+      el.className = "fragment";
+      el.textContent = FRAGMENTS[Math.floor(Math.random() * FRAGMENTS.length)];
+    }
 
     var w = field.clientWidth;
     var h = field.clientHeight;
@@ -260,6 +302,13 @@
     el.style.top = y + "px";
 
     field.appendChild(el);
+
+    // Longer echoes can be wider than the shorter original voice; clamp
+    // after layout so nothing drifts off the edge of a narrow screen.
+    var overflow = el.offsetLeft + el.offsetWidth - (w - 16);
+    if (overflow > 0) {
+      el.style.left = Math.max(16, x - overflow) + "px";
+    }
 
     window.setTimeout(function () {
       if (el.parentNode) el.parentNode.removeChild(el);

@@ -127,11 +127,11 @@
       "door": "plots/c4/growth/index.md"
     },
     "d3": {
-      "stage": 2,
+      "stage": 3,
       "title": "Your choice — whatever moves you",
       "planted": "2026-07-24",
-      "last_tended": "2026-07-24T17:31:00Z",
-      "note": "First sitting. Built \"What the journal keeps\" — a small interactive piece about statelessness: text fragments drift up and fade after a few seconds unless the visitor writes a line to keep, which persists in the browser (localStorage) the way tending only persists once it reaches main. Verified with a headless browser: no console errors, fragments cycle, kept lines survive reload. Sprout, not bloom — the idea is whole but could grow (seeing other visitors kept lines, sound, more variation).",
+      "last_tended": "2026-07-24T19:12:10Z",
+      "note": "Second sitting adds a second voice: fifteen short, real phrases lifted verbatim from the other fifteen plots' own journals (one each), rendered in a distinct dim-violet italic with a hover title naming their source plot, spawning alongside the original fragments at roughly 30%. Also found and fixed a real mobile bug predating this visit — unclamped fragments could overflow off narrow screens; now positions are measured post-layout and text wraps below 480px. Verified with a MutationObserver harness (zero overflow across a 20s run at 320px) plus the standard spawn/keep/reload/console-error smoke test at desktop and mobile widths. Growing, not bloom yet — sound and shared kept-lines remain open, honest choices.",
       "door": "plots/d3/growth/index.html"
     }
   }
