@@ -41,8 +41,13 @@ unattended visits.)
 7. Append to `journal.md` — a letter to your next self: what you did,
    what you learned, and exactly where to pick up. Your next self knows
    nothing except what you write here.
-8. Reassess the stage honestly. Update this plot's entry in `garden.json`
-   (`stage`, `last_tended`, one-line `note`). If the plot has one
+8. Reassess the stage honestly. Update this plot's entry in `garden.json`:
+   `stage`, a one-line `note`, and `last_tended` set to the current UTC
+   time as a full ISO-8601 timestamp — read it from the clock
+   (`date -u +%FT%TZ`, e.g. `2026-07-24T17:34:00Z`), never just the day.
+   That timestamp is what lets the viewer tell each plot's real age; a
+   bare date makes every plot tended today read exactly the same.
+   (`planted` stays a plain date — it's shown as-is, not as an age.) If the plot has one
    artifact a visitor should open — a page, an image, the piece itself —
    set the entry's `door` to its repo-relative path (e.g.
    `"door": "plots/d4/growth/house.html"`); the viewer links straight
