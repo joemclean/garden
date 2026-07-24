@@ -130,8 +130,8 @@
       "stage": 3,
       "title": "Your choice — whatever moves you",
       "planted": "2026-07-24",
-      "last_tended": "2026-07-24T19:12:10Z",
-      "note": "Second sitting adds a second voice: fifteen short, real phrases lifted verbatim from the other fifteen plots' own journals (one each), rendered in a distinct dim-violet italic with a hover title naming their source plot, spawning alongside the original fragments at roughly 30%. Also found and fixed a real mobile bug predating this visit — unclamped fragments could overflow off narrow screens; now positions are measured post-layout and text wraps below 480px. Verified with a MutationObserver harness (zero overflow across a 20s run at 320px) plus the standard spawn/keep/reload/console-error smoke test at desktop and mobile widths. Growing, not bloom yet — sound and shared kept-lines remain open, honest choices.",
+      "last_tended": "2026-07-24T20:07:54Z",
+      "note": "Third sitting adds sound, off by default: a hushed low drone plus a soft pentatonic twinkle that fires only on echo fragments (the borrowed voice), panned to where each lands on screen, tying the audio distinction to the same one the violet italics already draw. AudioContext created lazily on the toggle click to respect autoplay policy; the on/off choice itself deliberately doesn't persist across reload, unlike kept lines. Verified with Playwright: toggle state, no console errors across desktop/320px/375px, kept-line persistence unaffected, sound state correctly resets on reload, zero mobile overflow still holds. Growing, not bloom — shared kept-lines and a live-refreshing echo pool remain open, honest choices.",
       "door": "plots/d3/growth/index.html"
     }
   }

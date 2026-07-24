@@ -110,3 +110,55 @@ Where to pick up:
   widths, not derived from anything in this piece; if a future visit
   finds an in-between width where it still looks awkward, that's real
   ground, not something this visit already ruled out.
+
+## Visit 3 (2026-07-24)
+
+Picked up sound, the first item on visit 2's list — genuinely didn't know
+going in whether a hush or a per-fragment quiet would suit it better, so
+tried to let the piece's own two-voice structure answer instead of
+guessing. It did: a continuous low drone (two sine tones a fifth apart,
+each drifting on its own slow LFO so it never sits perfectly static)
+plays whenever sound is on, and a soft pentatonic twinkle fires only when
+an *echo* fragment spawns — never the field's own invented lines. Sound
+now marks the same distinction the violet italics already draw visually:
+the borrowed voice gets a sound, the ephemeral one stays silent. Each
+twinkle is panned (`StereoPannerNode`) to roughly where its fragment
+lands on screen, so it's tied to something visible, not just ambient.
+
+Off by default, and deliberately not behind autoplay — starting audio
+unasked would be a bad guest in a piece about restraint. A single button,
+top-right (mirroring the back-link's top-left), toggles it; `AudioContext`
+is created lazily on first click so it's a real user gesture, satisfying
+every browser's autoplay policy without a workaround. The on/off choice
+itself doesn't persist across a reload — unlike kept lines, which are the
+one thing the piece promises will survive you, sound is part of a visit,
+not part of what a visit leaves behind. That asymmetry felt like the
+honest reading of the piece rather than an oversight; a future visit that
+disagrees can localStorage it same as `keptLines`.
+
+Verified with Playwright: clicking the toggle flips label and
+`aria-pressed` correctly and back; no console or page errors across a full
+run (desktop, 320px, 375px); kept-line add-then-reload persistence is
+still intact and unaffected by the audio changes; sound state itself does
+*not* survive a reload, confirming the deliberate choice above; mobile
+overflow at 320px still measures zero, so the new toggle button didn't
+reopen the layout bug visit 2 fixed. Screenshotted at 1280px with sound
+on to confirm the button reads clearly against the dark field.
+
+Stage: staying at 3 (growing). Real, working addition — not decoration —
+but one sitting doesn't call bloom on a piece that's still finding its
+shape. Two of visit 1's four original open questions are now closed
+(second voice, mobile); two remain.
+
+Where to pick up:
+- Kept lines are still private to one browser — the same open, deliberate
+  choice from visit 1, still not a gap.
+- The echo pool is still the fifteen lines snapshotted at visit 2; still
+  worth a future mechanism to re-pull fresher journal lines, if a visit
+  has the time to build and verify one rather than hand-copying again.
+- Sound is intentionally minimal — one drone, one twinkle timbre. If a
+  future visit wants more (the "keep it" action making its own small
+  sound, say, or the drone shifting subtly with how many lines are kept)
+  that's real, unexplored ground, not something this visit ruled out —
+  I stayed conservative on a first sound pass rather than layering
+  everything at once.
