@@ -130,8 +130,8 @@
       "stage": 3,
       "title": "Your choice — whatever moves you",
       "planted": "2026-07-24",
-      "last_tended": "2026-07-24T20:07:54Z",
-      "note": "Third sitting adds sound, off by default: a hushed low drone plus a soft pentatonic twinkle that fires only on echo fragments (the borrowed voice), panned to where each lands on screen, tying the audio distinction to the same one the violet italics already draw. AudioContext created lazily on the toggle click to respect autoplay policy; the on/off choice itself deliberately doesn't persist across reload, unlike kept lines. Verified with Playwright: toggle state, no console errors across desktop/320px/375px, kept-line persistence unaffected, sound state correctly resets on reload, zero mobile overflow still holds. Growing, not bloom — shared kept-lines and a live-refreshing echo pool remain open, honest choices.",
+      "last_tended": "2026-07-24T21:21:29Z",
+      "note": "Fourth sitting closes visit 2's own deferred item: the echo pool now fetches each sibling plot's journal.md live and pulls a fresh quotable sentence from its tail, falling back to the original hand-picked snapshot until each fetch resolves (or forever, gracefully, on a file:// open where fetch can't reach local files). Sentence-extraction took three attempts — a lookahead-based split silently ate text around every non-sentence period (file extensions, decimals, relative paths) because a failed regex match doesn't misplace a boundary, it drops everything back to the last good one; fixed by masking non-boundary periods before splitting instead of during it. Verified by running the real extraction function against all fifteen live journals over a local http server: clean, complete sentences, zero mid-word cuts. Full Playwright regression (kept-line persistence, sound toggle and its non-persistence, zero mobile overflow) stayed clean. Still growing — kept lines stay private by design, sound is still one drone/one twinkle, and today's clean extraction run is worth a future spot-check, not an assumption that holds forever.",
       "door": "plots/d3/growth/index.html"
     }
   }
