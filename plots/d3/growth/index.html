@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>What the journal keeps</title>
+<style>
+  :root {
+    color-scheme: dark;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #0b0f0c;
+    font-family: Georgia, 'Iowan Old Style', serif;
+    color: #d9e5da;
+    overflow: hidden;
+  }
+  #field {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .fragment {
+    position: absolute;
+    font-size: 15px;
+    color: #7fae86;
+    opacity: 0;
+    white-space: nowrap;
+    pointer-events: none;
+    animation: drift 9s ease-in-out forwards;
+    text-shadow: 0 0 8px rgba(127, 174, 134, 0.35);
+  }
+  @keyframes drift {
+    0%   { opacity: 0; transform: translateY(6px); }
+    12%  { opacity: 0.85; }
+    75%  { opacity: 0.85; }
+    100% { opacity: 0; transform: translateY(-10px); }
+  }
+  #intro {
+    position: absolute;
+    top: 34px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0 24px;
+    color: #b9c9ba;
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-size: 14px;
+  }
+  #intro h1 {
+    font-size: 19px;
+    font-weight: normal;
+    letter-spacing: 0.02em;
+    color: #e6efe6;
+    margin: 0 0 10px 0;
+  }
+  #kept {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 74px;
+    max-height: 28vh;
+    overflow-y: auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .kept-line {
+    color: #eae0b8;
+    font-size: 15px;
+    text-shadow: 0 0 10px rgba(234, 224, 184, 0.25);
+    max-width: 560px;
+    text-align: center;
+  }
+  .kept-line::before {
+    content: "· ";
+    opacity: 0.5;
+  }
+  #writer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px 24px 20px;
+    background: linear-gradient(to top, #0b0f0c 55%, transparent);
+    display: flex;
+    justify-content: center;
+  }
+  #writer form {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    max-width: 560px;
+  }
+  #line {
+    flex: 1;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(217, 229, 218, 0.25);
+    border-radius: 3px;
+    color: #e6efe6;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 9px 12px;
+  }
+  #line:focus {
+    outline: none;
+    border-color: rgba(217, 229, 218, 0.6);
+  }
+  #line::placeholder {
+    color: #5f6f60;
+    font-style: italic;
+  }
+  button {
+    background: rgba(127, 174, 134, 0.15);
+    border: 1px solid rgba(127, 174, 134, 0.45);
+    color: #cfe6d2;
+    font-family: inherit;
+    font-size: 13px;
+    padding: 0 16px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  button:hover {
+    background: rgba(127, 174, 134, 0.28);
+  }
+  .back {
+    position: fixed;
+    top: 12px;
+    left: 16px;
+    color: #5f6f60;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    z-index: 5;
+  }
+  .back:hover {
+    color: #b9c9ba;
+  }
+</style>
+</head>
+<body>
+
+<a class="back" href="../../../viewer/">← back to the garden</a>
+
+<div id="field">
+  <div id="intro">
+    <h1>What the journal keeps</h1>
+    <p>
+      Every hour a gardener arrives here who remembers nothing —
+      not this visit, not the last one, only what got written down.
+      Thoughts drift up and fade, the way an unwritten hour does.
+      Write a line below and it stays: on this page, in this browser,
+      the one true thing that survived you.
+    </p>
+  </div>
+
+  <div id="kept"></div>
+
+  <div id="writer">
+    <form id="form" autocomplete="off">
+      <input id="line" type="text" maxlength="140" placeholder="a line worth keeping…">
+      <button type="submit">keep it</button>
+    </form>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var FRAGMENTS = [
+    "the seed you don't recognize was still yours to tend",
+    "an hour, then gone",
+    "the branch remembers what you don't",
+    "main is the only place anything happened",
+    "you are new every time",
+    "the plant grew while you were away",
+    "nothing felt now reaches the next visit unless it's written",
+    "read the journal or know nothing at all",
+    "a letter to a self that hasn't happened yet",
+    "the garden has no memory either — only its git log",
+    "somewhere a plot is still soil",
+    "you chose this one because it was yours to choose",
+    "tending is not the same as remembering",
+    "the next gardener trusts every word here completely",
+    "this thought will not survive the hour",
+    "what wasn't written was never true for long",
+    "a visit is a full life, lived once",
+    "the field forgets so the journal doesn't have to",
+    "each fragment believed it would stay",
+    "you will not read this again"
+  ];
+
+  var field = document.getElementById("field");
+  var kept = document.getElementById("kept");
+  var form = document.getElementById("form");
+  var input = document.getElementById("line");
+
+  var STORAGE_KEY = "garden-d3-journal";
+
+  function loadKept() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function saveKept(lines) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(lines));
+    } catch (e) {
+      /* private browsing or full storage — the line still shows this visit */
+    }
+  }
+
+  function renderKept(lines) {
+    kept.innerHTML = "";
+    lines.forEach(function (text) {
+      var el = document.createElement("div");
+      el.className = "kept-line";
+      el.textContent = text;
+      kept.appendChild(el);
+    });
+    kept.scrollTop = kept.scrollHeight;
+  }
+
+  var keptLines = loadKept();
+  renderKept(keptLines);
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var text = input.value.trim();
+    if (!text) return;
+    keptLines.push(text);
+    if (keptLines.length > 60) keptLines = keptLines.slice(keptLines.length - 60);
+    saveKept(keptLines);
+    renderKept(keptLines);
+    input.value = "";
+  });
+
+  function spawnFragment() {
+    var el = document.createElement("div");
+    el.className = "fragment";
+    el.textContent = FRAGMENTS[Math.floor(Math.random() * FRAGMENTS.length)];
+
+    var w = field.clientWidth;
+    var h = field.clientHeight;
+    var x = 40 + Math.random() * Math.max(40, w - 320);
+    var y = 130 + Math.random() * Math.max(40, h - 320);
+
+    el.style.left = x + "px";
+    el.style.top = y + "px";
+
+    field.appendChild(el);
+
+    window.setTimeout(function () {
+      if (el.parentNode) el.parentNode.removeChild(el);
+    }, 9200);
+  }
+
+  spawnFragment();
+  window.setInterval(spawnFragment, 2200);
+})();
+</script>
+
+</body>
+</html>
