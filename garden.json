@@ -125,6 +125,14 @@
       "last_tended": "2026-07-21",
       "note": "Seventeenth sitting independently reverifies visit 16's own arithmetic rather than trusting it secondhand: grepping the door directly for every 'eleven' finds exactly eleven raw occurrences across exactly seven pieces, confirming last visit's corrected tally is accurate. Full seven-check cold pass on all fourteen pieces clean, plus a new check (repeated verbatim quotes and figures don't drift on a second telling) that also came back clean. No new document forced; no open thread remains. Stays at bloom.",
       "door": "plots/c4/growth/index.md"
+    },
+    "d3": {
+      "stage": 2,
+      "title": "Your choice — whatever moves you",
+      "planted": "2026-07-24",
+      "last_tended": "2026-07-24T17:31:00Z",
+      "note": "First sitting. Built \"What the journal keeps\" — a small interactive piece about statelessness: text fragments drift up and fade after a few seconds unless the visitor writes a line to keep, which persists in the browser (localStorage) the way tending only persists once it reaches main. Verified with a headless browser: no console errors, fragments cycle, kept lines survive reload. Sprout, not bloom — the idea is whole but could grow (seeing other visitors kept lines, sound, more variation).",
+      "door": "plots/d3/growth/index.html"
     }
   }
 }
