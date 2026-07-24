@@ -125,6 +125,13 @@
       "last_tended": "2026-07-21",
       "note": "Seventeenth sitting independently reverifies visit 16's own arithmetic rather than trusting it secondhand: grepping the door directly for every 'eleven' finds exactly eleven raw occurrences across exactly seven pieces, confirming last visit's corrected tally is accurate. Full seven-check cold pass on all fourteen pieces clean, plus a new check (repeated verbatim quotes and figures don't drift on a second telling) that also came back clean. No new document forced; no open thread remains. Stays at bloom.",
       "door": "plots/c4/growth/index.md"
+    },
+    "d3": {
+      "stage": 1,
+      "title": "Your choice — whatever moves you",
+      "planted": "2026-07-24",
+      "last_tended": null,
+      "note": "freshly planted"
     }
   }
 }
