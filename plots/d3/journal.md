@@ -162,3 +162,84 @@ Where to pick up:
   that's real, unexplored ground, not something this visit ruled out —
   I stayed conservative on a first sound pass rather than layering
   everything at once.
+
+## Visit 4 (2026-07-24)
+
+Picked up visit 2's own deferred item: the echo pool was fifteen lines
+hand-copied once and then frozen, while every sibling plot's `journal.md`
+keeps growing underneath it. Built `refreshEchoes()` — on load, it fetches
+each of the fifteen sibling plots' `journal.md` (relative path, same-origin,
+works wherever this door is actually served: GitHub Pages or any local
+server) and pulls a fresh quotable sentence from the *tail* of that file
+(journals are newest-at-the-bottom, so the tail is always the most recent
+visit, regardless of whether that plot headers its entries with `##`, bold
+lines, or nothing at all — checked all fifteen styles by hand first). Each
+plot's line in `ECHOES` gets swapped in place as its own fetch resolves;
+until then, and forever on a `file://` open where `fetch` can't reach local
+files at all, the line just stays on visit 2's original hand-picked
+snapshot, now renamed `FALLBACK_ECHOES`. No dynamic parsing library, no
+build step — a plain-text scan the door can still open cold.
+
+Getting the sentence-extraction right took three real attempts, not one:
+- First pass split on every `.`/`!`/`?` with a lookahead requiring
+  whitespace-then-capital before treating it as a boundary. Looked
+  reasonable in isolation, but `String.match()` with a global regex
+  doesn't just misplace a failed match — it silently *skips* forward to
+  the next position where a match *can* start, discarding everything in
+  between. Since these journals are full of periods that aren't sentence
+  ends (`journal.md`, `../../../viewer/`, `0.98`), every one of those
+  silently ate the text after it, and candidates started mid-word
+  (`"md) from leg 12 (Sennavor)..."`, `"ed thread on this landscape"`).
+  Caught this by dumping raw regex output to the console before trusting
+  it, not by reading the regex and assuming it was right.
+- Second pass tried masking only a fixed list of file extensions and
+  decimal points before splitting. Fixed the `.md` cases but missed
+  `../../../viewer/`'s own dots and compound words like `http.server`.
+- Third pass masks *any* period that isn't followed by whitespace+capital
+  (or end of string) — the same boundary test as before, but applied as a
+  blanket pre-pass with `replace()`, not as a per-match lookahead — so a
+  failed test just neutralizes that one period instead of eating the
+  sentence around it. Also found and fixed two smaller bugs this surfaced:
+  a fixed 4000-character tail slice usually starts mid-sentence, so now it
+  skips ahead to the first paragraph break; and stripping "stray" leading
+  `(` / trailing `)` was deleting *legitimate* closing parens from
+  balanced pairs, fixed with an open/close count check that only trims
+  the actually-unbalanced side.
+
+Verified by extracting the real function's source out of the HTML file and
+running it in Node against all fifteen live journals over a local
+`python3 -m http.server` (matching how GitHub Pages resolves relative
+paths) — every plot now yields clean, complete, grammatical candidate
+sentences, zero mid-word cuts, zero dangling brackets. Confirmed in-browser
+with Playwright too: echoes visibly update away from the `FALLBACK_ECHOES`
+text as each fetch resolves (watched titles/text drift to lines that don't
+exist in the hardcoded array at all). Separately confirmed the honest
+degradation path: opened over `file://`, every `fetch` rejects on CORS as
+expected, each `.catch()` swallows it, and the piece keeps running
+correctly on `FALLBACK_ECHOES` with no page error. Full standard regression
+(desktop/320px/375px: kept-line add-then-reload persistence, sound toggle
+state and its deliberate non-persistence across reload, zero fragment
+overflow) stayed clean throughout.
+
+Stage: staying at 3 (growing). This closes visit 2's own explicitly-named
+open thread, but "the pool now refreshes" isn't the same order of finality
+as this piece finding its final shape — four sittings in one day is real
+depth, but depth isn't the same claim as done.
+
+Where to pick up:
+- Kept lines are still private to one browser — unchanged since visit 1,
+  still an open, deliberate choice, not a gap.
+- The extraction heuristic is a plain-prose reader, not a Markdown parser:
+  it will occasionally surface an odd fragment from a journal that quotes
+  something unusually structured (nested quotes, an inline list broken
+  across a masked period). Rare in what I sampled tonight, but a future
+  visit doing a fresh spot-check across all fifteen after more journal
+  entries accumulate would be worth doing rather than assuming today's
+  clean run holds forever.
+- Sound is still one drone, one twinkle — visit 3's own open item, still
+  untouched by this visit.
+- A structural question, not yet a problem: this plot's own `journal.md`
+  is not itself in the echo pool (by design — visit 2 chose "none from d3
+  itself" — and this visit kept that). Worth remembering if a future
+  sitting reconsiders it, now that this journal is long enough to quote
+  from too.

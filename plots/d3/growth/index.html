@@ -231,7 +231,14 @@
   // Short lines actually written by other visits, into other plots' own
   // journals — real memory that reached main, not this piece's invention.
   // Hover one to see which plot it came from.
-  var ECHOES = [
+  //
+  // FALLBACK_ECHOES is visit 2's original hand-picked snapshot (2026-07-24).
+  // It's shown immediately and stays as the offline/no-fetch fallback; on
+  // a served page (GitHub Pages, or any local server — not a bare file://
+  // open, which fetch() can't reach) refreshEchoes() below quietly replaces
+  // each line with something pulled fresh from that plot's own journal.md,
+  // so the pool ages with the garden instead of staying frozen at today.
+  var FALLBACK_ECHOES = [
     { text: "the same kind of premature call", from: "a1" },
     { text: "nothing here suggests it wants a third", from: "d4" },
     { text: "the first time in 38 visits that happened", from: "a4" },
@@ -248,6 +255,91 @@
     { text: "no thread currently open and undeclined", from: "c4" },
     { text: "a beginning, middle, and end", from: "d1" }
   ];
+
+  var ECHOES = FALLBACK_ECHOES.slice();
+
+  // Pull a handful of quotable sentences out of a sibling plot's journal
+  // text — no markdown parsing library, just enough to skip headers and
+  // stitch prose into candidate lines of a length that reads well drifting
+  // across the field. Only look at the tail of the file: journals are
+  // append-only with "newest at the bottom", so the last few thousand
+  // characters are always this plot's most recent visit, regardless of
+  // whether that plot marks visits with "## " headers, bold lines, or no
+  // header at all — every style in this garden shows up somewhere.
+  function extractCandidates(markdown) {
+    var tail = markdown.length > 4000 ? markdown.slice(-4000) : markdown;
+    // A fixed-size tail slice usually starts mid-sentence, sometimes
+    // mid-word. Skip ahead to the first paragraph break so extraction
+    // starts on a clean line instead of a chopped-off fragment.
+    var firstBreak = tail.indexOf("\n\n");
+    if (firstBreak > -1 && firstBreak < tail.length - 500) {
+      tail = tail.slice(firstBreak + 2);
+    }
+    var kept = [];
+    tail.split("\n").forEach(function (raw) {
+      var line = raw.trim();
+      if (!line) return;
+      if (/^#{1,6}\s/.test(line)) return;
+      if (/^\*\*[^*]+\*\*$/.test(line)) return;
+      if (/^-{3,}$/.test(line)) return;
+      kept.push(line.replace(/^[-*]\s+/, ""));
+    });
+    var blob = kept.join(" ").replace(/\s+/g, " ")
+      .replace(/`/g, "").replace(/\*\*/g, "").replace(/\*/g, "").replace(/_/g, "");
+    // These journals write in plain prose but constantly cite file names
+    // (`index.md`), relative paths (`../../../viewer/`), and decimal
+    // numbers (`0.98`) — periods that aren't sentence ends. Rather than
+    // deciding boundaries with a lookahead during the split itself (a
+    // failed lookahead there doesn't just misplace one boundary — match()
+    // silently skips forward past whatever failed, dropping a run of
+    // text), mask every period that ISN'T followed by "whitespace + a
+    // capital letter" or the end of the blob *first*, then split on
+    // whatever real periods are left.
+    var MASK = "\u0000";
+    var masked = blob.replace(/\.(?!\s+[A-Z"\u201c(]|\s*$)/g, MASK);
+    var sentences = masked.match(/[^.!?]+[.!?]/g) || [];
+    var candidates = [];
+    sentences.forEach(function (s) {
+      var t = s.replace(/[.!?]+$/, "").split(MASK).join(".")
+        .replace(/^["\u201c'\s]+|["\u201d'\s]+$/g, "");
+      var opens = (t.match(/\(/g) || []).length;
+      var closes = (t.match(/\)/g) || []).length;
+      if (closes > opens) t = t.replace(/\)+$/, "");
+      if (opens > closes) t = t.replace(/^\(+/, "");
+      if (t.length >= 24 && t.length <= 90 && !/^\d/.test(t) && t.indexOf("  ") === -1) {
+        candidates.push(t);
+      }
+    });
+    return candidates;
+  }
+
+  // Fires once per load; each plot resolves independently so one slow or
+  // unreachable journal never blocks the rest. On file:// this fails
+  // silently (fetch can't reach local files without a server) and every
+  // line just stays on FALLBACK_ECHOES — the piece still works, it just
+  // doesn't age.
+  function refreshEchoes() {
+    FALLBACK_ECHOES.forEach(function (fallback) {
+      var id = fallback.from;
+      fetch("../../../plots/" + id + "/journal.md")
+        .then(function (res) { return res.ok ? res.text() : null; })
+        .then(function (text) {
+          if (!text) return;
+          var candidates = extractCandidates(text);
+          if (!candidates.length) return;
+          var pick = candidates[Math.floor(Math.random() * candidates.length)];
+          for (var i = 0; i < ECHOES.length; i++) {
+            if (ECHOES[i].from === id) {
+              ECHOES[i] = { text: pick, from: id };
+              return;
+            }
+          }
+        })
+        .catch(function () { /* offline or file:// — keep the fallback line */ });
+    });
+  }
+
+  refreshEchoes();
 
   var field = document.getElementById("field");
   var kept = document.getElementById("kept");
