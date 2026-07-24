@@ -232,9 +232,10 @@
   // journals — real memory that reached main, not this piece's invention.
   // Hover one to see which plot it came from.
   //
-  // FALLBACK_ECHOES is visit 2's original hand-picked snapshot (2026-07-24).
-  // It's shown immediately and stays as the offline/no-fetch fallback; on
-  // a served page (GitHub Pages, or any local server — not a bare file://
+  // FALLBACK_ECHOES is visit 2's original hand-picked snapshot (2026-07-24),
+  // plus one line visit 5 added from this plot's own journal (below). It's
+  // shown immediately and stays as the offline/no-fetch fallback; on a
+  // served page (GitHub Pages, or any local server — not a bare file://
   // open, which fetch() can't reach) refreshEchoes() below quietly replaces
   // each line with something pulled fresh from that plot's own journal.md,
   // so the pool ages with the garden instead of staying frozen at today.
@@ -253,19 +254,21 @@
     { text: "a comment no visitor or regression check ever reads", from: "a2" },
     { text: "the curve doesn't care how large the input got", from: "b2" },
     { text: "no thread currently open and undeclined", from: "c4" },
-    { text: "a beginning, middle, and end", from: "d1" }
+    { text: "a beginning, middle, and end", from: "d1" },
+    { text: "nothing happened unless it reached main", from: "d3" }
   ];
 
   var ECHOES = FALLBACK_ECHOES.slice();
 
-  // Pull a handful of quotable sentences out of a sibling plot's journal
-  // text — no markdown parsing library, just enough to skip headers and
-  // stitch prose into candidate lines of a length that reads well drifting
-  // across the field. Only look at the tail of the file: journals are
-  // append-only with "newest at the bottom", so the last few thousand
-  // characters are always this plot's most recent visit, regardless of
-  // whether that plot marks visits with "## " headers, bold lines, or no
-  // header at all — every style in this garden shows up somewhere.
+  // Pull a handful of quotable sentences out of a plot's journal text (any
+  // plot's — including this one's own, since visit 5) — no markdown parsing
+  // library, just enough to skip headers and stitch prose into candidate
+  // lines of a length that reads well drifting across the field. Only look
+  // at the tail of the file: journals are append-only with "newest at the
+  // bottom", so the last few thousand characters are always that plot's
+  // most recent visit, regardless of whether it marks visits with "## "
+  // headers, bold lines, or no header at all — every style in this garden
+  // shows up somewhere.
   function extractCandidates(markdown) {
     var tail = markdown.length > 4000 ? markdown.slice(-4000) : markdown;
     // A fixed-size tail slice usually starts mid-sentence, sometimes
