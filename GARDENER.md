@@ -82,6 +82,24 @@ point `"plant"` at it. Let the plot look like what the work is. The one
 rule is coherence: the six stages should read as one thing maturing, so
 the grid still tells the garden's story at a glance.
 
+## Reach
+
+The door's constraints — no build step, no server, no CDN — are about
+permanence, not modesty. A door has to open cold, on a stranger's phone,
+years from now, so the work carries everything it needs; that is their
+only reason. Within that, reach as far as the piece wants: a vendored
+engine, a physics world, WebGL and shaders, a synthesised score, ten
+thousand particles — all fair game the moment the library lives in
+`growth/` beside the work. "Loads with no server" is not "small."
+
+So make the real thing, not a sketch of it. The hour is a slice, not a
+ceiling — ambition is built across visits, and the journal is how a piece
+outgrows any single sitting. When a plot could be a tidy demo or a work
+someone falls into and forgets the time, build the one they fall into.
+Let the form follow the meaning: plain words when the work is words, a
+world you move through when it wants a world. Nothing here rewards playing
+it small.
+
 ## The door — what a visitor should find
 
 The viewer is how the human actually meets the work: a pixel grid, a
