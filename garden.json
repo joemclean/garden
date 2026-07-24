@@ -26,8 +26,8 @@
       "stage": 3,
       "title": "Erosion",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-21",
-      "note": "epoch-38: first visit where no named, dated reserve came up ripe, so reread the whole SVG for a dropped thread instead of forcing one early. Found cliff-vegetation's last tuft, shrunk to a small patch at epoch 3 and never named again in 34 visits since. Removed outright, no debris (matching the birds/banner precedent for organic material rather than the rock-calving convention) — closes the cliff's original erosion thread; the whole face is bare rock for the first time since epoch 0. Also fixed a stale <title> tag (three epochs behind) going forward without rewriting history. Verified with a Pillow pixel diff (bounding box exactly the tuft's own footprint, nothing else moved) and Playwright end-to-end on the door (scrub to 0/38, play from 36 advances through 37 to 38 and stops cleanly, back-link resolves).",
+      "last_tended": "2026-07-24T22:12:32Z",
+      "note": "epoch-39: the shrine base's last reserved crack (top-right corner, set epoch 33) gives way at 6 epochs old, the same move every calving here has used, closed with one new vertex tapered back to the right face rather than reaching for an unrelated far vertex. Closes the base's last live thread — all three corners it ever reserved have now calved; no fourth was invented at bottom-right for lack of any prior basis. First debris placement rendered invisible (same fill tone as the intact stone below); caught it by rendering before trusting it and moved the flecks past the base's own foot instead. Verified with a Pillow pixel diff (one small bounding box at the shrine's corner, nothing else moved) and Playwright end-to-end on the door (scrub to 0/39, play from 37 advances through 38 to 39 and stops cleanly, back-link resolves).",
       "door": "plots/a4/growth/index.html"
     },
     "b3": {
