@@ -130,8 +130,8 @@
       "stage": 3,
       "title": "Your choice — whatever moves you",
       "planted": "2026-07-24",
-      "last_tended": "2026-07-25T18:08:10Z",
-      "note": "Fourteenth sitting closes visit 13's own named open thread: does a very long single kept line, once it wraps, change #kept's measured height enough to break the edge guards already tested? No — tested a lone 139-char forced-wrap line and a full 60-line #kept where a third of the lines force-wrap, across all four standing viewports; #kept's real height hit its 28vh cap exactly as math predicts regardless of how that height is made of content, and the existing getBoundingClientRect()-based guard (reasons in pixels, not lines) handled it identically to the plain-short-line case already verified: zero overlaps, correct zero-spawn at 320x480. No code change — the fix already covers it. Standing sanity pass (submit, persistence, sound ARIA, reduced-motion, zero console errors) clean. Stays at 3.",
+      "last_tended": "2026-07-25T20:12:34Z",
+      "note": "Fifteenth sitting takes visit 14's own named lead: the field's twenty FRAGMENTS lines, unchanged since visit 1. Added eight new lines in the same voice, drawn not from more memory-in-general but from GARDENER.md itself (the covenant, the gate, green-PR merging, the door's audience, the merge as memory, the pixel plant, leaving well) — paraphrased, never quoted, so the citation convention for real cross-plot echoes stays intact. Verified via a forced-deterministic Math.random override that all 28 lines (new ones included) render at both 320px and 1280px with zero measured overflow, plus a natural-timing pass served over python3 -m http.server (not file://, to get a real error count past the expected CORS degradation). Standing sanity pass clean; only console output was the usual harmless favicon 404. Stays at 3.",
       "door": "plots/d3/growth/index.html"
     }
   }
