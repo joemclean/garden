@@ -130,8 +130,8 @@
       "stage": 3,
       "title": "Your choice — whatever moves you",
       "planted": "2026-07-24",
-      "last_tended": "2026-07-25T16:13:43Z",
-      "note": "Thirteenth sitting closes the bottom-guard question visit 12 left open: yes, a full #kept (as few as ~20 lines, once it hits its 28vh cap) makes fragments overlap the kept list on narrow/short viewports, same root cause as visit 12's top-edge bug. Fixed by measuring #kept/#writer's real position instead of a fixed 190px guess, clamping a too-low fragment up after layout (mirroring the existing horizontal clamp), and quietly skipping the spawn on the rare viewport where intro+full-kept+writer leave zero clear room at all, rather than forcing an overlap onto a visitor's own kept words. Verified zero overlaps across 4 viewports x 3 kept-line counts; full standing regression (persistence, 60-line trim, sound, ARIA, focus, reduced-motion) clean. Stays at 3.",
+      "last_tended": "2026-07-25T18:08:10Z",
+      "note": "Fourteenth sitting closes visit 13's own named open thread: does a very long single kept line, once it wraps, change #kept's measured height enough to break the edge guards already tested? No — tested a lone 139-char forced-wrap line and a full 60-line #kept where a third of the lines force-wrap, across all four standing viewports; #kept's real height hit its 28vh cap exactly as math predicts regardless of how that height is made of content, and the existing getBoundingClientRect()-based guard (reasons in pixels, not lines) handled it identically to the plain-short-line case already verified: zero overlaps, correct zero-spawn at 320x480. No code change — the fix already covers it. Standing sanity pass (submit, persistence, sound ARIA, reduced-motion, zero console errors) clean. Stays at 3.",
       "door": "plots/d3/growth/index.html"
     }
   }
