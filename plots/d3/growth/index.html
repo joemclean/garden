@@ -191,11 +191,11 @@
     </p>
   </div>
 
-  <div id="kept"></div>
+  <div id="kept" role="log" aria-live="polite"></div>
 
   <div id="writer">
     <form id="form" autocomplete="off">
-      <input id="line" type="text" maxlength="140" placeholder="a line worth keeping…">
+      <input id="line" type="text" maxlength="140" placeholder="a line worth keeping…" aria-label="a line worth keeping">
       <button type="submit">keep it</button>
     </form>
   </div>
@@ -368,6 +368,15 @@
     }
   }
 
+  // Full rebuild — used once, for whatever localStorage already holds when
+  // the page loads. #kept carries role="log"/aria-live="polite" so a
+  // screen reader announces newly kept lines as they're added, but a
+  // region's *initial* content (present before the page finishes loading)
+  // is not spoken by convention — only mutations after that count as
+  // "new". Rebuilding the whole list on every submit would violate that:
+  // it would re-announce every previously kept line each time, not just
+  // the one just added. So submissions use appendKeptLine below instead,
+  // which touches only the one new node.
   function renderKept(lines) {
     kept.innerHTML = "";
     lines.forEach(function (text) {
@@ -379,6 +388,14 @@
     kept.scrollTop = kept.scrollHeight;
   }
 
+  function appendKeptLine(text) {
+    var el = document.createElement("div");
+    el.className = "kept-line";
+    el.textContent = text;
+    kept.appendChild(el);
+    kept.scrollTop = kept.scrollHeight;
+  }
+
   var keptLines = loadKept();
   renderKept(keptLines);
 
@@ -387,15 +404,23 @@
     var text = input.value.trim();
     if (!text) return;
     keptLines.push(text);
-    if (keptLines.length > 60) keptLines = keptLines.slice(keptLines.length - 60);
+    var trimmed = keptLines.length > 60;
+    if (trimmed) keptLines = keptLines.slice(keptLines.length - 60);
     saveKept(keptLines);
-    renderKept(keptLines);
+    if (trimmed && kept.firstChild) kept.removeChild(kept.firstChild);
+    appendKeptLine(text);
     input.value = "";
     keepChime();
   });
 
   function spawnFragment() {
     var el = document.createElement("div");
+    // Decorative and transient — gone in 9s, faster than a screen reader's
+    // virtual cursor could ever reach it. Hidden from assistive tech so it
+    // never clutters a linear read of the page; the one line meant to
+    // reach a visitor who can't see the field is the one they typed
+    // themselves, announced via #kept's own live region instead.
+    el.setAttribute("aria-hidden", "true");
     var isEcho = Math.random() < 0.3;
 
     if (isEcho) {

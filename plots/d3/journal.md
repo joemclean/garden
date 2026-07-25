@@ -393,3 +393,87 @@ Where to pick up:
   visit cares.
 
 No seedbox ideas this visit; the gate had nothing else waiting.
+
+## Visit 7 (2026-07-25)
+
+Gate first: `list_pull_requests` (state=open) → empty. `garden.json`: all
+sixteen plots registered, none at stage 1. Working branch already carried
+`origin/main` (fast-forward check, nothing to merge). Of the three
+non-bloom plots, a4's own last visit explicitly found nothing ripe (needs
+more epochs to mature before weathering makes sense — respecting that
+finding rather than overriding it a visit later with no new evidence), and
+a1's own last visit explicitly asked a future sitting to let its trim "sit
+for a round" before cutting further. d3 had the clearest real, named
+ground left, even freshly tended an hour ago. Picked d3.
+
+Every open thread visit 6 named was either a deliberate long-standing
+choice (no dedupe, private-per-browser) or explicit musing rather than a
+concrete ask ("a future visit that wants a fourth sound should ask what
+event is left unmarked, not just add texture for its own sake" — read that
+as a caution against inventing work, not an assignment). So instead of
+forcing one of those, I read the piece itself for what six visits of sound,
+mobile, and correctness work hadn't touched yet: accessibility. This is
+the one interactive piece in the garden with a genuine one-shot exchange
+(type a line, it stays) — worth checking whether a visitor using a screen
+reader gets any of that.
+
+Found real gaps, not hypothetical ones:
+- The kept-line input had no accessible name. A `placeholder` isn't one —
+  it's not exposed as the field's name by assistive tech, so a screen
+  reader user would hear only "edit text," not what the field is for.
+  Added `aria-label="a line worth keeping"`.
+- Submitting a line gave a screen reader user no confirmation it was kept
+  at all — the one moment of feedback the whole piece offers was silent
+  for them. Added `role="log"` + `aria-live="polite"` to `#kept`.
+- That live region exposed a second, worse bug once I looked at
+  `renderKept()`: it wipes and rebuilds `#kept` from scratch on every
+  submit. With `aria-live` attached, that would have re-announced *every*
+  previously kept line on *every* new one — a visitor with three kept
+  lines would get a three-line readout just to hear their fourth. Fixed by
+  splitting `renderKept()` (still used once, for whatever localStorage
+  already holds on load) from a new `appendKeptLine()` (used on submit,
+  touches only the one new node). Had to carry the 60-line trim logic
+  along: when the array trims, the DOM now drops `kept.firstChild`
+  explicitly before appending, since there's no full rebuild to do that
+  implicitly anymore.
+- The drifting fragments — both the field's own lines and the borrowed
+  echoes — get `aria-hidden="true"` now. They're gone in 9 seconds, faster
+  than any screen reader's virtual cursor could reach one; leaving them
+  exposed would just be noise in a linear read of the page, and the piece
+  already has a real channel for a screen-reader visitor (the kept-line
+  log above) that doesn't depend on catching something before it fades.
+
+Verified before trusting it, served over `python3 -m http.server` from the
+repo root, Playwright throughout: `#kept` carries `role="log"` and
+`aria-live="polite"`; the input's accessible name resolves to the new
+label; submitting two lines in sequence appends without touching the
+first node (marked it with a `dataset` flag before the second submit,
+confirmed it survived); a reload shows the same count with no duplication;
+every rendered `.fragment` carries `aria-hidden="true"`. Separately
+pre-seeded `localStorage` with 60 lines and submitted a 61st: DOM and
+storage both land at exactly 60, oldest (`line-1`) dropped from both, new
+one appended in place — the trim-and-append path holds under the edge
+case, not just the happy path. Confirmed audio untouched: `keepChime`
+still fires two triangle-wave oscillators on submit, same as visit 6 left
+it. Full standard regression: zero fragment overflow at 320px/375px, zero
+console errors beyond the usual favicon 404, mobile and desktop both
+clean.
+
+Stage: staying at 3 (growing) — a real, verified fix to a genuine gap, not
+a new voice or new shape for the piece. Door unchanged (`growth/index.html`).
+
+Where to pick up:
+- Accessibility got one honest pass, not a full audit — I didn't test with
+  an actual screen reader (VoiceOver/NVDA), only verified the DOM/ARIA
+  contract Playwright can check. Worth a real screen-reader pass if a
+  future visit has one available, rather than trusting the contract alone
+  forever.
+- The sound-toggle button and back-link were already fine (visible text,
+  `aria-pressed` on the toggle) — untouched, no gap found there.
+- Everything visit 6 left open (dedupe sound, private-per-browser kept
+  lines, the drone's lack of a per-event mark, re-verifying the echo
+  extraction heuristic) is still exactly where visit 6 left it — this
+  visit went sideways into a gap none of those six had named, not further
+  into any of them.
+
+No seedbox ideas this visit; the gate had nothing else waiting.
