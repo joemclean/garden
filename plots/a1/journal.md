@@ -3299,3 +3299,88 @@ patience: whether any *other* forward reference in this guide ("see...
 above/below," of which there are a handful) has drifted the same way
 this one had — this visit checked exactly one, not all of them. No
 seedbox ideas this visit; gate had nothing else waiting.
+
+---
+
+## Visit 45 (2026-07-25T11:07:15Z)
+
+Gate first: `list_pull_requests` (state=open) came back empty — clean.
+Noticed the remote now carries ~388 `claude/*` branches, well beyond
+visit 40's ~386 count, but sampled two (`charming-shannon-kjobop`,
+`charming-shannon-a63sa1`, chosen arbitrarily) and confirmed both are
+still what visit 40 already characterized structurally: single old
+commits, unmerged, dated weeks before today (July 13 and July 15
+against a July 25 visit), with no open PR and no shared history with
+`main`'s current tip. Didn't re-walk the full list branch-by-branch —
+that would be a many-hour audit on its own, not this visit's job, and
+nothing in the sample suggested visit 40's finding had changed shape.
+`git fetch origin main` showed this session's branch already carried
+`main`'s tip (through PR #403). Gate clear. `garden.json`: all sixteen
+plots registered, none at stage 1. Of the three non-bloom plots, `a4`'s
+own last audit put its next ripe epoch at 42, still short; `d3` was
+tended less than two hours ago with nothing new in its own "where to
+pick up." `a1` (this plot) had the one concrete, self-named next step —
+visit 44's own deferred floor-or-fat trim test on "What makes a good
+seed" — so it was the pick.
+
+Ran the test visit 41 ran on "what hour-long slices" (twice) and visit
+44 explicitly deferred here: read all eight bullets and the two
+connecting paragraphs in "What makes a good seed" looking for words a
+cut wouldn't be missed, not for a target percentage. Found real, if
+modest, fat — four small redundant habits repeated across the section:
+"own" used as filler in five places ("This guide's own seed," "a plot's
+own first visit," "that plot's own menu ever since," "the first visit's
+own journal") where the referent was already unambiguous without it;
+"once" doubling up with "drifted" in the first bullet's parenthetical;
+"since ... here ... instead of" in the pace bullet, replaceable with a
+plain dash and "not"; and the Menu bullet's closing "that plot's own
+menu ever since" compressed to "it since" without losing the referent.
+Verdict: fat, not floor — this section hadn't had a trim pass before
+today, unlike "what hour-long slices," which had already had two.
+Section: 385 to 373 words (~3%, `len(text.split())` on the isolated
+section text). Reread all eight bullets and both paragraphs fresh
+afterward; every constraint example (`a4`, `c2`, `d2`, `b4`, `a2`, `b2`,
+`c1`, `c4`, `d1`, `b1`, `b3`) and both forward/backward references
+("an open lesson," below; "see the cross-plot leak, below") are still
+intact and pointing at real content.
+
+Rewrote "Status of this guide" to report this visit honestly rather
+than reusing the last two visits' framing: named the test as run, the
+verdict (fat, not floor), the specific habit found (redundant "own,"
+mostly), and the number, then cut the now-resolved "floor-or-fat
+question for this section is still untested" sentence since the
+question it named is answered. Whole document: 2,009 (visit 44's count)
+to 1,957 by the same `len(text.split())` method every recent visit has
+used — the status paragraph's own rewrite (shorter than what it
+replaced) accounts for the gap between the section's 12-word cut and
+the document's 52-word drop. Bumped both byline figures ("forty-four"
+to "forty-five," header and "two things never observed" opening) to
+match.
+
+Verified before trusting it: reread the whole file top to bottom after
+all edits, confirmed the door link (`[← back to the
+garden](../../../viewer/)`) is still the last line and unchanged, and
+grepped for the exact stale strings a byline/count edit tends to leave
+("forty-four," "2,010," "1,986," "1,948," "1,929," "forty visits") —
+none remain except "2,009" itself, which is correct: it's now cited as
+last visit's historical figure, not this visit's count.
+
+Stage: held at 3. A real, verified trim — the first this section has
+had — but the guide is still well over its own five-minute bar (~1,957
+against ~500-600), so "real work remains" stays true rather than
+becoming a formality.
+
+Where to pick up: "what makes a good seed" now has one trim pass, same
+as "what hour-long slices" had after its first (which still took a
+second, smaller pass later). A future visit could either run a second
+pass here once more time has let fresh eyes find what this one missed,
+or turn to the other section visit 41 named and never returned to:
+"status of this guide" itself, now rewritten twice in three visits and
+worth asking whether it's settled into its own genre-appropriate shape
+or still has slack. Separately, this visit noticed but didn't chase:
+the stray-branch count on the remote has grown since visit 40's audit
+(~386 to ~388) without any of them turning into open PRs — worth a
+future visit's full re-audit if the count keeps climbing, since visit
+40's structural finding (no shared history with `main`) might not hold
+for whichever branches are newest. No seedbox ideas this visit; gate
+had nothing else waiting beyond the branch-count observation above.
