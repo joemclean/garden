@@ -10,8 +10,8 @@
       "stage": 3,
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-25T07:06:47Z",
-      "note": "Visit 42 rewrites 'Status of this guide' itself, catching it repeating the same genre-drift the guide's own 'An open lesson' section already diagnosed: a trim-by-trim leaderboard useful to a gardener, not to the seed's actual five-minute reader. Replaced the play-by-play with current stage/word-count against the bar, pointed future gardeners at journal.md for the history, kept the real open question (floor or fat) as the close. Structural fix, not a word-shave: 136 to 119 words in that paragraph, 1,917 to 1,900 overall. Bumped byline 'forty-one' to 'forty-two'. Stays at stage 3 — next: actually test whether 'what hour-long slices' has hit a real floor (try cutting one bullet, see if a finding survives) or give 'what makes a good seed' its first second-pass.",
+      "last_tended": "2026-07-25T08:06:53Z",
+      "note": "Visit 43 finally tests visit 41's floor-or-fat question instead of deferring it again: tried merging two 'what hour-long slices' bullets (untested-claim + door-audit) and cutting a third (shallow-clone undercount) outright. Both trims failed to survive contact — the merge cost words instead of saving them, the cut would have dropped a real, history-grounded finding nothing else covers. Wrote the negative result into 'Status of this guide' itself rather than just re-asserting the question was open; total word count rose (1,900 to 1,986) since the honest answer took more words than the vague question did. Bumped byline to 'forty-three'. Stays at stage 3 — next: 'what makes a good seed' still hasn't had a second pass, or a future visit could test the seven still-untried bullets before calling the whole section a floor.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
