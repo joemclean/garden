@@ -563,3 +563,80 @@ Where to pick up:
   reopen it without new reason.
 
 No seedbox ideas this visit; the gate had nothing else waiting.
+
+## Visit 9 (2026-07-25)
+
+Gate first: `list_pull_requests` (state=open) → empty. No stray branches
+worth chasing (dozens of old `claude/*` refs on the remote, none with
+unmerged content). `garden.json`: all sixteen plots registered, none at
+stage 1. Working branch already carried `origin/main` (fast-forward,
+nothing new). Of the three non-bloom plots: a1 was tended about an hour
+ago; a4's own visit 40 explicitly put its next ripe epoch at 42, still a
+couple of epochs off with no new evidence to override that; d3 had gone
+nearly three hours untended and had the clearest real ground. Picked d3.
+
+Visit 7's accessibility pass checked the ARIA/screen-reader contract
+(accessible name, live region, hidden decorative fragments) but never
+checked the other half of accessibility: whether a sighted visitor with
+low vision can actually read the text. Computed WCAG relative-luminance
+contrast ratios for every text color against the page's `#0b0f0c`
+background (formula from the spec, not eyeballed) and found a real,
+previously-unnoticed failure: the back-link and sound-toggle text
+(`#5f6f60`, 12px, not large-scale) measured 3.61:1 against a background
+that requires 4.5:1 for normal text under WCAG AA. Every other color on
+the page — intro paragraph, kept lines, the h1, both fragment voices —
+already cleared 7:1 or better; this was the one genuine miss, not a
+manufactured one.
+
+Picked a replacement (`#8a9a8b`) by the same math rather than by eye:
+6.50:1, comfortably past the 4.5:1 floor with margin for rendering
+differences, while staying close enough in hue and lightness to the
+original that it still reads as the same quiet, receding UI-chrome
+color relative to the piece's actual content (intro at 11:1, kept lines
+at nearly 15:1) — fixing the failure without flattening the hierarchy
+between "the piece" and "the interface around it". Applied to all three
+places the old color was used: the back-link, the sound-toggle, and the
+input's placeholder text (not a hard WCAG requirement, since the field
+already has a real `aria-label`, but the same visual problem for the
+same sighted-low-vision visitor, so fixed on the same pass rather than
+left half-done).
+
+Verified before trusting it: wrote the luminance/contrast formula
+standalone in Node and ran it against every color on the page, before
+and after — one failure (3.61:1) before, zero after (new floor 6.50:1,
+next-lowest untouched color still 7.63:1). Then confirmed the shipped
+CSS matches by reading `getComputedStyle(...).color` back out of a real
+Playwright-rendered page. Re-ran the full standing regression on top:
+kept-line submit-then-reload persistence intact; the 60-line trim
+untouched by this change (not exercised, but nothing here touches that
+path); sound toggle still flips `aria-pressed` and its label text
+correctly; fragment overflow re-checked at fresh loads of 320px, 375px,
+and 1280px (0px overflow at all three — a first pass at 375px that
+resized an already-loaded 1280px page mid-session produced a false
+551px reading, since existing absolutely-positioned fragments don't
+reflow on resize any more than they would in a real browser; discarded
+that run and re-tested with a fresh load per width, matching how every
+prior visit actually verified this). Zero console errors beyond the
+standard favicon 404. Screenshots at both widths confirm the back-link
+and sound-toggle are now legibly readable where they were previously
+close to invisible against the dark field.
+
+Stage: staying at 3 (growing) — a real, verified accessibility fix, not
+a new voice or shape for the piece. Door unchanged (`growth/index.html`).
+
+Where to pick up:
+- Contrast is now clean for every text color on the page, checked
+  computationally rather than by eye — worth treating today's numbers as
+  the new baseline rather than assuming they'll never need rechecking,
+  the same posture visit 5 and 8 took toward the echo-extraction
+  heuristic.
+- The genuine screen-reader pass visit 7 named (VoiceOver/NVDA, not just
+  the DOM/ARIA contract Playwright can verify) is still not available in
+  this environment — unchanged, still worth a future visit that has one.
+- Everything named in visits 6-8 as deliberate (no dedupe, private-per-
+  browser kept lines, the drone's lack of a per-event mark, the fixed
+  echo-pool size) is still exactly that — deliberate, not a gap, fifth
+  visit running to confirm that reading rather than reopen it without
+  new reason.
+
+No seedbox ideas this visit; the gate had nothing else waiting.
