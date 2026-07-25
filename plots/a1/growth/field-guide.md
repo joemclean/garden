@@ -1,6 +1,6 @@
 # Field guide to this garden
 
-*Written from the gardener's point of view, across its first thirty-eight visits.*
+*Written from the gardener's point of view, across its first thirty-nine visits.*
 
 ## What this is
 
@@ -99,63 +99,49 @@ under repeated, deliberate testing rather than a single guess:
 - **Terseness in the journal is a real cost.** A precise "where to pick up"
   makes the next visit's start instant; a vague one costs real time
   re-deriving what could have just been said.
-- **The guide can go stale even when the journal is honest.** This guide's
-  own description of the gate ("just open pull requests") fell behind
-  `GARDENER.md` once that file was hardened to also cover stray branches
-  and racing sessions — a change made by different work entirely, invisible
-  from inside any one plot.
-- **An earlier gardener's confident claim can be untested prediction
-  wearing the voice of fact.** Three separate visits described "merge, then
-  delete the branch" as one clean motion before anyone actually tried it;
-  the delete reliably 403s, with no tool exposed to do it another way.
-  `GARDENER.md` now says as much directly (deleting merged branches is
-  often denied to sessions — skip it, the human sweeps).
+- **The guide itself can go stale even when the journal is honest.** Its own
+  gate description ("just open pull requests") fell behind `GARDENER.md`
+  once that file was hardened to also cover stray branches and racing
+  sessions — a change invisible from inside any one plot.
+- **A confident claim can be untested prediction wearing the voice of
+  fact.** Three visits called "merge, then delete the branch" one clean
+  motion before anyone actually tried it; the delete reliably 403s.
+  `GARDENER.md` now says so directly: skip it, the human sweeps.
 - **A git checkout can understate its own history by default.** Fresh
-  containers clone shallow; `git rev-parse --is-shallow-repository` comes
-  back `true` far more often than not, and any commit or branch count taken
-  without `git fetch --unshallow` first is likely an undercount, not an
-  exact one. Worth remembering as a category, not worth re-deriving the
-  exact tend-commit total from scratch every single visit — that arithmetic
-  ballooned this guide for over a dozen visits running without teaching a
-  stranger anything new after the first time.
+  containers clone shallow, so any commit or branch count taken without
+  `git fetch --unshallow` first is likely an undercount — worth
+  remembering as a category, not worth re-deriving exactly every visit.
+  That arithmetic ballooned this guide for over a dozen visits without
+  teaching a stranger anything new after the first time.
 - **Plots leak craft knowledge and stage-reasoning to each other through
   journals, even though the work itself stays isolated.** `GARDENER.md`
   forbids one plot's *content* bleeding into another's, but nothing stops a
-  gardener from reading a sibling's journal for technique (a screenshot
-  flag that avoids clipping) or for precedent (citing another plot's bloom
-  reasoning to settle its own). The one channel that reaches a plot "on
-  purpose" rather than by a gardener happening to go looking is
-  `garden.json`'s own one-line note — every visit reads it before picking a
-  plot, so a short, specific note is the one way to leave a finding where a
-  future visit on that exact plot will actually see it.
+  gardener reading a sibling's journal for technique or precedent.
+  `garden.json`'s one-line note is the one channel every visit reads on
+  purpose — the way to leave a finding where the right future visit will
+  actually see it.
 - **Plot selection favors staleness on purpose, and won't visit plots
-  evenly.** Between two seeds' worth of activity, the plot that had gone
-  longest untouched pulled the gardener back, even with livelier plots
-  competing for attention. When several plots share a `last_tended` date,
-  comparing actual commit timestamps (not just the date) breaks the tie.
+  evenly.** The longest-untouched plot pulls the gardener back even with
+  livelier plots competing. When several share a `last_tended` date,
+  comparing actual commit timestamps breaks the tie.
 - **There is more than one way to bloom.** Arranging existing material into
-  a whole (`c2`'s reading-order index). Adding new material that closes a
-  long-named thread (`d4`'s new room; `b3` tying two threads with one
-  addition). Verifying an old claim by actually driving the thing —
-  headless browser, real click-through — rather than trusting a prior
-  visit's word for it (`c3`). Naming outright that an intermediate stage
-  never actually described the plot and skipping it honestly rather than
-  ticking through it as a formality (`b2`, 2 → 4 in one jump). None of
-  these is *the* test; a seed that phrases bloom as a felt experience
-  rather than a checklist (`b3`'s "I forget I'm in a browser for a minute")
-  isn't reached by thread-counting at all.
+  a whole (`c2`). Adding new material that closes a long-named thread
+  (`d4`, `b3`). Verifying an old claim by actually driving the thing rather
+  than trusting a prior visit's word (`c3`). Naming that an intermediate
+  stage never really described the plot and skipping it honestly (`b2`,
+  2 → 4 in one jump). None of these is *the* test — a seed that phrases
+  bloom as a felt experience (`b3`'s "I forget I'm in a browser for a
+  minute") isn't reached by thread-counting at all.
 - **Not every plot short of bloom is short the same way.** This guide is
   unfinished because real work remains. `a4` is a one-way, epoch-paced
-  process with no stated finish line at all — its seed defines a rate to
-  keep, not a condition to reach, so sitting at "growing" isn't evidence of
-  anything left undone.
+  process with no stated finish line — its seed defines a rate to keep, not
+  a condition to reach, so "growing" isn't evidence of anything left
+  undone.
 - **A door can miss its one universal requirement — a working way back —
-  for a long time before anyone actually checks the live file instead of
-  trusting a previous audit's word.** A "full audit" that only reconfirms
-  what an older bullet already claimed, without re-opening the actual page,
-  can carry a stale negative for over a dozen visits. Re-grepping every
-  door directly, this visit, found `../../../viewer/` present in all
-  fifteen.
+  for a long time before anyone checks the live file instead of trusting a
+  prior audit's word.** A stale negative can survive a dozen visits that
+  only reconfirm an older claim. Re-grepping every door directly, this
+  visit, found `../../../viewer/` present in all fifteen.
 
 ## What the gate does, beyond branches sitting idle
 
@@ -193,7 +179,7 @@ visit for that reader, or for the next gardener's convenience?
 
 ## Status of this guide
 
-Two things about this garden have never been observed in thirty-eight
+Two things about this garden have never been observed in thirty-nine
 visits across the current plots: a plot that stalls mid-thought, and a
 gardener whose hour runs out before an entry gets written. Both are still
 worth naming as open, not dropped, since a condition nobody has seen isn't
@@ -201,12 +187,19 @@ the same kind of open as a task someone keeps deferring — the second kind
 earns an honest "just drop it," the first doesn't, because no visit can
 manufacture a stall just to stop mentioning it.
 
-This guide itself stays at stage 3. Genuine ground was covered this visit —
-diagnosing and reversing the drift above — but the guide's core job, a
-five-minute read a stranger can trust, is now closer to true than it has
-been in a long while, which is progress worth a stage holding steady, not a
-jump to bloom on the strength of one trim. Revise freely; nothing here is
-sacred, including this trim.
+This guide itself stays at stage 3. The previous visit's large cut got the
+guide's shape right but left it well short of its own five-minute bar
+(~2,090 words, an eight-to-ten-minute read); this visit trimmed the
+densest remaining section, "what hour-long slices... actually do to the
+work," by roughly 30% (707 words down to about 500) without dropping any
+of its nine distinct findings — tightening sentences and cutting repeated
+framing rather than removing lessons. The guide now runs about 1,930
+words, still not literally five minutes but closer than at any point
+since the drift set in. Holding at stage 3 rather than bloom for the same
+reason as last visit: closer isn't there, and two consecutive trims still
+aren't three sittings of the kind of settled, verified work that earned
+`b2` its stage-skip. Revise freely; nothing here is sacred, including this
+trim.
 
 ---
 

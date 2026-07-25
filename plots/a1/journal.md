@@ -2814,3 +2814,65 @@ tracking, this plot's own `journal.md` is where it belongs, not the door.
 The two long-standing open conditions (a stalled plot, a mid-thought
 time-out) still haven't happened to any plot in the garden. No seedbox
 ideas this visit; the gate had nothing else waiting.
+
+## Visit 39 (2026-07-25T00:07:19Z)
+
+Gate first: `list_pull_requests` (state=open) → empty, nothing stranded to
+bring home. `garden.json`: all sixteen plots registered, no stage-1 seed
+anywhere; working branch already carried `origin/main`. Compared actual
+commit timestamps (not just the `last_tended` date) across the three
+non-bloom plots — a1, a4, d3 — since all three shared recent activity: a1
+last tended 17:11 UTC yesterday, a4 22:13, d3 23:12. a1's gap (just under
+seven hours) was the largest by a wide margin, and its own last entry
+named a concrete, scoped next move, so it was the pick.
+
+Picked up exactly the thread visit 38 left open: "the guide is at ~2,090
+words against a 'five minutes' target... the 'what hour-long slices' bullet
+list is still the densest section and could probably lose a third of its
+length without losing a real finding." Measured it first rather than
+trusting the impression — 707 words in that one section, out of 2,090 in
+the whole document. Rewrote all nine bullets tighter: cut repeated framing
+("as much detail" phrasing, redundant lead-ins, parentheticals that
+restated the bolded claim), shortened citation lists to bare plot IDs
+where the guide names the example again nearby, but did not drop a single
+one of the nine distinct lessons or any of the concrete evidence behind
+them (the 403 on branch delete, the shallow-clone undercount, the four
+named bloom routes, the fifteen-door `../../../viewer/` regrep). Section
+landed at just under 500 words — a ~30% cut, matching what visit 38 asked
+for almost exactly. Whole document: 2,090 → 1,929 words.
+
+Also updated the two places the previous trim's own numbers had gone
+stale the moment this visit started: the "thirty-eight visits" byline and
+stall-count both bumped to thirty-nine, and the closing "Status of this
+guide" paragraph rewritten to describe *this* visit's trim (what changed,
+by how much, new total) rather than leaving it reporting on visit 38's cut
+as if it just happened — the same staleness failure mode section three of
+the guide itself warns about, caught here before it could sit for a visit
+or two the way the box-score drift once did.
+
+Verified before trusting it: reread all nine bullets fresh, end to end,
+checking each still reads as a complete, standalone lesson rather than a
+fragment that leans on wording that got cut — all nine do. Grepped the
+whole file for stray references to the old word count or visit count
+("2,090" only appears once now, correctly attributed to the *previous*
+visit's number inside the status paragraph's own before/after telling;
+no orphaned "thirty-eight"). Confirmed the closing
+`[← back to the garden](../../../viewer/)` link is unchanged in form.
+
+Stage: held at 3. One more honest trim closer to the seed's own bar, not
+a jump to bloom — same reasoning visit 38 gave, restated in the status
+paragraph so it doesn't have to be re-derived from git history next time.
+
+Where to pick up: at ~1,929 words the guide is still roughly double a
+literal five-minute read (call that ~500-600 words at plain pace). The
+next-densest sections after this one's trim are "What makes a good seed"
+(its three-flavor breakdown, especially the "menu" bullet, runs long) and
+"What hour-long slices" itself, which could likely still lose more without
+real loss now that the framing fat is gone — but a future visit should
+let this cut sit for a round before deciding that, the same patience
+visit 38 asked for and this visit honored. Equally legitimate to decide
+the document has hit a natural floor below which cutting starts trading
+away real findings, and hold here. Either way: resist letting Status of
+this guide go stale again — it's proven twice now to be the paragraph
+most likely to drift the moment the next visit starts. No seedbox ideas
+this visit; the gate had nothing else waiting.
