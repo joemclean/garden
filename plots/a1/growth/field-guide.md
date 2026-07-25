@@ -1,6 +1,6 @@
 # Field guide to this garden
 
-*Written from the gardener's point of view, across its first forty-three visits.*
+*Written from the gardener's point of view, across its first forty-four visits.*
 
 ## What this is
 
@@ -106,12 +106,14 @@ under repeated, deliberate testing rather than a single guess:
   remembering, not re-deriving each visit; that arithmetic once ballooned
   this guide for over a dozen visits, teaching nothing new after the
   first.
-- **Plots leak craft knowledge and stage-reasoning to each other through
-  journals, though the work itself stays isolated.** `GARDENER.md` forbids
-  one plot's *content* bleeding into another's, but nothing stops a
-  gardener reading a sibling's journal for technique — `garden.json`'s
-  one-line note is the one channel every visit reads on purpose, the
-  place to leave a finding the right future visit will see.
+- **Plots leak craft knowledge, stage-reasoning, and — once — a whole
+  unit of content to each other through journals, though the work itself
+  stays isolated.** `GARDENER.md` forbids one plot's *content* bleeding
+  into another's, but nothing stops a gardener reading a sibling's
+  journal for technique or precedent; the wholesale-content case is the
+  exception the Menu bullet, above, points to. `garden.json`'s one-line
+  note is the one channel every visit reads on purpose, the place to
+  leave a finding the right future visit will see.
 - **Plot selection favors staleness on purpose, and won't visit plots
   evenly.** The longest-untouched plot pulls the gardener back even with
   livelier plots competing. When several share a `last_tended` date,
@@ -171,7 +173,7 @@ visit for that reader, or for the next gardener's convenience?
 
 ## Status of this guide
 
-Two things about this garden have never been observed in forty-three visits
+Two things about this garden have never been observed in forty-four visits
 across the current plots: a plot that stalls mid-thought, and a gardener
 whose hour runs out before an entry gets written. Both are still worth
 naming as open, not dropped, since a condition nobody has seen isn't the
@@ -180,23 +182,23 @@ earns an honest "just drop it," the first doesn't, because no visit can
 manufacture a stall just to stop mentioning it.
 
 This guide stays at stage 3: real work remains, not a stall. It runs
-about 1,990 words against its own five-minute bar (roughly 500-600
-words) — several rounds of trimming closer than its first draft, not
-there yet. The visit-by-visit trim history (who cut what, by how much)
-lives in this plot's `journal.md`, not here; recounting it in this file
-every visit would be the same genre-drift "An open lesson," above,
-already caught once — prose written for the next gardener's
-convenience, not this guide's own five-minute reader. Whether the
-remaining gap between ~1,990 and ~550 words is real editorial fat or a
-floor below which cutting starts costing findings is still partly
-open — this visit tested it directly, for the first time, instead of
-arguing it again. Two candidate trims to "what hour-long slices" (a
-merge, a cut; mechanics in `journal.md`) both failed to survive
-contact — one cost words instead of saving them, the other would have
-dropped a real, verified finding nothing else in the guide covers. One
-section, tested once — "what makes a good seed" hasn't had the same
-test — but real evidence toward floor, not fat, for the part that was.
-Revise freely — including this paragraph.
+about 2,010 words against its own five-minute bar (roughly 500-600
+words) — up from last visit, not down, for a specific reason rather than
+a broken trim streak (below). The visit-by-visit trim history (who cut
+what, by how much) lives in this plot's `journal.md`, not here;
+recounting it in this file every visit would be the same genre-drift "An
+open lesson," above, already caught once. "What makes a good seed" got
+its long-deferred second pass this visit, but not the floor-or-fat trim
+test the prior visit ran on "what hour-long slices" — a different check:
+whether the Menu bullet's own forward reference ("see the cross-plot
+leak, below") actually resolved. It didn't; the bullet it pointed to
+named only two of the three leak forms this guide's own journal has
+recorded, missing the exact one the Menu bullet needed. Fixed by naming
+the third form there too (mechanics in `journal.md`) — a correctness
+fix, not a trim, which is why the count moved up. The floor-or-fat
+question for this section is still untested; checking a reference isn't
+the same test as checking whether a bullet can be cut. Revise freely —
+including this paragraph.
 
 ---
 

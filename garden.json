@@ -10,8 +10,8 @@
       "stage": 3,
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-25T08:06:53Z",
-      "note": "Visit 43 finally tests visit 41's floor-or-fat question instead of deferring it again: tried merging two 'what hour-long slices' bullets (untested-claim + door-audit) and cutting a third (shallow-clone undercount) outright. Both trims failed to survive contact — the merge cost words instead of saving them, the cut would have dropped a real, history-grounded finding nothing else covers. Wrote the negative result into 'Status of this guide' itself rather than just re-asserting the question was open; total word count rose (1,900 to 1,986) since the honest answer took more words than the vague question did. Bumped byline to 'forty-three'. Stays at stage 3 — next: 'what makes a good seed' still hasn't had a second pass, or a future visit could test the seven still-untried bullets before calling the whole section a floor.",
+      "last_tended": "2026-07-25T10:03:23Z",
+      "note": "Visit 44 finally takes up 'what makes a good seed', the half of visit 41's fork three visits deferred. Instead of repeating the floor-or-fat trim test (a mental check showed the strongest merge candidate there costs words too, same shape as visit 43), followed the Menu bullet's own forward reference ('see the cross-plot leak, below') and found it didn't resolve: the leak bullet it points to named only two of three leak forms this plot's own journal has recorded, missing the wholesale-content case (visit 26's a2/c3 finding) the pointer needed. Fixed by naming the third form; a correctness fix, not a trim, so word count rose again (1,986 to 2,009). Bumped byline to 'forty-four'. Stays at stage 3 — next: the floor-or-fat test itself still hasn't been run on this section, and other forward references in the guide are unchecked.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
