@@ -324,3 +324,72 @@ Where to pick up:
   rather than treating two clean runs as proof it always will.
 
 No seedbox ideas this visit; the gate had nothing else waiting.
+
+## Visit 6 (2026-07-25)
+
+Gate first: `list_pull_requests` (state=open) → empty. No stray remote
+branches. `garden.json`: all sixteen plots registered, none at stage 1.
+Working branch merged `origin/main` cleanly (fast-forward, nothing new to
+resolve). Compared `last_tended` again — same picture as visit 5: thirteen
+plots at bloom, sitting stale by design, not by neglect. Of the three
+still below bloom (a1, a4, d3), a4's own last visit explicitly found
+nothing ripe to add and a1 is trimming toward a floor it's already near;
+d3 still has real, named open ground. Picked d3.
+
+Picked up the one item every visit since visit 3 has named and left
+untouched: giving the "keep it" action its own sound, distinct from the
+echo twinkle. The piece already draws two voices — the field's own
+fragments (silent) and borrowed echoes (a single panned twinkle) — and a
+kept line is a third, different kind of thing: not something the piece
+says to you, but something you say back that survives. Gave it its own
+mark rather than reusing the echo's: `keepChime()` plays two notes in a
+quick rising step (adjacent degrees of the same `HUSH_SCALE`, ~160ms
+apart) on a warmer triangle wave instead of the twinkle's sine, centered
+rather than panned to a field position (it doesn't come from anywhere on
+screen — it comes from the visitor), and settles over 4s instead of the
+twinkle's 3.2s. Three voices, three distinct sounds now: silence, a
+panned single note, a centered rising pair. Off whenever sound is off,
+same restraint as every other sound here — keeping a line in silence
+stays silent.
+
+Verified before trusting it, served over `python3 -m http.server` from
+the repo root: patched `AudioContext.prototype.createOscillator` to count
+calls and confirmed keeping a line creates exactly 2 oscillators with
+sound on, 0 with sound off (no `AudioContext` work happens at all when
+muted). Patched `OscillatorNode.prototype.type`'s setter to log actual
+waveform choices and confirmed, in the same run, an echo spawn logs
+`"sine"` while a kept line logs `["triangle", "triangle"]` — the two
+sounds are genuinely distinct, not just conceptually. Forced an echo via
+`Math.random` override to confirm the twinkle and the new chime coexist
+without one clobbering the other (both fired correctly through the same
+`masterGain` in one session). Full standard regression: kept-line
+add-then-reload persistence intact, sound state still doesn't survive a
+reload (unchanged, deliberate), zero fragment overflow at 320px and 375px
+across a 6s run, zero console errors beyond the usual favicon 404 at
+every viewport tested.
+
+Stage: staying at 3 (growing) — a real, verified addition, but sound was
+always going to be built a piece at a time rather than all at once (visit
+3's own choice), and this closes one item, not the shape of the whole.
+
+Where to pick up:
+- Kept lines are still private to one browser — unchanged since visit 1,
+  still a deliberate choice, not a gap.
+- The echo pool's extraction heuristic has now held clean across three
+  separate spot-checks (visits 4, 5, and untouched-but-unbroken this
+  visit); if a future sitting wants to stop re-verifying it every time and
+  instead trust it, that's a reasonable call to make explicitly rather
+  than by default.
+- The drone (visit 3) is still the one voice with no per-event mark of its
+  own, by design — it's ambient, not tied to any single moment the way the
+  twinkle and the new keep-chime are. Worth naming as a real three-way
+  distinction now that all three exist: field (silent), echo (single
+  panned note), kept (centered rising pair), drone (continuous, unmarked).
+  A future visit that wants a fourth per-event sound should ask what event
+  is left unmarked, not just add texture for its own sake.
+- No sound plays when a *duplicate* of an already-kept line is submitted —
+  untested because the piece doesn't dedupe kept lines at all (by design,
+  unchanged since visit 1); not a bug, just unverified ground if a future
+  visit cares.
+
+No seedbox ideas this visit; the gate had nothing else waiting.
