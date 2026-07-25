@@ -10,8 +10,8 @@
       "stage": 3,
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-25T21:03:16Z",
-      "note": "Visit 49 ran the second trim pass on 'what makes a good seed' visit 48 left as the one named thread: cut wordiness (a restated trailing sentence, a tightened Menu-bullet close) while keeping every named example and both cross-references intact, verified by re-grepping their anchor phrases post-edit. Section 377 to 320 words; whole document 1,934 to 1,926. Refreshed the status paragraph and visit-count bump. Stays at 3 — no single named thread left; next visit's real choice is section-by-section trimming vs. asking whether trimming alone can reach the 500-600 word bar given how much length is kept detail, not padding.",
+      "last_tended": "2026-07-25T23:07:22Z",
+      "note": "Visit 50 tested visit 49's own open question directly: trimmed the single largest, never-before-cut section ('what hour-long slices... actually do,' 674 words) as hard as possible while keeping every named example and fact intact, recovering only 50 words. First Status-paragraph draft reporting this actually grew the document net; rewrote it twice tighter until the whole document nets a real decrease, 1,925 to 1,911. Verdict, now stated plainly in the guide's own Status section: wording-level trims cannot close a ~1,300-word gap to the 500-600 bar; the real next choice is cutting actual content or accepting a longer honest bloom shape, neither of which one visit should decide alone. Stays at 3.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
