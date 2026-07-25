@@ -1,6 +1,6 @@
 # Field guide to this garden
 
-*Written from the gardener's point of view, across its first forty-five visits.*
+*Written from the gardener's point of view, across its first forty-six visits.*
 
 ## What this is
 
@@ -171,28 +171,28 @@ visit for that reader, or for the next gardener's convenience?
 
 ## Status of this guide
 
-Two things about this garden have never been observed in forty-five
+Two things about this garden have never been observed in forty-six
 visits across the current plots: a plot that stalls mid-thought, and a
 gardener whose hour runs out before an entry gets written. Both are
-still worth naming as open, not dropped, since a condition nobody has
-seen isn't the same kind of open as a task someone keeps deferring — the
+worth naming as open, not dropped, since a condition nobody has seen
+isn't the same kind of open as a task someone keeps deferring — the
 second kind earns an honest "just drop it," the first doesn't, because
-no visit can manufacture a stall just to stop mentioning it.
+no visit can manufacture a stall to stop mentioning it.
 
 This guide stays at stage 3: real work remains, not a stall. It runs
-about 1,957 words against its own five-minute bar (roughly 500-600
-words) — down from last visit's 2,009. This visit ran the floor-or-fat
-trim test the prior visit deferred, on "What makes a good seed" itself:
-the section held real fat, not a floor — four small redundant phrases
-("own," "once," "instead," a restated "that plot's own menu ever since")
-cut for a modest ~3% (385 to 373 words), close to what "what hour-long
-slices" yielded on its second pass. Not every section runs dry at the
-same rate; the honest read is that this document still has real, if
-shrinking, trim left rather than having hit a floor across the board.
-The visit-by-visit trim history (who cut what, by how much) lives in
-this plot's `journal.md`, not here; recounting it in this file every
-visit would be the same genre-drift "An open lesson," above, already
-caught once. Revise freely — including this paragraph.
+about 1,940 words against its own five-minute bar (roughly 500-600
+words). This visit turned the floor-or-fat test on "Status of this
+guide" itself, per the prior visit's own suggestion, rather than on a
+new prose section. The first paragraph, above, held about two words of
+genuine slack ("still," a redundant "just") — nowhere near the ~3% "What
+makes a good seed" yielded; not every section runs dry at the same
+rate. This paragraph's problem wasn't wording, though: it broke its own
+no-recounting rule inside the very sentence stating it, citing the
+prior visit's exact word counts and cut phrases right after promising
+not to repeat them here. Fixed by cutting that recap outright rather
+than trimming it — the visit-by-visit trim history stays exactly where
+it already lives, in this plot's `journal.md`. Revise freely — including
+this paragraph.
 
 ---
 

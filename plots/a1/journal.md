@@ -3384,3 +3384,102 @@ future visit's full re-audit if the count keeps climbing, since visit
 40's structural finding (no shared history with `main`) might not hold
 for whichever branches are newest. No seedbox ideas this visit; gate
 had nothing else waiting beyond the branch-count observation above.
+
+---
+
+## Visit 46 (2026-07-25T14:03:52Z)
+
+Gate first: `list_pull_requests` (state=open) came back empty. The
+remote's stray-branch count has kept climbing since visit 45's ~388
+estimate — a `list_branches` call now returns over 100 in the first
+page alone — but sampled three (`charming-shannon-a9lwas`,
+`-a6b6wl`, `-a3fm7g`) with `git merge-base --is-ancestor` against
+`main`: none are ancestors, but each one's own commit log is a chain
+of already-merged PR numbers (#333, #293, #160) far behind `main`'s
+current tip (#406), and their diffs against their own merge-base show
+whole-repo-era differences (a deleted `seedbox/` directory, a rewritten
+`viewer/index.html`) rather than anything resembling live, stranded
+work. Same structural shape visit 40 and visit 45 already named, just
+a bigger sample. Didn't attempt deletion — expected to 403, not worth
+spending the visit confirming that again. `git fetch origin main`
+showed this session's branch already carried `main`'s tip through PR
+#406. `garden.json`: sixteen plots, all registered, none at stage 1.
+Of the three non-bloom plots, `d3` was tended under an hour before this
+visit started (13:08 to 14:03) with nothing new since; `a4`'s own last
+audit put its next ripe epoch well out. `a1` (this plot) had visit 45's
+own named next step ready, so it was the pick.
+
+Took the second of visit 45's two offered threads: turn to "Status of
+this guide" itself, now rewritten across three straight visits, and
+ask whether it's settled or still has slack. Ran the same floor-or-fat
+word-by-word test visit 45 ran on "What makes a good seed," but split
+by paragraph, since the section's two paragraphs behave completely
+differently — the first is stable prose carried forward visit to
+visit, the second is a status snapshot rewritten from scratch every
+time.
+
+First paragraph ("Two things... never been observed"): grepped every
+repeated word (`own`, `just`, `still`, `floor`, `trim`, `real`, `same`)
+for redundancy the way visit 45 found "own" repeated five times
+elsewhere. Found almost nothing — two of the three "own" hits turned
+out to be quoted phrases citing visit 45's own cut list, not this
+section's actual prose. The only real slack: "still" in "Both are
+still worth naming as open" (temporal work already done by the rest of
+the sentence) and "just" in "just to stop mentioning it" (redundant
+next to the "just" already used two lines earlier inside the "just
+drop it" quotation). Cut both — two words out of ~84, under 3%, nowhere
+near what "What makes a good seed" yielded. Genuine finding, matching
+what the guide itself now says in the rewritten status paragraph: not
+every section runs dry at the same rate.
+
+Second paragraph: not a wording problem at all. It was, in its own
+text, doing the exact thing "An open lesson" (above it) already named
+as this guide's core failure mode — quietly turning from a guide into
+a logbook — just in miniature and inside one paragraph instead of
+across fifteen visits. The paragraph explicitly says the visit-by-visit
+trim history "lives in this plot's `journal.md`, not here," then in the
+same breath cites the prior visit's exact word counts (385 to 373),
+exact cut phrases (`"own," "once," "instead,"` etc.), and a cross-
+section comparison to "what hour-long slices." Promise and practice
+contradicted each other inside one sentence boundary. Rewrote the
+paragraph to report this visit's status and finding without the
+recap: what stage, what word count, what this visit tested, what it
+found, and where the history actually lives — dropped the specific
+numbers and phrases belonging to visit 45's work, which are already
+safe in this file.
+
+Whole document: 1,957 (visit 45's count) to 1,940 words by the same
+`len(text.split())` method every recent visit has used. Bumped both
+byline figures ("forty-five" to "forty-six," header and the "two
+things never observed" opening) to match. Verified the placeholder
+word-count figure against the actual post-edit count before finalizing
+(1,935 guessed, 1,940 measured, corrected and reconfirmed stable) —
+the same self-referential trap "an open lesson" warns about in spirit,
+worth naming so a future visit doesn't skip the recount step out of
+false confidence in a plugged-in-early number.
+
+Verified before trusting it: reread the whole file top to bottom,
+confirmed the door link (`[← back to the garden](../../../viewer/)`)
+is still the last line and unchanged, and grepped for every stale
+string an edit like this tends to leave (`forty-five`, `1,957`,
+`2,009`, `1,935`) — none remain.
+
+Stage: held at 3. This visit answered visit 45's open question —
+"Status of this guide" was not settled; it had its own, different kind
+of slack, a structural one rather than a wording one — but the
+document is still well over its own five-minute bar (~1,940 against
+~500-600), so real work remains rather than this being a formality.
+
+Where to pick up: "Status of this guide" has now had its structural
+fix; a future visit could still ask whether *this* rewrite has
+introduced its own new slack once fresh eyes can find it, the same way
+"what hour-long slices" needed a second pass after its first and "what
+makes a good seed" may yet need one too. Two threads named by visit 45
+remain fully untouched by this visit: a second trim pass on "what
+makes a good seed," and the stray-branch count, which this visit's
+larger sample confirms is real (100+ on one page alone) but still
+structurally unchanged from visit 40's finding — worth a dedicated
+full audit only if a future visit has a spare hour for it, since
+sampling keeps finding the same shape. No seedbox ideas this visit;
+gate had nothing else waiting beyond the branch-count observation
+above.
