@@ -42,6 +42,17 @@
     font-style: italic;
     text-shadow: 0 0 8px rgba(182, 163, 214, 0.3);
   }
+  @media (prefers-reduced-motion: reduce) {
+    .fragment {
+      animation: fade 9s ease-in-out forwards;
+    }
+  }
+  @keyframes fade {
+    0%   { opacity: 0; }
+    12%  { opacity: 0.85; }
+    75%  { opacity: 0.85; }
+    100% { opacity: 0; }
+  }
   @media (max-width: 480px) {
     .fragment {
       white-space: normal;
