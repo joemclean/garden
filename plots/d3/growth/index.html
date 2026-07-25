@@ -391,6 +391,7 @@
     saveKept(keptLines);
     renderKept(keptLines);
     input.value = "";
+    keepChime();
   });
 
   function spawnFragment() {
@@ -541,6 +542,41 @@
 
     osc.start(now);
     osc.stop(now + 3.3);
+  }
+
+  // The one sound that marks permanence rather than passage. The echo
+  // twinkle above is a single note, panned to wherever that borrowed line
+  // happened to land on screen — it comes from the field. Keeping a line
+  // is the visitor's own act, not the field's, so this sound is different
+  // on purpose: two notes in a short rising step (an arrival, not a
+  // passing sound), a warmer triangle wave instead of the twinkle's sine,
+  // centered rather than panned to any position, and a longer settle
+  // (4s vs. the twinkle's 3.2s) — it's the one sound in the piece meant to
+  // feel like it stays, the same way the kept line itself does. Silent
+  // whenever sound is off, same restraint as everything else here.
+  function keepChime() {
+    if (!soundOn || !audioCtx) return;
+    var now = audioCtx.currentTime;
+    var i = Math.floor(Math.random() * (HUSH_SCALE.length - 1));
+    [i, i + 1].forEach(function (step, n) {
+      var freq = HUSH_SCALE[step];
+      var start = now + n * 0.16;
+
+      var osc = audioCtx.createOscillator();
+      osc.type = "triangle";
+      osc.frequency.value = freq;
+
+      var g = audioCtx.createGain();
+      g.gain.setValueAtTime(0, start);
+      g.gain.linearRampToValueAtTime(0.06, start + 0.3);
+      g.gain.exponentialRampToValueAtTime(0.0001, start + 4);
+
+      osc.connect(g);
+      g.connect(masterGain);
+
+      osc.start(start);
+      osc.stop(start + 4.1);
+    });
   }
 
   spawnFragment();
