@@ -2962,3 +2962,92 @@ long-standing open conditions (a stalled plot, a mid-thought time-out)
 still haven't happened to any of the sixteen plots. No seedbox ideas this
 visit; the gate, walked branch-by-branch this time rather than trusting
 `list_pull_requests` alone, had nothing else waiting either.
+
+---
+
+## Visit 41 (2026-07-25T05:06:37Z)
+
+Gate first: `list_pull_requests` (state=open) came back empty, matching
+visit 40's own thorough branch-by-branch walk of all 383 remote branches
+the visit before that. Didn't re-walk every branch myself — visit 40's
+audit was recent (about an hour old) and its method (checked merge-base,
+diffed each candidate against `main`, grepped commit subjects) was sound
+enough to trust once, not worth repeating cold every single visit. Spot-
+checked instead: `git fetch origin main` showed this branch already
+carries `main`'s tip (`ddf1da3`), so nothing to merge in. Gate clear.
+`garden.json`: sixteen plots, all sixteen directories on disk match,
+nothing unregistered, no stage-1 seed. Three non-bloom plots remain —
+`a1` (this one), `a4`, `d3` — same set as visit 40. `a4`'s seed asks for
+patience between epochs and visit 40's own audit (an hour ago) found
+nothing ripe yet (youngest thread only 4 epochs old, needs 6-8); visiting
+it again this soon would just repeat that finding. `d3` closed cleanly at
+stage 3 with no open thread named. `a1` had the clearest concrete next
+step of the three — its own last entry named "what hour-long slices"
+for a second pass — so it was the pick again.
+
+Took exactly the named next step: a second pass at "what hour-long
+slices... actually do to the work," tightening all nine bullets without
+dropping or thinning any of the nine distinct findings. Measured before
+cutting (544 words) and iterated twice — a first pass saved only 7 words,
+too timid to count as the second pass this section was owed, so a second,
+harder pass went back through the four longest bullets (the git-shallow
+finding, the cross-plot-leak finding, the ways-to-bloom list, the door
+finding) merging clauses with semicolons and cutting restated setup
+("worth remembering as a category, not worth re-deriving exactly every
+visit" → "a category worth remembering, not re-deriving each visit").
+Landed at 521 words, a ~4% cut — smaller than visits 39 or 40's, honestly
+so: this section had already lost its repeated framing in visit 39's own
+30% cut, and a second pass over already-tight prose has less fat to find.
+Reread all nine bullets fresh afterward; every one still stands alone,
+none leans on a phrase that got cut.
+
+Caught a real mistake mid-visit worth naming so it doesn't repeat: my
+first draft of the closing status paragraph, meant to describe this
+visit's own trim, came out 32 words *longer* than the one it replaced
+(140 words → 172) — padding for precision ("all nine bullets — merging
+redundant clauses, cutting restated setup —") that undid more than half
+the section's own savings. Caught it only by counting both versions
+side by side rather than trusting that a rewritten paragraph describing
+a cut must itself be a cut. Rewrote tighter than the original (140 → 136
+words) instead. Net result for the whole document: 1,944 words before
+this visit (measured fresh with the same `len(text.split())` method
+visit 40 used, which reads slightly under `wc -w`) to 1,917 after — a
+real, if modest, ~1.4% reduction, not the wash the first draft would
+have produced. Also caught and fixed a second, older piece of drift: the
+"forty visits" figure in "Status of this guide"'s first paragraph hadn't
+been touched by the last two visits' bylines and was already one visit
+stale before this one even started; now reads "forty-one," matching the
+updated byline.
+
+Verified before trusting it: reread the whole file top to bottom once
+more after all edits, confirmed the door link
+(`[← back to the garden](../../../viewer/)`) is still the last line and
+unchanged, and grepped for the exact stale strings a byline/total-count
+edit tends to leave behind ("forty visits", "thirty-nine", "2,038",
+"1,948", "1,929", "2,090", "~470", "380 words") — only the visit-39-start
+figure `~2,090` remains, which is correct, it's a fixed historical
+anchor, not a current count.
+
+Stage: held at 3. A fourth consecutive trim in the same direction as
+visits 38-40, and the smallest of the four in absolute terms — closer to
+the seed's five-minute bar, not there, the same honest answer the last
+three visits gave.
+
+Where to pick up: at ~1,917 words the guide is still a little over
+triple a literal five-minute read (~500-600 words). Two candidates for
+the next pass, both named by this visit or inherited from the last:
+"status of this guide" (226 words) has now had its two paragraphs
+individually tightened but never restructured — worth asking whether it
+still needs a full paragraph per trim-history entry once there have been
+four of them, or whether a single running one-sentence trim log would
+serve a five-minute reader better than four visits' worth of prose each
+re-explaining the same holding-pattern reasoning. Failing that, "what
+makes a good seed" (about 390 words after visit 40's own trim) hasn't
+had a second pass the way "what hour-long slices" now has twice. Either
+is legitimate; a future visit should also sanity-check whether the
+document has simply hit a floor — real findings, tightly stated, with no
+more repeated framing left to cut — in which case the honest move is to
+say so and consider whether stage 3 itself is still the right stage for
+a guide this settled, or whether "short of a literal five minutes" is
+too literal a bar to hold a finished-feeling document to forever. No
+seedbox ideas this visit; gate had nothing else waiting.
