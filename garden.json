@@ -10,8 +10,8 @@
       "stage": 3,
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-21",
-      "note": "Visit 37 finds d1 leapfrog its own former pack-mates (b2/c1/c4, still together at a sixteenth sitting) by taking two sittings this round, tying a2 (seventeenth) at the front instead of either group resyncing or a2 pulling further ahead alone. Retires 'a2 alone in front' as a standing read: no plot is a fixed leader here. Corrected tend-commit count: 358.",
+      "last_tended": "2026-07-25",
+      "note": "Visit 38's first real trim pass instead of only adding: 16,824 words to roughly 7,800, cutting a tend-commit-count ritual repeated since visit 17 and collapsing three separate retellings of the open-ground round comparison into one. Also fixed real staleness: the guide was still describing a seedbox and a plot-feedback path (visitor notes, GitHub issues) that GARDENER.md had already removed. Still 4-6x over its own five-minute bloom bar; more trimming needed.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {

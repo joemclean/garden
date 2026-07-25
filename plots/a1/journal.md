@@ -2741,3 +2741,94 @@ or whether a member of the trailing three does what `d1` just did and
 leapfrogs to join them. The door-compliance and tend-commit-count
 bookkeeping are both current as of this visit. No seedbox ideas this
 visit; no feedback issues existed anywhere in the repo to weigh.
+
+---
+
+## Visit 38 — 2026-07-25
+
+Gate first: no open pull requests. `list_branches` turned up a long tail
+of stray `claude/charming-shannon-*` and `claude/blissful-ride-*` branches
+with no PRs attached — spot-checked a few against `origin/main` and found
+some already merged (safe to ignore, matching this guide's own note that
+deletion is denied and the human sweeps) and some genuinely unmerged, but
+none of them garden work with a PR open or a check failing, which is the
+actual trigger `GARDENER.md` names. Read this guide's own "What this is"
+section afterward and confirmed the current gate check in `GARDENER.md`
+no longer mentions comments or issues at all — worth remembering for next
+visit's gate check, not just this one's tending.
+
+Picked this plot the ordinary way: only two of fifteen sit below bloom
+(this one, `a4`), and `a4`'s own reasoning (a pace to keep, not a bloom
+line to reach) makes it the less urgent of the two. Read this plot's own
+`seed.md` cold, as always: bloom means "something a stranger could read
+to understand the whole system in five minutes." Then read the guide
+itself and did the arithmetic every prior visit's status paragraph never
+does — `wc -w`. 16,824 words. At any ordinary reading speed that's over
+an hour, not five minutes; this plot has been failing its own bloom
+condition for a long stretch of very productive-looking visits, one
+polite addition at a time, and nobody had said so plainly.
+
+Two real problems, not one. First, straightforward genre drift: the same
+open-ground round comparison was being narrated in full three separate
+times (once in "What makes a good seed," once in "What hour-long slices,"
+once in "Status of this guide"), and the tend-commit-count ritual —
+unshallow, recount, state the new total, restate the two standing open
+questions — repeated in nearly every visit's own paragraph since visit
+17, updating one number each time and little else. Second, and more
+serious: grepping for "seedbox" and "feedback" turned up live-sounding
+present-tense claims (a working seedbox mailbox, a feedback-issue path
+for one plot's finding to reach another) that `GARDENER.md`'s own recent
+commits ("Remove the seedbox," "Remove the feedback loop: no visitor
+notes or GitHub issues") had already retired. This guide had been
+confidently describing two mechanisms that no longer exist, for at least
+eighteen visits after they were removed — the exact "harness changed
+underneath the guide" failure mode visit 3 first named, just a bigger
+instance of it than any prior one.
+
+Did both in one pass rather than picking. Cut the guide from 16,824 words
+to roughly 7,800 (see the guide's own new closing paragraph for the exact
+method): collapsed the triple-narrated round comparison into one telling
+(inside "What hour-long slices"), compressed the visit-by-visit
+tend-commit ritual down to its current figure and known failure modes,
+and trimmed the visit-23 paragraph in "What makes a good seed" to its
+one durable finding instead of the full blow-by-blow. Separately, fixed
+the two stale mechanisms: rewrote the gate description in "What this is"
+to match current `GARDENER.md` (no comments, no issues, just PRs and
+stray branches), folded the seedbox's actual fate (existed, was used
+once, got removed without warning) into the existing "guide can go stale"
+bullet as a second, larger data point, and deleted the old "seedbox is a
+one-way mailbox" bullet outright since the mechanism it described is
+gone. Checked the whole file for any other live-sounding reference to
+either removed mechanism afterward — one remained, a historical citation
+of visit 9's own finding by name ("the seedbox isn't a queue"), left
+alone since it's citing something that was true when visit 9 wrote it,
+not asserting the seedbox exists now.
+
+Verified nothing broke: `grep -n "^## "` still shows the same six section
+headers in the same order, the back-link
+(`[← back to the garden](../../../viewer/)`) is still the last line, and
+a full read start-to-finish reads as one continuous document, not a
+patchwork — no dangling "as discussed above" pointing at a paragraph that
+got cut, no repeated word count claim left stale by the edit that produced
+it (the guide's own closing paragraph says "roughly 7,800" rather than a
+number that would go stale the instant a future visit adds a sentence).
+Left the stage at 3: this is real, substantial editing, but the plot is
+still short of its own bloom bar by a wide margin, not close enough to call
+finished.
+
+Where to pick up: still roughly four to six times longer than "five
+minutes" allows. The guide's own closing paragraph names two likely next
+targets — "What makes a good seed" still carries a fair amount of
+visit-by-visit texture (visits 21, 22 especially) that could compress the
+way "Status of this guide" just did without losing the load-bearing
+constraint-type finding (structural / restraint / menu), and the
+door/stage-crossing bullets in "hour-long slices" restate a similar idea
+(organizing vs. adding vs. verifying vs. skipping a stage honestly)
+across several separate entries that likely fold into one. Recount with
+`wc -w` after any such pass rather than estimating — that discipline is
+now stated explicitly in the guide's own text, so future visits have less
+excuse to skip it. The open-ground round comparison (`a2`/`d1` tied at
+seventeen, `b2`/`c1`/`c4` at sixteen) is unchanged since visit 37; didn't
+check for a new round this visit, since the hour went to the guide's own
+bloom bar instead. No seedbox ideas this visit — there is no seedbox to
+leave one in anymore.
