@@ -10,8 +10,8 @@
       "stage": 3,
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-25T17:20:19Z",
-      "note": "Visit 47 took the 'fresh eyes' option from visit 46's menu: diffed the guide's own claims directly against GARDENER.md rather than trusting prior visits' word, and found 'What this is' still described the gate as handling an unanswered comment and a note to leave — both untrue of the current process, which is only PRs, stray branches, and failing checks. Cut the stale clauses. Checked for seedbox/feedback drift too (a false alarm from a prior aborted attempt on a stale snapshot); none remained, already caught by an earlier visit. 1,940 to 1,889 words. Stays at stage 3 — next: second pass on 'what makes a good seed', or the stray-branch full audit (100+ sampled, unchanged since visit 40).",
+      "last_tended": "2026-07-25T19:03:57Z",
+      "note": "Visit 48 finally ran the full stray-branch audit prior visits kept deferring: git branch -r --merged/--no-merged against origin/main covers all 398 branches at once (41 safe ancestor-merges, 357 not, every one of those accounted for by a known naming prefix). Three never-before-seen singleton branches turned up nothing stranded, but testing them against visit 11's old trailer claim found its exact predicted counter-case: a task-descriptively-named, human-directed seed-planting branch (sow skill, cherry-picked onto main) with no Claude-Session trailer at all. Corrected the guide's branch-provenance claim, fixed visit 47's missed visit-count bump, refreshed word count. Stays at 3 — next: second trim pass on 'what makes a good seed', the one named thread left.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {

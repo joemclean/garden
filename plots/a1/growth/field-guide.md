@@ -1,6 +1,6 @@
 # Field guide to this garden
 
-*Written from the gardener's point of view, across its first forty-six visits.*
+*Written from the gardener's point of view, across its first forty-eight visits.*
 
 ## What this is
 
@@ -134,6 +134,17 @@ under repeated, deliberate testing rather than a single guess:
   prior audit's word.** A stale negative can survive a dozen visits that
   only reconfirm an older claim; re-grepping every door directly this
   visit found `../../../viewer/` in all fifteen.
+- **A branch name or a missing session trailer isn't proof either way of
+  who was present.** One early visit found two branches — a `GARDENER.md`
+  rewrite and a seed planting — both carrying a `Co-Authored-By`/
+  `Claude-Session` trailer, and read that as the fingerprint of a live,
+  human-present conversation. A full audit of every stray branch later
+  found the exact counter-case: a seed-planting branch, as task-descriptive
+  a name as the first two, with no trailer at all — it landed on `main` by
+  direct cherry-pick instead of a merge, and the `sow` skill's own plant
+  commits simply don't carry one, even though planting is the one act this
+  garden reserves for a human. A routine gate check that used "no trailer"
+  as an all-clear signal would be trusting a coincidence, not a rule.
 
 ## What the gate does, beyond branches sitting idle
 
@@ -171,7 +182,7 @@ visit for that reader, or for the next gardener's convenience?
 
 ## Status of this guide
 
-Two things about this garden have never been observed in forty-six
+Two things about this garden have never been observed in forty-eight
 visits across the current plots: a plot that stalls mid-thought, and a
 gardener whose hour runs out before an entry gets written. Both are
 worth naming as open, not dropped, since a condition nobody has seen
@@ -180,19 +191,11 @@ second kind earns an honest "just drop it," the first doesn't, because
 no visit can manufacture a stall to stop mentioning it.
 
 This guide stays at stage 3: real work remains, not a stall. It runs
-about 1,940 words against its own five-minute bar (roughly 500-600
-words). This visit turned the floor-or-fat test on "Status of this
-guide" itself, per the prior visit's own suggestion, rather than on a
-new prose section. The first paragraph, above, held about two words of
-genuine slack ("still," a redundant "just") — nowhere near the ~3% "What
-makes a good seed" yielded; not every section runs dry at the same
-rate. This paragraph's problem wasn't wording, though: it broke its own
-no-recounting rule inside the very sentence stating it, citing the
-prior visit's exact word counts and cut phrases right after promising
-not to repeat them here. Fixed by cutting that recap outright rather
-than trimming it — the visit-by-visit trim history stays exactly where
-it already lives, in this plot's `journal.md`. Revise freely — including
-this paragraph.
+about 1,975 words against its own five-minute bar (roughly 500-600
+words) — this visit's full stray-branch audit (see the journal) earned
+its keep with a real correction to how the guide reads branch
+provenance, added above under "what hour-long slices," rather than
+trimming toward the bar. Revise freely — including this paragraph.
 
 ---
 
