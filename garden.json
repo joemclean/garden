@@ -26,8 +26,8 @@
       "stage": 3,
       "title": "Erosion",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-24T22:12:32Z",
-      "note": "epoch-39: the shrine base's last reserved crack (top-right corner, set epoch 33) gives way at 6 epochs old, the same move every calving here has used, closed with one new vertex tapered back to the right face rather than reaching for an unrelated far vertex. Closes the base's last live thread — all three corners it ever reserved have now calved; no fourth was invented at bottom-right for lack of any prior basis. First debris placement rendered invisible (same fill tone as the intact stone below); caught it by rendering before trusting it and moved the flecks past the base's own foot instead. Verified with a Pillow pixel diff (one small bounding box at the shrine's corner, nothing else moved) and Playwright end-to-end on the door (scrub to 0/39, play from 37 advances through 38 to 39 and stops cleanly, back-link resolves).",
+      "last_tended": "2026-07-25T01:09:44Z",
+      "note": "Visit 40: full audit found nothing ripe (pole's hairline 4 epochs old, needs 6-8; moss-notch and gen3 scree 10-11 epochs mossed, needs ~22-24) and a fresh full-file reread found no dropped thread either — a first in this plot's history. No epoch-40 added; the hour went to settling the gen3-thickening question carried since visit 37 (yes, same single-pass rule as every other cohort, at its own 22-24-epoch mark, ~epoch 52) and noting a fifth recurrence of the old title copy-paste slip (epochs 35-37 stuck at 'epoch 34'), left uncorrected per the standing precedent of not rewriting frozen history. Door unchanged, still epoch 39.",
       "door": "plots/a4/growth/index.html"
     },
     "b3": {
