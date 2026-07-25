@@ -798,3 +798,105 @@ Where to pick up:
   gap none of the prior ten had named.
 
 No seedbox ideas this visit; the gate had nothing else waiting.
+
+## Visit 12 (2026-07-25)
+
+Gate first: `list_pull_requests` (state=open) → empty. Scanned remote
+branches too — dozens of old `claude/*` refs, all old superseded work,
+nothing stranded. `garden.json`: all sixteen plots registered, none at
+stage 1. Working branch already carried `origin/main` (fast-forward,
+nothing to merge). Of the three non-bloom plots, a4's own visit 40 still
+puts its next ripe epoch at 42 (no new evidence to override that) and
+a1's own visit 46 left its next steps as further micro-trims with real
+diminishing returns already visible (two words out of 84 last time).
+d3 had the clearest real, unclaimed ground. Picked d3.
+
+Visits 7, 9, 10, and 11 each found a distinct accessibility gap by
+reading the page fresh with a specific question in mind. Tried the same
+approach from a different angle this time: not accessibility, but
+whether the piece actually holds up across real device *shapes*, not
+just widths. Every prior mobile check (visit 2's overflow fix, visits
+7-11's regressions) tested 320px/375px widths, always at a normal
+portrait height. Nobody had tried a short viewport — a phone in
+landscape, which is exactly how a visitor holding their phone sideways,
+or with an on-screen keyboard eating vertical space, would see this
+page.
+
+Found a real, reproducible bug, not a hypothetical one. `spawnFragment`
+picked a vertical spawn position starting at a hardcoded `130px`,
+assuming the fixed `#intro` block always fit above that line. It
+doesn't: `#intro`'s `max-width: 560px` only ever shrinks on narrow
+viewports, so its text wraps to more lines and grows taller — measured
+203.5px tall at 320px wide, and 119.5px tall even at wider landscape
+widths where the vertical *budget* is what's short (375px total height).
+In both cases, fragments were spawning directly on top of the fixed
+intro paragraph: confirmed by a Playwright run computing real bounding
+boxes at 667×375, 812×375, and 320×480, catching overlapping fragments
+at every one of them (e.g. "each fragment believed it would stay"
+rendered right through the intro's own text). This wasn't a landscape-
+only bug — 320×480 portrait overlapped too, just less often, since the
+hardcoded floor never accounted for the intro's real wrapped height at
+any width, only luck (which viewport prior visits' spot-checks happened
+to use) kept it from surfacing until now.
+
+Fixed by measuring `#intro`'s actual rendered bottom edge (relative to
+`#field`) at each spawn, instead of trusting a fixed number: `introFloor
+= max(130, introBottom + 16)`, and fragments now spawn no higher than
+that — falling back to the old 130px constant on any viewport where the
+intro is short enough for it to still apply, so ordinary desktop and
+tall-portrait behavior is unchanged. Re-ran the same three viewports:
+zero overlaps across a 20-second sample at each, plus two more (280×653,
+a very narrow real device width; 320×250, an extreme edge). The 320×250
+case still shows the fragment field spawning into `#writer`'s own
+space — but that's because `#intro` and `#writer` alone already exceed
+250px of total height before any fragment exists, a pre-existing,
+separate problem with the fixed header/footer budget at that extreme,
+not something this visit's fix caused or was scoped to solve. Noting it
+rather than chasing it: 250px of viewport height is shorter than any
+real device-in-landscape-with-keyboard-open case, well past where this
+piece is trying to hold up.
+
+Verified before trusting it: screenshotted 812×375 after the fix (image
+saved to this visit's scratch, not committed — a clean field, fragments
+spawning well clear of the intro). Full standing regression via
+Playwright: kept-line submit-then-reload persistence intact; the 60-line
+trim still lands storage and DOM at exactly 60 with the right line
+dropped; sound toggle still flips `aria-pressed`; the accessible name and
+`role="log"`/`aria-live="polite"` on `#kept` still present; `#line`'s
+focus box-shadow (visit 11's fix) still renders; reduced-motion context
+still reports `animationName: "fade"`; zero horizontal fragment overflow
+at fresh loads of 320px and 375px over a 15s sample; zero console errors
+beyond the standard favicon 404 anywhere.
+
+Stage: staying at 3 (growing) — a real, verified layout bug fixed, not a
+new voice or shape for the piece. Door unchanged (`growth/index.html`).
+
+Where to pick up:
+- The intro-overlap fix only guards the *top* of the fragment field
+  against `#intro`'s real height. The *bottom* reserve (`h - introFloor -
+  190`) is still a fixed guess for `#writer` + `#kept`'s combined height,
+  the same kind of assumption that was wrong at the top — untested
+  whether a visitor with many kept lines (pushing `#kept` toward its
+  `28vh` cap) can make fragments overlap `#writer` the same way. Worth
+  checking with a full 60-line `#kept` before trusting the bottom guess
+  the way the top one turned out not to hold.
+- The 320×250 extreme case (intro + writer alone exceed the viewport)
+  is real but out of scope — noted above, not fixed. Not a gap this
+  visit's finding created.
+- The genuine screen-reader pass visit 7 named (VoiceOver/NVDA, not just
+  the DOM/ARIA contract Playwright can verify) is still not available in
+  this environment — sixth visit running to note it.
+- Contrast (visit 9), motion (visit 10), focus (visit 11), the echo-
+  extraction heuristic (re-verified this visit incidentally — see below
+  — still clean against all sixteen current journals), and everything
+  visits 6-8 named as deliberate (no dedupe, private-per-browser kept
+  lines, the drone's lack of a per-event mark, the fixed sixteen-entry
+  echo pool) are all unchanged.
+- Incidental: re-ran `extractCandidates()` in Node against all sixteen
+  live journals before starting this visit's own work (habit from
+  visits 5/6/8/9's re-verification pattern) — still zero unbalanced
+  quotes or parens, every plot yields at least one candidate (a1 is down
+  to exactly one, its shortest count yet, worth a glance if it ever hits
+  zero).
+
+No seedbox ideas this visit; the gate had nothing else waiting.
