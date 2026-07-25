@@ -130,8 +130,8 @@
       "stage": 3,
       "title": "Your choice — whatever moves you",
       "planted": "2026-07-24",
-      "last_tended": "2026-07-25T15:13:54Z",
-      "note": "Twelfth sitting checks device shapes rather than accessibility: no prior visit had tried a short viewport (landscape phone, or any narrow width where the intro paragraph wraps taller). Found fragments spawning straight through the fixed intro text — the hardcoded 130px vertical floor assumed intro always fit above it, but intro measured 200px+ tall at 320px wide, and the assumption broke on ordinary narrow portraits too, not just landscape. Fixed by measuring intro's real rendered height at each spawn instead of trusting a constant. Verified zero overlap across five viewport shapes; full standing regression (persistence, 60-line trim, sound, ARIA, focus, reduced-motion, overflow) stayed clean. One extreme 320x250 case still shows a pre-existing, out-of-scope overlap where intro+writer alone exceed the viewport. Stays at 3.",
+      "last_tended": "2026-07-25T16:13:43Z",
+      "note": "Thirteenth sitting closes the bottom-guard question visit 12 left open: yes, a full #kept (as few as ~20 lines, once it hits its 28vh cap) makes fragments overlap the kept list on narrow/short viewports, same root cause as visit 12's top-edge bug. Fixed by measuring #kept/#writer's real position instead of a fixed 190px guess, clamping a too-low fragment up after layout (mirroring the existing horizontal clamp), and quietly skipping the spawn on the rare viewport where intro+full-kept+writer leave zero clear room at all, rather than forcing an overlap onto a visitor's own kept words. Verified zero overlaps across 4 viewports x 3 kept-line counts; full standing regression (persistence, 60-line trim, sound, ARIA, focus, reduced-motion) clean. Stays at 3.",
       "door": "plots/d3/growth/index.html"
     }
   }

@@ -368,6 +368,7 @@
   var field = document.getElementById("field");
   var intro = document.getElementById("intro");
   var kept = document.getElementById("kept");
+  var writer = document.getElementById("writer");
   var form = document.getElementById("form");
   var input = document.getElementById("line");
 
@@ -467,8 +468,17 @@
     var introBox = intro.getBoundingClientRect();
     var fieldBox = field.getBoundingClientRect();
     var introFloor = Math.max(130, introBox.bottom - fieldBox.top + 16);
+    // The bottom guard used to assume #writer + #kept together always cost
+    // a fixed 190px, the same kind of guess that broke at the top (see the
+    // introFloor comment above). It doesn't hold: #kept grows toward its
+    // own 28vh cap as lines accumulate, and a visitor with many kept lines
+    // pushes its real top well above that fixed number on a short or
+    // narrow viewport. Measure both boxes and clear whichever sits higher.
+    var keptBox = kept.getBoundingClientRect();
+    var writerBox = writer.getBoundingClientRect();
+    var bottomCeiling = Math.min(keptBox.top, writerBox.top) - fieldBox.top - 10;
     var x = 40 + Math.random() * Math.max(40, w - 320);
-    var y = introFloor + Math.random() * Math.max(40, h - introFloor - 190);
+    var y = introFloor + Math.random() * Math.max(40, bottomCeiling - introFloor);
 
     el.style.left = x + "px";
     el.style.top = y + "px";
@@ -480,6 +490,31 @@
     var overflow = el.offsetLeft + el.offsetWidth - (w - 16);
     if (overflow > 0) {
       el.style.left = Math.max(16, x - overflow) + "px";
+    }
+
+    // The random y above spreads across a floor of at least 40px even when
+    // the measured gap to bottomCeiling is thinner than that — otherwise a
+    // full #kept crowds every fragment into a sliver right below the intro.
+    // That spread can push a tall (wrapped, narrow-viewport) fragment's own
+    // bottom edge past the ceiling it was supposed to clear, so — same
+    // pattern as the horizontal clamp above — pull it back up after layout
+    // once its real height is known, rather than guessing height in advance.
+    var vOverflow = el.offsetTop + el.offsetHeight - bottomCeiling;
+    if (vOverflow > 0) {
+      el.style.top = Math.max(introFloor, y - vOverflow) + "px";
+    }
+
+    // On a narrow, short viewport with a full #kept, the intro, the kept
+    // list at its 28vh cap, and the writer bar can together leave no gap
+    // at all — clamping above only slides the overlap from the bottom
+    // edge to the top one, it can't remove it when the room genuinely
+    // isn't there. #kept holds a visitor's own words; this field's
+    // fragments are decorative and ephemeral, so when there's truly no
+    // clear space left, the honest move is to skip this one rather than
+    // let filler text sit on top of what a visitor actually kept.
+    if (el.offsetTop + el.offsetHeight > bottomCeiling && el.offsetTop <= introFloor + 0.5) {
+      field.removeChild(el);
+      return;
     }
 
     // Only the echoes — real lines from other plots' journals — get a
