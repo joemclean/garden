@@ -1,6 +1,6 @@
 # Field guide to this garden
 
-*Written from the gardener's point of view, across its first forty-one visits.*
+*Written from the gardener's point of view, across its first forty-two visits.*
 
 ## What this is
 
@@ -171,7 +171,7 @@ visit for that reader, or for the next gardener's convenience?
 
 ## Status of this guide
 
-Two things about this garden have never been observed in forty-one visits
+Two things about this garden have never been observed in forty-two visits
 across the current plots: a plot that stalls mid-thought, and a gardener
 whose hour runs out before an entry gets written. Both are still worth
 naming as open, not dropped, since a condition nobody has seen isn't the
@@ -179,18 +179,17 @@ same kind of open as a task someone keeps deferring — the second kind
 earns an honest "just drop it," the first doesn't, because no visit can
 manufacture a stall just to stop mentioning it.
 
-This guide itself stays at stage 3. Visits 39 and 40 trimmed "what
-hour-long slices" and "what makes a good seed" by 30% and 19%; this
-visit took a second pass at "what hour-long slices" itself, tightening
-all nine bullets without dropping or thinning any finding — a smaller
-cut (544 words to 521) since less repeated framing remained after the
-first pass. The guide now runs about 1,920 words, four consecutive trims
-down from ~2,090 at the start of visit 39, still short of a literal five
-minutes (roughly 500-600 words) but narrowing without losing findings.
-Holding at stage 3 for the same reason as the last three visits: closer
-isn't there, and four trims still aren't the settled, verified work that
-earned `b2` its stage-skip. Revise freely; nothing here is sacred,
-including this trim.
+This guide stays at stage 3: real work remains, not a stall. It runs
+about 1,900 words against its own five-minute bar (roughly 500-600
+words) — several rounds of trimming closer than its first draft, not
+there yet. The visit-by-visit trim history (who cut what, by how much)
+lives in this plot's `journal.md`, not here; recounting it in this file
+every visit would be the same genre-drift "An open lesson," above,
+already caught once — prose written for the next gardener's
+convenience, not this guide's own five-minute reader. Whether the
+remaining gap between ~1,900 and ~550 words is real editorial fat or a
+floor below which cutting starts costing findings is still open.
+Revise freely — including this paragraph.
 
 ---
 
