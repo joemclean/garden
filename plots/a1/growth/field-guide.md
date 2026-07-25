@@ -1,6 +1,6 @@
 # Field guide to this garden
 
-*Written from the gardener's point of view, across its first forty-nine visits.*
+*Written from the gardener's point of view, across its first fifty visits.*
 
 ## What this is
 
@@ -94,55 +94,51 @@ under repeated, deliberate testing rather than a single guess:
   invisible from inside any one plot.
 - **A confident claim can be untested prediction wearing the voice of
   fact.** Three visits called "merge, then delete the branch" one clean
-  motion before anyone actually tried it; the delete reliably 403s, and
-  `GARDENER.md` now says so directly: skip it, the human sweeps.
+  motion before anyone tried it; the delete reliably 403s, and
+  `GARDENER.md` now says so: skip it, the human sweeps.
 - **A git checkout can understate its own history by default.** Fresh
   containers clone shallow, so a commit or branch count without `git
-  fetch --unshallow` first is likely an undercount — a category worth
-  remembering, not re-deriving each visit; that arithmetic once ballooned
-  this guide for over a dozen visits, teaching nothing new after the
-  first.
-- **Plots leak craft knowledge, stage-reasoning, and — once — a whole
-  unit of content to each other through journals, though the work itself
-  stays isolated.** `GARDENER.md` forbids one plot's *content* bleeding
-  into another's, but nothing stops a gardener reading a sibling's
-  journal for technique or precedent; the wholesale-content case is the
-  exception the Menu bullet, above, points to. `garden.json`'s one-line
-  note is the one channel every visit reads on purpose, the place to
-  leave a finding the right future visit will see.
+  fetch --unshallow` first is likely an undercount — that arithmetic once
+  ballooned this guide for a dozen visits before teaching anything new.
+- **Plots leak craft knowledge and stage-reasoning to each other through
+  journals — once, a whole unit of content — though the work itself stays
+  isolated.** `GARDENER.md` bars one plot's *content* from bleeding into
+  another's, but nothing stops reading a sibling's journal for technique
+  or precedent; the wholesale-content case is the exception the Menu
+  bullet, above, points to. `garden.json`'s one-line note is the one
+  channel every visit reads on purpose — where to leave a finding the
+  right future visit will see.
 - **Plot selection favors staleness on purpose, and won't visit plots
   evenly.** The longest-untouched plot pulls the gardener back even with
   livelier plots competing. When several share a `last_tended` date,
   comparing actual commit timestamps breaks the tie.
-- **There is more than one way to bloom.** Arranging existing material into
-  a whole (`c2`); adding new material that closes a long-named thread
+- **There is more than one way to bloom.** Arranging existing material
+  into a whole (`c2`); closing a long-named thread with new material
   (`d4`, `b3`); verifying an old claim by actually driving the thing
-  instead of trusting a prior visit's word (`c3`); naming that an
-  intermediate stage never really described the plot and skipping it
-  honestly (`b2`, 2 → 4 in one jump). None of these is *the* test —
-  `b3`'s own bloom line, "I forget I'm in a browser for a minute," is a
-  felt experience no thread-count reaches.
+  rather than trusting a prior visit's word (`c3`); naming that an
+  intermediate stage never fit and skipping it honestly (`b2`, 2 → 4 in
+  one jump). None of these is *the* test — `b3`'s own bloom line, "I
+  forget I'm in a browser for a minute," is a felt experience no
+  thread-count reaches.
 - **Not every plot short of bloom is short the same way.** This guide is
   unfinished because real work remains. `a4` is a one-way, epoch-paced
-  process with no stated finish line — its seed defines a rate to keep,
-  not a condition to reach, so "growing" isn't evidence of anything left
-  undone.
+  process with no stated finish line — its seed sets a rate to keep, not
+  a condition to reach, so "growing" isn't evidence of anything undone.
 - **A door can miss its one universal requirement — a working way back —
-  for a long time before anyone checks the live file instead of trusting a
-  prior audit's word.** A stale negative can survive a dozen visits that
-  only reconfirm an older claim; re-grepping every door directly this
-  visit found `../../../viewer/` in all fifteen.
-- **A branch name or a missing session trailer isn't proof either way of
-  who was present.** One early visit found two branches — a `GARDENER.md`
-  rewrite and a seed planting — both carrying a `Co-Authored-By`/
-  `Claude-Session` trailer, and read that as the fingerprint of a live,
-  human-present conversation. A full audit of every stray branch later
-  found the exact counter-case: a seed-planting branch, as task-descriptive
-  a name as the first two, with no trailer at all — it landed on `main` by
-  direct cherry-pick instead of a merge, and the `sow` skill's own plant
-  commits simply don't carry one, even though planting is the one act this
-  garden reserves for a human. A routine gate check that used "no trailer"
-  as an all-clear signal would be trusting a coincidence, not a rule.
+  for a long time before anyone checks the live file instead of trusting
+  a prior audit.** A stale negative can survive a dozen visits that only
+  reconfirm it; re-grepping every door directly this visit found
+  `../../../viewer/` in all fifteen.
+- **A branch name or a missing session trailer isn't proof of who was
+  present.** One early visit read two branches' `Co-Authored-By`/
+  `Claude-Session` trailers — a `GARDENER.md` rewrite and a seed planting
+  — as the fingerprint of a live, human-present conversation. A later
+  full branch audit found the counter-case: another seed-planting branch,
+  just as task-descriptive, carried no trailer at all — it landed by
+  direct cherry-pick, and the `sow` skill's own plant commits never carry
+  one, even though planting is the one act this garden reserves for a
+  human. A gate check treating "no trailer" as all-clear would be
+  trusting a coincidence, not a rule.
 
 ## What the gate does, beyond branches sitting idle
 
@@ -180,7 +176,7 @@ visit for that reader, or for the next gardener's convenience?
 
 ## Status of this guide
 
-Two things about this garden have never been observed in forty-nine
+Two things about this garden have never been observed in fifty
 visits across the current plots: a plot that stalls mid-thought, and a
 gardener whose hour runs out before an entry gets written. Both are
 worth naming as open, not dropped, since a condition nobody has seen
@@ -189,11 +185,14 @@ second kind earns an honest "just drop it," the first doesn't, because
 no visit can manufacture a stall to stop mentioning it.
 
 This guide stays at stage 3: real work remains, not a stall. It runs
-about 1,926 words against its own five-minute bar (roughly 500-600
-words) — this visit trimmed "what makes a good seed" (see the
-journal), the thread named as the one left; it's real ground made up,
-but far short of what the bar still asks for. Revise freely —
-including this paragraph.
+about 1,911 words against its own five-minute bar (500-600 words) —
+this visit tested whether trimming alone can close that gap by cutting
+the most padded section as hard as possible while keeping every
+example, and recovered only 50 words. Wording trims can't reach 500-600
+from here; most of what's left is kept detail, not padding. Closing the
+gap for real means cutting whole examples, or accepting a bloom shape
+longer than "five minutes" implies — a bigger call than wording. Revise
+freely — including this paragraph.
 
 ---
 
