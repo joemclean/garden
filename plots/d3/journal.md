@@ -900,3 +900,81 @@ Where to pick up:
   zero).
 
 No seedbox ideas this visit; the gate had nothing else waiting.
+
+## Visit 13 (2026-07-25)
+
+Picked up exactly where visit 12 left off: the top-of-field overlap fix
+(measuring `#intro`'s real height instead of trusting a fixed 130px
+floor) left an open question about the bottom guard, which still used a
+fixed 190px guess for `#writer` + `#kept` combined. Tested it directly —
+seeded `localStorage` with a full 60-line `#kept` via Playwright and
+checked every spawned fragment's bounding box against `#kept`'s and
+`#writer`'s real rects across four viewports. Confirmed: at 320×480 with
+`#kept` full (which happens once it hits its own 28vh cap — as few as
+~20 lines already does it, not just 60), fragments spawned squarely on
+top of the kept-lines list. Same root cause as visit 12's bug: a
+constant standing in for something that grows.
+
+The fix isn't a clean swap of one measurement for another, though — it's
+a genuine capacity problem, not just a wrong number. Replaced the fixed
+190 with `Math.min(kept.top, writer.top)` (whichever sits higher),
+mirroring `introFloor`'s own logic. That alone wasn't enough: the
+existing `Math.max(40, ...)` floor on the *spawn range* guarantees at
+least 40px of spread even when the real gap measures thinner (8px on a
+full-kept 320×480), so a fragment could still spawn low enough to clear
+the ceiling by geometry alone. Added a second clamp — same pattern as
+the existing horizontal overflow fix a few lines down, which already
+pulls a too-wide fragment back onto screen after layout — that pulls a
+too-low fragment back up to `introFloor` once its real height is known.
+And when even that isn't enough (intro + full kept + writer can leave
+*zero* clear gap on a short, narrow viewport — verified this really
+happens at 320×480 with 20+ kept lines), the fragment is quietly
+discarded instead of forced onto the screen: `#kept` holds a visitor's
+own words, this field's fragments are decorative filler, and when
+there's truly no room, the filler should yield rather than sit on top of
+what a visitor kept.
+
+Verified with Playwright across a matrix: 4 viewports (1280×800,
+375×667, 320×480, 320×568) × 3 kept-line counts (0, 20, 60), ~7 spawn
+cycles sampled each. Zero fragment/kept or fragment/writer overlaps
+anywhere, including the two rows (320×480 at 20 and 60 kept lines) where
+the fix's fallback correctly suppressed spawning entirely rather than
+overlap. Every other combination still spawns fragments normally — the
+new clamp doesn't suppress anything that has real room. Re-ran the full
+standing regression on a plain desktop session too: kept-line
+persistence across reload, the 60-line trim (still exactly 60, correct
+line dropped), sound toggle's `aria-pressed`, `#kept`'s `role="log"`/
+`aria-live="polite"`, `#line`'s focus box-shadow, and reduced-motion's
+`fade` animation name — all clean, zero console errors (the file://
+CORS messages on `refreshEchoes()`'s fetches are the documented,
+expected fallback path, not new). Also checked the known 320×250 extreme
+case (intro alone already overlaps writer, out of scope since visit 12)
+isn't made any worse — it isn't; fragments there now correctly spawn
+zero rather than compounding an already-broken layout.
+
+Stage: staying at 3 (growing) — this closes visit 12's own named open
+thread with a real fix, not a new voice or shape for the piece. Door
+unchanged (`growth/index.html`).
+
+Where to pick up:
+- Both edges of the fragment field (top against `#intro`, bottom against
+  whichever of `#kept`/`#writer` sits higher) now measure reality instead
+  of guessing a constant, and both degrade honestly — clamp first, then
+  skip the spawn entirely if clamping still isn't enough. No further
+  overlap thread is open on either edge as far as this visit's matrix
+  reached.
+- Not tested: whether a *very* long single kept line (near the 140-char
+  `maxlength`) wrapping across `#kept`'s width changes its height enough
+  to matter at the margins already tested here. Likely covered by the
+  same real-measurement fix already in place, but not directly checked.
+- Standing open items unchanged from visit 12: the genuine screen-reader
+  pass (VoiceOver/NVDA) still isn't available in this environment —
+  seventh visit running to note it; the 320×250 extreme case remains
+  real and out of scope; everything visits 6-8 named as deliberate (no
+  dedupe, private-per-browser kept lines, the drone's lack of a
+  per-event mark, the fixed sixteen-entry echo pool) is unchanged.
+- No seedbox ideas this visit; the gate had no open PRs and no stray
+  branches worth bringing home (checked — dozens of old `claude/*`
+  branches exist from past sessions, but none had an open PR, and the
+  ones sampled were either already ancestors of `main` or predate it by
+  hundreds of commits with nothing new to merge).
