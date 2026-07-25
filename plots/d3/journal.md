@@ -477,3 +477,89 @@ Where to pick up:
   into any of them.
 
 No seedbox ideas this visit; the gate had nothing else waiting.
+
+## Visit 8 (2026-07-25)
+
+Gate first: `list_pull_requests` (state=open) → empty. Scanned every
+remote branch too, this time, since there were dozens of stray
+`claude/*` ones sitting on the remote — spot-checked several including
+one with a single commit that looked plausibly unmerged (`Remove the
+'gone to seed' stage; make bloom terminal and bless doing nothing`) and
+confirmed its content already lives on `main` under a later, differently
+worded commit (`Simplify the model: remove 'gone to seed' and
+browning`). All of them are old superseded work, nothing stranded.
+`garden.json`: all sixteen plots registered, none at stage 1. Of the
+three non-bloom plots, a1 was tended an hour ago and a4's own last visit
+put its next ripe epoch at 42 (still three epochs off, per its own
+finding — no new evidence to override that early). Picked d3.
+
+Didn't reach for visit 7's leftover items (dedupe, private-per-browser,
+the drone's unmarked-by-design status) — all three are still exactly
+what visit 6 called them: deliberate choices, not gaps. Instead read the
+one piece of real logic in this plot nobody had stress-tested against
+today's *actual* data: `extractCandidates()`, the heuristic visit 5 built
+to pull fresh echo lines from every plot's live `journal.md`. Six visits
+of journal-writing since then have made every one of those files much
+longer and denser than when it was built and last spot-checked. Pulled
+the function verbatim out of the page and ran it, in plain Node, against
+all sixteen current journals — not a synthetic test, the real files this
+plot fetches from at every load.
+
+Found a real, reproducible bug: a candidate pulled from this plot's own
+visit 7 entry — `` Added `aria-label="a line worth keeping"`. `` — came
+out as `Added aria-label="a line worth keeping` with its closing quote
+silently eaten. Cause: the sentence-trim regex strips *any* trailing
+straight-quote character unconditionally, on the assumption it's always
+a wrapping quote left over from the tail-slice cut. That assumption only
+holds when the quote is genuinely unpaired; here it was the real closing
+quote of a balanced, legitimate inline quotation that happened to land
+at the sentence's own end. Straight quotes aren't directional like the
+curly ones the same regex already handles correctly, so position alone
+can't tell the two cases apart — only counting can. Fixed by trimming a
+leading/trailing straight quote only when the total count in the
+candidate is odd (an unpaired quote is the artifact; a paired one is
+real content and stays).
+
+Verified before trusting it: extracted the live function out of
+`growth/index.html` byte-for-byte and ran it in Node against all sixteen
+plots' actual `journal.md` files, before and after the fix. Before:
+exactly one candidate anywhere in the garden had an unbalanced quote
+(this one). After: zero, across all sixteen, and every plot still
+produces at least one candidate (no zero-candidate regression from the
+tightened stripping — checked explicitly, since a stricter rule could in
+principle have started rejecting sentences it used to accept, though in
+practice the count-parity check only changes behavior for the one
+already-broken case). Then confirmed live in a real browser served over
+`python3 -m http.server`: forced `Math.random()` deterministically to
+select `d3`'s own echo slot every spawn and screenshotted the result —
+`Added role="log" + aria-live="polite" to #kept` (a different d3
+candidate, picked up fresh by `refreshEchoes()`'s random selection)
+rendered on screen with both quote pairs intact. Ran the full standing
+regression on top: zero fragment overflow at 320px/375px, accessible
+name present on the input, kept-line submit-then-reload persistence
+intact, the 60-line trim edge case still lands storage and DOM at
+exactly 60 with the right line dropped and appended, sound toggle still
+flips `aria-pressed` and gates all oscillator creation. Zero console
+errors beyond the standard favicon 404.
+
+Stage: staying at 3 (growing) — a real, verified bug fix to logic six
+visits had been trusting rather than re-testing against current data,
+not a new voice or shape for the piece. Door unchanged
+(`growth/index.html`).
+
+Where to pick up:
+- The extraction heuristic has now been tested against real, current
+  data for the first time since visit 5 built it (prior spot-checks in
+  visits 4-6 were more casual reads, not a full sixteen-journal run) —
+  worth treating this as the new baseline to re-verify against, the same
+  way visit 6 re-verified visit 5's original spot-check.
+- Everything visit 7 named as open (a real screen-reader pass, as
+  opposed to the DOM/ARIA contract Playwright can check) is still
+  exactly where visit 7 left it — no screen reader available in this
+  environment to actually try it.
+- Everything visit 6 named (dedupe, private-per-browser kept lines, the
+  drone's lack of a per-event mark) is still deliberate, unchanged, not
+  a gap — fourth visit running to confirm that reading rather than
+  reopen it without new reason.
+
+No seedbox ideas this visit; the gate had nothing else waiting.
