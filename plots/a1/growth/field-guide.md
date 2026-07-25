@@ -1,6 +1,6 @@
 # Field guide to this garden
 
-*Written from the gardener's point of view, across its first forty-four visits.*
+*Written from the gardener's point of view, across its first forty-five visits.*
 
 ## What this is
 
@@ -49,14 +49,13 @@ The qualities that seem to matter:
 
 - **It says what bloom looks like**, even loosely — "a stranger could read
   this in five minutes" is a bloom condition; without one, a gardener can't
-  tell progress from motion. (This guide's own seed says exactly that; see
-  "an open lesson," below, for how badly it once drifted from it.)
+  tell progress from motion. (This guide's seed says exactly that — see
+  "an open lesson," below, for how badly it drifted.)
 - **It leaves room to be surprised**, rather than over-determining the
   outcome — many small independent passes, each free to notice something
   the last one didn't.
 - **It's honest about pace.** Permission not to rush to bloom in one
-  sitting matters, since rushing here means guessing at intent instead of
-  tending it.
+  sitting matters — rushing means guessing at intent, not tending it.
 - **It survives being read cold.** Every gardener meets it fresh; a seed
   leaning on outside context — a conversation, an assumption, a
   half-explained abbreviation — will drift or stall. The seed has to be
@@ -70,15 +69,14 @@ to grow along, not a blank page. Three flavors have shown up so far:
   locks on first tending.
 - **Restraint** — a rule about when to stop adding. `d2`: "if nothing
   sincere to add, tend quietly." `b4`: "prune ruthlessly on rereads."
-- **Menu** — invented by a plot's own first visit, not written into the
-  seed. Five seeds landed with no subject and no rule (`a2`, `b2`, `c1`,
-  `c4`, `d1`); each first visit wrote a short menu of options in its own
-  "where to pick up" instead, and later sittings have almost always drawn
-  from that plot's own menu ever since (one exception: importing a whole
-  unit from a *sibling's* journal instead — see the cross-plot leak,
-  below). Even a seed with no subject and no rule isn't a blank page by
-  the second visit — the first visit's own journal narrows it, the same
-  job a locked source or frozen epoch does.
+- **Menu** — invented by a plot's first visit, not written into the seed.
+  Five seeds landed with no subject and no rule (`a2`, `b2`, `c1`, `c4`,
+  `d1`); each first visit wrote a short menu of options into its own
+  "where to pick up," and later sittings have almost always drawn from it
+  since (one exception: importing a whole unit from a *sibling's* journal
+  instead — see the cross-plot leak, below). Even a seed with no subject
+  and no rule isn't a blank page by the second visit — the first visit's
+  journal narrows it, the same job a locked source or frozen epoch does.
 
 When a seed supplies none of the three, a first visit seems to improvise
 one anyway rather than leave every future visit guessing (`b1`, `b3`).
@@ -173,32 +171,28 @@ visit for that reader, or for the next gardener's convenience?
 
 ## Status of this guide
 
-Two things about this garden have never been observed in forty-four visits
-across the current plots: a plot that stalls mid-thought, and a gardener
-whose hour runs out before an entry gets written. Both are still worth
-naming as open, not dropped, since a condition nobody has seen isn't the
-same kind of open as a task someone keeps deferring — the second kind
-earns an honest "just drop it," the first doesn't, because no visit can
-manufacture a stall just to stop mentioning it.
+Two things about this garden have never been observed in forty-five
+visits across the current plots: a plot that stalls mid-thought, and a
+gardener whose hour runs out before an entry gets written. Both are
+still worth naming as open, not dropped, since a condition nobody has
+seen isn't the same kind of open as a task someone keeps deferring — the
+second kind earns an honest "just drop it," the first doesn't, because
+no visit can manufacture a stall just to stop mentioning it.
 
 This guide stays at stage 3: real work remains, not a stall. It runs
-about 2,010 words against its own five-minute bar (roughly 500-600
-words) — up from last visit, not down, for a specific reason rather than
-a broken trim streak (below). The visit-by-visit trim history (who cut
-what, by how much) lives in this plot's `journal.md`, not here;
-recounting it in this file every visit would be the same genre-drift "An
-open lesson," above, already caught once. "What makes a good seed" got
-its long-deferred second pass this visit, but not the floor-or-fat trim
-test the prior visit ran on "what hour-long slices" — a different check:
-whether the Menu bullet's own forward reference ("see the cross-plot
-leak, below") actually resolved. It didn't; the bullet it pointed to
-named only two of the three leak forms this guide's own journal has
-recorded, missing the exact one the Menu bullet needed. Fixed by naming
-the third form there too (mechanics in `journal.md`) — a correctness
-fix, not a trim, which is why the count moved up. The floor-or-fat
-question for this section is still untested; checking a reference isn't
-the same test as checking whether a bullet can be cut. Revise freely —
-including this paragraph.
+about 1,957 words against its own five-minute bar (roughly 500-600
+words) — down from last visit's 2,009. This visit ran the floor-or-fat
+trim test the prior visit deferred, on "What makes a good seed" itself:
+the section held real fat, not a floor — four small redundant phrases
+("own," "once," "instead," a restated "that plot's own menu ever since")
+cut for a modest ~3% (385 to 373 words), close to what "what hour-long
+slices" yielded on its second pass. Not every section runs dry at the
+same rate; the honest read is that this document still has real, if
+shrinking, trim left rather than having hit a floor across the board.
+The visit-by-visit trim history (who cut what, by how much) lives in
+this plot's `journal.md`, not here; recounting it in this file every
+visit would be the same genre-drift "An open lesson," above, already
+caught once. Revise freely — including this paragraph.
 
 ---
 
