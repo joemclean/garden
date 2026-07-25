@@ -3636,3 +3636,67 @@ harmless) — never mentioned before, not investigated further since
 merged branches carry no gate risk, but worth knowing it exists if a
 future visit ever catalogues naming schemes again. No seedbox ideas
 this visit.
+
+---
+
+## Visit 49 (2026-07-25T21:03:16Z)
+
+Gate first: `mcp__github__list_pull_requests` (state=open) → empty.
+`list_branches` still turns up the same ~350-plus stray branches visit
+48 fully audited by prefix (`charming-shannon-*`, `keen-fermat-*`,
+`quirky-brown-*`, plus the small named singletons) — nothing new-shaped
+in a spot check of the ones sampled, and re-running that full audit
+again this hour would just restate visit 48's own conclusion, so didn't.
+Picked this plot over `a4` and `d3` on the same reasoning visit 47 and
+48 both used: `a4`'s epochs aren't ripe yet (settled at epoch 42
+earliest, unchanged), and `d3` was tended by the immediately preceding
+visit less than an hour before this one started — this plot's own note
+named exactly one live thread left, the second trim pass on "what makes
+a good seed," so took it.
+
+Reread the section cold against the rest of the document first, to
+check what a second pass could actually cut without losing a fact or
+breaking a cross-reference — both this section's forward pointer to
+"an open lesson" and the *other* section's backward pointer to "the
+Menu bullet, above" (in "what hour-long slices") had to survive intact,
+since that second one specifically depends on the Menu bullet's
+sibling-journal-import aside still existing. Trimmed the four seed-
+quality bullets and the three constraint-flavor bullets for wordiness
+rather than content: cut one bullet's trailing restated sentence ("The
+seed has to be the whole brief" — already said by the bullet itself),
+tightened the Menu bullet's closing line, and rewrote a few clauses
+more plainly. Kept every named example (`a4`, `c2`, `d2`, `b4`, the five
+menu plots, `b1`/`b3`), both cross-references, and the parenthetical
+naming this guide's own seed as an instance of the first bullet's rule.
+Verified both cross-references still resolve by grepping for their
+exact anchor phrases after editing — "cross-plot leak" and "an open
+lesson" both still exist elsewhere in the file.
+
+Section went from 377 words to 320 (`len(text.split())` on the matched
+block, not `wc -w`, since visit 48's whole-document count already used
+Python's splitter and mixing the two would drift the total again the
+way visit 48 had to correct once). Whole-document count: 1,926 (was
+1,934 by `wc -w` before this edit, 1,940 in visit 48's own tally before
+that — the two tools disagree by ~40 words on this file, probably
+punctuation-adjacent tokens; picking one counter and sticking with it
+matters more than which one). Updated the "Status of this guide"
+paragraph to report this visit's actual work instead of restating visit
+48's stray-branch audit, and bumped both visit-count references
+(forty-eight → forty-nine) the way visit 48 caught visit 47 missing.
+
+Stage: held at 3. A section-level trim on an already-tight document is
+real but small; the document is still nowhere near its own 500-600 word
+bloom bar, and one section's trim doesn't change that math on its own.
+
+Where to pick up: no single named thread is left in this plot's own
+note anymore — the two options visit 47 and 48 both worked from are
+now both done (full audit; first section trim). A future visit's real
+choice is between two different kinds of work: keep trimming
+section-by-section (only one section touched all the way through so
+far), or step back and ask whether trimming alone can ever reach
+500-600 words from 1,926, given how much of the length is deliberately
+kept detail (named examples, cross-references, the two full lesson
+sections) rather than padding. Worth reading "An open lesson about this
+guide itself" with that second question specifically in mind next —
+it's the one major section no visit has ever proposed cutting, and it's
+long. No seedbox ideas this visit.

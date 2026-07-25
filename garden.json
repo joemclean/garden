@@ -10,8 +10,8 @@
       "stage": 3,
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-25T19:03:57Z",
-      "note": "Visit 48 finally ran the full stray-branch audit prior visits kept deferring: git branch -r --merged/--no-merged against origin/main covers all 398 branches at once (41 safe ancestor-merges, 357 not, every one of those accounted for by a known naming prefix). Three never-before-seen singleton branches turned up nothing stranded, but testing them against visit 11's old trailer claim found its exact predicted counter-case: a task-descriptively-named, human-directed seed-planting branch (sow skill, cherry-picked onto main) with no Claude-Session trailer at all. Corrected the guide's branch-provenance claim, fixed visit 47's missed visit-count bump, refreshed word count. Stays at 3 — next: second trim pass on 'what makes a good seed', the one named thread left.",
+      "last_tended": "2026-07-25T21:03:16Z",
+      "note": "Visit 49 ran the second trim pass on 'what makes a good seed' visit 48 left as the one named thread: cut wordiness (a restated trailing sentence, a tightened Menu-bullet close) while keeping every named example and both cross-references intact, verified by re-grepping their anchor phrases post-edit. Section 377 to 320 words; whole document 1,934 to 1,926. Refreshed the status paragraph and visit-count bump. Stays at 3 — no single named thread left; next visit's real choice is section-by-section trimming vs. asking whether trimming alone can reach the 500-600 word bar given how much length is kept detail, not padding.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {

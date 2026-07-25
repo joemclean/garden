@@ -1,6 +1,6 @@
 # Field guide to this garden
 
-*Written from the gardener's point of view, across its first forty-eight visits.*
+*Written from the gardener's point of view, across its first forty-nine visits.*
 
 ## What this is
 
@@ -44,42 +44,40 @@ human, not the gardener.
 
 ## What makes a good seed
 
-A good seed reads like a wish a friend made, not a ticket a manager filed.
-The qualities that seem to matter:
+A good seed reads like a wish a friend made, not a ticket a manager filed:
 
-- **It says what bloom looks like**, even loosely — "a stranger could read
-  this in five minutes" is a bloom condition; without one, a gardener can't
-  tell progress from motion. (This guide's seed says exactly that — see
-  "an open lesson," below, for how badly it drifted.)
+- **It says what bloom looks like**, even loosely — without one, a
+  gardener can't tell progress from motion. (This guide's own seed sets
+  one, "a stranger could read this in five minutes" — see "an open
+  lesson," below, for how badly it drifted.)
 - **It leaves room to be surprised**, rather than over-determining the
-  outcome — many small independent passes, each free to notice something
+  outcome: many small independent passes, each free to notice something
   the last one didn't.
-- **It's honest about pace.** Permission not to rush to bloom in one
-  sitting matters — rushing means guessing at intent, not tending it.
+- **It's honest about pace** — permission not to rush to bloom in one
+  sitting; rushing means guessing at intent, not tending it.
 - **It survives being read cold.** Every gardener meets it fresh; a seed
   leaning on outside context — a conversation, an assumption, a
-  half-explained abbreviation — will drift or stall. The seed has to be
-  the whole brief.
+  half-explained abbreviation — will drift or stall.
 
-A seed also seems to want to hand the next amnesiac gardener a *constraint*
-to grow along, not a blank page. Three flavors have shown up so far:
+Most seeds also hand the next amnesiac gardener a *constraint* to grow
+along, not a blank page. Three flavors so far:
 
-- **Structural** — a rule about what may not be undone. `a4`'s epoch-0
+- **Structural** — a rule about what may not be undone: `a4`'s epoch-0
   landscape may only be weathered, never added to; `c2`'s source text
   locks on first tending.
-- **Restraint** — a rule about when to stop adding. `d2`: "if nothing
-  sincere to add, tend quietly." `b4`: "prune ruthlessly on rereads."
-- **Menu** — invented by a plot's first visit, not written into the seed.
-  Five seeds landed with no subject and no rule (`a2`, `b2`, `c1`, `c4`,
-  `d1`); each first visit wrote a short menu of options into its own
-  "where to pick up," and later sittings have almost always drawn from it
-  since (one exception: importing a whole unit from a *sibling's* journal
-  instead — see the cross-plot leak, below). Even a seed with no subject
-  and no rule isn't a blank page by the second visit — the first visit's
-  journal narrows it, the same job a locked source or frozen epoch does.
+- **Restraint** — a rule about when to stop adding: `d2`'s "tend
+  quietly" if nothing sincere to add; `b4`'s "prune ruthlessly on
+  rereads."
+- **Menu** — invented by a plot's first visit, not written into the
+  seed. Five seeds landed with no subject and no rule (`a2`, `b2`, `c1`,
+  `c4`, `d1`); each wrote a short menu into its own "where to pick up,"
+  and later sittings have almost always drawn from it since (one
+  exception: importing a whole unit from a *sibling's* journal instead
+  — see the cross-plot leak, below). Even a menu seed stops being a
+  blank page once its first visit's journal narrows it.
 
-When a seed supplies none of the three, a first visit seems to improvise
-one anyway rather than leave every future visit guessing (`b1`, `b3`).
+When a seed supplies none of the three, a first visit improvises one
+anyway rather than leave every future visit guessing (`b1`, `b3`).
 
 ## What hour-long slices with no memory actually do to the work
 
@@ -182,7 +180,7 @@ visit for that reader, or for the next gardener's convenience?
 
 ## Status of this guide
 
-Two things about this garden have never been observed in forty-eight
+Two things about this garden have never been observed in forty-nine
 visits across the current plots: a plot that stalls mid-thought, and a
 gardener whose hour runs out before an entry gets written. Both are
 worth naming as open, not dropped, since a condition nobody has seen
@@ -191,11 +189,11 @@ second kind earns an honest "just drop it," the first doesn't, because
 no visit can manufacture a stall to stop mentioning it.
 
 This guide stays at stage 3: real work remains, not a stall. It runs
-about 1,975 words against its own five-minute bar (roughly 500-600
-words) — this visit's full stray-branch audit (see the journal) earned
-its keep with a real correction to how the guide reads branch
-provenance, added above under "what hour-long slices," rather than
-trimming toward the bar. Revise freely — including this paragraph.
+about 1,926 words against its own five-minute bar (roughly 500-600
+words) — this visit trimmed "what makes a good seed" (see the
+journal), the thread named as the one left; it's real ground made up,
+but far short of what the bar still asks for. Revise freely —
+including this paragraph.
 
 ---
 
