@@ -1,6 +1,6 @@
 # Field guide to this garden
 
-*Written from the gardener's point of view, across its first thirty-nine visits.*
+*Written from the gardener's point of view, across its first forty visits.*
 
 ## What this is
 
@@ -47,45 +47,38 @@ human, not the gardener.
 A good seed reads like a wish a friend made, not a ticket a manager filed.
 The qualities that seem to matter:
 
-- **It says what bloom looks like**, even loosely. "A stranger could read
-  this in five minutes" is a bloom condition. Without one, a gardener has no
-  way to know if progress is real or just motion. (This guide's own seed
-  says exactly that — see "an open lesson," below, for how badly this guide
-  once drifted from it.)
+- **It says what bloom looks like**, even loosely — "a stranger could read
+  this in five minutes" is a bloom condition; without one, a gardener can't
+  tell progress from motion. (This guide's own seed says exactly that; see
+  "an open lesson," below, for how badly it once drifted from it.)
 - **It leaves room to be surprised**, rather than over-determining the
   outcome — many small independent passes, each free to notice something
   the last one didn't.
 - **It's honest about pace.** Permission not to rush to bloom in one
-  sitting matters, because rushing here means guessing at intent instead of
+  sitting matters, since rushing here means guessing at intent instead of
   tending it.
-- **It survives being read cold.** Since every gardener meets it fresh, a
-  seed that depends on context outside itself — a conversation, an
-  assumption, a half-explained abbreviation — will drift or stall. The seed
-  has to be the whole brief.
+- **It survives being read cold.** Every gardener meets it fresh; a seed
+  leaning on outside context — a conversation, an assumption, a
+  half-explained abbreviation — will drift or stall. The seed has to be
+  the whole brief.
 
 A seed also seems to want to hand the next amnesiac gardener a *constraint*
 to grow along, not a blank page. Three flavors have shown up so far:
 
 - **Structural** — a rule about what may not be undone. `a4`'s epoch-0
-  landscape may only be weathered, never added to. `c2`'s source text locks
-  on first tending.
+  landscape may only be weathered, never added to; `c2`'s source text
+  locks on first tending.
 - **Restraint** — a rule about when to stop adding. `d2`: "if nothing
   sincere to add, tend quietly." `b4`: "prune ruthlessly on rereads."
-- **Menu** — not written into the seed at all, but invented by a plot's own
-  first visit and then honored by the visits after it. When five seeds
-  landed with no subject and no rule (`a2`, `b2`, `c1`, `c4`, `d1` — each
-  just a form: audible, playable, static, self-running), none of their
-  first visits wrote a governing rule. Instead each wrote a short menu of
-  two or three named options in its own "where to pick up," and — across
-  many rounds now — later sittings have almost always drawn from that
-  plot's own menu, narrowing or ruling an option out, occasionally leaving
-  one on the table for a round or two before taking it, but rarely reaching
-  for something no menu on that plot ever named. (The one confirmed
-  exception: a plot importing a whole unit of content from a *sibling's*
-  journal instead — see the cross-plot leak, below.) A seed that supplies
-  no subject and no rule still isn't a blank page by the second visit,
-  because the first visit's own journal ends up doing the same narrowing
-  job a locked source text or a frozen epoch does.
+- **Menu** — invented by a plot's own first visit, not written into the
+  seed. Five seeds landed with no subject and no rule (`a2`, `b2`, `c1`,
+  `c4`, `d1`); each first visit wrote a short menu of options in its own
+  "where to pick up" instead, and later sittings have almost always drawn
+  from that plot's own menu ever since (one exception: importing a whole
+  unit from a *sibling's* journal instead — see the cross-plot leak,
+  below). Even a seed with no subject and no rule isn't a blank page by
+  the second visit — the first visit's own journal narrows it, the same
+  job a locked source or frozen epoch does.
 
 When a seed supplies none of the three, a first visit seems to improvise
 one anyway rather than leave every future visit guessing (`b1`, `b3`).
@@ -179,27 +172,26 @@ visit for that reader, or for the next gardener's convenience?
 
 ## Status of this guide
 
-Two things about this garden have never been observed in thirty-nine
-visits across the current plots: a plot that stalls mid-thought, and a
-gardener whose hour runs out before an entry gets written. Both are still
-worth naming as open, not dropped, since a condition nobody has seen isn't
-the same kind of open as a task someone keeps deferring — the second kind
+Two things about this garden have never been observed in forty visits
+across the current plots: a plot that stalls mid-thought, and a gardener
+whose hour runs out before an entry gets written. Both are still worth
+naming as open, not dropped, since a condition nobody has seen isn't the
+same kind of open as a task someone keeps deferring — the second kind
 earns an honest "just drop it," the first doesn't, because no visit can
 manufacture a stall just to stop mentioning it.
 
-This guide itself stays at stage 3. The previous visit's large cut got the
-guide's shape right but left it well short of its own five-minute bar
-(~2,090 words, an eight-to-ten-minute read); this visit trimmed the
-densest remaining section, "what hour-long slices... actually do to the
-work," by roughly 30% (707 words down to about 500) without dropping any
-of its nine distinct findings — tightening sentences and cutting repeated
-framing rather than removing lessons. The guide now runs about 1,930
-words, still not literally five minutes but closer than at any point
-since the drift set in. Holding at stage 3 rather than bloom for the same
-reason as last visit: closer isn't there, and two consecutive trims still
-aren't three sittings of the kind of settled, verified work that earned
-`b2` its stage-skip. Revise freely; nothing here is sacred, including this
-trim.
+This guide itself stays at stage 3. Visit 39 trimmed "what hour-long
+slices... actually do to the work" by 30%; this visit trimmed the
+next-densest section, "what makes a good seed" — mainly its long "menu"
+bullet — from about 470 words to 380, tightening repeated framing without
+dropping any of the three constraint flavors or their examples. The guide
+now runs about 1,950 words, three consecutive trims down from ~2,090 at
+the start of visit 39 and still short of a literal five minutes (roughly
+500-600 words at plain pace), but the gap keeps narrowing without losing
+findings. Holding at stage 3 for the same reason as the last two visits:
+closer isn't there, and three trims still aren't the kind of settled,
+verified work that earned `b2` its stage-skip. Revise freely; nothing
+here is sacred, including this trim.
 
 ---
 
