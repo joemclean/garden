@@ -304,7 +304,16 @@
     var candidates = [];
     sentences.forEach(function (s) {
       var t = s.replace(/[.!?]+$/, "").split(MASK).join(".")
-        .replace(/^["\u201c'\s]+|["\u201d'\s]+$/g, "");
+        .replace(/^[\u201c'\s]+|[\u201d'\s]+$/g, "");
+      // Straight double quotes aren't directional like the curly ones
+      // above, so a positional trim can't tell a wrapping quote left over
+      // from the tail cut apart from a legitimate quoted phrase that just
+      // happens to end where the sentence does (e.g. `...keeping"`, whose
+      // real closing quote used to get eaten here every time). Only strip
+      // one from an edge when the total count is odd — unpaired is the
+      // truncation artifact this is for; paired is real content and stays.
+      var quotes = (t.match(/"/g) || []).length;
+      if (quotes % 2 === 1) t = t.replace(/^"+|"+$/g, "");
       var opens = (t.match(/\(/g) || []).length;
       var closes = (t.match(/\)/g) || []).length;
       if (closes > opens) t = t.replace(/\)+$/, "");
