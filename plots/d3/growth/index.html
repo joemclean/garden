@@ -366,6 +366,7 @@
   refreshEchoes();
 
   var field = document.getElementById("field");
+  var intro = document.getElementById("intro");
   var kept = document.getElementById("kept");
   var form = document.getElementById("form");
   var input = document.getElementById("line");
@@ -456,8 +457,18 @@
 
     var w = field.clientWidth;
     var h = field.clientHeight;
+    // The intro paragraph wraps to more lines — and grows taller — on
+    // narrow viewports, since its 560px max-width only ever shrinks. A
+    // fixed 130px floor assumed the intro always fit above that line;
+    // it doesn't on a narrow phone (measured 200px+ tall at 320px wide),
+    // so fragments spawned straight through the fixed intro text.
+    // Measuring the real box each spawn keeps the floor honest as the
+    // viewport (and the intro's own wrap) changes.
+    var introBox = intro.getBoundingClientRect();
+    var fieldBox = field.getBoundingClientRect();
+    var introFloor = Math.max(130, introBox.bottom - fieldBox.top + 16);
     var x = 40 + Math.random() * Math.max(40, w - 320);
-    var y = 130 + Math.random() * Math.max(40, h - 320);
+    var y = introFloor + Math.random() * Math.max(40, h - introFloor - 190);
 
     el.style.left = x + "px";
     el.style.top = y + "px";

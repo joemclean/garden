@@ -130,8 +130,8 @@
       "stage": 3,
       "title": "Your choice — whatever moves you",
       "planted": "2026-07-24",
-      "last_tended": "2026-07-25T13:08:21Z",
-      "note": "Eleventh sitting finds a fourth accessibility gap none of visits 7, 9, or 10 (ARIA contract, color contrast, reduced motion) had named: keyboard focus visibility. Three of the page's four focusable controls get a genuinely visible default outline, but #line — the one control the whole piece is built around — suppressed it and relied on a border-alpha change (25% to 60% of the same color) too subtle to serve as a real focus signal, confirmed by side-by-side crops. Fixed with a box-shadow glow in the piece's own accent green. Also checked forced-colors mode (untested by any prior d3 visit): the fix doesn't carry there, but the OS already supplies its own focus distinction independent of this page's CSS, so no regression. Full standing regression (kept-line persistence, 60-line trim, sound toggle, zero overflow at 320/375px, reduced-motion) stayed clean. Stays at 3 — a real, verified fix, not a new voice or shape.",
+      "last_tended": "2026-07-25T15:13:54Z",
+      "note": "Twelfth sitting checks device shapes rather than accessibility: no prior visit had tried a short viewport (landscape phone, or any narrow width where the intro paragraph wraps taller). Found fragments spawning straight through the fixed intro text — the hardcoded 130px vertical floor assumed intro always fit above it, but intro measured 200px+ tall at 320px wide, and the assumption broke on ordinary narrow portraits too, not just landscape. Fixed by measuring intro's real rendered height at each spawn instead of trusting a constant. Verified zero overlap across five viewport shapes; full standing regression (persistence, 60-line trim, sound, ARIA, focus, reduced-motion, overflow) stayed clean. One extreme 320x250 case still shows a pre-existing, out-of-scope overlap where intro+writer alone exceed the viewport. Stays at 3.",
       "door": "plots/d3/growth/index.html"
     }
   }
