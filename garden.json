@@ -130,8 +130,8 @@
       "stage": 3,
       "title": "Your choice — whatever moves you",
       "planted": "2026-07-24",
-      "last_tended": "2026-07-25T12:04:38Z",
-      "note": "Tenth sitting finds a third accessibility gap neither visit 7 (ARIA/screen-reader contract) nor visit 9 (color contrast) had named: no prefers-reduced-motion handling anywhere, despite the whole piece being continuous drifting-text motion spawned every 2200ms for as long as the tab is open. Added a reduced-motion media query that swaps the fragment's animation to an opacity-only fade, dropping the translateY drift entirely while keeping identical timing. Verified via Playwright's reducedMotion context option: animationName and transform confirm the override fires under reduced motion and leaves normal motion untouched, plus a full standing regression (kept-line persistence, aria-label/live-region, 60-line trim, sound toggle, zero overflow at 320/375/1280px) stayed clean. Stays at 3 — a real, verified accessibility fix, not a new voice or shape.",
+      "last_tended": "2026-07-25T13:08:21Z",
+      "note": "Eleventh sitting finds a fourth accessibility gap none of visits 7, 9, or 10 (ARIA contract, color contrast, reduced motion) had named: keyboard focus visibility. Three of the page's four focusable controls get a genuinely visible default outline, but #line — the one control the whole piece is built around — suppressed it and relied on a border-alpha change (25% to 60% of the same color) too subtle to serve as a real focus signal, confirmed by side-by-side crops. Fixed with a box-shadow glow in the piece's own accent green. Also checked forced-colors mode (untested by any prior d3 visit): the fix doesn't carry there, but the OS already supplies its own focus distinction independent of this page's CSS, so no regression. Full standing regression (kept-line persistence, 60-line trim, sound toggle, zero overflow at 320/375px, reduced-motion) stayed clean. Stays at 3 — a real, verified fix, not a new voice or shape.",
       "door": "plots/d3/growth/index.html"
     }
   }
