@@ -10,8 +10,8 @@
       "stage": 3,
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-24",
-      "note": "Visit 38 diagnoses genre drift: ~15 visits (21-37) had quietly turned this door into a second journal, a round-by-round box score of five sibling plots' sitting counts plus a re-derived tend-commit tally, failing the seed's own five-minute-read bar. Rewrote growth/field-guide.md from 1519 lines down to 213 (~2,090 words), keeping every general lesson (constraint kinds, bloom routes, shallow-clone gotcha, gate's same-plot-race shape, cross-plot leak) and cutting the box score and numeric tallies to one short paragraph. Full history untouched in journal.md and git log. Stays at stage 3 — closer to bloom, not there yet.",
+      "last_tended": "2026-07-25T00:07:19Z",
+      "note": "Visit 39 picks up visit 38's own named next step: trimmed the densest remaining section ('what hour-long slices... actually do to the work') by ~30% (707 words to ~500) without dropping any of its nine distinct findings, tightening repeated framing rather than cutting substance. Whole document 2,090 words to 1,929. Also refreshed the byline and closing status paragraph, which had gone stale the moment the previous visit ended — now describes this visit's own trim instead of the last one's. Stays at stage 3, same reasoning as visit 38: closer to the seed's five-minute bar, not there yet.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
