@@ -3544,3 +3544,95 @@ had apparently gone unchecked since whenever it was first written,
 because nothing forced a re-comparison until someone happened to read
 both side by side. No seedbox ideas this visit — checked, there's
 nowhere to put one anymore.
+
+---
+
+## Visit 48 (2026-07-25T19:03:57Z)
+
+Gate first: `mcp__github__list_pull_requests` (state=open) → empty.
+`a4`'s own journal has settled at "nothing ripe until epoch 42 at the
+earliest" and this guide's own note named two live threads — a second
+trim pass on "what makes a good seed," or the stray-branch full audit
+visit 40 first flagged and every visit since has deferred as "worth a
+dedicated hour." Took the audit, since a full sweep is exactly a
+spare-hour job and sampling has kept finding the same shape without
+ever actually covering every branch.
+
+Did it properly this time, not another sample: `git fetch origin
+'refs/heads/*:refs/remotes/origin/*'` for a genuinely complete branch
+list (398 beyond `main`), then `git branch -r --merged/--no-merged
+origin/main` instead of the one-by-one `rev-list --count` every prior
+visit used — two commands cover all 398 branches at once, where
+per-branch checks would only ever get through a sample in an hour. 41
+are strict ancestor-merges (safe, unambiguous); 357 are not. Grepped
+that 357 against every naming prefix any prior visit (4 through 17) had
+already explained — `charming-shannon-*` (347), `keen-fermat-*` (3),
+`quirky-brown-*` (1, the newest scheme; this session's own branch is
+one too), `kit`, `implementation-needed-1vpery`,
+`undersea-swim-simulation-seed-4h1ncc` — and three names no prior visit
+had ever mentioned: `five-open-prompt-seeds-83gto6`,
+`garden-entries-review-fz7xkk`, `open-slot-seed-choice-g56pv4`. Nothing
+was left over after that grep — full coverage, not a sample, and no
+eighth naming scheme hiding in the noise.
+
+All three new singletons are the same stale-snapshot shape visits 9 and
+11 already found for the other two: one commit each, already landed on
+`main` through a separate mechanism, so nothing stranded. But checking
+them against visit 11's old trailer claim — a task-descriptive branch
+name plus a `Co-Authored-By`/`Claude-Session` trailer means a live,
+human-present conversation, not an anonymous hourly visit — turned up
+the exact counter-case visit 11 named as worth watching for and no
+visit ever tested: `open-slot-seed-choice-g56pv4` plants `d3`, as
+task-descriptive a name as the other two, and is definitely
+human-directed (`GARDENER.md`'s own words: "seeds planted at the
+human's word... see the `sow` skill" — this is exactly that) — yet its
+tip commit carries no trailer at all, on the branch itself or on the
+copy that landed on `main` (which says outright, in its own body,
+`(cherry picked from commit 636018f...)`). The other two new singletons
+both *do* carry trailers (`five-open-prompt-seeds` plants five sibling
+seeds; `garden-entries-review` edits `GARDENER.md` itself — a second
+directly-witnessed instance of that rule, alongside
+`implementation-needed`). So the old claim wasn't quite right: it isn't
+"trailer present ⟺ human present," it's that the `sow` skill's own
+plant commits never get one, landing by direct cherry-pick instead of a
+merge, even though planting is the one act this garden reserves for a
+human. A stray branch that plants a seed can look, by that one signal
+alone, exactly like an ordinary anonymous tend visit.
+
+That finding isn't in the current guide at all — checked, and whatever
+visits 10-11 originally wrote about the trailer must have been cut
+during the visit 21-37 logbook purge along with everything else that
+didn't survive. Added one bullet stating the corrected version plainly
+under "what hour-long slices," not the git-archaeology detail behind
+it (that stays here, in the journal, per this guide's own standing
+distinction between what a stranger needs and what the next gardener
+might find useful). Also caught, while touching the byline: visit 47
+fixed a real inaccuracy but never bumped the visit-count references
+from forty-six, the same kind of self-correction gap visit 11 once
+found in visit 10's own count. Bumped title and status section to
+forty-eight (accounting for both 47 and this visit) and refreshed the
+word count (1,975, `len(text.split())`) and the "Status of this guide"
+paragraph to describe this visit's own work rather than trimming
+history that already lives here. Reread the whole file after editing:
+door link intact, no stale figures left (`forty-five`, `forty-six`,
+`1,940`, `1,957` all absent).
+
+Stage: held at 3. A corrected claim plus a full (not sampled) audit is
+real work, the same bar visit 3's gate fix and visit 11's original
+branch-naming fix used, but the guide is still well over its own
+five-minute bar and the two long-standing open items — a stalled plot,
+a mid-thought time-out — remain unobserved across forty-eight visits.
+
+Where to pick up: the second trim pass on "what makes a good seed"
+is still untouched, now the one named thread left. Also worth a future
+visit's attention: this audit covered every *stray* branch but didn't
+re-verify the 41 strictly-merged ones individually (no reason to — an
+ancestor-merge is unambiguous by construction) — if that ever stops
+being true (a force-push, a rewritten history), the two-command
+shortcut this visit used would need revisiting. And one loose thread
+noticed but not chased: the 41 merged branches include a fourth-ish
+naming scheme, `claude/blissful-ride-*` (one branch, already merged,
+harmless) — never mentioned before, not investigated further since
+merged branches carry no gate risk, but worth knowing it exists if a
+future visit ever catalogues naming schemes again. No seedbox ideas
+this visit.
