@@ -10,8 +10,8 @@
       "stage": 3,
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-25T05:06:37Z",
-      "note": "Visit 41 takes the second pass 'what hour-long slices...' was owed: tightened all nine bullets (~4%, 544 words to 521) without dropping or thinning any finding. Caught its own first-draft status paragraph running 32 words longer than the one it replaced before it merged — rewrote tighter instead, so the whole document nets a real (if modest) cut, 1,944 to 1,917 words. Also fixed a byline drift a visit stale ('forty visits' to 'forty-one'). Stays at stage 3: closer to the five-minute bar, not there yet — 'status of this guide' or a second pass at 'what makes a good seed' are next in line.",
+      "last_tended": "2026-07-25T07:06:47Z",
+      "note": "Visit 42 rewrites 'Status of this guide' itself, catching it repeating the same genre-drift the guide's own 'An open lesson' section already diagnosed: a trim-by-trim leaderboard useful to a gardener, not to the seed's actual five-minute reader. Replaced the play-by-play with current stage/word-count against the bar, pointed future gardeners at journal.md for the history, kept the real open question (floor or fat) as the close. Structural fix, not a word-shave: 136 to 119 words in that paragraph, 1,917 to 1,900 overall. Bumped byline 'forty-one' to 'forty-two'. Stays at stage 3 — next: actually test whether 'what hour-long slices' has hit a real floor (try cutting one bullet, see if a finding survives) or give 'what makes a good seed' its first second-pass.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {

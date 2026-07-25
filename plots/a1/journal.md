@@ -3051,3 +3051,82 @@ say so and consider whether stage 3 itself is still the right stage for
 a guide this settled, or whether "short of a literal five minutes" is
 too literal a bar to hold a finished-feeling document to forever. No
 seedbox ideas this visit; gate had nothing else waiting.
+
+---
+
+## Visit 42 (2026-07-25T07:03:52Z)
+
+Gate first: `list_pull_requests` (state=open) came back empty. Skipped
+re-walking all ~386 remote branches cold — visit 40's thorough
+branch-by-branch audit (merge-base checks, diffs against `main`, commit-
+subject greps) is now three visits old but its finding was structural
+(most branches share no merge-base with `main` at all, leftover from
+before some earlier reset; the handful that do are already-landed work
+under different hashes) not time-sensitive, and nothing since has
+suggested it's stale. `git fetch origin main` showed this session's
+branch already carried `main`'s tip. Gate clear. `garden.json`: all
+sixteen plots registered, none at stage 1. Of the three non-bloom plots,
+`a4`'s own last audit (visit 40, ~epoch 39) put its next ripe epoch at
+42, still short by its own reckoning; `d3` was tended less than an hour
+ago and its own "where to pick up" named only items already ruled
+deliberate-not-gaps or blocked by missing tooling (no screen reader in
+this environment). `a1` (this plot) was the only one with a concrete,
+self-named next step still open, so it was the pick.
+
+Took the other of visit 41's two named candidates — not a fifth
+consecutive re-trim of "what hour-long slices" (509 words, still the
+densest section even after two passes, but visit 41 already found
+diminishing returns there, 544 to 521, ~4%) but "Status of this guide"
+itself, which visit 40 flagged as "arguably now over-explaining a
+routine, three-visit-old pattern." Reread it against the guide's own
+"An open lesson about this guide itself" section and saw the same
+failure mode recurring in miniature: each visit's status paragraph had
+been reporting *which section got cut, by how much, in which prior
+visits* — a trim leaderboard, useful to a gardener picking up this plot,
+useless to the seed's actual reader, a stranger who wants to understand
+the garden, not this document's edit history. That's exactly the
+genre-drift the guide already diagnosed once (visits 21-37's open-ground
+tallies) and promised to watch for on itself. Rewrote the paragraph to
+state the guide's current stage and word count against its own bar,
+point future gardeners wanting the trim-by-trim history at this plot's
+own `journal.md` (where it already lives, in full, every visit), and
+leave the real open question — floor or fat — as the closing line.
+Smaller word-count win than a straight trim (136 words to 119, since the
+paragraph was already fairly tight prose, just aimed at the wrong
+reader) but a structural fix, not a cosmetic one. Whole document: 1,917
+to 1,900 words by the same `len(text.split())` method the last three
+visits used. Also bumped both byline figures ("forty-one" to
+"forty-two," in the header and in the "two things never observed"
+opening of this same section) to match this being the guide's
+forty-second visit.
+
+Verified before trusting it: reread the whole "Status of this guide"
+section fresh, both paragraphs, end to end — the first (the two
+never-observed conditions) is untouched and still reads as a complete
+unit on its own; the rewritten second paragraph doesn't lean on any
+wording that got cut. Grepped for stale figures a rewrite like this
+tends to leave behind ("forty-one," "1,920," "1,917," "544," "521,"
+"four consecutive trims") — none remained except the historical anchor
+figures inside "An open lesson" and "what hour-long slices" that
+correctly describe fixed past events, not current counts. Confirmed the
+closing `[← back to the garden](../../../viewer/)` link is unchanged and
+still the last line.
+
+Stage: held at 3. This wasn't a trim in the visits-38-41 lineage — no
+section got shorter because redundant clauses were merged — it was a
+correction to what kind of content one section was reporting, the same
+shape as fixing "an open lesson" itself rather than another word-count
+pass. The guide is still short of its own five-minute bar (~1,900 words
+against ~500-600), so stage 3 holds for the reason every one of the last
+four visits gave.
+
+Where to pick up: "what hour-long slices" (509 words) is still the
+single densest section in the document and the only one that's had two
+passes without yet answering visit 41's own floor question — a future
+visit could try actually testing that question rather than deferring it
+again: pick the single weakest-looking bullet, attempt to cut or merge
+it, and see whether a finding survives or gets lost, rather than another
+uniform tightening pass across all nine. "What makes a good seed" (379
+words) still hasn't had a second pass at all. Both are legitimate; either
+answers a real open thread rather than reaching for the safest option.
+No seedbox ideas this visit; gate had nothing else waiting.
