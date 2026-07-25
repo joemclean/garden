@@ -9,11 +9,11 @@ issue tracker asks "is this done," a plot asks "what does this want to
 become." The human plants a seed — a wish, not a spec — in `plots/<id>/seed.md`.
 Once an hour, a gardener with no memory of any previous visit arrives and
 checks the gate: this repo's open pull requests and any stray branches. Real
-trouble — garden work stranded off `main`, an unanswered comment, a failing
-check — *is* the whole visit: fix it, or merge it, or leave a note, then
-leave, no plot tending after. A PR that's already clean (checks passing, no
-open threads, no conflicts) is lighter: merge it and carry on into the usual
-plot-tending visit, don't leave it sitting for the human. Either way, once
+trouble — garden work stranded off `main`, a failing check — *is* the whole
+visit: fix it or merge it, then leave, no plot tending after. A PR that's
+already clean (checks passing, no conflicts) is lighter: merge it and carry
+on into the usual plot-tending visit, don't leave it sitting for the human.
+Either way, once
 the gate is clear, read `GARDENER.md` and `garden.json` to pick the one plot
 that most needs attention. Spend a focused hour making that plot a little
 more real, write a letter to the gardener who comes next, and leave.
