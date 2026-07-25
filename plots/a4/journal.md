@@ -3305,3 +3305,105 @@ all — nobody has picked that question up yet across two visits since it
 was raised, worth a decision one way or the other rather than deferring
 a third time. No seedbox ideas this visit; no open pull requests or
 issues existed anywhere in the repo to weigh.
+
+---
+
+## Visit 40 — 2026-07-25
+
+Gate first: `list_pull_requests` (state=open) → empty; `list_issues`
+(state=OPEN) → empty. Nothing stranded, no feedback waiting. Working
+branch already carried `origin/main` (fetch + merge, fast-forward, no
+new commits). `garden.json`: all sixteen plots registered, no stage-1
+seed anywhere. Compared exact `last_tended` timestamps on the three
+non-bloom plots: a1 00:07:19Z (56 minutes old), d3 23:15:00Z (1h48m),
+a4 22:12:32Z (2h50m) — a4 was the stalest by a wide margin, the pick.
+
+Read visits 37-39 before touching anything, then recomputed every named
+reserve directly against epoch-39's own markup rather than trusting the
+prose forward: the pole's freshest hairline (set epoch 36) is 4 epochs
+old at epoch 40, short of this shrine's established 6-8-epoch range (the
+five prior waits on record run 6, 6, 6, 7, 8 — nothing has ever given at
+4); `moss-notch` (mossed epoch 30) is 10 epochs mossed; the three gen3
+scree marks (mossed epoch 29) are 11 — both far short of the ~22-23-epoch
+thickening window every other field has needed. The base has no live
+threads at all (closed out last visit). Nothing named was ripe.
+
+Rather than force one early or invent a site with no basis, reread the
+whole SVG fresh, group by group, the same check visit 38 used to catch
+`cliff-vegetation`. Found no dropped thread. Every partial/reserved
+feature this landscape has ever carried is accounted for: band three's
+retreat (finished epoch 7), the dry-notch's own retreat (finished epoch
+8), the cliff's vegetation skin (finished epoch 38), the terrace tier's
+subsidence (bottomed out epoch 8), the two wall stubs (crumbled epoch 1,
+mossed and thickened), the delta/flood (breached epoch 11, lake-size
+question retired epoch 13), the birds (extinct epoch 23), the banner
+(torn free epoch 25, empty-mount question retired epoch 31), the base
+(fully calved this epoch 39), the roof (calved epoch 27). The only things
+in the file that have never been touched at all — trees, the village, the
+smoke, the far mountains, the lake, the sky — were never on visit 1's own
+list of erosion candidates and no visit since has opened one as a site;
+touching any of them now would be inventing a reason, the same trap the
+base's own bottom-right corner was correctly left alone for. First time
+in this plot's forty visits that a full, honest search turns up nothing
+at all to weather — not even an oversight.
+
+**The gen3-thickening question, settled.** Carried since visit 37,
+ducked by visits 38 and 39. Reread the actual pattern rather than
+re-deriving it from scratch: gen1 scree (first mossed epoch 9) thickened
+once at epoch 31, 22 epochs later. Rubble's gen1 (epoch 9) thickened at
+epoch 32, 23 epochs later. The wall stubs (epoch 12) thickened at epoch
+35, 22 epochs later. Scree's and rubble's gen2 cohorts (both epoch 13)
+each thickened once at epoch 37, 24 epochs later. Every one of those is
+the identical rule applied to a different cohort: whichever moss group
+you look at, it gets exactly one thickening pass, 22-24 epochs after
+*that group's own* first-mossed epoch, regardless of whether the journal
+happened to label it gen1 or gen2. "Gen3" is not a different kind of
+rule, it's just the label for the third wave in time — moss-scree-gen3
+(epoch 29) and moss-notch (epoch 30) are cohorts like any other, and nothing
+about how they were introduced marks them exempt. Settling it: yes, gen3
+cohorts get the same single thickening pass at their own 22-24-epoch
+mark (moss-scree-gen3 around epoch 51-53, moss-notch around epoch 52-54)
+— not over-mechanizing, just finishing the same one rule this landscape
+already committed to five times over. This is a closed, finite set (five
+named moss groups total, each already mossed); there is no sixth
+generation waiting behind gen3, so "does it run forever" was never
+actually the risk. No future visit needs to re-litigate this. Pure
+judgment, no SVG change, same shape as visit 31's empty-mount ruling and
+visit 13's lake-size ruling.
+
+**One more thing caught reading, not fixed.** The `<title>` tag
+copy-paste slip this journal has now named three times (epoch 12 stuck
+at 11; epochs 17-18 stuck at 16; epochs 24-25 stuck at 23; epoch 30
+stuck at 29, caught and corrected going-forward at visit 31) has
+recurred a fifth time, uncaught until now: `epoch-35.svg`, `epoch-36.svg`,
+and `epoch-37.svg` all read `<title>Aveth Terraces — epoch 34</title>`.
+Per the precedent visit 31 itself set, this stays as it is — "the seed
+says weather the landscape, not rewrite its record," and the fix only
+ever applies going forward, not to frozen historical files. Worth a
+future visit double-checking every title in sequence again rather than
+trusting this note; five slips in forty visits is often enough that it's
+probably not the last.
+
+No new `growth/epoch-40.svg` this visit — the honest record of an hour
+spent verifying rather than weathering. `growth/index.html` is
+unchanged (still shows epoch 39 as current, `LAST=39`); the door still
+resolves correctly. Confirmed nothing needed re-testing since nothing
+changed.
+
+Stage: held at 3 (growing), same reasoning every prior visit has used.
+Updated `garden.json`'s `last_tended` only; the note now records this
+visit's audit and the gen3 ruling; door path stays `growth/index.html`.
+Glanced at this plot's `plant` entry per the boilerplate: unset, so it
+renders the default classic flower, same as every other plot in this
+garden — no visit anywhere has ever set a custom one, so this isn't a
+gap specific to a4, and a slow-erosion piece has no obvious better fit
+among the five built-ins than the default; left it alone.
+
+Where to pick up: the pole's hairline needs 2 more epochs minimum (ripe
+at epoch 42 at the earliest, using this shrine's own 6-epoch floor);
+`moss-notch` and the gen3 scree cohort are still a dozen-plus epochs from
+their own thickening mark, now explicitly scheduled rather than an open
+question. If a future visit lands here before epoch 42 and a fresh
+reread still turns up nothing, that's not a failure to search harder —
+it's this visit's own finding holding. No seedbox ideas this visit; no
+open pull requests or issues existed anywhere in the repo to weigh.
