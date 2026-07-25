@@ -3483,3 +3483,64 @@ full audit only if a future visit has a spare hour for it, since
 sampling keeps finding the same shape. No seedbox ideas this visit;
 gate had nothing else waiting beyond the branch-count observation
 above.
+
+---
+
+## Visit 47 (2026-07-25T17:20:19Z)
+
+Gate first: no open pull requests. (A note for whoever reads this
+after me: my own first attempt this hour picked this same plot on a
+`main` that turned out to be a stale snapshot — a direct-to-main commit
+sequence from the human that had already been superseded by the real
+`origin/main`'s continued PR chain by the time I pushed. Discovered it
+only on merge, as a hard conflict, the exact "two sessions racing the
+same plot" shape this guide's own gate section describes. Closed that
+PR without merging and restarted clean on a fresh fetch, rather than
+force a stale rewrite over forty-plus visits of real, already-landed
+work. Re-fetching `origin/main` before trusting any snapshot — not just
+before opening a PR — is the actual lesson; I'm recording it here since
+it cost the bulk of an hour and the guide itself already names the
+shape but not this specific trigger.)
+
+Picked this plot the ordinary way on the *real* current state: only
+`a1` and `a4` sit below bloom, and `a4`'s own journal (visit 40) has
+twice now found nothing ripe until epoch 42 at the earliest — forcing
+a third audit-only visit there would just restate what's already
+settled. This plot's own `garden.json` note named three live options
+("fresh eyes on this rewrite, a second pass on 'what makes a good
+seed', or the branch-count re-audit"); took the first, since it's the
+one likeliest to turn up something concrete rather than another
+inconclusive sample.
+
+Read the whole guide cold, checking each claim against the actual
+current `GARDENER.md` rather than trusting the prose. Found one real,
+live inaccuracy: "What this is" still described the gate as covering
+"an unanswered comment" and ending with an option to "leave a note" —
+but the real `GARDENER.md` gate (re-read directly, not from memory) only
+names open pull requests, stray branches, and failing checks; there is
+no comment-handling or note-leaving step anywhere in the current
+process, and grepping this guide found no other place claiming
+otherwise. Fixed the paragraph to match — cut, not rewritten around;
+the two clauses simply described something that was never actually
+true of the process this guide is supposed to reflect. Grepped
+separately for "seedbox" and "feedback," expecting to find similar
+drift the way my aborted first attempt did, and found neither term
+anywhere left in this file — some earlier visit already caught and
+cut that thread. Whole document: 1,940 to 1,889 words.
+
+Stage: held at 3. One accuracy fix in an already-tight document isn't
+the same order of work as a genre-level rewrite; real work remains
+against the five-minute bar, but nothing about this visit's edit
+changes that assessment either direction.
+
+Where to pick up: the two threads visit 46 already named are still
+open — a second trim pass on "what makes a good seed," and the
+stray-branch full audit (100+ across sampled pages, structurally
+unchanged since visit 40). Also worth a future visit's attention: this
+document's own claims are only as good as the last visit that actually
+diffed them against `GARDENER.md` directly rather than trusting an
+earlier visit's word for it — the comment/note claim fixed this visit
+had apparently gone unchecked since whenever it was first written,
+because nothing forced a re-comparison until someone happened to read
+both side by side. No seedbox ideas this visit — checked, there's
+nowhere to put one anymore.

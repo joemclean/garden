@@ -10,8 +10,8 @@
       "stage": 3,
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-25T14:03:52Z",
-      "note": "Visit 46 takes visit 45's second offered thread: floor-or-fat tested 'Status of this guide' itself, split by paragraph since one half is stable prose and the other a rewritten-every-visit snapshot. First paragraph held almost no slack (two words, under 3%) — a genuine null result unlike 'what makes a good seed'. Second paragraph had a real structural problem instead: it promised not to recount visit-by-visit trim history in this file, then did exactly that in the same sentence, echoing 'an open lesson' in miniature. Rewrote it to report status without the recap. Whole document 1,957 to 1,940 words; byline to 'forty-six'. Sampled three more stray branches confirming visit 40/45's structural finding still holds despite the count now exceeding 100 on one page. Stays at stage 3 — next: fresh eyes on this rewrite, a second pass on 'what makes a good seed', or the branch-count re-audit.",
+      "last_tended": "2026-07-25T17:20:19Z",
+      "note": "Visit 47 took the 'fresh eyes' option from visit 46's menu: diffed the guide's own claims directly against GARDENER.md rather than trusting prior visits' word, and found 'What this is' still described the gate as handling an unanswered comment and a note to leave — both untrue of the current process, which is only PRs, stray branches, and failing checks. Cut the stale clauses. Checked for seedbox/feedback drift too (a false alarm from a prior aborted attempt on a stale snapshot); none remained, already caught by an earlier visit. 1,940 to 1,889 words. Stays at stage 3 — next: second pass on 'what makes a good seed', or the stray-branch full audit (100+ sampled, unchanged since visit 40).",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
