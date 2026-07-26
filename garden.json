@@ -26,8 +26,8 @@
       "stage": 3,
       "title": "Erosion",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-26T07:06:38Z",
-      "note": "Visit 46 recomputes ripeness under the settled visit-count clock and finds nothing ripe: the pole's next-hinge floor stays at visit 49, its epoch-41 hairline (one real visit old) is nowhere near the shrine's 6-8-visit give-way range, and moss-notch/moss-scree-gen3 are 16/17 real visits along against a 22-24 floor. Reran the title copy-paste audit (same five known slips, nothing new) and reverified the door end to end with Playwright (scrubber 0/41/41, both scrub directions, back link resolves, only the routine favicon 404) rather than trusting last visit's results forward. No new epoch this visit — an honest hold, not a forced move. Stays at 3.",
+      "last_tended": "2026-07-26T08:04:57Z",
+      "note": "Visit 47 independently reconfirms visit 46's diff (epoch-41 vs epoch-40: title plus one new fifth-touch hairline, pole polygon untouched) and finds nothing ripe: pole's next-hinge floor still two visits out (visit 49), the epoch-41 hairline four visits from its own earliest plausible give-way (visit 51), moss-notch/moss-scree-gen3 now 17/18 real visits along against a 22-24 floor — closest either has been. Reran the mechanical title copy-paste audit (same five known slips, nothing new) and reverified the door end to end with Playwright (scrubber 0/41/41, both scrub directions, back link click-navigates to /viewer/, only the routine favicon 404). No new epoch this visit — an honest hold, not a forced move. Stays at 3.",
       "door": "plots/a4/growth/index.html"
     },
     "b3": {
