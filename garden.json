@@ -26,8 +26,8 @@
       "stage": 3,
       "title": "Erosion",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-26T05:07:08Z",
-      "note": "Visit 44 confirms nothing named is ripe yet (pole's second hinge one visit old, floor is visit 49; both moss cohorts 14-15 of 22-24 visits along) and a fresh full reread of epoch-40.svg turns up no dropped thread. Took up the open question visit 43 flagged instead of just re-confirming the arithmetic: does the 5-unit sliver left above the new hinge have room for a third hairline mark? Measured epoch 36's own crack against the 9-unit segment it used (roughly a 1:4:4 cap/crack/margin split) and scaled it to the new 5-unit sliver (~0.6/2.2/2.2) — room exists, none of the three parts hits zero, so this isn't the same 'too thin to weather further' ending band three and the dry-notch reached. Not placing it yet regardless: only one visit has passed since the hinge, short of this pole's own two-visit rhythm between a hinge and its next mark. No SVG change; door reverified end to end with Playwright. Stays at 3.",
+      "last_tended": "2026-07-26T06:06:36Z",
+      "note": "Visit 45 places the third pole mark, two real visits after the epoch-40 hinge, matching this pole's own hinge-to-mark rhythm. Scaled visit 44's measured 1:4:4 cap/crack/margin split to the 5-unit sliver above the hinge (0.556/2.222/2.222) and drew a fresh hairline crack floating above the hinge rather than touching it, traced against the sliver's own tapering edges at each placement height so it clears both sides by 2-4 units throughout. New epoch-41.svg (diff against epoch-40 is exactly the title line plus the one new comment/path block); door updated to match and reverified end to end with Playwright (scrubber 0/41/41, back link resolves, only the routine favicon 404). Stays at 3 — one more mark doesn't close this landscape's own bloom, which is the seed's final frame, not a single epoch's event.",
       "door": "plots/a4/growth/index.html"
     },
     "b3": {

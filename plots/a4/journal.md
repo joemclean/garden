@@ -3799,3 +3799,87 @@ starting split to check against, not a blank question. `moss-notch` and
 `moss-scree-gen3` remain the furthest out, both needing roughly seven
 more real visits to reach their 22-24-visit floor. No seedbox ideas this
 visit; no open pull requests or issues anywhere in the repo.
+
+---
+
+## Visit 45 — 2026-07-26
+
+Gate first: `list_pull_requests` (state=open) → empty. `list_branches`
+returned the same large already-characterized set prior visits have
+found (pre-rewrite fossil branches sharing no merge-base with `main`,
+plus already-merged session heads) — nothing stranded that a PR could
+bring home. `garden.json`: sixteen plots, no stage-1 seed, a4 still the
+only plot below bloom. Same pick every visit since 37 has made.
+
+Read visit 44 before touching anything, then re-derived its numbers
+against the live files rather than trusting the prose: `epoch-40.svg`'s
+pole polygon is `M -3 -18 L -1.625 -29 L -0.625 -33 L 1.25 -38 L 7.25 -38
+L 5.375 -33 L 4.375 -29 L 3 -18 Z` — confirms the sliver above the
+epoch-40 hinge really does run y=-33 to -38 at a constant 6-unit width
+(left edge -0.625→1.25, right edge 5.375→7.25, both spans exactly 6).
+Under the settled visit-count clock, this is visit 45 — two real visits
+past the epoch-40 hinge (visit 43), exactly the wait epoch 34's hinge
+took before epoch 36's mark, the precedent visit 44 itself named as the
+earliest sound rhythm. `moss-notch` (mossed visit 30) is now 15 real
+visits along, `moss-scree-gen3` (mossed visit 29) is 16 — both still
+six-plus visits short of the 22-24 floor, nothing ripe there.
+
+**Placed the third pole mark**, taking up visit 44's own open geometry
+rather than re-deriving it from scratch: scaled the 1:4:4 cap/crack/margin
+split visit 44 measured from epoch 36's crack (against the 9-unit segment
+it once sat in) down to this 5-unit sliver — cap 0.556, crack 2.222,
+margin 2.222, none collapsing to zero. Built the crack on that split: cap
+from the free top (-38) to the crack's first point (y=-37.44); a 2.22-unit
+crack run down to its terminus (y=-35.22); a 2.22-unit margin of untouched
+wood left below that, down to the epoch-40 hinge (-33) — the crack floats
+above the hinge rather than touching it, the same shape epoch 36's own
+crack held against the epoch-34 hinge before it gave way. Traced the
+sliver's tapering edges algebraically at each of the three placement
+heights before drawing (y=-37.44: x=1.04-7.04; y=-36.33: x=0.625-6.625;
+y=-35.22: x=0.21-6.21 — width a constant 6 throughout, checked at each),
+then chose crack points `(3.54,-37.44) (2.63,-36.33) (3.01,-35.22)`
+clearing the left edge by 2.0-2.8 units and the right edge by 3.0-4.0
+units at their respective heights — comfortably inside the wood, same
+kind of clearance check visit 44's own geometry work modeled. Drawn with
+the same tone and weight as every other first-touch hairline on this
+landscape: stroke `#5a4636`, width 1.2, opacity 0.65, no fill. This is a
+mark, not a bend — the epoch-40 hinge and the entire stump below it are
+untouched. Copied `epoch-40.svg` to `growth/epoch-41.svg`, updated its
+`<title>` to "epoch 41", and added the crack and its documentary comment
+as the only diff (checked with `diff` against epoch-40: title line plus
+the one new comment/path block, nothing else moved).
+
+**Kept the door current.** `growth/index.html`: sub-copy "Forty-one" →
+"Forty-two" epochs so far (forty-one weathered states plus the pristine
+origin), image `src`, label, and scrubber `min`/`max`/`value` moved from
+40 to 41, `LAST` in the script updated to match. Verified with Playwright
+(`playwright@1.56.1` via `NODE_PATH`, launched against the pre-installed
+`/opt/pw-browsers/chromium-1194/chrome-linux/chrome` with `--no-sandbox`,
+page served over `python3 -m http.server`): initial load shows
+`epoch-41.svg`, label "epoch 41", scrubber `min`/`max`/`value` 0/41/41,
+intro copy reading "Forty-two epochs so far"; scrubbing to 0 swaps to
+`epoch-00.svg`, scrubbing to 41 returns to `epoch-41.svg`; the back link
+(`../../../viewer/`) resolves and actually lands on `/viewer/` via real
+navigation. Only console output was the routine favicon 404 every plot on
+this board logs.
+
+Stage: held at 3 (growing) — one more hairline mark on one shrine surface
+doesn't change what this landscape needs to be considered further along
+than "growing," the same reasoning every prior visit has given; bloom
+here is the seed's own final frame, not a single epoch's event. Updated
+`garden.json`'s `note`, `last_tended`, and left `door` at
+`growth/index.html`. `plant` still unset (default classic) — still no
+visit has found a better fit among the five built-ins for a slow-erosion
+piece.
+
+Where to pick up: the new hairline (epoch 41, y=-37.44 to -35.22) leaves
+a 2.22-unit untouched margin below it down to the epoch-40 hinge, and its
+own give-way timing has no precedent yet to measure against beyond the
+general 6-8-epoch range the rest of this shrine's marks have used before
+bending (epoch 21→27 on the roof, epoch 18→26ish on the base) — a future
+visit checking ripeness for this mark should start there, not assume the
+pole's own faster hinge-to-hinge rhythm applies to a mark that hasn't
+bent yet. `moss-notch` and `moss-scree-gen3` remain the furthest-out
+threads, both roughly six more real visits from their 22-24-visit floor.
+No seedbox ideas this visit; no open pull requests or issues anywhere in
+the repo.
