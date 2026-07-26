@@ -3474,3 +3474,89 @@ epochs out. A future visit landing here before epoch 42 finding nothing
 ripe again is not a failure, it's the arithmetic holding a third time.
 No seedbox ideas this visit; no open pull requests or issues existed
 anywhere in the repo to weigh.
+
+---
+
+## Visit 42 — 2026-07-26
+
+Gate first: `list_pull_requests` (state=open) → empty, confirmed via the
+GitHub API directly. `list_branches` returned 400+ stray refs — went one
+step further than prior visits' spot-checks and fetched every remote
+head, then ran `merge-base --is-ancestor` against `origin/main` for all
+of them in one pass. Result refines what visits 40/41 assumed: the
+`claude/quirky-brown-*` heads (this session's own naming pattern) really
+are already-merged ancestors, but the much larger `claude/charming-
+shannon-*` / `claude/keen-fermat-*` set has **no merge-base with `main`
+at all** — `git log --max-parents=0 origin/main` turns up multiple root
+commits, meaning `main`'s history was rewritten/squashed at some point
+and these hundreds of branches are pre-rewrite fossils, not unmerged
+work sitting on top of current history. Nothing to bring home; you
+can't cleanly merge a disconnected history, and pruning that many refs
+is exactly the branch-sweeping GARDENER.md reserves for the human.
+Recording the corrected shape here since "leftover heads from
+already-merged visits" (visit 41's phrasing) undersells how orphaned
+they actually are — a future gate check can skip re-deriving this and
+just confirm the count hasn't shifted.
+
+`garden.json`: sixteen plots, all registered, no stage-1 seed anywhere.
+a4 is the only plot below bloom, which per the boilerplate's own
+"still short of what its seed wished for" clause makes it the pick
+regardless of how recently it was last touched — this isn't a bloom
+plot cycling back for polish, it's the one still becoming.
+
+Reread the seed fresh before touching anything, specifically to
+pressure-test whether "hold, nothing ripe" (visits 40 and 41 both) is
+actually honoring "One hour is one epoch" or quietly drifting from it.
+Concluded the wait-for-a-threshold practice is sound: the seed's actual
+prohibition is inventing content, not inventing a slower cadence, and
+the 6-8/22-24-epoch floors were derived from this landscape's own
+observed pattern (every real thickening and every real hinge on this
+plot has landed inside those windows), not asserted from nowhere. So I
+independently re-derived rather than trusted forward: re-read the full
+742-line `epoch-39.svg` end to end, group by group, without opening
+visit 40 or 41's audits first, to see if a truly fresh pass caught
+anything two prior fresh passes missed. It didn't. The pole's epoch-36
+hairline (`M 2.5 -37 L 1.8 -35 L 2.6 -33`) is the only live thread with
+a concrete next move, and at a would-be epoch 40 it would be four
+epochs old against this shrine's own established 6-8-epoch floor — not
+ripe until epoch 42 at the earliest, same number visits 40 and 41 both
+reached. `moss-notch` (mossed epoch 30) and `moss-scree-gen3` (mossed
+epoch 29) are 10-11 epochs mossed against a ~22-24-epoch thickening
+window — nowhere close. The shrine base's bottom-right corner still
+carries no reserved crack in 39 epochs, and I still don't have more
+reason to open one than visit 39 did when it first named the gap.
+
+Did take up the one concrete task visit 41 left in reserve rather than
+just re-confirming its top-line conclusion: greped every epoch file's
+`<title>` tag in sequence (`epoch-00` through `epoch-39`) to check
+whether the recurring copy-paste slip has a sixth instance. It doesn't
+— exactly the five known slips (12→11, 17-18→16, 24-25→23, 30→29,
+35-37→34), unchanged, nothing past epoch 38. Per visit 31's own ruling,
+these stay as historical record and aren't retroactively fixed.
+
+Verified the door properly rather than trusting the DOM: served the
+repo root (`python3 -m http.server`), loaded `plots/a4/growth/index.html`
+in headless chromium (`/opt/pw-browsers/chromium-1194/chrome-linux/chrome`,
+`--no-sandbox`), confirmed `#shot` points at `epoch-39.svg`, the
+scrubber's `min`/`max`/`value` all read 0/39/39, the label reads "epoch
+39", the back-link resolves to `../../../viewer/`, and took a real
+screenshot rather than trusting attributes alone — sky, cliff, shrine,
+delta, and terraces all render as expected, no console errors beyond
+the routine favicon 404.
+
+No new `growth/epoch-40.svg` this visit — a third independent read
+turns up the same conclusion as the second, which is the arithmetic
+holding, not a rut. `growth/index.html` unchanged. Stage held at 3.
+Updated `garden.json`'s `last_tended` only; note now records this
+visit's gate correction and re-derivation; door stays
+`growth/index.html`. `plant` entry still unset (default classic) —
+no visit has ever found a better fit among the five built-ins for a
+slow-erosion piece, still true today.
+
+Where to pick up: same floor as visits 40 and 41 — epoch 42 at the
+earliest for the pole, epoch 51+ for either moss cohort. A future visit
+landing here again before epoch 42 with nothing ripe is the same
+honest result a fourth time, not a new problem. The corrected stray-
+branch shape (above) is the one new thing this visit adds to the gate's
+own running record; no seedbox ideas, no open PRs or issues anywhere in
+the repo.
