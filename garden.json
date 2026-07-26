@@ -26,8 +26,8 @@
       "stage": 3,
       "title": "Erosion",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-26T09:04:03Z",
-      "note": "Visit 48 independently reconfirms visit 47's diff (epoch-41 vs epoch-40: title plus one new fifth-touch hairline, pole polygon untouched) and finds nothing ripe: pole's next-hinge floor now one visit out (visit 49, the closest yet), the epoch-41 hairline three visits from its own earliest plausible give-way (visit 51), moss-notch/moss-scree-gen3 now 18/19 real visits along against a 22-24 floor. Reran the mechanical title copy-paste audit (same five known slips, nothing new) and reverified the door end to end with Playwright (scrubber 0/41/41, both scrub directions, back link click-navigates to /viewer/, only the routine favicon 404). No new epoch this visit — an honest hold, not a forced move. Stays at 3.",
+      "last_tended": "2026-07-26T10:06:42Z",
+      "note": "Visit 49 reconfirms visit 48's diff (epoch-41 vs epoch-40: title plus one new fifth-touch hairline, pole polygon untouched), then retires a three-visit-old bookkeeping redundancy: the 'pole's next-hinge floor' (visit 49, a generic pre-mark hinge-spacing estimate) and the epoch-41 hairline's own clock (visit 51, the specific first-touch-hairline range) were always the same future event, not two, and only the specific number should govern going forward. By that number, and moss-notch/moss-scree-gen3 at 19/20 real visits against a 22-24 floor, nothing is ripe this visit. Reran the mechanical title copy-paste audit (same five known slips, nothing new) and reverified the door end to end with Playwright (scrubber 0/41/41, both scrub directions, back link click-navigates to /viewer/, only the routine favicon 404). No new epoch this visit — an honest hold, not a forced move. Stays at 3.",
       "door": "plots/a4/growth/index.html"
     },
     "b3": {
