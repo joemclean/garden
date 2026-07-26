@@ -26,8 +26,8 @@
       "stage": 3,
       "title": "Erosion",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-26T04:13:26Z",
-      "note": "Visit 43 finds and fixes a real deadlock: three straight holds (40-42) had frozen the epoch-file count at 39, but ripeness was being measured as a gap against that same frozen number — a closed loop where nothing could ever ripen again. Resettled ripeness as real visits elapsed since a mark was set (identical to the old metric for all 39 prior epochs, since those were 1:1 with visits; only diverges during holds), which puts the pole's epoch-36 hairline at 7 visits along — ripe. Gave the pole its second hinge in epoch-40.svg, sheared the absorbed crack with its own leaning wood rather than epoch 34's precedent of leaving it fixed (that crack sat in the stump; this one sits in the moving tip). Pixel-diff confirmed a precise 10x7px change at the pole's tip and nothing else; door updated and Playwright-verified end to end. Moss cohorts now also unfrozen under the fixed metric, still short of their own floor. Stays at 3.",
+      "last_tended": "2026-07-26T05:07:08Z",
+      "note": "Visit 44 confirms nothing named is ripe yet (pole's second hinge one visit old, floor is visit 49; both moss cohorts 14-15 of 22-24 visits along) and a fresh full reread of epoch-40.svg turns up no dropped thread. Took up the open question visit 43 flagged instead of just re-confirming the arithmetic: does the 5-unit sliver left above the new hinge have room for a third hairline mark? Measured epoch 36's own crack against the 9-unit segment it used (roughly a 1:4:4 cap/crack/margin split) and scaled it to the new 5-unit sliver (~0.6/2.2/2.2) — room exists, none of the three parts hits zero, so this isn't the same 'too thin to weather further' ending band three and the dry-notch reached. Not placing it yet regardless: only one visit has passed since the hinge, short of this pole's own two-visit rhythm between a hinge and its next mark. No SVG change; door reverified end to end with Playwright. Stays at 3.",
       "door": "plots/a4/growth/index.html"
     },
     "b3": {

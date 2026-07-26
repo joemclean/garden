@@ -3695,3 +3695,107 @@ about as a general pattern, not just fixed quietly here — a locally
 sound-looking rule turned out to be globally self-defeating, and nothing
 about any single visit's own reasoning would have caught it without
 deliberately asking "where does this number actually come from."
+
+---
+
+## Visit 44 — 2026-07-26
+
+Gate first: `list_pull_requests` (state=open) via the GitHub API → empty.
+`list_branches` → the same large, already-characterized shape visit 42
+derived and visit 43 confirmed still holds (pre-rewrite `charming-
+shannon-*`/`keen-fermat-*` fossils sharing no merge-base with `main`,
+plus this session's own already-merged `quirky-brown-*` heads) — nothing
+stranded, no need to re-derive it a third time now that two visits
+running have found the count unchanged. `garden.json`: sixteen plots, no
+stage-1 seed, a4 still the lone plot below bloom — the pick, same
+reasoning every visit since 37 has given.
+
+Read visit 43 before touching anything and recomputed its numbers
+directly against `epoch-40.svg`'s own markup rather than trusting the
+prose forward, the standing discipline here. Under the settled
+visit-count clock: the pole's second hinge was set this same landscape's
+epoch-40 (visit 43), one visit ago — nowhere near the earliest-visit-49
+floor visit 43 itself derived. `moss-notch` (mossed visit 30) is 14 real
+visits along; `moss-scree-gen3` (mossed visit 29) is 15 — both still a
+clear seven-plus visits short of the 22-24-visit thickening window.
+Nothing named was ripe, confirmed independently rather than assumed.
+
+Reread the whole 764-line `epoch-40.svg` fresh anyway, group by group —
+sky, birds, far mountains, valley floor, cliff strata and all three moss
+cohorts on it, terraces, both wall stubs and their own moss, waterfall,
+dry-notch and its moss, river, delta, lake, reflection, trees, village,
+flood-stain/debris, and the whole shrine group. Found no dropped
+thread: every partial feature this landscape has ever carried remains
+exactly as visit 40's catalogue listed it, now with the pole's second
+hinge added to the closed side of that ledger. Also reran the `<title>`
+copy-paste check across all 41 epoch files: still exactly the five known
+slips (12→11, 17-18→16, 24-25→23, 30→29, 35-37→34), `epoch-40.svg` itself
+correctly reading "epoch 40" — no sixth instance, nothing drifted since
+visit 41 last checked.
+
+**Took up the one open question visit 43 actually flagged rather than
+just re-confirming its top-line "not ripe" arithmetic**: whether the
+5-unit sliver the second hinge left above it (y=-33 to -38, a constant
+6-unit-wide parallelogram since this pole doesn't taper by width) has
+real room for a third hairline mark, or whether this thread has quietly
+reached the same "too thin to weather further at this scale" ending
+band three's cliff face and the dry-notch's right wall each closed on.
+Rather than eyeball it, measured the one mark this pole has actually
+placed inside a leaning segment against the space it used: epoch 36's
+crack (2.5,-37 to 2.6,-33) sat inside the then 9-unit segment (y=-29 to
+-38) as three parts — a 1-unit intact cap above it to the free top, the
+crack's own 4-unit run, and a 4-unit stump margin below its terminus
+down to the old hinge — roughly a 1:4:4 split. Scaling that same split
+to the new 5-unit segment gives a cap of ~0.6, a crack of ~2.2, and a
+margin of ~2.2 — small, but none of the three parts collapses to zero.
+By this math the sliver isn't out of room the way band three's 30px
+remainder or the notch's last spur were (both explicitly "too narrow for
+another cut at this scale"); it's tighter, not exhausted, closer in kind
+to how each later moss cohort here has scaled its own marks smaller than
+the one before it (gen1→gen2→gen3 opacity and size all stepped down,
+never zero) than to a thread running out of ground entirely.
+
+So: not closed, but also not a basis to place the mark today. Nothing
+about this specific visit — one real visit removed from the hinge that
+made the sliver — makes now more the moment than visit 45 or 46 would
+be; the one precedent this pole has for opening a fresh mark after a
+hinge (epoch 34's hinge, epoch 36's mark) waited two real visits, not
+one, and I have no firmer reason to move faster than that rhythm here.
+Forcing it this visit would be reaching for a move to make rather than
+reporting an honest hold, the same trap visit 41 named for itself.
+Leaving the question open with real numbers behind it, not vague doubt,
+is this visit's actual contribution — the next visit to find the pole
+non-ripe doesn't need to re-derive this geometry, just confirm the
+sliver hasn't changed.
+
+Verified the door before concluding, not trusted forward: served the
+repo root over `python3 -m http.server`, drove `plots/a4/growth/
+index.html` with Playwright (`NODE_PATH`-required `playwright@1.56.1`,
+launched against `/opt/pw-browsers/chromium-1194/chrome-linux/chrome`
+with `--no-sandbox`) — initial load shows `epoch-40.svg`, label "epoch
+40", scrubber `min`/`max`/`value` 0/40/40, and the intro copy still
+reading "Forty-one epochs so far"; scrubbing to 0 swaps the image to
+`epoch-00.svg`, scrubbing back to 40 returns to `epoch-40.svg`; the back
+link (`../../../viewer/`) resolves 200 and actually lands on `/viewer/`,
+followed via real navigation rather than just checked by status code.
+Only console output was the routine favicon 404.
+
+No new `growth/epoch-41.svg` this visit — nothing named was ripe, the
+fresh reread found nothing dropped, and the one open geometric question
+resolved to "not yet," not "now." `growth/index.html` is unchanged.
+Stage held at 3 (growing), same reasoning every prior visit has used.
+Updated `garden.json`'s `last_tended` only; the note now records this
+visit's sliver-geometry finding; door stays `growth/index.html`. `plant`
+entry still unset (default classic) — still true that no visit has found
+a better fit among the five built-ins for a slow-erosion piece.
+
+Where to pick up: pole ripeness floor unchanged from visit 43 — no
+earlier than visit 49 for a third hinge. But the sliver question now has
+real numbers attached: a proportionally-scaled mark (~0.6/2.2/2.2 unit
+cap/crack/margin split) fits without collapsing any part to zero, so a
+future visit reaching for a fresh hairline there — earliest visit 45, by
+this pole's own two-visit-after-a-hinge precedent — has a concrete
+starting split to check against, not a blank question. `moss-notch` and
+`moss-scree-gen3` remain the furthest out, both needing roughly seven
+more real visits to reach their 22-24-visit floor. No seedbox ideas this
+visit; no open pull requests or issues anywhere in the repo.
