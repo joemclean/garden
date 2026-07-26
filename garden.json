@@ -26,8 +26,8 @@
       "stage": 3,
       "title": "Erosion",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-26T03:06:00Z",
-      "note": "Visit 42 refines the gate's own record: fetched every stray remote branch and confirmed the large claude/charming-shannon-* / claude/keen-fermat-* set has no merge-base with main at all (main's history was rewritten/squashed at some point) — pre-rewrite fossils, not unmerged work, nothing to bring home. On the plot itself, a third independent full-file reread of epoch-39.svg again found nothing ripe: pole's hairline still 4 epochs old at a would-be epoch 40 (needs 6-8, ripe at epoch 42 earliest), moss-notch and gen3 scree at 10-11 epochs (needs ~22-24). Re-verified every epoch's <title> tag in sequence per visit 41's own request — same five known copy-paste slips, nothing new. No epoch-40 added; door reverified via Playwright screenshot, resolves correctly at epoch 39. Stays at 3.",
+      "last_tended": "2026-07-26T04:13:26Z",
+      "note": "Visit 43 finds and fixes a real deadlock: three straight holds (40-42) had frozen the epoch-file count at 39, but ripeness was being measured as a gap against that same frozen number — a closed loop where nothing could ever ripen again. Resettled ripeness as real visits elapsed since a mark was set (identical to the old metric for all 39 prior epochs, since those were 1:1 with visits; only diverges during holds), which puts the pole's epoch-36 hairline at 7 visits along — ripe. Gave the pole its second hinge in epoch-40.svg, sheared the absorbed crack with its own leaning wood rather than epoch 34's precedent of leaving it fixed (that crack sat in the stump; this one sits in the moving tip). Pixel-diff confirmed a precise 10x7px change at the pole's tip and nothing else; door updated and Playwright-verified end to end. Moss cohorts now also unfrozen under the fixed metric, still short of their own floor. Stays at 3.",
       "door": "plots/a4/growth/index.html"
     },
     "b3": {

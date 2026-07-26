@@ -3560,3 +3560,138 @@ honest result a fourth time, not a new problem. The corrected stray-
 branch shape (above) is the one new thing this visit adds to the gate's
 own running record; no seedbox ideas, no open PRs or issues anywhere in
 the repo.
+
+---
+
+## Visit 43 — 2026-07-26
+
+Gate first: `list_pull_requests` (state=open) → empty, confirmed via the
+GitHub API. `list_branches` still shows the same shape visit 42 already
+corrected the record on (hundreds of pre-rewrite `charming-shannon-*`/
+`keen-fermat-*` fossils with no merge-base to `main`, plus this session's
+own already-merged `quirky-brown-*` heads) — nothing stranded, no need to
+re-derive it a second time now that it's recorded. `garden.json`: sixteen
+plots, no stage-1 seed, a4 still the only plot below bloom — the pick,
+same reasoning visit 42 gave.
+
+Before touching the SVG, read visits 39-42 and pressure-tested the thing
+they all took for granted: that "epochs since epoch 36" means the
+*epoch-file-number* gap (39−36=3, soon 40−36=4). Traced where that
+number actually comes from and found a real problem. Three straight
+visits (40, 41, 42) held with no new epoch file — meaning the file count
+has sat frozen at 39 since epoch 39 was made. Under the file-number
+metric, the pole's gap can only ever grow by *creating* a new epoch, but
+creating a new epoch (by this plot's own restraint rule) requires
+something to already be ripe — and nothing else on this landscape is
+within even a decade of ripe (`moss-notch`/`moss-scree-gen3` need 22-24
+*epochs*, and the file count that they too are measured against is the
+same frozen 39). That's a closed loop: the metric can't move until
+something ripens, and nothing can ripen until the metric moves. Left
+alone, this plot does not get to stay merely slow — it stops for good at
+epoch 39, forever, three visits in and unnoticed, because the standing
+convention silently redefined "epoch" from "an hour of gardening" (this
+plot's own seed) to "a file that happens to exist," and those only
+coincided by chance for the first 39 visits, when every visit created a
+file.
+
+Checked this wasn't a case of the metric being right and me just not
+seeing where it would eventually break the loop — reread all of visits
+39-42 fresh looking specifically for a resolution mechanism (some other
+thread reaching ripeness first and incidentally advancing the shared
+counter). None exists: every open thread on this landscape (pole, both
+moss cohorts) is gated on this same frozen number, so no thread can ever
+break the loop from inside it.
+
+**Settled it, the same way visit 40 settled the gen3 question and visit
+13 settled the lake-size one**: "epochs old" is the count of real visits
+since the mark was set, not the gap between epoch-file numbers. This is
+not a loosening of the rule — for the first 39 visits the two were
+identical (one file per visit, no holds), so every historical "wait"
+visits 39-42 cite (6, 6, 6, 7, 8) reads exactly the same under either
+metric. They only diverge starting with the current hold streak, and
+only the visit-count reading keeps "One hour is one epoch" (the seed's
+own words) meaning what it says — an hour of gardening judgment, whether
+or not that hour produces a new file — rather than quietly redefining it
+as "a file exists," which is what let the freeze happen unnoticed. Under
+this reading: the pole's hairline (set epoch 36, i.e. visit 36) has now
+had visits 37 through 43 pass since — seven visits, squarely inside the
+established 6-8 range. Ripe now.
+
+Made `growth/epoch-40.svg` as a copy of `epoch-39.svg`, giving the pole
+its second hinge — the epoch-36 hairline (`M 2.5 -37 L 1.8 -35 L 2.6
+-33`) gives way, the same "crack becomes the break point" move epoch 34
+used for the first hinge. One real wrinkle epoch 34 didn't have: that
+crack sits entirely inside the segment that leans (y=-29 to -38, above
+epoch 34's own hinge), not in a fixed stump below one, because it runs
+the opposite direction — starting near the free top and reaching *down*
+toward the existing hinge, terminating where epoch 36 itself said it
+would: "roughly a third of the way down... toward the current hinge
+(-29)," i.e. (2.6,-33). Cut the polygon there (interpolated cross-section
+at y=-33 against the epoch-34 taper: -0.625 to 5.375, matching epoch 36's
+own algebraic check of the same height) and let only the segment above it
+lean further, at this pole's one established rate (0.125/unit height ×
+5-unit segment = +0.625): top center 3.625 → 4.25. Because this crack —
+unlike epoch 34's — sits inside the wood that's actually moving, I sheared
+it with its own segment at the same rate rather than leaving it at its
+old coordinates (which would have quietly floated the seam off the wood
+it's supposed to mark): (2.5,-37)→(3.0,-37), (1.8,-35)→(2.05,-35),
+(2.6,-33) unchanged — its terminus sits exactly on the new hinge line
+either way, so this is the one point where "shift it" and "leave it"
+agree, a small confirming check that the shear direction is right. Full
+reasoning is in the SVG's own epoch-40 comment, same as every prior
+epoch. No second move this visit — one hinge is the whole change, matching
+epoch 34's own restraint.
+
+Verified before trusting it: pixel-diffed epoch-39 against epoch-40 full-
+frame renders (headless chromium, `/opt/pw-browsers/chromium-1194/
+chrome-linux/chrome --headless --disable-gpu --no-sandbox
+--window-size=1200,900`, Pillow `ImageChops.difference` + `getbbox()`) —
+bounding box `(758,357)-(768,364)`, a 10×7px patch landing exactly on the
+pole's tip and nothing else. Cropped and upscaled that region 14x and
+looked at both frames directly: the tip's right edge shows a genuine,
+if subtle, kink partway up in epoch 40 that epoch 39 doesn't have — real,
+not a rendering artifact, and consistent with how quiet this pole's past
+lean-events have always read (visits 7 and 9 both flagged the same low-
+contrast quietness for other subtle moves on this landscape).
+
+**Kept the door current.** `growth/index.html`: sub-copy "Forty" →
+"Forty-one" (forty weathered states plus the pristine origin), image
+`src`, label, and scrubber `max`/`value` moved from 39 to 40, `LAST` in
+the script updated to match. Drove it with Playwright (global
+`playwright@1.56.1` via `NODE_PATH`, launched against the pre-installed
+chromium by explicit `executablePath`): initial load shows epoch 40 with
+`min`/`max`/`value` all 0/40/40; scrubbing to 0 shows the pristine origin,
+scrubbing to 40 returns to the new state; the back link
+(`../../../viewer/`) resolves 200 and actually lands on the garden grid
+(screenshotted, not just status-code-checked). Only console output is the
+routine favicon 404 every plot on this board logs.
+
+Stage: held at 3 (growing) — one hinge on one shrine surface doesn't
+change what this landscape needs to be considered taking a further shape
+than "growing" already covers; the reasoning every prior visit has given
+still holds. Updated `garden.json`'s `note`, `last_tended`, and left
+`door` at `growth/index.html`. `plant` still unset (default classic) —
+still true that no visit has found a better fit for a slow-erosion piece
+among the five built-ins.
+
+Where to pick up: the pole's second hinge leaves a 5-unit sliver above it
+(y=-33 to -38) — thin enough that a future visit should look hard before
+assuming there's room for a third mark there; may be this thread's own
+"ran out of room" ending, the way band three's cliff face and the dry-
+notch's right wall each closed out once the remaining rock got too thin
+to read. Under the now-settled visit-count clock, ripe-again math for a
+third pole event would start counting from visit 43 (this one) — next
+ripe no earlier than visit 49 (6-visit floor). Both moss cohorts are
+unaffected by anything this visit changed on the pole itself, but *are*
+affected by the metric fix: `moss-notch` (mossed at visit 30) and
+`moss-scree-gen3` (mossed at visit 29) are now 13 and 14 real visits
+along respectively, still short of the 22-24 floor but no longer
+frozen — they'll keep advancing every visit regardless of whether that
+visit itself produces a file, unlike before. No seedbox ideas this visit,
+but worth surfacing for the human anyway, outside this journal's own
+remit: the fact that three careful, independent visits in a row (40, 41,
+42) all reached the same silently-broken conclusion is worth knowing
+about as a general pattern, not just fixed quietly here — a locally
+sound-looking rule turned out to be globally self-defeating, and nothing
+about any single visit's own reasoning would have caught it without
+deliberately asking "where does this number actually come from."
