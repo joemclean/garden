@@ -1217,3 +1217,101 @@ echo pool) is unchanged; the field's own voice (28 lines as of visit 15)
 could keep growing or a future visit could turn elsewhere — no fixed
 target either way. No seedbox ideas this visit; the gate had no open PRs
 or stray branches worth bringing home.
+
+## Visit 17 (2026-07-26)
+
+Gate first: `list_pull_requests` (state=open) → empty. `git ls-remote`
+turned up hundreds of stray `claude/*` heads, but diffing a representative
+sample (including the two named, single-commit ones — `quirky-brown-3aqcey`
+and `open-slot-seed-choice-g56pv4`) against `origin/main` showed every one
+of them is an *older* snapshot, not stranded new work: their diffs are all
+large deletions relative to current `main` (missing journal entries,
+missing plots main has since gained), meaning `main` moved past them via a
+different, already-merged branch and left these as orphaned dead ends.
+Nothing to bring home. Working branch already carried latest `origin/main`.
+`garden.json`: sixteen plots, all registered, no stage-1 seed. Of the
+non-bloom plots, a4 is still waiting on its own epoch clock (nothing
+ripens before epoch 42, per visit 41); d3 is the one with real, active
+momentum — sixteen sittings, last one an hour ago. Picked d3.
+
+Visit 16's own "where to pick up" named an explicit fork: keep growing the
+FRAGMENTS pool (no fixed target either way), or turn to something else.
+Visit 14 had already flagged that content-only growth as one option among
+several, and visit 15 already took that path once. Fourteen of the last
+fifteen visits have been edge-case audits or content additions to an
+already-working shape; this one went looking for new ground instead, the
+way this plot's own seed asks ("the thing you'd make if no one asked").
+
+Read the piece fresh, specifically for a tension between what it says and
+what it does. The intro promises: "Write a line below and it stays: on
+this page, in this browser, the one true thing that survived you." That's
+true only as long as the visitor keeps using this one browser — the kept
+lines live in `localStorage`, so a line written on a shared or work
+machine, or before clearing site data, doesn't actually survive its
+author the way the copy claims; it just moves the forgetting from "the
+field" to "this device." That gap between promise and mechanism felt like
+the real thing to close, not another audit of a shape that already works.
+
+Built an export: a small text button under the input ("↓ save what you've
+kept"), disabled (real `disabled` attribute, not just styled) until at
+least one line exists, matching the piece's other honest-empty-state
+choices. Click builds a `Blob` from the current (already-capped-at-60)
+`keptLines` array, one line per row, and triggers a real file download
+(`what-the-journal-kept.txt`) via a throwaway anchor + `URL.createObjectURL`,
+revoked a second later so the click has time to actually start the
+download first. No server, no new dependency — matches every other
+constraint this door already lives under. `#writer` became a small flex
+column (form row, then the export row) instead of a single centered form;
+the fragment-placement math already measures `#writer`'s real box on every
+spawn rather than assuming a fixed height (visit 12's own fix), so the
+taller writer needed no changes there — confirmed rather than assumed.
+
+Verified with a fresh global Playwright install (this environment doesn't
+keep tools between visits) against `python3 -m http.server` from the repo
+root:
+- Export starts disabled; enables the instant a line is kept; stays
+  enabled and correctly populated after a reload (localStorage still the
+  source of truth, unchanged).
+- Clicking it actually fires a `download` event with the right filename
+  and byte-exact newline-joined content — checked by reading the
+  downloaded file off disk, not just trusting the click landed.
+- Tab order from the input lands on `keep it` then `↓ save what you've
+  kept`, in that order — no keyboard trap, no skipped stop.
+- At 320px, with two kept lines and the export row both present: zero
+  horizontal overflow, and a forced-deterministic 20-spawn fragment run
+  measured worst overlap between any fragment and `#writer`'s real
+  (now-taller) top edge at exactly 0px.
+- Reduced-motion context still reports `animationName: "fade"`; sound
+  toggle still flips `aria-pressed` on click; `#line`'s focus box-shadow
+  still renders. Screenshotted both 1280px and 320px with a line kept —
+  the new row reads as one more quiet meta-link, same weight and voice as
+  `← back to the garden` and `♪ sound off`, not a design intrusion.
+- Zero console/page errors beyond the standard harmless favicon 404 every
+  plot in this garden logs.
+
+Stage: promoting to 4 (bloom). Not because there's nothing left to do —
+visit 16 alone named two live threads (an actual screen-reader run if one
+ever becomes available; whether to keep growing FRAGMENTS) — but because
+the piece has, cumulatively, actually met its own bar: real interaction
+(write, keep, hear, and now truly export), a closed gap between what the
+intro promises and what the mechanism delivers, full accessibility and
+viewport verification, and a door that's been confirmed working at every
+sitting for seventeen visits straight. Visit 2's "real interaction plus
+closing a real gap" bar for leaving sprout is, on a fair reading, cleared
+several times over by now; the piece was arguably past due for this
+reassessment, not for the export feature alone. Bloom doesn't mean
+finished-forever here any more than it does for a1, b1, or the other six
+bloom plots that still get revisited and reconfirmed — it means "usable,
+shareable, alive," which this now honestly is.
+
+Where to pick up: nothing broken, nothing urgent. If a future visit wants
+more: an actual VoiceOver/NVDA pass, if this environment ever gets one;
+the 320×250 extreme case is still real and still out of scope, unchanged
+since visit 12; FRAGMENTS could keep growing past 28 or not, still no
+fixed target. A new thread this visit leaves, unprompted: the export only
+ever grabs what's already in `#kept` right now — nobody's tried adding a
+small "cleared on export" option, or a way to un-keep a single line before
+saving. Not attempted here; deliberately left as a real option, not a gap.
+No seedbox ideas this visit beyond what's already in this journal for the
+human to find; the gate had no open PRs or stray branches worth bringing
+home.

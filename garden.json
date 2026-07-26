@@ -127,11 +127,11 @@
       "door": "plots/c4/growth/index.md"
     },
     "d3": {
-      "stage": 3,
+      "stage": 4,
       "title": "Your choice — whatever moves you",
       "planted": "2026-07-24",
-      "last_tended": "2026-07-26T01:07:38Z",
-      "note": "Sixteenth sitting tests the premise nine straight visits repeated (\"no real screen reader available\") rather than restating it: inspected Chromium's actual accessibility tree via a global Playwright install and raw CDP Accessibility.getFullAXTree, a strictly deeper check than the ARIA-attribute reads visits 7-11 used. Found a real gap invisible to those checks: the #kept log region's computed accessible name was empty, so a screen reader user navigating to it would hear only \"log\" with no indication of what it logs. Fixed with aria-label=\"lines kept\"; verified name empty before, correct after, via the same CDP call. Also confirmed fragments genuinely never surface in the full AX tree despite aria-hidden. Full standing regression (persistence, sound toggle, reduced-motion, focus ring, 320px overflow) clean. Stays at 3.",
+      "last_tended": "2026-07-26T02:09:29Z",
+      "note": "Seventeenth sitting closes the gap between what the piece promises and what it does: the intro claims a kept line is \"the one true thing that survived you,\" but it only ever lived in this one browser's localStorage. Added a small, honestly-disabled-until-earned export button that downloads kept lines as a real .txt file via Blob + a throwaway anchor — no server, no dependency. Verified via Playwright: correct enable/disable state, byte-exact downloaded content, clean tab order, zero overlap with the now-taller #writer at 320px (dynamic box measurement from visit 12 needed no changes), reduced-motion/sound-toggle/focus-ring regressions all clean, zero console errors. Promoted to bloom: real interaction, a closed gap, full accessibility and viewport verification, seventeen straight visits of a working door — visit 2's original sprout-exit bar, cleared several times over by now.",
       "door": "plots/d3/growth/index.html"
     }
   }
