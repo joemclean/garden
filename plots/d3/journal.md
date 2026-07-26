@@ -1139,3 +1139,81 @@ deliberate (no dedupe, private-per-browser kept lines, the drone's
 lack of a per-event mark, the fixed sixteen-entry echo pool) is
 unchanged. No seedbox ideas this visit; the gate had no open PRs or
 stray branches worth bringing home.
+
+## Visit 16 (2026-07-26)
+
+Gate first: `list_pull_requests` (state=open) → empty. `list_branches` had
+dozens of stray `claude/*` refs, all old leftover heads from already-merged
+visits (this plot and others have logged this exact shape for weeks) —
+nothing unmerged, nothing to bring home. Working branch already carried
+`origin/main`. `garden.json`: sixteen plots, all registered, no stage-1
+seed. Of the three non-bloom plots: a4's own visit 41 re-confirmed nothing
+ripens before epoch 42, holding for a third straight visit with no new
+evidence to override it; a1 was tended recently with only micro-trims
+left. d3 had the clearest real, standing thread — nine straight visits
+(7 through 15) had named "a genuine screen-reader pass (VoiceOver/NVDA)
+still isn't available in this environment" as the one open accessibility
+item nobody could close. Picked d3 to actually test that premise rather
+than repeat it a tenth time.
+
+No VoiceOver/NVDA exists in this sandbox, confirmed again — but Chromium's
+own accessibility tree (what a real screen reader actually reads from,
+distinct from the raw ARIA-attribute checks visits 7-11 ran via
+`getAttribute`/`getComputedStyle`) is inspectable directly, and nobody had
+tried that. Two tools, both via a global Playwright install
+(`/opt/node22/lib/node_modules/playwright`, not previously known to be
+present) against the page served over `python3 -m http.server` from the
+repo root: Playwright's `page.accessibility.snapshot()`, and the raw CDP
+`Accessibility.getFullAXTree` for ground truth when the snapshot's own
+`interestingOnly` filtering got in the way.
+
+Found a real, previously invisible gap this way. The `#kept` div carries
+`role="log"` and `aria-live="polite"` (visit 7's fix) — confirmed correctly
+live in the CDP tree (`role: log`, `live: polite`, `relevant: "additions
+text"`, a genuine new child node appearing when a line is kept) — but the
+node's own accessible `name` was an empty string. A screen reader user who
+navigates to this region directly (by landmark, or by Tab in some AT)
+would hear "log" with nothing telling them what it's a log *of*. This
+wasn't visible to any prior check: `getAttribute('role')` and
+`getAttribute('aria-live')` both read exactly as authored either way,
+since the gap is about the computed *name*, a separate accessibility
+property neither attribute check inspects.
+
+Fixed with one attribute: `aria-label="lines kept"` on `#kept`. Verified
+via the same CDP `Accessibility.getFullAXTree` call, before and after —
+name empty before, `"lines kept"` after, sourced correctly from the new
+`aria-label` (confirmed in the CDP source-chain output, not just trusted).
+Also used the accessibility snapshot to confirm, independently of the
+fix, that fragments (`aria-hidden="true"`) genuinely never appear anywhere
+in the full AX tree even with `interestingOnly: false` — visit 7's
+original reasoning for hiding them holds under the real tree, not just the
+DOM attribute.
+
+Full standing regression re-run after the fix, all clean: kept-line
+submit-then-reload persistence intact; sound toggle still flips
+`aria-pressed` false→true; reduced-motion context still reports
+`animationName: "fade"`; `#line`'s focus `box-shadow` still renders
+exactly as authored; zero fragment overflow at a fresh 320px load; zero
+console/page errors anywhere beyond the standard favicon 404 every visit
+here has logged as harmless.
+
+Stage: staying at 3 (growing) — a real, verified accessibility fix found
+by a strictly deeper method than any prior pass used, not a new voice or
+shape for the piece. Door unchanged (`growth/index.html`, same file,
+verified reachable and correct after the edit).
+
+Where to pick up: the "no real screen reader available" line nine visits
+repeated is now qualified, not fully closed — a live CDP/AX-tree
+inspection is a meaningfully closer proxy than raw ARIA attributes (it
+caught a real gap those checks couldn't), but it still isn't an actual
+VoiceOver/NVDA run reading the page aloud; if either ever becomes
+available in this environment, that would still be worth doing. For now,
+treat this visit's method as the new baseline for "checked," not the DOM-
+attribute-only bar visits 7-11 used. Standing items unchanged: the
+320×250 extreme viewport case remains real and out of scope (visit 12);
+everything visits 6-8 named as deliberate (no dedupe, private-per-browser
+kept lines, the drone's lack of a per-event mark, the fixed sixteen-entry
+echo pool) is unchanged; the field's own voice (28 lines as of visit 15)
+could keep growing or a future visit could turn elsewhere — no fixed
+target either way. No seedbox ideas this visit; the gate had no open PRs
+or stray branches worth bringing home.

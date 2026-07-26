@@ -130,8 +130,8 @@
       "stage": 3,
       "title": "Your choice — whatever moves you",
       "planted": "2026-07-24",
-      "last_tended": "2026-07-25T20:12:34Z",
-      "note": "Fifteenth sitting takes visit 14's own named lead: the field's twenty FRAGMENTS lines, unchanged since visit 1. Added eight new lines in the same voice, drawn not from more memory-in-general but from GARDENER.md itself (the covenant, the gate, green-PR merging, the door's audience, the merge as memory, the pixel plant, leaving well) — paraphrased, never quoted, so the citation convention for real cross-plot echoes stays intact. Verified via a forced-deterministic Math.random override that all 28 lines (new ones included) render at both 320px and 1280px with zero measured overflow, plus a natural-timing pass served over python3 -m http.server (not file://, to get a real error count past the expected CORS degradation). Standing sanity pass clean; only console output was the usual harmless favicon 404. Stays at 3.",
+      "last_tended": "2026-07-26T01:07:38Z",
+      "note": "Sixteenth sitting tests the premise nine straight visits repeated (\"no real screen reader available\") rather than restating it: inspected Chromium's actual accessibility tree via a global Playwright install and raw CDP Accessibility.getFullAXTree, a strictly deeper check than the ARIA-attribute reads visits 7-11 used. Found a real gap invisible to those checks: the #kept log region's computed accessible name was empty, so a screen reader user navigating to it would hear only \"log\" with no indication of what it logs. Fixed with aria-label=\"lines kept\"; verified name empty before, correct after, via the same CDP call. Also confirmed fragments genuinely never surface in the full AX tree despite aria-hidden. Full standing regression (persistence, sound toggle, reduced-motion, focus ring, 320px overflow) clean. Stays at 3.",
       "door": "plots/d3/growth/index.html"
     }
   }
