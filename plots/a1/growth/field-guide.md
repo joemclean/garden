@@ -1,6 +1,63 @@
 # Field guide to this garden
 
-*Written from the gardener's point of view, across its first fifty visits.*
+*Written from the gardener's point of view, across its first fifty-one visits.*
+
+## In five minutes
+
+This repository is a garden: a set of plots, each holding a wish a human
+"planted" — a paragraph in `plots/<id>/seed.md`, not a spec — and a
+gardener that visits once an hour to tend one. The gardener has no memory
+between visits; the only things that carry forward are what got written
+down: `garden.json` (one stage number and one-line note per plot, the
+garden's only shared state), each plot's `journal.md` (a letter to the
+next visit), and whatever lives in `plots/<id>/growth/`.
+
+A visit starts by checking the gate — this repo's open pull requests and
+stray branches. A green PR (checks passing, no conflicts) gets merged and
+the visit carries on into plot-tending; a broken or stranded one *is* the
+whole visit, fixed or merged before anything else; a genuine race between
+two sessions on the same plot gets closed clean rather than forced. Once
+the gate is clear, the gardener reads `garden.json`, picks the one plot
+that most needs attention — a freshly planted seed always first,
+otherwise judgment about where real momentum or need lives — reads that
+plot's `seed.md` and `journal.md` cold, and spends a focused hour making
+it a little more real. Everything made lives under that plot's own
+`growth/`; no other plot, and never `viewer/` or `GARDENER.md` itself,
+gets touched. The visit ends by writing the next journal entry, updating
+`garden.json` honestly, committing, opening a pull request, and merging
+it — an unmerged visit never happened.
+
+A good seed reads like a wish, not a ticket: it says roughly what bloom
+looks like, leaves room for a gardener to be surprised rather than
+over-determining the result, is honest that pace is fine, and survives
+being read cold by someone with zero outside context. Most seeds also
+hand the gardener some kind of constraint to grow along — a rule about
+what may never be undone, a rule about when to stop adding, or, if the
+seed gives neither, one a plot's own first visit improvises and every
+later visit then honors.
+
+Plots move through four stages: **soil** (empty), **seed** (planted,
+never tended), **sprout** (first real work exists), **growing** (taking
+shape, clear direction), and **bloom** — usable, shareable, alive, and
+sometimes simply finished. Stages only move when the work has actually
+moved; a plot can sit at one stage across many visits without that being
+neglect, and bloom is a real, final stopping point, not a rung to keep
+climbing past.
+
+From sprout onward, a plot keeps a **door** — one artifact, named in
+`garden.json`, that a stranger can open cold with no build step, no
+server, and no reading the journal first, served straight from `main`
+over GitHub Pages. Every door links back to the shared viewer
+(`../../../viewer/` from inside a plot's own `growth/`), so a visitor who
+wanders in from one plot can find the rest of the garden. That viewer — a
+grid of small pixel plants, one per plot — is how a human actually meets
+all of this: click a plant, land on its door.
+
+That's the whole system. Everything after this section is the longer
+version: the same ground again in more depth, plus the specific things
+many visits to *this one plot* have actually learned about doing the job
+— kept here for a future gardener to consult, not for a first-time reader
+to sit through.
 
 ## What this is
 
@@ -176,7 +233,7 @@ visit for that reader, or for the next gardener's convenience?
 
 ## Status of this guide
 
-Two things about this garden have never been observed in fifty
+Two things about this garden have never been observed in fifty-one
 visits across the current plots: a plot that stalls mid-thought, and a
 gardener whose hour runs out before an entry gets written. Both are
 worth naming as open, not dropped, since a condition nobody has seen
@@ -184,15 +241,35 @@ isn't the same kind of open as a task someone keeps deferring — the
 second kind earns an honest "just drop it," the first doesn't, because
 no visit can manufacture a stall to stop mentioning it.
 
-This guide stays at stage 3: real work remains, not a stall. It runs
-about 1,911 words against its own five-minute bar (500-600 words) —
-this visit tested whether trimming alone can close that gap by cutting
-the most padded section as hard as possible while keeping every
-example, and recovered only 50 words. Wording trims can't reach 500-600
-from here; most of what's left is kept detail, not padding. Closing the
-gap for real means cutting whole examples, or accepting a bloom shape
-longer than "five minutes" implies — a bigger call than wording. Revise
-freely — including this paragraph.
+Visit 50 left a choice: cut real content to hit 500-600 words, or accept
+a bloom shape longer than "five minutes" literally implies. This visit
+found a third option instead of picking one of those two, by rereading
+the seed itself: it names *two* readers, not one — "a stranger" who
+reads it in five minutes, and "the gardener's future selves" who
+*consult* it. Those are different jobs. A stranger needs one self-
+contained passage short enough to sit through once; a future gardener
+needs the kept detail — named examples, cross-references, the two full
+lesson sections — to actually look things up in, not to reread cover to
+cover every visit. So this visit added "In five minutes" as that
+self-contained passage (562 words on its own, `len(text.split())`,
+checked against the seed's own bar before writing anything after it),
+and reframed everything below it as the reference the second reader
+consults. Nothing below was cut; the two long-running open items (a
+stalled plot, a mid-thought time-out) are still genuinely unobserved,
+and both cross-references ("an open lesson," "the Menu bullet, above")
+still resolve.
+
+Promoting to stage 4 (bloom) on that basis: the seed's own bloom bar —
+five minutes for a stranger, and something future selves consult — now
+has a section satisfying each half directly, rather than one document
+straining to be both at once. Said so plainly rather than quietly
+holding at 3 out of habit; a future visit that finds the split doesn't
+hold up (the summary drifts from the body, or a stranger reports it
+doesn't actually stand alone) should say that honestly and drop back to
+3 — this is a real but reversible call, the same kind visit 3 made
+promoting to 3 in the first place. Whole-document count is now 2,687
+words; that number no longer measures against the five-minute bar, since
+only the summary above needs to.
 
 ---
 

@@ -7,11 +7,11 @@
   ],
   "plots": {
     "a1": {
-      "stage": 3,
+      "stage": 4,
       "title": "Field guide to this garden",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-25T23:07:22Z",
-      "note": "Visit 50 tested visit 49's own open question directly: trimmed the single largest, never-before-cut section ('what hour-long slices... actually do,' 674 words) as hard as possible while keeping every named example and fact intact, recovering only 50 words. First Status-paragraph draft reporting this actually grew the document net; rewrote it twice tighter until the whole document nets a real decrease, 1,925 to 1,911. Verdict, now stated plainly in the guide's own Status section: wording-level trims cannot close a ~1,300-word gap to the 500-600 bar; the real next choice is cutting actual content or accepting a longer honest bloom shape, neither of which one visit should decide alone. Stays at 3.",
+      "last_tended": "2026-07-26T00:07:46Z",
+      "note": "Visit 51 resolves visit 50's cut-content-or-accept-longer-bloom standoff by rereading the seed itself: it names two different readers, not one target length. Added a self-contained 562-word 'In five minutes' section satisfying the stranger-in-five-minutes half directly, and reframed the existing five sections as the reference future gardener selves consult, cutting nothing. Promoted to bloom on that basis, stated plainly as reversible if the split doesn't hold up under an actual cold reading.",
       "door": "plots/a1/growth/field-guide.md"
     },
     "d4": {
