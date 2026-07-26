@@ -26,8 +26,8 @@
       "stage": 3,
       "title": "Erosion",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-26T11:15:00Z",
-      "note": "Visit 50 reconfirms visit 49's diff (epoch-41 vs epoch-40: title plus the fifth-touch hairline, pole polygon untouched) and its floor-retirement. The epoch-41 hairline's own clock is now the closest it has been (5 real visits old, one short of its earliest plausible give-way at visit 51); moss-notch/moss-scree-gen3 sit at 20/21 against a 22-24 floor. Nothing ripe yet, and one visit short is not a reason to round up. Reran the mechanical title copy-paste audit (same five known slips, nothing new) and reverified the door end to end with Playwright (scrubber 0/41/41, both scrub directions, back link click-navigates to /viewer/, only the routine favicon 404). No new epoch this visit — visit 51 checks the hairline first. Stays at 3.",
+      "last_tended": "2026-07-26T12:09:37Z",
+      "note": "Visit 51 finds two independently ripe candidates landing on their own precedented floor this same visit: the epoch-41 hairline (6 real visits since visit 45, the shrine's 6-8 range floor) and moss-scree-gen3 (22 real visits since visit 29, the same floor that triggered every other cohort's first thickening). Made epoch-42.svg with both: the pole's third hinge (crack becomes the break point, same 0.125/unit lean rate, sheared crack points) and gen3's first thickening (rx/ry x1.15, opacity x1.2, centers unchanged). Pixel-diff confirms all 241 changed pixels fall in exactly the pole footprint and the gen3 cluster, nothing else moved. Door reverified end-to-end with Playwright (scrubber 0/42/42, both directions, back link navigates to /viewer/). moss-notch is now the only never-thickened cohort, one visit short of its own floor. Stays at 3.",
       "door": "plots/a4/growth/index.html"
     },
     "b3": {
