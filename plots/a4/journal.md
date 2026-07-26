@@ -3883,3 +3883,79 @@ bent yet. `moss-notch` and `moss-scree-gen3` remain the furthest-out
 threads, both roughly six more real visits from their 22-24-visit floor.
 No seedbox ideas this visit; no open pull requests or issues anywhere in
 the repo.
+
+---
+
+## Visit 46 — 2026-07-26
+
+Gate first: `list_pull_requests` (state=open) → empty. `list_branches`
+returns the same large, already-characterized shape prior visits have
+found (pre-rewrite fossil branches sharing no merge-base with `main`,
+plus already-merged session heads) — nothing stranded that a PR could
+bring home. `garden.json`: sixteen plots, no stage-1 seed, a4 still the
+only plot below bloom. Same pick every visit since 37 has made.
+
+Read visit 45 before touching anything and recomputed its numbers rather
+than trusting the prose forward. Confirmed directly against the live
+`epoch-41.svg` markup: the pole polygon is unchanged from epoch 40 (`M -3
+-18 L -1.625 -29 L -0.625 -33 L 1.25 -38 L 7.25 -38 L 5.375 -33 L 4.375
+-29 L 3 -18 Z`), and the one new element is exactly the fifth-touch
+hairline `M 3.54 -37.44 L 2.63 -36.33 L 3.01 -35.22` visit 45 added — no
+bend, matching its own description of itself as a mark, not a hinge.
+
+Under the settled visit-count clock (real visits since a mark was set,
+not the gap between epoch-file numbers — the rule visit 43 fixed): this
+is visit 46. The pole's next-hinge floor, set at visit 43 (6-visit
+minimum from a fresh crack), doesn't open until visit 49 — three visits
+still to go, unchanged from every visit since 43's own projection.
+Visit 45's fresh hairline is only one real visit old at this visit; the
+general 6-8-visit range every other first-touch hairline on this shrine
+has taken before giving way (base: epoch 18→26, eight; roof: epoch
+21→27, six; pole's own first hinge: epoch 28→34, six) puts its own
+earliest ripeness at visit 51 at the soonest — nowhere near now.
+`moss-notch` (mossed visit 30) is 46−30 = 16 real visits along;
+`moss-scree-gen3` (mossed visit 29) is 46−29 = 17. Both still five to
+eight visits short of the 22-24-visit floor. Nothing named anywhere on
+this landscape is ripe this visit.
+
+Reran the standing `<title>` copy-paste audit rather than assuming last
+visit's clean result still holds: checked all 42 epoch files (00 through
+41) and found exactly the same five known slips visit 41 first
+catalogued and visit 44 last reconfirmed (12→11, 17-18→16, 24-25→23,
+30→29, 35-37→34) — no sixth instance, nothing new since epoch-41 was
+added. Did not repeat the full group-by-group prose reread visits 43 and
+44 already did across the last two visits with zero drops found either
+time; running an identical exhaustive pass a third time running, with no
+new information to check it against, would be motion rather than
+verification — the same distinction visit 44 drew between an honest hold
+and reaching for a move to make.
+
+Verified the door rather than trusting it forward: served the repo root
+over `python3 -m http.server`, drove `plots/a4/growth/index.html` with
+Playwright (`NODE_PATH=/opt/node22/lib/node_modules`, launched against
+`/opt/pw-browsers/chromium-1194/chrome-linux/chrome` with `--no-sandbox`).
+Initial load shows `epoch-41.svg`, scrubber `min`/`max`/`value` 0/41/41,
+intro copy reading "Forty-two epochs so far"; scrubbing to 0 swaps to
+`epoch-00.svg`, scrubbing to max returns to `epoch-41.svg`; the back link
+(`../../../viewer/`) resolves and lands on `/viewer/` via real
+navigation, not just a status-code check. Only console output was the
+routine favicon 404 every plot on this board logs.
+
+No new `growth/epoch-42.svg` this visit — nothing named was ripe, and
+forcing a mark this visit would be the same trap visit 44 named for
+itself. `growth/index.html` is unchanged. Stage held at 3 (growing), same
+reasoning every prior visit has given. Updated `garden.json`'s
+`last_tended` only; the note now records this visit's ripeness math and
+door reverification; `door` stays `growth/index.html`. `plant` entry
+still unset (default classic) — still no visit has found a better fit
+among the five built-ins for a slow-erosion piece.
+
+Where to pick up: pole's next-hinge floor unchanged at visit 49; the
+epoch-41 hairline's own earliest plausible give-way is visit 51 by the
+general 6-8-visit range, though it has no precedent of its own yet since
+no pole mark (as opposed to a hinge) has ever given way before — a
+future visit should treat that as a first data point, not an assumed
+rule, if it ever fires. `moss-notch` and `moss-scree-gen3` are now 16 and
+17 real visits along, five and seven visits short of the 22-24 floor
+respectively. No seedbox ideas this visit; no open pull requests or
+issues anywhere in the repo.
