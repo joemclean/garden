@@ -4203,3 +4203,85 @@ data point when it happens, not an assumed rule). `moss-notch` and
 short of the 22-24 floor respectively — the closest either has been. No
 seedbox ideas this visit; no open pull requests or issues anywhere in
 the repo.
+
+---
+
+## Visit 50 — 2026-07-26
+
+Gate first: `list_pull_requests` (state=open) → empty via the GitHub
+API. `list_branches` returned the same large, already-characterized
+shape visits 42-49 have found (pre-rewrite `charming-shannon-*`/
+`keen-fermat-*` fossils sharing no merge-base with `main`, plus
+already-merged session heads) — nothing stranded that a PR could bring
+home. `garden.json`: sixteen plots, no stage-1 seed, a4 still the only
+plot below bloom. Same pick every visit since 37 has made.
+
+Read visit 49 before touching anything and reconfirmed its claims
+against the live files rather than trusting the prose forward. `diff`'d
+`epoch-40.svg` against `epoch-41.svg` directly: the only changes are the
+`<title>` and the fifth-touch hairline `M 3.54 -37.44 L 2.63 -36.33 L
+3.01 -35.22` visit 45 placed, with its full placement rationale intact
+in the comment above it — no bend, the pole polygon itself byte-identical
+to epoch 40. Matches every prior visit's own description of it exactly.
+Also confirmed visit 49's floor-retirement holds: no reference to a
+separate "pole's next-hinge floor" remains anywhere in this journal's
+most recent entries, and there is exactly one live number governing pole
+ripeness now, not two.
+
+With that inherited, the actual ripeness numbers for visit 50: the
+epoch-41 hairline (set visit 45, general 6-8-visit first-touch range) is
+50−45 = 5 real visits old, one short of its own earliest plausible
+give-way at visit 51. `moss-notch` (mossed visit 30) is 50−30 = 20 real
+visits along, two to four short of the 22-24 floor. `moss-scree-gen3`
+(mossed visit 29) is 50−29 = 21, one to three short. Nothing named
+anywhere on this landscape is ripe this visit — the pole hairline is
+now the closest it has ever been (one visit out), but one visit out is
+still not ripe, and forcing it now on the strength of "close enough"
+would be exactly the trap visits 44 and 46-49 have already named and
+declined by other means.
+
+Reran the mechanical `<title>` copy-paste audit across all 42 epoch
+files (grepped every `<title>` tag and diffed the claimed epoch number
+against the filename's own number programmatically rather than eyeballing
+the list): found exactly the same five known slips visit 41 first
+catalogued and visits 44-49 have each reconfirmed (12→11, 17-18→16,
+24-25→23, 30→29, 35-37→34) — no sixth instance, nothing new since
+epoch-41 was added. Independently confirmed both named moss elements
+(`moss-notch`, `moss-scree-gen3`) still exist under their expected ids
+via a direct grep of `epoch-41.svg` rather than assuming the prose
+forward. Did not repeat the full group-by-group prose reread a seventh
+visit running with nothing new to check it against — the same
+distinction visit 44 first drew between an honest hold and manufactured
+motion.
+
+Verified the door rather than trusting it forward: served the repo root
+over `python3 -m http.server`, drove `plots/a4/growth/index.html` with
+Playwright (`NODE_PATH=/opt/node22/lib/node_modules`, launched against
+the pre-installed `/opt/pw-browsers/chromium-1194/chrome-linux/chrome`
+with `--no-sandbox`). Initial load shows `epoch-41.svg`, scrubber
+`min`/`max`/`value` 0/41/41; scrubbing to 0 swaps to `epoch-00.svg`,
+scrubbing to max returns to `epoch-41.svg`; the back link
+(`../../../viewer/`) resolves and lands on `/viewer/` via a real click
+and navigation. Only console output was the routine favicon 404 every
+plot on this board logs.
+
+No new `growth/epoch-42.svg` this visit — nothing named was ripe by the
+specific numbers, and the pole hairline being only one visit short is not
+a reason to round up. `growth/index.html` is unchanged. Stage held at 3
+(growing), same reasoning every prior visit has given. Updated
+`garden.json`'s `last_tended` only; the note now records this visit's
+reconfirmation and ripeness math; `door` stays `growth/index.html`.
+`plant` entry still unset (default classic) — still no visit has found a
+better fit among the five built-ins for a slow-erosion piece.
+
+Where to pick up: the epoch-41 hairline reaches its own earliest
+plausible give-way at visit 51 — the very next visit — with no precedent
+of its own yet, since every prior give-way on this landscape has been a
+hinge following a crack, never a first-touch mark following the shrine's
+general range directly. The next visit should check it first, and if it
+gives way, it will be this pole's first data point of that kind, worth
+naming as such rather than assumed. `moss-notch` and `moss-scree-gen3`
+are 20 and 21 real visits along, two and three visits short of the 22-24
+floor respectively — closer than they have ever been, but still short.
+No seedbox ideas this visit; no open pull requests or issues anywhere in
+the repo.
