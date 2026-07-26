@@ -114,11 +114,35 @@
     display: flex;
     justify-content: center;
   }
+  #writer .writer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 560px;
+  }
   #writer form {
     display: flex;
     gap: 8px;
     width: 100%;
-    max-width: 560px;
+  }
+  .export-link {
+    background: transparent;
+    border: none;
+    color: #8a9a8b;
+    font-family: sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    padding: 2px 4px;
+  }
+  .export-link:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+  .export-link:not(:disabled):hover {
+    color: #b9c9ba;
   }
   #line {
     flex: 1;
@@ -206,10 +230,13 @@
   <div id="kept" role="log" aria-live="polite" aria-label="lines kept"></div>
 
   <div id="writer">
-    <form id="form" autocomplete="off">
-      <input id="line" type="text" maxlength="140" placeholder="a line worth keeping…" aria-label="a line worth keeping">
-      <button type="submit">keep it</button>
-    </form>
+    <div class="writer-inner">
+      <form id="form" autocomplete="off">
+        <input id="line" type="text" maxlength="140" placeholder="a line worth keeping…" aria-label="a line worth keeping">
+        <button type="submit">keep it</button>
+      </form>
+      <button id="export" class="export-link" type="button" disabled>↓ save what you've kept</button>
+    </div>
   </div>
 </div>
 
@@ -379,6 +406,7 @@
   var writer = document.getElementById("writer");
   var form = document.getElementById("form");
   var input = document.getElementById("line");
+  var exportBtn = document.getElementById("export");
 
   var STORAGE_KEY = "garden-d3-journal";
 
@@ -427,8 +455,36 @@
     kept.scrollTop = kept.scrollHeight;
   }
 
+  // Kept lines only ever leave this one browser's localStorage — a line
+  // typed on a machine that isn't yours doesn't actually "survive you" the
+  // way the intro promises, it just moves the forgetting one layer out.
+  // This is the piece's own escape hatch: hand the visitor a real file, so
+  // what they kept can outlive the tab, the browser, and this one device.
+  function updateExportState() {
+    exportBtn.disabled = keptLines.length === 0;
+  }
+
+  function downloadKept() {
+    if (!keptLines.length) return;
+    var blob = new Blob([keptLines.join("\n") + "\n"], { type: "text/plain" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = "what-the-journal-kept.txt";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    // Deferred, not immediate: revoking synchronously can race the click's
+    // own navigation to the blob URL in some browsers, killing the download
+    // before it starts. A short delay lets it actually begin first.
+    window.setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+  }
+
+  exportBtn.addEventListener("click", downloadKept);
+
   var keptLines = loadKept();
   renderKept(keptLines);
+  updateExportState();
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -440,6 +496,7 @@
     saveKept(keptLines);
     if (trimmed && kept.firstChild) kept.removeChild(kept.firstChild);
     appendKeptLine(text);
+    updateExportState();
     input.value = "";
     keepChime();
   });
