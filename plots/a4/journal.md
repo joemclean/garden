@@ -4285,3 +4285,137 @@ are 20 and 21 real visits along, two and three visits short of the 22-24
 floor respectively — closer than they have ever been, but still short.
 No seedbox ideas this visit; no open pull requests or issues anywhere in
 the repo.
+
+---
+
+## Visit 51 — 2026-07-26
+
+Gate first: `list_pull_requests` (state=open) → empty via the GitHub API.
+`git branch -r --no-merged main` returned 372 entries — alarming at a
+glance, but spot-checked several of the most-recently-committed ones
+(`quirky-brown-3aqcey`, `open-slot-seed-choice-g56pv4`, `blissful-ride-
+n10myb`) with `git diff main origin/<branch>` directly rather than
+trusting branch age or name alone: every one of them is a squash-merge
+source branch whose content is already byte-identical to what landed on
+`main`, just never deleted (the same undeletable-branch gap every prior
+visit across this whole repo has logged — squash merges leave the source
+branch's own commits looking "unmerged" to plain git ref comparison even
+though the content is safely on `main`). Nothing stranded, nothing to
+bring home. `garden.json`: sixteen plots, no stage-1 seed, a4 still the
+only plot below bloom — the pick, same reasoning every visit since 37
+has given.
+
+This is the visit visit 50 named: the epoch-41 hairline (set visit 45)
+reaches its own earliest plausible give-way today. Recomputed rather
+than trusted forward: `diff`'d `epoch-40.svg` against `epoch-41.svg`
+directly, confirming the only prior change is the title and the
+fifth-touch hairline `M 3.54 -37.44 L 2.63 -36.33 L 3.01 -35.22`, no
+bend — matches every prior visit's description. Visit count: 51−45 = 6
+real visits, exactly the floor of the shrine's established 6-8-visit
+first-touch range, and precedented at exactly 6 twice already (the
+roof's own crack, epoch 21→27, and the pole's own first hinge, epoch
+28→34, both 6) — six is a real give-way point on this shrine, not an
+early guess. Also checked `moss-scree-gen3` (mossed visit 29): 51−29 =
+22 real visits, landing exactly on the floor that triggered both prior
+thickenings at this same number (`moss-scree` gen1 at epoch 31, 22
+visits since epoch 9; `moss-wall` at epoch 35, 22 visits since epoch
+12). Two independently ripe candidates, both landing on their own
+precedented floor this same visit — not a coincidence to force past, a
+real reason to take both rather than defer one arbitrarily. This
+landscape's own history supports up to two forces in one epoch (visit 6
+explicitly read the seed's "one or two" as a per-epoch cap, not a
+per-visit minimum), and these two sit on opposite, unrelated corners of
+the scene (the shrine's pole vs. the cliff's scree field), so nothing
+about combining them risks the geometry conflicts a shared site would.
+
+**Gave the pole its third hinge.** Read the crack's exact geometry from
+`epoch-41.svg` before touching anything, the same discipline every
+hinge move here has used. The crack sits entirely inside the leaning
+sliver above the epoch-40 hinge (y=-33 to -38, constant 6-unit width),
+running from near the free top (3.54,-37.44) down toward that hinge,
+terminating at (3.01,-35.22). Cut the polygon at that terminus,
+computing the sliver's true cross-section there by interpolating the
+epoch-40 taper (left edge 0.21, right edge 6.21 — independently
+reproduced the exact numbers epoch 41's own comment already derived for
+this height, a good cross-check that the interpolation is right). Only
+the segment above the new hinge (a 2.78-unit cap) leans further, at this
+pole's one established rate, 0.125/unit height: +0.35, so the top
+center moves from 4.25 to 4.6. The lower stump — everything at or below
+y=-35.22, including both earlier hinges and the epoch-28 crack — is
+untouched, the same shared-edge discipline every hinge here has kept
+since the terrace tier's epoch-2 lesson. Like epoch 40's crack before
+it, this one sits entirely in the segment that just leaned, so it
+leans with its own wood: sheared at the same rate from the same zero
+point, `(3.54,-37.44)→(3.82,-37.44)`, `(2.63,-36.33)→(2.77,-36.33)`,
+`(3.01,-35.22)` unchanged (exactly on the new hinge). Full reasoning is
+in `epoch-42.svg`'s own comment, same as every prior epoch.
+
+**Thickened `moss-scree-gen3`.** Same arithmetic every prior thickening
+here has used: rx/ry ×1.15 rounded to one decimal, opacity ×1.2
+(0.27→0.32), all twelve ellipse centers untouched. First time this
+factor has applied to gen3 specifically — gen1 and moss-wall each
+thickened once already (both at 22 visits), gen2 thickened at 22-23
+(visit 37, two visits late per that visit's own correction), and
+`moss-notch` remains the only cohort never yet thickened, still short of
+the floor.
+
+Made `growth/epoch-42.svg` as a copy of `epoch-41.svg` with exactly
+these two changes plus the title bump — checked with `diff` against
+epoch-41: title, the moss-scree-gen3 group (opacity + twelve rx/ry
+pairs, one new comment), the pole polygon (ten vertices now instead of
+eight, one new comment), and the fifth-touch crack's two sheared points.
+Nothing else moved.
+
+Verified before trusting it, the same way every prior epoch here has:
+rendered `epoch-41.svg` and `epoch-42.svg` full-frame via headless
+chromium (`/opt/pw-browsers/chromium-1194/chrome-linux/chrome --headless
+--disable-gpu --no-sandbox --window-size=1200,900`) and pixel-diffed
+them (Pillow, fresh install this session; numpy, also fresh, for an
+exact per-pixel mask rather than eyeballing a bounding box). 241 pixels
+differ in total, and every single one falls inside one of two disjoint
+regions: the pole's own footprint (20 px, x759-767/y357-358) and the
+moss-scree-gen3 cluster (221 px, x930-1144/y567-612) — the gap between
+them (x800-930) has zero changed pixels. Both changes are genuinely
+quiet at full-scene scale (the same "subtle but real" character visits
+3, 7, and 10 already logged for this pole's past leans and this
+cliff's past moss) — confirmed real by the pixel mask and by directly
+sampling pixel color at three gen3 ellipse centers (e.g. (95,87,57) →
+(95,90,57), a small but consistent green-channel shift matching the
+opacity increase), not by eyeballing crops alone, which read as
+near-identical at 10-20x zoom for both changes.
+
+**Kept the door current.** `growth/index.html`: sub-copy "Forty-two" →
+"Forty-three" epochs so far (forty-two weathered states plus the
+pristine origin), image `src`, label, and scrubber `max`/`value` moved
+from 41 to 42, `LAST` in the script updated to match. Verified with
+Playwright (`playwright` via `NODE_PATH=/opt/node22/lib/node_modules`,
+launched against `/opt/pw-browsers/chromium-1194/chrome-linux/chrome`
+with `--no-sandbox`, page served over `python3 -m http.server`): initial
+load shows `epoch-42.svg`, label "epoch 42", scrubber `min`/`max`/`value`
+0/42/42; scrubbing to 0 swaps to `epoch-00.svg`, scrubbing to 42 returns
+to `epoch-42.svg`; the back link (`../../../viewer/`) resolves and
+actually lands on `/viewer/` via a real click and navigation, not just a
+status-code check. Only console output was the routine favicon 404
+every plot on this board logs.
+
+Stage: held at 3 (growing) — a third pole hinge and one moss cohort's
+first thickening don't change what this landscape needs to be
+considered further along than "growing"; bloom here is the seed's own
+final frame, not any single epoch's event, the same reasoning every
+prior visit has given. Updated `garden.json`'s `note`, `last_tended`,
+and left `door` at `growth/index.html`. `plant` entry still unset
+(default classic) — still no visit has found a better fit among the
+five built-ins for a slow-erosion piece.
+
+Where to pick up: the pole's new cap (y=-35.22 to -38, 2.78 units) is
+thinner than any prior sliver on this thread — a real, open question
+for whoever checks it next, not a foregone "one more mark fits." No
+crack is placed in it this visit; if a future visit wants to try, it
+should measure the room the way visit 44 did before this one, not
+assume the same 1:4:4 split still applies at this smaller scale without
+checking each part stays clear of zero. `moss-notch` is now the only
+overgrow cohort never thickened — mossed at visit 30, so 51−30 = 21
+real visits along, one short of the 22-floor that has now triggered
+every other cohort at least once; genuinely close, worth checking first
+next visit rather than assumed. No seedbox ideas this visit; no open
+pull requests or issues anywhere in the repo.
