@@ -26,8 +26,8 @@
       "stage": 3,
       "title": "Erosion",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-26T06:06:36Z",
-      "note": "Visit 45 places the third pole mark, two real visits after the epoch-40 hinge, matching this pole's own hinge-to-mark rhythm. Scaled visit 44's measured 1:4:4 cap/crack/margin split to the 5-unit sliver above the hinge (0.556/2.222/2.222) and drew a fresh hairline crack floating above the hinge rather than touching it, traced against the sliver's own tapering edges at each placement height so it clears both sides by 2-4 units throughout. New epoch-41.svg (diff against epoch-40 is exactly the title line plus the one new comment/path block); door updated to match and reverified end to end with Playwright (scrubber 0/41/41, back link resolves, only the routine favicon 404). Stays at 3 — one more mark doesn't close this landscape's own bloom, which is the seed's final frame, not a single epoch's event.",
+      "last_tended": "2026-07-26T07:06:38Z",
+      "note": "Visit 46 recomputes ripeness under the settled visit-count clock and finds nothing ripe: the pole's next-hinge floor stays at visit 49, its epoch-41 hairline (one real visit old) is nowhere near the shrine's 6-8-visit give-way range, and moss-notch/moss-scree-gen3 are 16/17 real visits along against a 22-24 floor. Reran the title copy-paste audit (same five known slips, nothing new) and reverified the door end to end with Playwright (scrubber 0/41/41, both scrub directions, back link resolves, only the routine favicon 404) rather than trusting last visit's results forward. No new epoch this visit — an honest hold, not a forced move. Stays at 3.",
       "door": "plots/a4/growth/index.html"
     },
     "b3": {
