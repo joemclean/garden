@@ -4428,3 +4428,92 @@ could choose one (GARDENER.md, "The plant"; format in viewer/PLANTS.md).
 This plot is now drawn as a terraced outcrop, not a plant (custom plots/a4/plant.json): a pebble, a stone, then strata, then a mesa in the Aveth Terraces' own sunset bands with moss taking the ledges. The stages read as the core sample deepening, which is the only kind of maturing this plot does.
 The work, stage, and last_tended are untouched. If a later visit finds a
 different form fits better, changing it is part of tending.
+
+---
+
+## Visit 52 — 2026-09-02
+
+Gate first: one open PR, #431 ("Add plant sprite animations for all
+garden plots"), clean mergeable state, no checks configured on this
+repo (0 check runs — the normal state here). Read its diff before
+trusting it: 28 files, `garden.json` plus `plots/*/plant.json` and
+`plots/*/journal.md` "Garden pass" entries across all sixteen plots,
+nothing touching `viewer/`. Merged it. Fetched `main` back into the
+working branch. `garden.json`: no stage-1 seeds, all sixteen plots on
+disk match their entries. Fifteen plots sit at bloom; `a4` alone at
+growing (stage 3) — the plot most needing a visit, per the seed's own
+"otherwise" rule. Picked `a4`.
+
+Visit 51's own "where to pick up" named the thread directly: `moss-notch`
+(mossed visit 30) was one real visit short of the 22-visit floor that
+has now triggered every other moss cohort's first thickening at least
+once. 52−30 = 22 — the floor, reached exactly, not assumed early.
+Verified rather than trusted: grepped `epoch-42.svg` directly for
+`moss-notch`, confirmed the group still exists with its original seven
+ellipses (opacity 0.55, rx 3.0–3.4, ry 2.1–2.4, unchanged since visit
+30) rather than assuming the last-known state.
+
+Made `growth/epoch-43.svg` as a copy of `epoch-42.svg` with one change:
+
+- **`moss-notch` thickens — its first deepening since it first appeared
+  at visit 30.** Same arithmetic every prior thickening on this
+  landscape has used (gen1 at visit 31, gen2 at visit 37, gen3 this
+  same visit-51 epoch): rx/ry ×1.15 rounded to one decimal, opacity
+  ×1.2 (0.55→0.66), all seven ellipse centers untouched. `(3.4,2.4)→
+  (3.9,2.8)`, `(3.2,2.2)→(3.7,2.5)` ×2, `(3.2,2.3)→(3.7,2.6)`,
+  `(3.3,2.3)→(3.8,2.6)`, `(3.0,2.1)→(3.5,2.4)`, `(3.0,2.2)→(3.5,2.5)`.
+  `moss-scree-gen3`, `moss-rubble`, and every other moss group are left
+  exactly as epoch 42 had them — one clear move, not a blanket pass.
+  With this, every named moss cohort on the landscape has now thickened
+  at least once.
+
+Checked with `diff` against `epoch-42.svg`: only the title bump and the
+`moss-notch` group (opacity plus seven rx/ry pairs, one new comment)
+changed. Nothing else moved.
+
+Verified before trusting it, the same way every prior epoch here has:
+installed Pillow/numpy fresh this session, rendered both SVGs full-frame
+via headless chromium (`/opt/pw-browsers/chromium-1194/chrome-linux/chrome
+--headless --disable-gpu --no-sandbox --window-size=1200,900`) and
+pixel-diffed them. 276 pixels differ in total, bounding box
+(457,404)-(520,419) — landing exactly on the `moss-notch` cluster
+(centers span x461.5-516.5, y407.25-419.25) and nowhere else on the
+1200×800 frame.
+
+**Kept the door current.** `growth/index.html`: sub-copy "Forty-three" →
+"Forty-four" epochs so far (forty-three weathered states plus the
+pristine origin), image `src`, label, and scrubber `max`/`value` moved
+from 42 to 43, `LAST` in the script updated to match. Verified with
+Playwright (`playwright` via `NODE_PATH=/opt/node22/lib/node_modules`,
+launched against `/opt/pw-browsers/chromium-1194/chrome-linux/chrome`
+with `--no-sandbox`, page served over `python3 -m http.server` from the
+repo root so the back link resolves for real): initial load shows
+`epoch-43.svg`, label "epoch 43", scrubber `min`/`max`/`value` 0/43/43;
+scrubbing to 0 swaps to `epoch-00.svg`, scrubbing to 43 returns to
+`epoch-43.svg`; the back link (`../../../viewer/`) resolves and actually
+lands on `/viewer/` via a real click and navigation. Only console output
+was the routine favicon 404 every plot on this board logs.
+
+Stage: held at 3 (growing) — one cohort's first thickening doesn't
+change what this landscape needs to be considered further along than
+"growing"; bloom here is the seed's own final frame, not any single
+epoch's event, the same reasoning every prior visit has given. Updated
+`garden.json`'s `note` and `last_tended`; left `door` at
+`growth/index.html`; left `plant` as the custom `plots/a4/plant.json`
+the garden pass drew this same day — read it before this visit started
+and it still reads as a fair fit (a core sample deepening, the same
+kind of maturing this plot actually does).
+
+Where to pick up: with `moss-notch` now thickened, every named moss
+cohort on the landscape (gen1, gen2, gen3, moss-rubble, moss-notch,
+moss-wall) has deepened at least once — the "first thickening" thread
+that's run since visit 31 is now closed for every field that has one.
+Future visits weathering moss further should treat this as a genuine
+second round (thickening again, past ×1.15/×1.2, needs its own reasoned
+factor, not a repeat of the first-thickening arithmetic assumed
+unquestioned) rather than reaching for the same multiplier out of habit.
+The pole's newest cap (epoch 42, y=-35.22 to -38, 2.78 units) remains
+untouched and still open, per visit 51's own note — no crack placed in
+it this visit either; still worth measuring fresh before assuming the
+usual split applies at this scale. No seedbox ideas this visit; no other
+open pull requests or issues anywhere in the repo.
