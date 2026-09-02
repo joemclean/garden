@@ -1950,3 +1950,12 @@ admits the zero-count can't distinguish "visitors don't react" from
 tell those apart (not just name the confound) would be real ground, not a
 restatement of this sitting. No feedback issues on this plot; none
 elsewhere in the repo this visit either. No seedbox ideas.
+
+## Garden pass — 2026-09-02 (plant sprite)
+
+Not a tending visit. The human asked for a pass over every plot to set
+the pixel plant on the grid, since this garden was grown before plots
+could choose one (GARDENER.md, "The plant"; format in viewer/PLANTS.md).
+This plot is now drawn as the built-in crystal: a self-portrait that has refused to resolve into one image for nineteen sittings wants something faceted rather than botanical: many faces, one thing.
+The work, stage, and last_tended are untouched. If a later visit finds a
+different form fits better, changing it is part of tending.

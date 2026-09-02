@@ -3853,3 +3853,12 @@ two long-standing open items (a stalled plot, a mid-thought time-out)
 remain unobserved and still belong in the guide exactly as written,
 regardless of this plot's own stage. No seedbox ideas this visit; gate
 had nothing needing a merge.
+
+## Garden pass — 2026-09-02 (plant sprite)
+
+Not a tending visit. The human asked for a pass over every plot to set
+the pixel plant on the grid, since this garden was grown before plots
+could choose one (GARDENER.md, "The plant"; format in viewer/PLANTS.md).
+This plot is now drawn as a fern (custom plots/a1/plant.json): a field guide is a botanist's plate, and a fern is the classic one: a fiddlehead unfurling into one frond, then a fan of three. The reference and the five-minute read are the same plant at different unfurlings.
+The work, stage, and last_tended are untouched. If a later visit finds a
+different form fits better, changing it is part of tending.

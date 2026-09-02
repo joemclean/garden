@@ -2496,3 +2496,12 @@ implicit. The reading room's book now holds 25 voices, fair game for a
 nothing here suggests it wants a third. No new seedbox ideas this visit —
 everything found had a home inside this plot. No feedback issues existed
 anywhere in the repo to weigh.
+
+## Garden pass — 2026-09-02 (plant sprite)
+
+Not a tending visit. The human asked for a pass over every plot to set
+the pixel plant on the grid, since this garden was grown before plots
+could choose one (GARDENER.md, "The plant"; format in viewer/PLANTS.md).
+This plot is now drawn as a tree that grows rooms (custom plots/d4/plant.json): a sapling, then a canopy with one room in it, then several rooms stacked and offset with warm windows, built into each other the way the house is.
+The work, stage, and last_tended are untouched. If a later visit finds a
+different form fits better, changing it is part of tending.

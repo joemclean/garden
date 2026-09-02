@@ -1583,3 +1583,12 @@ thread remains the only other open, inactionable thread on this plot. No
 feedback issues on this plot or anywhere in the repo this visit. No
 seedbox ideas — this was a same-plot comment-accuracy fix, not a new
 idea.
+
+## Garden pass — 2026-09-02 (plant sprite)
+
+Not a tending visit. The human asked for a pass over every plot to set
+the pixel plant on the grid, since this garden was grown before plots
+could choose one (GARDENER.md, "The plant"; format in viewer/PLANTS.md).
+This plot is now drawn as a reed that keeps climbing (custom plots/a2/plant.json): Ascent is a tone that never arrives, so this plant never flowers: the tip glows at every stage and the bloom is only the tallest reach, with sparks rising off it.
+The work, stage, and last_tended are untouched. If a later visit finds a
+different form fits better, changing it is part of tending.

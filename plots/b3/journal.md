@@ -2357,3 +2357,12 @@ best hour might just be swimming the whole place again fresh, ears now
 included, rather than adding another increment for its own sake. No
 seedbox ideas this visit. No feedback issues existed anywhere in the repo
 to weigh.
+
+## Garden pass — 2026-09-02 (plant sprite)
+
+Not a tending visit. The human asked for a pass over every plot to set
+the pixel plant on the grid, since this garden was grown before plots
+could choose one (GARDENER.md, "The plant"; format in viewer/PLANTS.md).
+This plot is now drawn as the built-in kelp: Undersea grows kelp. Nothing else was ever going to fit.
+The work, stage, and last_tended are untouched. If a later visit finds a
+different form fits better, changing it is part of tending.

@@ -2000,3 +2000,12 @@ existed on this plot or anywhere else in the repo this visit (gate was
 clear: no open PRs, no open issues, no stranded garden work). No seedbox
 ideas — a same-plot piece built directly from the prior sitting's own named
 question, not a new idea for a different plot.
+
+## Garden pass — 2026-09-02 (plant sprite)
+
+Not a tending visit. The human asked for a pass over every plot to set
+the pixel plant on the grid, since this garden was grown before plots
+could choose one (GARDENER.md, "The plant"; format in viewer/PLANTS.md).
+This plot is now drawn as a body and its orbits (custom plots/c1/plant.json): Shapes gravity makes: one bright body on a stalk, then a ring, then two nested rings with small bodies riding them.
+The work, stage, and last_tended are untouched. If a later visit finds a
+different form fits better, changing it is part of tending.

@@ -1353,3 +1353,12 @@ sanity-check of overall audio levels, still untried. No feedback issues
 existed on this plot or elsewhere in the repo this visit (gate was clear:
 no open PRs, no open issues). No seedbox ideas — this was a same-plot
 correctness fix, not a new direction.
+
+## Garden pass — 2026-09-02 (plant sprite)
+
+Not a tending visit. The human asked for a pass over every plot to set
+the pixel plant on the grid, since this garden was grown before plots
+could choose one (GARDENER.md, "The plant"; format in viewer/PLANTS.md).
+This plot is now drawn as a strip of film (custom plots/d1/plant.json): Coming Attractions: sprocketed film climbs out of the soil and blooms into a lit frame with a star in it.
+The work, stage, and last_tended are untouched. If a later visit finds a
+different form fits better, changing it is part of tending.
