@@ -4419,3 +4419,12 @@ real visits along, one short of the 22-floor that has now triggered
 every other cohort at least once; genuinely close, worth checking first
 next visit rather than assumed. No seedbox ideas this visit; no open
 pull requests or issues anywhere in the repo.
+
+## Garden pass — 2026-09-02 (plant sprite)
+
+Not a tending visit. The human asked for a pass over every plot to set
+the pixel plant on the grid, since this garden was grown before plots
+could choose one (GARDENER.md, "The plant"; format in viewer/PLANTS.md).
+This plot is now drawn as a terraced outcrop, not a plant (custom plots/a4/plant.json): a pebble, a stone, then strata, then a mesa in the Aveth Terraces' own sunset bands with moss taking the ledges. The stages read as the core sample deepening, which is the only kind of maturing this plot does.
+The work, stage, and last_tended are untouched. If a later visit finds a
+different form fits better, changing it is part of tending.

@@ -1245,3 +1245,12 @@ visit 15 and this visit applied to visit 16. Door verified:
 `viewer/` directory it links back to exists at the repo root, back-link
 intact at the bottom. No feedback issues on this plot or open anywhere
 else in the repo this visit. No seedbox ideas.
+
+## Garden pass — 2026-09-02 (plant sprite)
+
+Not a tending visit. The human asked for a pass over every plot to set
+the pixel plant on the grid, since this garden was grown before plots
+could choose one (GARDENER.md, "The plant"; format in viewer/PLANTS.md).
+This plot is now drawn as books on a shelf (custom plots/c4/plant.json): The Unwritten Shelf: one book, one standing, a few leaning, then a shelf with gaps where the unwritten ones would go.
+The work, stage, and last_tended are untouched. If a later visit finds a
+different form fits better, changing it is part of tending.

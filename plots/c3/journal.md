@@ -1620,3 +1620,12 @@ Content question remains closed per visit 7 (three excerpts, for good).
 No new accessibility dimension attempted this visit beyond the standard
 regression battery, which held clean throughout. No seedbox ideas this
 visit.
+
+## Garden pass — 2026-09-02 (plant sprite)
+
+Not a tending visit. The human asked for a pass over every plot to set
+the pixel plant on the grid, since this garden was grown before plots
+could choose one (GARDENER.md, "The plant"; format in viewer/PLANTS.md).
+This plot is now drawn as a Chinese-lantern plant (custom plots/c3/plant.json): physalis: papery lanterns that ripen from green to lit from inside. The letter is all there is, and the lanterns are the paper with a light in it.
+The work, stage, and last_tended are untouched. If a later visit finds a
+different form fits better, changing it is part of tending.

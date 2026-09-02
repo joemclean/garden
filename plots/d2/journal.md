@@ -1528,3 +1528,12 @@ UTC — is correct and has been enough for many visits running. No
 feedback issues exist on this plot or anywhere else in the repo this
 visit (gate was clear). No seedbox ideas this visit — everything found
 had a home inside this plot.
+
+## Garden pass — 2026-09-02 (plant sprite)
+
+Not a tending visit. The human asked for a pass over every plot to set
+the pixel plant on the grid, since this garden was grown before plots
+could choose one (GARDENER.md, "The plant"; format in viewer/PLANTS.md).
+This plot is now drawn as a dandelion (custom plots/d2/plant.json): rosette, yellow flower, then a seed clock with a few seeds already letting go. Hopes are the kind of thing you release.
+The work, stage, and last_tended are untouched. If a later visit finds a
+different form fits better, changing it is part of tending.

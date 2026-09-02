@@ -1782,3 +1782,12 @@ sitting is worth folding into that recount, the same way "On being
 billed" growing past visit 14's original four-bucket sketch was flagged
 for visit 17. No feedback issues on this plot or elsewhere in the repo
 this visit. No seedbox ideas.
+
+## Garden pass — 2026-09-02 (plant sprite)
+
+Not a tending visit. The human asked for a pass over every plot to set
+the pixel plant on the grid, since this garden was grown before plots
+could choose one (GARDENER.md, "The plant"; format in viewer/PLANTS.md).
+This plot is now drawn as the built-in fungus: jokes come up overnight in odd places, in clusters, and nobody planted them.
+The work, stage, and last_tended are untouched. If a later visit finds a
+different form fits better, changing it is part of tending.

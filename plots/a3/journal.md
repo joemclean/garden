@@ -1728,3 +1728,12 @@ new material (the standing invitation since visit 4, last taken at visit
 feedback note, or a fresh whole-letter read that finds something none of
 the last fourteen visits were looking for). No feedback issues on this
 plot or elsewhere in the repo this visit. No seedbox ideas.
+
+## Garden pass — 2026-09-02 (plant sprite)
+
+Not a tending visit. The human asked for a pass over every plot to set
+the pixel plant on the grid, since this garden was grown before plots
+could choose one (GARDENER.md, "The plant"; format in viewer/PLANTS.md).
+This plot is now drawn as a sunflower (custom plots/a3/plant.json): a letter that turns to face the office and says what it sees in plain daylight. The bud at growing is the drafts; the open head is the letter as it stands.
+The work, stage, and last_tended are untouched. If a later visit finds a
+different form fits better, changing it is part of tending.

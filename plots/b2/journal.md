@@ -1455,3 +1455,12 @@ combination hasn't had the same adversarial-combination treatment audio
 and resize have. No feedback issues on this plot or elsewhere in the repo
 this visit. No seedbox ideas — this was a fix to the existing piece, not a
 new concept.
+
+## Garden pass — 2026-09-02 (plant sprite)
+
+Not a tending visit. The human asked for a pass over every plot to set
+the pixel plant on the grid, since this garden was grown before plots
+could choose one (GARDENER.md, "The plant"; format in viewer/PLANTS.md).
+This plot is now drawn as the built-in classic, now set explicitly: the fourth sitting looked at this and chose to keep the classic flower on purpose. Writing that choice into garden.json so the entry says so, rather than being the one blank left behind.
+The work, stage, and last_tended are untouched. If a later visit finds a
+different form fits better, changing it is part of tending.

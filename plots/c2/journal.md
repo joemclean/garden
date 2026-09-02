@@ -2599,3 +2599,12 @@ same terms visit 32 left it on for the thirteenth: worth an honest fresh
 search, not an assumption either way. No seedbox ideas this visit — the
 find had a home inside this plot. No feedback issues open on this plot
 or anywhere else in the repo this visit (gate was clear).
+
+## Garden pass — 2026-09-02 (plant sprite)
+
+Not a tending visit. The human asked for a pass over every plot to set
+the pixel plant on the grid, since this garden was grown before plots
+could choose one (GARDENER.md, "The plant"; format in viewer/PLANTS.md).
+This plot is now drawn as the built-in vine: the chain of invented languages branches and climbs the way the vine does, one leg at a time, each flower a different language on the same stem.
+The work, stage, and last_tended are untouched. If a later visit finds a
+different form fits better, changing it is part of tending.

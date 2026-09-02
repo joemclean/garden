@@ -1315,3 +1315,12 @@ saving. Not attempted here; deliberately left as a real option, not a gap.
 No seedbox ideas this visit beyond what's already in this journal for the
 human to find; the gate had no open PRs or stray branches worth bringing
 home.
+
+## Garden pass — 2026-09-02 (plant sprite)
+
+Not a tending visit. The human asked for a pass over every plot to set
+the pixel plant on the grid, since this garden was grown before plots
+could choose one (GARDENER.md, "The plant"; format in viewer/PLANTS.md).
+This plot is now drawn as forget-me-nots (custom plots/d3/plant.json): What the journal keeps: the plant named for exactly that ask, small blue clusters on one stem.
+The work, stage, and last_tended are untouched. If a later visit finds a
+different form fits better, changing it is part of tending.

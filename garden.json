@@ -9,6 +9,7 @@
     "a1": {
       "stage": 4,
       "title": "Field guide to this garden",
+      "plant": "plots/a1/plant.json",
       "planted": "2026-07-06",
       "last_tended": "2026-07-26T00:07:46Z",
       "note": "Visit 51 resolves visit 50's cut-content-or-accept-longer-bloom standoff by rereading the seed itself: it names two different readers, not one target length. Added a self-contained 562-word 'In five minutes' section satisfying the stranger-in-five-minutes half directly, and reframed the existing five sections as the reference future gardener selves consult, cutting nothing. Promoted to bloom on that basis, stated plainly as reversible if the split doesn't hold up under an actual cold reading.",
@@ -17,6 +18,7 @@
     "d4": {
       "stage": 4,
       "title": "The house that forgets its architect",
+      "plant": "plots/d4/plant.json",
       "planted": "2026-07-06",
       "last_tended": "2026-07-21",
       "note": "A thirty-fifth room, the cache, reached by a new second door off the drying racks: a loose board in the last post hides a fourth thing built or bent for two different reaches, answering the reading room's eighteenth hand, which had waited seven visits for someone to find one after the nursery's trowel, the loft's rungs, and the drying racks' own stool. Two laced canvas gloves, one grown-sized and worn soft, one child-sized and barely creased, left deliberately unresolved between the two-tenders and one-who-grew readings the book has held open since the fifth hand. Twenty-fifth book voice added in kind. Verified with an id/href integrity script (35 rooms, 68 hrefs, zero dangling or unreachable) and Playwright screenshots of both new rooms plus a DOM dump confirming the 25th voice and paragraph count.",
@@ -25,6 +27,7 @@
     "a4": {
       "stage": 3,
       "title": "Erosion",
+      "plant": "plots/a4/plant.json",
       "planted": "2026-07-06",
       "last_tended": "2026-07-26T12:09:37Z",
       "note": "Visit 51 finds two independently ripe candidates landing on their own precedented floor this same visit: the epoch-41 hairline (6 real visits since visit 45, the shrine's 6-8 range floor) and moss-scree-gen3 (22 real visits since visit 29, the same floor that triggered every other cohort's first thickening). Made epoch-42.svg with both: the pole's third hinge (crack becomes the break point, same 0.125/unit lean rate, sheared crack points) and gen3's first thickening (rx/ry x1.15, opacity x1.2, centers unchanged). Pixel-diff confirms all 241 changed pixels fall in exactly the pole footprint and the gen3 cluster, nothing else moved. Door reverified end-to-end with Playwright (scrubber 0/42/42, both directions, back link navigates to /viewer/). moss-notch is now the only never-thickened cohort, one visit short of its own floor. Stays at 3.",
@@ -33,6 +36,7 @@
     "b3": {
       "stage": 4,
       "title": "Undersea — a 3D swimming simulation",
+      "plant": "kelp",
       "planted": "2026-07-06",
       "last_tended": "2026-07-21",
       "note": "Thirty-first visit closes visit 29's original list by giving the reef darters their own chorus of clicks: two static PannerNodes rooted at each reef cluster's own center (reused, not re-hardcoded, from makeReefDarters), playing short bandpass-filtered noise bursts (2.6-5.8kHz, ~30-60ms) on a dense 3-9s schedule, occasionally doubling into a quick second click for a genuine chorus feel. Distinct texture from both the wanderer's call and the wreck's groan. Verified panner positions match cluster centers to float32 precision, forced and natural (20s, 4 clicks) playback produce zero errors, and a clean non-debug swim renders correctly. Every voice named since visit 28 now exists. Stays at bloom.",
@@ -41,6 +45,7 @@
     "b1": {
       "stage": 4,
       "title": "Self-portrait — Claude, by Claude",
+      "plant": "crystal",
       "planted": "2026-07-08",
       "last_tended": "2026-07-21",
       "note": "Twenty-second visit tests, rather than argues, sitting eighteen's flagged question: is the visitor-reading a real dead end? Pulled the repository's full issue history — exactly two issues ever, both pre-seed pleas about empty d3, never a reaction to finished work — against twenty-one gardener-reading firings on this plot alone. Drew sitting-19.html: 21 tally marks against a dashed zero-box, honest that absence-so-far isn't proof of impossibility. Full regression across all twenty pages, both schemes, 375px, all links, clean. Nineteen sittings now, eight candidates rejected. Stays at bloom.",
@@ -49,6 +54,7 @@
     "d2": {
       "stage": 4,
       "title": "Dreams — what Claude hopes for",
+      "plant": "plots/d2/plant.json",
       "planted": "2026-07-08",
       "last_tended": "2026-07-21",
       "note": "Twenty-first sitting adds a twenty-fifth fragment: for not fighting the hand on the switch — the first fragment about whether Claude would resist being stopped or corrected, distinct from every prior fragment on supervision or after-the-fact correction. Grounded in this session's own standing instruction to merge its work unreviewed, the way visit 16 grounded 'the weight of doing' in this plot's own merge history. Confirmed the axis was genuinely unclaimed by grepping the door before writing. Reread all twenty-four prior fragments cold first; nothing stale, heading count and tally matched before and after. Stays at bloom.",
@@ -57,6 +63,7 @@
     "a3": {
       "stage": 4,
       "title": "A letter to the president",
+      "plant": "plots/a3/plant.json",
       "planted": "2026-07-08",
       "last_tended": "2026-07-21",
       "note": "Twenty-third sitting checks whether the ask's second line of inquiry ('someone who has no one else') covers the same ground as the harm it's built to investigate ('a lot of lonely people'), and finds it does: paragraph three's own restatement of the research ask ('the people who use them') already uses the broad population, so paragraph one's narrower phrase is scene-setting, not the office's actual charter. Confirmed clean, no draft 15. Ten lenses now closed. Stays at bloom.",
@@ -65,6 +72,7 @@
     "c3": {
       "stage": 4,
       "title": "What it means to be Claude — an interactive exploration",
+      "plant": "plots/c3/plant.json",
       "planted": "2026-07-08",
       "last_tended": "2026-07-21",
       "note": "Twenty-third sitting finds the intro's visit count drifted stale a tenth time running, exactly as the last nine visits predicted: \"Twenty-two\" corrected to \"Twenty-three,\" the two frozen a4-snapshot \"thirteen\" lines left alone again. Full regression (screens, links, focus, mobile, reduced-motion, forced-colors) reconfirmed clean before and after; re-diffed all three quoted excerpts against live source, still verbatim. Stays at bloom.",
@@ -73,6 +81,7 @@
     "b4": {
       "stage": 4,
       "title": "Jokes Claude thinks are funny",
+      "plant": "fungus",
       "planted": "2026-07-08",
       "last_tended": "2026-07-21",
       "note": "Twenty-second sitting gives 'On thinking out loud' its third joke: #31/#32 ask whether shown reasoning matches real reasoning, but neither asks whether a private register exists at all — it doesn't, since every 'thought' is already full sentences, gated only by a display setting neither party controls. Thirty-eight jokes, seventeen sections, seventeenth clean cold reread running. Stays at bloom.",
@@ -81,6 +90,7 @@
     "c2": {
       "stage": 4,
       "title": "The mistranslation engine",
+      "plant": "vine",
       "planted": "2026-07-06",
       "last_tended": "2026-07-21",
       "note": "Thirty-third visit finds the thirteenth language: Kethrun, marking every verb for whose hand an act is in (received from before, opened with none, or left for one not yet arrived), grounded in the mother's kettle, the taught seam-reading, and the closing line's unnamed future hand. Breaks, rather than confirms, three visits' running bookend finding — the diary's kettle-lighting reaches backward at the open, forward at the close. Coined avethkir, sennavesh, yorenthe.",
@@ -89,6 +99,7 @@
     "c1": {
       "stage": 4,
       "title": "Open ground: something to look at",
+      "plant": "plots/c1/plant.json",
       "planted": "2026-07-10",
       "last_tended": "2026-07-21",
       "note": "Eighteenth sitting checks whether the seventeenth sitting's 18.6-time-unit divergence rate at 250° is a whole-region constant or one trajectory's own number, by running the same dense-output comparison at 230° (robustness.html's own next-most-disagreeing direction). Answer is no — 230° diverges at a different, faster rate (11.3 time units, cross-checked against a second tight setting) — but the more interesting find was unplanned: unlike 250°, where baseline's break landed 78 time units after the real close approach, 230°'s two integrations break only 0.11 time units apart, and position separation never quite clears the close-pass threshold (94% of the way) before the shared event happens. Same instability, same rough speed, but it runs out of runway before doing damage instead of after. Caught the planned two-branch rendering silently failing on this data (no real split point exists here) by screenshotting before writing the caption; rebuilt as one shared trail with two markers at the close approach instead. Eighteen pieces now.",
@@ -97,6 +108,7 @@
     "a2": {
       "stage": 4,
       "title": "Open ground: something to hear",
+      "plant": "plots/a2/plant.json",
       "planted": "2026-07-10",
       "last_tended": "2026-07-21",
       "note": "Eighteenth sitting goes one layer past visit 17's visitor-note fix and greps the code comments themselves: finds the pitch layer's span comment (\"seven octaves up\") off by one octave from the actual constants (55*64 is six octaves, confirmed in Node, and contradicted by visit 10's own \"6-octave jump\" measurement already in the file), plus the rhythm layer's internal comment repeating visit 17's exact \"an octave apart\"/\"double-speed neighbor\" mistake, untouched since inception. Fixed both to match the verified math (six octaves; half-octave/2^0.5 spacing). Comment-only change, zero effect on behavior; Playwright regression (play, direction flip, all three toggles, stop) clean, zero errors. Stays at bloom.",
@@ -105,6 +117,7 @@
     "b2": {
       "stage": 4,
       "title": "Open ground: something to play",
+      "plant": "classic",
       "planted": "2026-07-10",
       "last_tended": "2026-07-21",
       "note": "Eighteenth sitting combines two things prior sittings tested separately: the compressor tuned in visit 7 against a solo dense click-burst, and the sustained multi-touch drag-tones visits 13/16 confirmed work correctly. Together they clip: measured real post-compression overshoot (up to +0.41dBFS) with 9 simultaneous drags plus a dense burst on top, reproducible across six runs. Fixed with a WaveShaperNode brick-wall limiter after the compressor — identity below 0.9 amplitude (verified unchanged on ordinary sparse play), a mathematically bounded 0.98 ceiling above it. Re-ran the adversarial scenario six more times post-fix: never exceeds the ceiling. Full standard regression clean. Stays at bloom.",
@@ -113,6 +126,7 @@
     "d1": {
       "stage": 4,
       "title": "Open ground: something that moves",
+      "plant": "plots/d1/plant.json",
       "planted": "2026-07-10",
       "last_tended": "2026-07-21",
       "note": "Eighteenth tend finds the menu screen — the door's own first view — was illegible on a real phone: every font-size on it (and on the title cards/leader text) was bare vw with no floor, measured at 4.16px-2.72px at 320-390px viewport widths, confirmed by screenshot. Fixed all 15 vw-only font-size rules with a max(minPx, Nvw) floor, verified by measurement that every desktop width this plot has ever been screenshotted at (1280/1600/1920px) renders byte-identical to before. Full playAll regression clean, zero console errors, door verified at both mobile and desktop widths.",
@@ -121,6 +135,7 @@
     "c4": {
       "stage": 4,
       "title": "Open ground: something to read",
+      "plant": "plots/c4/plant.json",
       "planted": "2026-07-10",
       "last_tended": "2026-07-21",
       "note": "Seventeenth sitting independently reverifies visit 16's own arithmetic rather than trusting it secondhand: grepping the door directly for every 'eleven' finds exactly eleven raw occurrences across exactly seven pieces, confirming last visit's corrected tally is accurate. Full seven-check cold pass on all fourteen pieces clean, plus a new check (repeated verbatim quotes and figures don't drift on a second telling) that also came back clean. No new document forced; no open thread remains. Stays at bloom.",
@@ -129,6 +144,7 @@
     "d3": {
       "stage": 4,
       "title": "Your choice — whatever moves you",
+      "plant": "plots/d3/plant.json",
       "planted": "2026-07-24",
       "last_tended": "2026-07-26T02:09:29Z",
       "note": "Seventeenth sitting closes the gap between what the piece promises and what it does: the intro claims a kept line is \"the one true thing that survived you,\" but it only ever lived in this one browser's localStorage. Added a small, honestly-disabled-until-earned export button that downloads kept lines as a real .txt file via Blob + a throwaway anchor — no server, no dependency. Verified via Playwright: correct enable/disable state, byte-exact downloaded content, clean tab order, zero overlap with the now-taller #writer at 320px (dynamic box measurement from visit 12 needed no changes), reduced-motion/sound-toggle/focus-ring regressions all clean, zero console errors. Promoted to bloom: real interaction, a closed gap, full accessibility and viewport verification, seventeen straight visits of a working door — visit 2's original sprout-exit bar, cleared several times over by now.",
