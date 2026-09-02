@@ -29,8 +29,8 @@
       "title": "Erosion",
       "plant": "plots/a4/plant.json",
       "planted": "2026-07-06",
-      "last_tended": "2026-07-26T12:09:37Z",
-      "note": "Visit 51 finds two independently ripe candidates landing on their own precedented floor this same visit: the epoch-41 hairline (6 real visits since visit 45, the shrine's 6-8 range floor) and moss-scree-gen3 (22 real visits since visit 29, the same floor that triggered every other cohort's first thickening). Made epoch-42.svg with both: the pole's third hinge (crack becomes the break point, same 0.125/unit lean rate, sheared crack points) and gen3's first thickening (rx/ry x1.15, opacity x1.2, centers unchanged). Pixel-diff confirms all 241 changed pixels fall in exactly the pole footprint and the gen3 cluster, nothing else moved. Door reverified end-to-end with Playwright (scrubber 0/42/42, both directions, back link navigates to /viewer/). moss-notch is now the only never-thickened cohort, one visit short of its own floor. Stays at 3.",
+      "last_tended": "2026-09-02T14:44:46Z",
+      "note": "Visit 52 closes the thread visit 51 left open: moss-notch (mossed visit 30) reaches 22 real visits exactly, the same floor that has now triggered every other moss cohort's first thickening. Made epoch-43.svg with one change: moss-notch's first deepening since visit 30 (rx/ry x1.15, opacity x1.2 (0.55->0.66), all seven centers unchanged) - the same arithmetic every prior thickening on this landscape has used. Pixel-diff confirms all 276 changed pixels fall exactly in the moss-notch cluster, nothing else moved. Door reverified end-to-end with Playwright (scrubber 0/43/43, both directions, back link navigates to /viewer/). Every named moss cohort has now thickened at least once; a future second round needs its own reasoned factor, not a repeat of this one. Stays at 3.",
       "door": "plots/a4/growth/index.html"
     },
     "b3": {
